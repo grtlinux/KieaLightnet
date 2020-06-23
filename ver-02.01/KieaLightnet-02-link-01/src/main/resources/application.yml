@@ -12,7 +12,7 @@ spring:
       web-allow-others: true
   
   datasource:
-    url: jdbc:h2:mem:authdb
+    url: jdbc:h2:mem:linkdb
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -31,7 +31,7 @@ spring:
     suffix: .html
   
   data.rest:
-    base-path: /api-auth
+    base-path: /api-link
     default-page-size: 5
     max-page-size: 50
   
@@ -42,6 +42,7 @@ spring:
   devtools:
     livereload.enabled: true
   
+
 
 
 ########################################################
@@ -63,7 +64,7 @@ spring.profiles.active: local-http
 spring:
   profiles: local-http
   
-server.port: 8081
+server.port: 8082
 
 ---
 spring:
@@ -78,12 +79,6 @@ server:
     key-store-password: server
     key-alias: serverkey
     
-
-
-
-
-
-
 
 
 

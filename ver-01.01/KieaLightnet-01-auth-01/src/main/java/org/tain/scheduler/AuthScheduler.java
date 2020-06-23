@@ -30,7 +30,7 @@ public class AuthScheduler {
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
-		if (Flag.flag) try { Thread.sleep(10 * 1000); } catch (InterruptedException e) {}
+		if (!Flag.flag) try { Thread.sleep(10 * 1000); } catch (InterruptedException e) {}
 		
 		// connect to lightnet and get the info of auth
 		httpPostAuth();
