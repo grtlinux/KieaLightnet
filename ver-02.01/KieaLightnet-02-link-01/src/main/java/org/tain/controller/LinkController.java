@@ -38,11 +38,122 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
+
+	// {"status":"fail","message":"invalid transactionID or callerOperatorCode"}
+	private String COMMIT_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.commit";
 	
+	@PostMapping(value = {"/commit"})
+	public ResponseEntity<?> commit(HttpEntity<String> _httpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		
+		if (Flag.flag) {
+			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+		}
+		
+		String accessToken = getAccessToken();
+		System.out.println(">>>>> accessToken = " + accessToken);
+
+		ResponseEntity<String> response = null;
+
+		if (Flag.flag) {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			headers.set("Authorization", "Bearer " + accessToken);
+
+			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
+
+			SkipSSLConfig.skip();
+			RestTemplate restTemplate = new RestTemplate();
+			for (int i=0; i < 5; i++) {
+				response = restTemplate.exchange(COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				
+				//response.getStatusCodeValue();
+				//response.getStatusCode();
+				//response.getHeaders();
+				//response.getBody();
+				
+				log.info("=====================================================");
+				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
+				log.info("=====================================================");
+				
+				if (response.getStatusCodeValue() != 200) {
+					try { Thread.sleep(3000); } catch (InterruptedException e) {}
+					continue;
+				}
+				break;
+			}
+		}
+		
+		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+
 	private String VALIDATE_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
 	
 	@PostMapping(value = {"/validate"})
 	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		
+		if (Flag.flag) {
+			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+		}
+		
+		String accessToken = getAccessToken();
+		System.out.println(">>>>> accessToken = " + accessToken);
+
+		ResponseEntity<String> response = null;
+
+		if (Flag.flag) {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			headers.set("Authorization", "Bearer " + accessToken);
+
+			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
+
+			SkipSSLConfig.skip();
+			RestTemplate restTemplate = new RestTemplate();
+			for (int i=0; i < 5; i++) {
+				response = restTemplate.exchange(VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				
+				//response.getStatusCodeValue();
+				//response.getStatusCode();
+				//response.getHeaders();
+				//response.getBody();
+				
+				log.info("=====================================================");
+				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
+				log.info("=====================================================");
+				
+				if (response.getStatusCodeValue() != 200) {
+					try { Thread.sleep(3000); } catch (InterruptedException e) {}
+					continue;
+				}
+				break;
+			}
+		}
+		
+		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	private String VALIDATE0_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
+	
+	@PostMapping(value = {"/validate0"})
+	public ResponseEntity<?> validate0(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
@@ -63,7 +174,7 @@ public class LinkController {
 			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
 			
 			SkipSSLConfig.skip();
-			response = new RestTemplate().postForObject(VALIDATE_HTTPS_URL, httpEntity, String.class);
+			response = new RestTemplate().postForObject(VALIDATE0_HTTPS_URL, httpEntity, String.class);
 			System.out.println(">>>>> response: " + response);
 			
 			if (Flag.flag) {
