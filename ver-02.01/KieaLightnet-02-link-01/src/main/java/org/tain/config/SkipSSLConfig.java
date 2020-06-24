@@ -7,9 +7,11 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
@@ -46,5 +48,17 @@ public class SkipSSLConfig {
 		requestFactory.setHttpClient(httpClient);
 		
 		return new RestTemplate(requestFactory);
+	}
+	
+	public static RestTemplate getCustomRestTemplate() {
+		HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
+		httpRequestFactory.setConnectTimeout(2000);
+		httpRequestFactory.setReadTimeout(3000);
+		HttpClient httpClient = HttpClientBuilder.create()
+				.setMaxConnTotal(200)
+				.setMaxConnPerRoute(20)
+				.build();
+		httpRequestFactory.setHttpClient(httpClient);
+		return new RestTemplate(httpRequestFactory);
 	}
 }

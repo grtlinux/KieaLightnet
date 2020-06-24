@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthScheduler {
 
-	@Scheduled(fixedRate = 120 * 1000)
+	@Scheduled(fixedRate = 10 * 60 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		

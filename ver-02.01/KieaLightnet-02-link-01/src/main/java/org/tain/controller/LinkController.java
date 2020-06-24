@@ -10,6 +10,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,10 +35,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class LinkController {
 
-	private String DETAIL_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances.detail";
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
 	
-	@PostMapping(value = {"/detail"})
-	public ResponseEntity<?> auth(HttpEntity<String> _httpEntity) throws Exception {
+	private String VALIDATE_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
+	
+	@PostMapping(value = {"/validate"})
+	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
@@ -47,6 +53,61 @@ public class LinkController {
 		String accessToken = getAccessToken();
 		System.out.println(">>>>> accessToken = " + accessToken);
 
+		String response = null;
+		
+		if (Flag.flag) {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			headers.set("Authorization", "Bearer " + accessToken);
+			
+			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
+			
+			SkipSSLConfig.skip();
+			response = new RestTemplate().postForObject(VALIDATE_HTTPS_URL, httpEntity, String.class);
+			System.out.println(">>>>> response: " + response);
+			
+			if (Flag.flag) {
+				// Pretty Print
+				ObjectMapper objectMapper = new ObjectMapper();
+				objectMapper.registerModule(new JavaTimeModule());
+				objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+				
+				JsonNode jsonNode = objectMapper.readTree(response);
+				//String json = jsonNode.at("/").toPrettyString();
+				String json = jsonNode.toPrettyString();
+				System.out.println(">>>>> json: " + json);
+			}
+		}
+		
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	private String LIST_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances";
+	
+	@PostMapping(value = {"/list"})
+	public ResponseEntity<?> list(HttpEntity<String> _httpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		
+		MultiValueMap<String, String> reqMap = new LinkedMultiValueMap<>();
+		if (Flag.flag) {
+			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			
+			Map<String,Object> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,Object>>() {});
+			map.forEach((key, value) -> {
+				reqMap.add(key, (String)value);
+			}); 
+		}
+		
+		String accessToken = getAccessToken();
+		System.out.println(">>>>> accessToken = " + accessToken);
+
+		ResponseEntity<String> response = null;
+		
 		if (Flag.flag) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
@@ -54,18 +115,18 @@ public class LinkController {
 			
 			HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 			
-			UriComponents builder = UriComponentsBuilder.fromHttpUrl(DETAIL_HTTPS_URL)
-					.queryParam("sourceCountry", "KOR")
-					.queryParam("destinationCountry", "KHM")
-					.queryParam("destinationOperatorCode", "lyhour")
-					.queryParam("withdrawableAmount", "1.500")
-					.queryParam("transactionCurrency", "USD")
-					.queryParam("deliveryMethod", "cash")
-					.build(false);
+			UriComponents builder = UriComponentsBuilder.fromHttpUrl(LIST_HTTPS_URL)
+					.queryParams(reqMap)
+					//.queryParam("sourceCountry", "KOR")
+					//.queryParam("destinationCountry", "KHM")
+					//.queryParam("destinationOperatorCode", "lyhour")
+					//.queryParam("withdrawableAmount", "1.500")
+					//.queryParam("transactionCurrency", "USD")
+					//.queryParam("deliveryMethod", "cash")
+					.build(true);
 			
 			SkipSSLConfig.skip();
-			RestTemplate restTemplate = new RestTemplate();
-			ResponseEntity<String> response = restTemplate.exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
+			response = new RestTemplate().exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
 			System.out.println(">>>>> response: " + response);
 			
 			if (Flag.flag) {
@@ -81,16 +142,84 @@ public class LinkController {
 			}
 		}
 		
-		Map<String,Object> map = new HashMap<>();
-		map.put("title", "auth");
-		
-		return new ResponseEntity<>(map, HttpStatus.OK);
+		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	private String DETAIL_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances.detail";
+	
+	@PostMapping(value = {"/detail"})
+	public ResponseEntity<?> detail(HttpEntity<String> _httpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		
+		MultiValueMap<String, String> reqMap = new LinkedMultiValueMap<>();
+		if (Flag.flag) {
+			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			
+			Map<String,Object> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,Object>>() {});
+			map.forEach((key, value) -> {
+				reqMap.add(key, (String)value);
+			}); 
+		}
+		
+		String accessToken = getAccessToken();
+		System.out.println(">>>>> accessToken = " + accessToken);
+
+		ResponseEntity<String> response = null;
+		
+		if (Flag.flag) {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			headers.set("Authorization", "Bearer " + accessToken);
+			
+			HttpEntity<String> httpEntity = new HttpEntity<>(headers);
+			
+			UriComponents builder = UriComponentsBuilder.fromHttpUrl(DETAIL_HTTPS_URL)
+					.queryParams(reqMap)
+					//.queryParam("sourceCountry", "KOR")
+					//.queryParam("destinationCountry", "KHM")
+					//.queryParam("destinationOperatorCode", "lyhour")
+					//.queryParam("withdrawableAmount", "1.500")
+					//.queryParam("transactionCurrency", "USD")
+					//.queryParam("deliveryMethod", "cash")
+					.build(true);
+			
+			SkipSSLConfig.skip();
+			response = new RestTemplate().exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
+			System.out.println(">>>>> response: " + response);
+			
+			if (Flag.flag) {
+				// Pretty Print
+				ObjectMapper objectMapper = new ObjectMapper();
+				objectMapper.registerModule(new JavaTimeModule());
+				objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+				
+				JsonNode jsonNode = objectMapper.readTree(response.getBody());
+				//String json = jsonNode.at("/").toPrettyString();
+				String json = jsonNode.toPrettyString();
+				System.out.println(">>>>> json: " + json);
+			}
+		}
+		
+		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+
 	private String HTTP_URL = "http://localhost:8081/auth";
 
 	private String getAccessToken() throws Exception {
@@ -98,7 +227,7 @@ public class LinkController {
 		Map<String,Object> resMap = null;
 		if (Flag.flag) {
 			String reqJson = "{"
-				+ "\"title\": \"detail\","
+				+ "\"title\": \"detail\""
 				+ "}";
 			reqMap = new ObjectMapper().readValue(reqJson, new TypeReference<Map<String,Object>>(){});
 		}
