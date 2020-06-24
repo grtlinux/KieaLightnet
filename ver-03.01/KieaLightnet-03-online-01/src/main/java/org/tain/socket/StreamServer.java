@@ -18,7 +18,7 @@ public class StreamServer {
 
 	private ServerSocket serverSocket = null;
 	
-	private static final int LISTEN_PORT = 9092;
+	private static final int LISTEN_PORT = 9083;
 	
 	@Bean
 	public void jobStreamServer() throws Exception {

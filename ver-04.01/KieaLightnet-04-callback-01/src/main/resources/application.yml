@@ -12,7 +12,7 @@ spring:
       web-allow-others: true
   
   datasource:
-    url: jdbc:h2:mem:lns01db
+    url: jdbc:h2:mem:callbackdb
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -23,6 +23,11 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
   
+  data.rest:
+    base-path: /api
+    default-page-size: 5
+    max-page-size: 50
+  
   thymeleaf:
     enabled: true
     encoding: utf-8
@@ -30,19 +35,18 @@ spring:
     prefix: classpath:templates/
     suffix: .html
   
-  data.rest:
-    base-path: /api
-    default-page-size: 5
-    max-page-size: 50
-  
   servlet.multipart:
+    enabled: true
+    location: ~/FILES
     max-file-size: 5GB
     max-request-size: 5GB
   
   devtools:
     livereload.enabled: true
-  
-  
+
+
+
+
 
 ########################################################
 json:
@@ -53,7 +57,6 @@ json:
 
     lightnet: src/main/resources/table/lightnet.json
 
-server.tcp.port: 9083
 
 
 ########################################################
@@ -64,7 +67,7 @@ spring.profiles.active: local-http
 spring:
   profiles: local-http
   
-server.port: 8091
+server.port: 8084
 
 ---
 spring:
@@ -79,12 +82,6 @@ server:
     key-store-password: server
     key-alias: serverkey
     
-
-
-
-
-
-
 
 
 
