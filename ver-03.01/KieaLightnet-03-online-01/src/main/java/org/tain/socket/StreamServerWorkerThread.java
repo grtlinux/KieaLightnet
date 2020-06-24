@@ -1,5 +1,6 @@
-package org.tain.scheduler;
+package org.tain.socket;
 
+import java.net.Socket;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,30 +10,40 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.tain.config.SkipSSLConfig;
+import org.tain.object.Packet;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Component
 @Slf4j
-public class DetailScheduler {
+public class StreamServerWorkerThread extends Thread {
 
-	//@Scheduled(fixedRate = 60 * 1000)
-	public void scheduleJob() throws Exception {
-		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-		
-		if (!Flag.flag) try { Thread.sleep(10 * 1000); } catch (InterruptedException e) {}
-		
-		// connect to lightnet and get the info of auth
-		httpPostDetail();
+	private Socket socket = null;
+	private StreamPacket streamPacket = null;
+	private Packet packet = null;
+	
+	public StreamServerWorkerThread(Socket socket) throws Exception {
+		this.socket = socket;
+		this.streamPacket = new StreamPacket(this.socket);
+	}
+	
+	@Override
+	public void run() {
+		try {
+			do {
+				this.packet = this.streamPacket.recvPacket();
+				if (Flag.flag) System.out.println("SERVER >>>>> " + this.packet);
+				this.httpPostDetail();
+			} while(this.packet != null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	private String HTTP_URL = "http://localhost:8081/detail";
+	private String HTTP_URL = "http://localhost:8081/link/detail";
 	
 	private void httpPostDetail() throws Exception {
 		if (Flag.flag) {
