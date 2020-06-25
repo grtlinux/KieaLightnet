@@ -45,6 +45,7 @@ public class StreamServerWorkerThread extends Thread {
 				// 0. detail
 				// 1. validate
 				// 2. commit
+				// 3. batch
 				switch (random.nextInt() % 3) {
 				case 0:
 					this.httpPostDetail();
