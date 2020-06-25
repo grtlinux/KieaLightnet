@@ -36,6 +36,8 @@ spring:
     max-page-size: 50
   
   servlet.multipart:
+    enabled: true
+    location: ~/FILES
     max-file-size: 5GB
     max-request-size: 5GB
   
