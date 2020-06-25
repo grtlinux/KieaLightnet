@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthController {
 
-	@PostMapping(value = {""})
+	@PostMapping(value = {"/auth"})
 	public ResponseEntity<?> auth(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
@@ -36,7 +36,7 @@ public class AuthController {
 		}
 		
 		Map<String,Object> map = new HashMap<>();
-		map.put("title", "auth");
+		map.put("title", "/auth/auth");
 		map.put("accessToken", AccessToken.get());
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
