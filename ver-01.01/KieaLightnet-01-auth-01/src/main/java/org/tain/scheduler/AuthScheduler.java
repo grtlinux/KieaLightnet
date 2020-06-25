@@ -42,6 +42,51 @@ public class AuthScheduler {
 	
 	private String AUTH_HTTP_URL = "https://test-public.lightnetapis.io/v1/auth";
 	
+	private void httpPostAuth() throws Exception {
+		
+		String reqJson = ""
+			+ "{"
+			+ "\"clientId\": \"pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT\","
+			+ "\"secret\": \"skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk\""
+			+ "}";
+		
+		if (Flag.flag) {
+			AccessToken.set(null);
+			
+			HttpHeaders reqHeaders = new HttpHeaders();
+			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+			
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+
+			SkipSSLConfig.skip();
+			RestTemplate restTemplate = new RestTemplate();
+			ResponseEntity<String> response = null;
+			for (int i=0; i < 5; i++) {
+				response = restTemplate.exchange(AUTH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
+				//response.getStatusCodeValue();
+				//response.getStatusCode();
+				//response.getHeaders();
+				//response.getBody();
+				
+				AccessToken.set(response.getHeaders().get("AccessToken").get(0));
+				
+				log.info("=====================================================");
+				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				log.info("KANG-20200623 >>>>> AccessToken = {}", AccessToken.get());
+				log.info("=====================================================");
+				
+				if (response.getStatusCodeValue() == 200) {
+					break;
+				}
+				
+				log.info("KANG-20200618 >>>>> {} after 5sec, retry to connect.....", CurrentInfo.get());
+				try { Thread.sleep(5000); } catch (InterruptedException e) {}
+			}
+		}
+	}
+	
 	@SuppressWarnings("unused")
 	private void httpPostAuth0() throws Exception {
 		Map<String,Object> reqMap = null;
@@ -77,51 +122,6 @@ public class AuthScheduler {
 				
 				String accessToken = response.getHeaders().get("AccessToken").get(0);
 				AccessToken.set(accessToken);
-				
-				log.info("=====================================================");
-				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
-				log.info("KANG-20200623 >>>>> AccessToken = {}", AccessToken.get());
-				log.info("=====================================================");
-				
-				if (response.getStatusCodeValue() == 200) {
-					break;
-				}
-				
-				log.info("KANG-20200618 >>>>> {} after 5sec, retry to connect.....", CurrentInfo.get());
-				try { Thread.sleep(5000); } catch (InterruptedException e) {}
-			}
-		}
-	}
-	
-	private void httpPostAuth() throws Exception {
-		
-		String reqJson = ""
-			+ "{"
-			+ "\"clientId\": \"pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT\","
-			+ "\"secret\": \"skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk\""
-			+ "}";
-		
-		if (Flag.flag) {
-			AccessToken.set(null);
-			
-			HttpHeaders reqHeaders = new HttpHeaders();
-			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
-
-			SkipSSLConfig.skip();
-			RestTemplate restTemplate = new RestTemplate();
-			ResponseEntity<String> response = null;
-			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(AUTH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
-				//response.getStatusCodeValue();
-				//response.getStatusCode();
-				//response.getHeaders();
-				//response.getBody();
-				
-				AccessToken.set(response.getHeaders().get("AccessToken").get(0));
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
