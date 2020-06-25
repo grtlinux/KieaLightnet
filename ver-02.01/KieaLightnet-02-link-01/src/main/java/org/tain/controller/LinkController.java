@@ -1,7 +1,6 @@
 package org.tain.controller;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.http.HttpEntity;
@@ -50,30 +49,21 @@ public class LinkController {
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		//String accessToken = getAccessToken();
-		//System.out.println(">>>>> accessToken = " + accessToken);
-
 		ResponseEntity<String> response = null;
-
+		
 		if (Flag.flag) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-			//headers.set("Authorization", "Bearer " + accessToken);
 
 			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
 
-			//SkipSSLConfig.skip();
 			RestTemplate restTemplate = new RestTemplate();
 			for (int i=0; i < 5; i++) {
 				response = restTemplate.exchange(CALLBACK_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				
-				//response.getStatusCodeValue();
-				//response.getStatusCode();
-				//response.getHeaders();
-				//response.getBody();
-				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> POST {}", CALLBACK_HTTPS_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
@@ -106,7 +96,7 @@ public class LinkController {
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		String accessToken = getAccessToken();
+		String accessToken = getAccessToken("/commit");
 		System.out.println(">>>>> accessToken = " + accessToken);
 
 		ResponseEntity<String> response = null;
@@ -123,13 +113,9 @@ public class LinkController {
 			for (int i=0; i < 5; i++) {
 				response = restTemplate.exchange(COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				
-				//response.getStatusCodeValue();
-				//response.getStatusCode();
-				//response.getHeaders();
-				//response.getBody();
-				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> POST {}", COMMIT_HTTPS_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
@@ -138,6 +124,18 @@ public class LinkController {
 				if (response.getStatusCodeValue() != 200) {
 					try { Thread.sleep(3000); } catch (InterruptedException e) {}
 					continue;
+				}
+				
+				if (Flag.flag) {
+					// Pretty Print
+					ObjectMapper objectMapper = new ObjectMapper();
+					objectMapper.registerModule(new JavaTimeModule());
+					objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+					
+					JsonNode jsonNode = objectMapper.readTree(response.getBody());
+					//String json = jsonNode.at("/").toPrettyString();
+					String json = jsonNode.toPrettyString();
+					System.out.println(">>>>> json: " + json);
 				}
 				break;
 			}
@@ -161,7 +159,7 @@ public class LinkController {
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		String accessToken = getAccessToken();
+		String accessToken = getAccessToken("/validate");
 		System.out.println(">>>>> accessToken = " + accessToken);
 
 		ResponseEntity<String> response = null;
@@ -178,13 +176,9 @@ public class LinkController {
 			for (int i=0; i < 5; i++) {
 				response = restTemplate.exchange(VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				
-				//response.getStatusCodeValue();
-				//response.getStatusCode();
-				//response.getHeaders();
-				//response.getBody();
-				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> POST {}", VALIDATE_HTTPS_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
@@ -193,6 +187,18 @@ public class LinkController {
 				if (response.getStatusCodeValue() != 200) {
 					try { Thread.sleep(3000); } catch (InterruptedException e) {}
 					continue;
+				}
+				
+				if (Flag.flag) {
+					// Pretty Print
+					ObjectMapper objectMapper = new ObjectMapper();
+					objectMapper.registerModule(new JavaTimeModule());
+					objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+					
+					JsonNode jsonNode = objectMapper.readTree(response.getBody());
+					//String json = jsonNode.at("/").toPrettyString();
+					String json = jsonNode.toPrettyString();
+					System.out.println(">>>>> json: " + json);
 				}
 				break;
 			}
@@ -216,7 +222,7 @@ public class LinkController {
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		String accessToken = getAccessToken();
+		String accessToken = getAccessToken("/validate0");
 		System.out.println(">>>>> accessToken = " + accessToken);
 
 		String response = null;
@@ -230,6 +236,13 @@ public class LinkController {
 			
 			SkipSSLConfig.skip();
 			response = new RestTemplate().postForObject(VALIDATE0_HTTPS_URL, httpEntity, String.class);
+			
+			log.info("=====================================================");
+			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+			log.info("KANG-20200623 >>>>> POST {}", VALIDATE0_HTTPS_URL);
+			log.info("KANG-20200623 >>>>> response  = {}", response);
+			log.info("=====================================================");
+			
 			System.out.println(">>>>> response: " + response);
 			
 			if (Flag.flag) {
@@ -252,7 +265,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String LIST_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances";
+	private String LIST_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances";
 	
 	@PostMapping(value = {"/list"})
 	public ResponseEntity<?> list(HttpEntity<String> _httpEntity) throws Exception {
@@ -263,13 +276,11 @@ public class LinkController {
 			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 			
-			Map<String,Object> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,Object>>() {});
-			map.forEach((key, value) -> {
-				reqMap.add(key, (String)value);
-			}); 
+			Map<String,String> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>() {});
+			reqMap.setAll(map);
 		}
 		
-		String accessToken = getAccessToken();
+		String accessToken = getAccessToken("/list");
 		System.out.println(">>>>> accessToken = " + accessToken);
 
 		ResponseEntity<String> response = null;
@@ -283,16 +294,19 @@ public class LinkController {
 			
 			UriComponents builder = UriComponentsBuilder.fromHttpUrl(LIST_HTTPS_URL)
 					.queryParams(reqMap)
-					//.queryParam("sourceCountry", "KOR")
-					//.queryParam("destinationCountry", "KHM")
-					//.queryParam("destinationOperatorCode", "lyhour")
-					//.queryParam("withdrawableAmount", "1.500")
-					//.queryParam("transactionCurrency", "USD")
-					//.queryParam("deliveryMethod", "cash")
 					.build(true);
 			
 			SkipSSLConfig.skip();
 			response = new RestTemplate().exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
+			
+			log.info("=====================================================");
+			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+			log.info("KANG-20200623 >>>>> GET {}", builder.toString());
+			log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+			log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+			log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
+			log.info("=====================================================");
+			
 			System.out.println(">>>>> response: " + response);
 			
 			if (Flag.flag) {
@@ -326,13 +340,11 @@ public class LinkController {
 			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 			
-			Map<String,Object> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,Object>>() {});
-			map.forEach((key, value) -> {
-				reqMap.add(key, (String)value);
-			}); 
+			Map<String,String> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>() {});
+			reqMap.setAll(map);
 		}
 		
-		String accessToken = getAccessToken();
+		String accessToken = getAccessToken("/detail");
 		System.out.println(">>>>> accessToken = " + accessToken);
 
 		ResponseEntity<String> response = null;
@@ -346,16 +358,19 @@ public class LinkController {
 			
 			UriComponents builder = UriComponentsBuilder.fromHttpUrl(DETAIL_HTTPS_URL)
 					.queryParams(reqMap)
-					//.queryParam("sourceCountry", "KOR")
-					//.queryParam("destinationCountry", "KHM")
-					//.queryParam("destinationOperatorCode", "lyhour")
-					//.queryParam("withdrawableAmount", "1.500")
-					//.queryParam("transactionCurrency", "USD")
-					//.queryParam("deliveryMethod", "cash")
 					.build(true);
 			
 			SkipSSLConfig.skip();
 			response = new RestTemplate().exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
+			
+			log.info("=====================================================");
+			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+			log.info("KANG-20200623 >>>>> GET {}", builder.toString());
+			log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+			log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+			log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
+			log.info("=====================================================");
+			
 			System.out.println(">>>>> response: " + response);
 			
 			if (Flag.flag) {
@@ -386,39 +401,30 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String HTTP_URL = "http://localhost:8081/auth";
+	private String AUTH_HTTP_URL = "http://localhost:8081/auth/auth";
 
-	private String getAccessToken() throws Exception {
-		Map<String,Object> reqMap = null;
+	private String getAccessToken(String subTitle) throws Exception {
 		Map<String,Object> resMap = null;
-		if (Flag.flag) {
-			String reqJson = "{"
-				+ "\"title\": \"detail\""
-				+ "}";
-			reqMap = new ObjectMapper().readValue(reqJson, new TypeReference<Map<String,Object>>(){});
-		}
+		
+		String reqJson = "{"
+			+ "\"title\": \"/link" + subTitle + "\""
+			+ "}";
+		
+		ResponseEntity<String> response = null;
 		
 		if (Flag.flag) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
 			
-			Map<String, Object> parameters = new HashMap<>();
-			parameters.put("title", (String) reqMap.get("title"));
-			
-			HttpEntity<Map<String,Object>> request = new HttpEntity<>(parameters, headers);
+			HttpEntity<String> request = new HttpEntity<>(reqJson, headers);
 
-			SkipSSLConfig.skip();
 			RestTemplate restTemplate = new RestTemplate();
 			for (int i=0; i < 5; i++) {
-				ResponseEntity<String> response = restTemplate.exchange(HTTP_URL, HttpMethod.POST, request, String.class);
-				
-				//response.getStatusCodeValue();
-				//response.getStatusCode();
-				//response.getHeaders();
-				//response.getBody();
+				response = restTemplate.exchange(AUTH_HTTP_URL, HttpMethod.POST, request, String.class);
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> POST {}", AUTH_HTTP_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
