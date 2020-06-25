@@ -21,16 +21,18 @@ import lombok.extern.slf4j.Slf4j;
 public class CallbackController {
 
 	@PostMapping(value = {"", "/callback"})
-	public ResponseEntity<?> auth(HttpEntity<String> httpEntity) throws Exception {
+	public ResponseEntity<?> auth(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + httpEntity.getBody());
+			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 		}
 		
 		Map<String,Object> map = new HashMap<>();
-		map.put("title", "auth");
+		map.put("title", "/callback");
+		map.put("message", "ACKNOWLEDGE");
+		map.put("status", "success");
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}
