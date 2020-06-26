@@ -119,25 +119,6 @@ server:
     key-store-password: server
     key-alias: serverkey
     
-
-#########################################################
-#
-# $ java -jar application.jar --spring.profiles.active=logging-debug,logging-daily
-#
-# logging.file:             절대경로 또는 현재경로의 상대경로로 로그파일을 지정
-# logging.file.path:        logging.file이 없을 때 동작. 지정경로에 spring.log
-# logging.file.max-size:    default 10MB 이상 초과하면 spring1.log, spring2.log ...
-# logging.file.max-history: 특정일수가 지난 로그파일을 자동 삭
-# logging.level.*:          path 기반으로 logger의 level을 지정한다.
-# - spring-boot 2.0.0부터는 rolling 정책이 SizeAndTimeBasedRollingPolicy로 변경
-# - TRACE DEBUG INFO WARN ERROR FATAL OFF
-#
-#########################################################
-
-
-
-
-
 ---
 spring:
   profiles: logging-dev
