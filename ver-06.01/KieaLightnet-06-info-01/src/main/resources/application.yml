@@ -44,7 +44,12 @@ spring:
   devtools:
     livereload.enabled: true
 
-
+  output:
+    ansi:
+      enabled: DETECT     # ALWAYS / NEVER / DETECT
+      # FATAL and ERROR – Red
+      # WARN – Yellow
+      # INFO, DEBUG and TRACE – Green
 
 ########################################################
 json:
@@ -59,13 +64,14 @@ json:
 
 ########################################################
 ########################################################
-spring.profiles.active: local-http
+spring.profiles.active: local-http #, logging-dev
 
 ---
 spring:
   profiles: local-http
   
 server.port: 8087
+
 
 ---
 spring:
@@ -81,8 +87,72 @@ server:
     key-alias: serverkey
     
 
+#########################################################
+#
+# $ java -jar application.jar --spring.profiles.active=logging-debug,logging-daily
+#
+---
+spring:
+  profiles: logging-dev
 
+logging:
+  # path: aaa
+  file:
+    filenamePattern: myfile. % d {yyyy-MM-dd-HH-mm-ss} .log
+  # file: /logs/application-debug.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    # level:
+  level:
+    root: debug
+    org.tain.controller: debug
+    org.tain.service: debug
+    org.tain.repository: debug
+    org.tain.domain: debug
 
+---
+spring:
+  profiles: logging-prod
+
+logging:
+  file: /logs/application-debug.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: error
+    org.tain.controller: warn
+    org.tain.service: info
+    org.tain.repository: debug
+    org.tain.domain: trace
+
+---
+spring.profiles: logging-info
+logging:
+  file: logs/application.log
+  level:
+    org.thymeleaf: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: INFO
+    org.quartz.core: INFO
+    org.h2.server.web: INFO
+ 
+---
+spring.profiles: logging-debug
+logging:
+  file: logs/application.log
+  level:
+    org.thymeleaf: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.quartz.core: DEBUG
+    org.h2.server.web: DEBUG
+ 
+---
+spring.profiles: logging-daily
+logging:
+  config: classpath:logback-spring.xml
 
 
 
