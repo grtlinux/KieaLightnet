@@ -58,7 +58,7 @@ json:
     group: src/main/resources/table/table_group.json
     field-info: src/main/resources/table/table_field_info.json
 
-    lightnet: src/main/resources/table/lightnet.json
+    lightnet: src/main/resources/table/lightnet_sample.json
 
 
 

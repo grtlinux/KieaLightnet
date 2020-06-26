@@ -65,7 +65,7 @@ public class Lightnet {
 	private String resJsonData;
 	
 	@Column(name = "created_date")
-	private LocalDateTime createdData = LocalDateTime.now();
+	private LocalDateTime createdDate = LocalDateTime.now();
 	
 	@Builder
 	public Lightnet(

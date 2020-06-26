@@ -29,7 +29,7 @@ public class LightnetController {
 	@Autowired
 	private LightnetService lightnetService;
 	
-	@GetMapping(value = {"/listt"})
+	@GetMapping(value = {"/list"})
 	public String list(Pageable pageable, Model model) {
 		log.info("KANG-20200618 >>>>> {}", CurrentInfo.get());
 		model.addAttribute("lightnetList", this.lightnetService.findLightnetList(pageable));
