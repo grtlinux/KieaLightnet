@@ -145,6 +145,8 @@ server:
     key-store-password: server
     key-alias: serverkey
     
+########################################################
+
 ---
 spring:
   profiles: logging-dev
@@ -207,6 +209,16 @@ logging:
 spring.profiles: logging-daily
 logging:
   config: classpath:logback-spring.xml
+
+
+
+
+
+
+
+
+
+
 
 
 
