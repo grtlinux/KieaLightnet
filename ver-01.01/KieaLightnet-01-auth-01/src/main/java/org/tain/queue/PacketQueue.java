@@ -1,4 +1,4 @@
-package org.tain.utils;
+package org.tain.queue;
 
 import java.util.LinkedList;
 
