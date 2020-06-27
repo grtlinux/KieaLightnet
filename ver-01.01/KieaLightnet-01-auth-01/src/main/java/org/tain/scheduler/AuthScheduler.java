@@ -16,6 +16,7 @@ import org.tain.config.SkipSSLConfig;
 import org.tain.data.AccessToken;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.Sleep;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,9 +31,8 @@ public class AuthScheduler {
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
-		if (!Flag.flag) try { Thread.sleep(10 * 1000); } catch (InterruptedException e) {}
+		if (!Flag.flag) Sleep.run(10 * 1000);
 		
-		// connect to lightnet and get the info of auth
 		httpPostAuth();
 	}
 
@@ -40,9 +40,10 @@ public class AuthScheduler {
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
 	
-	private String AUTH_HTTP_URL = "https://test-public.lightnetapis.io/v1/auth";
+	private String POST_AUTH_HTTP_URL = "https://test-public.lightnetapis.io/v1/auth";
 	
 	private void httpPostAuth() throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		String reqJson = ""
 			+ "{"
@@ -58,20 +59,14 @@ public class AuthScheduler {
 			
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
 
-			SkipSSLConfig.skip();
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			ResponseEntity<String> response = null;
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(AUTH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
-				//response.getStatusCodeValue();
-				//response.getStatusCode();
-				//response.getHeaders();
-				//response.getBody();
+				response = restTemplate.exchange(POST_AUTH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
 				
 				AccessToken.set(response.getHeaders().get("AccessToken").get(0));
 				
 				log.info("=====================================================");
-				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> AccessToken = {}", AccessToken.get());
@@ -113,7 +108,7 @@ public class AuthScheduler {
 			SkipSSLConfig.skip();
 			RestTemplate restTemplate = new RestTemplate();
 			for (int i=0; i < 5; i++) {
-				ResponseEntity<String> response = restTemplate.exchange(AUTH_HTTP_URL, HttpMethod.POST, request, String.class);
+				ResponseEntity<String> response = restTemplate.exchange(POST_AUTH_HTTP_URL, HttpMethod.POST, request, String.class);
 				
 				//response.getStatusCodeValue();
 				//response.getStatusCode();
