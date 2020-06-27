@@ -108,6 +108,11 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: trace
 
 
+########################################################
+lightnet:
+  url: https://test-public.lightnetapis.io
+  #url: http://localhost:8888
+  
 
 ########################################################
 json:

@@ -3,6 +3,7 @@ package org.tain.controller;
 import java.time.LocalDateTime;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -34,12 +35,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class LinkController {
 
+	@Value("${lightnet.url}")
+	private String lightnetUrl;
+	
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
 	// {"status":"fail","message":"invalid transactionID or callerOperatorCode"}
-	private String POST_COMMIT_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.commit";
+	private String POST_COMMIT_HTTPS_URL = "/v1.1/remittances.commit";
 	
 	@PostMapping(value = {"/commit"})
 	public ResponseEntity<?> commit(HttpEntity<String> _httpEntity) throws Exception {
@@ -64,7 +68,7 @@ public class LinkController {
 
 			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(POST_COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				response = restTemplate.exchange(lightnetUrl + POST_COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -101,7 +105,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String POST_VALIDATE_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
+	private String POST_VALIDATE_HTTPS_URL = "/v1.1/remittances.validate";
 	
 	@PostMapping(value = {"/validate"})
 	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
@@ -126,7 +130,7 @@ public class LinkController {
 
 			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				response = restTemplate.exchange(lightnetUrl + POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -163,7 +167,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String VALIDATE0_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
+	private String POST_VALIDATE0_HTTPS_URL = "/v1.1/remittances.validate";
 	
 	@PostMapping(value = {"/validate0"})
 	public ResponseEntity<?> validate0(HttpEntity<String> _httpEntity) throws Exception {
@@ -186,11 +190,11 @@ public class LinkController {
 			
 			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
 			
-			response = SkipSSLConfig.getRestTemplate(1).postForObject(VALIDATE0_HTTPS_URL, httpEntity, String.class);
+			response = SkipSSLConfig.getRestTemplate(1).postForObject(lightnetUrl + POST_VALIDATE0_HTTPS_URL, httpEntity, String.class);
 			
 			log.info("=====================================================");
 			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-			log.info("KANG-20200623 >>>>> POST {}", VALIDATE0_HTTPS_URL);
+			log.info("KANG-20200623 >>>>> POST {}", POST_VALIDATE0_HTTPS_URL);
 			log.info("KANG-20200623 >>>>> response  = {}", response);
 			log.info("=====================================================");
 			
@@ -216,7 +220,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String GET_LIST_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances";
+	private String GET_LIST_HTTPS_URL = "/v1/remittances";
 	
 	@PostMapping(value = {"/list"})
 	public ResponseEntity<?> list(HttpEntity<String> _httpEntity) throws Exception {
@@ -243,7 +247,7 @@ public class LinkController {
 			
 			HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 			
-			UriComponents builder = UriComponentsBuilder.fromHttpUrl(GET_LIST_HTTPS_URL)
+			UriComponents builder = UriComponentsBuilder.fromHttpUrl(lightnetUrl + GET_LIST_HTTPS_URL)
 					.queryParams(reqMap)
 					.build(true);
 			
@@ -279,7 +283,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String GET_DETAIL_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances.detail";
+	private String GET_DETAIL_HTTPS_URL = "/v1/remittances.detail";
 	
 	@PostMapping(value = {"/detail"})
 	public ResponseEntity<?> detail(HttpEntity<String> _httpEntity) throws Exception {
@@ -306,7 +310,7 @@ public class LinkController {
 			
 			HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 			
-			UriComponents builder = UriComponentsBuilder.fromHttpUrl(GET_DETAIL_HTTPS_URL)
+			UriComponents builder = UriComponentsBuilder.fromHttpUrl(lightnetUrl + GET_DETAIL_HTTPS_URL)
 					.queryParams(reqMap)
 					.build(true);
 			
