@@ -39,7 +39,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 
 	// {"status":"fail","message":"invalid transactionID or callerOperatorCode"}
-	private String COMMIT_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.commit";
+	private String POST_COMMIT_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.commit";
 	
 	@PostMapping(value = {"/commit"})
 	public ResponseEntity<?> commit(HttpEntity<String> _httpEntity) throws Exception {
@@ -62,14 +62,13 @@ public class LinkController {
 
 			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
 
-			SkipSSLConfig.skip();
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				response = restTemplate.exchange(POST_COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-				log.info("KANG-20200623 >>>>> POST {}", COMMIT_HTTPS_URL);
+				log.info("KANG-20200623 >>>>> POST {}", POST_COMMIT_HTTPS_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
@@ -102,7 +101,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String VALIDATE_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
+	private String POST_VALIDATE_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
 	
 	@PostMapping(value = {"/validate"})
 	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
@@ -125,14 +124,13 @@ public class LinkController {
 
 			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
 
-			SkipSSLConfig.skip();
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				response = restTemplate.exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-				log.info("KANG-20200623 >>>>> POST {}", VALIDATE_HTTPS_URL);
+				log.info("KANG-20200623 >>>>> POST {}", POST_VALIDATE_HTTPS_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
@@ -188,8 +186,7 @@ public class LinkController {
 			
 			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
 			
-			SkipSSLConfig.skip();
-			response = new RestTemplate().postForObject(VALIDATE0_HTTPS_URL, httpEntity, String.class);
+			response = SkipSSLConfig.getRestTemplate(1).postForObject(VALIDATE0_HTTPS_URL, httpEntity, String.class);
 			
 			log.info("=====================================================");
 			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -219,7 +216,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String LIST_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances";
+	private String GET_LIST_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances";
 	
 	@PostMapping(value = {"/list"})
 	public ResponseEntity<?> list(HttpEntity<String> _httpEntity) throws Exception {
@@ -246,12 +243,11 @@ public class LinkController {
 			
 			HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 			
-			UriComponents builder = UriComponentsBuilder.fromHttpUrl(LIST_HTTPS_URL)
+			UriComponents builder = UriComponentsBuilder.fromHttpUrl(GET_LIST_HTTPS_URL)
 					.queryParams(reqMap)
 					.build(true);
 			
-			SkipSSLConfig.skip();
-			response = new RestTemplate().exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
+			response = SkipSSLConfig.getRestTemplate(1).exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
 			
 			log.info("=====================================================");
 			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -283,7 +279,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String DETAIL_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances.detail";
+	private String GET_DETAIL_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances.detail";
 	
 	@PostMapping(value = {"/detail"})
 	public ResponseEntity<?> detail(HttpEntity<String> _httpEntity) throws Exception {
@@ -310,12 +306,11 @@ public class LinkController {
 			
 			HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 			
-			UriComponents builder = UriComponentsBuilder.fromHttpUrl(DETAIL_HTTPS_URL)
+			UriComponents builder = UriComponentsBuilder.fromHttpUrl(GET_DETAIL_HTTPS_URL)
 					.queryParams(reqMap)
 					.build(true);
 			
-			SkipSSLConfig.skip();
-			response = new RestTemplate().exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
+			response = SkipSSLConfig.getRestTemplate(1).exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
 			
 			log.info("=====================================================");
 			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -355,7 +350,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String AUTH_HTTP_URL = "http://localhost:8081/auth/auth";
+	private String POST_LOCAL_AUTH_HTTP_URL = "http://localhost:8081/auth/auth";
 
 	private String getAccessToken(String subTitle) throws Exception {
 		Map<String,Object> resMap = null;
@@ -372,13 +367,13 @@ public class LinkController {
 			
 			HttpEntity<String> request = new HttpEntity<>(reqJson, headers);
 
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(0);
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(AUTH_HTTP_URL, HttpMethod.POST, request, String.class);
+				response = restTemplate.exchange(POST_LOCAL_AUTH_HTTP_URL, HttpMethod.POST, request, String.class);
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-				log.info("KANG-20200623 >>>>> POST {}", AUTH_HTTP_URL);
+				log.info("KANG-20200623 >>>>> POST {}", POST_LOCAL_AUTH_HTTP_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());

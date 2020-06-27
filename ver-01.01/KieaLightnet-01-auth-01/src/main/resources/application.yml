@@ -110,6 +110,11 @@ logging:
 
 
 ########################################################
+lightnet:
+  url: https://test-public.lightnetapis.io
+  #url: http://localhost:8888
+  
+########################################################
 json:
   table-file:
     meta: src/main/resources/table/table_meta.json

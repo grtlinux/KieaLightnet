@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -40,7 +41,9 @@ public class AuthScheduler {
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
 	
-	private String POST_AUTH_HTTP_URL = "https://test-public.lightnetapis.io/v1/auth";
+	@Value("${lightnet.url}")
+	private String lightnetUrl;
+	private String POST_AUTH_HTTP_URL = "/v1/auth";
 	
 	private void httpPostAuth() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -62,11 +65,13 @@ public class AuthScheduler {
 			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			ResponseEntity<String> response = null;
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(POST_AUTH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
+				response = restTemplate.exchange(lightnetUrl + POST_AUTH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
 				
 				AccessToken.set(response.getHeaders().get("AccessToken").get(0));
 				
 				log.info("=====================================================");
+				log.info("KANG-20200623 >>>>> lightnetUrl        = {}", lightnetUrl);
+				log.info("KANG-20200623 >>>>> POST_AUTH_HTTP_URL = {}", POST_AUTH_HTTP_URL);
 				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				log.info("KANG-20200623 >>>>> AccessToken = {}", AccessToken.get());
