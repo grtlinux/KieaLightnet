@@ -28,7 +28,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class OnlineScheduler {
 
-	@Scheduled(fixedRate = 30 * 1000)
+	/*
+	 * TODO: KANG-20200627: for TEST
+	 */
+	@Scheduled(fixedRate = 10 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
@@ -36,27 +39,27 @@ public class OnlineScheduler {
 		
 		if (Flag.flag) {
 			Random random = new Random(new Date().getTime());
-			int switchNumber = random.nextInt(6);
+			int switchNumber = random.nextInt(2);
 			System.out.println(">>>>> switchNumber = " + switchNumber);
 			
 			switch (switchNumber) {
 			case 0:
-				if (!Flag.flag) httpPostAuth();       // https://test-public.lightnetapis.io/v1/auth
-				break;
-			case 1:
 				httpPostDetail();     // http://localhost:8082/link/detail
 				break;
-			case 2:
+			case 1:
 				httpPostList();       // http://localhost:8085/batch/list
 				break;
-			case 3:
-				httpPostCallback();   // http://localhost:8082/callback/callback
+			case 2:
+				if (!Flag.flag) httpPostCallback();   // http://localhost:8082/callback/callback
 				break;
-			case 4:
+			case 3:
 				if (!Flag.flag) httpPostValidate();   // http://localhost:8082/link/validate
 				break;
-			case 5:
+			case 4:
 				if (!Flag.flag) httpPostCommit();     // http://localhost:8082/link/commit
+				break;
+			case 5:
+				if (!Flag.flag) httpPostAuth();       // https://test-public.lightnetapis.io/v1/auth
 				break;
 			default:
 				Sleep.run(5 * 1000);
@@ -87,9 +90,8 @@ public class OnlineScheduler {
 			
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
 
-			SkipSSLConfig.skip();
 			ResponseEntity<String> response = null;
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			
 			for (int i=0; i < 5; i++) {
 				response = restTemplate.exchange(POST_AUTH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
@@ -175,7 +177,8 @@ public class OnlineScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private String POST_LIST_HTTP_URL = "http://localhost:8085/batch/list";
+	//private String POST_LIST_HTTP_URL = "http://localhost:8085/batch/list";
+	private String POST_LIST_HTTP_URL = "http://localhost:8082/link/list";
 	
 	private void httpPostList() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

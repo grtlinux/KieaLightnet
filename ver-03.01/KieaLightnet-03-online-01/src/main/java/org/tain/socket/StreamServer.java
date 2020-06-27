@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.tain.utils.CurrentInfo;
+import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +21,7 @@ public class StreamServer {
 	public void jobStreamServer() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
-		new Thread("StreamServer") {
+		if (!Flag.flag) new Thread("StreamServer") {
 			// StreamServer Thread
 			private static final int LISTEN_PORT = 9083;
 			private ServerSocket serverSocket = null;

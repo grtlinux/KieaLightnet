@@ -7,16 +7,18 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 public class SkipSSLConfig {
 
-	public static void skip() throws Exception {
+	private static void skip() throws Exception {
 		TrustManager[] trustAllCerts = new TrustManager[] {
 				new X509TrustManager() {
 					public java.security.cert.X509Certificate[] getAcceptedIssuers() {
@@ -33,7 +35,29 @@ public class SkipSSLConfig {
 		HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
 	}
 	
-	public static RestTemplate getRestTemplate() throws Exception {
+	public static RestTemplate getRestTemplate(int switchNumber) throws Exception {
+		
+		RestTemplate restTemplate = null;
+		
+		switch(switchNumber) {
+		case 0:
+			restTemplate = new RestTemplate();
+			break;
+		case 1:
+			skip();
+			restTemplate = new RestTemplate();
+			break;
+		case 2:
+			restTemplate = _getRestTemplate();
+			break;
+		default:
+			restTemplate = _getCustomRestTemplate();
+			break;
+		}
+		return restTemplate;
+	}
+	
+	private static RestTemplate _getRestTemplate() throws Exception {
 		TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -> true;
 		SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom()
 			.loadTrustMaterial(null, acceptingTrustStrategy)
@@ -46,5 +70,17 @@ public class SkipSSLConfig {
 		requestFactory.setHttpClient(httpClient);
 		
 		return new RestTemplate(requestFactory);
+	}
+	
+	private static RestTemplate _getCustomRestTemplate() {
+		HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
+		httpRequestFactory.setConnectTimeout(2000);
+		httpRequestFactory.setReadTimeout(3000);
+		HttpClient httpClient = HttpClientBuilder.create()
+				.setMaxConnTotal(200)
+				.setMaxConnPerRoute(20)
+				.build();
+		httpRequestFactory.setHttpClient(httpClient);
+		return new RestTemplate(httpRequestFactory);
 	}
 }

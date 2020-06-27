@@ -133,8 +133,7 @@ public class StreamServerWorkerThread extends Thread {
 			
 			HttpEntity<Map<String,Object>> request = new HttpEntity<>(paramMap, headers);
 
-			SkipSSLConfig.skip();
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			for (int i=0; i < 5; i++) {
 				ResponseEntity<String> response = restTemplate.exchange(DETAIL_HTTP_URL, HttpMethod.POST, request, String.class);
 				
