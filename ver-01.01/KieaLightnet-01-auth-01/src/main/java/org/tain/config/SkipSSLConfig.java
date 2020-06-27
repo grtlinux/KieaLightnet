@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class SkipSSLConfig {
 
-	public static void skip() throws Exception {
+	private static void skip() throws Exception {
 		TrustManager[] trustAllCerts = new TrustManager[] {
 				new X509TrustManager() {
 					public java.security.cert.X509Certificate[] getAcceptedIssuers() {

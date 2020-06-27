@@ -105,8 +105,7 @@ public class AuthScheduler {
 			
 			HttpEntity<Map<String,Object>> request = new HttpEntity<>(parameters, headers);
 
-			SkipSSLConfig.skip();
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
 			for (int i=0; i < 5; i++) {
 				ResponseEntity<String> response = restTemplate.exchange(POST_AUTH_HTTP_URL, HttpMethod.POST, request, String.class);
 				
