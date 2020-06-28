@@ -106,6 +106,7 @@ logging:
     org.hibernate.type: info
     # show sql values
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+  
 
 
 ########################################################
