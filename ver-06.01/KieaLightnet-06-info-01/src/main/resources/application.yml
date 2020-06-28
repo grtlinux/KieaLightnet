@@ -12,10 +12,13 @@ spring:
       web-allow-others: true
   
   datasource:
-    url: jdbc:h2:mem:infodb
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    hikari:
+      jdbc-url: jdbc:h2:mem:infodb
+      #jdbc-url: jdbc:h2:~/.h2/infodb
+      #driverClassName: org.h2.Driver
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
   
   jpa:
     show-sql: true

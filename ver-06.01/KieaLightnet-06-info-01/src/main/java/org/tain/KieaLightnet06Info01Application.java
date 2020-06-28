@@ -1,6 +1,7 @@
 package org.tain;
 
 import java.io.File;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,14 @@ import lombok.extern.slf4j.Slf4j;
 public class KieaLightnet06Info01Application implements CommandLineRunner {
 
 	public static void main(String[] args) {
+		log.info("KANG-20200628 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		SpringApplication.run(KieaLightnet06Info01Application.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		if (Flag.flag)
-			job02();
+		log.info("KANG-20200628 >>>>> {}", CurrentInfo.get());
+		if (Flag.flag) job02();
 	}
 
 	////////////////////////////////////////////////////////////////////////
