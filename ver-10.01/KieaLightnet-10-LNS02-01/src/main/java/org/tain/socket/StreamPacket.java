@@ -74,8 +74,6 @@ public class StreamPacket {
 		} catch (Exception e) {
 			if (Flag.flag) e.printStackTrace();
 			this.packet = null;
-		} finally {
-			this.close();
 		}
 		return this.packet;
 	}
@@ -94,8 +92,6 @@ public class StreamPacket {
 		} catch (Exception e) {
 			if (Flag.flag) e.printStackTrace();
 			this.packet = null;
-		} finally {
-			this.close();
 		}
 		return this.packet;
 	}
