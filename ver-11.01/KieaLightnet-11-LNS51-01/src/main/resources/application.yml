@@ -114,7 +114,8 @@ lightnet:
   url: https://test-public.lightnetapis.io
   #url: http://localhost:8888
 
-
+  title: LNS51
+  
 ########################################################
 json:
   table-file:

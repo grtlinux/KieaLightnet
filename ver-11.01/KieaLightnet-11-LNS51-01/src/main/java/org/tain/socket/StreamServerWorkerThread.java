@@ -1,8 +1,6 @@
 package org.tain.socket;
 
 import java.net.Socket;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.tain.object.Packet;
 import org.tain.utils.Flag;
@@ -28,11 +26,11 @@ public class StreamServerWorkerThread extends Thread {
 				
 				Sleep.run(1000);
 				
-				Map<String,Object> map = new HashMap<>();
-				map.put("message", "ACKNOWLEDGE");
-				map.put("status", "success");
+				//Map<String,Object> map = new HashMap<>();
+				//map.put("message", "ACKNOWLEDGE by KIEA");
+				//map.put("status", "success");
 				
-				String response = "{\"message\": \"ACKNOWLEDGE\", \"status\": \"success\"}";
+				String response = "{\"message\": \"ACKNOWLEDGE by KIEA\", \"status\": \"success\"}";
 				
 				this.streamPacket.sendPacket(response);
 				

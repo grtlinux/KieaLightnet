@@ -49,6 +49,9 @@ public class StreamClientWorkerThread extends Thread {
 				Packet packet = this.streamPacket.sendPacket(request);
 				if (Flag.flag) System.out.println("CLIENT >>>>> " + packet);
 				
+				// TODO: KANG-20200628: recvPacket
+				// this.packet = this.streamPacket.recvPacket();
+				
 				String response = packet.getData();
 				log.info("KANG-20200628 >>>>> response: [{}]", response);
 				message.setDataToQueue(response);

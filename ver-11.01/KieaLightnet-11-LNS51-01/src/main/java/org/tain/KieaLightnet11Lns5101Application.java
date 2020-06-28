@@ -2,6 +2,7 @@ package org.tain;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,15 +22,20 @@ public class KieaLightnet11Lns5101Application implements CommandLineRunner {
 		SpringApplication.run(KieaLightnet11Lns5101Application.class, args);
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+
+	@Value("${lightnet.title}")
+	private String lightnetTitle;
+
 	@Override
 	public void run(String... args) throws Exception {
+		CurrentInfo.setTitle(this.lightnetTitle);
+		
 		log.info("KANG-20200628 >>>>> {}", CurrentInfo.get());
 		if (Flag.flag) job01();
 	}
-
-	///////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////
 
 	private void job01() {
 		log.info("KANG-20200628 >>>>> {}", CurrentInfo.get());

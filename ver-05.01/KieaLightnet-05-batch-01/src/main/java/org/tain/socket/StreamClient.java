@@ -17,6 +17,7 @@ public class StreamClient {
 	private static final String host = "127.0.0.1";
 	//private static final String host = "localhost";
 	private static final int port = 9095;
+	private StreamClientWorkerThread thread = null;
 	
 	@Bean
 	public void jobStreamClient() throws Exception {
@@ -26,9 +27,14 @@ public class StreamClient {
 			Socket socket = new Socket();
 			socket.connect(new InetSocketAddress(host, port));
 			
-			new StreamClientWorkerThread(socket).start();
+			this.thread = new StreamClientWorkerThread(socket);
+			this.thread.start();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	}
+	
+	public StreamClientWorkerThread getThread() {
+		return this.thread;
 	}
 }
