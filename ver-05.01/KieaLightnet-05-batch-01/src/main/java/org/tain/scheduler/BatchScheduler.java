@@ -2,6 +2,7 @@ package org.tain.scheduler;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -10,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.tain.object.Message;
+import org.tain.socket.StreamClient;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
@@ -23,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class TestBatchScheduler {
+public class BatchScheduler {
 
 	//@Scheduled(fixedRate = 10 * 60 * 1000)
 	public void scheduleJob() throws Exception {
@@ -91,11 +94,33 @@ public class TestBatchScheduler {
 		}
 		
 		if (Flag.flag) {
-			/*
-			 * 배치 파일 생성과 AP에 전달 진행
-			 */
+			// 배치 파일 생성
+		}
+		
+		if (Flag.flag) {
+			// AP에 signal 전달 진행
+			String req = "REQUEST: sending batch file.";
+			String res = callStreamClient(req);
+			System.out.println(">>>>> " + res);
 		}
 		
 		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+
+	@Autowired
+	private StreamClient streamClient;
+	
+	private String callStreamClient(String req) throws Exception {
+		Message message = new Message();
+		message.setData(req);
+		
+		this.streamClient.getThread().setMessage(message);
+		
+		String res = message.getDataFromQueue();
+		return res;
 	}
 }
