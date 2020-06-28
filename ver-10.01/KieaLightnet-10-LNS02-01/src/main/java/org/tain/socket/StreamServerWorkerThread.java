@@ -22,12 +22,12 @@ public class StreamServerWorkerThread extends Thread {
 			do {
 				this.packet = this.streamPacket.recvPacket();
 				if (Flag.flag) System.out.println("SERVER >>>>> " + this.packet);
-				
-				//if (this.packet == null)
-				//	break;
 			} while(this.packet != null);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			if (this.socket != null)
+				try { this.socket.close(); } catch (Exception e) {}
 		}
 	}
 }
