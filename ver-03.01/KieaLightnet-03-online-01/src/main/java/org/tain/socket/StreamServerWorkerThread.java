@@ -3,8 +3,6 @@ package org.tain.socket;
 import java.net.Socket;
 import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 import org.springframework.http.HttpEntity;
@@ -46,7 +44,9 @@ public class StreamServerWorkerThread extends Thread {
 				// 1. validate
 				// 2. commit
 				// 3. batch
-				switch (random.nextInt() % 3) {
+				int switchNumber = random.nextInt() % 3;
+				if (Flag.flag) switchNumber = -1;
+				switch (switchNumber) {
 				case 0:
 					this.httpPostDetail();
 					break;
@@ -57,10 +57,9 @@ public class StreamServerWorkerThread extends Thread {
 					this.httpPostDetail();
 					break;
 				default:
+					Sleep.run(3000);
 					break;
 				}
-				
-				Sleep.run(2000);
 			} while(this.packet != null);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -94,7 +93,7 @@ public class StreamServerWorkerThread extends Thread {
 			
 			HttpEntity<String> request = new HttpEntity<>(parameters, headers);
 
-			RestTemplate restTemplate = new RestTemplate();
+			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(0);
 			for (int i=0; i < 5; i++) {
 				response = restTemplate.exchange(DETAIL_HTTP_URL, HttpMethod.POST, request, String.class);
 				
@@ -114,43 +113,6 @@ public class StreamServerWorkerThread extends Thread {
 		}
 		
 		log.info("KANG-20200623 >>>>> response.getBody() = {}", response.getBody());
-		
-		return;
-	}
-	
-	private void httpPostDetail0() throws Exception {
-		if (Flag.flag) {
-			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.APPLICATION_JSON);
-			
-			Map<String, Object> paramMap = new HashMap<>();
-			paramMap.put("sourceCountry", "KOR");
-			paramMap.put("destinationCountry", "KHM");
-			paramMap.put("destinationOperatorCode", "lyhour");
-			paramMap.put("withdrawableAmount", "1.500");
-			paramMap.put("transactionCurrency", "USD");
-			paramMap.put("deliveryMethod", "cash");
-			
-			HttpEntity<Map<String,Object>> request = new HttpEntity<>(paramMap, headers);
-
-			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
-			for (int i=0; i < 5; i++) {
-				ResponseEntity<String> response = restTemplate.exchange(DETAIL_HTTP_URL, HttpMethod.POST, request, String.class);
-				
-				log.info("=====================================================");
-				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
-				log.info("=====================================================");
-				
-				if (response.getStatusCodeValue() == 200) {
-					break;
-				}
-				
-				log.info("KANG-20200618 >>>>> {} after 5sec, retry to connect.....", CurrentInfo.get());
-				try { Thread.sleep(5000); } catch (InterruptedException e) {}
-			}
-		}
 		
 		return;
 	}

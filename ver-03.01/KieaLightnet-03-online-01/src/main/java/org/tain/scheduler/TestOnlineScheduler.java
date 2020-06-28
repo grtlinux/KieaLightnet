@@ -31,7 +31,7 @@ public class TestOnlineScheduler {
 	/*
 	 * TODO: KANG-20200627: for TEST
 	 */
-	@Scheduled(fixedRate = 10 * 1000)
+	@Scheduled(fixedRate = 60 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
@@ -40,6 +40,7 @@ public class TestOnlineScheduler {
 		if (Flag.flag) {
 			Random random = new Random(new Date().getTime());
 			int switchNumber = random.nextInt(2);
+			if (Flag.flag) switchNumber = -1;
 			System.out.println(">>>>> switchNumber = " + switchNumber);
 			
 			switch (switchNumber) {
