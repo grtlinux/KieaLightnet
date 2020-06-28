@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.tain.scheduler.BatchScheduler;
+import org.tain.scheduler.TestBatchScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 public class BatchController {
 
 	@Autowired
-	private BatchScheduler batchScheduler;
+	private TestBatchScheduler batchScheduler;
 	
 	@PostMapping(value = {"/list"})
 	public ResponseEntity<?> list(HttpEntity<String> _httpEntity) throws Exception {

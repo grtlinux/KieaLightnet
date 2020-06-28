@@ -8,7 +8,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.tain.utils.CurrentInfo;
@@ -24,9 +23,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class BatchScheduler {
+public class TestBatchScheduler {
 
-	@Scheduled(fixedRate = 10 * 60 * 1000)
+	//@Scheduled(fixedRate = 10 * 60 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
