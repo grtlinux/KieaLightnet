@@ -21,7 +21,7 @@ public class StreamClientWorkerThread extends Thread {
 	@Override
 	public void run() {
 		try {
-			IntStream.rangeClosed(1, 10).forEach(index -> {
+			IntStream.rangeClosed(1, 24 * 60 * 6).forEach(index -> {
 				String request = String.format("Hello, world!!!! index is %d...", index);
 				Packet packet = this.streamPacket.sendPacket(request);
 				if (Flag.flag) System.out.println("CLIENT >>>>> " + packet);
