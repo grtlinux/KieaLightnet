@@ -35,6 +35,8 @@ public class CallbackController {
 		if (Flag.flag) {
 			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			
+			//if (Flag.flag) return new ResponseEntity<>("{\"message\":\"Hello world!!\"}", HttpStatus.OK);
 		}
 		
 		ResponseEntity<String> response = null;

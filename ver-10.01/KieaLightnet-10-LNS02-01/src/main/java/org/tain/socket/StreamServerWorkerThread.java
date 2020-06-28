@@ -1,9 +1,12 @@
 package org.tain.socket;
 
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.tain.object.Packet;
 import org.tain.utils.Flag;
+import org.tain.utils.Sleep;
 
 public class StreamServerWorkerThread extends Thread {
 
@@ -22,6 +25,17 @@ public class StreamServerWorkerThread extends Thread {
 			do {
 				this.packet = this.streamPacket.recvPacket();
 				if (Flag.flag) System.out.println("SERVER >>>>> " + this.packet);
+				
+				Sleep.run(1000);
+				
+				Map<String,Object> map = new HashMap<>();
+				map.put("message", "ACKNOWLEDGE");
+				map.put("status", "success");
+				
+				String response = "{\"message\": \"ACKNOWLEDGE\", \"status\": \"success\"}";
+				
+				this.streamPacket.sendPacket(response);
+				
 			} while(this.packet != null);
 		} catch (Exception e) {
 			e.printStackTrace();
