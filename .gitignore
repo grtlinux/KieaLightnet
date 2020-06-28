@@ -27,5 +27,5 @@ hs_err_pid*
 # ------ written by Kiea at 2020-06-01 ---------
 bin/
 build/
-
+logs/
 
