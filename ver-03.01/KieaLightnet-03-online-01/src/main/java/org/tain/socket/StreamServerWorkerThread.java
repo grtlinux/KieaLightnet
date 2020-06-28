@@ -2,8 +2,6 @@ package org.tain.socket;
 
 import java.net.Socket;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Random;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -15,7 +13,11 @@ import org.tain.config.SkipSSLConfig;
 import org.tain.object.Packet;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.Sleep;
+
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,17 +35,40 @@ public class StreamServerWorkerThread extends Thread {
 	
 	@Override
 	public void run() {
-		Random random = new Random(new Date().getTime());
+		//Random random = new Random(new Date().getTime());
 		
 		try {
 			do {
 				this.packet = this.streamPacket.recvPacket();
 				if (Flag.flag) System.out.println("SERVER >>>>> " + this.packet);
-		
+				
+				String request = this.packet.getData();
+				String response = null;
+				
+				String switchString = request.substring(0, 4);
+				System.out.println(">>>>> switchString = [" + switchString + "]");
+				switch(switchString) {
+				case "0101":
+					httpPostBatch();
+					response = "RES batch/list hostPostList.....";  // batch list
+					break;
+				case "0201":
+					httpPostDetail();
+					response = "RES detail hostPostList.....";  // detail
+					break;
+				case "0301":
+					httpPostList();
+					response = "RES batch/list hostPostList.....";  // batch list
+					break;
+				default:
+					break;
+				}
+				this.packet = this.streamPacket.sendPacket(response);
 				// 0. detail
 				// 1. validate
 				// 2. commit
 				// 3. batch
+				/*
 				int switchNumber = random.nextInt() % 3;
 				if (Flag.flag) switchNumber = -1;
 				switch (switchNumber) {
@@ -60,9 +85,67 @@ public class StreamServerWorkerThread extends Thread {
 					Sleep.run(3000);
 					break;
 				}
+				*/
 			} while(this.packet != null);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	
+	private String POST_BATCH_HTTP_URL = "http://localhost:8085/batch/list";
+	
+	private void httpPostBatch() throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		
+		String reqJson = ""
+			+ "{"
+			+ "\"operatorCode\": \"\","
+			+ "\"offset\": \"0\","
+			+ "\"limit\": \"20\""
+			+ "}";
+		
+		ResponseEntity<String> response = null;
+		
+		if (Flag.flag) {
+			HttpHeaders reqHeaders = new HttpHeaders();
+			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+			
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+
+			RestTemplate restTemplate = new RestTemplate();
+			for (int i=0; i < 5; i++) {
+				response = restTemplate.exchange(POST_BATCH_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
+				
+				log.info("=====================================================");
+				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> POST {}", POST_BATCH_HTTP_URL);
+				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				log.info("=====================================================");
+				
+				if (response.getStatusCodeValue() == 200) {
+					break;
+				}
+				
+				log.info("KANG-20200618 >>>>> {} after 5sec, retry to connect.....", CurrentInfo.get());
+				try { Thread.sleep(5000); } catch (InterruptedException e) {}
+			}
+		}
+		
+		if (Flag.flag) {
+			// Pretty Print
+			ObjectMapper objectMapper = new ObjectMapper();
+			objectMapper.registerModule(new JavaTimeModule());
+			objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			
+			JsonNode jsonNode = objectMapper.readTree(response.getBody());
+			//String json = jsonNode.at("/").toPrettyString();
+			String json = jsonNode.toPrettyString();
+			System.out.println(">>>>> json: " + json);
 		}
 	}
 
@@ -70,7 +153,7 @@ public class StreamServerWorkerThread extends Thread {
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
 
-	private String DETAIL_HTTP_URL = "http://localhost:8082/link/detail";
+	private String POST_DETAIL_HTTP_URL = "http://localhost:8082/link/detail";
 	
 	private void httpPostDetail() throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
@@ -95,7 +178,7 @@ public class StreamServerWorkerThread extends Thread {
 
 			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(0);
 			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(DETAIL_HTTP_URL, HttpMethod.POST, request, String.class);
+				response = restTemplate.exchange(POST_DETAIL_HTTP_URL, HttpMethod.POST, request, String.class);
 				
 				log.info("=====================================================");
 				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -117,6 +200,63 @@ public class StreamServerWorkerThread extends Thread {
 		return;
 	}
 	
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	
+	private String POST_LIST_HTTP_URL = "http://localhost:8082/link/list";
+	
+	private void httpPostList() throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		
+		String reqJson = ""
+			+ "{"
+			+ "\"operatorCode\": \"\","
+			+ "\"offset\": \"0\","
+			+ "\"limit\": \"20\""
+			+ "}";
+		
+		ResponseEntity<String> response = null;
+		
+		if (Flag.flag) {
+			HttpHeaders reqHeaders = new HttpHeaders();
+			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+			
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+
+			RestTemplate restTemplate = new RestTemplate();
+			for (int i=0; i < 5; i++) {
+				response = restTemplate.exchange(POST_LIST_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
+				
+				log.info("=====================================================");
+				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+				log.info("KANG-20200623 >>>>> POST {}", POST_LIST_HTTP_URL);
+				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				log.info("=====================================================");
+				
+				if (response.getStatusCodeValue() == 200) {
+					break;
+				}
+				
+				log.info("KANG-20200618 >>>>> {} after 5sec, retry to connect.....", CurrentInfo.get());
+				try { Thread.sleep(5000); } catch (InterruptedException e) {}
+			}
+		}
+		
+		if (Flag.flag) {
+			// Pretty Print
+			ObjectMapper objectMapper = new ObjectMapper();
+			objectMapper.registerModule(new JavaTimeModule());
+			objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			
+			JsonNode jsonNode = objectMapper.readTree(response.getBody());
+			//String json = jsonNode.at("/").toPrettyString();
+			String json = jsonNode.toPrettyString();
+			System.out.println(">>>>> json: " + json);
+		}
+	}
+
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////

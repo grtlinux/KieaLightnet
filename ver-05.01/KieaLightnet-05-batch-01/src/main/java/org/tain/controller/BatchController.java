@@ -39,6 +39,9 @@ public class BatchController {
 	
 	private String LIST_HTTPS_URL = "http://localhost:8082/link/list";
 	
+	//
+	// NOT-USED
+	//
 	//@PostMapping(value = {"/list"})
 	public ResponseEntity<?> list0(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

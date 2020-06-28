@@ -28,6 +28,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BatchScheduler {
 
+	//
+	// NOT-USED
+	//
 	//@Scheduled(fixedRate = 10 * 60 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -95,13 +98,14 @@ public class BatchScheduler {
 		
 		if (Flag.flag) {
 			// 배치 파일 생성
+			System.out.println(">>>>> create batch file");
 		}
 		
 		if (Flag.flag) {
 			// AP에 signal 전달 진행
 			String req = "REQUEST: sending batch file.";
 			String res = callStreamClient(req);
-			System.out.println(">>>>> " + res);
+			System.out.println(">>>>> return the request message: " + res);
 		}
 		
 		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);

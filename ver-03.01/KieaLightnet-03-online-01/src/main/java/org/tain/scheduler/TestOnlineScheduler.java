@@ -9,7 +9,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.tain.config.SkipSSLConfig;
@@ -31,7 +30,7 @@ public class TestOnlineScheduler {
 	/*
 	 * TODO: KANG-20200627: for TEST
 	 */
-	@Scheduled(fixedRate = 60 * 1000)
+	//@Scheduled(fixedRate = 60 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
