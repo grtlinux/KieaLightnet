@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class OnlineScheduler {
+public class TestOnlineScheduler {
 
 	/*
 	 * TODO: KANG-20200627: for TEST
