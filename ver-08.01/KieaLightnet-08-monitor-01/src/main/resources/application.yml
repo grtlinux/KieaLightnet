@@ -14,7 +14,7 @@ spring:
   
   datasource:
     hikari:
-      jdbc-url: jdbc:h2:mem:monitordb
+      jdbc-url: jdbc:h2:mem:testdb
       #url: jdbc:h2:mem:monitordb
       #url: jdbc:h2:tcp://localhost:8087/mem:infodb
       #url: jdbc:h2:mem:infodb;AUTO_SERVER=TRUE;AUTO_SERVER_PORT=8087
@@ -51,6 +51,26 @@ spring:
     livereload.enabled: true
 
 
+logging:
+
+  file:
+    path: logs/
+    max-size: 1MB
+  
+  pattern:
+    console: "%d{HH:mm:ss} %-5level - %msg%n"
+    file: "%d %-5level [%-10thread] %-30logger{30} - %msg%n"
+  
+  level:
+    root: info
+    org.tain.*: info
+    org.hibernate.SQL: info
+    org.hibernate.type: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+
+job:
+  default-path: lightnet/
 
 
 

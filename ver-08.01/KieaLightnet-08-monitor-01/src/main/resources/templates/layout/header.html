@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- header -->
+<div th:fragment="header">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="/" class="navbar-brand" style="text-decoration:none;">
+					<img th:src="@{/images/spring_boot_gray.png}" class="img-rounded" style="display:inline-block;height:100%;margin-right:5px;" />
+					<span style="vertical-align:middle;">LNS System</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!-- navbar menu LEFT -->
+				<ul class="nav navbar-nav navbar-left">
+					<li><a data-target="#modalSelfInfo" data-toggle="modal" href="#" onclick="alert('This is Lightnet Transfer System..');">My Info</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">AccessToken<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/key/info"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Info</a></li>
+							<li><a href="/key/refresh"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Refresh</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Send Info<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/send/validate"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Validate</a></li>
+							<li><a href="/send/commit"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Commit</a></li>
+							<li class="divider"></li>
+							<li><a href="/send/list"><span class="glyphicon glyphicon-list-all"></span>&nbsp;List</a></li>
+							<li><a href="/send/detail"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Detail</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Recv Info<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/recv/callback"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Callback</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">FEP<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/fep/lns01"><span class="glyphicon glyphicon-list-all"></span>&nbsp;LNS01</a></li>
+							<li><a href="/fep/lns02"><span class="glyphicon glyphicon-list-all"></span>&nbsp;LNS02</a></li>
+							<li class="divider"></li>
+							<li><a href="/fep/lns51"><span class="glyphicon glyphicon-list-all"></span>&nbsp;LNS51</a></li>
+						</ul>
+					</li>
+					<li class="hide"><a href="/sample05/">통계</a></li>
+				</ul>
+				<!-- /navbar menu LEFT -->
+				
+			</div>
+		</div>
+	</nav>
+</div>
+<!-- /header -->
+</html>

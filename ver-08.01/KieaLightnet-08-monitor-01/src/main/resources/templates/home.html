@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<!-- meta name="viewport" content="width=device-width, initial-scale=1"/ -->
+	<title>Home.html</title>
+	<!-- css0 and script0 -->
+	<th:block th:replace="layout/css::css"></th:block>
+	<th:block th:replace="layout/script::script"></th:block>
+	<!-- /css0 and script0 -->
+</head>
+<body>
+<!-- header0 -->
+<div th:replace="layout/header::header"></div>
+<!-- /header0 -->
+
+	<!-- main -->
+	<div class="container">
+		<br/><br/>
+		<div class="jumbotron">
+			<h1>Hello, LNS World~~.</h1>
+			<p>
+				Have a happy time with us. If you want, push the button 'START'.
+			</p>
+			<p align="right">
+				<a class="btn btn-primary btn-lg" href="/">START</a>
+			</p>
+		</div>
+	</div>
+	<!-- /main -->
+	
+<!-- footer0 -->
+<div th:replace="layout/footer::footer"></div>
+<!-- /footer0 -->
+</body>
+</html>
