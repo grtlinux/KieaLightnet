@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.tain.data.AccessToken;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,12 +33,13 @@ public class AuthController {
 		
 		while (AccessToken.get() == null) {
 			// wait for a second
-			try { Thread.sleep(3000); } catch (InterruptedException e) {}
+			Sleep.run(3 * 1000);
 		}
 		
 		Map<String,Object> map = new HashMap<>();
 		map.put("title", "/auth/auth");
 		map.put("accessToken", AccessToken.get());
+		map.put("createdDate", LocalDateTime.now());
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
 	}

@@ -5,13 +5,13 @@
 	<!-- meta name="viewport" content="width=device-width, initial-scale=1"/ -->
 	<title>form.html</title>
 	<!-- css0 and script0 -->
-	<th:block th:replace="layout/css::css1"></th:block>
-	<th:block th:replace="layout/script::script1"></th:block>
+	<th:block th:replace="layout/css::${layout._css_}"></th:block>
+	<th:block th:replace="layout/script::${layout._script_}"></th:block>
 	<!-- /css0 and script0 -->
 </head>
 <body>
 <!-- header0 -->
-<div th:replace="layout/header::header1"></div>
+<div th:replace="layout/header::${layout._header_}"></div>
 <!-- /header0 -->
 	
 	<!-- main -->
@@ -60,7 +60,7 @@
 	<!-- /main -->
 	
 <!-- footer0 -->
-<div th:replace="layout/footer::footer1"></div>
+<div th:replace="layout/footer::${layout._footer_}"></div>
 <!-- /footer0 -->
 	
 	<!-- script -->
