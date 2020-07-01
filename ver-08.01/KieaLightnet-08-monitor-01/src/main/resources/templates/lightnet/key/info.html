@@ -63,14 +63,32 @@
 <!-- /footer0 -->
 
 <script>
+/*
+function createData() { 
+	// 1. 자바스크립트 객체 형태로 전달 
+	var sendData = {name:$('#name').val(), email:$('#email').val()}; 
+	// 2. jQuery serialize함수를 사용해서 전달 
+	var sendData = $('#AjaxForm').serialize(); 
+	console.log(sendData); 
+	return sendData; 
+	
+	// 3. 객체를 json 문자열로 만들어서 전달 
+	var sendData = JSON.stringify({name:$('#name').val(), email:$('#email').val()}); 
+	console.log(sendData); 
+	return {"data" : sendDta}; 
+}
+*/
+
 	$(function() {
 		$.ajax({
 			url: "http://localhost:8081/auth/auth",
 			type: "POST",
 			contentType: "application/json",
 			dataType: "json",
-			success: function() {
-				alert('성공~~');
+			success: function(data, status, xhr) {
+				//alert('성공~~' + JSON.stringify(data));
+				$('#accessToken').val(data.accessToken);
+				$('#createdDate').val(data.createdDate);
 			},
 			error: function() {
 				alert('실패!!');
