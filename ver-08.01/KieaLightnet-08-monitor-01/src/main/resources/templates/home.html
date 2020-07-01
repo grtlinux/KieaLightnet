@@ -14,20 +14,9 @@
 <div th:replace="layout/header::${prop._header_}"></div>
 <!-- /header0 -->
 
-	<!-- main -->
-	<div class="container">
-		<br/><br/>
-		<div class="jumbotron">
-			<h1>Hello, LNS World~~.</h1>
-			<p>
-				Have a happy time with us. If you want, push the button 'START'.
-			</p>
-			<p align="right">
-				<a class="btn btn-primary btn-lg" href="/">START</a>
-			</p>
-		</div>
-	</div>
-	<!-- /main -->
+<!-- home0 -->
+<th:block th:replace="layout/home::${prop._home_}"></th:block>
+<!-- /home0 -->
 	
 <!-- footer0 -->
 <div th:replace="layout/footer::${prop._footer_}"></div>

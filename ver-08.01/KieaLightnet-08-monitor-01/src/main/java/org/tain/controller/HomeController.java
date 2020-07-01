@@ -30,8 +30,11 @@ public class HomeController {
 		case 1: map.put("_header_", "header2"); break;
 		default: map.put("_header_", "header1"); break;
 		}
+		
 		map.put("_css_", "css1");
 		map.put("_script_", "script1");
+		map.put("_header_", "header1");
+		map.put("_home_", "home1");
 		map.put("_footer_", "footer1");
 		model.addAttribute("prop", map);
 		log.info("KANG-20200630 >>>>> {}", map);
