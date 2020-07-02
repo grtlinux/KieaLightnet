@@ -34,9 +34,13 @@ public class AuthScheduler {
 		
 		if (!Flag.flag) Sleep.run(10 * 1000);
 		
-		httpPostAuth();
+		this.httpPostAuth();
 	}
 
+	public void authRefresh() throws Exception {
+		this.httpPostAuth();
+	}
+	
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
@@ -45,7 +49,7 @@ public class AuthScheduler {
 	private String lightnetUrl;
 	private String POST_AUTH_HTTP_URL = "/v1/auth";
 	
-	private void httpPostAuth() throws Exception {
+	private synchronized void httpPostAuth() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		String reqJson = ""
