@@ -135,7 +135,9 @@ spring.profiles.active: local-http
 spring:
   profiles: local-http
   
-server.port: 8095
+server:
+  port: 8095
+  servlet.context-path: /v0.1
 
 ---
 spring:

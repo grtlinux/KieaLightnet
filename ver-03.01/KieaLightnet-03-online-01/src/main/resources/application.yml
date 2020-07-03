@@ -137,7 +137,9 @@ spring.profiles.active: local-http
 spring:
   profiles: local-http
   
-server.port: 8083
+server:
+  port: 8083
+  servlet.context-path: /v0.1
 
 ---
 spring:
