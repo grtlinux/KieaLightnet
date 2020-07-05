@@ -1,0 +1,47 @@
+[
+	{
+		"title": "auth-1(v0.1)",
+		"content": "auth connect to [1.LNS-auth]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8081",
+		"reqVer": "/v0.1",
+		"reqPath": "/auth/auth",
+		"reqMethod": "POST",
+		"reqParameters": "{\"clientId\":\"pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT\",\"secret\":\"skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "auth-2(v0.1)",
+		"content": "auth connect to [2.LNS-link]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8082",
+		"reqVer": "/v0.1",
+		"reqPath": "/auth/auth",
+		"reqMethod": "POST",
+		"reqParameters": "{\"clientId\":\"pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT\",\"secret\":\"skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "auth-3(v0.1)",
+		"content": "auth connect to [3.LNS-online]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8083",
+		"reqVer": "/v0.1",
+		"reqPath": "/auth/auth",
+		"reqMethod": "POST",
+		"reqParameters": "{\"clientId\":\"pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT\",\"secret\":\"skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "list-3(v0.1)",
+		"content": "list connect to [3.LNS-online]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8083",
+		"reqVer": "/v0.1",
+		"reqPath": "/list/list",
+		"reqMethod": "POST",
+		"reqParameters": "{\"operatorCode\":\"\",\"offset\":\"0\",\"limit\":\"20\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	}
+]

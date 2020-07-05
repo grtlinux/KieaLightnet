@@ -50,7 +50,7 @@
 				<!-- navbar menu -->
 				<ul class="nav navbar-nav navbar-left">
 					<li><a data-target="#modalSelfInfo" data-toggle="modal" href="#" onclick="alert('toggle event after click event.....');">MyInfo</a></li>
-					<li class="dropdown">
+					<li class="dropdown hide">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Test<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a th:href="@{/board/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Board</a></li>
@@ -60,11 +60,10 @@
 							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Order</a></li>
 						</ul>
 					</li>
-					<li class="dropdown hide">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Lightnet<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;List</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Result</a></li>
+							<li><a th:href="@{/line/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Line</a></li>
 						</ul>
 					</li>
 					<li class="hide"><a href="/sample05/">Statistic</a></li>
