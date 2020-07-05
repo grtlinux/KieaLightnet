@@ -51,15 +51,16 @@
 				<ul class="nav navbar-nav navbar-left">
 					<li><a data-target="#modalSelfInfo" data-toggle="modal" href="#" onclick="alert('toggle event after click event.....');">MyInfo</a></li>
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Customer<span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Test<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Info</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Role</a></li>
+							<li><a th:href="@{/board/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Board</a></li>
+							<li><a th:href="@{/stmt/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Stmt</a></li>
+							<li><a th:href="@{/kuser/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Kuser</a></li>
 							<li class="divider"></li>
 							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Order</a></li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown hide">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Order<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;List</a></li>

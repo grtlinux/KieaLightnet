@@ -17,10 +17,10 @@
 	<!-- main -->
 	<div class="container">
 		<div class="page-header">
-			<h1>게시글 목록</h1>
+			<h1>Kuser List</h1>
 		</div>
 		<div class="pull-right" style="width:100px;margin:10px 0;">
-			<a th:href="@{/board}" class="btn btn-primary btn-block">등록</a>
+			<a th:href="@{/kuser}" class="btn btn-primary btn-block">REGISTER</a>
 		</div>
 		<br/><br/><br/>
 		<div id="mainHide">
@@ -28,19 +28,19 @@
 				<thead>
 					<tr>
 						<th class="col-md-1">#</th>
-						<th class="col-md-4">제목</th>
-						<th class="col-md-3">부제</th>
-						<th class="col-md-2">사용자</th>
-						<th class="col-md-2">생성 날짜</th>
+						<th class="col-md-3">Username</th>
+						<th class="col-md-3">Password</th>
+						<th class="col-md-3">Role</th>
+						<th class="col-md-2">Create Date</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="board : ${list}">
-						<td th:text="${board.id}">#</td>
-						<td><a th:href="@{/board(id=${board.id})}" th:text="${board.title}">제목</a></td>
-						<td th:text="${board.subTitle}">부제</td>
-						<td th:text="${board.userId}">사용자</td>
-						<td th:text="${board.createdDate} ? ${#temporals.format(board.createdDate,'yyyy-MM-dd HH:mm')} : ${board.createdDate}">생성 날짜</td>
+					<tr th:each="kuser : ${list}">
+						<td th:text="${kuser.id}">#</td>
+						<td><a th:href="@{/kuser(id=${kuser.id})}" th:text="${kuser.username}">username</a></td>
+						<td th:text="${kuser.password}">password</td>
+						<td th:text="${kuser.role}">role</td>
+						<td th:text="${kuser.createdDate} ? ${#temporals.format(kuser.createdDate,'yyyy-MM-dd HH:mm')} : ${kuser.createdDate}">Create Date</td>
 					</tr>
 				</tbody>
 			</table>

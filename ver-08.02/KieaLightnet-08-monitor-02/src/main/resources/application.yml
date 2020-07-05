@@ -70,5 +70,15 @@ server:
   servlet.context-path: /v0.1
 
 
+# ------------------------------------------------------------
+json:
+  file:
+    stmt.path: src/main/resources/json/1000-2.json
+    kuser.path: src/main/resources/json/kuser.json
+
+
+
+
+
 
 
