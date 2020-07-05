@@ -24,7 +24,7 @@ public class BoardController {
 	@GetMapping(value = {"/list"})
 	public String list(Pageable pageable, Model model) {
 		log.info("KANG-20200705 >>>>> {} {}", CurrentInfo.get());
-		model.addAttribute("boardList", this.boardService.findBoardList(pageable));
+		model.addAttribute("list", this.boardService.findBoardList(pageable));
 		return "board/list";
 	}
 	
@@ -38,7 +38,7 @@ public class BoardController {
 	@GetMapping(value = {"/list/{userId}"})
 	public String listByUserId(@PathVariable(value = "userId") String userId, Pageable pageable, Model model) {
 		log.info("KANG-20200705 >>>>> {} {}", CurrentInfo.get());
-		model.addAttribute("boardList", this.boardService.findBoardListByUserId(pageable, userId));
+		model.addAttribute("list", this.boardService.findBoardListByUserId(pageable, userId));
 		return "board/list";
 	}
 }

@@ -35,7 +35,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="board : ${boardList}">
+					<tr th:each="board : ${list}">
 						<td th:text="${board.id}">#</td>
 						<td><a th:href="@{/board(id=${board.id})}" th:text="${board.title}">제목</a></td>
 						<td th:text="${board.subTitle}">부제</td>

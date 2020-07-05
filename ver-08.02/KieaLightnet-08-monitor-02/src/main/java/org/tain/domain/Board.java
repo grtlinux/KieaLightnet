@@ -17,6 +17,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.Builder;
 import lombok.Data;
@@ -58,7 +60,7 @@ public class Board {
 	private String userId;
 	
 	//@JsonIgnore
-	//@JsonProperty(access = Access.READ_ONLY)
+	@JsonProperty(access = Access.READ_ONLY)
 	//@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "created_date")
 	private LocalDateTime createdDate = LocalDateTime.now();
