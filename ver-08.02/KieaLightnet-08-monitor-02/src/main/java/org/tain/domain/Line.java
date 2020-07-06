@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.Lob;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -70,10 +71,12 @@ public class Line {
 	@Column(name = "req_parameters", length = 1024)
 	private String reqParameters;
 	
-	@Column(name = "res_ret_json", length = 10240)
+	@Lob
+	@Column(name = "res_ret_json", columnDefinition = "CLOB")
 	private String resRetJson;
 	
-	@Column(name = "res_ret_stream", length = 10240)
+	@Lob
+	@Column(name = "res_ret_stream", columnDefinition = "CLOB")
 	private String resRetStream;
 	
 	//@JsonIgnore

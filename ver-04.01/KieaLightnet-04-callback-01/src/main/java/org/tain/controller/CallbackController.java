@@ -32,7 +32,7 @@ public class CallbackController {
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		String response = callStreamClient(_httpEntity.getBody());
+		String response = this.callStreamClient(_httpEntity.getBody());
 		
 		Map<String,Object> map = new HashMap<>();
 		map.put("title", "/callback");

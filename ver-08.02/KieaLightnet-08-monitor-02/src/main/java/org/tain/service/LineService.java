@@ -26,7 +26,7 @@ public class LineService {
 			int pageSize = pageable.getPageSize();
 			Sort sort = pageable.getSort();
 			
-			//pageSize = 10;
+			pageSize = 10;
 			sort = Sort.by("id").descending();
 			
 			pageable = PageRequest.of(pageNumber, pageSize, sort);

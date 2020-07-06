@@ -221,6 +221,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	
 	private String GET_LIST_HTTPS_URL = "/v1/remittances";
+	//private String GET_LIST_HTTPS_URL = "/v1.1/remittances";
 	
 	@PostMapping(value = {"/list"})
 	public ResponseEntity<?> list(HttpEntity<String> _httpEntity) throws Exception {
@@ -283,7 +284,72 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	//private String GET_LIST_HTTPS_URL = "/v1/remittances";
+	private String GET_LIST1_HTTPS_URL = "/v1.1/remittances";
+	
+	@PostMapping(value = {"/list1"})
+	public ResponseEntity<?> list1(HttpEntity<String> _httpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		
+		MultiValueMap<String, String> reqMap = new LinkedMultiValueMap<>();
+		if (Flag.flag) {
+			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			
+			Map<String,String> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>() {});
+			reqMap.setAll(map);
+		}
+		
+		String accessToken = getAccessToken("/list");
+		System.out.println(">>>>> accessToken = " + accessToken);
+
+		ResponseEntity<String> response = null;
+		
+		if (Flag.flag) {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			headers.set("Authorization", "Bearer " + accessToken);
+			
+			HttpEntity<String> httpEntity = new HttpEntity<>(headers);
+			
+			UriComponents builder = UriComponentsBuilder.fromHttpUrl(lightnetUrl + GET_LIST1_HTTPS_URL)
+					.queryParams(reqMap)
+					.build(true);
+			
+			response = SkipSSLConfig.getRestTemplate(1).exchange(builder.toString(), HttpMethod.GET, httpEntity, String.class);
+			
+			log.info("=====================================================");
+			log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+			log.info("KANG-20200623 >>>>> GET {}", builder.toString());
+			log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+			log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+			log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
+			log.info("=====================================================");
+			
+			System.out.println(">>>>> response: " + response);
+			
+			if (Flag.flag) {
+				// Pretty Print
+				ObjectMapper objectMapper = new ObjectMapper();
+				objectMapper.registerModule(new JavaTimeModule());
+				objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+				
+				JsonNode jsonNode = objectMapper.readTree(response.getBody());
+				//String json = jsonNode.at("/").toPrettyString();
+				String json = jsonNode.toPrettyString();
+				System.out.println(">>>>> json: " + json);
+			}
+		}
+		
+		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	private String GET_DETAIL_HTTPS_URL = "/v1/remittances.detail";
+	//private String GET_DETAIL_HTTPS_URL = "/v1.1/remittances.detail";
 	
 	@PostMapping(value = {"/detail"})
 	public ResponseEntity<?> detail(HttpEntity<String> _httpEntity) throws Exception {
@@ -354,7 +420,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String POST_LOCAL_AUTH_HTTP_URL = "http://localhost:8081/auth/auth";
+	private String POST_LOCAL_AUTH_HTTP_URL = "http://localhost:8081/v0.1/auth/auth";
 
 	private String getAccessToken(String subTitle) throws Exception {
 		Map<String,Object> resMap = null;

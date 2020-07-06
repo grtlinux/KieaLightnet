@@ -44,12 +44,34 @@
 		"resRetJson": "",
 		"resRetStream": ""
 	},{
-		"title": "list-3(v0.1)",
-		"content": "list connect to [3.LNS-online]",
+		"title": "[v0.1] link/detail",
+		"content": "/link/detail to [2.LNS-link]",
 		"userId": "kiea",
-		"reqUrl": "http://localhost:8083",
+		"reqUrl": "http://localhost:8082",
 		"reqVer": "/v0.1",
-		"reqPath": "/list/list",
+		"reqPath": "/link/detail",
+		"reqMethod": "POST",
+		"reqParameters": "{\"sourceCountry\":\"KOR\",\"destinationCountry\":\"KHM\",\"destinationOperatorCode\":\"lyhour\",\"withdrawableAmount\":\"1.500\",\"transactionCurrency\":\"USD\",\"deliveryMethod\":\"cash\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "[v0.1] link/list",
+		"content": "/link/list to [2.LNS-link]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8082",
+		"reqVer": "/v0.1",
+		"reqPath": "/link/list",
+		"reqMethod": "POST",
+		"reqParameters": "{\"operatorCode\":\"\",\"offset\":\"0\",\"limit\":\"20\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "[v0.1] link/list1",
+		"content": "/link/list to [2.LNS-link]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8082",
+		"reqVer": "/v0.1",
+		"reqPath": "/link/list1",
 		"reqMethod": "POST",
 		"reqParameters": "{\"operatorCode\":\"\",\"offset\":\"0\",\"limit\":\"20\"}",
 		"resRetJson": "",
