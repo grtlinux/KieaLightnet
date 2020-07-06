@@ -58,10 +58,10 @@ public class AuthController {
 			System.out.println(">>>>> Body = " + httpEntity.getBody());
 		}
 		
-		this.authScheduler.authRefresh();
+		this.authScheduler.authRefresh(httpEntity.getBody());
 		
 		Map<String,Object> map = new HashMap<>();
-		map.put("title", "/auth/auth");
+		map.put("title", "/auth/refresh");
 		map.put("accessToken", AccessToken.get());
 		map.put("createdDate", LocalDateTime.now());
 		

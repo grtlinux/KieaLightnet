@@ -34,11 +34,20 @@ public class AuthScheduler {
 		
 		if (!Flag.flag) Sleep.run(10 * 1000);
 		
-		this.httpPostAuth();
+		this.authRefresh();
 	}
 
+	public void authRefresh(String reqJson) throws Exception {
+		this.httpPostAuth(reqJson);
+	}
+	
 	public void authRefresh() throws Exception {
-		this.httpPostAuth();
+		String reqJson = ""
+				+ "{"
+				+ "\"clientId\": \"pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT\","
+				+ "\"secret\": \"skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk\""
+				+ "}";
+		this.httpPostAuth(reqJson);
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////
@@ -49,14 +58,8 @@ public class AuthScheduler {
 	private String lightnetUrl;
 	private String POST_AUTH_HTTP_URL = "/v1/auth";
 	
-	private synchronized void httpPostAuth() throws Exception {
+	private synchronized void httpPostAuth(String reqJson) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-		
-		String reqJson = ""
-			+ "{"
-			+ "\"clientId\": \"pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT\","
-			+ "\"secret\": \"skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk\""
-			+ "}";
 		
 		if (Flag.flag) {
 			AccessToken.set(null);

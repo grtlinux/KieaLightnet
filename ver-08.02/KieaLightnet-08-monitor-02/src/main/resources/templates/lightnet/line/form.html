@@ -56,15 +56,21 @@
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Request Parameters</th>
-				<td><textarea id="line_reqParameters" th:text="${line?.reqParameters}" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:50px;"></textarea><span class="help-block"></span></td>
+				<td><textarea id="line_reqParameters" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">TEST</button>
+				</td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Response Json</th>
-				<td><textarea id="line_resRetJson" th:text="${line?.resRetJson}" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
+				<td><textarea id="line_resRetJson" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
 			</tr>
-			<tr>
+			<tr class="hide">
 				<th style="padding:13px 0 0 15px;">Response Stresm</th>
-				<td><textarea id="line_resRetStream" th:text="${line?.resRetStream}" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
+				<td><textarea id="line_resRetStream" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -73,7 +79,7 @@
 		</table>
 		<div class="pull-left">
 			<a th:href="@{/line/list}" class="btn btn-default">LIST</a>
-			<button id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">TEST</button>
+			<button id="btnModal" type="button" class="btn btn-primary hide" data-toggle="modal" data-target="#myModal">TEST</button>
 		</div>
 		<div class="pull-right">
 			<button th:if="!${line?.id}" type="button" class="btn btn-primary" id="insert">SAVE</button>
@@ -113,7 +119,7 @@
 						</tr>
 						<tr>
 							<th style="padding:13px 0 0 15px;">Request Parameters</th>
-							<td><textarea id="modal_reqParameters" readonly="readonly" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:50px;"></textarea></td>
+							<td><textarea id="modal_reqParameters" readonly="readonly" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea></td>
 						</tr>
 						<tr>
 							<td></td>
@@ -139,12 +145,20 @@
 	<!-- /Modal dialog -->
 	
 	<!-- script -->
+	<script th:inline="javascript">
+		// document.ready
+		var json = /*[[${line?.reqParameters}]]*/;
+		//if (true) console.log(">>>>> json = " + json);
+		$('#line_reqParameters').val(JSON.stringify(JSON.parse(json), null, 2));
+	</script>
 	<script>
 		$('#btnModal').click(function() {
 			//alert('Hello btnModal');
 			$('#modal_title').val($('#line_title').val());
 			$('#modal_reqUrl').val($('#line_reqUrl').val() + $('#line_reqVer').val() + $('#line_reqPath').val());
-			$('#modal_reqParameters').val($('#line_reqParameters').val());
+			var jsonParameters = JSON.stringify(JSON.parse($('#line_reqParameters').val()), null, 2);
+			$('#modal_reqParameters').val(jsonParameters);
+			$('#modal_resRetJson').val('');
 		});
 		$('#btnTransfer').click(function() {
 			//alert('Hello btnTransfer');
@@ -157,14 +171,19 @@
 					"Authorization": "Basic " + btoa("kiea" + ":" + "test")
 				},
 				dataType: "json",
-				success: function() {
-					alert('저장 성공~~');
+				success: function(data, status) {
+					$('#modal_resRetJson').val(JSON.stringify(data, null, 2));
+					//alert('송신 성공~~' + $('#modal_resRetJson').val());
 					//location.href = _contextPath_ + '/line/list';
 				},
 				error: function() {
-					alert('저장 실패!!');
+					alert('송신 실패!!');
 				}
 			});
+		});
+		$('#btnClose').click(function() {
+			//alert('Hello btnClose');
+			$('#line_resRetJson').val($('#modal_resRetJson').val());
 		});
 	</script>
 	<script th:if="!${line?.id}">
