@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpServerErrorException;
 import org.tain.config.SkipSSLConfig;
 import org.tain.data.AccessToken;
 import org.tain.utils.CurrentInfo;
@@ -41,9 +42,10 @@ public class ValidateController {
 			try {
 				System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
 				System.out.println(">>>>> Body = " + _httpEntity.getBody());
-				JsonNode jsonNode = new ObjectMapper().readTree(_httpEntity.getBody());
-				data = jsonNode.at("/data").asText();
-				System.out.println(">>>>> data = " + data);
+				data = _httpEntity.getBody();
+				//JsonNode jsonNode = new ObjectMapper().readTree(_httpEntity.getBody());
+				//data = jsonNode.at("/data").asText();
+				//System.out.println(">>>>> data = " + data);
 				//Map<String,String> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
 				//data = map.get("data");
 				//System.out.println(">>>>> data = " + data);
@@ -72,10 +74,21 @@ public class ValidateController {
 				HttpEntity<String> httpEntity = new HttpEntity<>(data, headers);
 				
 				response = SkipSSLConfig.getRestTemplate(1).exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
-				System.out.println(">>>>> response.getStatusCode() = " + response.getStatusCode());
 				System.out.println(">>>>> response.getBody() = " + response.getBody());
+			} catch (HttpServerErrorException e) {
+				System.out.println("-------------------------------------");
+				System.out.println("LINK ERROR >>>>> e.getStatusText()           = " + e.getStatusText());
+				System.out.println("LINK ERROR >>>>> e.getStatusCode()           = " + e.getStatusCode());
+				System.out.println("LINK ERROR >>>>> e.getRawStatusCode()        = " + e.getRawStatusCode());
+				System.out.println("LINK ERROR >>>>> e.getResponseHeaders()      = " + e.getResponseHeaders());
+				System.out.println("LINK ERROR >>>>> e.getResponseBodyAsString() = " + e.getResponseBodyAsString());
+				System.out.println("-------------------------------------");
+				return new ResponseEntity<>(e.getResponseBodyAsString(), HttpStatus.OK);
 			} catch (Exception e) {
-				e.printStackTrace();
+				//e.printStackTrace();
+				System.out.println("LINK ERROR >>>>> e.getMessage() = " + e.getMessage());
+				System.out.println("LINK ERROR >>>>> e.getLocalizedMessage() = " + e.getLocalizedMessage());
+				return null;
 			}
 		}
 		
