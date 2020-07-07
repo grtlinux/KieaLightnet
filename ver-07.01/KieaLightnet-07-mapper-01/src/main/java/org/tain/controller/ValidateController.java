@@ -11,6 +11,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.tain.utils.Convert;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -61,7 +62,7 @@ public class ValidateController {
 				+ "\"transactionCurrency\":\"USD\","
 				+ "\"deliveryMethod\":\"cash\""
 				+ "}";
-			map.put("data", response);
+			map.put("data", Convert.quote(response));
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
@@ -98,7 +99,7 @@ public class ValidateController {
 			jsonNode = objectMapper.readTree(map.get("data"));
 			System.out.println(">>>>> jsonNode = " + jsonNode.toPrettyString());
 			
-			map.put("data", "0102AAAA        1234567890  ABC1002003        Hello    ");
+			map.put("data", Convert.quote("0102AAAA        1234567890  ABC1002003        Hello    "));
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
