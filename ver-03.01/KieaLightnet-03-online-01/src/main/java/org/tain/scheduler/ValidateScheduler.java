@@ -115,6 +115,7 @@ public class ValidateScheduler {
 					+ "\"command\": \"Stream To Json\","
 					+ "\"data\": \"" + Convert.quote(request) + "\""
 					+ "}";
+			System.out.println(">>>>> reqJson = " + reqJson);
 		}
 		
 		ResponseEntity<String> response = null;
