@@ -104,68 +104,6 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-
-	private String POST_VALIDATE_HTTPS_URL = "/v1.1/remittances.validate";
-	
-	@PostMapping(value = {"/validate"})
-	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
-		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-		
-		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
-		}
-		
-		String accessToken = getAccessToken("/validate");
-		System.out.println(">>>>> accessToken = " + accessToken);
-
-		ResponseEntity<String> response = null;
-
-		if (Flag.flag) {
-			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.APPLICATION_JSON);
-			headers.set("Authorization", "Bearer " + accessToken);
-
-			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
-
-			RestTemplate restTemplate = SkipSSLConfig.getRestTemplate(1);
-			for (int i=0; i < 5; i++) {
-				response = restTemplate.exchange(lightnetUrl + POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
-				
-				log.info("=====================================================");
-				log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
-				log.info("KANG-20200623 >>>>> POST {}", POST_VALIDATE_HTTPS_URL);
-				log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
-				log.info("KANG-20200623 >>>>> response.getBody()            = {}", response.getBody());
-				log.info("=====================================================");
-				
-				if (response.getStatusCodeValue() != 200) {
-					try { Thread.sleep(3000); } catch (InterruptedException e) {}
-					continue;
-				}
-				
-				if (Flag.flag) {
-					// Pretty Print
-					ObjectMapper objectMapper = new ObjectMapper();
-					objectMapper.registerModule(new JavaTimeModule());
-					objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-					
-					JsonNode jsonNode = objectMapper.readTree(response.getBody());
-					//String json = jsonNode.at("/").toPrettyString();
-					String json = jsonNode.toPrettyString();
-					System.out.println(">>>>> json: " + json);
-				}
-				break;
-			}
-		}
-		
-		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
-	}
-
-	///////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////
 	
 	private String POST_VALIDATE0_HTTPS_URL = "/v1.1/remittances.validate";
 	

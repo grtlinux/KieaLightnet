@@ -117,7 +117,7 @@
 		"reqVer": "/v0.1",
 		"reqPath": "/lns01/validate",
 		"reqMethod": "POST",
-		"reqParameters": "{\"title\":\"Validate Stream Test\",\"class\":\"validate\",\"type\":\"REQ\",\"data\":\"00000000000000000000000000000000000000000000000\"}",
+		"reqParameters": "{\"title\":\"Validate Stream Test\",\"class\":\"validate\",\"type\":\"REQ\",\"data\":\"0101AAAAA   Validate Packet 00000000000000000000000000000000000000000000000\"}",
 		"resRetJson": "",
 		"resRetStream": ""
 	}

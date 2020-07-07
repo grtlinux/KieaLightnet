@@ -25,36 +25,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ValidateController {
 
-	@PostMapping(value = {"/j2s"})
-	public ResponseEntity<?> jsonToStream(HttpEntity<String> _httpEntity) throws Exception {
-		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
-		
-		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
-		}
-		
-		Map<String,String> map = null;
-		JsonNode jsonNode = null;
-		if (Flag.flag) {
-			// mapping process
-			//{
-			//  "command": "Json To Stream",
-			//  "data": "{\"field1\":\"value1\",\"field2\":\"value2\"}"
-			//}
-			ObjectMapper objectMapper = new ObjectMapper();
-			map      = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
-			jsonNode = objectMapper.readTree(map.get("data"));
-			System.out.println(">>>>> jsonNode = " + jsonNode.toPrettyString());
-			
-			map.put("result", "LIST-J2S          1234567890  ABC1002003        Hello    ");
-		}
-		
-		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
-		headers.add("Content-Type", "application/json; charset=UTF-8");
-		
-		return new ResponseEntity<>(map, headers, HttpStatus.OK);
-	}
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
 
 	@PostMapping(value = {"/s2j"})
 	public ResponseEntity<?> streamToJson(HttpEntity<String> _httpEntity) throws Exception {
@@ -70,11 +43,12 @@ public class ValidateController {
 		if (Flag.flag) {
 			// mapping process
 			//{
-			//  "command": "Json To Stream",
-			//  "data": "LIST-J2S          1234567890  ABC1002003        Hello    "
+			//  "title": "/mapper/validate",
+			//  "command": "Stream To Json",
+			//  "data": "0101 0000000000000000000000000000000000000000 "
 			//}
 			ObjectMapper objectMapper = new ObjectMapper();
-			map      = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
+			map = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
 			stream = map.get("data");
 			System.out.println(">>>>> stream = [" + stream + "]");
 			String response = ""
@@ -87,7 +61,44 @@ public class ValidateController {
 				+ "\"transactionCurrency\":\"USD\","
 				+ "\"deliveryMethod\":\"cash\""
 				+ "}";
-			map.put("result", response);
+			map.put("data", response);
+		}
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		//headers.add("Content-Type", "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(map, headers, HttpStatus.OK);
+	}
+	
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+
+	@PostMapping(value = {"/j2s"})
+	public ResponseEntity<?> jsonToStream(HttpEntity<String> _httpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+		}
+		
+		Map<String,String> map = null;
+		JsonNode jsonNode = null;
+		if (Flag.flag) {
+			// mapping process
+			//{
+			//  "title": "/mapper/validate",
+			//  "command": "Json To Stream",
+			//  "data": "{\"field1\":\"value1\",\"field2\":\"value2\"}"
+			//}
+			ObjectMapper objectMapper = new ObjectMapper();
+			map      = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
+			jsonNode = objectMapper.readTree(map.get("data"));
+			System.out.println(">>>>> jsonNode = " + jsonNode.toPrettyString());
+			
+			map.put("data", "0102AAAA        1234567890  ABC1002003        Hello    ");
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
