@@ -76,5 +76,49 @@
 		"reqParameters": "{\"operatorCode\":\"\",\"offset\":\"0\",\"limit\":\"20\"}",
 		"resRetJson": "",
 		"resRetStream": ""
+	},{
+		"title": "[v0.1] link/validate",
+		"content": "/link/validte to [2.LNS-link]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8082",
+		"reqVer": "/v0.1",
+		"reqPath": "/link/validate",
+		"reqMethod": "POST",
+		"reqParameters": "{\"receiver\":{\"firstName\":\"SOPIDA\",\"lastName\":\"WANGKIATKUL\",\"bankCode\":\"SICOTHBK\",\"accountId\":\"6032668977\"},\"deliveryMethod\":\"account_deposit\",\"sender\":{\"firstName\":\"NDBXMX\",\"lastName\":\"GYQMNB\",\"address\":{\"address\":\"senderAddress\",\"city\":\"senderCity\",\"countryCode\":\"THA\",\"postalCode\":\"senderZipCode\"},\"nationalityCountryCode\":\"KOR\",\"mobilePhone\":{\"number\":\"881111111\",\"countryCode\":\"66\"},\"idNumber\":\"idNumber\"},\"destination\":{\"country\":\"THA\",\"receive\":{\"currency\":\"THB\"},\"operatorCode\":\"scb\"},\"remark\":\"This is SCB test remark\",\"source\":{\"country\":\"KOR\",\"send\":{\"amount\":\"1000.01\",\"currency\":\"USD\"},\"transactionId\":\"9974531076200937\"}}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "[v0.1] link/commit",
+		"content": "/link/commit to [2.LNS-link]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8082",
+		"reqVer": "/v0.1",
+		"reqPath": "/link/commit",
+		"reqMethod": "POST",
+		"reqParameters": "{\"transactionId\":\"a205c886-0d7f-4b40-5de5-d1323eb57514\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "[v0.1] link/callback",
+		"content": "/link/callback to [2.LNS-link]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8082",
+		"reqVer": "/v0.1",
+		"reqPath": "/link/callback",
+		"reqMethod": "POST",
+		"reqParameters": "{\"counterpartyTransactionId\":\"82622468196393\",\"reason\":\"remit completed\",\"sourceOperatorCode\":\"airpay\",\"status\":\"RECEIVED\",\"transactionId\":\"702c74a5-ecea-4545-ae23-9afa9d8b73d1\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "[v0.1] lns01/validate",
+		"content": "/lns01/validate to [9.LNS01]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8091",
+		"reqVer": "/v0.1",
+		"reqPath": "/lns01/validate",
+		"reqMethod": "POST",
+		"reqParameters": "{\"title\":\"Validate Stream Test\",\"class\":\"validate\",\"type\":\"REQ\",\"data\":\"00000000000000000000000000000000000000000000000\"}",
+		"resRetJson": "",
+		"resRetStream": ""
 	}
 ]

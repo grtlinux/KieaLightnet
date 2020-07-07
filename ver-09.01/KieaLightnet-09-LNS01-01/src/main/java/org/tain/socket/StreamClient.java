@@ -15,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 public class StreamClient {
 
 	private static final String host = "127.0.0.1";
-	//private static final String host = "localhost";
-	private static final int port = 9083;
+	private static final int port = 9091;
+	private StreamClientWorkerThread thread = null;
 	
 	@Bean
 	public void jobStreamClient() throws Exception {
@@ -25,10 +25,17 @@ public class StreamClient {
 		try {
 			Socket socket = new Socket();
 			socket.connect(new InetSocketAddress(host, port));
+			System.out.println(">>>>>  Connection is OK!!!");
 			
-			new StreamClientWorkerThread(socket).start();
+			this.thread = new StreamClientWorkerThread(socket);
+			this.thread.start();
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(">>>>> EXCEPTION: " + e.getMessage());
+			System.exit(-1);
 		}
+	}
+	
+	public StreamClientWorkerThread getThread() {
+		return this.thread;
 	}
 }
