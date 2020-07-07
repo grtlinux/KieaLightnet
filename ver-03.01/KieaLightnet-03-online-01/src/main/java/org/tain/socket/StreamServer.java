@@ -33,8 +33,8 @@ public class StreamServer {
 					this.serverSocket.bind(new InetSocketAddress("localhost", LISTEN_PORT));
 					
 					while (true) {
-						log.info("KANG-20200623 >>>>> Waiting for a client connection with port={}.....", LISTEN_PORT);
 						Socket socket = this.serverSocket.accept();   // blocking
+						log.info("KANG-20200623 >>>>> event a client connection with port={}.....", LISTEN_PORT);
 						new StreamServerWorkerThread(socket).start();
 						
 						Sleep.run(1000);

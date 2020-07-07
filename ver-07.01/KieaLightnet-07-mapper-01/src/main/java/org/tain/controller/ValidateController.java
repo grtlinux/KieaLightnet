@@ -35,34 +35,30 @@ public class ValidateController {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			System.out.println("MAPPER >>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println("MAPPER >>>>> Body = " + _httpEntity.getBody());
 		}
 		
 		Map<String,String> map = null;
-		String stream = null;
+		String data = null;
 		if (Flag.flag) {
 			// mapping process
-			//{
-			//  "title": "/mapper/validate",
-			//  "command": "Stream To Json",
-			//  "data": "0101 0000000000000000000000000000000000000000 "
-			//}
 			ObjectMapper objectMapper = new ObjectMapper();
 			map = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
-			stream = map.get("data");
-			System.out.println(">>>>> stream = [" + stream + "]");
-			String response = ""
-				+ "{"
-				+ "\"title\":\"LIST-S2J\","
-				+ "\"sourceCountry\":\"KOR\","
-				+ "\"destinationCountry\":\"KHM\","
-				+ "\"destinationOperatorCode\":\"lyhour\","
-				+ "\"withdrawableAmount\":\"1.500\","
-				+ "\"transactionCurrency\":\"USD\","
-				+ "\"deliveryMethod\":\"cash\""
-				+ "}";
-			map.put("data", Convert.quote(response));
+			
+			data = map.get("data");
+			System.out.println("MAPPER >>>>> data = [" + data + "]");
+			
+			// link process (REQ -> RES)
+			String retData = "{\"receiver\":{\"firstName\":\"SOPIDA\",\"lastName\":\"WANGKIATKUL\",\"bankCode\":\"SICOTHBK\""
+					+ ",\"accountId\":\"6032668977\"},\"deliveryMethod\":\"account_deposit\",\"sender\":{\"firstName\":\"NDBXMX\""
+					+ ",\"lastName\":\"GYQMNB\",\"address\":{\"address\":\"senderAddress\",\"city\":\"senderCity\",\"countryCode\":\"THA\""
+					+ ",\"postalCode\":\"senderZipCode\"},\"nationalityCountryCode\":\"KOR\",\"mobilePhone\":{\"number\":\"881111111\""
+					+ ",\"countryCode\":\"66\"},\"idNumber\":\"idNumber\"},\"destination\":{\"country\":\"THA\",\"receive\":{\"currency\":\"THB\"}"
+					+ ",\"operatorCode\":\"scb\"},\"remark\":\"This is SCB test remark\",\"source\":{\"country\":\"KOR\""
+					+ ",\"send\":{\"amount\":\"1000.01\",\"currency\":\"USD\"},\"transactionId\":\"9974531076200937\"}}";
+			map.put("retData", Convert.quote(retData));
+			System.out.println("MAPPER >>>>> map: " + map);
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
@@ -81,25 +77,26 @@ public class ValidateController {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			System.out.println("MAPPER >>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println("MAPPER >>>>> Body = " + _httpEntity.getBody());
 		}
 		
 		Map<String,String> map = null;
-		JsonNode jsonNode = null;
+		String data = null;
 		if (Flag.flag) {
 			// mapping process
-			//{
-			//  "title": "/mapper/validate",
-			//  "command": "Json To Stream",
-			//  "data": "{\"field1\":\"value1\",\"field2\":\"value2\"}"
-			//}
 			ObjectMapper objectMapper = new ObjectMapper();
-			map      = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
-			jsonNode = objectMapper.readTree(map.get("data"));
-			System.out.println(">>>>> jsonNode = " + jsonNode.toPrettyString());
+			map = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
 			
-			map.put("data", Convert.quote("0102AAAA        1234567890  ABC1002003        Hello    "));
+			data = map.get("data");
+			System.out.println("MAPPER >>>>> data = [" + data + "]");
+			if (Flag.flag) {
+				JsonNode jsonNode = new ObjectMapper().readTree(data);
+				System.out.println("MAPPER >>>>> REQ JSON: " + jsonNode.toPrettyString());
+			}
+			
+			map.put("retData", Convert.quote("0102AAAA        1234567890  ABC1002003        Hello    "));
+			System.out.println("MAPPER >>>>> map: " + map);
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();

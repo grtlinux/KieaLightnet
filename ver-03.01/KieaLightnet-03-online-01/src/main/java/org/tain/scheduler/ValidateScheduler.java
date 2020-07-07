@@ -1,6 +1,8 @@
 package org.tain.scheduler;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,6 +15,7 @@ import org.tain.utils.Convert;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,12 +27,17 @@ import lombok.extern.slf4j.Slf4j;
 public class ValidateScheduler {
 
 	public static String process(String request) throws Exception {
-		log.info("KANG-20200623 >>>>> {} {}", request);
-
-		String response = null;
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			// REQ mapper process
+			System.out.printf("ONLINE >>>>> 1. request  data: [%s]\n", request);
+		}
+
+		String response = "0102 Hello world!!! response";
+		
+		if (!Flag.flag) {
+			/*
+			// req mapper process
 			response = mapperHttpPostReq(request);
 			System.out.println(">>>>> 1. response data: " + response);
 			
@@ -44,12 +52,29 @@ public class ValidateScheduler {
 			response = linkHttpPost(response);
 			System.out.println(">>>>> 2. response data: " + response);
 			
-			// RES mapper process
+			// res mapper process
 			response = mapperHttpPostRes(request);
 			System.out.println(">>>>> 3. response data: " + response);
+			*/
 		}
 		
-		return "0102 Hello world!!! response";
+		if (Flag.flag) {
+			// req mapper process
+			response = mapperHttpPostReq(request);
+			System.out.printf("ONLINE >>>>> 1. response data: [%s]\n", response);
+			if (Flag.flag) {
+				JsonNode jsonNode = new ObjectMapper().readTree(response);
+				System.out.println("ONLINE >>>>> 1. REQ JSON: " + jsonNode.toPrettyString());
+			}
+			
+			//System.out.printf("ONLINE >>>>> 2. response data: [%s]\n", response);
+			
+			// process
+			response = mapperHttpPostRes(response);
+			System.out.printf("ONLINE >>>>> 3. response data: [%s]\n", response);
+		}
+		
+		return response;
 	}
 
 	/////////////////////////////////////////////////////////////////////////
@@ -62,36 +87,41 @@ public class ValidateScheduler {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		String retResponse = null;
 		
-		String reqJson = null;
+		Map<String,String> reqMap = new HashMap<>();
 		if (Flag.flag) {
-			reqJson = ""
-					+ "{"
-					+ "\"title\": \"/mapper/validate\","
-					+ "\"command\": \"Stream To Json\","
-					+ "\"data\": \"" + Convert.quote(request) + "\""
-					+ "}";
+			reqMap.put("title", "/mapper/validate");
+			reqMap.put("command", "Stream To Json");
+			reqMap.put("data", request);
+			System.out.println("ONLINE >>>>> reqMap: " + reqMap);
 		}
 		
 		ResponseEntity<String> response = null;
 		if (Flag.flag) {
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+			HttpEntity<Map<String,String>> reqHttpEntity = new HttpEntity<>(reqMap, reqHeaders);
 			
 			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_MAPPER_VALIDATE_REQ_S2J_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
+			/*
 			// Pretty Print
 			try {
 				JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 				String json = jsonNode.toPrettyString();
-				System.out.println(">>>>> response json: " + json);
+				System.out.println("ONLINE >>>>> response json: " + json);
 				
-				retResponse = jsonNode.at("/data").toString();
+				retResponse = jsonNode.at("/retData").toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			*/
+		}
+		
+		if (Flag.flag) {
+			Map<String,String> map = new ObjectMapper().readValue(response.getBody(), new TypeReference<Map<String,String>>(){});
+			retResponse = map.get("retData");
 		}
 		
 		return retResponse;
@@ -153,21 +183,24 @@ public class ValidateScheduler {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		String retResponse = null;
 		
-		String reqJson = null;
 		if (Flag.flag) {
-			reqJson = ""
-					+ "{"
-					+ "\"title\": \"/mapper/validate\","
-					+ "\"command\": \"Json To Stream\","
-					+ "\"data\": \"" + Convert.quote(request) + "\""
-					+ "}";
+			JsonNode jsonNode = new ObjectMapper().readTree(request);
+			System.out.println("ONLINE >>>>> 3. REQ JSON: " + jsonNode.toPrettyString());
+		}
+		
+		Map<String,String> reqMap = new HashMap<>();
+		if (Flag.flag) {
+			reqMap.put("title", "/mapper/validate");
+			reqMap.put("command", "Stream To Json");
+			reqMap.put("data", request);
+			System.out.println("ONLINE >>>>> reqMap: " + reqMap);
 		}
 		
 		ResponseEntity<String> response = null;
 		if (Flag.flag) {
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+			HttpEntity<Map<String,String>> reqHttpEntity = new HttpEntity<>(reqMap, reqHeaders);
 			
 			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_MAPPER_VALIDATE_RES_S2J_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
 		}
@@ -177,9 +210,9 @@ public class ValidateScheduler {
 			try {
 				JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 				String json = jsonNode.toPrettyString();
-				System.out.println(">>>>> response json: " + json);
+				System.out.println("ONLINE >>>>> response json: " + json);
 				
-				retResponse = jsonNode.at("/data").toString();
+				retResponse = jsonNode.at("/retData").toString();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
