@@ -48,7 +48,7 @@ public class ValidateController {
 		if (Flag.flag) {
 			map = new HashMap<>();
 			
-			map.put("title", "/lns01/test");
+			map.put("title", "/lns01/validate");
 			map.put("createdDate", LocalDateTime.now());
 			map.put("response", response);
 		}

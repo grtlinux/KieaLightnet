@@ -1,15 +1,11 @@
 package org.tain.socket;
 
 import java.net.Socket;
-import java.util.Date;
-import java.util.Random;
-import java.util.stream.IntStream;
 
 import org.tain.object.Message;
 import org.tain.object.Packet;
 import org.tain.queue.MessageQueue;
 import org.tain.utils.Flag;
-import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,7 +24,8 @@ public class StreamClientWorkerThread extends Thread {
 	
 	@Override
 	public void run() {
-		if (!Flag.flag) {
+		if (!Flag.flag) {  // no use
+			/*
 			try {
 				// Random random = new Random(new Date().getTime());
 				
@@ -63,9 +60,11 @@ public class StreamClientWorkerThread extends Thread {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			*/
 		}
 		
-		if (!Flag.flag) {
+		if (!Flag.flag) {  // no use
+			/*
 			try {
 				IntStream.rangeClosed(1, 24 * 60 * 6).forEach(index -> {
 					String request = String.format("Hello, world!!!! index is %d...to LNS02", index);
@@ -77,6 +76,7 @@ public class StreamClientWorkerThread extends Thread {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			*/
 		}
 		
 		if (Flag.flag) {
@@ -88,7 +88,6 @@ public class StreamClientWorkerThread extends Thread {
 				Packet packet = this.streamPacket.sendPacket(request);
 				if (Flag.flag) System.out.println("CLIENT >>>>> " + packet);
 				
-				// TODO: KANG-20200628: recvPacket
 				packet = this.streamPacket.recvPacket();
 				
 				String response = packet.getData();
