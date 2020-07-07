@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.tain.utils.CurrentInfo;
+import org.tain.utils.Flag;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,16 +23,19 @@ public class StreamClient {
 	public void jobStreamClient() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
-		try {
-			Socket socket = new Socket();
-			socket.connect(new InetSocketAddress(host, port));
-			System.out.println(">>>>>  Connection is OK!!!");
-			
-			this.thread = new StreamClientWorkerThread(socket);
-			this.thread.start();
-		} catch (Exception e) {
-			System.out.println(">>>>> EXCEPTION: " + e.getMessage());
-			System.exit(-1);
+		if (Flag.flag) {
+			// socket connection
+			try {
+				Socket socket = new Socket();
+				socket.connect(new InetSocketAddress(host, port));
+				System.out.println(">>>>>  Connection is OK!!!");
+				
+				this.thread = new StreamClientWorkerThread(socket);
+				this.thread.start();
+			} catch (Exception e) {
+				System.out.println(">>>>> EXCEPTION: " + e.getMessage());
+				System.exit(-1);
+			}
 		}
 	}
 	

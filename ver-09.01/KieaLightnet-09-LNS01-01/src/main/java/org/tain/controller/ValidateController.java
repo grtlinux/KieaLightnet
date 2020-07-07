@@ -32,16 +32,16 @@ public class ValidateController {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			System.out.println("LNS01 >>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println("LNS01 >>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		String response = null;
+		String response = "0102 temp data... not real";
 		if (Flag.flag) {
 			ObjectMapper objectMapper = new ObjectMapper();
 			Map<String, String> map = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
 			
-			response = this.callStreamClient(map.get("data"));
+			response = this.callStreamClient(map.get("data"));  // IN:stream OUT:stream
 		}
 		
 		Map<String,Object> map = null;
@@ -51,6 +51,8 @@ public class ValidateController {
 			map.put("title", "/lns01/validate");
 			map.put("createdDate", LocalDateTime.now());
 			map.put("response", response);
+			
+			System.out.println("LNS01 >>>>> retMap = " + map);
 		}
 		
 		return new ResponseEntity<>(map, HttpStatus.OK);
