@@ -33,44 +33,66 @@ public class ValidateController {
 	private String POST_VALIDATE_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.validate";
 	
 	@PostMapping(value = {""})
-	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
+	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
 		String data = null;
 		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
-			JsonNode jsonNode = new ObjectMapper().readTree(_httpEntity.getBody());
-			data = jsonNode.at("/data").asText();
+			try {
+				System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
+				System.out.println(">>>>> Body = " + _httpEntity.getBody());
+				JsonNode jsonNode = new ObjectMapper().readTree(_httpEntity.getBody());
+				data = jsonNode.at("/data").asText();
+				System.out.println(">>>>> data = " + data);
+				//Map<String,String> map = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
+				//data = map.get("data");
+				//System.out.println(">>>>> data = " + data);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		String accessToken = null;
 		if (Flag.flag) {
-			// get AccessToken from /auth/auth
-			accessToken = AccessToken.getAccessToken("/validate");
-			System.out.println(">>>>> accessToken = " + accessToken);
+			try {
+				// get AccessToken from /auth/auth
+				accessToken = AccessToken.getAccessToken("/validate");
+				System.out.println(">>>>> accessToken = " + accessToken);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		ResponseEntity<String> response = null;
 		if (Flag.flag) {
-			HttpHeaders headers = new HttpHeaders();
-			headers.setContentType(MediaType.APPLICATION_JSON);
-			headers.set("Authorization", "Bearer " + accessToken);
-			HttpEntity<String> httpEntity = new HttpEntity<>(data, headers);
-			
-			response = SkipSSLConfig.getRestTemplate(1).exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+			try {
+				HttpHeaders headers = new HttpHeaders();
+				headers.setContentType(MediaType.APPLICATION_JSON);
+				headers.set("Authorization", "Bearer " + accessToken);
+				HttpEntity<String> httpEntity = new HttpEntity<>(data, headers);
+				
+				response = SkipSSLConfig.getRestTemplate(1).exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				System.out.println(">>>>> response.getStatusCode() = " + response.getStatusCode());
+				System.out.println(">>>>> response.getBody() = " + response.getBody());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		if (Flag.flag) {
-			// Pretty Print
-			ObjectMapper objectMapper = new ObjectMapper();
-			objectMapper.registerModule(new JavaTimeModule());
-			objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-			
-			JsonNode jsonNode = objectMapper.readTree(response.getBody());
-			//String json = jsonNode.at("/").toPrettyString();
-			String json = jsonNode.toPrettyString();
-			System.out.println(">>>>> json: " + json);
+			try {
+				// Pretty Print
+				ObjectMapper objectMapper = new ObjectMapper();
+				objectMapper.registerModule(new JavaTimeModule());
+				objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+				
+				JsonNode jsonNode = objectMapper.readTree(response.getBody());
+				//String json = jsonNode.at("/").toPrettyString();
+				String json = jsonNode.toPrettyString();
+				System.out.println(">>>>> json: " + json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
