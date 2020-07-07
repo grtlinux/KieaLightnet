@@ -36,21 +36,27 @@ public class ValidateController {
 	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
+		String data = null;
 		if (Flag.flag) {
 			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			JsonNode jsonNode = new ObjectMapper().readTree(_httpEntity.getBody());
+			data = jsonNode.at("/data").asText();
 		}
 		
-		// get AccessToken from /auth/auth
-		String accessToken = AccessToken.getAccessToken("/validate");
-		System.out.println(">>>>> accessToken = " + accessToken);
-
+		String accessToken = null;
+		if (Flag.flag) {
+			// get AccessToken from /auth/auth
+			accessToken = AccessToken.getAccessToken("/validate");
+			System.out.println(">>>>> accessToken = " + accessToken);
+		}
+		
 		ResponseEntity<String> response = null;
 		if (Flag.flag) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
 			headers.set("Authorization", "Bearer " + accessToken);
-			HttpEntity<String> httpEntity = new HttpEntity<>(_httpEntity.getBody(), headers);
+			HttpEntity<String> httpEntity = new HttpEntity<>(data, headers);
 			
 			response = SkipSSLConfig.getRestTemplate(1).exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 		}
