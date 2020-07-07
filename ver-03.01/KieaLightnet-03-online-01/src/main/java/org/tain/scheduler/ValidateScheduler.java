@@ -11,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.tain.config.SkipSSLConfig;
-import org.tain.utils.Convert;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -35,29 +34,6 @@ public class ValidateScheduler {
 
 		String response = "0102 Hello world!!! response";
 		
-		if (!Flag.flag) {
-			/*
-			// req mapper process
-			response = mapperHttpPostReq(request);
-			System.out.println(">>>>> 1. response data: " + response);
-			
-			// link process (REQ -> RES)
-			if (Flag.flag) response = "{\"receiver\":{\"firstName\":\"SOPIDA\",\"lastName\":\"WANGKIATKUL\",\"bankCode\":\"SICOTHBK\""
-					+ ",\"accountId\":\"6032668977\"},\"deliveryMethod\":\"account_deposit\",\"sender\":{\"firstName\":\"NDBXMX\""
-					+ ",\"lastName\":\"GYQMNB\",\"address\":{\"address\":\"senderAddress\",\"city\":\"senderCity\",\"countryCode\":\"THA\""
-					+ ",\"postalCode\":\"senderZipCode\"},\"nationalityCountryCode\":\"KOR\",\"mobilePhone\":{\"number\":\"881111111\""
-					+ ",\"countryCode\":\"66\"},\"idNumber\":\"idNumber\"},\"destination\":{\"country\":\"THA\",\"receive\":{\"currency\":\"THB\"}"
-					+ ",\"operatorCode\":\"scb\"},\"remark\":\"This is SCB test remark\",\"source\":{\"country\":\"KOR\""
-					+ ",\"send\":{\"amount\":\"1000.01\",\"currency\":\"USD\"},\"transactionId\":\"9974531076200937\"}}";
-			response = linkHttpPost(response);
-			System.out.println(">>>>> 2. response data: " + response);
-			
-			// res mapper process
-			response = mapperHttpPostRes(request);
-			System.out.println(">>>>> 3. response data: " + response);
-			*/
-		}
-		
 		if (Flag.flag) {
 			// req mapper process
 			response = mapperHttpPostReq(request);
@@ -67,7 +43,8 @@ public class ValidateScheduler {
 				System.out.println("ONLINE >>>>> 1. REQ JSON: " + jsonNode.toPrettyString());
 			}
 			
-			//System.out.printf("ONLINE >>>>> 2. response data: [%s]\n", response);
+			response = linkHttpPost(response);
+			System.out.printf("ONLINE >>>>> 2. response data: [%s]\n", response);
 			
 			// process
 			response = mapperHttpPostRes(response);
@@ -137,27 +114,23 @@ public class ValidateScheduler {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		String retResponse = null;
 		
-		String reqJson = null;
 		if (Flag.flag) {
-			reqJson = ""
-					+ "{"
-					+ "\"title\": \"/mapper/validate\","
-					+ "\"command\": \"Stream To Json\","
-					+ "\"data\": \"" + Convert.quote(request) + "\""
-					+ "}";
-			System.out.println(">>>>> reqJson = " + reqJson);
+			System.out.println("ONLINE >>>>> request = " + request);
 		}
 		
 		ResponseEntity<String> response = null;
 		if (Flag.flag) {
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(request, reqHeaders);
 			
 			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_LINK_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
+			
+			retResponse = response.getBody();
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
+			/*
 			// Pretty Print
 			try {
 				JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
@@ -168,6 +141,14 @@ public class ValidateScheduler {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			*/
+		}
+		
+		if (!Flag.flag) {
+			/*
+			Map<String,String> map = new ObjectMapper().readValue(response.getBody(), new TypeReference<Map<String,String>>(){});
+			retResponse = map.get("retData");
+			*/
 		}
 		
 		return retResponse;
