@@ -24,7 +24,7 @@ public class StreamServerWorkerThread extends Thread {
 		try {
 			do {
 				this.packet = this.streamPacket.recvPacket();
-				if (Flag.flag) System.out.println("SERVER >>>>> " + this.packet);
+				if (Flag.flag) System.out.println("LNS02 >>>>> REQ: " + this.packet);
 				
 				Sleep.run(1000);
 				
@@ -33,6 +33,8 @@ public class StreamServerWorkerThread extends Thread {
 				map.put("status", "success");
 				
 				String response = "{\"message\": \"ACKNOWLEDGE\", \"status\": \"success\"}";
+				response = "0602 LNS02 callback Hello, world!!!";
+				if (Flag.flag) System.out.println("LNS02 >>>>> RES: " + response);
 				
 				this.streamPacket.sendPacket(response);
 				

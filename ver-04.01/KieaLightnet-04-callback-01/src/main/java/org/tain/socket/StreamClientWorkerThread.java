@@ -1,13 +1,12 @@
 package org.tain.socket;
 
 import java.net.Socket;
-import java.util.stream.IntStream;
 
 import org.tain.object.Message;
 import org.tain.object.Packet;
 import org.tain.queue.MessageQueue;
+import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,6 +18,8 @@ public class StreamClientWorkerThread extends Thread {
 	private MessageQueue messageQueue = null;
 	
 	public StreamClientWorkerThread(Socket socket) throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
+		
 		this.socket = socket;
 		this.streamPacket = new StreamPacket(this.socket);
 		this.messageQueue = new MessageQueue();
@@ -26,7 +27,10 @@ public class StreamClientWorkerThread extends Thread {
 	
 	@Override
 	public void run() {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
+		
 		if (!Flag.flag) {
+			/*
 			try {
 				IntStream.rangeClosed(1, 24 * 60 * 6).forEach(index -> {
 					String request = String.format("Hello, world!!!! index is %d...to LNS02", index);
@@ -38,22 +42,23 @@ public class StreamClientWorkerThread extends Thread {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			*/
 		}
 		
 		if (Flag.flag) {
 			while (true) {
 				Message message = this.messageQueue.get();
 				String request = message.getData();
-				log.info("KANG-20200628 >>>>> request: [{}]", request);
+				System.out.printf("CALLBACK >>>>> request: [%s]\n", request);
 				
 				Packet packet = this.streamPacket.sendPacket(request);
 				if (Flag.flag) System.out.println("CLIENT >>>>> " + packet);
 				
 				// TODO: KANG-20200628: recvPacket
-				// this.packet = this.streamPacket.recvPacket();
+				packet = this.streamPacket.recvPacket();
 				
 				String response = packet.getData();
-				log.info("KANG-20200628 >>>>> response: [{}]", response);
+				System.out.printf("CALLBACK >>>>> response: [%s]\n", response);
 				message.setDataToQueue(response);
 			}
 		}

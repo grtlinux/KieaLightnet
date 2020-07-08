@@ -2,7 +2,6 @@ package org.tain.socket;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.time.LocalDateTime;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -21,7 +20,7 @@ public class StreamClient {
 	
 	@Bean
 	public void jobStreamClient() throws Exception {
-		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
 			Socket socket = null;
