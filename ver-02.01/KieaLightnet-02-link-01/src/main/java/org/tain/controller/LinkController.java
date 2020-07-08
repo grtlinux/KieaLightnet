@@ -45,7 +45,7 @@ public class LinkController {
 	// {"status":"fail","message":"invalid transactionID or callerOperatorCode"}
 	private String POST_COMMIT_HTTPS_URL = "/v1.1/remittances.commit";
 	
-	@PostMapping(value = {"/commit"})
+	@PostMapping(value = {"/commit0"})
 	public ResponseEntity<?> commit(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		

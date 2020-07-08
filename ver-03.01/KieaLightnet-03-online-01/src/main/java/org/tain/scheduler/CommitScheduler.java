@@ -29,13 +29,12 @@ public class CommitScheduler {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			System.out.printf("ONLINE >>>>> 1. request  data: [%s]\n", request);
+			System.out.printf("ONLINE >>>>> 1. request data: [%s]\n", request);
 		}
 
-		String response = "0102 Hello world!!! response";
+		String response = "0202 Hello world!!! response";
 		
-		if (!Flag.flag) {
-			/*
+		if (Flag.flag) {
 			// req mapper process
 			response = mapperHttpPostReq(request);
 			System.out.printf("ONLINE >>>>> 1. response data: [%s]\n", response);
@@ -50,9 +49,12 @@ public class CommitScheduler {
 			// process
 			response = mapperHttpPostRes(response);
 			System.out.printf("ONLINE >>>>> 3. response data: [%s]\n", response);
-			*/
 		}
 		
+		if (Flag.flag) {
+			System.out.printf("ONLINE >>>>> 9. response data: [%s]\n", response);
+		}
+
 		return response;
 	}
 
@@ -60,7 +62,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_VALIDATE_REQ_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/validate/s2j";
+	private static String POST_MAPPER_VALIDATE_REQ_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/s2j";
 	
 	private static String mapperHttpPostReq(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -68,7 +70,7 @@ public class CommitScheduler {
 		
 		Map<String,String> reqMap = new HashMap<>();
 		if (Flag.flag) {
-			reqMap.put("title", "/mapper/validate");
+			reqMap.put("title", "/mapper/commit");
 			reqMap.put("command", "Stream To Json");
 			reqMap.put("data", request);
 			System.out.println("ONLINE >>>>> reqMap: " + reqMap);
@@ -110,7 +112,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_LINK_HTTP_URL = "http://localhost:8082/v0.1/link/validate";
+	private static String POST_LINK_HTTP_URL = "http://localhost:8082/v0.1/link/commit";
 	
 	private static String linkHttpPost(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -160,7 +162,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_VALIDATE_RES_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/validate/j2s";
+	private static String POST_MAPPER_VALIDATE_RES_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/j2s";
 	
 	private static String mapperHttpPostRes(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -173,7 +175,7 @@ public class CommitScheduler {
 		
 		Map<String,String> reqMap = new HashMap<>();
 		if (Flag.flag) {
-			reqMap.put("title", "/mapper/validate");
+			reqMap.put("title", "/mapper/commit");
 			reqMap.put("command", "Stream To Json");
 			reqMap.put("data", request);
 			System.out.println("ONLINE >>>>> reqMap: " + reqMap);

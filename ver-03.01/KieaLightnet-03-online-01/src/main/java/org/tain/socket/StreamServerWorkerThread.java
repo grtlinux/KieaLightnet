@@ -1,25 +1,12 @@
 package org.tain.socket;
 
 import java.net.Socket;
-import java.time.LocalDateTime;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
-import org.tain.config.SkipSSLConfig;
 import org.tain.object.Packet;
 import org.tain.scheduler.CommitScheduler;
 import org.tain.scheduler.ValidateScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,12 +18,14 @@ public class StreamServerWorkerThread extends Thread {
 	private Packet packet = null;
 	
 	public StreamServerWorkerThread(Socket socket) throws Exception {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		this.socket = socket;
 		this.streamPacket = new StreamPacket(this.socket);
 	}
 	
 	@Override
 	public void run() {
+		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		//Random random = new Random(new Date().getTime());
 		
 		try {
@@ -57,7 +46,7 @@ public class StreamServerWorkerThread extends Thread {
 					response = CommitScheduler.process(request);
 					break;
 				case "0301":
-					httpPostList();
+					//httpPostList();
 					response = "RES batch/list hostPostList.....";  // batch list
 					break;
 				default:
@@ -73,7 +62,7 @@ public class StreamServerWorkerThread extends Thread {
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
-
+	/*
 	private String POST_DETAIL_HTTP_URL = "http://localhost:8082/link/detail";
 	
 	private void httpPostDetail() throws Exception {
@@ -120,11 +109,12 @@ public class StreamServerWorkerThread extends Thread {
 		
 		return;
 	}
+	*/
 	
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
-	
+	/*
 	private String POST_LIST_HTTP_URL = "http://localhost:8082/link/list";
 	
 	private void httpPostList() throws Exception {
@@ -177,7 +167,7 @@ public class StreamServerWorkerThread extends Thread {
 			System.out.println(">>>>> json: " + json);
 		}
 	}
-
+	*/
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////

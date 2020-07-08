@@ -25,17 +25,50 @@ public class StreamClient {
 		
 		if (Flag.flag) {
 			// socket connection
+			Socket socket = null;
 			try {
-				Socket socket = new Socket();
+				socket = new Socket();
 				socket.connect(new InetSocketAddress(host, port));
 				System.out.println(">>>>>  Connection is OK!!!");
 				
 				this.thread = new StreamClientWorkerThread(socket);
 				this.thread.start();
+				
 			} catch (Exception e) {
 				System.out.println(">>>>> EXCEPTION: " + e.getMessage());
 				System.exit(-1);
 			}
+		}
+		
+		if (!Flag.flag) {
+			/*
+			// socket connection
+			while (true) {
+				Socket socket = null;
+				try {
+					socket = new Socket();
+					socket.connect(new InetSocketAddress(host, port));
+					System.out.println(">>>>>  Connection is OK!!!");
+					
+					this.thread = new StreamClientWorkerThread(socket);
+					this.thread.start();
+					
+					if (Flag.flag) {
+						while (true) {
+							Sleep.run(5 * 1000);
+							if (this.thread.isAlive() == false)
+								break;
+							System.out.println(">>>>>  thread is alive...");
+						}
+						System.out.println(">>>>>  thread was killed...");
+					}
+				} catch (Exception e) {
+					System.out.println(">>>>> EXCEPTION: " + e.getMessage());
+				}
+				if (socket != null) try { socket.close(); } catch (Exception e) {}
+				Sleep.run(5 * 1000);
+			}
+			*/
 		}
 	}
 	
