@@ -66,6 +66,7 @@ public class ValidateController {
 		}
 		
 		ResponseEntity<String> response = null;
+		String retJson = null;
 		if (Flag.flag) {
 			try {
 				HttpHeaders headers = new HttpHeaders();
@@ -75,6 +76,7 @@ public class ValidateController {
 				
 				response = SkipSSLConfig.getRestTemplate(1).exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				System.out.println(">>>>> response.getBody() = " + response.getBody());
+				retJson = response.getBody();
 			} catch (HttpServerErrorException e) {
 				System.out.println("-------------------------------------");
 				System.out.println("LINK ERROR >>>>> e.getStatusText()           = " + e.getStatusText());
@@ -83,7 +85,7 @@ public class ValidateController {
 				System.out.println("LINK ERROR >>>>> e.getResponseHeaders()      = " + e.getResponseHeaders());
 				System.out.println("LINK ERROR >>>>> e.getResponseBodyAsString() = " + e.getResponseBodyAsString());
 				System.out.println("-------------------------------------");
-				return new ResponseEntity<>(e.getResponseBodyAsString(), HttpStatus.OK);
+				retJson = e.getResponseBodyAsString();
 			} catch (Exception e) {
 				//e.printStackTrace();
 				System.out.println("LINK ERROR >>>>> e.getMessage() = " + e.getMessage());
@@ -99,7 +101,7 @@ public class ValidateController {
 				objectMapper.registerModule(new JavaTimeModule());
 				objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 				
-				JsonNode jsonNode = objectMapper.readTree(response.getBody());
+				JsonNode jsonNode = objectMapper.readTree(retJson);
 				//String json = jsonNode.at("/").toPrettyString();
 				String json = jsonNode.toPrettyString();
 				System.out.println(">>>>> json: " + json);
@@ -108,6 +110,6 @@ public class ValidateController {
 			}
 		}
 		
-		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
+		return new ResponseEntity<>(retJson, HttpStatus.OK);
 	}
 }
