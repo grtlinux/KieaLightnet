@@ -142,5 +142,16 @@
 		"reqParameters": "{\"title\":\"Detail Stream Test\",\"division\":\"detail\",\"type\":\"REQ\",\"data\":\"0301AAAAA   Commit Packet 00000000000000000000000000000000000000000000000\"}",
 		"resRetJson": "",
 		"resRetStream": ""
+	},{
+		"title": "[v0.1] lns01/list",
+		"content": "/lns01/list to [9.LNS01]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8091",
+		"reqVer": "/v0.1",
+		"reqPath": "/lns01/list",
+		"reqMethod": "POST",
+		"reqParameters": "{\"title\":\"List Stream Test\",\"division\":\"list\",\"type\":\"REQ\",\"data\":\"0401AAAAA   Commit Packet 00000000000000000000000000000000000000000000000\"}",
+		"resRetJson": "",
+		"resRetStream": ""
 	}
 ]
