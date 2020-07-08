@@ -6,7 +6,6 @@ public class Sleep {
 		try {
 			Thread.sleep(milliseconds);
 		} catch (InterruptedException e) {
-			// TODO: handle exception
 		}
 	}
 }

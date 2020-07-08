@@ -112,7 +112,7 @@ public class ListScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_LINK_HTTP_URL = "http://localhost:8082/v0.1/link/list";
+	private static String POST_LINK_HTTP_URL = "http://localhost:8085/v0.1/batch/list";
 	
 	private static String linkHttpPost(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());

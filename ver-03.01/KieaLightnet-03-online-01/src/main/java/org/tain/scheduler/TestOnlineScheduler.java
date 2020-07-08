@@ -27,9 +27,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TestOnlineScheduler {
 
-	/*
-	 * TODO: KANG-20200627: for TEST
-	 */
 	//@Scheduled(fixedRate = 60 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

@@ -30,7 +30,6 @@ public class StreamClient {
 			this.thread = new StreamClientWorkerThread(socket);
 			this.thread.start();
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
 	}
 	
