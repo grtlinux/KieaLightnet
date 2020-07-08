@@ -117,7 +117,7 @@
 		"reqVer": "/v0.1",
 		"reqPath": "/lns01/validate",
 		"reqMethod": "POST",
-		"reqParameters": "{\"title\":\"Validate Stream Test\",\"class\":\"validate\",\"type\":\"REQ\",\"data\":\"0101AAAAA   Validate Packet 00000000000000000000000000000000000000000000000\"}",
+		"reqParameters": "{\"title\":\"Validate Stream Test\",\"division\":\"validate\",\"type\":\"REQ\",\"data\":\"0101AAAAA   Validate Packet 00000000000000000000000000000000000000000000000\"}",
 		"resRetJson": "",
 		"resRetStream": ""
 	},{
@@ -128,7 +128,18 @@
 		"reqVer": "/v0.1",
 		"reqPath": "/lns01/commit",
 		"reqMethod": "POST",
-		"reqParameters": "{\"title\":\"Commit Stream Test\",\"class\":\"commit\",\"type\":\"REQ\",\"data\":\"0201AAAAA   Commit Packet 00000000000000000000000000000000000000000000000\"}",
+		"reqParameters": "{\"title\":\"Commit Stream Test\",\"division\":\"commit\",\"type\":\"REQ\",\"data\":\"0201AAAAA   Commit Packet 00000000000000000000000000000000000000000000000\"}",
+		"resRetJson": "",
+		"resRetStream": ""
+	},{
+		"title": "[v0.1] lns01/detail",
+		"content": "/lns01/detail to [9.LNS01]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8091",
+		"reqVer": "/v0.1",
+		"reqPath": "/lns01/detail",
+		"reqMethod": "POST",
+		"reqParameters": "{\"title\":\"Detail Stream Test\",\"division\":\"detail\",\"type\":\"REQ\",\"data\":\"0301AAAAA   Commit Packet 00000000000000000000000000000000000000000000000\"}",
 		"resRetJson": "",
 		"resRetStream": ""
 	}
