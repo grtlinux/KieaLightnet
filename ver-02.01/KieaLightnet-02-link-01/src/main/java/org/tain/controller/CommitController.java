@@ -31,7 +31,7 @@ public class CommitController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String POST_VALIDATE_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.commit";
+	private String POST_COMMIT_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.commit";
 	
 	@PostMapping(value = {""})
 	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) {
@@ -58,7 +58,7 @@ public class CommitController {
 		if (Flag.flag) {
 			try {
 				// get AccessToken from /auth/auth
-				accessToken = AccessToken.getAccessToken("/validate");
+				accessToken = AccessToken.getAccessToken("/commit");
 				System.out.println(">>>>> accessToken = " + accessToken);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -74,7 +74,7 @@ public class CommitController {
 				headers.set("Authorization", "Bearer " + accessToken);
 				HttpEntity<String> httpEntity = new HttpEntity<>(data, headers);
 				
-				response = SkipSSLConfig.getRestTemplate(1).exchange(POST_VALIDATE_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				response = SkipSSLConfig.getRestTemplate(1).exchange(POST_COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				System.out.println(">>>>> response.getBody() = " + response.getBody());
 				retJson = response.getBody();
 			} catch (HttpServerErrorException e) {

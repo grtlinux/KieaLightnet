@@ -11,6 +11,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.tain.utils.Convert;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -25,69 +26,80 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DetailController {
 
-	@PostMapping(value = {"/j2s"})
-	public ResponseEntity<?> jsonToStream(HttpEntity<String> _httpEntity) throws Exception {
-		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
-		
-		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
-		}
-		
-		Map<String,String> map = null;
-		JsonNode jsonNode = null;
-		if (Flag.flag) {
-			// mapping process
-			//{
-			//  "command": "Json To Stream",
-			//  "data": "{\"field1\":\"value1\",\"field2\":\"value2\"}"
-			//}
-			ObjectMapper objectMapper = new ObjectMapper();
-			map      = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
-			jsonNode = objectMapper.readTree(map.get("data"));
-			System.out.println(">>>>> jsonNode = " + jsonNode.toPrettyString());
-			
-			map.put("result", "LIST-J2S          1234567890  ABC1002003        Hello    ");
-		}
-		
-		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
-		headers.add("Content-Type", "application/json; charset=UTF-8");
-		
-		return new ResponseEntity<>(map, headers, HttpStatus.OK);
-	}
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
 
 	@PostMapping(value = {"/s2j"})
 	public ResponseEntity<?> streamToJson(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			System.out.println(">>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + _httpEntity.getBody());
+			System.out.println("MAPPER >>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println("MAPPER >>>>> Body = " + _httpEntity.getBody());
 		}
 		
 		Map<String,String> map = null;
-		String stream = null;
+		String data = null;
 		if (Flag.flag) {
 			// mapping process
-			//{
-			//  "command": "Json To Stream",
-			//  "data": "LIST-J2S          1234567890  ABC1002003        Hello    "
-			//}
 			ObjectMapper objectMapper = new ObjectMapper();
-			map      = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
-			stream = map.get("data");
-			System.out.println(">>>>> stream = [" + stream + "]");
-			String response = ""
-				+ "{"
-				+ "\"title\":\"LIST-S2J\","
-				+ "\"sourceCountry\":\"KOR\","
-				+ "\"destinationCountry\":\"KHM\","
-				+ "\"destinationOperatorCode\":\"lyhour\","
-				+ "\"withdrawableAmount\":\"1.500\","
-				+ "\"transactionCurrency\":\"USD\","
-				+ "\"deliveryMethod\":\"cash\""
-				+ "}";
-			map.put("result", response);
+			map = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
+			
+			data = map.get("data");
+			System.out.println("MAPPER >>>>> data = [" + data + "]");
+			
+			// link process (REQ -> RES)
+			String retData = ""
+					+ "{"
+					+ "\"sourceCountry\":\"KOR\","
+					+ "\"destinationCountry\":\"KHM\","
+					+ "\"destinationOperatorCode\":\"lyhour\","
+					+ "\"withdrawableAmount\":\"1.500\","
+					+ "\"transactionCurrency\":\"USD\","
+					+ "\"deliveryMethod\":\"cash\""
+					+ "}";
+			
+			map.put("retData", Convert.quote(retData));
+			System.out.println("MAPPER >>>>> map: " + map);
+		}
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		//headers.add("Content-Type", "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(map, headers, HttpStatus.OK);
+	}
+	
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+
+	@PostMapping(value = {"/j2s"})
+	public ResponseEntity<?> jsonToStream(HttpEntity<String> _httpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			System.out.println("MAPPER >>>>> Headers = " + _httpEntity.getHeaders());
+			System.out.println("MAPPER >>>>> Body = " + _httpEntity.getBody());
+		}
+		
+		Map<String,String> map = null;
+		String data = null;
+		if (Flag.flag) {
+			// mapping process
+			ObjectMapper objectMapper = new ObjectMapper();
+			map = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
+			
+			data = map.get("data");
+			System.out.println("MAPPER >>>>> data = [" + data + "]");
+			if (Flag.flag) {
+				JsonNode jsonNode = new ObjectMapper().readTree(data);
+				System.out.println("MAPPER >>>>> REQ JSON: " + jsonNode.toPrettyString());
+			}
+			
+			map.put("retData", Convert.quote("0302AAAA        1234567890  ABC1002003        Hello    "));
+			System.out.println("MAPPER >>>>> map: " + map);
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();

@@ -4,6 +4,7 @@ import java.net.Socket;
 
 import org.tain.object.Packet;
 import org.tain.scheduler.CommitScheduler;
+import org.tain.scheduler.DetailScheduler;
 import org.tain.scheduler.ValidateScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -46,8 +47,7 @@ public class StreamServerWorkerThread extends Thread {
 					response = CommitScheduler.process(request);
 					break;
 				case "0301":
-					//httpPostList();
-					response = "RES batch/list hostPostList.....";  // batch list
+					response = DetailScheduler.process(request);
 					break;
 				default:
 					break;
