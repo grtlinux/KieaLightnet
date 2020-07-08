@@ -128,7 +128,7 @@
 		"reqVer": "/v0.1",
 		"reqPath": "/lns01/commit",
 		"reqMethod": "POST",
-		"reqParameters": "{\"transactionId\":\"a205c886-0d7f-4b40-5de5-d1323eb57514\"}",
+		"reqParameters": "{\"title\":\"Commit Stream Test\",\"class\":\"commit\",\"type\":\"REQ\",\"data\":\"0201AAAAA   Commit Packet 00000000000000000000000000000000000000000000000\"}",
 		"resRetJson": "",
 		"resRetStream": ""
 	}

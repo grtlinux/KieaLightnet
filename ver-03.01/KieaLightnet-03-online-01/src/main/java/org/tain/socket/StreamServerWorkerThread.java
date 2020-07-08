@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.tain.config.SkipSSLConfig;
 import org.tain.object.Packet;
+import org.tain.scheduler.CommitScheduler;
 import org.tain.scheduler.ValidateScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -53,8 +54,7 @@ public class StreamServerWorkerThread extends Thread {
 					response = ValidateScheduler.process(request);
 					break;
 				case "0201":
-					httpPostDetail();
-					response = "RES detail hostPostList.....";  // detail
+					response = CommitScheduler.process(request);
 					break;
 				case "0301":
 					httpPostList();
