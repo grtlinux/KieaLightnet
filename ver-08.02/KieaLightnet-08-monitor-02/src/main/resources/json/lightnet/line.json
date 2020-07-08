@@ -120,5 +120,16 @@
 		"reqParameters": "{\"title\":\"Validate Stream Test\",\"class\":\"validate\",\"type\":\"REQ\",\"data\":\"0101AAAAA   Validate Packet 00000000000000000000000000000000000000000000000\"}",
 		"resRetJson": "",
 		"resRetStream": ""
+	},{
+		"title": "[v0.1] lns01/commit",
+		"content": "/lns01/commit to [9.LNS01]",
+		"userId": "kiea",
+		"reqUrl": "http://localhost:8091",
+		"reqVer": "/v0.1",
+		"reqPath": "/lns01/commit",
+		"reqMethod": "POST",
+		"reqParameters": "{\"transactionId\":\"a205c886-0d7f-4b40-5de5-d1323eb57514\"}",
+		"resRetJson": "",
+		"resRetStream": ""
 	}
 ]
