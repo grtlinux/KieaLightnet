@@ -5,6 +5,7 @@ import java.net.Socket;
 import org.tain.object.Packet;
 import org.tain.scheduler.CommitScheduler;
 import org.tain.scheduler.DetailScheduler;
+import org.tain.scheduler.ListScheduler;
 import org.tain.scheduler.ValidateScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -48,6 +49,9 @@ public class StreamServerWorkerThread extends Thread {
 					break;
 				case "0301":
 					response = DetailScheduler.process(request);
+					break;
+				case "0401":
+					response = ListScheduler.process(request);
 					break;
 				default:
 					break;
