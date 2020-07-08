@@ -92,7 +92,7 @@ spring:
 logging:
   #file: /zlogs/application-dev.log
   file:
-    path: logs/
+    path: logs/callback/
     # name: application-kiea.log
     max-size: 1MB
   pattern:

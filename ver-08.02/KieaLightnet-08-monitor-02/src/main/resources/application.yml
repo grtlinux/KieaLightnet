@@ -49,7 +49,7 @@ spring:
 logging:
 
   file:
-    path: logs/
+    path: logs/monitor/
     max-size: 1MB
   
   pattern:
