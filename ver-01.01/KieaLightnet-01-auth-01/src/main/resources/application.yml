@@ -93,7 +93,7 @@ logging:
   file:
     path: logs/auth/
     # name: application-kiea.log
-    max-size: 1MB
+    max-size: 10MB
   pattern:
     # console: "%-4relative [%thread] %-5level %logger{35} - %msg%n"
     # console: "%d %-5level - %msg%n"

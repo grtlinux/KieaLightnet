@@ -50,7 +50,7 @@ logging:
 
   file:
     path: logs/monitor/
-    max-size: 1MB
+    max-size: 10MB
   
   pattern:
     console: "%d{HH:mm:ss} %-5level - %msg%n"
