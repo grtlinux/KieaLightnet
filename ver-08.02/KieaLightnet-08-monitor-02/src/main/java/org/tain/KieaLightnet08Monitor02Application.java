@@ -51,7 +51,7 @@ public class KieaLightnet08Monitor02Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		log.info("KANG-20200705 >>>>> {} {}", CurrentInfo.get());
+		log.info("KANG-20200705 >>>>> {} {}", System.getenv("HOME"), CurrentInfo.get());
 		if (Flag.flag) job01();
 		if (Flag.flag) job02();
 		if (Flag.flag) job03();
@@ -99,7 +99,7 @@ public class KieaLightnet08Monitor02Application implements CommandLineRunner {
 		if (Flag.flag) {
 			try {
 				ObjectMapper objectMapper = new ObjectMapper();
-				List<Stmt> list = objectMapper.readValue(new File(this.jsonFileStmtPath), new TypeReference<List<Stmt>>() {});
+				List<Stmt> list = objectMapper.readValue(new File(System.getenv("HOME") + this.jsonFileStmtPath), new TypeReference<List<Stmt>>() {});
 				list.forEach(entity -> {
 					this.stmtRepository.save(entity);
 				});
@@ -125,7 +125,7 @@ public class KieaLightnet08Monitor02Application implements CommandLineRunner {
 		if (Flag.flag) {
 			try {
 				ObjectMapper objectMapper = new ObjectMapper();
-				List<Kuser> list = objectMapper.readValue(new File(this.jsonFileKuserPath), new TypeReference<List<Kuser>>() {});
+				List<Kuser> list = objectMapper.readValue(new File(System.getenv("HOME") + this.jsonFileKuserPath), new TypeReference<List<Kuser>>() {});
 				list.forEach(entity -> {
 					this.kuserRepository.save(entity);
 				});
@@ -151,7 +151,7 @@ public class KieaLightnet08Monitor02Application implements CommandLineRunner {
 		if (Flag.flag) {
 			try {
 				ObjectMapper objectMapper = new ObjectMapper();
-				List<Line> list = objectMapper.readValue(new File(this.jsonFileLinePath), new TypeReference<List<Line>>() {});
+				List<Line> list = objectMapper.readValue(new File(System.getenv("HOME") + this.jsonFileLinePath), new TypeReference<List<Line>>() {});
 				list.forEach(entity -> {
 					this.lineRepository.save(entity);
 				});

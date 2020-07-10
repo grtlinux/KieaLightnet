@@ -73,9 +73,9 @@ server:
 # ------------------------------------------------------------
 json:
   file:
-    stmt.path: src/main/resources/json/1000-2.json
-    kuser.path: src/main/resources/json/kuser.json
-    line.path: src/main/resources/json/lightnet/line.json
+    stmt.path: /KANG/json/1000-2.json
+    kuser.path: /KANG/json/kuser.json
+    line.path: /KANG/json/lightnet/line.json
 
 
 
