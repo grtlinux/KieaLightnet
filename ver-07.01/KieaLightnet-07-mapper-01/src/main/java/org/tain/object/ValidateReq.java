@@ -22,6 +22,9 @@ public class ValidateReq {
 	private String transactionId;
 	private String status;
 	
+	private String saveReport;
+	private String remittanceType;
+	
 	@Builder
 	public ValidateReq(
 			Source source,
@@ -33,7 +36,9 @@ public class ValidateReq {
 			Currency fee,
 			Rate rate,
 			String transactionId,
-			String status
+			String status,
+			String saveReport,
+			String remittanceType
 			) {
 		this.source = source;
 		this.sender = sender;
@@ -45,5 +50,7 @@ public class ValidateReq {
 		this.rate = rate;
 		this.transactionId = transactionId;
 		this.status = status;
+		this.saveReport = saveReport;
+		this.remittanceType = remittanceType;
 	}
 }

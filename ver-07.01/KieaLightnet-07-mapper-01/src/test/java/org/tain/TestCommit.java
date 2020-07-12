@@ -2,15 +2,15 @@ package org.tain;
 
 import java.io.File;
 
-import org.tain.object.ValidateReq;
-import org.tain.object.ValidateRes;
+import org.tain.object.CommitReq;
+import org.tain.object.CommitRes;
 import org.tain.utils.Flag;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class TestValidate {
+public class TestCommit {
 
 	public static void main(String[] args) throws Exception {
 		if (!Flag.flag) test00();
@@ -22,30 +22,30 @@ public class TestValidate {
 
 	private static void test00() throws Exception {
 		if (Flag.flag) {
-			// read validate_req
-			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/validate_req.json"));
-			System.out.println("----------------------------- validate_req.json ----------------------------");
+			// read commit_req
+			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/commit_req.json"));
+			System.out.println("----------------------------- commit_req.json ----------------------------");
 			System.out.println(">>>>> " + jsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			// read validate_req2
-			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/validate_req2.json"));
-			System.out.println("----------------------------- validate_req2.json ----------------------------");
+			// read commit_req2
+			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/commit_req2.json"));
+			System.out.println("----------------------------- commit_req2.json ----------------------------");
 			System.out.println(">>>>> " + jsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			// read validate_res
-			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/validate_res.json"));
-			System.out.println("----------------------------- validate_res.json ----------------------------");
+			// read commit_res
+			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/commit_res.json"));
+			System.out.println("----------------------------- commit_res.json ----------------------------");
 			System.out.println(">>>>> " + jsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			// read validate_res2
-			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/validate_res2.json"));
-			System.out.println("----------------------------- validate_res2.json ----------------------------");
+			// read commit_res2
+			JsonNode jsonNode = new ObjectMapper().readTree(new File("src/test/java/org/tain/commit_res2.json"));
+			System.out.println("----------------------------- commit_res2.json ----------------------------");
 			System.out.println(">>>>> " + jsonNode.toPrettyString());
 		}
 		System.out.println("--------------------------- E N D -------------------------------");
@@ -53,13 +53,13 @@ public class TestValidate {
 
 	private static void test01() throws Exception {
 		if (Flag.flag) {
-			// read validate_req
-			System.out.println("----------------------------- validate_req.json ----------------------------");
-			ValidateReq validateReq = new ObjectMapper().readValue(new File("src/test/java/org/tain/validate_req.json"), ValidateReq.class);
-			System.out.println(">>>>> " + validateReq);
+			// read commit_req
+			System.out.println("----------------------------- commit_req.json ----------------------------");
+			CommitReq commitReq = new ObjectMapper().readValue(new File("src/test/java/org/tain/commit_req.json"), CommitReq.class);
+			System.out.println(">>>>> " + commitReq);
 			
 			if (Flag.flag) {
-				System.out.println(">>>>> " + validateReq.getSender().getAddress().getPostalCode());
+				System.out.println(">>>>> " + commitReq.getTransactionId());
 			}
 			
 			if (Flag.flag) {
@@ -71,8 +71,8 @@ public class TestValidate {
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.CUSTOM);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.USE_DEFAULTS);
-				String jsonValidateReq = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(validateReq);
-				System.out.println(">>>>> " + jsonValidateReq);
+				String jsonCommitReq = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(commitReq);
+				System.out.println(">>>>> " + jsonCommitReq);
 			}
 		}
 		System.out.println("--------------------------- E N D -------------------------------");
@@ -80,13 +80,13 @@ public class TestValidate {
 
 	private static void test02() throws Exception {
 		if (Flag.flag) {
-			// read validate_req2
-			System.out.println("----------------------------- validate_req2.json ----------------------------");
-			ValidateReq validateReq = new ObjectMapper().readValue(new File("src/test/java/org/tain/validate_req2.json"), ValidateReq.class);
-			System.out.println(">>>>> " + validateReq);
+			// read commit_req2
+			System.out.println("----------------------------- commit_req2.json ----------------------------");
+			CommitReq commitReq = new ObjectMapper().readValue(new File("src/test/java/org/tain/commit_req2.json"), CommitReq.class);
+			System.out.println(">>>>> " + commitReq);
 			
 			if (Flag.flag) {
-				System.out.println(">>>>> " + validateReq.getSender().getAddress().getPostalCode());
+				System.out.println(">>>>> " + commitReq.getTransactionId());
 			}
 			
 			if (Flag.flag) {
@@ -98,8 +98,8 @@ public class TestValidate {
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.CUSTOM);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.USE_DEFAULTS);
-				String jsonValidateReq = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(validateReq);
-				System.out.println(">>>>> " + jsonValidateReq);
+				String jsonCommitReq = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(commitReq);
+				System.out.println(">>>>> " + jsonCommitReq);
 			}
 		}
 		System.out.println("--------------------------- E N D -------------------------------");
@@ -107,13 +107,13 @@ public class TestValidate {
 
 	private static void test03() throws Exception {
 		if (Flag.flag) {
-			// read validate_res
-			System.out.println("----------------------------- validate_res.json ----------------------------");
-			ValidateRes validateRes = new ObjectMapper().readValue(new File("src/test/java/org/tain/validate_res.json"), ValidateRes.class);
-			System.out.println(">>>>> " + validateRes);
+			// read commit_res
+			System.out.println("----------------------------- commit_res.json ----------------------------");
+			CommitRes commitRes = new ObjectMapper().readValue(new File("src/test/java/org/tain/commit_res.json"), CommitRes.class);
+			System.out.println(">>>>> " + commitRes);
 			
 			if (Flag.flag) {
-				System.out.println(">>>>> " + validateRes.getData().getSender().getAddress().getPostalCode());
+				System.out.println(">>>>> " + commitRes.getData().getTransactionId());
 			}
 			
 			if (Flag.flag) {
@@ -125,8 +125,8 @@ public class TestValidate {
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.CUSTOM);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.USE_DEFAULTS);
-				String jsonValidateReq = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(validateRes);
-				System.out.println(">>>>> " + jsonValidateReq);
+				String jsonCommitRes = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(commitRes);
+				System.out.println(">>>>> " + jsonCommitRes);
 			}
 		}
 		System.out.println("--------------------------- E N D -------------------------------");
@@ -134,13 +134,13 @@ public class TestValidate {
 
 	private static void test04() throws Exception {
 		if (Flag.flag) {
-			// read validate_res2
-			System.out.println("----------------------------- validate_res2.json ----------------------------");
-			ValidateRes validateRes = new ObjectMapper().readValue(new File("src/test/java/org/tain/validate_res2.json"), ValidateRes.class);
-			System.out.println(">>>>> " + validateRes);
+			// read commit_res2
+			System.out.println("----------------------------- commit_res2.json ----------------------------");
+			CommitRes commitRes = new ObjectMapper().readValue(new File("src/test/java/org/tain/commit_res2.json"), CommitRes.class);
+			System.out.println(">>>>> " + commitRes);
 			
 			if (Flag.flag) {
-				System.out.println(">>>>> " + validateRes.getData().getSender().getAddress().getPostalCode());
+				System.out.println(">>>>> " + commitRes.getData().getTransactionId());
 			}
 			
 			if (Flag.flag) {
@@ -152,8 +152,8 @@ public class TestValidate {
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.NON_DEFAULT);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.CUSTOM);
 				//objectMapper.setSerializationInclusion(JsonInclude.Include.USE_DEFAULTS);
-				String jsonValidateReq = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(validateRes);
-				System.out.println(">>>>> " + jsonValidateReq);
+				String jsonCommitRes = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(commitRes);
+				System.out.println(">>>>> " + jsonCommitRes);
 			}
 		}
 		System.out.println("--------------------------- E N D -------------------------------");

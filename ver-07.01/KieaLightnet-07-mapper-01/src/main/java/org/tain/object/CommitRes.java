@@ -6,16 +6,16 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Data
-public class ValidateRes {
+public class CommitRes {
 
-	private ValidateReq data;
+	private CommitReq data;
 	
 	private String status;
 	private String message;
 	
 	@Builder
-	public ValidateRes(
-			ValidateReq data,
+	public CommitRes(
+			CommitReq data,
 			String status,
 			String message
 			) {
