@@ -1,0 +1,28 @@
+{
+    "data": {
+        "source": {
+            "send": {
+            }
+        },
+        "sender": {
+            "address": {
+            },
+            "mobilePhone": {
+            }
+        },
+        "destination": {
+            "receive": {
+            }
+        },
+        "receiver": {
+        },
+        "fee": {
+        },
+        "rate": {
+            "from": {
+            },
+            "to": {
+            }
+        }
+    }
+}
