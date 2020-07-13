@@ -243,7 +243,7 @@ public class TestCommit {
 				sb.append(String.format("%-20s", nvl(commitRes.getData().getStatus())));                                   // data.status
 				
 				sb.append(String.format("%-20s", nvl(commitRes.getStatus())));                                             // data.sender.firstName
-				sb.append(String.format("%-20s", nvl(commitRes.getMessage())));                                            // data.sender.lastName
+				sb.append(String.format("%-50s", nvl(commitRes.getMessage())));                                            // data.sender.lastName
 				
 				int length = 4 + sb.length();
 				sb.insert(0, String.format("%04d", length));
@@ -255,6 +255,8 @@ public class TestCommit {
 			
 			//strCommitRes = "01510202RESD014017804533540              62bbb4b8-fe03-40d2-6f30-92baf54da82d              RECEIVED            success             OK                  ";
 			//strCommitRes = "01510202RESD014017804533540              62bbb4b8-fe03-40d2-6f30-92baf54da82d KIEA         RECEIVED            success             OK                  ";
+			//strCommitRes = "01810202RESD014017804533540              62bbb4b8-fe03-40d2-6f30-92baf54da82d              RECEIVED            success             OK                                                ";
+			//strCommitRes = "01810202RESD014017804533540              62bbb4b8-fe03-40d2-6f30-92baf54da82d KIEA         RECEIVED            success             OK                                                ";
 			
 			CommitRes dummyCommitRes = new ObjectMapper().readValue(new File("src/test/java/org/tain/commit_res_dummy.json"), CommitRes.class);
 			if (Flag.flag) {
@@ -277,7 +279,7 @@ public class TestCommit {
 				size = 20; dummyCommitRes.getData().setStatus(nvl(strCommitRes.substring(offset, offset+size).trim())); offset += size;
 				
 				size = 20; dummyCommitRes.setStatus(nvl(strCommitRes.substring(offset, offset+size).trim())); offset += size;
-				size = 20; dummyCommitRes.setMessage(nvl(strCommitRes.substring(offset, offset+size).trim())); offset += size;
+				size = 50; dummyCommitRes.setMessage(nvl(strCommitRes.substring(offset, offset+size).trim())); offset += size;
 				
 				if (Flag.flag) {
 					System.out.printf(">>>>> %d %s %s\n", length, division, type);
@@ -302,3 +304,28 @@ public class TestCommit {
 		return str;
 	}
 }
+
+/*
+
+	typedef struct _Commit_Req {
+		char[ 4] length                         ; // length    : 0061
+		char[ 4] division                       ; // division  : 0201
+		char[ 3] type                           ; // type      : REQ
+
+		char[50] transactionId                  ; // transactionId
+	} Commit_Req;
+
+	typedef struct _Commit_Res {
+		char[ 4] length                         ; // length    : 0181
+		char[ 4] division                       ; // division  : 0202
+		char[ 3] type                           ; // type      : RES
+	
+		char[20] data.destination.transactionId ; // data.destination.transactionId
+		char[10] data.destination.withdrawalId  ; // data.destination.withdrawalId
+		char[50] data.transactionId             ; // data.transactionId
+		char[20] data.status                    ; // data.status
+
+		char[20] status                         ; // status
+		char[50] message                        ; // message
+	} Commit_Res;
+*/

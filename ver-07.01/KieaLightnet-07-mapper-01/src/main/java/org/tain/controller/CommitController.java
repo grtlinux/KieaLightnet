@@ -3,6 +3,7 @@ package org.tain.controller;
 import java.io.File;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -70,9 +71,12 @@ public class CommitController {
 	//strCommitReq = "00610201REQ62bbb4b8-fe03-40d2-6f30-92baf54da82d              ";
 	//strCommitReq = "00610201REQ62bbb4b8-fe03-40d2-6f30-92baf54da82d KIEA         ";
 	
+	@Value("${json.file.commitReqDummy.path}")
+	private String jsonFileCommitReqDummyPath;
+
 	private String requestStreamToJson(String data) throws Exception {
 		
-		CommitReq dummyCommitReq = new ObjectMapper().readValue(new File("./commit_req_dummy.json"), CommitReq.class);
+		CommitReq dummyCommitReq = new ObjectMapper().readValue(new File(System.getenv("HOME") + this.jsonFileCommitReqDummyPath), CommitReq.class);
 		String jsonDummyCommitReq = "";
 		
 		if (Flag.flag) {
@@ -176,13 +180,23 @@ public class CommitController {
 			sb.append(String.format("0202"));
 			sb.append(String.format("RES"));
 			
-			sb.append(String.format("%-20s", nvl2(commitRes.getData().getDestination().getTransactionId())));           // data.destination.transactionId
-			sb.append(String.format("%-10s", nvl2(commitRes.getData().getDestination().getWithdrawalId())));            // data.destination.withdrawalId
-			sb.append(String.format("%-50s", nvl2(commitRes.getData().getTransactionId())));                            // data.transactionId
-			sb.append(String.format("%-20s", nvl2(commitRes.getData().getStatus())));                                   // data.status
-			
-			sb.append(String.format("%-20s", nvl2(commitRes.getStatus())));                                             // data.sender.firstName
-			sb.append(String.format("%-20s", nvl2(commitRes.getMessage())));                                            // data.sender.lastName
+			if ("success".equals(commitRes.getStatus())) {
+				sb.append(String.format("%-20s", nvl2(commitRes.getData().getDestination().getTransactionId())));           // data.destination.transactionId
+				sb.append(String.format("%-10s", nvl2(commitRes.getData().getDestination().getWithdrawalId())));            // data.destination.withdrawalId
+				sb.append(String.format("%-50s", nvl2(commitRes.getData().getTransactionId())));                            // data.transactionId
+				sb.append(String.format("%-20s", nvl2(commitRes.getData().getStatus())));                                   // data.status
+				
+				sb.append(String.format("%-20s", nvl2(commitRes.getStatus())));                                             // data.sender.firstName
+				sb.append(String.format("%-50s", nvl2(commitRes.getMessage())));                                            // data.sender.lastName
+			} else {
+				sb.append(String.format("%-20s", ""));   // data.destination.transactionId
+				sb.append(String.format("%-10s", ""));   // data.destination.withdrawalId
+				sb.append(String.format("%-50s", ""));   // data.transactionId
+				sb.append(String.format("%-20s", ""));   // data.status
+				
+				sb.append(String.format("%-20s", nvl2(commitRes.getStatus())));                                             // data.sender.firstName
+				sb.append(String.format("%-50s", nvl2(commitRes.getMessage())));                                            // data.sender.lastName
+			}
 			
 			int length = 4 + sb.length();
 			sb.insert(0, String.format("%04d", length));

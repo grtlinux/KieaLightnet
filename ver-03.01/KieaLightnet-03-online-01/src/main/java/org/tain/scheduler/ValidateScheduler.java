@@ -186,7 +186,8 @@ public class ValidateScheduler {
 			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_MAPPER_VALIDATE_RES_S2J_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
+			/*
 			// Pretty Print
 			try {
 				JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
@@ -194,6 +195,16 @@ public class ValidateScheduler {
 				System.out.println("ONLINE >>>>> response json: " + json);
 				
 				retResponse = jsonNode.at("/retData").toString();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			*/
+		}
+		
+		if (Flag.flag) {
+			try {
+				Map<String,String> map = new ObjectMapper().readValue(response.getBody(), new TypeReference<Map<String,String>>(){});
+				retResponse = map.get("retData");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

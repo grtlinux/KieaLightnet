@@ -476,3 +476,102 @@ public class TestValidate {
 		return str;
 	}
 }
+
+
+/*
+
+	typedef struct _Validate_Req {
+		char[ 4] length                        ; // length    : 0491
+		char[ 4] division                      ; // division  : 0101
+		char[ 3] type                          ; // type      : REQ
+
+		char[20] sourceTransactionId           ; // source.transactionId
+		char[10] sourceOperatorCode            ; // source.operatorCode
+		char[10] sourceCountry                 ; // source.country
+		char[20] sourceSendAmount              ; // source.send.amount
+		char[10] sourceSendCurrency            ; // source.send.currency
+
+		char[20] senderFirstName               ; // sender.firstName
+		char[20] senderLastName                ; // sender.lastName
+		char[10] senderNationalityCountryCode  ; // sender.nationalityCountryCode
+		char[20] senderIdNumber                ; // sender.idNumber
+		char[20] senderAddressAddress          ; // sender.address.address
+		char[20] senderAddressCity             ; // sender.address.city
+		char[10] senderAddressCountryCode      ; // sender.address.countryCode
+		char[20] senderAddressPostalCode       ; // sender.address.postalCode
+		char[20] senderMobilePhoneNumber       ; // sender.mobilePhone.number
+		char[10] senderMobilePhoneCountryCode  ; // sender.mobilePhone.countryCode
+
+		char[20] destinationTransactionId      ; // destination.transactionId
+		char[10] destinationOperatorCode       ; // destination.operatorCode
+		char[10] destinationCountry            ; // destination.country
+		char[20] destinationWithdrawalId       ; // destination.withdrawalId
+		char[20] destinationReceiveAmount      ; // destination.receive.amount
+		char[10] destinationReceiveCurrency    ; // destination.receive.currency
+
+		char[20] receiverFirstName             ; // receiver.firstName
+		char[20] receiverLastName              ; // receiver.lastName
+		char[20] receiverBankCode              ; // receiver.bankCode
+		char[20] receiverAccountId             ; // receiver.accountId
+
+		char[20] deliveryMethod                ; // deliveryMethod
+		char[50] remark                        ; // remark
+	} Validate_Req;
+
+
+	typedef struct _Validate_Res {
+		char[ 4] length                             ; // length    : 0791
+		char[ 4] division                           ; // division  : 0102
+		char[ 3] type                               ; // type      : RES
+
+		char[20] dataSourceTransactionId            ; // datasourcetransactionId
+		char[10] dataSourceOperatorCode             ; // datasourceoperatorCode
+		char[10] dataSourceCountry                  ; // datasourcecountry
+		char[20] dataSourceSendAmount               ; // datasourcesendamount
+		char[10] dataSourceSendCurrency             ; // datasourcesendcurrency
+
+		char[20] dataSenderFirstName                ; // datasenderfirstName
+		char[20] dataSenderLastName                 ; // datasenderlastName
+		char[10] dataSenderNationalityCountryCode   ; // datasendernationalityCountryCode
+		char[20] dataSenderIdNumber                 ; // datasenderidNumber
+		char[20] dataSenderAddressAddress           ; // datasenderaddressaddress
+		char[20] dataSenderAddressCity              ; // datasenderaddresscity
+		char[10] dataSenderAddressCountryCode       ; // datasenderaddresscountryCode
+		char[20] dataSenderAddressPostalCode        ; // datasenderaddresspostalCode
+		char[20] dataSenderMobilePhoneNumber        ; // datasendermobilePhonenumber
+		char[10] dataSenderMobilePhoneCountryCode   ; // datasendermobilePhonecountryCode
+
+		char[20] dataDestinationTransactionId       ; // datadestinationtransactionId
+		char[10] dataDestinationOperatorCode        ; // datadestinationoperatorCode
+		char[10] dataDestinationCountry             ; // datadestinationcountry
+		char[20] dataDestinationWithdrawalId        ; // datadestinationwithdrawalId
+		char[20] dataDestinationReceiveAmount       ; // datadestinationreceiveamount
+		char[10] dataDestinationReceiveCurrency     ; // datadestinationreceivecurrency
+
+		char[20] dataReceiverFirstName              ; // datareceiverfirstName
+		char[20] dataReceiverLastName               ; // datareceiverlastName
+		char[20] dataReceiverBankCode               ; // datareceiverbankCode
+		char[20] dataReceiverAccountId              ; // datareceiveraccountId
+
+		char[20] dataDeliveryMethod                 ; // datadeliveryMethod
+		char[50] dataRemark                         ; // dataremark
+
+		char[20] dataFeeAmount                      ; // datafeeamount
+		char[10] dataFeeCurrency                    ; // datafeecurrency
+		char[20] dataFeeModel                       ; // datafeemodel
+		char[20] dataRateFromAmount                 ; // dataratefromamount
+		char[10] dataRateFromCurrency               ; // dataratefromcurrency
+		char[20] dataRateToAmount                   ; // dataratetoamount
+		char[10] dataRateToCurrency                 ; // dataratetocurrency
+
+		char[50] dataTransactionId                  ; // datatransactionId
+		char[20] dataStatus                         ; // datastatus
+
+		char[20] dataSaveReport                     ; // datasaveReport
+		char[30] dataRemittanceType                 ; // dataremittanceType
+
+		char[20] status                             ; // status
+		char[50] message                            ; // message
+	} Validate_Res;
+	
+*/

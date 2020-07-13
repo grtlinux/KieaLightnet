@@ -130,6 +130,7 @@ json:
 
   file:
     validateReqDummy.path: /KANG/json/lightnet/validate_req_dummy.json
+    commitReqDummy.path: /KANG/json/lightnet/commit_req_dummy.json
 
 
 ########################################################

@@ -51,10 +51,6 @@ public class CommitScheduler {
 			System.out.printf("ONLINE >>>>> 3. response data: [%s]\n", response);
 		}
 		
-		if (Flag.flag) {
-			System.out.printf("ONLINE >>>>> 9. response data: [%s]\n", response);
-		}
-
 		return response;
 	}
 
@@ -62,7 +58,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_VALIDATE_REQ_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/s2j";
+	private static String POST_MAPPER_COMMIT_REQ_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/s2j";
 	
 	private static String mapperHttpPostReq(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -82,7 +78,7 @@ public class CommitScheduler {
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
 			HttpEntity<Map<String,String>> reqHttpEntity = new HttpEntity<>(reqMap, reqHeaders);
 			
-			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_MAPPER_VALIDATE_REQ_S2J_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
+			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_MAPPER_COMMIT_REQ_S2J_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
 		}
 		
 		if (!Flag.flag) {
@@ -162,7 +158,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_VALIDATE_RES_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/j2s";
+	private static String POST_MAPPER_COMMIT_RES_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/j2s";
 	
 	private static String mapperHttpPostRes(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -187,10 +183,11 @@ public class CommitScheduler {
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
 			HttpEntity<Map<String,String>> reqHttpEntity = new HttpEntity<>(reqMap, reqHeaders);
 			
-			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_MAPPER_VALIDATE_RES_S2J_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
+			response = SkipSSLConfig.getRestTemplate(0).exchange(POST_MAPPER_COMMIT_RES_S2J_HTTP_URL, HttpMethod.POST, reqHttpEntity, String.class);
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
+			/*
 			// Pretty Print
 			try {
 				JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
@@ -198,6 +195,16 @@ public class CommitScheduler {
 				System.out.println("ONLINE >>>>> response json: " + json);
 				
 				retResponse = jsonNode.at("/retData").toString();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			*/
+		}
+		
+		if (Flag.flag) {
+			try {
+				Map<String,String> map = new ObjectMapper().readValue(response.getBody(), new TypeReference<Map<String,String>>(){});
+				retResponse = map.get("retData");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
