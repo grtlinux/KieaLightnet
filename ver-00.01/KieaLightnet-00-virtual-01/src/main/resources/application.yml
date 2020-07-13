@@ -12,7 +12,7 @@ spring:
       web-allow-others: true
   
   datasource:
-    url: jdbc:h2:mem:authdb
+    url: jdbc:h2:mem:virualdb
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -91,14 +91,14 @@ spring:
 logging:
   #file: /zlogs/application-dev.log
   file:
-    path: logs/
+    path: logs/virtual/
     # name: application-kiea.log
-    max-size: 1MB
+    max-size: 10MB
   pattern:
     # console: "%-4relative [%thread] %-5level %logger{35} - %msg%n"
     # console: "%d %-5level - %msg%n"
     console: "%d{HH:mm:ss} %-5level - %msg%n"
-    file: "%d %-5level [%-10thread] %-30logger{30} - %msg%n"
+    file: "%d %-5level [%-10thread] [%-30logger{30}] - %msg%n"
   level:
     root: info
     org.tain.controller.*: info
@@ -113,6 +113,7 @@ logging:
 lightnet:
   url: https://test-public.lightnetapis.io
   #url: http://localhost:8888
+  
   
 ########################################################
 json:
