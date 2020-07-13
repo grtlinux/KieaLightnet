@@ -38,9 +38,12 @@ public class StreamServerWorkerThread extends Thread {
 				String request = this.packet.getData();
 				String response = null;
 				
-				String switchString = request.substring(0, 4);
-				System.out.println(">>>>> switchString = [" + switchString + "]");
-				switch(switchString) {
+				String strLength   = request.substring(0, 4);
+				String strDivision = request.substring(4, 8);
+				String strType     = request.substring(8, 11);
+				System.out.printf(">>>>> [%s] [%s] [%s]", strLength, strDivision, strType);
+				
+				switch (strDivision) {
 				case "0101":
 					response = ValidateScheduler.process(request);
 					break;

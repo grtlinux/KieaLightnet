@@ -128,6 +128,8 @@ json:
 
     lightnet: src/main/resources/table/lightnet.json
 
+  file:
+    validateReqDummy.path: /KANG/json/lightnet/validate_req_dummy.json
 
 
 ########################################################

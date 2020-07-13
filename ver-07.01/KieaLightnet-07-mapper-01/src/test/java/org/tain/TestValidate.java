@@ -17,7 +17,7 @@ public class TestValidate {
 		if (!Flag.flag) test01();
 		if (Flag.flag) test02();
 		if (!Flag.flag) test03();
-		if (!Flag.flag) test04();
+		if (Flag.flag) test04();
 	}
 
 	private static void test00() throws Exception {
@@ -176,6 +176,9 @@ public class TestValidate {
 				
 				strValidateReq = sb.toString();
 			}
+			
+			//strValidateReq = "04910101REQ9974531076200937              KOR       1000.01             USD       NDBXMX              GYQMNB              KOR       idNumber            senderAddress       senderCity          THA       senderZipCode       881111111           66                            scb       THA                                               THB       SOPIDA              WANGKIATKUL         SICOTHBK            6032668977          account_deposit     This is SCB test remark                           ";
+			//strValidateReq = "04910101REQ9974531076200937              KOR2      1000.01             USD       NDBXMX              GYQMNB              KOR       idNumber            senderAddress       senderCity          THA       senderZipCode       881111111           66                            scb       THA                                               THB       SOPIDA              WANGKIATKUL         SICOTHBK            6032668977          account_deposit     This is SCB test remark                           ";
 			
 			ValidateReq dummyValidateReq = new ObjectMapper().readValue(new File("src/test/java/org/tain/validate_req_dummy.json"), ValidateReq.class);
 			if (Flag.flag) {
@@ -371,7 +374,7 @@ public class TestValidate {
 				sb.append(String.format("%-30s", nvl(validateRes.getData().getRemittanceType())));                            // data.remittanceType
 				
 				sb.append(String.format("%-20s", nvl(validateRes.getStatus())));                                              // status
-				sb.append(String.format("%-20s", nvl(validateRes.getMessage())));                                             // message
+				sb.append(String.format("%-50s", nvl(validateRes.getMessage())));                                             // message
 				
 				int length = 4 + sb.length();
 				sb.insert(0, String.format("%04d", length));
@@ -382,7 +385,9 @@ public class TestValidate {
 			}
 			
 			//strValidateRes = "07610102RES9974531076200937    hanwha    KOR       1000.0100           USD       NDBXMX              GYQMNB              KOR       idNumber            senderAddress       senderCity          THA       senderZipCode       881111111           66        D014017804533540    scb       THA                           31040.5700          THB       SOPIDA              WANGKIATKUL         SICOTHBK            6032668977          account_deposit                                                       0.7000              USD       included            1.0000              USD       31.0620             THB       62bbb4b8-fe03-40d2-6f30-92baf54da82d              PENDING                                 MESSAGING                     success             OK                  ";
-			//strValidateRes = "07610102RES9974531076200937    hanwha    KOR       1000.0100           USD       NDBXMX              GYQMNB              KOR       idNumber            senderAddress       senderCity          THA       senderZipCode       881111111           66        D014017804533540    scb       THA                           31040.5700          THB       SOPIDA              WANGKIATKUL         SICOTHBK            6032668977          account_deposit                                                       0.7000              USD       included            1.0000              USD       31.0620             THB       62bbb4b8-fe03-40d2-6f30-92baf54da82d              PENDING                                 MESSAGING                     success             OK                  ";
+			//strValidateRes = "07610102RES9974531076200937    hanwha    KOR2      1000.0100           USD       NDBXMX              GYQMNB              KOR       idNumber            senderAddress       senderCity          THA       senderZipCode       881111111           66        D014017804533540    scb       THA                           31040.5700          THB       SOPIDA              WANGKIATKUL         SICOTHBK            6032668977          account_deposit                                                       0.7000              USD       included            1.0000              USD       31.0620             THB       62bbb4b8-fe03-40d2-6f30-92baf54da82d              PENDING                                 MESSAGING                     success             OK                  ";
+			//strValidateRes = "07910102RES9974531076200937    hanwha    KOR       1000.0100           USD       NDBXMX              GYQMNB              KOR       idNumber            senderAddress       senderCity          THA       senderZipCode       881111111           66        D014017804533540    scb       THA                           31040.5700          THB       SOPIDA              WANGKIATKUL         SICOTHBK            6032668977          account_deposit                                                       0.7000              USD       included            1.0000              USD       31.0620             THB       62bbb4b8-fe03-40d2-6f30-92baf54da82d              PENDING                                 MESSAGING                     success             OK                                                ";
+			//strValidateRes = "07910102RES9974531076200937    hanwha    KOR2      1000.0100           USD       NDBXMX              GYQMNB              KOR       idNumber            senderAddress       senderCity          THA       senderZipCode       881111111           66        D014017804533540    scb       THA                           31040.5700          THB       SOPIDA              WANGKIATKUL         SICOTHBK            6032668977          account_deposit                                                       0.7000              USD       included            1.0000              USD       31.0620             THB       62bbb4b8-fe03-40d2-6f30-92baf54da82d              PENDING                                 MESSAGING                     success             OK                                                ";
 			
 			ValidateRes dummyValidateRes = new ObjectMapper().readValue(new File("src/test/java/org/tain/validate_res_dummy.json"), ValidateRes.class);
 			if (Flag.flag) {
@@ -446,7 +451,7 @@ public class TestValidate {
 				size = 30; dummyValidateRes.getData().setRemittanceType(nvl(strValidateRes.substring(offset, offset+size).trim())); offset += size;
 				
 				size = 20; dummyValidateRes.setStatus(nvl(strValidateRes.substring(offset, offset+size).trim())); offset += size;
-				size = 20; dummyValidateRes.setMessage(nvl(strValidateRes.substring(offset, offset+size).trim())); offset += size;
+				size = 50; dummyValidateRes.setMessage(nvl(strValidateRes.substring(offset, offset+size).trim())); offset += size;
 				
 				if (Flag.flag) {
 					System.out.printf(">>>>> %d %s %s\n", length, division, type);
@@ -463,7 +468,7 @@ public class TestValidate {
 	}
 	
 	private static String nvl(String str) {
-		if (str == null) {
+		if (str == null || "null".equals(str)) {
 			return "";
 		} else if ("".equals(str)) {
 			return null;
