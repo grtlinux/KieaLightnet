@@ -114,6 +114,8 @@ lightnet:
   url: https://test-public.lightnetapis.io
   #url: http://localhost:8888
   
+  #accessToken: 0000000000000000000000000
+  
   
 ########################################################
 json:
@@ -136,7 +138,7 @@ spring:
   
 server:
   port: 8888
-  servlet.context-path: /v0.1
+  servlet.context-path: /v1
 
 ---
 spring:

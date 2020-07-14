@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TestCallbackScheduler {
 
-	@Scheduled(fixedRate = 24 * 60 * 1000)
+	//@Scheduled(fixedRate = 24 * 60 * 1000)
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200628 >>>>> {}", CurrentInfo.get());
 		
