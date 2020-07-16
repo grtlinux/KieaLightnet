@@ -126,7 +126,7 @@ json:
 
     lightnet: src/main/resources/table/lightnet.json
 
-server.tcp.port: 9083
+# server.tcp.port: 9083
 
 
 ########################################################
