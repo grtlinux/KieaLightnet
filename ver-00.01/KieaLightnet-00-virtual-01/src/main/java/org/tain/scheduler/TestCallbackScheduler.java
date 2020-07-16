@@ -38,7 +38,7 @@ public class TestCallbackScheduler {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String POST_CALLBACK_HTTP_URL = "http://localhost:8082/callback/callback";
+	private String POST_CALLBACK_HTTP_URL = "http://localhost:18082/callback/callback";
 	
 	private void httpPostCallback() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

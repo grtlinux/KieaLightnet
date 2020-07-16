@@ -74,7 +74,7 @@ public class CallbackController {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private String POST_MAPPER_CALLBACK_REQ_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/callback/j2s";
+	private String POST_MAPPER_CALLBACK_REQ_S2J_HTTP_URL = "http://localhost:18086/v0.1/mapper/callback/j2s";
 	
 	private String mapperHttpPostReq(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -139,7 +139,7 @@ public class CallbackController {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private String POST_MAPPER_CALLBACK_RES_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/callback/s2j";
+	private String POST_MAPPER_CALLBACK_RES_S2J_HTTP_URL = "http://localhost:18086/v0.1/mapper/callback/s2j";
 	
 	private String mapperHttpPostRes(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());

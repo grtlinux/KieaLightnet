@@ -63,11 +63,11 @@ public class ListController {
 		
 		Map<String,Object> map = null;
 		if (Flag.flag) {
-			map = new ObjectMapper().readValue(new File(jsonResDataFilesList1), new TypeReference<Map<String,Object>>(){});
+			map = new ObjectMapper().readValue(new File(System.getenv("HOME") + jsonResDataFilesList1), new TypeReference<Map<String,Object>>(){});
 		}
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Request --------------------");
+			System.out.println("--------------- Response --------------------");
 			System.out.println(">>>>> Headers = " + headers);
 			System.out.println(">>>>> Body = " + map);
 		}

@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DetailController {
 
-	// http://localhost:18888/v1/remittances
+	// http://localhost:18888/v1/remittances.detail
 	/*
 		GET
 		
@@ -68,11 +68,11 @@ public class DetailController {
 		
 		Map<String,Object> map = null;
 		if (Flag.flag) {
-			map = new ObjectMapper().readValue(new File(jsonResDataFilesDetail), new TypeReference<Map<String,Object>>(){});
+			map = new ObjectMapper().readValue(new File(System.getenv("HOME") + jsonResDataFilesDetail), new TypeReference<Map<String,Object>>(){});
 		}
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Request --------------------");
+			System.out.println("--------------- Response --------------------");
 			System.out.println(">>>>> Headers = " + headers);
 			System.out.println(">>>>> Body = " + map);
 		}

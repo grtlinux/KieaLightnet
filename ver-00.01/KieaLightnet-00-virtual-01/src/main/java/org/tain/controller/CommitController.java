@@ -48,11 +48,11 @@ public class CommitController {
 		
 		Map<String,Object> map = null;
 		if (Flag.flag) {
-			map = new ObjectMapper().readValue(new File(jsonResDataFilesCommit), new TypeReference<Map<String,Object>>(){});
+			map = new ObjectMapper().readValue(new File(System.getenv("HOME") + jsonResDataFilesCommit), new TypeReference<Map<String,Object>>(){});
 		}
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Request --------------------");
+			System.out.println("--------------- Response --------------------");
 			System.out.println(">>>>> Headers = " + headers);
 			System.out.println(">>>>> Body = " + map);
 		}

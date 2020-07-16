@@ -37,7 +37,7 @@ public class ValidateController {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Request --------------------");
+			System.out.println("--------------- Response --------------------");
 			System.out.println(">>>>> Headers = " + httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + httpEntity.getBody());
 		}
@@ -48,7 +48,7 @@ public class ValidateController {
 		
 		Map<String,Object> map = null;
 		if (Flag.flag) {
-			map = new ObjectMapper().readValue(new File(jsonResDataFilesValidate), new TypeReference<Map<String,Object>>(){});
+			map = new ObjectMapper().readValue(new File(System.getenv("HOME") + jsonResDataFilesValidate), new TypeReference<Map<String,Object>>(){});
 		}
 		
 		if (Flag.flag) {

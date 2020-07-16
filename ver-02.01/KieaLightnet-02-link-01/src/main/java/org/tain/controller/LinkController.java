@@ -225,7 +225,7 @@ public class LinkController {
 	//private String GET_LIST_HTTPS_URL = "/v1/remittances";
 	private String GET_LIST1_HTTPS_URL = "/v1.1/remittances";
 	
-	@PostMapping(value = {"/list1"})
+	@PostMapping(value = {"/list10"})
 	public ResponseEntity<?> list1(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
@@ -294,7 +294,7 @@ public class LinkController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String POST_LOCAL_AUTH_HTTP_URL = "http://localhost:8081/v0.1/auth/auth";
+	private String POST_LOCAL_AUTH_HTTP_URL = "http://localhost:18081/v0.1/auth/auth";
 
 	private String getAccessToken(String subTitle) throws Exception {
 		Map<String,Object> resMap = null;

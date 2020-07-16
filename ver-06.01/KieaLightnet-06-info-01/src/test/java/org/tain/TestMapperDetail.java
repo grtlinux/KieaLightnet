@@ -32,7 +32,7 @@ public class TestMapperDetail {
 	///////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////
 	
-	private static String MAPPER_DETAIL_S2J_HTTPS_URL = "http://localhost:8086/mapper/detail/request/s2j";
+	private static String MAPPER_DETAIL_S2J_HTTPS_URL = "http://localhost:18086/mapper/detail/request/s2j";
 	
 	private static void requestStreamToJson() throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());

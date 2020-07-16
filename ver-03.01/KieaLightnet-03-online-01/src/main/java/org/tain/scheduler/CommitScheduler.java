@@ -58,7 +58,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_COMMIT_REQ_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/s2j";
+	private static String POST_MAPPER_COMMIT_REQ_S2J_HTTP_URL = "http://localhost:18086/v0.1/mapper/commit/s2j";
 	
 	private static String mapperHttpPostReq(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -108,7 +108,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_LINK_HTTP_URL = "http://localhost:8082/v0.1/link/commit";
+	private static String POST_LINK_HTTP_URL = "http://localhost:18082/v0.1/link/commit";
 	
 	private static String linkHttpPost(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -158,7 +158,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_COMMIT_RES_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/commit/j2s";
+	private static String POST_MAPPER_COMMIT_RES_S2J_HTTP_URL = "http://localhost:18086/v0.1/mapper/commit/j2s";
 	
 	private static String mapperHttpPostRes(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -240,7 +240,7 @@ public class CommitScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 
-	private String POST_BATCH_HTTP_URL = "http://localhost:8085/batch/list";
+	private String POST_BATCH_HTTP_URL = "http://localhost:18085/batch/list";
 	
 	public void httpPostBatch() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

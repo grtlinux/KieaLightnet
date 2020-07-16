@@ -37,7 +37,7 @@ public class StreamClientWorkerThread extends Thread {
 					System.out.println(">>>>> switchNumber = " + switchNumber);
 					switch(switchNumber) {
 					case 0:
-						request = String.format("0101[%d] REQUEST Hello, Batch!", index);  // 8085/batch/list
+						request = String.format("0101[%d] REQUEST Hello, Batch!", index);  // 18085/batch/list
 						break;
 					case 1:
 						request = String.format("0201[%d] REQUEST Hello, Detail!", index);  // detail

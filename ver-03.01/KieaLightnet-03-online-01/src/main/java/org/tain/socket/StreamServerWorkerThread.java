@@ -70,7 +70,7 @@ public class StreamServerWorkerThread extends Thread {
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
 	/*
-	private String POST_DETAIL_HTTP_URL = "http://localhost:8082/link/detail";
+	private String POST_DETAIL_HTTP_URL = "http://localhost:18082/link/detail";
 	
 	private void httpPostDetail() throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
@@ -122,7 +122,7 @@ public class StreamServerWorkerThread extends Thread {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	/*
-	private String POST_LIST_HTTP_URL = "http://localhost:8082/link/list";
+	private String POST_LIST_HTTP_URL = "http://localhost:18082/link/list";
 	
 	private void httpPostList() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

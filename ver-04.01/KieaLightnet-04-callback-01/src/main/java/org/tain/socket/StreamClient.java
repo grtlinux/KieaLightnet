@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 public class StreamClient {
 
 	private static final String host = "127.0.0.1";  // localhost
-	private static final int port = 9092;
+	private static final int port = 19092;
 	private StreamClientWorkerThread thread = null;
 	
 	@Bean

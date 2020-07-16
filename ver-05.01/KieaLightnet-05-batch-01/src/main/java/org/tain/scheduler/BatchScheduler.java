@@ -44,7 +44,7 @@ public class BatchScheduler {
 	////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////
 	
-	private String LIST_HTTP_URL = "http://localhost:8082/link/list";
+	private String LIST_HTTP_URL = "http://localhost:18082/link/list";
 	
 	public ResponseEntity<?> httpPostList() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

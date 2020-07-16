@@ -111,8 +111,8 @@ logging:
 
 ########################################################
 lightnet:
-  url: https://test-public.lightnetapis.io
-  #url: http://localhost:18888
+  #url: https://test-public.lightnetapis.io
+  url: http://localhost:18888
   
 ########################################################
 json:

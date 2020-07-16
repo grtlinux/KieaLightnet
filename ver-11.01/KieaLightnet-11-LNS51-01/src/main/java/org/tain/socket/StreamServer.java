@@ -23,7 +23,7 @@ public class StreamServer {
 		
 		if (Flag.flag) new Thread("StreamServer") {
 			// StreamServer Thread
-			private static final int LISTEN_PORT = 9095;
+			private static final int LISTEN_PORT = 19095;
 			private ServerSocket serverSocket = null;
 			
 			@Override

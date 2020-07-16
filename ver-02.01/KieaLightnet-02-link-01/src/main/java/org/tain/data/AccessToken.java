@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AccessToken {
 
-	private static String POST_LOCAL_AUTH_HTTP_URL = "http://localhost:8081/v0.1/auth/auth";
+	private static String POST_LOCAL_AUTH_HTTP_URL = "http://localhost:18081/v0.1/auth/auth";
 
 	public static String getAccessToken(String subTitle) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());

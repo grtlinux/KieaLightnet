@@ -125,7 +125,7 @@ json:
 
     lightnet: src/main/resources/table/lightnet.json
 
-server.tcp.port: 9083
+server.tcp.port: 19083
 
 
 ########################################################
@@ -137,7 +137,7 @@ spring:
   profiles: local-http
   
 server:
-  port: 8091
+  port: 18091
   servlet.context-path: /v0.1
 
 ---

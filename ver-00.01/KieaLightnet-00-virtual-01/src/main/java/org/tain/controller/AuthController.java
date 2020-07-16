@@ -24,6 +24,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthController {
 
+	// http://localhost:18888/v1/auth
+	
 	@Value("${lightnet.accessToken:12345678901234567890abcde}")
 	private String lightnetAccessToken;
 	
@@ -47,7 +49,7 @@ public class AuthController {
 		map.put("message", "OK");
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Request --------------------");
+			System.out.println("--------------- Response --------------------");
 			System.out.println(">>>>> Headers = " + headers);
 			System.out.println(">>>>> Body = " + map);
 		}

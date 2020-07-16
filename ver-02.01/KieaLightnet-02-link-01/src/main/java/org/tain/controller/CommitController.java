@@ -1,5 +1,6 @@
 package org.tain.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,18 +24,21 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/link/commit"})
+@RequestMapping(value = {"/link"})
 @Slf4j
 public class CommitController {
 
+	@Value("${lightnet.url}")
+	private String lightnetUrl;
+
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String POST_COMMIT_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.commit";
+	private String POST_COMMIT_HTTPS_URL = "/v1.1/remittances.commit";
 	
-	@PostMapping(value = {""})
-	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) {
+	@PostMapping(value = {"/commit"})
+	public ResponseEntity<?> commit(HttpEntity<String> _httpEntity) {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
 		String data = null;
@@ -74,7 +78,7 @@ public class CommitController {
 				headers.set("Authorization", "Bearer " + accessToken);
 				HttpEntity<String> httpEntity = new HttpEntity<>(data, headers);
 				
-				response = SkipSSLConfig.getRestTemplate(1).exchange(POST_COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
+				response = SkipSSLConfig.getRestTemplate(1).exchange(this.lightnetUrl + POST_COMMIT_HTTPS_URL, HttpMethod.POST, httpEntity, String.class);
 				System.out.println(">>>>> response.getBody() = " + response.getBody());
 				retJson = response.getBody();
 			} catch (HttpServerErrorException e) {

@@ -41,19 +41,19 @@ public class TestOnlineScheduler {
 			
 			switch (switchNumber) {
 			case 0:
-				httpPostDetail();     // http://localhost:8082/link/detail
+				httpPostDetail();     // http://localhost:18082/link/detail
 				break;
 			case 1:
-				httpPostList();       // http://localhost:8085/batch/list
+				httpPostList();       // http://localhost:18085/batch/list
 				break;
 			case 2:
-				if (!Flag.flag) httpPostCallback();   // http://localhost:8082/callback/callback
+				if (!Flag.flag) httpPostCallback();   // http://localhost:18082/callback/callback
 				break;
 			case 3:
-				if (!Flag.flag) httpPostValidate();   // http://localhost:8082/link/validate
+				if (!Flag.flag) httpPostValidate();   // http://localhost:18082/link/validate
 				break;
 			case 4:
-				if (!Flag.flag) httpPostCommit();     // http://localhost:8082/link/commit
+				if (!Flag.flag) httpPostCommit();     // http://localhost:18082/link/commit
 				break;
 			case 5:
 				if (!Flag.flag) httpPostAuth();       // https://test-public.lightnetapis.io/v1/auth
@@ -114,7 +114,7 @@ public class TestOnlineScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private String POST_DETAIL_HTTP_URL = "http://localhost:8082/link/detail";
+	private String POST_DETAIL_HTTP_URL = "http://localhost:18082/link/detail";
 	
 	private void httpPostDetail() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -174,8 +174,8 @@ public class TestOnlineScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	//private String POST_LIST_HTTP_URL = "http://localhost:8085/batch/list";
-	private String POST_LIST_HTTP_URL = "http://localhost:8082/link/list";
+	//private String POST_LIST_HTTP_URL = "http://localhost:18085/batch/list";
+	private String POST_LIST_HTTP_URL = "http://localhost:18082/link/list";
 	
 	private void httpPostList() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -232,7 +232,7 @@ public class TestOnlineScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private String POST_CALLBACK_HTTP_URL = "http://localhost:8082/callback/callback";
+	private String POST_CALLBACK_HTTP_URL = "http://localhost:18082/callback/callback";
 	
 	private void httpPostCallback() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -290,7 +290,7 @@ public class TestOnlineScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private String POST_VALIDATE_HTTP_URL = "http://localhost:8082/link/validate";
+	private String POST_VALIDATE_HTTP_URL = "http://localhost:18082/link/validate";
 	
 	private void httpPostValidate() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
@@ -384,7 +384,7 @@ public class TestOnlineScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private String POST_COMMIT_HTTP_URL = "http://localhost:8082/link/commit";
+	private String POST_COMMIT_HTTP_URL = "http://localhost:18082/link/commit";
 	
 	private void httpPostCommit() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

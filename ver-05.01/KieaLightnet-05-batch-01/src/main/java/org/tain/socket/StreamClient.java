@@ -16,7 +16,7 @@ public class StreamClient {
 
 	private static final String host = "127.0.0.1";
 	//private static final String host = "localhost";
-	private static final int port = 9095;
+	private static final int port = 19095;
 	private StreamClientWorkerThread thread = null;
 	
 	@Bean

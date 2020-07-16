@@ -110,8 +110,8 @@ logging:
 
 ########################################################
 lightnet:
-  url: https://test-public.lightnetapis.io
-  #url: http://localhost:8888
+  #url: https://test-public.lightnetapis.io
+  url: http://localhost:18888
   
 
 ########################################################
@@ -134,7 +134,7 @@ spring:
   profiles: local-http
   
 server:
-  port: 8082
+  port: 18082
   servlet.context-path: /v0.1
 
 ---

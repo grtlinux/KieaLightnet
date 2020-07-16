@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BatchController {
 
-	private String POST_LINK_HTTP_URL = "http://localhost:8082/v0.1/link/list";
+	private String POST_LINK_HTTP_URL = "http://localhost:18082/v0.1/link/list";
 
 	@PostMapping(value = {""})
 	public ResponseEntity<?> list(HttpEntity<String> _httpEntity) throws Exception {

@@ -62,7 +62,7 @@ public class ListScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_LIST_REQ_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/list/s2j";
+	private static String POST_MAPPER_LIST_REQ_S2J_HTTP_URL = "http://localhost:18086/v0.1/mapper/list/s2j";
 	
 	private static String mapperHttpPostReq(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -112,7 +112,7 @@ public class ListScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_LINK_HTTP_URL = "http://localhost:8085/v0.1/batch/list";
+	private static String POST_LINK_HTTP_URL = "http://localhost:18085/v0.1/batch/list";
 	
 	private static String linkHttpPost(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -162,7 +162,7 @@ public class ListScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	
-	private static String POST_MAPPER_LIST_RES_S2J_HTTP_URL = "http://localhost:8086/v0.1/mapper/list/j2s";
+	private static String POST_MAPPER_LIST_RES_S2J_HTTP_URL = "http://localhost:18086/v0.1/mapper/list/j2s";
 	
 	private static String mapperHttpPostRes(String request) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -233,7 +233,7 @@ public class ListScheduler {
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 
-	private String POST_BATCH_HTTP_URL = "http://localhost:8085/batch/list";
+	private String POST_BATCH_HTTP_URL = "http://localhost:18085/batch/list";
 	
 	public void httpPostBatch() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());

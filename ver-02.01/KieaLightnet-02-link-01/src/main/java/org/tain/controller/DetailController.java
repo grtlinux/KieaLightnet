@@ -2,6 +2,7 @@ package org.tain.controller;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -30,19 +31,22 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/link/detail"})
+@RequestMapping(value = {"/link"})
 @Slf4j
 public class DetailController {
 
+	@Value("${lightnet.url}")
+	private String lightnetUrl;
+
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 
-	private String GET_DETAIL_HTTPS_URL = "https://test-public.lightnetapis.io/v1/remittances.detail";
+	private String GET_DETAIL_HTTPS_URL = "/v1/remittances.detail";
 	//private String GET_DETAIL_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances.detail";
 	
-	@PostMapping(value = {""})
-	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) {
+	@PostMapping(value = {"/detail"})
+	public ResponseEntity<?> detail(HttpEntity<String> _httpEntity) {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
 		MultiValueMap<String, String> reqMap = new LinkedMultiValueMap<>();
@@ -85,7 +89,7 @@ public class DetailController {
 				headers.set("Authorization", "Bearer " + accessToken);
 				HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 				
-				UriComponents builder = UriComponentsBuilder.fromHttpUrl(GET_DETAIL_HTTPS_URL)
+				UriComponents builder = UriComponentsBuilder.fromHttpUrl(this.lightnetUrl + GET_DETAIL_HTTPS_URL)
 						.queryParams(reqMap)
 						.build(true);
 				
