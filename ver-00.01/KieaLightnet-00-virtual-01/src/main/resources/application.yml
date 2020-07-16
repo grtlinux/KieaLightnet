@@ -101,7 +101,7 @@ logging:
     file: "%d %-5level [%-10thread] [%-30logger{30}] - %msg%n"
   level:
     root: info
-    org.tain.controller.*: info
+    org.tain.*: info
     # show sql statement
     org.hibernate.SQL: info
     org.hibernate.type: info
@@ -114,7 +114,7 @@ lightnet:
   url: https://test-public.lightnetapis.io
   #url: http://localhost:8888
   
-  #accessToken: 0000000000000000000000000
+  accessToken: "0000000000000000000000000"
   
   
 ########################################################
@@ -126,6 +126,13 @@ json:
 
     lightnet: src/main/resources/table/lightnet.json
 
+  res-data:
+    files:
+      list1: src/main/resources/json/list_res_v1.json
+      list1_1: src/main/resources/json/list_res_v1.1.json
+      detail: src/main/resources/json/detail_res.json
+      validate: src/main/resources/json/validate_res2.json
+      commit: src/main/resources/json/commit_res2.json
 
 
 ########################################################
@@ -137,7 +144,7 @@ spring:
   profiles: local-http
   
 server:
-  port: 8888
+  port: 18888
   servlet.context-path: /v1
 
 ---
