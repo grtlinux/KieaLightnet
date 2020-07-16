@@ -10,14 +10,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 import org.tain.config.SkipSSLConfig;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -100,11 +96,12 @@ public class LinkController {
 		
 		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
 	}
-
+	
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	/*
 	private String POST_VALIDATE0_HTTPS_URL = "/v1.1/remittances.validate";
 	
 	@PostMapping(value = {"/validate0"})
@@ -153,11 +150,13 @@ public class LinkController {
 		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
+	*/
 	
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	/*
 	private String GET_LIST_HTTPS_URL = "/v1/remittances";
 	//private String GET_LIST_HTTPS_URL = "/v1.1/remittances";
 	
@@ -217,11 +216,13 @@ public class LinkController {
 		
 		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
 	}
+	*/
 	
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	/*
 	//private String GET_LIST_HTTPS_URL = "/v1/remittances";
 	private String GET_LIST1_HTTPS_URL = "/v1.1/remittances";
 	
@@ -281,6 +282,7 @@ public class LinkController {
 		
 		return new ResponseEntity<>(response.getBody(), HttpStatus.OK);
 	}
+	*/
 	
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////

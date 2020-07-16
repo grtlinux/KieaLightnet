@@ -137,7 +137,7 @@ public class ListController {
 	private String GET_LIST1_HTTPS_URL = "/v1.1/remittances";
 	//private String GET_LIST_HTTPS_URL = "https://test-public.lightnetapis.io/v1.1/remittances";
 	
-	@PostMapping(value = {"/_list1"})
+	@PostMapping(value = {"/list1"})
 	public ResponseEntity<?> list1(HttpEntity<String> _httpEntity) {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		

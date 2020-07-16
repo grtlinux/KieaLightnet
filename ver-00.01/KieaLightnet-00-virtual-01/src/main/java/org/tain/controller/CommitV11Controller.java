@@ -1,4 +1,4 @@
-package org.tain.controller.v1_1;
+package org.tain.controller;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -23,21 +23,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/v1.1/remittances.validate"})
+@RequestMapping(value = {"/v1.1/remittances.commit"})
 @Slf4j
-public class ValidateController {
+public class CommitV11Controller {
 
-	// http://localhost:18888/v1/remittances.validate
+	// http://localhost:18888/v1.1/remittances.commit
 	
-	@Value("${json.res-data.files.validate}")
-	private String jsonResDataFilesValidate;
+	@Value("${json.res-data.files.commit}")
+	private String jsonResDataFilesCommit;
 
 	@PostMapping(value = {""})
 	public ResponseEntity<?> list(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
-			System.out.println("--------------- v1.1 Response --------------------");
+			System.out.println("--------------- v1.1 Request --------------------");
 			System.out.println(">>>>> Headers = " + httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + httpEntity.getBody());
 		}
@@ -48,11 +48,11 @@ public class ValidateController {
 		
 		Map<String,Object> map = null;
 		if (Flag.flag) {
-			map = new ObjectMapper().readValue(new File(System.getenv("HOME") + jsonResDataFilesValidate), new TypeReference<Map<String,Object>>(){});
+			map = new ObjectMapper().readValue(new File(System.getenv("HOME") + jsonResDataFilesCommit), new TypeReference<Map<String,Object>>(){});
 		}
 		
 		if (Flag.flag) {
-			System.out.println("--------------- v1.1 Request --------------------");
+			System.out.println("--------------- v1.1 Response --------------------");
 			System.out.println(">>>>> Headers = " + headers);
 			System.out.println(">>>>> Body = " + map);
 		}
@@ -60,3 +60,4 @@ public class ValidateController {
 		return new ResponseEntity<>(map, headers, HttpStatus.OK);
 	}
 }
+

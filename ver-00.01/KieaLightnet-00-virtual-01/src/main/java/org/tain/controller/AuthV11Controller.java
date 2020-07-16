@@ -1,7 +1,7 @@
-package org.tain.controller.v1_1;
+package org.tain.controller;
 
-import java.io.File;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -17,23 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/v1.1/remittances.commit"})
+@RequestMapping(value = {"/v1.1/auth"})
 @Slf4j
-public class CommitController {
+public class AuthV11Controller {
 
-	// http://localhost:18888/v1.1/remittances.commit
+	// http://localhost:18888/v1.1/auth
 	
-	@Value("${json.res-data.files.commit}")
-	private String jsonResDataFilesCommit;
-
+	@Value("${lightnet.accessToken:12345678901234567890abcde}")
+	private String lightnetAccessToken;
+	
 	@PostMapping(value = {""})
-	public ResponseEntity<?> list(HttpEntity<String> httpEntity) throws Exception {
+	public ResponseEntity<?> auth(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
@@ -45,11 +42,11 @@ public class CommitController {
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
 		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		//headers.add("Content-Type", "application/json; charset=UTF-8");
+		headers.add("AccessToken", this.lightnetAccessToken);
 		
-		Map<String,Object> map = null;
-		if (Flag.flag) {
-			map = new ObjectMapper().readValue(new File(System.getenv("HOME") + jsonResDataFilesCommit), new TypeReference<Map<String,Object>>(){});
-		}
+		Map<String,Object> map = new HashMap<>();
+		map.put("status", "success");
+		map.put("message", "OK");
 		
 		if (Flag.flag) {
 			System.out.println("--------------- v1.1 Response --------------------");
@@ -60,4 +57,3 @@ public class CommitController {
 		return new ResponseEntity<>(map, headers, HttpStatus.OK);
 	}
 }
-

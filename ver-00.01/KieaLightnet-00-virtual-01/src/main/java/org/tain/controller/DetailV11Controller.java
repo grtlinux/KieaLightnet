@@ -1,4 +1,4 @@
-package org.tain.controller.v1_1;
+package org.tain.controller;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(value = {"/v1.1/remittances.detail"})
 @Slf4j
-public class DetailController {
+public class DetailV11Controller {
 
 	// http://localhost:18888/v1/remittances.detail
 	/*
