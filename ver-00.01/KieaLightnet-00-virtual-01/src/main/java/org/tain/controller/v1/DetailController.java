@@ -1,4 +1,4 @@
-package org.tain.controller;
+package org.tain.controller.v1;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/remittances.detail"})
+@RequestMapping(value = {"/v1/remittances.detail"})
 @Slf4j
 public class DetailController {
 
@@ -57,7 +57,7 @@ public class DetailController {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Request --------------------");
+			System.out.println("--------------- v1 Request --------------------");
 			System.out.println(">>>>> Headers = " + httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + httpEntity.getBody());
 		}
@@ -72,7 +72,7 @@ public class DetailController {
 		}
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Response --------------------");
+			System.out.println("--------------- v1 Response --------------------");
 			System.out.println(">>>>> Headers = " + headers);
 			System.out.println(">>>>> Body = " + map);
 		}

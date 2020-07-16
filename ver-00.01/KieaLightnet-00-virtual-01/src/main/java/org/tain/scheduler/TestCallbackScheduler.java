@@ -91,11 +91,5 @@ public class TestCallbackScheduler {
 			String json = jsonNode.toPrettyString();
 			System.out.println(">>>>> json: " + json);
 		}
-		
-		if (Flag.flag) {
-			/*
-			 * 배치 파일 생성과 AP에 전달 진행
-			 */
-		}
 	}
 }

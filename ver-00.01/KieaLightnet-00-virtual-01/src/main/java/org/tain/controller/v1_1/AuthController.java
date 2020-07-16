@@ -1,4 +1,4 @@
-package org.tain.controller;
+package org.tain.controller.v1_1;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -20,11 +20,11 @@ import org.tain.utils.Flag;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/auth"})
+@RequestMapping(value = {"/v1.1/auth"})
 @Slf4j
 public class AuthController {
 
-	// http://localhost:18888/v1/auth
+	// http://localhost:18888/v1.1/auth
 	
 	@Value("${lightnet.accessToken:12345678901234567890abcde}")
 	private String lightnetAccessToken;
@@ -34,7 +34,7 @@ public class AuthController {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Request --------------------");
+			System.out.println("--------------- v1.1 Request --------------------");
 			System.out.println(">>>>> Headers = " + httpEntity.getHeaders());
 			System.out.println(">>>>> Body = " + httpEntity.getBody());
 		}
@@ -49,7 +49,7 @@ public class AuthController {
 		map.put("message", "OK");
 		
 		if (Flag.flag) {
-			System.out.println("--------------- Response --------------------");
+			System.out.println("--------------- v1.1 Response --------------------");
 			System.out.println(">>>>> Headers = " + headers);
 			System.out.println(">>>>> Body = " + map);
 		}

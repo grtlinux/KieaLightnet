@@ -145,7 +145,7 @@ spring:
   
 server:
   port: 18888
-  servlet.context-path: /v1
+  #servlet.context-path: /v1
 
 ---
 spring:
