@@ -125,6 +125,8 @@
 							<td></td>
 							<td>
 								<button id="btnTransfer" type="button" class="btn btn-primary">Transfer</button>
+								<button id="btnCopyRequest" type="button" class="btn btn-primary">Copy Request</button>
+								<button id="btnCopyResponse" type="button" class="btn btn-primary">Copy Response</button>
 							</td>
 						</tr>
 						<tr>
@@ -185,6 +187,20 @@
 		$('#btnClose').click(function() {
 			//alert('Hello btnClose');
 			$('#line_resRetJson').val($('#modal_resRetJson').val());
+		});
+		$('#btnCopyRequest').click(function() {
+			//alert('Hello btnCopyRequest');
+			var copyText = document.getElementById("modal_reqParameters");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopyResponse').click(function() {
+			//alert('Hello btnCopyResponse');
+			var copyText = document.getElementById("modal_resRetJson");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
 		});
 	</script>
 	<script th:if="!${line?.id}">
