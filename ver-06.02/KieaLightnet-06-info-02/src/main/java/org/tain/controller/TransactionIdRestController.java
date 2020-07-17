@@ -44,8 +44,9 @@ public class TransactionIdRestController {
 			transactionId.append("HW");
 			transactionId.append(now.format(DateTimeFormatter.ofPattern("yyMMddHHmm")));
 			transactionId.append("A");
-			transactionId.append(String.valueOf(this.random.nextInt(10)));
 			transactionId.append(now.format(DateTimeFormatter.ofPattern("ss")));
+			transactionId.append(String.valueOf(this.random.nextInt(10)));
+			
 			if (Flag.flag) System.out.println(">>>>> transactionId = [" + transactionId.toString() + "]");
 		}
 		
