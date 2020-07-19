@@ -1,6 +1,11 @@
 
 
 
+server:
+
+  port: 18087
+  servlet.context-path: /v0.2
+
 
 spring:
 
@@ -62,13 +67,6 @@ logging:
     org.hibernate.SQL: info
     org.hibernate.type: info
     org.hibernate.type.descriptor.sql.BasicBinder: trace
-
-
-server:
-
-  port: 18087
-  servlet.context-path: /v0.2
-
 
 # -----------------------------------------------------------
 
