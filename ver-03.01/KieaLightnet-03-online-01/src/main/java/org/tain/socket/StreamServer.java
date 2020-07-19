@@ -35,6 +35,7 @@ public class StreamServer {
 					while (true) {
 						Socket socket = this.serverSocket.accept();   // blocking
 						log.info("KANG-20200623 >>>>> event a client connection with port={}.....", LISTEN_PORT);
+						System.out.println(">>>>>  Server Connection is OK!!!");
 						new StreamServerWorkerThread(socket).start();
 						
 						Sleep.run(1000);

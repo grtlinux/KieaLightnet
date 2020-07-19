@@ -29,7 +29,7 @@ public class StreamClient {
 			try {
 				socket = new Socket();
 				socket.connect(new InetSocketAddress(host, port));
-				System.out.println(">>>>>  Connection is OK!!!");
+				System.out.println(">>>>>  Client Connection is OK!!!");
 				
 				this.thread = new StreamClientWorkerThread(socket);
 				this.thread.start();

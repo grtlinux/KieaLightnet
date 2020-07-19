@@ -36,11 +36,12 @@ public class StreamServerWorkerThread extends Thread {
 				this.packet = this.streamPacket.recvPacket();
 				if (Flag.flag) System.out.println("SERVER >>>>> " + this.packet);
 				
+				int length = this.packet.getLength();
 				String request = this.packet.getData();
-				String strLength   = request.substring(0, 4);
-				String strDivision = request.substring(4, 8);
-				String strType     = request.substring(8, 11);
-				System.out.printf(">>>>> [%s] [%s] [%s]", strLength, strDivision, strType);
+				String strDivision = request.substring(0, 4);
+				String strType     = request.substring(4, 7);
+				String strContent  = request.substring(7);
+				System.out.printf(">>>>> [%04d] [%s] [%s] [%s]", length, strDivision, strType, strContent);
 				
 				String response = null;
 				switch (strDivision) {
@@ -52,6 +53,7 @@ public class StreamServerWorkerThread extends Thread {
 					break;
 				case "0301":
 					response = DetailScheduler.process(request);
+					//response = "00200302RES.DETAIL..";
 					break;
 				case "0401":
 					response = ListScheduler.process(request);
