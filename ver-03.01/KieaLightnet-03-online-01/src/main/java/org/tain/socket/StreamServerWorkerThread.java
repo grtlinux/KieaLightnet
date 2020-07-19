@@ -37,13 +37,12 @@ public class StreamServerWorkerThread extends Thread {
 				if (Flag.flag) System.out.println("SERVER >>>>> " + this.packet);
 				
 				String request = this.packet.getData();
-				String response = null;
-				
 				String strLength   = request.substring(0, 4);
 				String strDivision = request.substring(4, 8);
 				String strType     = request.substring(8, 11);
 				System.out.printf(">>>>> [%s] [%s] [%s]", strLength, strDivision, strType);
 				
+				String response = null;
 				switch (strDivision) {
 				case "0101":
 					response = ValidateScheduler.process(request);

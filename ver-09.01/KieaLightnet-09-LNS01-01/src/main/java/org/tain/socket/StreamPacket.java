@@ -82,9 +82,11 @@ public class StreamPacket {
 		try {
 			this.packet = new Packet();
 			this.packet.setData(data);
-			this.packet.setLength(data.length() + DEFAULT_LENGTH_SIZE);
+			this.packet.setLength(data.length());
 			
-			byte[] bytPacket = String.format("%0" + DEFAULT_LENGTH_SIZE + "d%s", this.packet.getLength(), this.packet.getData()).getBytes();
+			//byte[] bytPacket = String.format("%0" + DEFAULT_LENGTH_SIZE + "d%s", this.packet.getLength(), this.packet.getData()).getBytes();
+			// KANG-20200719: data에 이미 길이항목 포함
+			byte[] bytPacket = this.packet.getData().getBytes();
 			int nsend = this.send(bytPacket);
 			if (nsend != this.packet.getLength()) {
 				throw new IOException("ERROR: wrong send....");
