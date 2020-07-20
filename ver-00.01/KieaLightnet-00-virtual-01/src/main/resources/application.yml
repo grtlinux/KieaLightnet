@@ -21,7 +21,11 @@ spring:
     show-sql: true
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
-    hibernate.ddl-auto: update
+    #hibernate.ddl-auto: none         # 아무것도 실행하지 않는다.(대부분의 DB에서 기본)
+    #hibernate.ddl-auto: create-drop  # SessionFactory가 시작될 때 drop및 생성을 실행하고, SessionFactory가 종료될 때 drop을 실행한다.(in-memory DB 의 경우 기본값)
+    #hibernate.ddl-auto: create       # SessionFactory가 시작될 때 데이터베이스 drop을 실행하고 생성된 DDL을 실행한다.
+    hibernate.ddl-auto: update       # 변경된 스키마를 적용한다.
+    #hibernate.ddl-auto: validate     # 변경된 스키마가 있다면 변경점을 출력하고 어플리케이션을 종료한다.
   
   thymeleaf:
     enabled: true
@@ -89,16 +93,24 @@ spring:
 # 
 #########################################################
 logging:
-  #file: /zlogs/application-dev.log
+  # config: classpath:logback-spring.xml
+  # file: /zlogs/application-dev.log
   file:
+    # filenamePattern: myfile.%d{yy-MM-dd}.log
     path: logs/virtual/
     # name: application-kiea.log
     max-size: 10MB
+    max-history: 10
+    
   pattern:
     # console: "%-4relative [%thread] %-5level %logger{35} - %msg%n"
     # console: "%d %-5level - %msg%n"
-    console: "%d{HH:mm:ss} %-5level - %msg%n"
-    file: "%d %-5level [%-10thread] [%-30logger{30}] - %msg%n"
+    # console: "%d{HH:mm:ss} %-5level - %msg%n"
+    console: "%clr(%d{HH:mm:ss}){magenta} %p - %msg%n"
+    # console: "%black(%d{ISO8601}) %highlight(%-5level) %p [%blue(%t{15})] %yellow(%C{1.}) - %msg%n%throwable"
+    # console: "%black(%d{ISO8601}) %highlight(%-5level) %p ${PID:-} [%blue(%15.15t{15})] [%yellow(%30.30C{1.} #%-4.4L)] - %msg%n%throwable"
+    file: "%d %-5level [%-10.10thread] [%-30.30logger{29}] - %msg%n"
+
   level:
     root: info
     org.tain.*: info
@@ -107,6 +119,9 @@ logging:
     org.hibernate.type: info
     # show sql values
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+    # -------------------
+    org.thymeleaf: info
+    org.h2.server.web: info
 
 
 ########################################################

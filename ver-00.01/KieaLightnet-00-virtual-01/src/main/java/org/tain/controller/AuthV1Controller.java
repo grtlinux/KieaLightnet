@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,7 @@ public class AuthV1Controller {
 	@Value("${lightnet.accessToken:12345678901234567890abcde}")
 	private String lightnetAccessToken;
 	
+	@CrossOrigin(origins = {"http://localhost:9000"})
 	@PostMapping(value = {""})
 	public ResponseEntity<?> auth(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
