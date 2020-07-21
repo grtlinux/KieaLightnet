@@ -19,7 +19,7 @@ spring:
   
   datasource:
     hikari:
-      jdbc-url: jdbc:h2:mem:testdb         # in-memory db
+      jdbc-url: jdbc:h2:mem:adapterdb         # in-memory db
       driver-class-name: org.h2.Driver
       username: sa
       password:
