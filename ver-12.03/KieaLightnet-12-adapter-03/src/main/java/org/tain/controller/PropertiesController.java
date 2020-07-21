@@ -36,18 +36,18 @@ public class PropertiesController {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			System.out.println("--------------- v1 Request --------------------");
-			System.out.println(">>>>> Headers = " + httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + httpEntity.getBody());
+			log.info("--------------- v1 Request --------------------");
+			log.info(">>>>> Headers = " + httpEntity.getHeaders());
+			log.info(">>>>> Body = " + httpEntity.getBody());
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
 		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		
 		if (Flag.flag) {
-			System.out.println("--------------- v1 Response --------------------");
-			System.out.println(">>>>> Headers = " + headers);
-			System.out.println(">>>>> Body = " + this.lnsEnvBaseProperties);
+			log.info("--------------- v1 Response --------------------");
+			log.info(">>>>> Headers = " + headers);
+			log.info(">>>>> Body = " + this.lnsEnvBaseProperties);
 		}
 		
 		return new ResponseEntity<>(this.lnsEnvBaseProperties, headers, HttpStatus.OK);
@@ -66,18 +66,18 @@ public class PropertiesController {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			System.out.println("--------------- v1 Request --------------------");
-			System.out.println(">>>>> Headers = " + httpEntity.getHeaders());
-			System.out.println(">>>>> Body = " + httpEntity.getBody());
+			log.info("--------------- v1 Request --------------------");
+			log.info(">>>>> Headers = " + httpEntity.getHeaders());
+			log.info(">>>>> Body = " + httpEntity.getBody());
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
 		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		
 		if (Flag.flag) {
-			System.out.println("--------------- v1 Response --------------------");
-			System.out.println(">>>>> Headers = " + headers);
-			System.out.println(">>>>> Body = " + this.lnsEnvJsonProperties);
+			log.info("--------------- v1 Response --------------------");
+			log.info(">>>>> Headers = " + headers);
+			log.info(">>>>> Body = " + this.lnsEnvJsonProperties);
 		}
 		
 		return new ResponseEntity<>(this.lnsEnvJsonProperties, headers, HttpStatus.OK);
