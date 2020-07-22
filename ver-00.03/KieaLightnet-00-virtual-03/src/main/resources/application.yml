@@ -79,8 +79,9 @@ logging:
 spring.profiles:
   active:
   - lns-default
-  - lns-dev
-  #- lns-real
+  - lns-local   # local test
+  - lns-dev     # test
+  #- lns-real    # real
 
 ---
 spring.profiles: lns-default
@@ -92,7 +93,7 @@ lns-env:
     comment: This is a virtual lightnet PROGRAM.
 
   virtual:
-    access-token: 12345678901234567890abcde
+    access-token:  12345678901234567890abcde
     commit-file:   /KANG/json/virtual/commit_res2.json
     detail-file:   /KANG/json/virtual/detail_res.json
     list-file:     /KANG/json/virtual/list_res_v1.json
@@ -100,30 +101,44 @@ lns-env:
     validate-file: /KANG/json/virtual/validate_res2.json
 
 ---
-spring.profiles: lns-dev
+spring.profiles: lns-local
 
 lns-env:
   json:
+    material: LOCAL
     file:
       virtual: /KANG/json/lightnet/virtual.json
       auth:    /KANG/json/lightnet/auth.json
       link:    /KANG/json/lightnet/link.json
       lns01:   /KANG/json/lightnet/lns01.json
       adapter: /KANG/json/lightnet/adapter.json
-      temp:    /KANG/json/lightnet/dev.json
+
+---
+spring.profiles: lns-dev
+
+lns-env:
+  json:
+    material: DEV
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
 
 ---
 spring.profiles: lns-real
 
 lns-env:
   json:
+    material: REAL
     file:
       virtual: /KANG/json/lightnet/virtual.json
       auth:    /KANG/json/lightnet/auth.json
       link:    /KANG/json/lightnet/link.json
       lns01:   /KANG/json/lightnet/lns01.json
       adapter: /KANG/json/lightnet/adapter.json
-      temp:    /KANG/json/lightnet/real.json
+
 
 
 

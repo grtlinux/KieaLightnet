@@ -79,8 +79,9 @@ logging:
 spring.profiles:
   active:
   - lns-default
-  - lns-dev
-  #- lns-real
+  - lns-local   # local test
+  - lns-dev     # test
+  #- lns-real    # real
 
 ---
 spring.profiles: lns-default
@@ -91,31 +92,48 @@ lns-env:
     version: ver 0.3_2020.07.20
     comment: This is a virtual Adapter PROGRAM.
 
+  adapter:
+    comment: FEP adapter program
+  
 ---
-spring.profiles: lns-dev
+spring.profiles: lns-local
 
 lns-env:
   json:
+    material: LOCAL
     file:
       virtual: /KANG/json/lightnet/virtual.json
       auth:    /KANG/json/lightnet/auth.json
       link:    /KANG/json/lightnet/link.json
       lns01:   /KANG/json/lightnet/lns01.json
       adapter: /KANG/json/lightnet/adapter.json
-      temp:    /KANG/json/lightnet/dev.json
+
+---
+spring.profiles: lns-dev
+
+lns-env:
+  json:
+    material: DEV
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
 
 ---
 spring.profiles: lns-real
 
 lns-env:
   json:
+    material: REAL
     file:
       virtual: /KANG/json/lightnet/virtual.json
       auth:    /KANG/json/lightnet/auth.json
       link:    /KANG/json/lightnet/link.json
       lns01:   /KANG/json/lightnet/lns01.json
       adapter: /KANG/json/lightnet/adapter.json
-      temp:    /KANG/json/lightnet/real.json
+
 
 
 
