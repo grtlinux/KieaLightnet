@@ -1,0 +1,141 @@
+
+
+# --------------------------------
+# BASE
+
+server:
+  port: 18087
+  servlet.context-path: /v0.3
+
+
+spring:
+
+  h2.console:
+    enabled: true
+    path: /h2
+    settings:
+      trace: false
+      web-allow-others: true
+  
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:infodb         # in-memory db
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+  
+  jpa:
+    show-sql: true
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: update
+  
+  data.rest:
+    base-path: /api
+    default-page-size: 5
+    max-page-size: 50
+  
+  thymeleaf:
+    enabled: true
+    encoding: utf-8
+    cache: false
+    prefix: classpath:templates/
+    suffix: .html
+  
+  servlet.multipart:
+    enabled: true
+    location: ~/FILES
+    max-file-size: 5GB
+    max-request-size: 5GB
+  
+  devtools:
+    livereload.enabled: true
+
+
+logging:
+
+  file:
+    path: logs/info/
+    max-size: 10MB
+    max-history: 30         # delete after a month
+  
+  pattern:
+    console: "%clr(%d{HH:mm:ss}){magenta} %p - %m%n"
+    file: "%d %-5level [%-10.10thread] [%-30.30logger{29}] - %m%n"
+  
+  level:
+    root: info
+    org.tain.*: info
+    org.hibernate.SQL: info
+    org.hibernate.type: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.thymeleaf: info
+    org.h2.server.web: info
+
+
+# --------------------------------
+# CHOICE
+
+spring.profiles:
+  active:
+  - lns-default
+  - lns-local   # local test
+  #- lns-dev     # test
+  #- lns-real    # real
+
+---
+spring.profiles: lns-default
+
+lns-env:
+  base:
+    program: KieaLightnet-06-info-03.jar
+    version: ver 0.3_2020.07.20
+    comment: This is an info PROGRAM.
+
+---
+spring.profiles: lns-local
+
+lns-env:
+  info:
+    
+  json:
+    material: LOCAL
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
+
+---
+spring.profiles: lns-dev
+
+lns-env:
+  info:
+    
+  json:
+    material: DEV
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
+
+---
+spring.profiles: lns-real
+
+lns-env:
+  info:
+    
+  json:
+    material: REAL
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
+
+
+
