@@ -1,6 +1,9 @@
 package org.tain.object;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -11,9 +14,9 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_lnspacket"
-	, indexes = {
-			//@Index(name = "lnspacket_tranid_idx", unique = false, columnList = "transaction_id"),
-	}
+	//, indexes = {
+	//		//@Index(name = "lnspacket_tranid_idx", unique = false, columnList = "transaction_id"),
+	//}
 )
 @SequenceGenerator(name = "lnspacket_seq"
 	, sequenceName = "lnspacket_seq"
@@ -25,4 +28,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(value = {})
 public class LnsPacket {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "lnspacket_seq")
+	private Long id;
 }

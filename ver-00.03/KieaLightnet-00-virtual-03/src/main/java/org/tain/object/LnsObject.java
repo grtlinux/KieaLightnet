@@ -11,14 +11,10 @@ import javax.persistence.Index;
 import javax.persistence.Lob;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -29,7 +25,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "tb_lnsobject"
 	, indexes = {
-			@Index(name = "lnsobject_tranid_idx", unique = false, columnList = "transaction_id"),
+			@Index(name = "lnsobject_tranid_idx", unique = true, columnList = "transaction_id"),
 	}
 )
 @SequenceGenerator(name = "lnsobject_seq"
@@ -99,18 +95,22 @@ public class LnsObject {
 	
 	// time  ----------------------------------------
 	@CreationTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	//@Temporal(TemporalType.TIMESTAMP) // @Temporal should only be set on a java.util.Date or java.util.Calendar property
+	//@JsonProperty(access = Access.WRITE_ONLY)
+	//@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "cre_date")
 	private LocalDateTime creDate;
 	//private Timestamp creDate;
+	//private Date creDate;
 	
 	@UpdateTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
-	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	//@Temporal(TemporalType.TIMESTAMP) // @Temporal should only be set on a java.util.Date or java.util.Calendar property
+	//@JsonProperty(access = Access.WRITE_ONLY)
+	//@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "upd_date")
 	private LocalDateTime updDate;
 	//private Timestamp updDate;
+	//private Date updDate;
 	
 	@Builder
 	public LnsObject(
