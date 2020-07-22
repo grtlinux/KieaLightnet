@@ -12,5 +12,6 @@ import lombok.Data;
 @Data
 public class LnsEnvJsonProperties {
 
+	private String material;
 	private Map<String,String> file;
 }
