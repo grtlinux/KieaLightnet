@@ -61,7 +61,7 @@ public class KieaLightnet02Link03Application implements CommandLineRunner {
 			ObjectWriter objectWriter = new ObjectMapper().writerWithDefaultPrettyPrinter();
 			log.info(">>>>> base.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvBaseProperties));
 			log.info(">>>>> json.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvJsonProperties));
-			log.info(">>>>> auth.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvLinkProperties));
+			log.info(">>>>> link.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvLinkProperties));
 		}
 		
 		if (Flag.flag) {

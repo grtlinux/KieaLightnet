@@ -97,7 +97,7 @@ public class PropertiesController {
 	private LnsEnvAuthProperties lnsEnvAuthProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"virtual"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"auth"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> virtual(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		

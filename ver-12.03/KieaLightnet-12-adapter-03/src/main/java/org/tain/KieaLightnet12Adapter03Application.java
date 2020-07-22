@@ -13,6 +13,7 @@ import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -42,7 +43,7 @@ public class KieaLightnet12Adapter03Application implements CommandLineRunner {
 	@Autowired
 	private LnsEnvJsonProperties lnsEnvJsonProperties;
 	
-	private void job01() {
+	private void job01() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -51,19 +52,9 @@ public class KieaLightnet12Adapter03Application implements CommandLineRunner {
 		}
 		
 		if (Flag.flag) {
-			try {
-				String jsonString = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this.lnsEnvBaseProperties);
-				System.out.println(">>>>> base.jsonString: " + jsonString);
-			} catch (Exception e) {
-			}
-		}
-		
-		if (Flag.flag) {
-			try {
-				String jsonString = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this.lnsEnvJsonProperties);
-				System.out.println(">>>>> json.jsonString: " + jsonString);
-			} catch (Exception e) {
-			}
+			ObjectWriter objectWriter = new ObjectMapper().writerWithDefaultPrettyPrinter();
+			log.info(">>>>> base.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvBaseProperties));
+			log.info(">>>>> json.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvJsonProperties));
 		}
 		
 		if (Flag.flag) {

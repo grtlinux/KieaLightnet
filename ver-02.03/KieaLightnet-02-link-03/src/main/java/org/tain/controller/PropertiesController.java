@@ -27,13 +27,13 @@ public class PropertiesController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18082/link/properties/base
+	// http://localhost:18082/v0.3/link/properties/base
 	
 	@Autowired
 	private LnsEnvBaseProperties lnsEnvBaseProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"base"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/base"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> base(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
@@ -59,13 +59,13 @@ public class PropertiesController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18082/link/properties/json
+	// http://localhost:18082/v0.3/link/properties/json
 
 	@Autowired
 	private LnsEnvJsonProperties lnsEnvJsonProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"json"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/json"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> json(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
@@ -91,13 +91,13 @@ public class PropertiesController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18082/link/properties/link
+	// http://localhost:18082/v0.3/link/properties/link
 
 	@Autowired
 	private LnsEnvLinkProperties lnsEnvLinkProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"virtual"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/link"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> virtual(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
