@@ -53,10 +53,15 @@ public class StreamServerWorkerThread extends Thread {
 					break;
 				case "0301":
 					response = DetailScheduler.process(request);
-					//response = "00200302RES.DETAIL..";
 					break;
 				case "0401":
 					response = ListScheduler.process(request);
+					break;
+				case "0501":
+					//response = List2Scheduler.process(request);
+					break;
+				case "0601":
+					//response = CallbackScheduler.process(request);
 					break;
 				case "0701":
 					response = TransactionIdScheduler.process(request);
