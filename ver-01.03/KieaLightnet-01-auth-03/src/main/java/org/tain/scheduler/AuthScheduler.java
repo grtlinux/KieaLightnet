@@ -12,7 +12,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.tain.data.AccessToken;
+import org.tain.domain.Token;
 import org.tain.properties.LnsEnvAuthProperties;
+import org.tain.repository.TokenRepository;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.RestTemplateConfig;
@@ -30,6 +32,9 @@ public class AuthScheduler {
 
 	@Autowired
 	private LnsEnvAuthProperties lnsEnvAuthProperties;
+	
+	@Autowired
+	private TokenRepository tokenRepository;
 	
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
@@ -77,7 +82,7 @@ public class AuthScheduler {
 	private synchronized void httpPostAuth(Map<String,String> mapReq) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) {
+		if (Flag.flag && this.cntUrl == -1) {
 			this.cntUrl = this.lnsEnvAuthProperties.getLightnetUrl().length;
 			this.idxUrl = this.lnsEnvAuthProperties.getLightnetStartIdx();
 		}
@@ -107,8 +112,13 @@ public class AuthScheduler {
 					log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 					log.info("KANG-20200623 >>>>> AccessToken = {}", AccessToken.get());
 					log.info("=====================================================");
-					if (response.getStatusCodeValue() == 200)
+					if (response.getStatusCodeValue() == 200) {
+						Token token = Token.builder().token(AccessToken.get()).build();
+						this.tokenRepository.save(token);
 						break;
+					}
+					
+					Sleep.run(1000);
 				} catch (Exception e) {
 					//e.printStackTrace();
 					log.error("KANG-20200724 >>>>> Exception.message = {}", e.getMessage());

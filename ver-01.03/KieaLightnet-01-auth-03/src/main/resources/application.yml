@@ -18,18 +18,25 @@ spring:
       web-allow-others: true
   
   datasource:
-    hikari:
-      # jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb
-      jdbc-url: jdbc:h2:mem:testdb
-      driver-class-name: org.h2.Driver
-      username: sa
-      password:
+    url: jdbc:h2:tcp://localhost:9092/lightnetdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    
+#    hikari:
+#      jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#      # jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#      # jdbc-url: jdbc:h2:mem:testdb
+#      driver-class-name: org.h2.Driver
+#      username: sa
+#      password:
   
   jpa:
     show-sql: true
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
+    # hibernate.ddl-auto: none
   
   data.rest:
     base-path: /api
