@@ -35,7 +35,7 @@ public class AuthScheduler {
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
 
-	@Scheduled(fixedRate = 10 * 60 * 1000)    // 10 minutes
+	@Scheduled(fixedRate = 1 * 60 * 1000)    // 10 minutes
 	//@Scheduled(fixedRate = 20 * 60 * 1000)    // 20 minutes
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -71,32 +71,49 @@ public class AuthScheduler {
 	
 	private String POST_AUTH_HTTP_URL = "/v1/auth";
 	
+	private int idxUrl = 0;
+	private int cntUrl = -1;
+	
 	private synchronized void httpPostAuth(Map<String,String> mapReq) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			this.cntUrl = this.lnsEnvAuthProperties.getLightnetUrl().length;
+			this.idxUrl = this.lnsEnvAuthProperties.getLightnetStartIdx();
+		}
 		
 		if (Flag.flag) {
 			AccessToken.set(null);
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			
 			HttpEntity<Map<String,String>> reqHttpEntity = new HttpEntity<>(mapReq, reqHeaders);
-
-			ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SSL01).exchange(
-					this.lnsEnvAuthProperties.getLightnetUrl() + POST_AUTH_HTTP_URL
-					, HttpMethod.POST
-					, reqHttpEntity
-					, String.class);
 			
-			AccessToken.set(response.getHeaders().get("AccessToken").get(0));
-			
-			log.info("=====================================================");
-			log.info("KANG-20200623 >>>>> lightnetUrl        = {}", this.lnsEnvAuthProperties.getLightnetUrl());
-			log.info("KANG-20200623 >>>>> POST_AUTH_HTTP_URL = {}", POST_AUTH_HTTP_URL);
-			log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
-			log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
-			log.info("KANG-20200623 >>>>> AccessToken = {}", AccessToken.get());
-			log.info("=====================================================");
+			for (;this.idxUrl >= 0 && this.idxUrl < this.cntUrl; this.idxUrl = (++ this.idxUrl) % this.cntUrl) {
+				try {
+					log.info("================ idxUrl: {}, cntUrl: {} ================", this.idxUrl, this.cntUrl);
+					log.info("KANG-20200623 >>>>> lightnetUrl        = {}", this.lnsEnvAuthProperties.getLightnetUrl()[this.idxUrl]);
+					log.info("KANG-20200623 >>>>> POST_AUTH_HTTP_URL = {}", POST_AUTH_HTTP_URL);
+					
+					ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+							this.lnsEnvAuthProperties.getLightnetUrl()[idxUrl] + POST_AUTH_HTTP_URL
+							, HttpMethod.POST
+							, reqHttpEntity
+							, String.class);
+					
+					AccessToken.set(response.getHeaders().get("AccessToken").get(0));
+					
+					log.info("KANG-20200623 >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+					log.info("KANG-20200623 >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+					log.info("KANG-20200623 >>>>> AccessToken = {}", AccessToken.get());
+					log.info("=====================================================");
+					if (response.getStatusCodeValue() == 200)
+						break;
+				} catch (Exception e) {
+					//e.printStackTrace();
+					log.error("KANG-20200724 >>>>> Exception.message = {}", e.getMessage());
+				}
+			}
 		}
 	}
 }

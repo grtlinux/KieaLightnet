@@ -33,7 +33,7 @@ public class PropertiesController {
 	private LnsEnvBaseProperties lnsEnvBaseProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"base"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/base"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> base(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
@@ -65,7 +65,7 @@ public class PropertiesController {
 	private LnsEnvJsonProperties lnsEnvJsonProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"json"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/json"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> json(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
@@ -97,7 +97,7 @@ public class PropertiesController {
 	private LnsEnvAuthProperties lnsEnvAuthProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"auth"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/auth"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> virtual(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		

@@ -19,7 +19,8 @@ spring:
   
   datasource:
     hikari:
-      jdbc-url: jdbc:h2:mem:authdb         # in-memory db
+      # jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb
+      jdbc-url: jdbc:h2:mem:testdb
       driver-class-name: org.h2.Driver
       username: sa
       password:
@@ -100,7 +101,12 @@ spring.profiles: lns-local
 
 lns-env:
   auth:
-    lightnet-url: http://localhost:18888
+    lightnet-url:
+    - http://localhost:18888
+    - https://192.10.2.141
+    - https://192.10.2.38
+    - https://test-public.lightnetapis.io
+    lightnet-start-idx: 1
     
   json:
     material: LOCAL
@@ -116,7 +122,10 @@ spring.profiles: lns-dev
 
 lns-env:
   auth:
-    lightnet-url: https://test-public.lightnetapis.io
+    lightnet-url:
+    - https://test-public.lightnetapis.io
+    - https://192.10.2.141
+    - https://192.10.2.38
     
   json:
     material: DEV
@@ -132,7 +141,10 @@ spring.profiles: lns-real
 
 lns-env:
   auth:
-    lightnet-url: https://real-public.lightnetapis.io
+    lightnet-url:
+    - https://real-public.lightnetapis.io
+    - https://192.10.2.141
+    - https://192.10.2.38
     
   json:
     material: REAL

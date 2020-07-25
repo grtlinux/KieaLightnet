@@ -13,9 +13,6 @@ import org.tain.properties.LnsEnvJsonProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-
 import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
@@ -51,17 +48,9 @@ public class KieaLightnet01Auth03Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get(), this.lnsEnvBaseProperties);
-			log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get(), this.lnsEnvJsonProperties);
-			log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get(), this.lnsEnvAuthProperties);
-		}
-		
-		
-		if (Flag.flag) {
-			ObjectWriter objectWriter = new ObjectMapper().writerWithDefaultPrettyPrinter();
-			log.info(">>>>> base.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvBaseProperties));
-			log.info(">>>>> json.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvJsonProperties));
-			log.info(">>>>> auth.jsonString: " + objectWriter.writeValueAsString(this.lnsEnvAuthProperties));
+			log.info(">>>>> base.jsonString: " + this.lnsEnvBaseProperties.toPrettyJson());
+			log.info(">>>>> json.jsonString: " + this.lnsEnvJsonProperties.toPrettyJson());
+			log.info(">>>>> auth.jsonString: " + this.lnsEnvAuthProperties.toPrettyJson());
 		}
 		
 		if (Flag.flag) {
