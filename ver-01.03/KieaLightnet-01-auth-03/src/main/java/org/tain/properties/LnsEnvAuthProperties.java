@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Data;
@@ -16,8 +17,11 @@ import lombok.Data;
 @Data
 public class LnsEnvAuthProperties {
 
+	@JsonIgnore
 	private String clientId;
+	@JsonIgnore
 	private String secret;
+	
 	private String accessToken;
 	private String[] lightnetUrl;
 	private int lightnetStartIdx;
