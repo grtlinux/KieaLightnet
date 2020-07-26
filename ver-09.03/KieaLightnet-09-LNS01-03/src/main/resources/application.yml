@@ -62,7 +62,7 @@ spring:
 logging:
 
   file:
-    path: logs/info/
+    path: logs/lns01/
     max-size: 10MB
     max-history: 30         # delete after a month
   
