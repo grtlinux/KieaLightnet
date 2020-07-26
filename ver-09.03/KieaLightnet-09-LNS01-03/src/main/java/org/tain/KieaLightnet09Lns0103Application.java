@@ -81,5 +81,4 @@ public class KieaLightnet09Lns0103Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 	}
-
 }

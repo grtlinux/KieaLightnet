@@ -4,7 +4,6 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.time.LocalDateTime;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -19,7 +18,7 @@ public class StreamClient {
 	private static final int port = 19091;
 	private StreamClientWorkerThread thread = null;
 	
-	@Bean
+	//@Bean
 	public void jobStreamClient() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
