@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>form.html</title>
+	<!-- css and script -->
+	<th:block th:replace="layout/css::css1"></th:block>
+	<th:block th:replace="layout/script::script1"></th:block>
+	<!-- /css and script -->
+</head>
+<body>
+	<!-- header -->
+	<div th:replace="layout/header::header2"></div>
+	<!-- /header -->
+	
+	<!-- main -->
+	<div class="container">
+		<div class="page-header">
+			<h1>Transfer JSON formats between Normal and Pretty</h1>
+		</div>
+		<br/>
+		<table class="table">
+			<tr>
+				<th style="padding:13px 0 0 15px;">
+					JSON: Normal form<br/>
+					<span id="lengthNormal">length : 0</span><br/>
+				</th>
+				<td><textarea id="form_normal" class="col-md-1 form-control input-sm" rows="100" style="height: 200px;"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="button" class="btn btn-primary" id="btnToPretty">Normal -&gt; Pretty</button>
+					<button type="button" class="btn btn-primary" id="btnToNormal">Pretty -&gt; Normal</button>
+				</td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">
+					JSON: Pretty form<br/>
+					<span id="lengthPretty">length : 0</span><br/>
+				</th>
+				<td><textarea id="form_pretty" class="col-md-1 form-control input-sm" rows="100" style="height: 300px;"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<br/><br/>
+		<br/><br/>
+	</div>
+	<!-- /main -->
+	
+	<!-- footer -->
+	<div th:replace="layout/footer::footer1"></div>
+	<!-- /footer -->
+	
+	<!-- script -->
+	<script>
+		// initialize
+		if (true) {
+			$('#form_normal').val('{"field1":"abc","field2":"hello", "age":23}');
+			$('form_normal').trigger('change');
+		}
+		$('#lengthNormal').hide();
+		$('#lengthPretty').hide();
+	</script>
+	<script>
+		// length
+		/*
+		if (!true) {
+			$('#form_normal').on("propertychange change keyup paste input", function() {
+				$('#lengthNormal').text($('#form_normal').val().length);
+			});
+			$('#form_pretty').on("propertychange change keyup paste input", function() {
+				$('#lengthPretty').text($('#form_pretty').val().length);
+			});
+		}
+		*/
+		if (true) {
+			$('#form_normal').on('input change paste keyup protertychange', function(){
+				if (this.value.length) {
+					$('#lengthNormal').text("length : " + this.value.length).show();
+				} else {
+					$('#lengthNormal').hide();
+				}
+			});
+			$('#form_pretty').on('input change paste keyup protertychange', function(){
+				if (this.value.length) {
+					$('#lengthPretty').text("length : " + this.value.length).show();
+				} else {
+					$('#lengthPretty').hide();
+				}
+			});
+		}
+	</script>
+	<script>
+		// click event
+		$('#btnToPretty').click(function() {
+			var obj = JSON.parse($('#form_normal').val());
+			$('#form_pretty').val(JSON.stringify(obj, null, 2));
+			// trigger
+			$('form_normal').trigger('change');
+			$('form_pretty').trigger('change');
+		});
+		$('#btnToNormal').click(function() {
+			//alert(">>>>> " + $('#form_pretty').val());
+			var obj = JSON.parse($('#form_pretty').val());
+			$('#form_normal').val(JSON.stringify(obj));
+			// trigger
+			$('form_normal').trigger('change');
+			$('form_pretty').trigger('change');
+		});
+	</script>
+</body>
+</html>

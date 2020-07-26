@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>form.html</title>
+	<!-- css and script -->
+	<th:block th:replace="layout/css::css1"></th:block>
+	<th:block th:replace="layout/script::script1"></th:block>
+	<!-- /css and script -->
+</head>
+<body>
+	<!-- header -->
+	<div th:replace="layout/header::header2"></div>
+	<!-- /header -->
+	
+	<!-- main -->
+	<div class="container">
+		<div class="page-header">
+			<h1>Kuser Form</h1>
+		</div>
+		<br/>
+		<input id="kuser_id" type="hidden" th:value="${kuser?.id}"/>
+		<input id="kuser_create_date" type="hidden" th:value="${kuser?.createdDate}"/>
+		<table class="table">
+			<tr>
+				<th style="padding:13px 0 0 15px;">생성날짜</th>
+				<td><input type="text" class="col-md-1 form-control input-sm" readonly="readonly" th:value="${kuser?.createdDate} ? ${#temporals.format(kuser.createdDate,'yyyy-MM-dd HH:mm')} : ${kuser?.createdDate}"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Username</th>
+				<td><input id="kuser_username" type="text" class="col-md-1 form-control input-sm" th:value="${kuser?.username}"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Password</th>
+				<td><input id="kuser_password" type="text" class="col-md-1 form-control input-sm" th:value="${kuser?.password}"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Role</th>
+				<td><input id="kuser_role" type="text" class="col-md-1 form-control input-sm" th:value="${kuser?.role}"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<div class="pull-left">
+			<a th:href="@{/kuser/list}" class="btn btn-default">LIST</a>
+		</div>
+		<div class="pull-right">
+			<button th:if="!${kuser?.id}" type="button" class="btn btn-primary" id="insert">SAVE</button>
+			<button th:if="${kuser?.id}" type="button" class="btn btn-info" id="update">UPDATE</button>
+			<button th:if="${kuser?.id}" type="button" class="btn btn-danger" id="delete">DELETE</button>
+		</div>
+	</div>
+	<!-- /main -->
+	
+	<!-- footer -->
+	<div th:replace="layout/footer::footer1"></div>
+	<!-- /footer -->
+	
+	<!-- script -->
+	<script th:if="!${kuser?.id}">
+		$('#insert').click(function() {
+			var jsonData = JSON.stringify({
+				username: $('#kuser_username').val(),
+				password: $('#kuser_password').val(),
+				role: $('#kuser_role').val()
+			});
+			$.ajax({
+				url: _contextPath_ + "/api/kusers/",
+				type: "POST",
+				data: jsonData,
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("havi" + ":" + "test")
+				},
+				dataType: "json",
+				success: function() {
+					alert('저장 성공~~');
+					location.href = _contextPath_ + '/kuser/list';
+				},
+				error: function() {
+					alert('저장 실패!!');
+				}
+			});
+		});
+	</script>
+	<script th:if="${kuser?.id}">
+		$('#update').click(function() {
+			var jsonData = JSON.stringify({
+				username: $('#kuser_username').val(),
+				password: $('#kuser_password').val(),
+				role: $('#kuser_role').val(),
+				createdDate: $('#kuser_create_date').val()
+			});
+			$.ajax({
+				url: _contextPath_ + "/api/kusers/" + $('#kuser_id').val(),
+				type: "PUT",
+				data: jsonData,
+				contentType: "application/json",
+				dataType: "json",
+				success: function() {
+					alert('수정 성공~~');
+					location.href = _contextPath_ + '/kuser/list';
+				},
+				error: function() {
+					alert('수정 실패!!');
+				}
+			});
+		});
+		$('#delete').click(function() {
+			$.ajax({
+				url: _contextPath_ + "/api/kusers/" + $('#kuser_id').val(),
+				type: "DELETE",
+				success: function() {
+					alert('삭제 성공~~');
+					location.href = _contextPath_ + '/kuser/list';
+				},
+				error: function() {
+					alert('삭제 실패!!');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

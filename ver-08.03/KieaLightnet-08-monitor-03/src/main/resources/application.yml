@@ -101,12 +101,16 @@ lns-env:
     comment: This is an monitor PROGRAM.
 
   monitor:
+    json-file:
+      stmt-path:  /KANG/json/1000-2.json
+      kuser-path: /KANG/json/kuser.json
+      line-path:  /KANG/json/lightnet/line.json
 
 ---
 spring.profiles: lns-local
 
 lns-env:
-  monitor:
+  #monitor:
     
   json:
     material: LOCAL
@@ -121,7 +125,7 @@ lns-env:
 spring.profiles: lns-dev
 
 lns-env:
-  monitor:
+  #monitor:
     
   json:
     material: DEV
@@ -136,7 +140,7 @@ lns-env:
 spring.profiles: lns-real
 
 lns-env:
-  monitor:
+  #monitor:
     
   json:
     material: REAL

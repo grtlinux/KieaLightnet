@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<!-- header1 -->
+<div th:fragment="header1">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a th:href="@{/}" class="navbar-brand" style="text-decoration:none;">
+					<img th:src="@{/images/spring_boot_gray.png}" class="img-rounded" style="display:inline-block;height:100%;margin-right:5px;" />
+					<span style="vertical-align:middle;">LNS System</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!-- navbar menu -->
+				<ul class="nav navbar-nav navbar-left">
+					<li class="hide"><a th:href="@{/logout}">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</div>
+<!-- /header1 -->
+
+
+
+<!-- header2 -->
+<div th:fragment="header2">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a th:href="@{/}" class="navbar-brand" style="text-decoration:none;">
+					<img th:src="@{/images/spring_boot_gray.png}" class="img-rounded" style="display:inline-block;height:100%;margin-right:5px;" />
+					<span style="vertical-align:middle;">LNS System (v0.1)</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!-- navbar menu -->
+				<ul class="nav navbar-nav navbar-left">
+					<li><a data-target="#modalSelfInfo" data-toggle="modal" href="#" onclick="alert('### Ligntnet Transfer System (LNS) version 0.1 :)');">Info</a></li>
+					<li class="dropdown hide">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Test<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a th:href="@{/board/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Board</a></li>
+							<li><a th:href="@{/stmt/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Stmt</a></li>
+							<li><a th:href="@{/kuser/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Kuser</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Order</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Lightnet<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a th:href="@{/line/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Line</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a th:href="@{/tools/tranJsonNormalPretty}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Tran JSON (Normal&lt;-&gt;Pretty)</a></li>
+						</ul>
+					</li>
+					<li class="hide"><a href="/sample05/">Statistic</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</div>
+<!-- /header2 -->
+
+
+
+</html>

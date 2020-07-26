@@ -12,10 +12,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 
 @Component
-@ConfigurationProperties(prefix = "lns-env.auth")
+@ConfigurationProperties(prefix = "lns-env.monitor.json-file")
 @Data
 public class LnsEnvMonitorProperties {
 
+	private String stmtPath;
+	private String kuserPath;
+	private String LinePath;
+	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp createdDate = new Timestamp(System.currentTimeMillis());
 	
