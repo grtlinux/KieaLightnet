@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>form.html</title>
+	<!-- css and script -->
+	<th:block th:replace="layout/css::css1"></th:block>
+	<th:block th:replace="layout/script::script1"></th:block>
+	<!-- /css and script -->
+</head>
+<body>
+	<!-- header -->
+	<div th:replace="layout/header::header2"></div>
+	<!-- /header -->
+	
+	<!-- main -->
+	<div class="container">
+		<div class="page-header">
+			<h1>Line Form</h1>
+		</div>
+		<br/>
+		<input id="line_id" type="hidden" th:value="${line?.id}"/>
+		<input id="line_create_date" type="hidden" th:value="${line?.createdDate}"/>
+		<table class="table">
+			<tr>
+				<th style="padding:13px 0 0 15px;">생성날짜</th>
+				<td><input type="text" class="col-md-1 form-control input-sm" readonly="readonly" th:value="${line?.createdDate} ? ${#temporals.format(line.createdDate,'yyyy-MM-dd HH:mm')} : ${line?.createdDate}"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Title</th>
+				<td><input id="line_title" th:value="${line?.title}" type="text" class="col-md-1 form-control input-sm"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Content</th>
+				<td><input id="line_content" th:value="${line?.content}" type="text" class="col-md-1 form-control input-sm"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">User Id</th>
+				<td><input id="line_userId" th:value="${line?.userId}" type="text" class="col-md-1 form-control input-sm"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Request Url</th>
+				<td><input id="line_reqUrl" th:value="${line?.reqUrl}" type="text" class="col-md-1 form-control input-sm"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Request Version</th>
+				<td><input id="line_reqVer" th:value="${line?.reqVer}" type="text" class="col-md-1 form-control input-sm"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Request Path</th>
+				<td><input id="line_reqPath" th:value="${line?.reqPath}" type="text" class="col-md-1 form-control input-sm"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Request Method</th>
+				<td><input id="line_reqMethod" th:value="${line?.reqMethod}" type="text" class="col-md-1 form-control input-sm"/></td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Request Parameters</th>
+				<td><textarea id="line_reqParameters" class="col-md-1 form-control input-sm" rows="50" style="height:100px;"></textarea><span class="help-block"></span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">TEST</button>
+				</td>
+			</tr>
+			<tr>
+				<th style="padding:13px 0 0 15px;">Response Json</th>
+				<td><textarea id="line_resRetJson" class="col-md-1 form-control input-sm" rows="50" style="height:100px;"></textarea><span class="help-block"></span></td>
+			</tr>
+			<tr class="hide">
+				<th style="padding:13px 0 0 15px;">Response Stresm</th>
+				<td><textarea id="line_resRetStream" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<div class="pull-left">
+			<a th:href="@{/line/list}" class="btn btn-default">LIST</a>
+			<button id="btnModal" type="button" class="btn btn-primary hide" data-toggle="modal" data-target="#myModal">TEST</button>
+		</div>
+		<div class="pull-right">
+			<button th:if="!${line?.id}" type="button" class="btn btn-primary" id="insert">SAVE</button>
+			<button th:if="${line?.id}" type="button" class="btn btn-info" id="update">UPDATE</button>
+			<button th:if="${line?.id}" type="button" class="btn btn-danger" id="delete">DELETE</button>
+		</div>
+	</div>
+	<br/><br/>
+	<br/><br/>
+	<!-- /main -->
+	
+	<!-- footer -->
+	<div th:replace="layout/footer::footer1"></div>
+	<!-- /footer -->
+	
+	<!-- Modal dialog -->
+	<div class="modal fase" id="myModal">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+			
+				<!-- Modal Header -->
+				<div class="modal-header bg-success">
+					<h4 class="modal-title">Line Test</h4>
+					<!-- button type="button" class="close" data-dismiss="modal">&times;</button -->
+				</div>
+				
+				<!-- Modal body -->
+				<div class="modal-body">
+					<table class="table">
+						<tr>
+							<th style="padding:13px 0 0 15px;">Title</th>
+							<td><input id="modal_title" value="" readonly="readonly" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">Request URL</th>
+							<td><input id="modal_reqUrl" value="" readonly="readonly" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">Request Parameters</th>
+							<td><textarea id="modal_reqParameters" readonly="readonly" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button id="btnTransfer" type="button" class="btn btn-primary">Transfer</button>
+								<button id="btnCopyRequest" type="button" class="btn btn-primary">Copy Request</button>
+								<button id="btnCopyResponse" type="button" class="btn btn-primary">Copy Response</button>
+							</td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">Response Json</th>
+							<td><textarea id="modal_resRetJson" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea></td>
+						</tr>
+					</table>
+				</div>
+				
+				<!-- Modal footer -->
+				<div class="modal-footer bg-success">
+					<button id="btnClose" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- /Modal dialog -->
+	
+	<!-- script -->
+	<script th:inline="javascript">
+		// document.ready
+		var json = /*[[${line?.reqParameters}]]*/;
+		//if (true) console.log(">>>>> json = " + json);
+		$('#line_reqParameters').val(JSON.stringify(JSON.parse(json), null, 2));
+	</script>
+	<script>
+		$('#btnModal').click(function() {
+			//alert('Hello btnModal');
+			$('#modal_title').val($('#line_title').val());
+			$('#modal_reqUrl').val($('#line_reqUrl').val() + $('#line_reqVer').val() + $('#line_reqPath').val());
+			var jsonParameters = JSON.stringify(JSON.parse($('#line_reqParameters').val()), null, 2);
+			$('#modal_reqParameters').val(jsonParameters);
+			$('#modal_resRetJson').val('');
+		});
+		$('#btnTransfer').click(function() {
+			//alert('Hello btnTransfer');
+			$.ajax({
+				url: $('#modal_reqUrl').val(),
+				type: "POST",
+				data: $('#modal_reqParameters').val(),
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("kiea" + ":" + "test")
+				},
+				dataType: "json",
+				success: function(data, status) {
+					$('#modal_resRetJson').val(JSON.stringify(data, null, 2));
+					//alert('송신 성공~~');
+					//alert('송신 성공~~' + $('#modal_resRetJson').val());
+					//location.href = _contextPath_ + '/line/list';
+				},
+				error: function() {
+					alert('송신 실패!!');
+				}
+			});
+		});
+		$('#btnClose').click(function() {
+			//alert('Hello btnClose');
+			$('#line_resRetJson').val($('#modal_resRetJson').val());
+		});
+		$('#btnCopyRequest').click(function() {
+			//alert('Hello btnCopyRequest');
+			var copyText = document.getElementById("modal_reqParameters");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopyResponse').click(function() {
+			//alert('Hello btnCopyResponse');
+			var copyText = document.getElementById("modal_resRetJson");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+	</script>
+	<script th:if="!${line?.id}">
+		$('#insert').click(function() {
+			var jsonData = JSON.stringify({
+				title: $('#line_title').val(),
+				content: $('#line_content').val(),
+				userId: $('#line_userId').val(),
+				reqUrl: $('#line_reqUrl').val(),
+				reqVer: $('#line_reqVer').val(),
+				reqPath: $('#line_reqPath').val(),
+				reqMethod: $('#line_reqMethod').val(),
+				reqParameters: $('#line_reqParameters').val(),
+				resRetJson: $('#line_resRetJson').val(),
+				resRetStream: $('#line_resRetStream').val()
+			});
+			$.ajax({
+				url: _contextPath_ + "/api/lines/",
+				type: "POST",
+				data: jsonData,
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("kiea" + ":" + "test")
+				},
+				dataType: "json",
+				success: function() {
+					alert('저장 성공~~');
+					location.href = _contextPath_ + '/line/list';
+				},
+				error: function() {
+					alert('저장 실패!!');
+				}
+			});
+		});
+	</script>
+	<script th:if="${line?.id}">
+		$('#update').click(function() {
+			var jsonData = JSON.stringify({
+				title: $('#line_title').val(),
+				content: $('#line_content').val(),
+				userId: $('#line_userId').val(),
+				reqUrl: $('#line_reqUrl').val(),
+				reqVer: $('#line_reqVer').val(),
+				reqPath: $('#line_reqPath').val(),
+				reqMethod: $('#line_reqMethod').val(),
+				reqParameters: $('#line_reqParameters').val(),
+				resRetJson: $('#line_resRetJson').val(),
+				resRetStream: $('#line_resRetStream').val(),
+				createdDate: $('#line_create_date').val()
+			});
+			$.ajax({
+				url: _contextPath_ + "/api/lines/" + $('#line_id').val(),
+				type: "PUT",
+				data: jsonData,
+				contentType: "application/json",
+				dataType: "json",
+				success: function() {
+					alert('수정 성공~~');
+					location.href = _contextPath_ + '/line/list';
+				},
+				error: function() {
+					alert('수정 실패!!');
+				}
+			});
+		});
+		$('#delete').click(function() {
+			$.ajax({
+				url: _contextPath_ + "/api/lines/" + $('#line_id').val(),
+				type: "DELETE",
+				success: function() {
+					alert('삭제 성공~~');
+					location.href = _contextPath_ + '/line/list';
+				},
+				error: function() {
+					alert('삭제 실패!!');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

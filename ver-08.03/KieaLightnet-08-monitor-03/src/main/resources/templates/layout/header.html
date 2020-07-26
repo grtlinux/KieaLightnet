@@ -43,13 +43,13 @@
 				</button>
 				<a th:href="@{/}" class="navbar-brand" style="text-decoration:none;">
 					<img th:src="@{/images/spring_boot_gray.png}" class="img-rounded" style="display:inline-block;height:100%;margin-right:5px;" />
-					<span style="vertical-align:middle;">LNS System (v0.1)</span>
+					<span style="vertical-align:middle;">LNS System (v0.3)</span>
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<!-- navbar menu -->
 				<ul class="nav navbar-nav navbar-left">
-					<li><a data-target="#modalSelfInfo" data-toggle="modal" href="#" onclick="alert('### Ligntnet Transfer System (LNS) version 0.1 :)');">Info</a></li>
+					<li><a data-target="#modalSelfInfo" data-toggle="modal" href="#" onclick="alert('### Ligntnet Transfer System (LNS) version 0.3 :)');">Info</a></li>
 					<li class="dropdown hide">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Test<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -63,7 +63,12 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Lightnet<span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<!-- -->
 							<li><a th:href="@{/line/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Line</a></li>
+							<!-- -->
+							<li><a th:href="@{/adapter/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Adapter</a></li>
+							<li><a th:href="@{/lns01/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Lns01</a></li>
+							<li><a th:href="@{/link/list}"><span class="glyphicon glyphicon-list-all"></span>&nbsp;Link</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">

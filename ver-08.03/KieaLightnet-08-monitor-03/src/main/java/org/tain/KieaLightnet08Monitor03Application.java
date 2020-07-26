@@ -10,16 +10,22 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.tain.domain.Adapter;
 import org.tain.domain.Board;
 import org.tain.domain.Kuser;
 import org.tain.domain.Line;
+import org.tain.domain.Link;
+import org.tain.domain.Lns01;
 import org.tain.domain.Stmt;
 import org.tain.properties.LnsEnvBaseProperties;
 import org.tain.properties.LnsEnvJsonProperties;
 import org.tain.properties.LnsEnvMonitorProperties;
+import org.tain.repository.AdapterRepository;
 import org.tain.repository.BoardRepository;
 import org.tain.repository.KuserRepository;
 import org.tain.repository.LineRepository;
+import org.tain.repository.LinkRepository;
+import org.tain.repository.Lns01Repository;
 import org.tain.repository.StmtRepository;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -44,7 +50,7 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		if (Flag.flag) job01();
 		if (Flag.flag) job02();
-		if (Flag.flag) job03();
+		if (!Flag.flag) job03();
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();
 		if (Flag.flag) job06();
@@ -92,7 +98,7 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 	private void job02() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		IntStream.rangeClosed(1, 200).forEach(index -> {
+		if (Flag.flag) IntStream.rangeClosed(1, 200).forEach(index -> {
 			this.boardRepository.save(Board.builder()
 					.title("제목-" + index)
 					.subTitle("부제목-" + index)
@@ -171,9 +177,62 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 		}
 	}
 
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+
+	@Autowired
+	private AdapterRepository adapterRepository;
+	
+	@Autowired
+	private Lns01Repository lns01Repository;
+	
+	@Autowired
+	private LinkRepository linkRepository;
+	
 	private void job06() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			try {
+				ObjectMapper objectMapper = new ObjectMapper();
+				List<Adapter> list = objectMapper.readValue(new File(System.getenv("HOME") + this.lnsEnvMonitorProperties.getAdapterPath()), new TypeReference<List<Adapter>>() {});
+				list.forEach(entity -> {
+					this.adapterRepository.save(entity);
+				});
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		if (Flag.flag) {
+			try {
+				ObjectMapper objectMapper = new ObjectMapper();
+				List<Lns01> list = objectMapper.readValue(new File(System.getenv("HOME") + this.lnsEnvMonitorProperties.getLns01Path()), new TypeReference<List<Lns01>>() {});
+				list.forEach(entity -> {
+					this.lns01Repository.save(entity);
+				});
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		if (Flag.flag) {
+			try {
+				ObjectMapper objectMapper = new ObjectMapper();
+				List<Link> list = objectMapper.readValue(new File(System.getenv("HOME") + this.lnsEnvMonitorProperties.getLinkPath()), new TypeReference<List<Link>>() {});
+				list.forEach(entity -> {
+					this.linkRepository.save(entity);
+				});
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
+
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
 	private void job07() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());

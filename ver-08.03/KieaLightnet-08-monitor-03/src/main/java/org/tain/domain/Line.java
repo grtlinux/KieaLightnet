@@ -18,12 +18,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Entity
 @Table(name = "tb_line"
@@ -39,6 +39,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @JsonIgnoreProperties({})
+@Slf4j
 public class Line {
 
 	@JsonIgnore
@@ -80,7 +81,7 @@ public class Line {
 	private String resRetStream;
 	
 	//@JsonIgnore
-	@JsonProperty(access = Access.READ_ONLY)
+	//@JsonProperty(access = Access.READ_ONLY)
 	//@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "created_date")
 	private LocalDateTime createdDate = LocalDateTime.now();
@@ -117,5 +118,25 @@ public class Line {
 		this.reqParameters = reqParameters;
 		this.resRetJson = resRetJson;
 		this.resRetStream = resRetStream;
+	}
+	
+	////////////////////////////////////////////////////////////////////////
+	
+	public String toJson() {
+		try {
+			return new ObjectMapper().writeValueAsString(this);
+		} catch (Exception e) {
+			log.info("ERROR: " + e.getMessage());
+		}
+		return "{}";
+	}
+	
+	public String toPrettyJson() {
+		try {
+			return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
+		} catch (Exception e) {
+			log.info("ERROR: " + e.getMessage());
+		}
+		return "{}";
 	}
 }

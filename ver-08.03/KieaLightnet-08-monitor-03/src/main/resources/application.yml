@@ -102,9 +102,12 @@ lns-env:
 
   monitor:
     json-file:
-      stmt-path:  /KANG/json/1000-2.json
-      kuser-path: /KANG/json/kuser.json
-      line-path:  /KANG/json/lightnet/line.json
+      stmt-path:     /KANG/json/1000-2.json
+      kuser-path:    /KANG/json/kuser.json
+      line-path:     /KANG/json/lightnet/_line.json
+      adapter-path:  /KANG/json/lightnet/adapter.json
+      lns01-path:    /KANG/json/lightnet/lns01.json
+      link-path:     /KANG/json/lightnet/link.json
 
 ---
 spring.profiles: lns-local
