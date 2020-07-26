@@ -56,8 +56,8 @@ public class AuthScheduler {
 
 	public void authRefresh() throws Exception {
 		Map<String,String> mapReq = new HashMap<>();
-		mapReq.put("clientId", "pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT");
-		mapReq.put("secret", "skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk");
+		mapReq.put("clientId", this.lnsEnvAuthProperties.getClientId());
+		mapReq.put("secret", this.lnsEnvAuthProperties.getSecret());
 		this.httpPostAuth(mapReq);
 	}
 	

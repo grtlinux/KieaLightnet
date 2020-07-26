@@ -16,6 +16,8 @@ import lombok.Data;
 @Data
 public class LnsEnvAuthProperties {
 
+	private String clientId;
+	private String secret;
 	private String accessToken;
 	private String[] lightnetUrl;
 	private int lightnetStartIdx;
