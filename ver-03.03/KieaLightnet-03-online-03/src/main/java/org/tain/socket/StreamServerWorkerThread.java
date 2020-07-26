@@ -3,6 +3,7 @@ package org.tain.socket;
 import java.net.Socket;
 
 import org.tain.object.LnsPacket;
+import org.tain.scheduler.TransactionIdScheduler;
 import org.tain.scheduler.ValidateScheduler;
 import org.tain.utils.CurrentInfo;
 
@@ -51,7 +52,7 @@ public class StreamServerWorkerThread extends Thread {
 					//response = CallbackScheduler.process(request);
 					break;
 				case "0701":
-					//response = TransactionIdScheduler.process(request);
+					resPacket = TransactionIdScheduler.process(reqPacket);
 					break;
 				default:
 					break;
