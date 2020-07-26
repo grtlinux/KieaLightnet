@@ -36,6 +36,7 @@ public class RestTemplateConfig {
 			restTemplate = _getRestTemplate();
 			break;
 		case SETENV: // normal set the env
+			skip();
 			restTemplate = _getCustomRestTemplate();
 			break;
 		}
@@ -76,7 +77,7 @@ public class RestTemplateConfig {
 	
 	private static RestTemplate _getCustomRestTemplate() {
 		HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
-		httpRequestFactory.setConnectTimeout(2000);
+		httpRequestFactory.setConnectTimeout(5000);
 		httpRequestFactory.setReadTimeout(3000);
 		HttpClient httpClient = HttpClientBuilder.create()
 				.setMaxConnTotal(200)

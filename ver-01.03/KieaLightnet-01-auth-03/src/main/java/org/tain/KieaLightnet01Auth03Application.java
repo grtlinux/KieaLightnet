@@ -1,21 +1,17 @@
 package org.tain;
 
 import java.time.LocalDateTime;
-import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.tain.domain.Trid;
 import org.tain.properties.LnsEnvAuthProperties;
 import org.tain.properties.LnsEnvBaseProperties;
 import org.tain.properties.LnsEnvJsonProperties;
-import org.tain.repository.TridRepository;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -67,19 +63,8 @@ public class KieaLightnet01Auth03Application implements CommandLineRunner {
 		}
 	}
 
-	@Autowired
-	private TridRepository tridRepository;
-	
 	private void job02() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
-		
-		if (!Flag.flag) IntStream.rangeClosed(1, 10).forEach(index -> {
-			Trid trid = Trid.builder().trid("trid-" + System.currentTimeMillis()).build();
-			this.tridRepository.save(trid);
-			log.info(">>>>> trid.json = {}", trid.toPrettyJson());
-			
-			Sleep.run(1000);
-		});
 	}
 
 	private void job03() {

@@ -1,11 +1,9 @@
 package org.tain.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,8 +14,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.tain.domain.Trid;
+import org.tain.repository.TridRepository;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.TransactionId;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,7 +32,8 @@ public class TransactionIdController {
 	///////////////////////////////////////////////////////////////////////////
 	// http://localhost:18087/v0.3/info/transactionId/get
 
-	private Random random = new Random(System.currentTimeMillis());
+	@Autowired
+	private TridRepository tridRepository;
 	
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {"/get"}, method = {RequestMethod.GET, RequestMethod.POST})
@@ -44,22 +46,13 @@ public class TransactionIdController {
 			log.info(">>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		StringBuffer transactionId = new StringBuffer();
-		if (Flag.flag) {
-			LocalDateTime now = LocalDateTime.now();
-			transactionId.append("HW");
-			transactionId.append(now.format(DateTimeFormatter.ofPattern("yyMMddHHmm")));
-			transactionId.append("A");
-			transactionId.append(now.format(DateTimeFormatter.ofPattern("ss")));
-			transactionId.append(String.valueOf(this.random.nextInt(10)));
-			
-			log.info(">>>>> transactionId = [" + transactionId.toString() + "]");
-		}
+		String transactionId = TransactionId.get();
+		this.tridRepository.save(Trid.builder().trid(transactionId).build());
 		
 		// TODO: map to object
 		Map<String,Object> map = new HashMap<>();
 		if (Flag.flag) {
-			map.put("transactionId", transactionId.toString());
+			map.put("transactionId", transactionId);
 			map.put("status", "success");
 			map.put("message", "OK");
 		}
