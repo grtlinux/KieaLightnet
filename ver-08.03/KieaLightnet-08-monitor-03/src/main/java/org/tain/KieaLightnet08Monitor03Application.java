@@ -23,6 +23,7 @@ import org.tain.domain.Link;
 import org.tain.domain.Lns01;
 import org.tain.domain.Stmt;
 import org.tain.object.LnsJson;
+import org.tain.object.LnsMap;
 import org.tain.object.LnsStream;
 import org.tain.properties.LnsEnvBaseProperties;
 import org.tain.properties.LnsEnvJsonProperties;
@@ -63,10 +64,20 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 		if (!Flag.flag) job04();
 		if (!Flag.flag) job05();
 		if (!Flag.flag) job06();
-		if (Flag.flag) job07();
+		if (!Flag.flag) job07();
 		if (Flag.flag) job08();
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
+		if (Flag.flag) job11();
+		if (Flag.flag) job12();
+		if (Flag.flag) job13();
+		if (Flag.flag) job14();
+		if (Flag.flag) job15();
+		if (Flag.flag) job16();
+		if (Flag.flag) job17();
+		if (Flag.flag) job18();
+		if (Flag.flag) job19();
+		if (Flag.flag) job20();
 	}
 
 	////////////////////////////////////////////////////////////////////////////
@@ -253,8 +264,8 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 		LnsJson reqLnsJson = null;
 		if (Flag.flag) {
 			reqLnsJson = LnsJson.builder()
-					.name("TEST")
-					.title("for testing...")
+					.name("TEST-trid")
+					.title("for getting trid...")
 					.workUrl("http://localhost:18091/v0.3/lns01/trid")
 					.division("trid")
 					.divisionType("REQ")
@@ -302,15 +313,111 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 	////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////
 
-	private void job08() {
-		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	private void job08() throws Exception {
+		log.info("MONITOR >>>>> {} {}", CurrentInfo.get());
+		
+		LnsJson reqLnsJson = null;
+		if (Flag.flag) {
+			LnsMap reqLnsMap = new LnsMap();
+			reqLnsMap.put("clientId", "pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT");
+			reqLnsMap.put("secret", "skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk");
+			reqLnsMap.reset();
+			reqLnsMap.printInfo();
+			
+			reqLnsJson = LnsJson.builder()
+					.name("TEST")
+					.title("for auth-testing...")
+					.workUrl("http://localhost:18082/v0.3/link/test")
+					.division("test")
+					.divisionType("REQ")
+					.dataType("JSON")
+					.reqJsonData(reqLnsMap.toString())
+					.build();
+			
+			log.info("MONITOR >>>>> 1. reqLnsJson = {}", reqLnsJson.toPrettyJson());
+			log.info("MONITOR >>>>> 2. reqLnsMap = {}", reqLnsMap.toPrettyString());
+		}
+		
+		LnsJson resLnsJson = null;
+		if (Flag.flag) {
+			try {
+				HttpHeaders reqHeaders = new HttpHeaders();
+				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqLnsJson.toJson(), reqHeaders);
+				
+				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+						reqLnsJson.getWorkUrl()
+						, HttpMethod.POST
+						, reqHttpEntity
+						, String.class);
+				
+				log.info("MONITOR >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("MONITOR >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				
+				resLnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+			} catch (Exception e) {
+				log.error("MONITOR >>>>> Exception.message = {}", e.getMessage());
+				System.exit(-1);
+			}
+		}
+		
+		if (Flag.flag) {
+			LnsMap resLnsMap = new LnsMap(resLnsJson.getResJsonData());
+			
+			log.info("MONITOR >>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
+			log.info("MONITOR >>>>> 2. resLnsMap = {}", resLnsMap.toPrettyString());
+		}
 	}
+
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
 	private void job09() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 	}
 
 	private void job10() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job11() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job12() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job13() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job14() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job15() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job16() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job17() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job18() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job19() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	}
+
+	private void job20() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 	}
 }
