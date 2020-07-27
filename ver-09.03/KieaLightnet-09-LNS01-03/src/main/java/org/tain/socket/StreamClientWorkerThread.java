@@ -2,6 +2,7 @@ package org.tain.socket;
 
 import java.net.Socket;
 
+import org.tain.object.LnsPacket;
 import org.tain.object.Message;
 import org.tain.object.Packet;
 import org.tain.queue.MessageQueue;
@@ -27,17 +28,16 @@ public class StreamClientWorkerThread extends Thread {
 		if (Flag.flag) {
 			while (true) {
 				Message message = this.messageQueue.get();
-				String request = message.getData();
-				log.info("KANG-20200628 >>>>> request: [{}]", request);
+				// String request = message.getData();
+				LnsPacket reqPacket = new LnsPacket(message.getData());
+				log.info("KANG-20200628 >>>>> reqPacket.json: {}", reqPacket.toPrettyJson());
 				
-				Packet packet = this.streamPacket.sendPacket(request);
-				if (Flag.flag) System.out.println("CLIENT >>>>> " + packet);
+				reqPacket = this.streamPacket.sendPacket(reqPacket);
 				
-				packet = this.streamPacket.recvPacket();
+				LnsPacket resPacket = this.streamPacket.recvPacket();
 				
-				String response = packet.getData();
-				log.info("KANG-20200628 >>>>> response: [{}]", response);
-				message.setDataToQueue(response);
+				log.info("KANG-20200628 >>>>> resPacket.json: {}", resPacket.toPrettyJson());
+				message.setDataToQueue(resPacket.getData());
 			}
 		}
 	}

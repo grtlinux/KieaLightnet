@@ -1,23 +1,24 @@
 package org.tain.controller;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.tain.object.LnsJson;
 import org.tain.object.Message;
 import org.tain.socket.StreamClient;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,15 +30,39 @@ public class TransactionIdController {
 
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"/transactionId"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/trid"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
-			System.out.println("LNS01 >>>>> Headers = " + _httpEntity.getHeaders());
-			System.out.println("LNS01 >>>>> Body = " + _httpEntity.getBody());
+			log.info("LNS01 >>>>> Headers = {}", _httpEntity.getHeaders());
+			log.info("LNS01 >>>>> Body = {}", _httpEntity.getBody());
 		}
 		
+		LnsJson reqJson = null;
+		if (Flag.flag) {
+			reqJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
+			log.info("LNS01 >>>>> reqJson = {}", reqJson.toPrettyJson());
+		}
+		
+		LnsJson resJson = null;
+		if (Flag.flag) {
+			resJson = LnsJson.builder()
+					.name(reqJson.getName())
+					.title(reqJson.getTitle())
+					.workUrl(reqJson.getWorkUrl())
+					.division(reqJson.getDivision())
+					.divisionType(reqJson.getDivisionType())
+					.dataType(reqJson.getDataType())
+					.reqData("00530701REQ................................          ")
+					.resData("00530702RESHW34567890123456................ABCDEFGHIJ")
+					.code("00000")
+					.message("SUCCESS: to get the trid")
+					.build();
+			log.info("LNS01 >>>>> resJson = {}", resJson.toPrettyJson());
+		}
+		
+		/*
 		Map<String,String> mapReq = null;
 		if (Flag.flag) {
 			mapReq = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
@@ -52,6 +77,7 @@ public class TransactionIdController {
 			trid = resTrid.substring(11, 43).trim();
 			System.out.println(">>>>> trid = " + trid);
 		}
+		*/
 		
 		/*
 		// validate stream
@@ -64,6 +90,7 @@ public class TransactionIdController {
 		}
 		*/
 		
+		/*
 		String response = "00000102  temp data.123456789012345678901234567890...................... not real";
 		
 		Map<String,Object> mapRes = null;
@@ -76,8 +103,12 @@ public class TransactionIdController {
 			
 			System.out.println("LNS01 >>>>> retMap = " + mapRes);
 		}
+		*/
 		
-		return new ResponseEntity<>(mapRes, HttpStatus.OK);
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(resJson, headers, HttpStatus.OK);
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////

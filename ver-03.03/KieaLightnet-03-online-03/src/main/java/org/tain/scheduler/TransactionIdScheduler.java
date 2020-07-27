@@ -28,14 +28,15 @@ import lombok.extern.slf4j.Slf4j;
 public class TransactionIdScheduler {
 
 	public static LnsPacket process(LnsPacket request) throws Exception {
-		log.info("KANG-20200623 >>>>> {} request.json: {}", CurrentInfo.get(), request.toPrettyJson());
+		log.info("KANG-20200623 >>>>> request.json: {}", request.toPrettyJson());
 		
-		//LnsPacket response = null;
+		LnsPacket response = null;
 		if (Flag.flag) {
-			
+			response = new LnsPacket("00530702RES................................          ");
+			log.info("KANG-20200623 >>>>> response.json: {}", response.toPrettyJson());
 		}
 		
-		return request;
+		return response;
 	}
 
 	public static String process(String request) throws Exception {

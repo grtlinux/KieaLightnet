@@ -9,6 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.tain.domain.Adapter;
 import org.tain.domain.Board;
@@ -17,6 +22,8 @@ import org.tain.domain.Line;
 import org.tain.domain.Link;
 import org.tain.domain.Lns01;
 import org.tain.domain.Stmt;
+import org.tain.object.LnsJson;
+import org.tain.object.LnsStream;
 import org.tain.properties.LnsEnvBaseProperties;
 import org.tain.properties.LnsEnvJsonProperties;
 import org.tain.properties.LnsEnvMonitorProperties;
@@ -29,6 +36,8 @@ import org.tain.repository.Lns01Repository;
 import org.tain.repository.StmtRepository;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.RestTemplateConfig;
+import org.tain.utils.enums.RestTemplateType;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,17 +58,21 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		if (Flag.flag) job01();
-		if (Flag.flag) job02();
+		if (!Flag.flag) job02();
 		if (!Flag.flag) job03();
-		if (Flag.flag) job04();
-		if (Flag.flag) job05();
-		if (Flag.flag) job06();
+		if (!Flag.flag) job04();
+		if (!Flag.flag) job05();
+		if (!Flag.flag) job06();
 		if (Flag.flag) job07();
 		if (Flag.flag) job08();
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
 	}
 
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	
 	@Autowired
 	private LnsEnvBaseProperties lnsEnvBaseProperties;
 	
@@ -236,7 +249,61 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 
 	private void job07() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		LnsJson reqJson = null;
+		if (Flag.flag) {
+			reqJson = LnsJson.builder()
+					.name("TEST")
+					.title("for testing...")
+					.workUrl("http://localhost:18091/v0.3/lns01/trid")
+					.division("trid")
+					.divisionType("REQ")
+					.dataType("STREAM")
+					.reqData("00530701REQ................................          ")
+					.resData("")
+					.code("")
+					.message("")
+					.build();
+			log.info(">>>>> lnsJson.REQ = {}", reqJson.toPrettyJson());
+			
+			LnsStream lnsStream = new LnsStream(reqJson.getReqData());
+			log.info(">>>>> lnsStream.REQ = {}", lnsStream.toPrettyJson());
+		}
+		
+		LnsJson resJson = null;
+		if (Flag.flag) {
+			try {
+				HttpHeaders reqHeaders = new HttpHeaders();
+				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson.toJson(), reqHeaders);
+				
+				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+						reqJson.getWorkUrl()
+						, HttpMethod.POST
+						, reqHttpEntity
+						, String.class);
+				
+				log.info(">>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info(">>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				
+				resJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+			} catch (Exception e) {
+				log.error(">>>>> Exception.message = {}", e.getMessage());
+				System.exit(-1);
+			}
+		}
+		
+		if (Flag.flag) {
+			log.info(">>>>> lnsJson.RES = {}", resJson.toPrettyJson());
+			
+			LnsStream resStream = new LnsStream(resJson.getResData());
+			log.info(">>>>> lnsStream.RES = {}", resStream.toPrettyJson());
+		}
 	}
+
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////
 
 	private void job08() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());

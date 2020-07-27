@@ -20,7 +20,7 @@ public class StreamClient {
 	private static final int port = 19091;
 	private StreamClientWorkerThread thread = null;
 	
-	@Bean
+	//@Bean
 	public void jobStreamClient() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
