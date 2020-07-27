@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(value = {"/lns01"})
 @Slf4j
-public class TransactionIdController {
+public class TridController {
 
 	
 	@CrossOrigin(origins = {"/**"})
@@ -53,13 +53,9 @@ public class TransactionIdController {
 		LnsStream resLnsStream = null;
 		if (Flag.flag) {
 			resLnsJson = (LnsJson) reqLnsJson.clone();
-			resLnsStream = (LnsStream) reqLnsStream.clone();
 			
-			resLnsStream.setDivision("0702");
-			resLnsStream.setDivisionType("RES");
-			resLnsStream.setTrid("HW34567890123456");
-			resLnsStream.setContent(".............................OK");
-			resLnsStream.combind();
+			String response = this.callStreamClient(reqLnsStream.getData());
+			resLnsStream = new LnsStream(response);
 			
 			resLnsJson.setDivisionType("RES");
 			resLnsJson.setResStrData(resLnsStream.getData());
@@ -69,49 +65,6 @@ public class TransactionIdController {
 			log.info("LNS01 >>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
 			log.info("LNS01 >>>>> 2. resLnsStream = {}", resLnsStream.toPrettyJson());
 		}
-		
-		/*
-		Map<String,String> mapReq = null;
-		if (Flag.flag) {
-			mapReq = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
-		}
-		
-		// transaction id
-		String trid = "";
-		if (Flag.flag) {
-			//String reqTrid = "00530701REQ................................          ";
-			String reqTrid = mapReq.get("data");
-			String resTrid = this.callStreamClient(reqTrid);  // IN:stream OUT:stream
-			trid = resTrid.substring(11, 43).trim();
-			System.out.println(">>>>> trid = " + trid);
-		}
-		*/
-		
-		/*
-		// validate stream
-		String response = "00000102  temp data.123456789012345678901234567890...................... not real";
-		if (!Flag.flag) {
-			ObjectMapper objectMapper = new ObjectMapper();
-			Map<String, String> map = objectMapper.readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
-			
-			response = this.callStreamClient(map.get("data"));  // IN:stream OUT:stream
-		}
-		*/
-		
-		/*
-		String response = "00000102  temp data.123456789012345678901234567890...................... not real";
-		
-		Map<String,Object> mapRes = null;
-		if (Flag.flag) {
-			mapRes = new HashMap<>();
-			
-			mapRes.put("title", "/lns01/transactionId");
-			mapRes.put("createdDate", LocalDateTime.now());
-			mapRes.put("response", response);
-			
-			System.out.println("LNS01 >>>>> retMap = " + mapRes);
-		}
-		*/
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
 		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");

@@ -64,7 +64,7 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 		if (!Flag.flag) job04();
 		if (!Flag.flag) job05();
 		if (!Flag.flag) job06();
-		if (!Flag.flag) job07();
+		if (Flag.flag) job07();
 		if (!Flag.flag) job08();
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
@@ -78,6 +78,8 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 		if (Flag.flag) job18();
 		if (Flag.flag) job19();
 		if (Flag.flag) job20();
+		
+		System.exit(-1);
 	}
 
 	////////////////////////////////////////////////////////////////////////////

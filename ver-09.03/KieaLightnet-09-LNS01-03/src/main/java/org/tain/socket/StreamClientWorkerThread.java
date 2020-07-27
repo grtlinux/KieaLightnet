@@ -4,7 +4,6 @@ import java.net.Socket;
 
 import org.tain.object.LnsPacket;
 import org.tain.object.Message;
-import org.tain.object.Packet;
 import org.tain.queue.MessageQueue;
 import org.tain.utils.Flag;
 
