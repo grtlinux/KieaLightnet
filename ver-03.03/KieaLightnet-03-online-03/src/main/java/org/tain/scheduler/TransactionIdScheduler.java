@@ -10,7 +10,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import org.tain.object.LnsJson;
+import org.tain.object.LnsMap;
 import org.tain.object.LnsPacket;
+import org.tain.object.LnsStream;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.RestTemplateConfig;
@@ -27,18 +30,85 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TransactionIdScheduler {
 
-	public static LnsPacket process(LnsPacket request) throws Exception {
-		log.info("KANG-20200623 >>>>> request.json: {}", request.toPrettyJson());
+	public static LnsPacket process(LnsPacket reqLnsPacket) throws Exception {
+		log.info("KANG-20200623 >>>>> request.json: {}", reqLnsPacket.toPrettyJson());
 		
-		LnsPacket response = null;
 		if (Flag.flag) {
-			response = new LnsPacket("00530702RES................................          ");
-			log.info("KANG-20200623 >>>>> response.json: {}", response.toPrettyJson());
+			// stream to json on trid
+			String reqJson = mapperS2J(reqLnsPacket.getData());
 		}
 		
-		return response;
+		LnsPacket resLnsPacket = null;
+		if (Flag.flag) {
+			resLnsPacket = new LnsPacket("00530702RESHWyymmddhhmmA999    ............OK        ");
+			log.info("KANG-20200623 >>>>> response.json: {}", resLnsPacket.toPrettyJson());
+		}
+		
+		return resLnsPacket;
 	}
 
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	
+	public static String mapperS2J(String reqStream) throws Exception {
+		log.info(">>>>> {} {}", CurrentInfo.get());
+		
+		LnsJson reqLnsJson = null;
+		if (Flag.flag) {
+			reqLnsJson = LnsJson.builder()
+					.name("MAPPER")
+					.title("mapperS2J with trid")
+					.workUrl("http://localhost:18091/v0.3/lns01/trid")
+					.division("trid")
+					.divisionType("REQ")
+					.dataType("STREAM")
+					.reqStrData(reqStream)
+					.build();
+			LnsStream reqLnsStream = new LnsStream(reqLnsJson.getReqStrData());
+			
+			log.info(">>>>> 1. reqLnsJson = {}", reqLnsJson.toPrettyJson());
+			log.info(">>>>> 2. reqLnsStream = {}", reqLnsStream.toPrettyJson());
+		}
+		
+		LnsJson resLnsJson = null;
+		if (Flag.flag) {
+			try {
+				HttpHeaders reqHeaders = new HttpHeaders();
+				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqLnsJson.toJson(), reqHeaders);
+				
+				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+						reqLnsJson.getWorkUrl()
+						, HttpMethod.POST
+						, reqHttpEntity
+						, String.class);
+				
+				log.info(">>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info(">>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				
+				resLnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+			} catch (Exception e) {
+				log.error(">>>>> Exception.message = {}", e.getMessage());
+				System.exit(-1);
+			}
+		}
+		
+		LnsMap resLnsMap = null;
+		if (Flag.flag) {
+			resLnsMap = new LnsMap(resLnsJson.getResJsonData());
+			
+			log.info(">>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
+			log.info(">>>>> 2. resLnsMap = {}", resLnsMap.toPrettyString());
+		}
+		
+		return resLnsMap.toString();
+	}
+	
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	
 	public static String process(String request) throws Exception {
 		log.info("KANG-20200717 >>>>> {} {}", CurrentInfo.get());
 		
