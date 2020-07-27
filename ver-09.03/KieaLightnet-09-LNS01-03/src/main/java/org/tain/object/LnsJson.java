@@ -16,20 +16,20 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @NoArgsConstructor
 @Slf4j
-public class LnsJson {
+public class LnsJson implements Cloneable {
 
 	private String name;
 	private String title;
 	
 	private String workUrl;
-	private String division;
-	private String divisionType;
+	private String division;       // trid/validate/commit/list/detail/callback
+	private String divisionType;   // REQ / RES
 	
-	private String dataType;
+	private String dataType;       // STREAM / JSON
 	private String reqData;
 	private String resData;
 	
-	private String code;
+	private String code;           // 00000: SUCCESS
 	private String message;
 	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
@@ -59,6 +59,13 @@ public class LnsJson {
 		this.resData = resData;
 		this.code = code;
 		this.message = message;
+	}
+	
+	////////////////////////////////////////////////////////////////////////
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
 	
 	////////////////////////////////////////////////////////////////////////

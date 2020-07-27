@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @NoArgsConstructor
 @Slf4j
-public class LnsJson implements Cloneable {
+public class LnsJson {
 
 	private String name;
 	private String title;
@@ -59,13 +59,6 @@ public class LnsJson implements Cloneable {
 		this.resData = resData;
 		this.code = code;
 		this.message = message;
-	}
-	
-	////////////////////////////////////////////////////////////////////////
-	
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
 	}
 	
 	////////////////////////////////////////////////////////////////////////

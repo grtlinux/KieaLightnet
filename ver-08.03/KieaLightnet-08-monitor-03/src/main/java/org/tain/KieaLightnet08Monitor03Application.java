@@ -248,7 +248,7 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 	////////////////////////////////////////////////////////////////////////////
 
 	private void job07() {
-		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		log.info("MONITOR >>>>> {} {}", CurrentInfo.get());
 		
 		LnsJson reqJson = null;
 		if (Flag.flag) {
@@ -264,10 +264,10 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 					.code("")
 					.message("")
 					.build();
-			log.info(">>>>> lnsJson.REQ = {}", reqJson.toPrettyJson());
+			log.info("MONITOR >>>>> lnsJson.REQ = {}", reqJson.toPrettyJson());
 			
 			LnsStream lnsStream = new LnsStream(reqJson.getReqData());
-			log.info(">>>>> lnsStream.REQ = {}", lnsStream.toPrettyJson());
+			log.info("MONITOR >>>>> lnsStream.REQ = {}", lnsStream.toPrettyJson());
 		}
 		
 		LnsJson resJson = null;
@@ -283,21 +283,21 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 						, reqHttpEntity
 						, String.class);
 				
-				log.info(">>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info(">>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				log.info("MONITOR >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("MONITOR >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				
 				resJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
 			} catch (Exception e) {
-				log.error(">>>>> Exception.message = {}", e.getMessage());
+				log.error("MONITOR >>>>> Exception.message = {}", e.getMessage());
 				System.exit(-1);
 			}
 		}
 		
 		if (Flag.flag) {
-			log.info(">>>>> lnsJson.RES = {}", resJson.toPrettyJson());
+			log.info("MONITOR >>>>> lnsJson.RES = {}", resJson.toPrettyJson());
 			
 			LnsStream resStream = new LnsStream(resJson.getResData());
-			log.info(">>>>> lnsStream.RES = {}", resStream.toPrettyJson());
+			log.info("MONITOR >>>>> lnsStream.RES = {}", resStream.toPrettyJson());
 		}
 	}
 

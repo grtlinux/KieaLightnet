@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @NoArgsConstructor
 @Slf4j
-public class LnsStream {
+public class LnsStream implements Cloneable {
 
 	private String data;
 	private int length;
@@ -41,6 +41,29 @@ public class LnsStream {
 	//@CreationTimestamp  // use when repo.save
 	private Timestamp creDate = new Timestamp(System.currentTimeMillis());
 
+	////////////////////////////////////////////////////////////////////////
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+	
+	////////////////////////////////////////////////////////////////////////
+	
+	public String combind() {
+		StringBuffer sb = new StringBuffer();
+		sb.append(String.format("%-4s", this.division));
+		sb.append(String.format("%-3s", this.divisionType));
+		sb.append(String.format("%-20s", this.trid));
+		sb.append(this.content);
+		
+		this.length = sb.length() + 4;
+		sb.insert(0, String.format("%04d", this.length));
+		
+		this.data = sb.toString();
+		
+		return this.data;
+	}
 	////////////////////////////////////////////////////////////////////////
 	
 	public String toJson() {

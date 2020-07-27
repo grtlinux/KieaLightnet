@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,58 +15,44 @@ import lombok.extern.slf4j.Slf4j;
 @Data
 @NoArgsConstructor
 @Slf4j
-public class LnsJson implements Cloneable {
+public class LnsStream {
 
-	private String name;
-	private String title;
+	private String data;
+	private int length;
 	
-	private String workUrl;
-	private String division;       // trid/validate/commit/list/detail/callback
-	private String divisionType;   // REQ / RES
+	private String strLength;     // 4
+	private String division;      // 4
+	private String divisionType;  // 3 REQ/RES
+	private String trid;          // 20 transaction id (16)
+	private String content;
 	
-	private String dataType;       // STREAM / JSON
-	private String reqData;
-	private String resData;
-	
-	private String code;           // 00000: SUCCESS
-	private String message;
+	public LnsStream(String data) {
+		this.data   = data;
+		this.length = data.length();
+		
+		this.strLength    = data.substring(0, 4);
+		this.division     = data.substring(4, 8);
+		this.divisionType = data.substring(8, 11);
+		this.trid         = data.substring(11, 31);
+		this.content      = data.substring(31);
+	}
 	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	//@CreationTimestamp  // use when repo.save
 	private Timestamp creDate = new Timestamp(System.currentTimeMillis());
 
-	@Builder
-	public LnsJson(
-			String name,
-			String title,
-			String workUrl,
-			String division,
-			String divisionType,
-			String dataType,
-			String reqData,
-			String resData,
-			String code,
-			String message
-			) {
-		this.name = name;
-		this.title = title;
-		this.workUrl = workUrl;
-		this.division = division;
-		this.divisionType = divisionType;
-		this.dataType = dataType;
-		this.reqData = reqData;
-		this.resData = resData;
-		this.code = code;
-		this.message = message;
-	}
-	
 	////////////////////////////////////////////////////////////////////////
 	
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
+	public String combind() {
+		StringBuffer sb = new StringBuffer();
+		sb.append(String.format("%-4s", this.division));
+		sb.append(String.format("%-3s", this.divisionType));
+		sb.append(String.format("%-20s", this.trid));
+		sb.append(this.content);
+		sb.insert(0, String.format("%04d", sb.length() + 4));
+		
+		return this.data;
 	}
-	
 	////////////////////////////////////////////////////////////////////////
 	
 	public String toJson() {

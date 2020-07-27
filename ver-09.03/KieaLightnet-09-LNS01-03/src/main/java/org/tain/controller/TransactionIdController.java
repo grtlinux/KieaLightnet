@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.object.LnsJson;
+import org.tain.object.LnsStream;
 import org.tain.object.Message;
 import org.tain.socket.StreamClient;
 import org.tain.utils.CurrentInfo;
@@ -40,25 +41,31 @@ public class TransactionIdController {
 		}
 		
 		LnsJson reqJson = null;
+		LnsStream reqStream = null;
 		if (Flag.flag) {
 			reqJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
+			reqStream = new LnsStream(reqJson.getReqData());
 			log.info("LNS01 >>>>> reqJson = {}", reqJson.toPrettyJson());
+			log.info("LNS01 >>>>> reqStream = {}", reqStream.toPrettyJson());
 		}
 		
 		LnsJson resJson = null;
+		LnsStream resStream = null;
 		if (Flag.flag) {
-			resJson = LnsJson.builder()
-					.name(reqJson.getName())
-					.title(reqJson.getTitle())
-					.workUrl(reqJson.getWorkUrl())
-					.division(reqJson.getDivision())
-					.divisionType(reqJson.getDivisionType())
-					.dataType(reqJson.getDataType())
-					.reqData("00530701REQ................................          ")
-					.resData("00530702RESHW34567890123456................ABCDEFGHIJ")
-					.code("00000")
-					.message("SUCCESS: to get the trid")
-					.build();
+			resJson = (LnsJson) reqJson.clone();
+			
+			resStream = (LnsStream) reqStream.clone();
+			resStream.setDivision("0702");
+			resStream.setDivisionType("RES");
+			resStream.setTrid("HW34567890123456");
+			resStream.setContent(".............................OK");
+			resStream.combind();
+			
+			resJson.setDivisionType("RES");
+			resJson.setResData(resStream.getData());
+			resJson.setCode("00000");
+			resJson.setMessage("MSG: to get the trid..");
+			
 			log.info("LNS01 >>>>> resJson = {}", resJson.toPrettyJson());
 		}
 		
