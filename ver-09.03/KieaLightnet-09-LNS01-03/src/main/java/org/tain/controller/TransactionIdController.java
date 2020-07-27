@@ -9,7 +9,6 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,16 +38,22 @@ public class TransactionIdController {
 			System.out.println("LNS01 >>>>> Body = " + _httpEntity.getBody());
 		}
 		
-		/*
+		Map<String,String> mapReq = null;
+		if (Flag.flag) {
+			mapReq = new ObjectMapper().readValue(_httpEntity.getBody(), new TypeReference<Map<String,String>>(){});
+		}
+		
 		// transaction id
 		String trid = "";
 		if (Flag.flag) {
-			String reqTrid = "00000701REQ................................          ";
+			//String reqTrid = "00530701REQ................................          ";
+			String reqTrid = mapReq.get("data");
 			String resTrid = this.callStreamClient(reqTrid);  // IN:stream OUT:stream
-			trid = resTrid.substring(11, 43);
+			trid = resTrid.substring(11, 43).trim();
 			System.out.println(">>>>> trid = " + trid);
 		}
 		
+		/*
 		// validate stream
 		String response = "00000102  temp data.123456789012345678901234567890...................... not real";
 		if (!Flag.flag) {
@@ -61,18 +66,18 @@ public class TransactionIdController {
 		
 		String response = "00000102  temp data.123456789012345678901234567890...................... not real";
 		
-		Map<String,Object> map = null;
+		Map<String,Object> mapRes = null;
 		if (Flag.flag) {
-			map = new HashMap<>();
+			mapRes = new HashMap<>();
 			
-			map.put("title", "/lns01/validate");
-			map.put("createdDate", LocalDateTime.now());
-			map.put("response", response);
+			mapRes.put("title", "/lns01/transactionId");
+			mapRes.put("createdDate", LocalDateTime.now());
+			mapRes.put("response", response);
 			
-			System.out.println("LNS01 >>>>> retMap = " + map);
+			System.out.println("LNS01 >>>>> retMap = " + mapRes);
 		}
 		
-		return new ResponseEntity<>(map, HttpStatus.OK);
+		return new ResponseEntity<>(mapRes, HttpStatus.OK);
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////

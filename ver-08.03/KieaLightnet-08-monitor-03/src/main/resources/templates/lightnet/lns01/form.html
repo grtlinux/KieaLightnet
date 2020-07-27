@@ -16,47 +16,47 @@
 	<!-- main -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Line Form</h1>
+			<h1>LNS01 Form</h1>
 		</div>
 		<br/>
-		<input id="line_id" type="hidden" th:value="${line?.id}"/>
-		<input id="line_create_date" type="hidden" th:value="${line?.createdDate}"/>
+		<input id="lns01_id" type="hidden" th:value="${lns01?.id}"/>
+		<input id="lns01_create_date" type="hidden" th:value="${lns01?.createdDate}"/>
 		<table class="table">
 			<tr>
 				<th style="padding:13px 0 0 15px;">생성날짜</th>
-				<td><input type="text" class="col-md-1 form-control input-sm" readonly="readonly" th:value="${line?.createdDate} ? ${#temporals.format(line.createdDate,'yyyy-MM-dd HH:mm')} : ${line?.createdDate}"/></td>
+				<td><input type="text" class="col-md-1 form-control input-sm" readonly="readonly" th:value="${lns01?.createdDate} ? ${#temporals.format(lns01.createdDate,'yyyy-MM-dd HH:mm')} : ${lns01?.createdDate}"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Title</th>
-				<td><input id="line_title" th:value="${line?.title}" type="text" class="col-md-1 form-control input-sm"/></td>
+				<td><input id="lns01_title" th:value="${lns01?.title}" type="text" class="col-md-1 form-control input-sm"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Content</th>
-				<td><input id="line_content" th:value="${line?.content}" type="text" class="col-md-1 form-control input-sm"/></td>
+				<td><input id="lns01_content" th:value="${lns01?.content}" type="text" class="col-md-1 form-control input-sm"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">User Id</th>
-				<td><input id="line_userId" th:value="${line?.userId}" type="text" class="col-md-1 form-control input-sm"/></td>
+				<td><input id="lns01_userId" th:value="${lns01?.userId}" type="text" class="col-md-1 form-control input-sm"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Request Url</th>
-				<td><input id="line_reqUrl" th:value="${line?.reqUrl}" type="text" class="col-md-1 form-control input-sm"/></td>
+				<td><input id="lns01_reqUrl" th:value="${lns01?.reqUrl}" type="text" class="col-md-1 form-control input-sm"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Request Version</th>
-				<td><input id="line_reqVer" th:value="${line?.reqVer}" type="text" class="col-md-1 form-control input-sm"/></td>
+				<td><input id="lns01_reqVer" th:value="${lns01?.reqVer}" type="text" class="col-md-1 form-control input-sm"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Request Path</th>
-				<td><input id="line_reqPath" th:value="${line?.reqPath}" type="text" class="col-md-1 form-control input-sm"/></td>
+				<td><input id="lns01_reqPath" th:value="${lns01?.reqPath}" type="text" class="col-md-1 form-control input-sm"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Request Method</th>
-				<td><input id="line_reqMethod" th:value="${line?.reqMethod}" type="text" class="col-md-1 form-control input-sm"/></td>
+				<td><input id="lns01_reqMethod" th:value="${lns01?.reqMethod}" type="text" class="col-md-1 form-control input-sm"/></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Request Parameters</th>
-				<td><textarea id="line_reqParameters" class="col-md-1 form-control input-sm" rows="50" style="height:100px;"></textarea><span class="help-block"></span></td>
+				<td><textarea id="lns01_reqParameters" class="col-md-1 form-control input-sm" rows="50" style="height:100px;"></textarea><span class="help-block"></span></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -66,11 +66,11 @@
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">Response Json</th>
-				<td><textarea id="line_resRetJson" class="col-md-1 form-control input-sm" rows="50" style="height:100px;"></textarea><span class="help-block"></span></td>
+				<td><textarea id="lns01_resRetJson" class="col-md-1 form-control input-sm" rows="50" style="height:100px;"></textarea><span class="help-block"></span></td>
 			</tr>
 			<tr class="hide">
 				<th style="padding:13px 0 0 15px;">Response Stresm</th>
-				<td><textarea id="line_resRetStream" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
+				<td><textarea id="lns01_resRetStream" class="col-md-1 form-control input-sm" maxlength="140" rows="7" style="height:100px;"></textarea><span class="help-block"></span></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -78,13 +78,13 @@
 			</tr>
 		</table>
 		<div class="pull-left">
-			<a th:href="@{/line/list}" class="btn btn-default">LIST</a>
+			<a th:href="@{/lns01/list}" class="btn btn-default">LIST</a>
 			<button id="btnModal" type="button" class="btn btn-primary hide" data-toggle="modal" data-target="#myModal">TEST</button>
 		</div>
 		<div class="pull-right">
-			<button th:if="!${line?.id}" type="button" class="btn btn-primary" id="insert">SAVE</button>
-			<button th:if="${line?.id}" type="button" class="btn btn-info" id="update">UPDATE</button>
-			<button th:if="${line?.id}" type="button" class="btn btn-danger" id="delete">DELETE</button>
+			<button th:if="!${lns01?.id}" type="button" class="btn btn-primary" id="insert">SAVE</button>
+			<button th:if="${lns01?.id}" type="button" class="btn btn-info" id="update">UPDATE</button>
+			<button th:if="${lns01?.id}" type="button" class="btn btn-danger" id="delete">DELETE</button>
 		</div>
 	</div>
 	<br/><br/>
@@ -102,7 +102,7 @@
 			
 				<!-- Modal Header -->
 				<div class="modal-header bg-success">
-					<h4 class="modal-title">Line Test</h4>
+					<h4 class="modal-title">LNS01 Test</h4>
 					<!-- button type="button" class="close" data-dismiss="modal">&times;</button -->
 				</div>
 				
@@ -149,16 +149,16 @@
 	<!-- script -->
 	<script th:inline="javascript">
 		// document.ready
-		var json = /*[[${line?.reqParameters}]]*/;
+		var json = /*[[${lns01?.reqParameters}]]*/;
 		//if (true) console.log(">>>>> json = " + json);
-		$('#line_reqParameters').val(JSON.stringify(JSON.parse(json), null, 2));
+		$('#lns01_reqParameters').val(JSON.stringify(JSON.parse(json), null, 2));
 	</script>
 	<script>
 		$('#btnModal').click(function() {
 			//alert('Hello btnModal');
-			$('#modal_title').val($('#line_title').val());
-			$('#modal_reqUrl').val($('#line_reqUrl').val() + $('#line_reqVer').val() + $('#line_reqPath').val());
-			var jsonParameters = JSON.stringify(JSON.parse($('#line_reqParameters').val()), null, 2);
+			$('#modal_title').val($('#lns01_title').val());
+			$('#modal_reqUrl').val($('#lns01_reqUrl').val() + $('#lns01_reqVer').val() + $('#lns01_reqPath').val());
+			var jsonParameters = JSON.stringify(JSON.parse($('#lns01_reqParameters').val()), null, 2);
 			$('#modal_reqParameters').val(jsonParameters);
 			$('#modal_resRetJson').val('');
 		});
@@ -177,7 +177,7 @@
 					$('#modal_resRetJson').val(JSON.stringify(data, null, 2));
 					//alert('송신 성공~~');
 					//alert('송신 성공~~' + $('#modal_resRetJson').val());
-					//location.href = _contextPath_ + '/line/list';
+					//location.href = _contextPath_ + '/lns01/list';
 				},
 				error: function() {
 					alert('송신 실패!!');
@@ -186,7 +186,7 @@
 		});
 		$('#btnClose').click(function() {
 			//alert('Hello btnClose');
-			$('#line_resRetJson').val($('#modal_resRetJson').val());
+			$('#lns01_resRetJson').val($('#modal_resRetJson').val());
 		});
 		$('#btnCopyRequest').click(function() {
 			//alert('Hello btnCopyRequest');
@@ -203,22 +203,22 @@
 			document.execCommand("copy");
 		});
 	</script>
-	<script th:if="!${line?.id}">
+	<script th:if="!${lns01?.id}">
 		$('#insert').click(function() {
 			var jsonData = JSON.stringify({
-				title: $('#line_title').val(),
-				content: $('#line_content').val(),
-				userId: $('#line_userId').val(),
-				reqUrl: $('#line_reqUrl').val(),
-				reqVer: $('#line_reqVer').val(),
-				reqPath: $('#line_reqPath').val(),
-				reqMethod: $('#line_reqMethod').val(),
-				reqParameters: $('#line_reqParameters').val(),
-				resRetJson: $('#line_resRetJson').val(),
-				resRetStream: $('#line_resRetStream').val()
+				title: $('#lns01_title').val(),
+				content: $('#lns01_content').val(),
+				userId: $('#lns01_userId').val(),
+				reqUrl: $('#lns01_reqUrl').val(),
+				reqVer: $('#lns01_reqVer').val(),
+				reqPath: $('#lns01_reqPath').val(),
+				reqMethod: $('#lns01_reqMethod').val(),
+				reqParameters: $('#lns01_reqParameters').val(),
+				resRetJson: $('#lns01_resRetJson').val(),
+				resRetStream: $('#lns01_resRetStream').val()
 			});
 			$.ajax({
-				url: _contextPath_ + "/api/lines/",
+				url: _contextPath_ + "/api/lns01s/",
 				type: "POST",
 				data: jsonData,
 				contentType: "application/json",
@@ -228,7 +228,7 @@
 				dataType: "json",
 				success: function() {
 					alert('저장 성공~~');
-					location.href = _contextPath_ + '/line/list';
+					location.href = _contextPath_ + '/lns01/list';
 				},
 				error: function() {
 					alert('저장 실패!!');
@@ -236,30 +236,30 @@
 			});
 		});
 	</script>
-	<script th:if="${line?.id}">
+	<script th:if="${lns01?.id}">
 		$('#update').click(function() {
 			var jsonData = JSON.stringify({
-				title: $('#line_title').val(),
-				content: $('#line_content').val(),
-				userId: $('#line_userId').val(),
-				reqUrl: $('#line_reqUrl').val(),
-				reqVer: $('#line_reqVer').val(),
-				reqPath: $('#line_reqPath').val(),
-				reqMethod: $('#line_reqMethod').val(),
-				reqParameters: $('#line_reqParameters').val(),
-				resRetJson: $('#line_resRetJson').val(),
-				resRetStream: $('#line_resRetStream').val(),
-				createdDate: $('#line_create_date').val()
+				title: $('#lns01_title').val(),
+				content: $('#lns01_content').val(),
+				userId: $('#lns01_userId').val(),
+				reqUrl: $('#lns01_reqUrl').val(),
+				reqVer: $('#lns01_reqVer').val(),
+				reqPath: $('#lns01_reqPath').val(),
+				reqMethod: $('#lns01_reqMethod').val(),
+				reqParameters: $('#lns01_reqParameters').val(),
+				resRetJson: $('#lns01_resRetJson').val(),
+				resRetStream: $('#lns01_resRetStream').val(),
+				createdDate: $('#lns01_create_date').val()
 			});
 			$.ajax({
-				url: _contextPath_ + "/api/lines/" + $('#line_id').val(),
+				url: _contextPath_ + "/api/lns01s/" + $('#lns01_id').val(),
 				type: "PUT",
 				data: jsonData,
 				contentType: "application/json",
 				dataType: "json",
 				success: function() {
 					alert('수정 성공~~');
-					location.href = _contextPath_ + '/line/list';
+					location.href = _contextPath_ + '/lns01/list';
 				},
 				error: function() {
 					alert('수정 실패!!');
@@ -268,11 +268,11 @@
 		});
 		$('#delete').click(function() {
 			$.ajax({
-				url: _contextPath_ + "/api/lines/" + $('#line_id').val(),
+				url: _contextPath_ + "/api/lns01s/" + $('#lns01_id').val(),
 				type: "DELETE",
 				success: function() {
 					alert('삭제 성공~~');
-					location.href = _contextPath_ + '/line/list';
+					location.href = _contextPath_ + '/lns01/list';
 				},
 				error: function() {
 					alert('삭제 실패!!');

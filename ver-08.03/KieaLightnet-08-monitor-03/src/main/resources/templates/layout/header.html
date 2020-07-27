@@ -49,7 +49,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<!-- navbar menu -->
 				<ul class="nav navbar-nav navbar-left">
-					<li><a data-target="#modalSelfInfo" data-toggle="modal" href="#" onclick="alert('### Ligntnet Transfer System (LNS) version 0.3 :)');">Info</a></li>
+					<li><a data-target="#myArchModal" data-toggle="modal" href="#">Architecture</a></li>
 					<li class="dropdown hide">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Test<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -82,6 +82,33 @@
 			</div>
 		</div>
 	</nav>
+	
+	<!-- Modal dialog -->
+	<div class="modal fase" id="myArchModal">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+			
+				<!-- Modal Header -->
+				<div class="modal-header bg-success">
+					<h4 class="modal-title">LNS Architecture</h4>
+					<!-- button type="button" class="close" data-dismiss="modal">&times;</button -->
+				</div>
+				
+				<!-- Modal body -->
+				<div class="modal-body">
+					<img th:src="@{/images/architecture.png}" class="img-rounded img-responsive">
+				</div>
+				
+				<!-- Modal footer -->
+				<div class="modal-footer bg-success">
+					<button id="btnClose" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- /Modal dialog -->
+	
 </div>
 <!-- /header2 -->
 
