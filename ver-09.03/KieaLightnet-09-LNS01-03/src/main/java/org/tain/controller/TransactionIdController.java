@@ -40,33 +40,34 @@ public class TransactionIdController {
 			log.info("LNS01 >>>>> Body = {}", _httpEntity.getBody());
 		}
 		
-		LnsJson reqJson = null;
-		LnsStream reqStream = null;
+		LnsJson reqLnsJson = null;
+		LnsStream reqLnsStream = null;
 		if (Flag.flag) {
-			reqJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
-			reqStream = new LnsStream(reqJson.getReqData());
-			log.info("LNS01 >>>>> reqJson = {}", reqJson.toPrettyJson());
-			log.info("LNS01 >>>>> reqStream = {}", reqStream.toPrettyJson());
+			reqLnsJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
+			reqLnsStream = new LnsStream(reqLnsJson.getReqStrData());
+			log.info("LNS01 >>>>> 1. reqLnsJson = {}", reqLnsJson.toPrettyJson());
+			log.info("LNS01 >>>>> 2. reqLnsStream = {}", reqLnsStream.toPrettyJson());
 		}
 		
-		LnsJson resJson = null;
-		LnsStream resStream = null;
+		LnsJson resLnsJson = null;
+		LnsStream resLnsStream = null;
 		if (Flag.flag) {
-			resJson = (LnsJson) reqJson.clone();
+			resLnsJson = (LnsJson) reqLnsJson.clone();
+			resLnsStream = (LnsStream) reqLnsStream.clone();
 			
-			resStream = (LnsStream) reqStream.clone();
-			resStream.setDivision("0702");
-			resStream.setDivisionType("RES");
-			resStream.setTrid("HW34567890123456");
-			resStream.setContent(".............................OK");
-			resStream.combind();
+			resLnsStream.setDivision("0702");
+			resLnsStream.setDivisionType("RES");
+			resLnsStream.setTrid("HW34567890123456");
+			resLnsStream.setContent(".............................OK");
+			resLnsStream.combind();
 			
-			resJson.setDivisionType("RES");
-			resJson.setResData(resStream.getData());
-			resJson.setCode("00000");
-			resJson.setMessage("MSG: to get the trid..");
+			resLnsJson.setDivisionType("RES");
+			resLnsJson.setResStrData(resLnsStream.getData());
+			resLnsJson.setCode("00000");
+			resLnsJson.setMessage("MSG: to get the trid..");
 			
-			log.info("LNS01 >>>>> resJson = {}", resJson.toPrettyJson());
+			log.info("LNS01 >>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
+			log.info("LNS01 >>>>> 2. resLnsStream = {}", resLnsStream.toPrettyJson());
 		}
 		
 		/*
@@ -115,7 +116,7 @@ public class TransactionIdController {
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
 		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		
-		return new ResponseEntity<>(resJson, headers, HttpStatus.OK);
+		return new ResponseEntity<>(resLnsJson, headers, HttpStatus.OK);
 	}
 	//////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////

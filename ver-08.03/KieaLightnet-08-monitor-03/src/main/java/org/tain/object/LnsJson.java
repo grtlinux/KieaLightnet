@@ -6,6 +6,8 @@ import org.tain.utils.CurrentInfo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Builder;
@@ -15,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Data
 @NoArgsConstructor
+@JsonInclude(value = Include.NON_NULL)
 @Slf4j
 public class LnsJson implements Cloneable {
 
@@ -25,11 +28,13 @@ public class LnsJson implements Cloneable {
 	private String division;       // trid/validate/commit/list/detail/callback
 	private String divisionType;   // REQ / RES
 	
-	private String dataType;       // STREAM / JSON
-	private String reqData;
-	private String resData;
+	private String dataType;       // STREAM / JSON / ALL
+	private String reqStrData;     // request stream data
+	private String reqJsonData;    // request json data
+	private String resStrData;     // response stream data
+	private String resJsonData;    // response json data
 	
-	private String code;           // 00000: SUCCESS
+	private String code;           // 00000: SUCCESS, 99999: FAIL
 	private String message;
 	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
@@ -44,8 +49,10 @@ public class LnsJson implements Cloneable {
 			String division,
 			String divisionType,
 			String dataType,
-			String reqData,
-			String resData,
+			String reqStrData,
+			String reqJsonData,
+			String resStrData,
+			String resJsonData,
 			String code,
 			String message
 			) {
@@ -55,8 +62,10 @@ public class LnsJson implements Cloneable {
 		this.division = division;
 		this.divisionType = divisionType;
 		this.dataType = dataType;
-		this.reqData = reqData;
-		this.resData = resData;
+		this.reqStrData = reqStrData;
+		this.reqJsonData = reqJsonData;
+		this.resStrData = resStrData;
+		this.resJsonData = resJsonData;
 		this.code = code;
 		this.message = message;
 	}

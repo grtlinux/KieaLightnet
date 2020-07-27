@@ -5,7 +5,9 @@ import java.sql.Timestamp;
 import org.tain.utils.CurrentInfo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Data;
@@ -14,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Data
 @NoArgsConstructor
+@JsonInclude(value = Include.NON_NULL)
 @Slf4j
 public class LnsStream implements Cloneable {
 

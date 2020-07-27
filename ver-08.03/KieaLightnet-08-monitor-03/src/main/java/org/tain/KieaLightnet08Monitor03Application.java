@@ -250,35 +250,32 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 	private void job07() {
 		log.info("MONITOR >>>>> {} {}", CurrentInfo.get());
 		
-		LnsJson reqJson = null;
+		LnsJson reqLnsJson = null;
 		if (Flag.flag) {
-			reqJson = LnsJson.builder()
+			reqLnsJson = LnsJson.builder()
 					.name("TEST")
 					.title("for testing...")
 					.workUrl("http://localhost:18091/v0.3/lns01/trid")
 					.division("trid")
 					.divisionType("REQ")
 					.dataType("STREAM")
-					.reqData("00530701REQ................................          ")
-					.resData("")
-					.code("")
-					.message("")
+					.reqStrData("00530701REQ................................          ")
 					.build();
-			log.info("MONITOR >>>>> lnsJson.REQ = {}", reqJson.toPrettyJson());
+			LnsStream reqLnsStream = new LnsStream(reqLnsJson.getReqStrData());
 			
-			LnsStream lnsStream = new LnsStream(reqJson.getReqData());
-			log.info("MONITOR >>>>> lnsStream.REQ = {}", lnsStream.toPrettyJson());
+			log.info("MONITOR >>>>> 1. reqLnsJson = {}", reqLnsJson.toPrettyJson());
+			log.info("MONITOR >>>>> 2. reqLnsStream = {}", reqLnsStream.toPrettyJson());
 		}
 		
-		LnsJson resJson = null;
+		LnsJson resLnsJson = null;
 		if (Flag.flag) {
 			try {
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson.toJson(), reqHeaders);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqLnsJson.toJson(), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						reqJson.getWorkUrl()
+						reqLnsJson.getWorkUrl()
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);
@@ -286,7 +283,7 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 				log.info("MONITOR >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info("MONITOR >>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				
-				resJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+				resLnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
 			} catch (Exception e) {
 				log.error("MONITOR >>>>> Exception.message = {}", e.getMessage());
 				System.exit(-1);
@@ -294,10 +291,10 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 		}
 		
 		if (Flag.flag) {
-			log.info("MONITOR >>>>> lnsJson.RES = {}", resJson.toPrettyJson());
+			LnsStream resLnsStream = new LnsStream(resLnsJson.getResStrData());
 			
-			LnsStream resStream = new LnsStream(resJson.getResData());
-			log.info("MONITOR >>>>> lnsStream.RES = {}", resStream.toPrettyJson());
+			log.info("MONITOR >>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
+			log.info("MONITOR >>>>> 2. resLnsStream = {}", resLnsStream.toPrettyJson());
 		}
 	}
 
