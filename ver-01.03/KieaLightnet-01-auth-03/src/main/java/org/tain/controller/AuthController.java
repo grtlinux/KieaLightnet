@@ -54,7 +54,7 @@ public class AuthController {
 		
 		// TODO: to be repaired
 		Map<String,Object> map = new HashMap<>();
-		map.put("title", "/auth/auth");
+		map.put("url", "http://localhost:18081/v0.3/auth/auth");
 		map.put("accessToken", AccessToken.get());
 		map.put("createdDate", LocalDateTime.now());
 		
@@ -94,7 +94,7 @@ public class AuthController {
 		
 		// TODO: to be repaired
 		Map<String,Object> map = new HashMap<>();
-		map.put("title", "/auth/refresh");
+		map.put("url", "http://localhost:18081/v0.3/auth/refresh");
 		map.put("accessToken", AccessToken.get());
 		map.put("createdDate", LocalDateTime.now());
 		
