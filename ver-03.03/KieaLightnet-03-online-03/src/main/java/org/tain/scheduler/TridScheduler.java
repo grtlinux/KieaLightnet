@@ -28,7 +28,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class TransactionIdScheduler {
+public class TridScheduler {
 
 	public static LnsPacket process(LnsPacket reqLnsPacket) throws Exception {
 		log.info("KANG-20200623 >>>>> request.json: {}", reqLnsPacket.toPrettyJson());
@@ -36,6 +36,7 @@ public class TransactionIdScheduler {
 		if (Flag.flag) {
 			// stream to json on trid
 			String reqJson = mapperS2J(reqLnsPacket.getData());
+			log.info("KANG-20200728 >>>>> {} reqJson: {}", CurrentInfo.get(), reqJson);
 		}
 		
 		LnsPacket resLnsPacket = null;
@@ -59,7 +60,7 @@ public class TransactionIdScheduler {
 			reqLnsJson = LnsJson.builder()
 					.name("MAPPER")
 					.title("mapperS2J with trid")
-					.workUrl("http://localhost:18091/v0.3/lns01/trid")
+					.workUrl("http://localhost:18086/v0.3/mapper/trid/s2j")
 					.division("trid")
 					.divisionType("REQ")
 					.dataType("STREAM")
@@ -90,7 +91,8 @@ public class TransactionIdScheduler {
 				resLnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
 			} catch (Exception e) {
 				log.error(">>>>> Exception.message = {}", e.getMessage());
-				System.exit(-1);
+				//System.exit(-1);
+				return null;
 			}
 		}
 		

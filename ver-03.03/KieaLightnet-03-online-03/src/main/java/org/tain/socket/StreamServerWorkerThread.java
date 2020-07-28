@@ -3,7 +3,7 @@ package org.tain.socket;
 import java.net.Socket;
 
 import org.tain.object.LnsPacket;
-import org.tain.scheduler.TransactionIdScheduler;
+import org.tain.scheduler.TridScheduler;
 import org.tain.scheduler.ValidateScheduler;
 import org.tain.utils.CurrentInfo;
 
@@ -25,16 +25,16 @@ public class StreamServerWorkerThread extends Thread {
 	public void run() {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
-		LnsPacket reqPacket = null;
-		LnsPacket resPacket = null;
+		LnsPacket reqLnsPacket = null;
+		LnsPacket resLnsPacket = null;
 		try {
 			do {
-				reqPacket = this.streamPacket.recvPacket();
-				log.info("SERVER >>>>> " + reqPacket.toPrettyJson());
+				reqLnsPacket = this.streamPacket.recvPacket();
+				log.info("SERVER >>>>> " + reqLnsPacket.toPrettyJson());
 				
-				switch (reqPacket.getDivision()) {
+				switch (reqLnsPacket.getDivision()) {
 				case "0101":
-					resPacket = ValidateScheduler.process(reqPacket);
+					resLnsPacket = ValidateScheduler.process(reqLnsPacket);
 					break;
 				case "0201":
 					//response = CommitScheduler.process(request);
@@ -52,13 +52,13 @@ public class StreamServerWorkerThread extends Thread {
 					//response = CallbackScheduler.process(request);
 					break;
 				case "0701":
-					resPacket = TransactionIdScheduler.process(reqPacket);
+					resLnsPacket = TridScheduler.process(reqLnsPacket);
 					break;
 				default:
 					break;
 				}
-				resPacket = this.streamPacket.sendPacket(resPacket);
-			} while(resPacket != null);
+				resLnsPacket = this.streamPacket.sendPacket(resLnsPacket);
+			} while(resLnsPacket != null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
