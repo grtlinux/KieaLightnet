@@ -31,12 +31,20 @@ import lombok.extern.slf4j.Slf4j;
 public class TridScheduler {
 
 	public static LnsPacket process(LnsPacket reqLnsPacket) throws Exception {
-		log.info("KANG-20200623 >>>>> request.json: {}", reqLnsPacket.toPrettyJson());
+		log.info(">>>>> request.json: {}", reqLnsPacket.toPrettyJson());
 		
 		if (Flag.flag) {
-			// stream to json on trid
+			// stream to json of trid
 			String reqJson = mapperS2J(reqLnsPacket.getData());
-			log.info("KANG-20200728 >>>>> {} reqJson: {}", CurrentInfo.get(), reqJson);
+			log.info(">>>>> {} reqJson: {}", CurrentInfo.get(), reqJson);
+			
+			// http info
+			String resJson = httpPost(reqJson);
+			log.info(">>>>> {} resJson: {}", CurrentInfo.get(), resJson);
+			
+			// json to stream of trid
+			//String resStream = mapperJ2S(resJson);
+			//log.info(">>>>> {} resStream: {}", CurrentInfo.get(), resStream);
 		}
 		
 		LnsPacket resLnsPacket = null;
@@ -49,15 +57,13 @@ public class TridScheduler {
 	}
 
 	/////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////
 	
 	public static String mapperS2J(String reqStream) throws Exception {
 		log.info(">>>>> {} {}", CurrentInfo.get());
 		
-		LnsJson reqLnsJson = null;
+		LnsJson lnsJson = null;
 		if (Flag.flag) {
-			reqLnsJson = LnsJson.builder()
+			lnsJson = LnsJson.builder()
 					.name("MAPPER")
 					.title("mapperS2J with trid")
 					.workUrl("http://localhost:18086/v0.3/mapper/trid/s2j")
@@ -66,21 +72,20 @@ public class TridScheduler {
 					.dataType("STREAM")
 					.reqStrData(reqStream)
 					.build();
-			LnsStream reqLnsStream = new LnsStream(reqLnsJson.getReqStrData());
+			LnsStream lnsStream = new LnsStream(lnsJson.getReqStrData());
 			
-			log.info(">>>>> 1. reqLnsJson = {}", reqLnsJson.toPrettyJson());
-			log.info(">>>>> 2. reqLnsStream = {}", reqLnsStream.toPrettyJson());
+			log.info(">>>>> 1. reqLnsJson = {}", lnsJson.toPrettyJson());
+			log.info(">>>>> 2. reqLnsStream = {}", lnsStream.toPrettyJson());
 		}
 		
-		LnsJson resLnsJson = null;
 		if (Flag.flag) {
 			try {
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqLnsJson.toJson(), reqHeaders);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(lnsJson.toJson(), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						reqLnsJson.getWorkUrl()
+						lnsJson.getWorkUrl()
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);
@@ -88,7 +93,7 @@ public class TridScheduler {
 				log.info(">>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info(">>>>> response.getStatusCode()      = {}", response.getStatusCode());
 				
-				resLnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+				lnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
 			} catch (Exception e) {
 				log.error(">>>>> Exception.message = {}", e.getMessage());
 				//System.exit(-1);
@@ -96,17 +101,137 @@ public class TridScheduler {
 			}
 		}
 		
-		LnsMap resLnsMap = null;
+		LnsMap lnsMap = null;
 		if (Flag.flag) {
-			resLnsMap = new LnsMap(resLnsJson.getResJsonData());
+			lnsMap = new LnsMap(lnsJson.getReqJsonData());
 			
-			log.info(">>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
-			log.info(">>>>> 2. resLnsMap = {}", resLnsMap.toPrettyString());
+			log.info(">>>>> 1. resLnsJson = {}", lnsJson.toPrettyJson());
+			log.info(">>>>> 2. resLnsMap = {}", lnsMap.toPrettyString());
 		}
 		
-		return resLnsMap.toString();
+		return lnsMap.toString();
 	}
 	
+	/////////////////////////////////////////////////////////////////////////
+	
+	private static String httpPost(String reqJson) throws Exception {
+		log.info(">>>>> {} {}", CurrentInfo.get());
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = LnsJson.builder()
+					.name("trid")
+					.title("to get trid from INFO")
+					.workUrl("http://localhost:18087/v0.3/info/trid/get")
+					.division("trid")
+					.divisionType("REQ")
+					.dataType("JSON")
+					.reqJsonData(reqJson)
+					.build();
+			LnsMap lnsMap = new LnsMap(lnsJson.getReqJsonData());
+			
+			log.info("ONLINE -> INFO >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
+			log.info("ONLINE -> INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+		}
+		
+		if (Flag.flag) {
+			try {
+				HttpHeaders reqHeaders = new HttpHeaders();
+				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(lnsJson.toJson(), reqHeaders);
+				
+				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+						lnsJson.getWorkUrl()
+						, HttpMethod.POST
+						, reqHttpEntity
+						, String.class);
+				
+				log.info("ONLINE <- INFO >>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info("ONLINE <- INFO >>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				
+				lnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+			} catch (Exception e) {
+				log.error(">>>>> Exception.message = {}", e.getMessage());
+				//System.exit(-1);
+				return null;
+			}
+		}
+		
+		LnsMap lnsMap = null;
+		if (Flag.flag) {
+			lnsMap = new LnsMap(lnsJson.getResJsonData());
+			
+			log.info("ONLINE <- INFO >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
+			log.info("ONLINE <- INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+		}
+		
+		return lnsMap.toString();
+	}
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+	public static String mapperJ2S(String resJson) throws Exception {
+		log.info(">>>>> {} {}", CurrentInfo.get());
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = LnsJson.builder()
+					.name("MAPPER")
+					.title("mapperS2J with trid")
+					.workUrl("http://localhost:18086/v0.3/mapper/trid/j2s")
+					.division("trid")
+					.divisionType("REQ")
+					.dataType("STREAM")
+					.resJsonData(resJson)
+					.build();
+			LnsMap lnsMap = new LnsMap(lnsJson.getResJsonData());
+			
+			log.info(">>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
+			log.info(">>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+		}
+		
+		if (Flag.flag) {
+			try {
+				HttpHeaders reqHeaders = new HttpHeaders();
+				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(lnsJson.toJson(), reqHeaders);
+				
+				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+						lnsJson.getWorkUrl()
+						, HttpMethod.POST
+						, reqHttpEntity
+						, String.class);
+				
+				log.info(">>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info(">>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				
+				lnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+			} catch (Exception e) {
+				log.error(">>>>> Exception.message = {}", e.getMessage());
+				//System.exit(-1);
+				return null;
+			}
+		}
+		
+		LnsStream lnsStream = null;
+		if (Flag.flag) {
+			lnsStream = new LnsStream(lnsJson.getResStrData());
+			
+			log.info(">>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
+			log.info(">>>>> 2. lnsStream = {}", lnsStream.toPrettyJson());
+		}
+		
+		return lnsStream.getData();
+	}
+	
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////

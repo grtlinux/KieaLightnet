@@ -3,7 +3,7 @@ package org.tain.utils;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class TransactionId {
+public class Trid {
 
 	//private static Random random = new Random(System.currentTimeMillis());
 	private static int seq = 0;

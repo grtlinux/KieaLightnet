@@ -65,6 +65,13 @@ public class LnsMap implements Cloneable {
 		return this.jsonNode.toPrettyString();
 	}
 	
+	////////////////////////////////////////////////////////////////////////
+	
+	@Override
+	public LnsMap clone() throws CloneNotSupportedException {
+		return (LnsMap) super.clone();
+	}
+	
 	///////////////////////////////////////////////////////////////////////
 	
 	public void printInfo() {
