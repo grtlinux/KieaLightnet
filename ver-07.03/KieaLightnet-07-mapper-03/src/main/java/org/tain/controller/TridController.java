@@ -102,7 +102,7 @@ public class TridController {
 		LnsStream lnsStream = null;
 		if (Flag.flag) {
 			lnsStream = this.jsonToStr(lnsMap);
-			lnsJson.setResStrData(lnsStream.toJson());
+			lnsJson.setResStrData(lnsStream.getData());
 			
 			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
 			log.info("LNS01 >>>>> 2. lnsStream = {}", lnsStream.toPrettyJson());
