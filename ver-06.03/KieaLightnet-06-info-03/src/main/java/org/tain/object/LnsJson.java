@@ -73,8 +73,8 @@ public class LnsJson implements Cloneable {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
+	public LnsJson clone() throws CloneNotSupportedException {
+		return (LnsJson) super.clone();
 	}
 	
 	////////////////////////////////////////////////////////////////////////

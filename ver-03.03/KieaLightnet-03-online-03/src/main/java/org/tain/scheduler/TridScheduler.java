@@ -106,7 +106,7 @@ public class TridScheduler {
 			lnsMap = new LnsMap(lnsJson.getReqJsonData());
 			
 			log.info(">>>>> 1. resLnsJson = {}", lnsJson.toPrettyJson());
-			log.info(">>>>> 2. resLnsMap = {}", lnsMap.toPrettyString());
+			log.info(">>>>> 2. resLnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
 		return lnsMap.toString();
@@ -131,7 +131,7 @@ public class TridScheduler {
 			LnsMap lnsMap = new LnsMap(lnsJson.getReqJsonData());
 			
 			log.info("ONLINE -> INFO >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("ONLINE -> INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+			log.info("ONLINE -> INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
 		if (Flag.flag) {
@@ -162,7 +162,7 @@ public class TridScheduler {
 			lnsMap = new LnsMap(lnsJson.getResJsonData());
 			
 			log.info("ONLINE <- INFO >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("ONLINE <- INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+			log.info("ONLINE <- INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
 		return lnsMap.toString();
@@ -187,7 +187,7 @@ public class TridScheduler {
 			LnsMap lnsMap = new LnsMap(lnsJson.getResJsonData());
 			
 			log.info(">>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info(">>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+			log.info(">>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
 		if (Flag.flag) {

@@ -20,6 +20,8 @@ public class LnsMap implements Cloneable {
 	private JsonNode jsonNode;
 	private String jsonString;
 	
+	////////////////////////////////////////////////////////////////////////
+
 	public LnsMap() throws Exception {
 		this.map = new HashMap<>();
 		this.jsonString = "{}";
@@ -44,6 +46,8 @@ public class LnsMap implements Cloneable {
 		this.map = this.objectMapper.readValue(this.jsonString, new TypeReference<Map<String,String>>(){});
 	}
 	
+	////////////////////////////////////////////////////////////////////////
+
 	public void put(String key, String value) {
 		this.map.put(key, value);
 	}
@@ -57,11 +61,17 @@ public class LnsMap implements Cloneable {
 		this.jsonNode = this.objectMapper.readTree(this.jsonString);
 	}
 	
+	////////////////////////////////////////////////////////////////////////
+
 	public String toString() {
 		return this.jsonNode.toString();
 	}
 	
-	public String toPrettyString() {
+	public String toJson() {
+		return this.jsonNode.toString();
+	}
+	
+	public String toPrettyJson() {
 		return this.jsonNode.toPrettyString();
 	}
 	

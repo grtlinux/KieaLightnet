@@ -337,7 +337,7 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 					.build();
 			
 			log.info("MONITOR >>>>> 1. reqLnsJson = {}", reqLnsJson.toPrettyJson());
-			log.info("MONITOR >>>>> 2. reqLnsMap = {}", reqLnsMap.toPrettyString());
+			log.info("MONITOR >>>>> 2. reqLnsMap = {}", reqLnsMap.toPrettyJson());
 		}
 		
 		LnsJson resLnsJson = null;
@@ -367,7 +367,7 @@ public class KieaLightnet08Monitor03Application implements CommandLineRunner {
 			LnsMap resLnsMap = new LnsMap(resLnsJson.getResJsonData());
 			
 			log.info("MONITOR >>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
-			log.info("MONITOR >>>>> 2. resLnsMap = {}", resLnsMap.toPrettyString());
+			log.info("MONITOR >>>>> 2. resLnsMap = {}", resLnsMap.toPrettyJson());
 		}
 	}
 

@@ -47,8 +47,8 @@ public class LnsStream implements Cloneable {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
+	public LnsStream clone() throws CloneNotSupportedException {
+		return (LnsStream) super.clone();
 	}
 	
 	////////////////////////////////////////////////////////////////////////

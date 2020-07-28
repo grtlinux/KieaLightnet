@@ -54,7 +54,7 @@ public class TridController {
 			lnsJson.setReqJsonData(lnsMap.toString());
 			
 			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+			log.info("LNS01 >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
@@ -96,7 +96,7 @@ public class TridController {
 			lnsJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
 			lnsMap = new LnsMap(lnsJson.getResJsonData());
 			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. lnsMap = {}", lnsMap.toPrettyString());
+			log.info("LNS01 >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
 		LnsStream lnsStream = null;
