@@ -51,7 +51,7 @@ public class TridController {
 		LnsMap lnsMap = null;
 		if (Flag.flag) {
 			lnsMap = this.strToJson(lnsStream);
-			lnsJson.setReqJsonData(lnsMap.toString());
+			lnsJson.setReqJsonData(lnsMap.toJson());
 			
 			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
 			log.info("LNS01 >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
@@ -102,7 +102,7 @@ public class TridController {
 		LnsStream lnsStream = null;
 		if (Flag.flag) {
 			lnsStream = this.jsonToStr(lnsMap);
-			lnsJson.setResStrData(lnsStream.toString());
+			lnsJson.setResStrData(lnsStream.toJson());
 			
 			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
 			log.info("LNS01 >>>>> 2. lnsStream = {}", lnsStream.toPrettyJson());
@@ -118,12 +118,14 @@ public class TridController {
 	
 	private LnsStream jsonToStr(LnsMap lnsMap) throws Exception {
 		
-		StringBuffer sb = new StringBuffer("00530702RESHWyymmddhhmmA999    ............OK        ");
-		
-		//lnsMap.put("division", lnsStream.getDivision());
-		//lnsMap.put("divisionType", lnsStream.getDivisionType());
-		//lnsMap.put("trid", lnsStream.getTrid());
-		//lnsMap.reset();
+		//StringBuffer sb = new StringBuffer("00530702RESHWyymmddhhmmA999    ............OK        ");
+		StringBuffer sb = new StringBuffer();
+		sb.append("0702");
+		sb.append("RES");
+		sb.append(String.format("%-20s", lnsMap.get("trid")));
+		sb.append("00000");
+		sb.append("SUCCESS   ");
+		sb.insert(0, String.format("%04d", sb.length() + 4));
 		
 		LnsStream lnsStream = new LnsStream(sb.toString());
 		

@@ -33,6 +33,7 @@ public class TridScheduler {
 	public static LnsPacket process(LnsPacket reqLnsPacket) throws Exception {
 		log.info(">>>>> request.json: {}", reqLnsPacket.toPrettyJson());
 		
+		LnsPacket resLnsPacket = null;
 		if (Flag.flag) {
 			// stream to json of trid
 			String reqJson = mapperS2J(reqLnsPacket.getData());
@@ -43,14 +44,11 @@ public class TridScheduler {
 			log.info(">>>>> {} resJson: {}", CurrentInfo.get(), resJson);
 			
 			// json to stream of trid
-			//String resStream = mapperJ2S(resJson);
-			//log.info(">>>>> {} resStream: {}", CurrentInfo.get(), resStream);
-		}
-		
-		LnsPacket resLnsPacket = null;
-		if (Flag.flag) {
-			resLnsPacket = new LnsPacket("00530702RESHWyymmddhhmmA999    ............OK        ");
-			log.info("KANG-20200623 >>>>> response.json: {}", resLnsPacket.toPrettyJson());
+			String resStream = mapperJ2S(resJson);
+			log.info(">>>>> {} resStream: {}", CurrentInfo.get(), resStream);
+			
+			resLnsPacket = new LnsPacket(resStream);
+			log.info(">>>>> {} resLnsPacket: {}", CurrentInfo.get(), resLnsPacket.toPrettyJson());
 		}
 		
 		return resLnsPacket;
@@ -90,8 +88,8 @@ public class TridScheduler {
 						, reqHttpEntity
 						, String.class);
 				
-				log.info(">>>>> response.getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info(">>>>> response.getStatusCode()      = {}", response.getStatusCode());
+				log.info(">>>>> getStatusCodeValue() = {}", response.getStatusCodeValue());
+				log.info(">>>>> getStatusCode()      = {}", response.getStatusCode());
 				
 				lnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
 			} catch (Exception e) {
@@ -109,7 +107,7 @@ public class TridScheduler {
 			log.info(">>>>> 2. resLnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
-		return lnsMap.toString();
+		return lnsMap.toJson();
 	}
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -165,7 +163,7 @@ public class TridScheduler {
 			log.info("ONLINE <- INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
-		return lnsMap.toString();
+		return lnsMap.toJson();
 	}
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -181,7 +179,7 @@ public class TridScheduler {
 					.workUrl("http://localhost:18086/v0.3/mapper/trid/j2s")
 					.division("trid")
 					.divisionType("REQ")
-					.dataType("STREAM")
+					.dataType("JSON")
 					.resJsonData(resJson)
 					.build();
 			LnsMap lnsMap = new LnsMap(lnsJson.getResJsonData());

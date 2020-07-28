@@ -58,7 +58,7 @@ public class TridController {
 			resLnsMap.put("trid", Trid.get());
 			resLnsMap.reset();
 			
-			lnsJson.setResJsonData(resLnsMap.toString());
+			lnsJson.setResJsonData(resLnsMap.toJson());
 			
 			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
 			log.info("LNS01 >>>>> 2. resLnsMap = {}", resLnsMap.toPrettyJson());
