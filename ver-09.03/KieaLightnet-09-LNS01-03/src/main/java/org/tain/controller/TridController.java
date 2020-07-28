@@ -52,11 +52,10 @@ public class TridController {
 		LnsJson resLnsJson = null;
 		LnsStream resLnsStream = null;
 		if (Flag.flag) {
-			resLnsJson = (LnsJson) reqLnsJson.clone();
-			
 			String response = this.callStreamClient(reqLnsStream.getData());
 			resLnsStream = new LnsStream(response);
 			
+			resLnsJson = (LnsJson) reqLnsJson.clone();
 			resLnsJson.setDivisionType("RES");
 			resLnsJson.setResStrData(resLnsStream.getData());
 			resLnsJson.setCode("00000");
@@ -71,6 +70,7 @@ public class TridController {
 		
 		return new ResponseEntity<>(resLnsJson, headers, HttpStatus.OK);
 	}
+	
 	//////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////////
