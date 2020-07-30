@@ -87,6 +87,8 @@ public class AuthScheduler {
 			this.idxUrl = this.lnsEnvAuthProperties.getLightnetStartIdx();
 		}
 		
+		String api_key = new ObjectMapper().writeValueAsString(mapReq);
+		
 		if (Flag.flag) {
 			AccessToken.set(null);
 			
@@ -99,6 +101,7 @@ public class AuthScheduler {
 					log.info("================ idxUrl: {}, cntUrl: {} ================", this.idxUrl, this.cntUrl);
 					log.info("KANG-20200623 >>>>> lightnetUrl        = {}", this.lnsEnvAuthProperties.getLightnetUrl()[this.idxUrl]);
 					log.info("KANG-20200623 >>>>> POST_AUTH_HTTP_URL = {}", POST_AUTH_HTTP_URL);
+					log.info("KANG-20200623 >>>>> api_key            = {}", api_key);
 					
 					ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 							this.lnsEnvAuthProperties.getLightnetUrl()[idxUrl] + POST_AUTH_HTTP_URL
