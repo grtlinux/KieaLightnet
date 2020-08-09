@@ -1,0 +1,165 @@
+
+
+# --------------------------------
+# BASE
+
+server:
+  port: 18082
+  servlet.context-path: /v0.3
+
+
+spring:
+  profiles.active:
+  - lns-default
+  - lns-local
+  #- lns-test
+  #- lsn-real
+
+  h2.console:
+    enabled: true
+    path: /h2
+    settings:
+      trace: false
+      web-allow-others: true
+
+  datasource:
+    url: jdbc:h2:tcp://localhost:9092/lightnetdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+#    hikari:
+#      jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#      # jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#      # jdbc-url: jdbc:h2:mem:testdb
+#      driver-class-name: org.h2.Driver
+#      username: sa
+#      password:
+
+  jpa:
+    show-sql: true
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: update
+    # hibernate.ddl-auto: none
+
+  data.rest:
+    base-path: /api
+    default-page-size: 5
+    max-page-size: 50
+
+  thymeleaf:
+    enabled: true
+    encoding: utf-8
+    cache: false
+    prefix: classpath:templates/
+    suffix: .html
+
+  servlet.multipart:
+    enabled: true
+    location: ~/FILES
+    max-file-size: 5GB
+    max-request-size: 5GB
+
+  devtools:
+    livereload.enabled: true
+
+
+logging:
+
+  file:
+    path: logs/link/
+    max-size: 10MB
+    max-history: 30         # delete after a month
+
+  pattern:
+    console: "%clr(%d{HH:mm:ss} %p){magenta} - %m%n"
+    file: "%d %-5level [%-10thread] [%-30logger{30}] - %m%n"
+
+  level:
+    root: info
+    org.tain.*: info
+    org.hibernate.SQL: info
+    org.hibernate.type: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.thymeleaf: info
+    org.h2.server.web: info
+
+
+---
+# --------------------------------------------------------
+spring.profiles: lns-default
+
+lns-env:
+  base:
+    program: KieaLightnet-02-link-03.jar
+    version: ver 0.3_2020.07.20
+    comment: This is an link PROGRAM.
+
+---
+# --------------------------------------------------------
+spring.profiles: lns-local
+
+lns-env:
+  link:
+    lightnet-url:
+    - http://localhost:18888
+    - https://192.10.2.141
+    - https://192.10.2.38
+    - https://test-public.lightnetapis.io
+    - https://test-internal-system.lightnetapis.io
+    - https://test1-internal-system.lightnetapis.io
+    - https://test2-internal-system.lightnetapis.io
+    lightnet-start-idx: 0
+    auth-url: http://localhost:18081/v0.3/auth/auth
+    callback-url: http://localhost:18084/v0.3/callback/callback
+
+  json:
+    material: LOCAL
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
+
+---
+# --------------------------------------------------------
+spring.profiles: lns-test
+
+lns-env:
+  link:
+    lightnet-url: https://test-public.lightnetapis.io
+    auth-url: http://localhost:18081/v0.3/auth/auth
+    callback-url: http://localhost:18084/v0.3/callback/callback
+
+  json:
+    material: TEST
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
+
+---
+# --------------------------------------------------------
+spring.profiles: lns-real
+
+lns-env:
+  link:
+    lightnet-url: https://real-public.lightnetapis.io
+    auth-url: http://localhost:18081/v0.3/auth/auth
+    callback-url: http://localhost:18084/v0.3/callback/callback
+
+  json:
+    material: REAL
+    file:
+      virtual: /KANG/json/lightnet/virtual.json
+      auth:    /KANG/json/lightnet/auth.json
+      link:    /KANG/json/lightnet/link.json
+      lns01:   /KANG/json/lightnet/lns01.json
+      adapter: /KANG/json/lightnet/adapter.json
+
+
+
