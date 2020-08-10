@@ -66,7 +66,7 @@ public class StreamPacket {
 		try {
 			String strLength = this.recvLength(DEFAULT_LENGTH_SIZE);
 			int length = Integer.parseInt(strLength);
-			String strData = this.recvData(length - DEFAULT_LENGTH_SIZE);
+			String strData = this.recvData(length);
 			lnsPacket = new LnsPacket(strLength + strData);
 		} catch (Exception e) {
 			e.printStackTrace();

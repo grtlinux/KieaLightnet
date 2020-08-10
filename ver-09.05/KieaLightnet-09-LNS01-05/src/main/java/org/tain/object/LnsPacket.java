@@ -14,9 +14,9 @@ public class LnsPacket {
 	private int length;
 	
 	private String strLength;
-	private String division;
-	private String type;
-	private String tid;        // transaction id
+	private String division = "";
+	private String type = "";
+	private String tid = "";        // transaction id
 	private String content;
 	
 	public LnsPacket(String data) {
@@ -24,10 +24,12 @@ public class LnsPacket {
 		this.length    = data.length();
 		
 		this.strLength = data.substring( 0,  4);
-		this.division  = data.substring( 4,  8);
-		this.type      = data.substring( 8, 11);
-		this.tid       = data.substring(11, 31);
-		this.content   = data.substring(31);
+		// TODO: after to be fixed
+		//this.division  = data.substring( 4,  8);
+		//this.type      = data.substring( 8, 11);
+		//this.tid       = data.substring(11, 31);
+		//this.content   = data.substring(31);
+		this.content   = data.substring(4);
 	}
 	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")

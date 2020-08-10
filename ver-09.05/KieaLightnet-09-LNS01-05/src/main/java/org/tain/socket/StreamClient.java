@@ -4,8 +4,10 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import org.tain.properties.LnsEnvLns01Properties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
@@ -16,9 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class StreamClient {
 
-	private static final String host = "127.0.0.1";
-	private static final int port = 19091;
 	private StreamClientWorkerThread thread = null;
+	
+	@Autowired
+	private LnsEnvLns01Properties lnsEnvLns01Properties;
 	
 	@Bean
 	public void jobStreamClient() throws Exception {
@@ -49,7 +52,7 @@ public class StreamClient {
 				Socket socket = null;
 				try {
 					socket = new Socket();
-					socket.connect(new InetSocketAddress(host, port));
+					socket.connect(new InetSocketAddress(this.lnsEnvLns01Properties.getOnlineHost(), this.lnsEnvLns01Properties.getOnlinePort()));
 					log.info(">>>>>  Client Connection is OK!!!");
 					
 					this.thread = new StreamClientWorkerThread(socket);

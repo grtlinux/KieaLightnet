@@ -5,10 +5,15 @@
 
 server:
   port: 18091
-  servlet.context-path: /v0.3
+  servlet.context-path: /v0.5
 
 
 spring:
+  profiles.active:
+  - lns-default
+  - lns-local
+  #- lns-test
+  #- lsn-real
 
   h2.console:
     enabled: true
@@ -80,26 +85,21 @@ logging:
     org.h2.server.web: info
 
 
-# --------------------------------
-# CHOICE
-
-spring.profiles:
-  active:
-  - lns-default
-  - lns-local   # local test
-  #- lns-dev     # test
-  #- lns-real    # real
-
 ---
+# --------------------------------------------------------
 spring.profiles: lns-default
 
 lns-env:
   base:
-    program: KieaLightnet-09-lns01-03.jar
-    version: ver 0.3_2020.07.20
-    comment: This is an lsn01 PROGRAM.
+    program: KieaLightnet-09-lns01-05.jar
+    version: ver 0.5_2020.08.10
+    comment: This is a lightnet PROGRAM.
+  lns01:
+    online-host: 127.0.0.1
+    online-port: 19091
 
 ---
+# --------------------------------------------------------
 spring.profiles: lns-local
 
 lns-env:
@@ -115,13 +115,14 @@ lns-env:
       adapter: /KANG/json/lightnet/adapter.json
 
 ---
-spring.profiles: lns-dev
+# --------------------------------------------------------
+spring.profiles: lns-test
 
 lns-env:
   lns01:
     
   json:
-    material: DEV
+    material: TEST
     file:
       virtual: /KANG/json/lightnet/virtual.json
       auth:    /KANG/json/lightnet/auth.json
@@ -130,6 +131,7 @@ lns-env:
       adapter: /KANG/json/lightnet/adapter.json
 
 ---
+# --------------------------------------------------------
 spring.profiles: lns-real
 
 lns-env:

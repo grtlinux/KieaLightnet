@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.tain.object.Message;
 import org.tain.socket.StreamClient;
 import org.tain.utils.CurrentInfo;
+import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,8 +23,8 @@ public class Lns01Scheduler {
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
-		for (int i=0; i < 3; i++) {
-			String req = "005012345678901234567890ABCDEF12345678901234567890";
+		for (int i=0; i < 1; i++) {
+			String req = "005012345678901234567890ABCDEF12345678901234567890KANG";
 			System.out.println(">>>>> req: " + req);
 			String res = this.callStreamClient(req);
 			System.out.println(">>>>> res: " + res);
@@ -31,7 +32,7 @@ public class Lns01Scheduler {
 		}
 		
 		Sleep.run(2000);
-		System.exit(0);
+		if (Flag.flag) System.exit(0);  // TODO: remove later
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////

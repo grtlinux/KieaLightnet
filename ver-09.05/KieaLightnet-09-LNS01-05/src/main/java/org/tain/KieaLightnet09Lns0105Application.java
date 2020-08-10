@@ -12,6 +12,7 @@ import org.tain.properties.LnsEnvJsonProperties;
 import org.tain.properties.LnsEnvLns01Properties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,6 +36,10 @@ public class KieaLightnet09Lns0105Application implements CommandLineRunner {
 		if (Flag.flag) job05();
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	////////////b///////////////////////////////////////////////////////////////
+	
 	@Autowired
 	private LnsEnvBaseProperties lnsEnvBaseProperties;
 	
@@ -48,21 +53,18 @@ public class KieaLightnet09Lns0105Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			log.info(">>>>> base.jsonString: " + this.lnsEnvBaseProperties.toPrettyJson());
-			log.info(">>>>> json.jsonString: " + this.lnsEnvJsonProperties.toPrettyJson());
-			log.info(">>>>> lns01.jsonString: " + this.lnsEnvLns01Properties.toPrettyJson());
+			JsonPrint.getInstance().printPrettyJson(this.lnsEnvBaseProperties);
+			JsonPrint.getInstance().printPrettyJson(this.lnsEnvLns01Properties);
+			JsonPrint.getInstance().printPrettyJson(this.lnsEnvJsonProperties);
 		}
 		
-		if (Flag.flag) {
-			String key = null;
-			key = "virtual"; log.info("KANG-20200721 >>>>> {} = {}", key, this.lnsEnvJsonProperties.getFile().get(key));
-			key = "auth"   ; log.info("KANG-20200721 >>>>> {} = {}", key, this.lnsEnvJsonProperties.getFile().get(key));
-			key = "link"   ; log.info("KANG-20200721 >>>>> {} = {}", key, this.lnsEnvJsonProperties.getFile().get(key));
-			key = "lns01"  ; log.info("KANG-20200721 >>>>> {} = {}", key, this.lnsEnvJsonProperties.getFile().get(key));
-			key = "adapter"; log.info("KANG-20200721 >>>>> {} = {}", key, this.lnsEnvJsonProperties.getFile().get(key));
-		}
+		// System.exit(0);  // TODO: remove later
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	private void job02() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 	}
