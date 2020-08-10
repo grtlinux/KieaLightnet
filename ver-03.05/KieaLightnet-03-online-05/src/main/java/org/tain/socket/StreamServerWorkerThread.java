@@ -7,6 +7,7 @@ import org.tain.scheduler.TridScheduler;
 import org.tain.scheduler.ValidateScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +35,7 @@ public class StreamServerWorkerThread extends Thread {
 			try {
 				do {
 					reqLnsPacket = this.streamPacket.recvPacket();
-					log.info("SERVER >>>>> " + reqLnsPacket.toPrettyJson());
+					log.info("SERVER >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsPacket));
 					Sleep.run(1000);
 					String data = reqLnsPacket.getData().replace("12345", "54321");
 					resLnsPacket = new LnsPacket(data);
@@ -46,13 +47,13 @@ public class StreamServerWorkerThread extends Thread {
 		}
 		
 		if (!Flag.flag) {
-			// dev and real
+			// test and real
 			LnsPacket reqLnsPacket = null;
 			LnsPacket resLnsPacket = null;
 			try {
 				do {
 					reqLnsPacket = this.streamPacket.recvPacket();
-					log.info("SERVER >>>>> " + reqLnsPacket.toPrettyJson());
+					log.info("SERVER >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsPacket));
 					
 					switch (reqLnsPacket.getDivision()) {
 					case "0101":

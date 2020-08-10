@@ -2,23 +2,18 @@ package org.tain.object;
 
 import java.sql.Timestamp;
 
-import org.tain.utils.CurrentInfo;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Data
 @NoArgsConstructor
 @JsonInclude(value = Include.NON_NULL)
-@Slf4j
 public class LnsJson implements Cloneable {
 
 	private String name;
@@ -75,25 +70,5 @@ public class LnsJson implements Cloneable {
 	@Override
 	public LnsJson clone() throws CloneNotSupportedException {
 		return (LnsJson) super.clone();
-	}
-	
-	////////////////////////////////////////////////////////////////////////
-	
-	public String toJson() {
-		try {
-			return new ObjectMapper().writeValueAsString(this);
-		} catch (Exception e) {
-			log.info("ERROR[{}]: {}", CurrentInfo.get(), e.getMessage());
-		}
-		return "{}";
-	}
-	
-	public String toPrettyJson() {
-		try {
-			return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
-		} catch (Exception e) {
-			log.info("ERROR[{}]: {}", CurrentInfo.get(), e.getMessage());
-		}
-		return "{}";
 	}
 }

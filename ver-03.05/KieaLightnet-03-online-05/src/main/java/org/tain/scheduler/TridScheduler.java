@@ -16,6 +16,7 @@ import org.tain.object.LnsPacket;
 import org.tain.object.LnsStream;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 import org.tain.utils.RestTemplateConfig;
 import org.tain.utils.enums.RestTemplateType;
 
@@ -31,7 +32,7 @@ import lombok.extern.slf4j.Slf4j;
 public class TridScheduler {
 
 	public static LnsPacket process(LnsPacket reqLnsPacket) throws Exception {
-		log.info(">>>>> request.json: {}", reqLnsPacket.toPrettyJson());
+		log.info(">>>>> request.json: {}", JsonPrint.getInstance().toPrettyJson(reqLnsPacket));
 		
 		LnsPacket resLnsPacket = null;
 		if (Flag.flag) {
@@ -48,7 +49,7 @@ public class TridScheduler {
 			log.info(">>>>> {} resStream: {}", CurrentInfo.get(), resStream);
 			
 			resLnsPacket = new LnsPacket(resStream);
-			log.info(">>>>> {} resLnsPacket: {}", CurrentInfo.get(), resLnsPacket.toPrettyJson());
+			log.info(">>>>> {} resLnsPacket: {}", CurrentInfo.get(), JsonPrint.getInstance().toPrettyJson(resLnsPacket));
 		}
 		
 		return resLnsPacket;
@@ -72,15 +73,15 @@ public class TridScheduler {
 					.build();
 			LnsStream lnsStream = new LnsStream(lnsJson.getReqStrData());
 			
-			log.info(">>>>> 1. reqLnsJson = {}", lnsJson.toPrettyJson());
-			log.info(">>>>> 2. reqLnsStream = {}", lnsStream.toPrettyJson());
+			log.info(">>>>> 1. reqLnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info(">>>>> 2. reqLnsStream = {}", JsonPrint.getInstance().toPrettyJson(lnsStream));
 		}
 		
 		if (Flag.flag) {
 			try {
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				HttpEntity<String> reqHttpEntity = new HttpEntity<>(lnsJson.toJson(), reqHeaders);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(lnsJson), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						lnsJson.getWorkUrl()
@@ -103,7 +104,7 @@ public class TridScheduler {
 		if (Flag.flag) {
 			lnsMap = new LnsMap(lnsJson.getReqJsonData());
 			
-			log.info(">>>>> 1. resLnsJson = {}", lnsJson.toPrettyJson());
+			log.info(">>>>> 1. resLnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 			log.info(">>>>> 2. resLnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
@@ -128,7 +129,7 @@ public class TridScheduler {
 					.build();
 			LnsMap lnsMap = new LnsMap(lnsJson.getReqJsonData());
 			
-			log.info("ONLINE -> INFO >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
+			log.info("ONLINE -> INFO >>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 			log.info("ONLINE -> INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
@@ -136,7 +137,7 @@ public class TridScheduler {
 			try {
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				HttpEntity<String> reqHttpEntity = new HttpEntity<>(lnsJson.toJson(), reqHeaders);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(lnsJson), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						lnsJson.getWorkUrl()
@@ -159,7 +160,7 @@ public class TridScheduler {
 		if (Flag.flag) {
 			lnsMap = new LnsMap(lnsJson.getResJsonData());
 			
-			log.info("ONLINE <- INFO >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
+			log.info("ONLINE <- INFO >>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 			log.info("ONLINE <- INFO >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
@@ -184,7 +185,7 @@ public class TridScheduler {
 					.build();
 			LnsMap lnsMap = new LnsMap(lnsJson.getResJsonData());
 			
-			log.info(">>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
+			log.info(">>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 			log.info(">>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
 		}
 		
@@ -192,7 +193,7 @@ public class TridScheduler {
 			try {
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				HttpEntity<String> reqHttpEntity = new HttpEntity<>(lnsJson.toJson(), reqHeaders);
+				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(lnsJson), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						lnsJson.getWorkUrl()
@@ -215,8 +216,8 @@ public class TridScheduler {
 		if (Flag.flag) {
 			lnsStream = new LnsStream(lnsJson.getResStrData());
 			
-			log.info(">>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info(">>>>> 2. lnsStream = {}", lnsStream.toPrettyJson());
+			log.info(">>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info(">>>>> 2. lnsStream = {}", JsonPrint.getInstance().toPrettyJson(lnsStream));
 		}
 		
 		return lnsStream.getData();
