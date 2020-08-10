@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>list.html</title>
+	<!-- css and script -->
+	<th:block th:replace="layout/css::css1"></th:block>
+	<th:block th:replace="layout/script::script1"></th:block>
+	<!-- /css and script -->
+</head>
+
+<body>
+	<!-- header -->
+	<div th:replace="layout/header::header2"></div>
+	<!-- /header -->
+	
+	<!-- main -->
+	<div class="container">
+		<div class="page-header">
+			<h1>LNS01 List</h1>
+		</div>
+		<div class="pull-right" style="width:100px;margin:10px 0;">
+			<a th:href="@{/lns01}" class="btn btn-primary btn-block">REGISTER</a>
+		</div>
+		<br/><br/><br/>
+		<div id="mainHide">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="col-md-1">#</th>
+						<th class="col-md-2">Title</th>
+						<th class="col-md-3">Content</th>
+						<th class="col-md-2">Url</th>
+						<th class="col-md-1">Ver</th>
+						<th class="col-md-1">Path</th>
+						<th class="col-md-2">Create Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="line : ${list}">
+						<td th:text="${line.id}">#</td>
+						<td th:text="${line.title}">Title</td>
+						<td><a th:href="@{/lns01(id=${line.id})}" th:text="${line.content}">Content</a></td>
+						<td th:text="${line.reqUrl}">Url</td>
+						<td th:text="${line.reqVer}">Ver</td>
+						<td th:text="${line.reqPath}">Path</td>
+						<td th:text="${line.createdDate} ? ${#temporals.format(line.createdDate,'yyyy-MM-dd HH:mm')} : ${line.createdDate}">Create Date</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br/>
+		
+		<!-- page -->
+		<th:block th:replace="layout/page::page1"></th:block>
+		<!-- /page -->
+	</div>
+	<br/><br/>
+	<br/><br/>
+	<!-- /main -->
+	
+	<!-- footer -->
+	<div th:replace="layout/footer::footer1"></div>
+	<!-- /footer -->
+</body>
+</html>

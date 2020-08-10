@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>list.html</title>
+	<!-- css and script -->
+	<th:block th:replace="layout/css::css1"></th:block>
+	<th:block th:replace="layout/script::script1"></th:block>
+	<!-- /css and script -->
+</head>
+
+<body>
+	<!-- header -->
+	<div th:replace="layout/header::header2"></div>
+	<!-- /header -->
+	
+	<!-- main -->
+	<div class="container">
+		<div class="page-header">
+			<h1>Kuser List</h1>
+		</div>
+		<div class="pull-right" style="width:100px;margin:10px 0;">
+			<a th:href="@{/kuser}" class="btn btn-primary btn-block">REGISTER</a>
+		</div>
+		<br/><br/><br/>
+		<div id="mainHide">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="col-md-1">#</th>
+						<th class="col-md-3">Username</th>
+						<th class="col-md-3">Password</th>
+						<th class="col-md-3">Role</th>
+						<th class="col-md-2">Create Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="kuser : ${list}">
+						<td th:text="${kuser.id}">#</td>
+						<td><a th:href="@{/kuser(id=${kuser.id})}" th:text="${kuser.username}">username</a></td>
+						<td th:text="${kuser.password}">password</td>
+						<td th:text="${kuser.role}">role</td>
+						<td th:text="${kuser.createdDate} ? ${#temporals.format(kuser.createdDate,'yyyy-MM-dd HH:mm')} : ${kuser.createdDate}">Create Date</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br/>
+		
+		<!-- page -->
+		<th:block th:replace="layout/page::page1"></th:block>
+		<!-- /page -->
+	</div>
+	<br/><br/>
+	<br/><br/>
+	<!-- /main -->
+	
+	<!-- footer -->
+	<div th:replace="layout/footer::footer1"></div>
+	<!-- /footer -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>list.html</title>
+	<!-- css and script -->
+	<th:block th:replace="layout/css::css1"></th:block>
+	<th:block th:replace="layout/script::script1"></th:block>
+	<!-- /css and script -->
+</head>
+
+<body>
+	<!-- header -->
+	<div th:replace="layout/header::header2"></div>
+	<!-- /header -->
+	
+	<!-- main -->
+	<div class="container">
+		<div class="page-header">
+			<h1>Stmt List</h1>
+		</div>
+		<div class="pull-right" style="width:100px;margin:10px 0;">
+			<a th:href="@{/stmt}" class="btn btn-primary btn-block">REGISTER</a>
+		</div>
+		<br/><br/><br/>
+		<div id="mainHide">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="col-md-1">#</th>
+						<th class="col-md-1">Grp</th>
+						<th class="col-md-1">Seq</th>
+						<th class="col-md-7">Stmt En</th>
+						<th class="col-md-2">Create Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="stmt : ${list}">
+						<td th:text="${stmt.id}">#</td>
+						<td th:text="${stmt.groupNo}">Grp</td>
+						<td th:text="${stmt.seqNo}">Seq</td>
+						<td><a th:href="@{/stmt(id=${stmt.id})}" th:text="${stmt.stmtEn}">Stmt En</a></td>
+						<td th:text="${stmt.createdDate} ? ${#temporals.format(stmt.createdDate,'yyyy-MM-dd HH:mm')} : ${stmt.createdDate}">Create Date</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br/>
+		
+		<!-- page -->
+		<th:block th:replace="layout/page::page1"></th:block>
+		<!-- /page -->
+	</div>
+	<br/><br/>
+	<br/><br/>
+	<!-- /main -->
+	
+	<!-- footer -->
+	<div th:replace="layout/footer::footer1"></div>
+	<!-- /footer -->
+</body>
+</html>
