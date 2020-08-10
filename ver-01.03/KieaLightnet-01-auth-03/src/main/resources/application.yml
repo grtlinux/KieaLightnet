@@ -115,6 +115,9 @@ lns-env:
     - https://192.10.2.141
     - https://192.10.2.38
     - https://test-public.lightnetapis.io
+    - https://test1-internal-system.lightnetapis.io
+    - https://test2-internal-system.lightnetapis.io
+    - https://test-internal-system.lightnetapis.io
     lightnet-start-idx: 0
     
   json:
