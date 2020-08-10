@@ -19,6 +19,7 @@ import org.tain.object.Message;
 import org.tain.socket.StreamClient;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -45,8 +46,8 @@ public class TridController {
 		if (Flag.flag) {
 			reqLnsJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
 			reqLnsStream = new LnsStream(reqLnsJson.getReqStrData());
-			log.info("LNS01 >>>>> 1. reqLnsJson = {}", reqLnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. reqLnsStream = {}", reqLnsStream.toPrettyJson());
+			log.info("LNS01 >>>>> 1. reqLnsJson = {}", JsonPrint.getInstance().toPrettyJson(reqLnsJson));
+			log.info("LNS01 >>>>> 2. reqLnsStream = {}", JsonPrint.getInstance().toPrettyJson(reqLnsStream));
 		}
 		
 		LnsJson resLnsJson = null;
@@ -61,8 +62,8 @@ public class TridController {
 			resLnsJson.setCode("00000");
 			resLnsJson.setMessage("MSG: to get the trid..");
 			
-			log.info("LNS01 >>>>> 1. resLnsJson = {}", resLnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. resLnsStream = {}", resLnsStream.toPrettyJson());
+			log.info("LNS01 >>>>> 1. resLnsJson = {}", JsonPrint.getInstance().toPrettyJson(resLnsJson));
+			log.info("LNS01 >>>>> 2. resLnsStream = {}", JsonPrint.getInstance().toPrettyJson(resLnsStream));
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
