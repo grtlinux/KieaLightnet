@@ -1,7 +1,6 @@
 package org.tain;
 
 import java.time.LocalDateTime;
-import java.util.TimeZone;
 
 import javax.annotation.PostConstruct;
 
@@ -16,6 +15,7 @@ import org.tain.properties.LnsEnvVirtualProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
+import org.tain.utils.LnsTimeZone;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,11 +31,7 @@ public class KieaLightnet00Virtual05Application implements CommandLineRunner {
 
 	@PostConstruct
 	public void start() {
-		if (!Flag.flag) {
-			TimeZone.setDefault(TimeZone.getTimeZone("UTC+9"));
-			//TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
-			//TimeZone.setDefault(TimeZone.getTimeZone("GMT+09:00"));
-		}
+		if (!Flag.flag) LnsTimeZone.setTimeZone("UTC+9");
 	}
 
 	@Override
@@ -48,6 +44,10 @@ public class KieaLightnet00Virtual05Application implements CommandLineRunner {
 		if (Flag.flag) job05();
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	@Autowired
 	private LnsEnvBaseProperties lnsEnvBaseProperties;
 	
@@ -67,6 +67,10 @@ public class KieaLightnet00Virtual05Application implements CommandLineRunner {
 		}
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	private void job02() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
