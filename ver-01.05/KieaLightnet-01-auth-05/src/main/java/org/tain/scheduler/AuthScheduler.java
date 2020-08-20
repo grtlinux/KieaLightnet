@@ -40,7 +40,7 @@ public class AuthScheduler {
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
 
-	@Scheduled(fixedRate = 5 * 60 * 1000)    // 10 minutes
+	@Scheduled(fixedRate = 2 * 60 * 1000)    // 10 minutes
 	//@Scheduled(fixedRate = 20 * 60 * 1000)    // 20 minutes
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());

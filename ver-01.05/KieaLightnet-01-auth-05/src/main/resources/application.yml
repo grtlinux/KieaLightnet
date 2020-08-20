@@ -116,7 +116,7 @@ lns-env:
     #- https://test2-internal-system.lightnetapis.io
     - https://test-public.lightnetapis.io         # 192.10.2.38  test-public.lightnetapis.io
     - https://test-hawis.lightnetapis.io          # 192.10.2.141 test-hawis.lightnetapis.io
-    lightnet-start-idx: 0
+    lightnet-start-idx: 2
 
   json:
     material: LOCAL
