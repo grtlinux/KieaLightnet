@@ -40,7 +40,7 @@ public class AuthScheduler {
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
 
-	@Scheduled(fixedRate = 1 * 60 * 1000)    // 10 minutes
+	@Scheduled(fixedRate = 2 * 60 * 1000)    // 10 minutes
 	//@Scheduled(fixedRate = 20 * 60 * 1000)    // 20 minutes
 	public void scheduleJob() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
@@ -125,7 +125,8 @@ public class AuthScheduler {
 				} catch (Exception e) {
 					//e.printStackTrace();
 					log.error("KANG-20200724 >>>>> Exception.message = {}", e.getMessage());
-					Sleep.run(2000);
+					Sleep.run(30000);
+					break;
 				}
 			}
 		}

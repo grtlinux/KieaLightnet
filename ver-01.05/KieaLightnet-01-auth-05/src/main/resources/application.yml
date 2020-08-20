@@ -108,14 +108,15 @@ spring.profiles: lns-local
 lns-env:
   auth:
     lightnet-url:
-    #- http://localhost:18888
+    - http://localhost:18888                      # virtual lightnet
     #- https://192.10.2.141
     #- https://192.10.2.38
     #- https://test-internal-system.lightnetapis.io
     #- https://test1-internal-system.lightnetapis.io
-    - https://test2-internal-system.lightnetapis.io
-    - https://test-public.lightnetapis.io
-    lightnet-start-idx: 0
+    #- https://test2-internal-system.lightnetapis.io
+    - https://test-public.lightnetapis.io         # 192.10.2.38  test-public.lightnetapis.io
+    - https://test-hawis.lightnetapis.io          # 192.10.2.141 test-hawis.lightnetapis.io
+    lightnet-start-idx: 2
 
   json:
     material: LOCAL
