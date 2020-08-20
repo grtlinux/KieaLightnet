@@ -16,6 +16,7 @@ import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.LnsTimeZone;
+import org.tain.working.ListWorking;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -71,11 +72,19 @@ public class KieaLightnet00Virtual05Application implements CommandLineRunner {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job02() {
+	@Autowired
+	private ListWorking listWorking;
+	
+	private void job02() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
+		if (Flag.flag) this.listWorking.loading();
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	private void job03() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
