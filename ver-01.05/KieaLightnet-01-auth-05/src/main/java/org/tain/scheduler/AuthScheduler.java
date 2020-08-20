@@ -126,6 +126,7 @@ public class AuthScheduler {
 					//e.printStackTrace();
 					log.error("KANG-20200724 >>>>> Exception.message = {}", e.getMessage());
 					Sleep.run(30000);
+					break;
 				}
 			}
 		}
