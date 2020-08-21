@@ -20,10 +20,14 @@ public abstract class AbstractToString {
 					int length = annotation.length();
 					
 					if (field.getType() == String.class) {
-						sb.append(String.format("%-" + length + "." + length + "s", field.get(this).toString()));
+						String value = (String) field.get(this);
+						if (value == null) value = "";
+						sb.append(String.format("%-" + length + "." + length + "s", value));
+					} else {
+						sb.append(field.get(this).toString());
 					}
 				} else {
-					//sb.append(field.get(this).toString());
+					// sb.append(field.get(this));
 				}
 			}
 		} catch (Exception e) {

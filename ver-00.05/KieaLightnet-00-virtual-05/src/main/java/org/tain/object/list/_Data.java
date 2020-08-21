@@ -3,31 +3,38 @@ package org.tain.object.list;
 import org.tain.annotation.AbstractToString;
 import org.tain.annotation.StreamAnnotation;
 
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-@NoArgsConstructor
-@SuppressWarnings("unused")
+@Getter
 public class _Data extends AbstractToString {
 
-	@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 50)
 	private String transactionId;
 	
-	@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 20)
 	private String deliveryMethod;
 	
-	private _Source source;
-	private _Destination destination;
+	@StreamAnnotation
+	private _Source source = new _Source();
 	
-	private _Fee fee;
+	@StreamAnnotation
+	private _Destination destination = new _Destination();
 	
-	private _Rate rate;
+	@StreamAnnotation
+	private _Fee fee = new _Fee();
 	
-	private _Sender sender;
-	private _Receiver receiver;
+	@StreamAnnotation
+	private _Rate rate = new _Rate();
 	
-	@StreamAnnotation(length = 10)
+	@StreamAnnotation
+	private _Sender sender = new _Sender();
+	
+	@StreamAnnotation
+	private _Receiver receiver = new _Receiver();
+	
+	@StreamAnnotation(length = 40)
 	private String status;
 
-	@StreamAnnotation(length = 10)
+	//@StreamAnnotation(length = 10)
 	private String remittanceType;
 }
