@@ -23,10 +23,10 @@ public class _Sender extends AbstractToString {
 	@StreamAnnotation(length = 80)
 	private String lastName;
 	
-	//@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 10)
 	private String idIssueDate;
 	
-	//@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 10)
 	private String idExpirationDate;
 	
 	@StreamAnnotation

@@ -8,7 +8,7 @@ import lombok.Getter;
 @Getter
 public class _Money extends AbstractToString {
 
-	@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 30)
 	private String amount;
 	
 	@StreamAnnotation(length = 3)
