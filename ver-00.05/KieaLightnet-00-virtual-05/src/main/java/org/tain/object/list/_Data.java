@@ -1,13 +1,19 @@
 package org.tain.object.list;
 
-import org.tain.annotation.AbstractToString;
+import org.tain.annotation.AbstractStream;
 import org.tain.annotation.StreamAnnotation;
 
 import lombok.Getter;
 
 @Getter
-public class _Data extends AbstractToString {
+public class _Data extends AbstractStream {
 
+	//@StreamAnnotation(length = 10)
+	//private long idLong;
+	
+	//@StreamAnnotation(length = 3)
+	//private int idInt;
+	
 	@StreamAnnotation(length = 50)
 	private String transactionId;
 	
@@ -35,6 +41,6 @@ public class _Data extends AbstractToString {
 	@StreamAnnotation(length = 40)
 	private String status;
 
-	//@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 10, usable = false)
 	private String remittanceType;
 }

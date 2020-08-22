@@ -1,12 +1,12 @@
 package org.tain.object.list;
 
-import org.tain.annotation.AbstractToString;
+import org.tain.annotation.AbstractStream;
 import org.tain.annotation.StreamAnnotation;
 
 import lombok.Getter;
 
 @Getter
-public class _Address extends AbstractToString {
+public class _Address extends AbstractStream {
 
 	@StreamAnnotation(length = 40)
 	private String address;
@@ -23,6 +23,6 @@ public class _Address extends AbstractToString {
 	@StreamAnnotation(length = 40)
 	private String state;
 
-	//@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 10, usable = false)
 	private String countryCode;
 }

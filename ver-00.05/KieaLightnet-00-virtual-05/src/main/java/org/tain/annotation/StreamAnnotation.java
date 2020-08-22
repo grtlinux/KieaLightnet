@@ -10,4 +10,12 @@ import java.lang.annotation.Target;
 public @interface StreamAnnotation {
 	String value() default "name";
 	int length() default 0;
+	boolean usable() default true;
+	/*
+	String value() default "-";
+	int number() default 20;
+	String[] language() default {};
+	public enum Quality{BAD, GOOD, VERYGOOD}
+	Quality quality() default Quality.GOOD;
+	*/
 }

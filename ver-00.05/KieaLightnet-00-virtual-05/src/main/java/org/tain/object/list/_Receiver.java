@@ -1,12 +1,12 @@
 package org.tain.object.list;
 
-import org.tain.annotation.AbstractToString;
+import org.tain.annotation.AbstractStream;
 import org.tain.annotation.StreamAnnotation;
 
 import lombok.Getter;
 
 @Getter
-public class _Receiver extends AbstractToString {
+public class _Receiver extends AbstractStream {
 
 	@StreamAnnotation(length = 35)
 	private String accountId;

@@ -218,13 +218,17 @@ public class ListWorking {
 			String json = jsonNode.at("/data").toPrettyString();
 			if (Flag.flag) System.out.println("/data >>>>> " + json);
 			
-			PrintWriter printWriter = new PrintWriter("/Users/kangmac/LIST.DAT");
 			List<_Data> lstData = objectMapper.readValue(json, new TypeReference<List<_Data>>() {});
-			for (_Data data : lstData) {
-				if (Flag.flag) System.out.println("FILE_DATA >>>>> [" + data + "]");
-				printWriter.println(data);
+			
+			if (Flag.flag) {
+				PrintWriter printWriter = new PrintWriter(new File(System.getenv("HOME") + "/LIST.DAT"));
+				for (_Data data : lstData) {
+					if (Flag.flag) System.out.println("FILE_DATA >>>>> [" + data.getStream() + "]");
+					printWriter.println(data.getStream());
+				}
+				printWriter.close();
 			}
-			printWriter.close();
+			
 			if (Flag.flag) System.exit(0);
 		}
 	}

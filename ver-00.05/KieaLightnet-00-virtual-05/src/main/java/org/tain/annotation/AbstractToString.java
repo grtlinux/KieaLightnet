@@ -2,6 +2,7 @@ package org.tain.annotation;
 
 import java.lang.reflect.Field;
 
+@Deprecated
 public abstract class AbstractToString {
 
 	//////////////////////////////////////////////////////////////////

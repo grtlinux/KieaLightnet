@@ -1,17 +1,17 @@
 package org.tain.object.list;
 
-import org.tain.annotation.AbstractToString;
+import org.tain.annotation.AbstractStream;
 import org.tain.annotation.StreamAnnotation;
 
 import lombok.Getter;
 
 @Getter
-public class _Sender extends AbstractToString {
+public class _Sender extends AbstractStream {
 
 	@StreamAnnotation
 	private _Address address = new _Address();
 	
-	//@StreamAnnotation(length = 10)
+	@StreamAnnotation(length = 10, usable = false)
 	private String dob;
 	
 	@StreamAnnotation(length = 8)
