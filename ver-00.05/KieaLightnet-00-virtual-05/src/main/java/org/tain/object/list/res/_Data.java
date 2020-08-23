@@ -1,18 +1,16 @@
-package org.tain.object.list;
+package org.tain.object.list.res;
 
 import org.tain.annotation.AbstractStream;
 import org.tain.annotation.StreamAnnotation;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import lombok.Getter;
 
 @Getter
 //@JsonIgnoreProperties(value = {"idLong", "idInt"})  // to the below
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
+//@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class _Data extends AbstractStream {
 
 	//@StreamAnnotation(length = 10)

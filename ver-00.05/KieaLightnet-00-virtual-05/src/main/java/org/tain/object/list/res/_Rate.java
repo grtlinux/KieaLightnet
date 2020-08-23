@@ -1,4 +1,4 @@
-package org.tain.object.list;
+package org.tain.object.list.res;
 
 import org.tain.annotation.AbstractStream;
 import org.tain.annotation.StreamAnnotation;
@@ -9,11 +9,11 @@ import lombok.Getter;
 
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _MobilePhone extends AbstractStream {
+public class _Rate extends AbstractStream {
 
-	@StreamAnnotation(length = 4)
-	private String countryCode;
-
-	@StreamAnnotation(length = 20)
-	private String number;
+	@StreamAnnotation
+	private _Money from = new _Money();
+	
+	@StreamAnnotation
+	private _Money to = new _Money();
 }

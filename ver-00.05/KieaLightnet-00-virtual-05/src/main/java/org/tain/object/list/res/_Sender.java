@@ -1,4 +1,4 @@
-package org.tain.object.list;
+package org.tain.object.list.res;
 
 import org.tain.annotation.AbstractStream;
 import org.tain.annotation.StreamAnnotation;

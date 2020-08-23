@@ -1,4 +1,4 @@
-package org.tain.object;
+package org.tain.object.lns;
 
 import java.sql.Timestamp;
 
@@ -19,7 +19,7 @@ public class LnsJson implements Cloneable {
 	private String name;
 	private String title;
 	
-	private String workUrl;
+	private String workUrl;        // scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
 	private String division;       // trid/validate/commit/list/detail/callback
 	private String divisionType;   // REQ / RES
 	

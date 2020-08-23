@@ -1,4 +1,4 @@
-package org.tain.object;
+package org.tain.object.lns;
 
 import java.sql.Timestamp;
 
@@ -16,23 +16,19 @@ import lombok.NoArgsConstructor;
 public class LnsStream implements Cloneable {
 
 	private String data;
-	private int length;
+	private int length;           // data_length
 	
-	private String strLength;     // 4
-	private String division;      // 4
-	private String divisionType;  // 3 REQ/RES
-	private String trid;          // 20 transaction id (16)
+	private String strLength;     // 4 = (length - 4) = (7 + content)
+	private String typeCode;      // 7 0200300/0210300 <- validate-REQ/RES
 	private String content;
 	
 	public LnsStream(String data) {
 		this.data   = data;
-		this.length = data.length();
+		this.length = data.length();  // data_length
 		
-		this.strLength    = data.substring(0, 4);
-		this.division     = data.substring(4, 8);
-		this.divisionType = data.substring(8, 11);
-		this.trid         = data.substring(11, 31);
-		this.content      = data.substring(31);
+		this.strLength    = data.substring(0, 4);   // info_length = data_length - 4
+		this.typeCode     = data.substring(4, 11);
+		this.content      = data.substring(11);    // to transfer stream to json
 	}
 	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
@@ -50,13 +46,15 @@ public class LnsStream implements Cloneable {
 	
 	public String combind() {
 		StringBuffer sb = new StringBuffer();
-		sb.append(String.format("%-4s", this.division));
-		sb.append(String.format("%-3s", this.divisionType));
-		sb.append(String.format("%-20s", this.trid));
+		
+		sb.append(String.format("%-7s", this.typeCode));
 		sb.append(this.content);
 		
-		this.length = sb.length() + 4;
-		sb.insert(0, String.format("%04d", this.length));
+		this.length = sb.length() + 4;  // the value included the length size
+		sb.insert(0, String.format("%04d", this.length - 4));
+		
+		//this.length = sb.length();      // the value excluded the length size
+		//sb.insert(0, String.format("%04d", this.length));
 		
 		this.data = sb.toString();
 		
