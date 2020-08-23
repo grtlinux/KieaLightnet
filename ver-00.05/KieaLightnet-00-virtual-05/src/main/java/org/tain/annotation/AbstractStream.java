@@ -5,15 +5,26 @@ import java.lang.reflect.Method;
 
 import org.tain.utils.Flag;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public abstract class AbstractStream {
 
+	/*
+	 * string (<-), number(->)
+	 * ignore field
+	 * null field
+	 * null = ""
+	 * 
+	 */
 	//////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////
 	
+	@JsonIgnore
+	//@JsonProperty
 	public String getStream() {
 		StringBuffer sb = new StringBuffer();
 		
@@ -63,7 +74,9 @@ public abstract class AbstractStream {
 	//////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////
 	
-	public SubString setStream(SubString subString) {
+	@JsonIgnore
+	//@JsonProperty
+	public SubString getObject(SubString subString) {
 		
 		try {
 			Field[] fields = this.getClass().getDeclaredFields();
@@ -73,11 +86,15 @@ public abstract class AbstractStream {
 				StreamAnnotation annotation = field.getAnnotation(StreamAnnotation.class);
 				if (annotation != null && annotation.usable()) {
 					int length = annotation.length();
+					//boolean useNull = annotation.useNull();
+					boolean useNullSpace = annotation.useNullSpace();
 					
 					Class<?> type = field.getType();
 					if (type == String.class) {
 						String value = subString.get(length).trim();
 						if (Flag.flag) log.trace("\tString: [%s][%s]\n", field.getName(), value);
+						if (value.equals("") && useNullSpace == false)
+							value = null;
 						field.set(this, value);
 					} else if (type == long.class) {
 						long value = Long.parseLong(subString.get(length).trim());
@@ -93,11 +110,15 @@ public abstract class AbstractStream {
 						if (Flag.flag) log.trace("\tCLASS: " + cls.getName());
 						
 						Class<?>[] param = new Class<?>[] { SubString.class };
-						Method method = cls.getMethod("setStream", param);
-						
+						Method method = cls.getMethod("getObject", param);
 						Object[] paramObject = new Object[] { subString };
-						subString = (SubString) method.invoke(object, paramObject);
 						
+						//subString.setFlagNull(false);
+						subString = (SubString) method.invoke(object, paramObject);
+						//if (subString.getFlagNull() == true) {
+						//	field.set(this, null);
+						//	//subString.setFlagNull(false);
+						//}
 					}
 				} else {
 					// sb.append(field.get(this).toString());

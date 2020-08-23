@@ -22,4 +22,16 @@ public class SubString {
 		this.offset += size;
 		return ret;
 	}
+	
+	////////////////////////////////////////////////////
+	
+	private boolean flagNull = true;
+	
+	public void setFlagNull(boolean flag) {
+		this.flagNull = flag;
+	}
+	
+	public boolean getFlagNull() {
+		return this.flagNull;
+	}
 }

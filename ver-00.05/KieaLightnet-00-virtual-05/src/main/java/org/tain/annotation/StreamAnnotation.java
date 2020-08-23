@@ -11,6 +11,9 @@ public @interface StreamAnnotation {
 	String value() default "name";
 	int length() default 0;
 	boolean usable() default true;
+	@Deprecated
+	boolean useNull() default false;       // 
+	boolean useNullSpace() default false;  // in JSON
 	/*
 	String value() default "-";
 	int number() default 20;

@@ -6,11 +6,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tain.annotation.SubString;
 import org.tain.object.list._Data;
 import org.tain.object.list._Source;
 import org.tain.properties.LnsEnvVirtualProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -223,8 +225,16 @@ public class ListWorking {
 			if (Flag.flag) {
 				PrintWriter printWriter = new PrintWriter(new File(System.getenv("HOME") + "/LIST.DAT"));
 				for (_Data data : lstData) {
-					if (Flag.flag) System.out.println("FILE_DATA >>>>> [" + data.getStream() + "]");
-					printWriter.println(data.getStream());
+					System.out.println("==================== getStream ==================================");
+					String strStream = data.getStream();
+					if (Flag.flag) System.out.println("FILE_DATA >>>>> [" + strStream + "]");
+					printWriter.println(strStream);
+					
+					System.out.println("-------------------- setStream ----------------------------------");
+					SubString subString = new SubString(strStream);
+					_Data data2 = new _Data();
+					data2.getObject(subString);
+					JsonPrint.getInstance().printPrettyJson(data2);
 				}
 				printWriter.close();
 			}
