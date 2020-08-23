@@ -18,14 +18,14 @@ import org.tain.utils.Sample;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/lns01/rest"})
+@RequestMapping(value = {"/rest/lns01"})
 @Slf4j
 public class TestController {
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18091/v0.5/lns01/rest/test1
+	// http://localhost:18091/v0.5/rest/lns01/test1
 	
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {"/test1"}, method = {RequestMethod.GET, RequestMethod.POST})
@@ -43,7 +43,7 @@ public class TestController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18091/v0.5/lns01/rest/test2
+	// http://localhost:18091/v0.5/rest/lns01/test2
 	
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {"/test2"}, method = {RequestMethod.GET, RequestMethod.POST})

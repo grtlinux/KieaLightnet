@@ -2,18 +2,18 @@ package org.tain.queue;
 
 import java.util.LinkedList;
 
-import org.tain.object.Message;
+import org.tain.object.lns.LnsMessage;
 
 public class MessageQueue {
 
-	private final LinkedList<Message> queue = new LinkedList<>();
+	private final LinkedList<LnsMessage> queue = new LinkedList<>();
 	
-	public synchronized void set(Message message) {
+	public synchronized void set(LnsMessage message) {
 		this.queue.addLast(message);
 		this.notifyAll();
 	}
 	
-	public synchronized Message get() {
+	public synchronized LnsMessage get() {
 		while (this.queue.size() <= 0) {
 			try {
 				wait();

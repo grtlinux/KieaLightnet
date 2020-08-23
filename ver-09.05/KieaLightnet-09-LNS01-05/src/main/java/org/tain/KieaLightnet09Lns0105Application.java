@@ -7,12 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.tain.properties.LnsEnvBaseProperties;
-import org.tain.properties.LnsEnvJsonProperties;
-import org.tain.properties.LnsEnvLns01Properties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.JsonPrint;
+import org.tain.working.PropertiesWorking;
+import org.tain.working.TrIdWorking;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,7 +23,17 @@ public class KieaLightnet09Lns0105Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		SpringApplication.run(KieaLightnet09Lns0105Application.class, args);
 	}
-
+	
+	/*
+	@PostConstruct
+	void started() {
+		//TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+		System.out.println(">>>>> " + new Date());
+		System.out.println(">>>>> " + new Timestamp(System.currentTimeMillis()));
+	}
+	*/
+	
 	@Override
 	public void run(String... args) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
@@ -38,37 +46,34 @@ public class KieaLightnet09Lns0105Application implements CommandLineRunner {
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	////////////b///////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
 	
 	@Autowired
-	private LnsEnvBaseProperties lnsEnvBaseProperties;
+	private PropertiesWorking propertiesWorking;
 	
-	@Autowired
-	private LnsEnvJsonProperties lnsEnvJsonProperties;
-	
-	@Autowired
-	private LnsEnvLns01Properties lnsEnvLns01Properties;
-
 	private void job01() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) {
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvBaseProperties);
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvLns01Properties);
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvJsonProperties);
-		}
+		if (Flag.flag) this.propertiesWorking.printProperties();
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+
+	@Autowired
+	private TrIdWorking trIdWorking;
+	
+	private void job02() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		// System.exit(0);  // TODO: remove later
+		if (!Flag.flag) this.trIdWorking.get();
 	}
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job02() {
-		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
-	}
-
 	private void job03() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		

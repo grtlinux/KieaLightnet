@@ -2,8 +2,8 @@ package org.tain.socket;
 
 import java.net.Socket;
 
-import org.tain.object.LnsPacket;
-import org.tain.object.Message;
+import org.tain.object.lns.LnsMessage;
+import org.tain.object.lns.LnsStream;
 import org.tain.queue.MessageQueue;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -27,22 +27,22 @@ public class StreamClientWorkerThread extends Thread {
 	public void run() {
 		if (Flag.flag) {
 			while (true) {
-				Message message = this.messageQueue.get();
+				LnsMessage message = this.messageQueue.get();
 				// String request = message.getData();
-				LnsPacket reqPacket = new LnsPacket(message.getData());
-				log.info("KANG-20200628 >>>>> reqPacket.json: {}", JsonPrint.getInstance().toPrettyJson(reqPacket));
+				LnsStream reqStream = new LnsStream(message.getData());
+				log.info("KANG-20200628 >>>>> reqStream.json: {}", JsonPrint.getInstance().toPrettyJson(reqStream));
 				
-				reqPacket = this.streamPacket.sendPacket(reqPacket);
+				reqStream = this.streamPacket.sendPacket(reqStream);
 				
-				LnsPacket resPacket = this.streamPacket.recvPacket();
+				LnsStream resStream = this.streamPacket.recvPacket();
 				
-				log.info("KANG-20200628 >>>>> resPacket.json: {}", JsonPrint.getInstance().toPrettyJson(resPacket));
-				message.setDataToQueue(resPacket.getData());
+				log.info("KANG-20200628 >>>>> resStream.json: {}", JsonPrint.getInstance().toPrettyJson(resStream));
+				message.setDataToQueue(resStream.getData());
 			}
 		}
 	}
 	
-	public void setMessage(Message message) {
+	public void setMessage(LnsMessage message) {
 		this.messageQueue.set(message);
 	}
 }

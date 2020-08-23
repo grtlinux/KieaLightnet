@@ -41,6 +41,8 @@ spring:
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
+    properties:
+      hibernate.jdbc.time-zone: UTC+9
   
   data.rest:
     base-path: /api
@@ -72,8 +74,8 @@ logging:
     max-history: 30         # delete after a month
   
   pattern:
-    console: "%clr(%d{HH:mm:ss}){magenta} %p - %m%n"
-    file: "%d %-5level [%-10.10thread] [%-30.30logger{29}] - %m%n"
+    console: "%clr(%d{HH:mm:ss} %p){magenta} - %m%n"
+    file: "%d %-5level [%-10.10thread] [%-30.30logger{30}] - %m%n"
   
   level:
     root: info
@@ -81,6 +83,7 @@ logging:
     org.hibernate.SQL: info
     org.hibernate.type: info
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+    
     org.thymeleaf: info
     org.h2.server.web: info
 
@@ -94,7 +97,8 @@ lns-env:
     program: KieaLightnet-09-lns01-05.jar
     version: ver 0.5_2020.08.10
     comment: This is a lightnet PROGRAM.
-  lns01:
+    
+  job:
     online-host: 127.0.0.1
     online-port: 19091
 
@@ -103,7 +107,7 @@ lns-env:
 spring.profiles: lns-local
 
 lns-env:
-  lns01:
+  job:
     
   json:
     material: LOCAL
@@ -119,7 +123,7 @@ lns-env:
 spring.profiles: lns-test
 
 lns-env:
-  lns01:
+  job:
     
   json:
     material: TEST
@@ -135,7 +139,7 @@ lns-env:
 spring.profiles: lns-real
 
 lns-env:
-  lns01:
+  job:
     
   json:
     material: REAL

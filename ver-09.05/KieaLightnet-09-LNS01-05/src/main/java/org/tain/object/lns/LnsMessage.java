@@ -1,8 +1,8 @@
-package org.tain.object;
+package org.tain.object.lns;
 
 import org.tain.queue.MessageQueue;
 
-public class Message {
+public class LnsMessage {
 
 	private String data;
 	private MessageQueue returnQueue = new MessageQueue();
@@ -21,7 +21,7 @@ public class Message {
 	}
 	
 	public String getDataFromQueue() {
-		Message message = this.returnQueue.get();
+		LnsMessage message = this.returnQueue.get();
 		return message.getData();
 	}
 	

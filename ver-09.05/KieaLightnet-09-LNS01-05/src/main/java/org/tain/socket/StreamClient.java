@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.tain.properties.LnsEnvLns01Properties;
+import org.tain.properties.LnsEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
@@ -21,7 +21,7 @@ public class StreamClient {
 	private StreamClientWorkerThread thread = null;
 	
 	@Autowired
-	private LnsEnvLns01Properties lnsEnvLns01Properties;
+	private LnsEnvJobProperties lnsEnvJobProperties;
 	
 	@Bean
 	public void jobStreamClient() throws Exception {
@@ -46,13 +46,13 @@ public class StreamClient {
 			*/
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			while (true) {
 				// socket connection
 				Socket socket = null;
 				try {
 					socket = new Socket();
-					socket.connect(new InetSocketAddress(this.lnsEnvLns01Properties.getOnlineHost(), this.lnsEnvLns01Properties.getOnlinePort()));
+					socket.connect(new InetSocketAddress(this.lnsEnvJobProperties.getOnlineHost(), this.lnsEnvJobProperties.getOnlinePort()));
 					log.info(">>>>>  Client Connection is OK!!!");
 					
 					this.thread = new StreamClientWorkerThread(socket);

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.properties.LnsEnvBaseProperties;
 import org.tain.properties.LnsEnvJsonProperties;
-import org.tain.properties.LnsEnvLns01Properties;
+import org.tain.properties.LnsEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -91,13 +91,13 @@ public class PropertiesController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18091/v0.5/lns01/properties/lns01
+	// http://localhost:18091/v0.5/lns01/properties/job
 
 	@Autowired
-	private LnsEnvLns01Properties lnsEnvLns01Properties;
+	private LnsEnvJobProperties lnsEnvJobProperties;
 	
 	@CrossOrigin(origins = {"/**"})
-	@RequestMapping(value = {"/lns01"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/job"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> virtual(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
@@ -113,10 +113,10 @@ public class PropertiesController {
 		if (Flag.flag) {
 			log.info("--------------- v1 Response --------------------");
 			log.info(">>>>> Headers = " + headers);
-			log.info(">>>>> Body = " + this.lnsEnvLns01Properties);
+			log.info(">>>>> Body = " + this.lnsEnvJobProperties);
 			log.info("==================================================");
 		}
 		
-		return new ResponseEntity<>(this.lnsEnvLns01Properties, headers, HttpStatus.OK);
+		return new ResponseEntity<>(this.lnsEnvJobProperties, headers, HttpStatus.OK);
 	}
 }

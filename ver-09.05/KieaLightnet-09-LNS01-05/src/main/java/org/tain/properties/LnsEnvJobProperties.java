@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import lombok.Data;
 
 @Component
-@ConfigurationProperties(prefix = "lns-env.lns01")
+@ConfigurationProperties(prefix = "lns-env.job")
 @Data
-public class LnsEnvLns01Properties {
+public class LnsEnvJobProperties {
 
 	private String onlineHost;
 	private Integer onlinePort;

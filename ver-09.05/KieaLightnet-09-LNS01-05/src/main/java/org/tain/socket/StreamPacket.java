@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-import org.tain.object.LnsPacket;
+import org.tain.object.lns.LnsStream;
 import org.tain.utils.Sleep;
 
 public class StreamPacket {
@@ -61,37 +61,42 @@ public class StreamPacket {
 		return strData;
 	}
 	
-	public LnsPacket recvPacket() {
-		LnsPacket lnsPacket = null;
+	public LnsStream recvPacket() {
+		LnsStream lnsStream = null;
 		try {
 			String strLength = this.recvLength(DEFAULT_LENGTH_SIZE);
 			int length = Integer.parseInt(strLength);
 			String strData = this.recvData(length);
-			lnsPacket = new LnsPacket(strLength + strData);
+			lnsStream = new LnsStream(strLength + strData);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return lnsPacket;
+		return lnsStream;
 	}
 	///////////////////////////////////////////////////////////
 	// sendPacket
 	
-	public LnsPacket sendPacket(LnsPacket lnsPacket) {
+	public LnsStream sendPacket(LnsStream lsnStream) {
 		try {
-			byte[] bytPacket = lnsPacket.getData().getBytes();
+			byte[] bytPacket = lsnStream.getData().getBytes();
 			int nsend = this.send(bytPacket);
-			if (nsend != lnsPacket.getLength()) {
+			if (nsend != lsnStream.getLength()) {
 				throw new IOException("ERROR: wrong send");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			lnsPacket = null;
+			lsnStream = null;
 		}
 		
-		return lnsPacket;
+		return lsnStream;
 	}
 	
 	///////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////
+	
 	// recv and send
 	
 	public byte[] recv(int length) throws Exception {

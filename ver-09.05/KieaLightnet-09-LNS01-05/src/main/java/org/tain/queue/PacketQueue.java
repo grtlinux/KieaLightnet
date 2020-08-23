@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import org.tain.object.Packet;
 
+@Deprecated
 public class PacketQueue {
 
 	private final LinkedList<Packet> queue = new LinkedList<>();

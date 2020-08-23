@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import lombok.Data;
 
 @Data
+@Deprecated
 public class LnsPacket {
 
 	private String data;

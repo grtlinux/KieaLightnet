@@ -63,8 +63,18 @@ public class JsonPrint implements JsonPrintImpl {
 	}
 
 	@Override
+	public void printJson(String title, Object object) {
+		System.out.println(title + " JSON >>>>> " + this.toJson(object));
+	}
+
+	@Override
 	public void printPrettyJson(Object object) {
 		System.out.println("Pretty JSON >>>>> " + this.toPrettyJson(object));
+	}
+
+	@Override
+	public void printPrettyJson(String title, Object object) {
+		System.out.println(title + " Pretty JSON >>>>> " + this.toPrettyJson(object));
 	}
 
 	@Override

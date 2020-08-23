@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.tain.object.LnsJson;
-import org.tain.object.LnsStream;
-import org.tain.object.Message;
+import org.tain.object.lns.LnsJson;
+import org.tain.object.lns.LnsMessage;
+import org.tain.object.lns.LnsStream;
 import org.tain.socket.StreamClient;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -33,7 +33,7 @@ public class TridController {
 	
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {"/trid"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public ResponseEntity<?> validate(HttpEntity<String> _httpEntity) throws Exception {
+	public ResponseEntity<?> trid(HttpEntity<String> _httpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get(), LocalDateTime.now());
 		
 		if (Flag.flag) {
@@ -57,10 +57,9 @@ public class TridController {
 			resLnsStream = new LnsStream(response);
 			
 			resLnsJson = (LnsJson) reqLnsJson.clone();
-			resLnsJson.setDivisionType("RES");
+			resLnsJson.setTrType("0210");
+			resLnsJson.setTrCode("100");
 			resLnsJson.setResStrData(resLnsStream.getData());
-			resLnsJson.setCode("00000");
-			resLnsJson.setMessage("MSG: to get the trid..");
 			
 			log.info("LNS01 >>>>> 1. resLnsJson = {}", JsonPrint.getInstance().toPrettyJson(resLnsJson));
 			log.info("LNS01 >>>>> 2. resLnsStream = {}", JsonPrint.getInstance().toPrettyJson(resLnsStream));
@@ -80,7 +79,7 @@ public class TridController {
 	private StreamClient streamClient;
 	
 	private String callStreamClient(String req) throws Exception {
-		Message message = new Message();
+		LnsMessage message = new LnsMessage();
 		message.setData(req);
 		
 		this.streamClient.getThread().setMessage(message);

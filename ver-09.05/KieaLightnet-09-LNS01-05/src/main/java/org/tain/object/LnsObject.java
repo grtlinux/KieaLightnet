@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Data
+@Deprecated
 public class LnsObject {
 
 	private String name;
