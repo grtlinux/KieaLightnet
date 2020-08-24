@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.tain.properties.LnsEnvVirtualProperties;
+import org.tain.properties.LnsEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -51,7 +51,7 @@ public class DetailV11Controller {
 	*/
 
 	@Autowired
-	private LnsEnvVirtualProperties lnsEnvVirtualProperties;
+	private LnsEnvJobProperties lnsEnvVirtualProperties;
 
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})

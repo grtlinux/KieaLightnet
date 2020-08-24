@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.properties.LnsEnvBaseProperties;
 import org.tain.properties.LnsEnvJsonProperties;
-import org.tain.properties.LnsEnvVirtualProperties;
+import org.tain.properties.LnsEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -94,7 +94,7 @@ public class PropertiesController {
 	// http://localhost:18888/virtual/properties/virtual
 
 	@Autowired
-	private LnsEnvVirtualProperties lnsEnvVirtualProperties;
+	private LnsEnvJobProperties lnsEnvVirtualProperties;
 	
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {"virtual"}, method = {RequestMethod.GET, RequestMethod.POST})

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.tain.annotation.SubString;
 import org.tain.object.list.res._Data;
 import org.tain.object.list.res._Source;
-import org.tain.properties.LnsEnvVirtualProperties;
+import org.tain.properties.LnsEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ListWorking {
 
 	@Autowired
-	private LnsEnvVirtualProperties lnsEnvVirtualProperties;
+	private LnsEnvJobProperties lnsEnvVirtualProperties;
 	
 	public void loading() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());

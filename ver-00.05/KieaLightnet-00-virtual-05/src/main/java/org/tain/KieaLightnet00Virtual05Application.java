@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.tain.properties.LnsEnvBaseProperties;
 import org.tain.properties.LnsEnvJsonProperties;
-import org.tain.properties.LnsEnvVirtualProperties;
+import org.tain.properties.LnsEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -56,15 +56,15 @@ public class KieaLightnet00Virtual05Application implements CommandLineRunner {
 	private LnsEnvJsonProperties lnsEnvJsonProperties;
 	
 	@Autowired
-	private LnsEnvVirtualProperties lnsEnvVirtualProperties;
+	private LnsEnvJobProperties lnsEnvJobProperties;
 
 	private void job01() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvBaseProperties);
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvVirtualProperties);
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvJsonProperties);
+			JsonPrint.getInstance().printPrettyJson("BASE", this.lnsEnvBaseProperties);
+			JsonPrint.getInstance().printPrettyJson("JSON", this.lnsEnvJsonProperties);
+			JsonPrint.getInstance().printPrettyJson("JOB", this.lnsEnvJobProperties);
 		}
 	}
 

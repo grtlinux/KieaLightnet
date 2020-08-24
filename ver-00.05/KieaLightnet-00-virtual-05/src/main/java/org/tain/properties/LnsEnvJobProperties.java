@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 import lombok.Data;
 
 @Component
-@ConfigurationProperties(prefix = "lns-env.virtual")
+@ConfigurationProperties(prefix = "lns-env.job")
 @Data
-public class LnsEnvVirtualProperties {
+public class LnsEnvJobProperties {
 
 	private String accessToken;
 	
