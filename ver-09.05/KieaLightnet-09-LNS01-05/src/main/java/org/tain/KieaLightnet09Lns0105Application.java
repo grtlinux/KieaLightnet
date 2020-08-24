@@ -67,7 +67,7 @@ public class KieaLightnet09Lns0105Application implements CommandLineRunner {
 	private void job02() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		if (!Flag.flag) this.trIdWorking.get();
+		if (Flag.flag) this.trIdWorking.get();
 	}
 
 	///////////////////////////////////////////////////////////////////////////

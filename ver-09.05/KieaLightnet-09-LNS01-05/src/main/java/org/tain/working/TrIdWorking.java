@@ -35,7 +35,7 @@ public class TrIdWorking {
 		}
 		
 		Sleep.run(2000);
-		if (!Flag.flag) System.exit(0);  // TODO: remove later
+		if (Flag.flag) System.exit(0);  // TODO: remove later
 	}
 	
 	//////////////////////////////////////////////////////////////////////////////////

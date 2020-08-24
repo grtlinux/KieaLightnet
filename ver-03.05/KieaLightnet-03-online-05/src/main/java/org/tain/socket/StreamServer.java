@@ -19,11 +19,11 @@ import lombok.extern.slf4j.Slf4j;
 public class StreamServer {
 
 	@Autowired
-	private LnsEnvJobProperties lnsEnvOnlineProperties;
+	private LnsEnvJobProperties lnsEnvJobProperties;
 	
 	@Bean
 	public void jobStreamServer() throws Exception {
-		log.info("KANG-20200623 >>>>> {} listen-port: {}", CurrentInfo.get(), this.lnsEnvOnlineProperties.getListenPort());
+		log.info("KANG-20200623 >>>>> {} listen-port: {}", CurrentInfo.get(), this.lnsEnvJobProperties.getListenPort());
 		
 		if (Flag.flag) {
 			new Thread("StreamServer") {
@@ -58,7 +58,7 @@ public class StreamServer {
 							try { this.serverSocket.close(); } catch (Exception e) {}
 					}
 				}
-			}.setListenPort(this.lnsEnvOnlineProperties.getListenPort()).start();
+			}.setListenPort(this.lnsEnvJobProperties.getListenPort()).start();
 		}
 	}
 }

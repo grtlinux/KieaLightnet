@@ -46,7 +46,7 @@ public class StreamClient {
 			*/
 		}
 		
-		if (!Flag.flag) {
+		if (Flag.flag) {
 			while (true) {
 				// socket connection
 				Socket socket = null;

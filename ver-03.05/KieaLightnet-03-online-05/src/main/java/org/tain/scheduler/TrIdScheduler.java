@@ -229,7 +229,7 @@ public class TrIdScheduler {
 		log.info("KANG-20200717 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			System.out.printf("ONLINE >>>>> 1. request  data: [%s]\n", request);
+			System.out.printf(">>>>> 1. request  data: [%s]\n", request);
 		}
 
 		String response = "00180702RES.......";
@@ -238,25 +238,25 @@ public class TrIdScheduler {
 			/*
 			// req mapper process
 			response = mapperHttpPostReq(request);
-			System.out.printf("ONLINE >>>>> 1. response data: [%s]\n", response);
+			System.out.printf(">>>>> 1. response data: [%s]\n", response);
 			if (Flag.flag) {
 				JsonNode jsonNode = new ObjectMapper().readTree(response);
-				System.out.println("ONLINE >>>>> 1. REQ JSON: " + jsonNode.toPrettyString());
+				System.out.println(">>>>> 1. REQ JSON: " + jsonNode.toPrettyString());
 			}
 			
 			response = linkHttpPost(response);
-			System.out.printf("ONLINE >>>>> 2. response data: [%s]\n", response);
+			System.out.printf(">>>>> 2. response data: [%s]\n", response);
 			
 			// process
 			response = mapperHttpPostRes(response);
-			System.out.printf("ONLINE >>>>> 3. response data: [%s]\n", response);
+			System.out.printf(">>>>> 3. response data: [%s]\n", response);
 			*/
 		}
 		
 		StringBuffer sb = null;
 		if (Flag.flag) {
 			response = infoHttpPost(request);
-			System.out.printf("ONLINE >>>>> 2. response data: [%s]\n", response);
+			System.out.printf(">>>>> 2. response data: [%s]\n", response);
 			
 			Map<String,String> map = new ObjectMapper().readValue(response, new TypeReference<Map<String,String>>(){});
 			
@@ -288,7 +288,7 @@ public class TrIdScheduler {
 			reqMap.put("title", "/mapper/validate");
 			reqMap.put("command", "Stream To Json");
 			reqMap.put("data", request);
-			System.out.println("ONLINE >>>>> reqMap: " + reqMap);
+			System.out.println(">>>>> reqMap: " + reqMap);
 		}
 		
 		ResponseEntity<String> response = null;
@@ -306,7 +306,7 @@ public class TrIdScheduler {
 			try {
 				JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 				String json = jsonNode.toPrettyString();
-				System.out.println("ONLINE >>>>> response json: " + json);
+				System.out.println(">>>>> response json: " + json);
 				
 				retResponse = jsonNode.at("/retData").toString();
 			} catch (Exception e) {
@@ -337,7 +337,7 @@ public class TrIdScheduler {
 		String retResponse = null;
 		
 		if (Flag.flag) {
-			System.out.println("ONLINE >>>>> request = " + request);
+			System.out.println(">>>>> request = " + request);
 		}
 		
 		ResponseEntity<String> response = null;
@@ -391,7 +391,7 @@ public class TrIdScheduler {
 		
 		if (Flag.flag) {
 			JsonNode jsonNode = new ObjectMapper().readTree(request);
-			System.out.println("ONLINE >>>>> 3. REQ JSON: " + jsonNode.toPrettyString());
+			System.out.println(">>>>> 3. REQ JSON: " + jsonNode.toPrettyString());
 		}
 		
 		Map<String,String> reqMap = new HashMap<>();
@@ -399,7 +399,7 @@ public class TrIdScheduler {
 			reqMap.put("title", "/mapper/validate");
 			reqMap.put("command", "Stream To Json");
 			reqMap.put("data", request);
-			System.out.println("ONLINE >>>>> reqMap: " + reqMap);
+			System.out.println(">>>>> reqMap: " + reqMap);
 		}
 		
 		ResponseEntity<String> response = null;
@@ -417,7 +417,7 @@ public class TrIdScheduler {
 			try {
 				JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 				String json = jsonNode.toPrettyString();
-				System.out.println("ONLINE >>>>> response json: " + json);
+				System.out.println(">>>>> response json: " + json);
 				
 				retResponse = jsonNode.at("/retData").toString();
 			} catch (Exception e) {
@@ -455,7 +455,7 @@ public class TrIdScheduler {
 		String retResponse = null;
 		
 		if (Flag.flag) {
-			System.out.println("ONLINE >>>>> request = " + request);
+			System.out.println(">>>>> request = " + request);
 		}
 		
 		ResponseEntity<String> response = null;

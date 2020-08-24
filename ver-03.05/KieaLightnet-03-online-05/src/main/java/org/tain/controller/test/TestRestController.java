@@ -20,12 +20,12 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(value = {"/rest/online"})
 @Slf4j
-public class TestController {
+public class TestRestController {
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18083/v0.5/online/rest/test1
+	// http://localhost:18083/v0.5/rest/online/test1
 	
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {"/test1"}, method = {RequestMethod.GET, RequestMethod.POST})
@@ -43,7 +43,7 @@ public class TestController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
-	// http://localhost:18083/v0.5/online/rest/test2
+	// http://localhost:18083/v0.5/rest/online/test2
 	
 	@CrossOrigin(origins = {"/**"})
 	@RequestMapping(value = {"/test2"}, method = {RequestMethod.GET, RequestMethod.POST})

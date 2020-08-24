@@ -66,11 +66,19 @@ public class KieaLightnet03Online05Application implements CommandLineRunner {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job02() {
+	private void job02() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		String stream = "0047" + "0200200" + "101RESTR123456789012345678Hello world!!!";
-		log.info(">>>>> test stream.json: {}", JsonPrint.getInstance().toPrettyJson(new LnsStream(stream)));
+		String reqStream = "0047" + "0200200" + "101RESTR123456789012345678Hello world!!!";
+		LnsStream reqLnsStream = new LnsStream(reqStream);
+		log.info(">>>>> test reqLnsStream.json: {}", JsonPrint.getInstance().toPrettyJson(reqLnsStream));
+		
+		LnsStream resLnsStream = (LnsStream) reqLnsStream.clone();
+		resLnsStream.setTrTypeCode("0210200");
+		resLnsStream.combind();
+		log.info(">>>>> test resLnsStream.json: {}", JsonPrint.getInstance().toPrettyJson(resLnsStream));
+		
+		if (!Flag.flag) System.exit(0);
 	}
 
 	///////////////////////////////////////////////////////////////////////////

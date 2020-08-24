@@ -35,9 +35,13 @@ public class StreamServerWorkerThread extends Thread {
 				do {
 					reqLnsStream = this.streamPacket.recvStream();
 					log.info("SERVER req >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsStream));
+					
 					Sleep.run(1000);
-					String data = reqLnsStream.getData().replace("12345", "54321");
-					resLnsStream = new LnsStream(data);
+					String resData = reqLnsStream.getData().replace("12345", "54321");
+					resLnsStream = new LnsStream(resData);
+					resLnsStream.setTrTypeCode("0210100");
+					resLnsStream.combind();
+					
 					resLnsStream = this.streamPacket.sendStream(resLnsStream);
 					log.info("SERVER res >>>>> " + JsonPrint.getInstance().toPrettyJson(resLnsStream));
 				} while(resLnsStream != null);
