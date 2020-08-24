@@ -61,7 +61,7 @@ public class StreamPacket {
 		return strData;
 	}
 	
-	public LnsStream recvPacket() {
+	public LnsStream recvStream() {
 		LnsStream lnsStream = null;
 		try {
 			String strLength = this.recvLength(DEFAULT_LENGTH_SIZE);
@@ -76,7 +76,7 @@ public class StreamPacket {
 	///////////////////////////////////////////////////////////
 	// sendPacket
 	
-	public LnsStream sendPacket(LnsStream lsnStream) {
+	public LnsStream sendStream(LnsStream lsnStream) {
 		try {
 			byte[] bytPacket = lsnStream.getData().getBytes();
 			int nsend = this.send(bytPacket);

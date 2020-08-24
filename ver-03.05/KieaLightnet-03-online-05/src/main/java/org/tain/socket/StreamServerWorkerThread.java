@@ -2,9 +2,8 @@ package org.tain.socket;
 
 import java.net.Socket;
 
-import org.tain.object.LnsPacket;
-import org.tain.scheduler.TridScheduler;
-import org.tain.scheduler.ValidateScheduler;
+import org.tain.object.lns.LnsStream;
+import org.tain.scheduler.TrIdScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -30,18 +29,18 @@ public class StreamServerWorkerThread extends Thread {
 		
 		if (Flag.flag) {
 			// test
-			LnsPacket reqLnsPacket = null;
-			LnsPacket resLnsPacket = null;
+			LnsStream reqLnsStream = null;
+			LnsStream resLnsStream = null;
 			try {
 				do {
-					reqLnsPacket = this.streamPacket.recvPacket();
-					log.info("SERVER req >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsPacket));
+					reqLnsStream = this.streamPacket.recvStream();
+					log.info("SERVER req >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsStream));
 					Sleep.run(1000);
-					String data = reqLnsPacket.getData().replace("12345", "54321");
-					resLnsPacket = new LnsPacket(data);
-					resLnsPacket = this.streamPacket.sendPacket(resLnsPacket);
-					log.info("SERVER res >>>>> " + JsonPrint.getInstance().toPrettyJson(resLnsPacket));
-				} while(resLnsPacket != null);
+					String data = reqLnsStream.getData().replace("12345", "54321");
+					resLnsStream = new LnsStream(data);
+					resLnsStream = this.streamPacket.sendStream(resLnsStream);
+					log.info("SERVER res >>>>> " + JsonPrint.getInstance().toPrettyJson(resLnsStream));
+				} while(resLnsStream != null);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -49,17 +48,18 @@ public class StreamServerWorkerThread extends Thread {
 		
 		if (!Flag.flag) {
 			// test and real
-			LnsPacket reqLnsPacket = null;
-			LnsPacket resLnsPacket = null;
+			LnsStream reqLnsStream = null;
+			LnsStream resLnsStream = null;
 			try {
 				do {
-					reqLnsPacket = this.streamPacket.recvPacket();
-					log.info("SERVER >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsPacket));
+					reqLnsStream = this.streamPacket.recvStream();
+					log.info("SERVER >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsStream));
 					
-					switch (reqLnsPacket.getDivision()) {
-					case "0101":
-						resLnsPacket = ValidateScheduler.process(reqLnsPacket);
+					switch (reqLnsStream.getTrTypeCode()) {
+					case "0200100":
+						resLnsStream = TrIdScheduler.process(reqLnsStream);
 						break;
+					/*
 					case "0201":
 						//response = CommitScheduler.process(request);
 						break;
@@ -76,13 +76,14 @@ public class StreamServerWorkerThread extends Thread {
 						//response = CallbackScheduler.process(request);
 						break;
 					case "0701":
-						resLnsPacket = TridScheduler.process(reqLnsPacket);
+						resLnsStream = TridScheduler.process(reqLnsStream);
 						break;
+					*/
 					default:
 						break;
 					}
-					resLnsPacket = this.streamPacket.sendPacket(resLnsPacket);
-				} while(resLnsPacket != null);
+					resLnsStream = this.streamPacket.sendStream(resLnsStream);
+				} while(resLnsStream != null);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

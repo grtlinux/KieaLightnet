@@ -1,4 +1,4 @@
-package org.tain.object;
+package org.tain.object.lns;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +16,10 @@ import lombok.Data;
 public class LnsMap implements Cloneable {
 
 	private ObjectMapper objectMapper = new ObjectMapper();
+	
+	/*
+	 * Map <-> JsonNode <-> JsonString
+	 */
 	private Map<String, String> map;
 	private JsonNode jsonNode;
 	private String jsonString;

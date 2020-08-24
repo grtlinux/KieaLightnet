@@ -18,7 +18,7 @@ import org.tain.utils.Sample;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/online/rest"})
+@RequestMapping(value = {"/rest/online"})
 @Slf4j
 public class TestController {
 

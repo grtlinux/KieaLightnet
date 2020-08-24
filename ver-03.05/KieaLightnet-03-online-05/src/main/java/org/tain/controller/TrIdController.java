@@ -22,9 +22,9 @@ import org.tain.utils.Flag;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/info/transactionId"})
+@RequestMapping(value = {"/info/trId"})
 @Slf4j
-public class TransactionIdController {
+public class TrIdController {
 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////

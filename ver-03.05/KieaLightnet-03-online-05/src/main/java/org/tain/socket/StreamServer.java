@@ -7,7 +7,7 @@ import java.net.Socket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.tain.properties.LnsEnvOnlineProperties;
+import org.tain.properties.LnsEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class StreamServer {
 
 	@Autowired
-	private LnsEnvOnlineProperties lnsEnvOnlineProperties;
+	private LnsEnvJobProperties lnsEnvOnlineProperties;
 	
 	@Bean
 	public void jobStreamServer() throws Exception {

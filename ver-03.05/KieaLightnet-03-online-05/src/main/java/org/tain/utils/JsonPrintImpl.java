@@ -10,7 +10,9 @@ public interface JsonPrintImpl {
 	public String toJson(Object object);
 	public String toPrettyJson(Object object);
 	public void printJson(Object object);
+	public void printJson(String title, Object object);
 	public void printPrettyJson(Object object);
+	public void printPrettyJson(String title, Object object);
 	public void saveJson(File file, Object object);
 	public void savePrettyJson(File file, Object object);
 }

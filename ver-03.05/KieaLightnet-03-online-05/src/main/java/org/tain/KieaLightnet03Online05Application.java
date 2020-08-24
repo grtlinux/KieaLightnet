@@ -10,13 +10,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.tain.object.LnsPacket;
-import org.tain.properties.LnsEnvBaseProperties;
-import org.tain.properties.LnsEnvJsonProperties;
-import org.tain.properties.LnsEnvOnlineProperties;
+import org.tain.object.lns.LnsStream;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
+import org.tain.working.PropertiesWorking;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -56,22 +54,12 @@ public class KieaLightnet03Online05Application implements CommandLineRunner {
 	///////////////////////////////////////////////////////////////////////////
 	
 	@Autowired
-	private LnsEnvBaseProperties lnsEnvBaseProperties;
+	private PropertiesWorking propertiesWorking;
 	
-	@Autowired
-	private LnsEnvJsonProperties lnsEnvJsonProperties;
-	
-	@Autowired
-	private LnsEnvOnlineProperties lnsEnvOnlineProperties;
-
 	private void job01() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) {
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvBaseProperties);
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvOnlineProperties);
-			JsonPrint.getInstance().printPrettyJson(this.lnsEnvJsonProperties);
-		}
+		if (Flag.flag) this.propertiesWorking.printProperties();
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -81,8 +69,8 @@ public class KieaLightnet03Online05Application implements CommandLineRunner {
 	private void job02() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		String stream = "00400101RESTR123456789012345678Hello world!!!";
-		log.info(">>>>> test stream.json: {}", JsonPrint.getInstance().toPrettyJson(new LnsPacket(stream)));
+		String stream = "0047" + "0200200" + "101RESTR123456789012345678Hello world!!!";
+		log.info(">>>>> test stream.json: {}", JsonPrint.getInstance().toPrettyJson(new LnsStream(stream)));
 	}
 
 	///////////////////////////////////////////////////////////////////////////

@@ -32,9 +32,9 @@ public class StreamClientWorkerThread extends Thread {
 				LnsStream reqStream = new LnsStream(message.getData());
 				log.info("KANG-20200628 >>>>> reqStream.json: {}", JsonPrint.getInstance().toPrettyJson(reqStream));
 				
-				reqStream = this.streamPacket.sendPacket(reqStream);
+				reqStream = this.streamPacket.sendStream(reqStream);
 				
-				LnsStream resStream = this.streamPacket.recvPacket();
+				LnsStream resStream = this.streamPacket.recvStream();
 				
 				log.info("KANG-20200628 >>>>> resStream.json: {}", JsonPrint.getInstance().toPrettyJson(resStream));
 				message.setDataToQueue(resStream.getData());
