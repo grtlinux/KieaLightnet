@@ -2,7 +2,11 @@ package org.tain.socket;
 
 import java.net.Socket;
 
+import org.tain.annotation.SubString;
 import org.tain.object.lns.LnsStream;
+import org.tain.object.trid.req._TridReqData;
+import org.tain.object.trid.res._TridResData;
+import org.tain.object.trid.res._TridResTrid;
 import org.tain.scheduler.TrIdScheduler;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -31,16 +35,44 @@ public class StreamServerWorkerThread extends Thread {
 			// test
 			LnsStream reqLnsStream = null;
 			LnsStream resLnsStream = null;
+			_TridReqData reqData = null;
+			_TridResData resData = null;
 			try {
 				do {
 					reqLnsStream = this.streamPacket.recvStream();
 					log.info("SERVER req >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsStream));
 					
-					Sleep.run(1000);
-					String resData = reqLnsStream.getData().replace("12345", "54321");
-					resLnsStream = new LnsStream(resData);
-					resLnsStream.setTrTypeCode("0210100");
-					resLnsStream.combind();
+					if (Flag.flag) {
+						// req
+						reqData = new _TridReqData();
+						reqData.getObject(new SubString(reqLnsStream.getContent()));
+						if (Flag.flag) JsonPrint.getInstance().printPrettyJson("REQ_DATA", reqData);
+					}
+					
+					if (Flag.flag) {
+						Sleep.run(2000);
+						
+						// req -> res
+						resData = new _TridResData();
+						_TridResTrid trid = new _TridResTrid();
+						trid.setCommand("trid.ses");
+						trid.setTridCode("1234567890123456");
+						resData.setTrid(trid);
+						resData.setStatus("RES_STATUS");
+						resData.setMessage("RES_MESSAGE: Hello, Kiea....");
+						
+						resLnsStream = new LnsStream();
+						resLnsStream.setTrTypeCode("0210100");
+						resLnsStream.setContent(resData.getStream());
+						resLnsStream.combind();
+					}
+					
+					if (Flag.flag) {
+						// res
+						resData = new _TridResData();
+						resData.getObject(new SubString(resLnsStream.getContent()));
+						if (Flag.flag) JsonPrint.getInstance().printPrettyJson("RES_DATA", resData);
+					}
 					
 					resLnsStream = this.streamPacket.sendStream(resLnsStream);
 					log.info("SERVER res >>>>> " + JsonPrint.getInstance().toPrettyJson(resLnsStream));
@@ -52,12 +84,13 @@ public class StreamServerWorkerThread extends Thread {
 		
 		if (!Flag.flag) {
 			// test and real
+			int seq = 0;
 			LnsStream reqLnsStream = null;
 			LnsStream resLnsStream = null;
 			try {
 				do {
 					reqLnsStream = this.streamPacket.recvStream();
-					log.info("SERVER >>>>> " + JsonPrint.getInstance().toPrettyJson(reqLnsStream));
+					log.info("[{}]SERVER REQ >>>>> {}", ++seq, JsonPrint.getInstance().toPrettyJson(reqLnsStream));
 					
 					switch (reqLnsStream.getTrTypeCode()) {
 					case "0200100":
@@ -87,6 +120,7 @@ public class StreamServerWorkerThread extends Thread {
 						break;
 					}
 					resLnsStream = this.streamPacket.sendStream(resLnsStream);
+					log.info("[{}]SERVER REQ >>>>> {}", seq, JsonPrint.getInstance().toPrettyJson(resLnsStream));
 				} while(resLnsStream != null);
 			} catch (Exception e) {
 				e.printStackTrace();

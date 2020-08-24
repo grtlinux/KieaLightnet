@@ -49,10 +49,12 @@ public class LnsStream implements Cloneable {
 		
 		sb.append(String.format("%-7s", this.trTypeCode));
 		sb.append(this.content);
-		this.strLength = String.format("%04d", sb.length());
-		this.length = sb.length() + 4;  // the value included the length size
 		
+		this.length = sb.length() + 4;  // the value included the length size
 		sb.insert(0, String.format("%04d", this.length - 4));
+		
+		//this.length = sb.length();      // the value excluded the length size
+		//sb.insert(0, String.format("%04d", this.length));
 		
 		this.data = sb.toString();
 		

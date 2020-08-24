@@ -5,10 +5,15 @@
 
 server:
   port: 18086
-  servlet.context-path: /v0.3
+  servlet.context-path: /v0.5
 
 
 spring:
+  profiles.avtive:
+  - lns-default
+  - lns-local
+  #- lns-test
+  #- lns-real
 
   h2.console:
     enabled: true
@@ -18,17 +23,26 @@ spring:
       web-allow-others: true
   
   datasource:
-    hikari:
-      jdbc-url: jdbc:h2:mem:mapperdb         # in-memory db
-      driver-class-name: org.h2.Driver
-      username: sa
-      password:
+    url: jdbc:h2:tcp://localhost:9092/lightnetdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    
+#    hikari:
+#      jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#      # jdbc-url: jdbc:h2:tcp://localhost:9092/lightnetdb;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#      # jdbc-url: jdbc:h2:mem:testdb
+#      driver-class-name: org.h2.Driver
+#      username: sa
+#      password:
   
   jpa:
     show-sql: true
     database: h2
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate.ddl-auto: update
+    properties:
+      hibernate.jdbc.time-zone: UTC+9
   
   data.rest:
     base-path: /api
@@ -60,7 +74,7 @@ logging:
     max-history: 30         # delete after a month
   
   pattern:
-    console: "%clr(%d{HH:mm:ss}){magenta} %p - %m%n"
+    console: "%clr(%d{HH:mm:ss} %p){magenta} - %m%n"
     file: "%d %-5level [%-10.10thread] [%-30.30logger{29}] - %m%n"
   
   level:
@@ -75,17 +89,9 @@ logging:
     
 
 
-# --------------------------------
-# CHOICE
-
-spring.profiles:
-  active:
-  - lns-default
-  - lns-local   # local test
-  #- lns-dev     # test
-  #- lns-real    # real
 
 ---
+# --------------------------------------------------------
 spring.profiles: lns-default
 
 lns-env:
@@ -94,13 +100,13 @@ lns-env:
     version: ver 0.3_2020.07.20
     comment: This is a mapper PROGRAM.
 
-  mapper:
+  job:
 
 ---
 spring.profiles: lns-local
 
 lns-env:
-  mapper:
+  job:
   
   json:
     material: LOCAL
@@ -112,10 +118,10 @@ lns-env:
       adapter: /KANG/json/lightnet/adapter.json
 
 ---
-spring.profiles: lns-dev
+spring.profiles: lns-test
 
 lns-env:
-  mapper:
+  job:
   
   json:
     material: DEV
@@ -130,7 +136,7 @@ lns-env:
 spring.profiles: lns-real
 
 lns-env:
-  mapper:
+  job:
   
   json:
     material: REAL

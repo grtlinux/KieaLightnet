@@ -36,6 +36,7 @@ public class RestTemplateConfig {
 			restTemplate = _getRestTemplate();
 			break;
 		case SETENV: // normal set the env
+			skip();
 			restTemplate = _getCustomRestTemplate();
 			break;
 		}

@@ -11,14 +11,10 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import lombok.Data;
 
 @Component
-@ConfigurationProperties(prefix = "lns-env.base")
+@ConfigurationProperties(prefix = "lns-env.job")
 @Data
-public class LnsEnvBaseProperties {
+public class LnsEnvJobProperties {
 
-	private String program;
-	private String version;
-	private String comment;
-	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp createdDate = new Timestamp(System.currentTimeMillis());
 }

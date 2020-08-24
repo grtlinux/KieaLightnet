@@ -72,7 +72,7 @@ public class TrIdScheduler {
 		if (Flag.flag) {
 			// resJson -> resStr
 			lnsJson.setTitle("trid: resJson -> resStr");
-			lnsJson.setTrType("0210");
+			lnsJson.setTrType("0210");   // server setting
 			lnsJson.setTrCode("100");
 			lnsJson.setSvrCode("trid.res");
 			log.info(">>>>> 4. lnsJson.BEFORE = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));

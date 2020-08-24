@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.tain.object.LnsJson;
-import org.tain.object.LnsMap;
-import org.tain.object.LnsStream;
+import org.tain.object.lns.LnsJson;
+import org.tain.object.lns.LnsMap;
+import org.tain.object.lns.LnsStream;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(value = {"/mapper/trid"})
 @Slf4j
-public class TridController {
+public class TridRestController {
 
 	/////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
