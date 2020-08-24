@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(value = {"/lns01"})
 @Slf4j
-public class TridController {
+public class TridRestController {
 
 	
 	@CrossOrigin(origins = {"/**"})

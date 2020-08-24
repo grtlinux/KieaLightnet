@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping(value = {"/lns01"})
 @Slf4j
-public class ValidateController {
+public class ValidateRestController {
 
 	
 	@PostMapping(value = {"/validate"})
