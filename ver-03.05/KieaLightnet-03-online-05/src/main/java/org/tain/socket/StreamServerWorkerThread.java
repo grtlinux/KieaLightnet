@@ -56,7 +56,7 @@ public class StreamServerWorkerThread extends Thread {
 						resData = new _TridResData();
 						_TridResTrid trid = new _TridResTrid();
 						trid.setCommand("trid.ses");
-						trid.setTridCode("1234567890123456");
+						trid.setTridCode("HWyyMMddHHmmA999");
 						resData.setTrid(trid);
 						resData.setStatus("RES_STATUS");
 						resData.setMessage("RES_MESSAGE: Hello, Kiea....");

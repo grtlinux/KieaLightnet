@@ -2,6 +2,9 @@ package org.tain.working;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -224,11 +227,31 @@ public class ListWorking {
 			
 			if (Flag.flag) {
 				PrintWriter printWriter = new PrintWriter(new File(System.getenv("HOME") + "/LIST.DAT"));
+				int rowSize = lstData.get(0).getStream().length() + 2;
+				rowSize += 5;   // display sequence
+				if (Flag.flag) {
+					// header HH
+					LocalDate yesterday = LocalDate.now().plus(Period.ofDays(-1));
+					StringBuffer sb = new StringBuffer();
+					sb.append("HH");
+					sb.append("00000");   // display sequence
+					sb.append(yesterday.format(DateTimeFormatter.BASIC_ISO_DATE));
+					sb.append("000000");
+					sb.append(yesterday.format(DateTimeFormatter.BASIC_ISO_DATE));
+					sb.append("235959");
+					printWriter.println(String.format("%-" + rowSize + "." + rowSize + "s", sb.toString()));
+				}
+				int idx = 0;
 				for (_Data data : lstData) {
+					// data DD
+					++idx;
 					System.out.println("==================== getStream ==================================");
 					String strStream = data.getStream();
 					if (Flag.flag) System.out.println("FILE_DATA >>>>> [" + strStream + "]");
-					printWriter.println(strStream);
+					printWriter.print("DD");
+					printWriter.print(String.format("%05d", idx));   // display sequence
+					printWriter.print(strStream);
+					printWriter.println();
 					
 					System.out.println("-------------------- setStream ----------------------------------");
 					SubString subString = new SubString(strStream);
@@ -236,6 +259,15 @@ public class ListWorking {
 					data2.getObject(subString);
 					JsonPrint.getInstance().printPrettyJson(data2);
 				}
+				if (Flag.flag) {
+					// tail TT
+					StringBuffer sb = new StringBuffer();
+					sb.append("TT");
+					sb.append("00000");   // display sequence
+					sb.append(String.format("%010d", idx));
+					printWriter.println(String.format("%-" + rowSize + "." + rowSize + "s", sb.toString()));
+				}
+				
 				printWriter.close();
 			}
 			

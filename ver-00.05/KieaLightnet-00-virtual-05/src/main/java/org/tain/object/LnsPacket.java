@@ -26,6 +26,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @JsonIgnoreProperties(value = {})
+@Deprecated
 public class LnsPacket {
 
 	@Id
