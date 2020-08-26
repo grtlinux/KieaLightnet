@@ -15,6 +15,7 @@ import org.tain.object.lns.LnsMap;
 import org.tain.object.lns.LnsStream;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -44,8 +45,8 @@ public class TridRestController {
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
 			lnsStream = new LnsStream(lnsJson.getReqStrData());
-			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. lnsStream = {}", lnsStream.toPrettyJson());
+			log.info("LNS01 >>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info("LNS01 >>>>> 2. lnsStream = {}", JsonPrint.getInstance().toPrettyJson(lnsStream));
 		}
 		
 		LnsMap lnsMap = null;
@@ -53,8 +54,8 @@ public class TridRestController {
 			lnsMap = this.strToJson(lnsStream);
 			lnsJson.setReqJsonData(lnsMap.toJson());
 			
-			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
+			log.info("LNS01 >>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info("LNS01 >>>>> 2. lnsMap = {}", JsonPrint.getInstance().toPrettyJson(lnsMap));
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
@@ -68,9 +69,9 @@ public class TridRestController {
 	private LnsMap strToJson(LnsStream lnsStream) throws Exception {
 		LnsMap lnsMap = new LnsMap();
 		
-		lnsMap.put("division", lnsStream.getDivision());
-		lnsMap.put("divisionType", lnsStream.getDivisionType());
-		lnsMap.put("trid", lnsStream.getTrid());
+		lnsMap.put("strLength", lnsStream.getStrLength());
+		lnsMap.put("trTypeCode", lnsStream.getTrTypeCode());
+		lnsMap.put("content", lnsStream.getContent());
 		lnsMap.reset();
 		
 		return lnsMap;
@@ -95,8 +96,8 @@ public class TridRestController {
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(_httpEntity.getBody(), LnsJson.class);
 			lnsMap = new LnsMap(lnsJson.getResJsonData());
-			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. lnsMap = {}", lnsMap.toPrettyJson());
+			log.info("LNS01 >>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info("LNS01 >>>>> 2. lnsMap = {}", JsonPrint.getInstance().toPrettyJson(lnsMap));
 		}
 		
 		LnsStream lnsStream = null;
@@ -104,8 +105,8 @@ public class TridRestController {
 			lnsStream = this.jsonToStr(lnsMap);
 			lnsJson.setResStrData(lnsStream.getData());
 			
-			log.info("LNS01 >>>>> 1. lnsJson = {}", lnsJson.toPrettyJson());
-			log.info("LNS01 >>>>> 2. lnsStream = {}", lnsStream.toPrettyJson());
+			log.info("LNS01 >>>>> 1. lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info("LNS01 >>>>> 2. lnsStream = {}", JsonPrint.getInstance().toPrettyJson(lnsStream));
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
