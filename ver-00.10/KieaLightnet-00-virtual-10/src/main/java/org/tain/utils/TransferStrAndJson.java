@@ -1,6 +1,7 @@
 package org.tain.utils;
 
 import java.lang.reflect.Field;
+import java.text.DecimalFormat;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -51,12 +52,18 @@ public class TransferStrAndJson {
 							// TO DO: to fixed for scale precision
 							double value = (double) field.get(object);
 							log.trace("getStream().FIELD: '{}', double: {}, length: {}", field.getName(), value, length);
-							sb.append(String.format("%" + length + "f", value));
-							//sb.append(String.format("%" + length + "." + length + "s", String.valueOf(value)));
+							DecimalFormat df = new DecimalFormat("#");
+							df.setMaximumFractionDigits(5);
+							//sb.append(String.format("%" + length + "f", value));
+							//System.out.println("2. " + df.format(value));
+							sb.append(String.format("%" + length + "." + length + "s", df.format(value)));
 						} else if (type == float.class) {
 							// TO DO: to fixed for scale precision
 							float value = (float) field.get(object);
 							log.trace("getStream().FIELD: '{}', float: {}, length: {}", field.getName(), value, length);
+							//DecimalFormat df = new DecimalFormat("#");
+							//df.setMaximumFractionDigits(5);
+							//sb.append(String.format("%" + length + "." + length + "s", df.format(value)));
 							sb.append(String.format("%" + length + "." + length + "s", String.valueOf(value)));
 						} else {
 							Object obj = field.get(object);

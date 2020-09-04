@@ -17,7 +17,7 @@ public class Task01 {
 		log.info("KANG-20200721 >>>>> param = {}, {}", param, CurrentInfo.get());
 		
 		if (Flag.flag) {
-			for (int i=0; i < 10; i++) {
+			for (int i=0; i < 3; i++) {
 				Sleep.run(2000);
 				System.out.println(">>>>> Hello, no-" + i);
 			}

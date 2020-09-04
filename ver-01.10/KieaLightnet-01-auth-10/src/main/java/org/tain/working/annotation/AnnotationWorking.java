@@ -1,5 +1,10 @@
 package org.tain.working.annotation;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 import org.springframework.stereotype.Component;
 import org.tain.object.dummy._Dummy;
 import org.tain.utils.CurrentInfo;
@@ -40,6 +45,56 @@ public class AnnotationWorking {
 			TransferStrAndJson.subString = new SubString(stream);
 			dummy = (_Dummy) TransferStrAndJson.getObject(dummy);
 			JsonPrint.getInstance().printPrettyJson("AFTER :", dummy);
+		}
+		
+		if (Flag.flag) {
+			double myValue = 0.0000021d;
+			
+			// option 1. print bare double
+			System.out.println("1. " + myValue);
+			
+			// option 2. use decimalFormat
+			DecimalFormat df = new DecimalFormat("#");
+			df.setMaximumFractionDigits(8);
+			System.out.println("2. " + df.format(myValue));
+			
+			// option 3. use printf
+			System.out.printf("3. %.9f%n", myValue);
+			
+			// option 4. convert toBigDecimal and ask for to plainString()
+			System.out.println("4. " + new BigDecimal(myValue).toPlainString());
+			
+			// option 5. String.format
+			System.out.println("5. " + String.format("%.12f", myValue));
+		}
+		
+		if (Flag.flag) {
+			double myValue = 123000000.456000d;
+			
+			// option 1. print bare double
+			System.out.println("1. " + myValue);
+			
+			// option 2. use decimalFormat
+			DecimalFormat df = new DecimalFormat("#");
+			df.setMaximumFractionDigits(8);
+			System.out.println("2. " + df.format(myValue));
+			
+			// option 3. use printf
+			System.out.printf("3. %.9f%n", myValue);
+			
+			// option 4. convert toBigDecimal and ask for to plainString()
+			System.out.println("4. " + new BigDecimal(myValue).toPlainString());
+			
+			// option 5. String.format
+			System.out.println("5. " + String.format("%.12f", myValue));
+		}
+		
+		if (Flag.flag) {
+			double myValue = 0.00000021d;
+			myValue = 123000000.456000d;
+			DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+			df.setMaximumFractionDigits(340); // 340 = DecimalFormat.DOUBLE_FRACTION_DIGITS
+			System.out.println(">>>>> " + df.format(myValue)); // Output: 0.00000021
 		}
 	}
 }

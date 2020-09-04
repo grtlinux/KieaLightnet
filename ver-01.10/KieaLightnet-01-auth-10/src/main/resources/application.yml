@@ -60,7 +60,7 @@ spring:
 
 logging:
   file:
-    path: logs/virtual/
+    path: logs/auth/
     max-size: 10MB
     max-history: 30         # delete after a month
   pattern:
