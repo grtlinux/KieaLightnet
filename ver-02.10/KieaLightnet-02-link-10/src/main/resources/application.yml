@@ -4,7 +4,7 @@
 # BASE
 
 server:
-  port: 18081
+  port: 18082
   servlet.context-path: /v1.0
 
 
@@ -60,7 +60,7 @@ spring:
 
 logging:
   file:
-    path: logs/virtual/
+    path: logs/link/
     max-size: 10MB
     max-history: 30         # delete after a month
   pattern:
@@ -85,7 +85,7 @@ spring.profiles: proj-default
 proj-env:
   base:
     name: lightnet project
-    program: KieaLightnet-01-auth-10.jar
+    program: KieaLightnet-02-link-10.jar
     version: ver 1.0_2020.09.01
     comment: This is lightnet project.
 
@@ -100,6 +100,17 @@ proj-env:
 
   job:
     name: job variables
+    lightnet-url:
+    - http://localhost:18888
+    - https://192.10.2.141
+    - https://192.10.2.38
+    - https://test-public.lightnetapis.io
+    - https://test-internal-system.lightnetapis.io
+    - https://test1-internal-system.lightnetapis.io
+    - https://test2-internal-system.lightnetapis.io
+    lightnet-start-idx: 0
+    auth-url: http://localhost:18081/v1.0/auth/auth
+    callback-url: http://localhost:18084/v1.0/callback/callback
     
   json:
     name: default json   # not used
@@ -108,6 +119,14 @@ proj-env:
 spring.profiles: proj-local
 
 proj-env:
+  job:
+    name: job variables
+    lightnet-url:
+    - https://test-public.lightnetapis.io
+    #lightnet-start-idx: 0
+    #auth-url: http://localhost:18081/v1.0/auth/auth
+    #callback-url: http://localhost:18084/v1.0/callback/callback
+    
   json:
     name: local json
 
