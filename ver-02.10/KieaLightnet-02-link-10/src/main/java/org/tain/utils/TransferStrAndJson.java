@@ -92,6 +92,8 @@ public class TransferStrAndJson {
 	
 	public static Object getObject(Object object) {
 		
+		boolean flagNull = true;
+		
 		if (Flag.flag) {
 			// simple test
 		}
@@ -116,26 +118,32 @@ public class TransferStrAndJson {
 							if ("".equals(value) && useNullSpace == false)
 								value = null;
 							field.set(object, value);
+							flagNull = false;
 						} else if (type == long.class) {
 							long value = Long.parseLong(subString.get(length).trim());
 							log.trace("getObject().FIELD: '{}', long: {}, length: {}", field.getName(), value, length);
 							field.setLong(object, value);
+							flagNull = false;
 						} else if (type == int.class) {
 							int value = Integer.parseInt(subString.get(length).trim());
 							log.trace("getObject().FIELD: '{}', int: {}, length: {}", field.getName(), value, length);
 							field.setInt(object, value);
+							flagNull = false;
 						} else if (type == double.class) {
 							double value = Double.parseDouble(subString.get(length).trim());
 							log.trace("getObject().FIELD: '{}', double: {}, length: {}", field.getName(), value, length);
 							field.setDouble(object, value);
+							flagNull = false;
 						} else if (type == float.class) {
 							float value = Float.parseFloat(subString.get(length).trim());
 							log.trace("getObject().FIELD: '{}', float: {}, length: {}", field.getName(), value, length);
 							field.setFloat(object, value);
+							flagNull = false;
 						} else {
 							Object obj = field.get(object);
 							obj = TransferStrAndJson.getObject(obj);
 							field.set(object, obj);
+							if (obj != null) flagNull = false;
 						}
 					} else {
 						//
@@ -145,6 +153,8 @@ public class TransferStrAndJson {
 				e.printStackTrace();
 			}
 		}
+		
+		if (flagNull) object = null;
 		
 		return object;
 	}
