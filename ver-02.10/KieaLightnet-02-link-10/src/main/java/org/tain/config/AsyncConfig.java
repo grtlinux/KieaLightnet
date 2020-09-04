@@ -12,13 +12,39 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @EnableAsync
 public class AsyncConfig extends AsyncConfigurerSupport {
 
-	@Bean(name = "task01Job")
-	public Executor task01Job() {
+	@Bean(name = "serverMainTask")
+	public Executor serverMainTask() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 		executor.setCorePoolSize(1);
 		executor.setMaxPoolSize(1);
 		executor.setQueueCapacity(0);
-		executor.setThreadNamePrefix("task01Job-");
+		executor.setThreadNamePrefix("serverMainTask-");
+		executor.initialize();
+		return executor;
+	}
+	
+	@Bean(name = "serverTask")
+	public Executor serverTask() {
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+		executor.setCorePoolSize(2);
+		executor.setMaxPoolSize(2);
+		executor.setQueueCapacity(0);
+		executor.setThreadNamePrefix("serverTask-");
+		executor.initialize();
+		return executor;
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	@Bean(name = "task01Task")
+	public Executor task01Task() {
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+		executor.setCorePoolSize(1);
+		executor.setMaxPoolSize(1);
+		executor.setQueueCapacity(0);
+		executor.setThreadNamePrefix("task01Task-");
 		executor.initialize();
 		return executor;
 	}

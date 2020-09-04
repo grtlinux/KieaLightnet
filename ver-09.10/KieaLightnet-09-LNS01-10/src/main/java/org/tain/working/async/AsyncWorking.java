@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class AsyncWorking {
 
 	@Autowired
-	private Task01 task01;
+	private Task01Job task01Job;
 	
 	public void runningTaskThread() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
@@ -21,7 +21,7 @@ public class AsyncWorking {
 		if (Flag.flag) {
 			for (int i=0; i < 1; i++) {
 				try {
-					this.task01.task01("PARAM-" + i);
+					this.task01Job.task01Job("PARAM-" + i);
 				} catch (Exception e) {
 					//System.out.println(">>>>> EXCEPTION: " + e.getMessage());
 					Sleep.run(10 * 1000);

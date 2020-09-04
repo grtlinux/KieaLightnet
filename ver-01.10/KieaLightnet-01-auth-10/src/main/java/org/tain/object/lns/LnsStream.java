@@ -27,8 +27,8 @@ public class LnsStream implements Cloneable {
 		this.length = data.length();  // data_length
 		
 		this.strLength    = data.substring(0, 4);   // info_length = data_length - 4
-		this.typeCode     = data.substring(4, 11);
-		this.content      = data.substring(11);    // to transfer stream to json
+		this.typeCode     = data.substring(4, 11);  // 7 0200300/0210300 <- validate-REQ/RES
+		this.content      = data.substring(11);     // to transfer stream to json
 	}
 	
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")

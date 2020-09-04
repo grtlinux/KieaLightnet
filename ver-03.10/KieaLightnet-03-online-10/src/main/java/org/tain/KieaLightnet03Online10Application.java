@@ -14,6 +14,7 @@ import org.tain.utils.LnsTimeZone;
 import org.tain.working.annotation.AnnotationWorking;
 import org.tain.working.async.AsyncWorking;
 import org.tain.working.properties.PropertiesWorking;
+import org.tain.working.task.ServerTasksWorking;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,9 +37,9 @@ public class KieaLightnet03Online10Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // async
-		if (Flag.flag) job03();  // annotation
-		if (Flag.flag) job04();
+		if (!Flag.flag) job02();  // async
+		if (!Flag.flag) job03();  // annotation
+		if (Flag.flag) job04();  // server main and task
 		if (Flag.flag) job05();
 	}
 
@@ -84,12 +85,21 @@ public class KieaLightnet03Online10Application implements CommandLineRunner {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
+ 	
+	@Autowired
+	private ServerTasksWorking serverTasksWorking;
 	
 	private void job04() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
+		if (Flag.flag) this.serverTasksWorking.runningServerMainTask();
+		if (Flag.flag) this.serverTasksWorking.runningServerTask();
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	private void job05() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		

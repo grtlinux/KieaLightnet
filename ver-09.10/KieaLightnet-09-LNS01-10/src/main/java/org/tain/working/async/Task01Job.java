@@ -10,10 +10,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class Task01 {
+public class Task01Job {
 
-	@Async(value = "task01Job")
-	public void task01(String param) throws Exception {
+	@Async(value = "task01Task")
+	public void task01Job(String param) throws Exception {
 		log.info("KANG-20200721 >>>>> param = {}, {}", param, CurrentInfo.get());
 		
 		if (Flag.flag) {
