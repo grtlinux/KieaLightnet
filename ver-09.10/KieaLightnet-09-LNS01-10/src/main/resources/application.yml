@@ -4,7 +4,7 @@
 # BASE
 
 server:
-  port: 18081
+  port: 18091
   servlet.context-path: /v1.0
 
 
@@ -60,7 +60,7 @@ spring:
 
 logging:
   file:
-    path: logs/virtual/
+    path: logs/lns01/
     max-size: 10MB
     max-history: 30         # delete after a month
   pattern:
@@ -85,7 +85,7 @@ spring.profiles: proj-default
 proj-env:
   base:
     name: lightnet project
-    program: KieaLightnet-01-auth-10.jar
+    program: KieaLightnet-09-lns01-10.jar
     version: ver 1.0_2020.09.01
     comment: This is lightnet project.
 
@@ -100,6 +100,8 @@ proj-env:
 
   job:
     name: job variables
+    online-host: 127.0.0.1
+    online-port: 19091
     
   json:
     name: default json   # not used

@@ -2,8 +2,6 @@ package org.tain.working.annotation;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
 
 import org.springframework.stereotype.Component;
 import org.tain.object.dummy._Dummy;
@@ -92,7 +90,8 @@ public class AnnotationWorking {
 		if (Flag.flag) {
 			double myValue = 0.00000021d;
 			myValue = 123000000.456000d;
-			DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+			//DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+			DecimalFormat df = new DecimalFormat("0");
 			df.setMaximumFractionDigits(340); // 340 = DecimalFormat.DOUBLE_FRACTION_DIGITS
 			System.out.println(">>>>> " + df.format(myValue)); // Output: 0.00000021
 		}
