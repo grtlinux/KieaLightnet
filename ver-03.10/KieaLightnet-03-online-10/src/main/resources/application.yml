@@ -4,7 +4,7 @@
 # BASE
 
 server:
-  port: 18081
+  port: 18083
   servlet.context-path: /v1.0
 
 
@@ -100,6 +100,7 @@ proj-env:
 
   job:
     name: job variables
+    listen-port: 19091
     
   json:
     name: default json   # not used
