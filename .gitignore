@@ -29,4 +29,6 @@ hs_err_pid*
 bin/
 build/
 logs/
+
 .classpath
+.project
