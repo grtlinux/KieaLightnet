@@ -227,7 +227,7 @@ public class ListWorking {
 			List<_Data> lstData = objectMapper.readValue(json, new TypeReference<List<_Data>>() {});
 			
 			if (Flag.flag) {
-				PrintWriter printWriter = new PrintWriter(new File(System.getenv("HOME") + "/LIST2.txt"));
+				PrintWriter printFileWriter = new PrintWriter(new File(System.getenv("HOME") + "/LIST2.txt"));
 				String stream = TransferStrAndJson.getStream(lstData.get(0));
 				int rowSize = stream.length() + 2;
 				rowSize += 5;   // display sequence
@@ -241,7 +241,7 @@ public class ListWorking {
 					sb.append("000000");
 					sb.append(yesterday.format(DateTimeFormatter.BASIC_ISO_DATE));
 					sb.append("235959");
-					printWriter.println(String.format("%-" + rowSize + "." + rowSize + "s", sb.toString()));
+					printFileWriter.println(String.format("%-" + rowSize + "." + rowSize + "s", sb.toString()));
 				}
 				int idx = 0;
 				for (_Data data : lstData) {
@@ -250,10 +250,10 @@ public class ListWorking {
 					System.out.println("==================== getStream ==================================");
 					String strStream = TransferStrAndJson.getStream(data);
 					if (Flag.flag) System.out.println("FILE_DATA >>>>> [" + strStream + "]");
-					printWriter.print("DD");
-					printWriter.print(String.format("%05d", idx));   // display sequence
-					printWriter.print(strStream);
-					printWriter.println();
+					printFileWriter.print("DD");
+					printFileWriter.print(String.format("%05d", idx));   // display sequence
+					printFileWriter.print(strStream);
+					printFileWriter.println();
 					
 					System.out.println("-------------------- setStream ----------------------------------");
 					_Data data2 = new _Data();
@@ -268,10 +268,10 @@ public class ListWorking {
 					sb.append("TT");
 					sb.append("00000");   // display sequence
 					sb.append(String.format("%010d", idx));
-					printWriter.println(String.format("%-" + rowSize + "." + rowSize + "s", sb.toString()));
+					printFileWriter.println(String.format("%-" + rowSize + "." + rowSize + "s", sb.toString()));
 				}
 				
-				printWriter.close();
+				printFileWriter.close();
 			}
 			
 			if (Flag.flag) System.exit(0);

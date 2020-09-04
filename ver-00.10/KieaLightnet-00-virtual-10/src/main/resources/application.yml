@@ -75,7 +75,7 @@ logging:
     org.thymeleaf: info
     org.h2.server.web: info
     
-    org.tain.utils.TransferStrAndJson: trace
+    #org.tain.utils.TransferStrAndJson: trace
 
 
 ---

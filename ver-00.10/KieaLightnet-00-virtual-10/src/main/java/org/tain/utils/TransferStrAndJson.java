@@ -37,26 +37,26 @@ public class TransferStrAndJson {
 						if (type == String.class) {
 							String value = (String) field.get(object);
 							if (value == null) value = "";
-							log.trace("\tFIELD: '{}', String: '{}', length: {}", field.getName(), value, length);
+							log.trace("getStream().FIELD: '{}', String: '{}', length: {}", field.getName(), value, length);
 							sb.append(String.format("%-" + length + "." + length + "s", value));
 						} else if (type == long.class) {
 							long value = (long) field.get(object);
-							log.trace("\tFIELD: '{}', long: {}, length: {}", field.getName(), value, length);
+							log.trace("getStream().FIELD: '{}', long: {}, length: {}", field.getName(), value, length);
 							sb.append(String.format("%" + length + "." + length + "s", String.valueOf(value)));
 						} else if (type == int.class) {
 							int value = (int) field.get(object);
-							log.trace("\tFIELD: '{}', int: {}, length: {}", field.getName(), value, length);
+							log.trace("getStream().FIELD: '{}', int: {}, length: {}", field.getName(), value, length);
 							sb.append(String.format("%" + length + "." + length + "s", String.valueOf(value)));
 						} else if (type == double.class) {
 							// TO DO: to fixed for scale precision
 							double value = (double) field.get(object);
-							log.trace("\tFIELD: '{}', double: {}, length: {}", field.getName(), value, length);
+							log.trace("getStream().FIELD: '{}', double: {}, length: {}", field.getName(), value, length);
 							sb.append(String.format("%" + length + "f", value));
 							//sb.append(String.format("%" + length + "." + length + "s", String.valueOf(value)));
 						} else if (type == float.class) {
 							// TO DO: to fixed for scale precision
 							float value = (float) field.get(object);
-							log.trace("\tFIELD: '{}', float: {}, length: {}", field.getName(), value, length);
+							log.trace("getStream().FIELD: '{}', float: {}, length: {}", field.getName(), value, length);
 							sb.append(String.format("%" + length + "." + length + "s", String.valueOf(value)));
 						} else {
 							Object obj = field.get(object);
@@ -105,25 +105,25 @@ public class TransferStrAndJson {
 						Class<?> type = field.getType();
 						if (type == String.class) {
 							String value = subString.get(length).trim();
-							log.trace("\tFIELD: '{}', String: '{}', length: {}", field.getName(), value, length);
+							log.trace("getObject().FIELD: '{}', String: '{}', length: {}", field.getName(), value, length);
 							if ("".equals(value) && useNullSpace == false)
 								value = null;
 							field.set(object, value);
 						} else if (type == long.class) {
 							long value = Long.parseLong(subString.get(length).trim());
-							log.trace("\tFIELD: '{}', long: {}, length: {}", field.getName(), value, length);
+							log.trace("getObject().FIELD: '{}', long: {}, length: {}", field.getName(), value, length);
 							field.setLong(object, value);
 						} else if (type == int.class) {
 							int value = Integer.parseInt(subString.get(length).trim());
-							log.trace("\tFIELD: '{}', int: {}, length: {}", field.getName(), value, length);
+							log.trace("getObject().FIELD: '{}', int: {}, length: {}", field.getName(), value, length);
 							field.setInt(object, value);
 						} else if (type == double.class) {
 							double value = Double.parseDouble(subString.get(length).trim());
-							log.trace("\tFIELD: '{}', double: {}, length: {}", field.getName(), value, length);
+							log.trace("getObject().FIELD: '{}', double: {}, length: {}", field.getName(), value, length);
 							field.setDouble(object, value);
 						} else if (type == float.class) {
 							float value = Float.parseFloat(subString.get(length).trim());
-							log.trace("\tFIELD: '{}', float: {}, length: {}", field.getName(), value, length);
+							log.trace("getObject().FIELD: '{}', float: {}, length: {}", field.getName(), value, length);
 							field.setFloat(object, value);
 						} else {
 							Object obj = field.get(object);

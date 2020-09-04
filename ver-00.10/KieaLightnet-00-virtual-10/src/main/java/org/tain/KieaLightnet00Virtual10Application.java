@@ -35,9 +35,10 @@ public class KieaLightnet00Virtual10Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
-		if (Flag.flag) job01();
-		if (Flag.flag) job02();
-		if (Flag.flag) job03();
+		
+		if (Flag.flag) job01();  // properties
+		if (Flag.flag) job02();  // async
+		if (Flag.flag) job03();  // annotation
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();
 	}
