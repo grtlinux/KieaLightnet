@@ -96,4 +96,12 @@ public class AnnotationWorking {
 			System.out.println(">>>>> " + df.format(myValue)); // Output: 0.00000021
 		}
 	}
+	
+	public void test02_test() {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			// getStream
+		}
+	}
 }
