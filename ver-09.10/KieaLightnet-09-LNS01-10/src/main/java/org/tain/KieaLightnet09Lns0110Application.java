@@ -37,8 +37,8 @@ public class KieaLightnet09Lns0110Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // async
-		if (Flag.flag) job03();  // annotation
+		if (!Flag.flag) job02();  // async
+		if (!Flag.flag) job03();  // annotation
 		if (Flag.flag) job04();  // clientTask
 		if (Flag.flag) job05();
 	}
