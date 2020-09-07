@@ -16,7 +16,7 @@ public class _ReqData {
 	private String title;
 	
 	@StreamAnnotation
-	@JsonProperty(value = "req_name")
+	@JsonProperty(value = "name")
 	private _ReqName name = new _ReqName();
 	
 	@StreamAnnotation(length = 20)

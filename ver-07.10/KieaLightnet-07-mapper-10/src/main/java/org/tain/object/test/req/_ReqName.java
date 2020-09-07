@@ -22,4 +22,8 @@ public class _ReqName {
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "last_name")
 	private String lastName;
+	
+	@StreamAnnotation(length = 5)
+	@JsonProperty(value = "sex")
+	private String sex;
 }

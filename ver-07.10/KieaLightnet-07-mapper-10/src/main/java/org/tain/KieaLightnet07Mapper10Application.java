@@ -76,7 +76,7 @@ public class KieaLightnet07Mapper10Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) this.annotationWorking.test01_dummy();
-		if (Flag.flag) this.annotationWorking.test02_test();
+		if (Flag.flag) this.annotationWorking.test02_testObjectAndJson();
 	}
 
 	///////////////////////////////////////////////////////////////////////////

@@ -16,7 +16,7 @@ public class _ResData {
 	private String title;
 	
 	@StreamAnnotation
-	@JsonProperty(value = "res_name")
+	@JsonProperty(value = "name")
 	private _ResName name = new _ResName();
 	
 	@StreamAnnotation(length = 20)

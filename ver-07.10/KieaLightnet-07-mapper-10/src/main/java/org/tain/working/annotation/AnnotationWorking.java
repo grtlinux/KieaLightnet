@@ -5,11 +5,14 @@ import java.text.DecimalFormat;
 
 import org.springframework.stereotype.Component;
 import org.tain.object.dummy._Dummy;
+import org.tain.object.test.req._ReqData;
+import org.tain.object.test.req._ReqName;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.SubString;
 import org.tain.utils.TransferStrAndJson;
+import org.tain.utils.enums.JsonPrintType;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -97,11 +100,24 @@ public class AnnotationWorking {
 		}
 	}
 	
-	public void test02_test() {
+	public void test02_testObjectAndJson() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			// getStream
+			// req
+			_ReqName name = new _ReqName();
+			name.setFirstName("Seok");
+			name.setMiddleName("Kiea");
+			name.setLastName("Kang");
+			
+			_ReqData data = new _ReqData();
+			data.setTitle("TITLE");
+			data.setMessage("MESSAGE");
+			data.setName(name);
+			
+			JsonPrint.getInstance(JsonPrintType.DEFAULT).printPrettyJson("REQ_DEFAULT", data);
+			JsonPrint.getInstance(JsonPrintType.STEP01).printPrettyJson("REQ_STEP01", data);
+			JsonPrint.getInstance(JsonPrintType.NORMAL).printPrettyJson("REQ_NORMAL", data);
 		}
 	}
 }
