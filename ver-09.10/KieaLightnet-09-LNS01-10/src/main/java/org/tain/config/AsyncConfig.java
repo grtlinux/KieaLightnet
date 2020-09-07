@@ -12,24 +12,24 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @EnableAsync
 public class AsyncConfig extends AsyncConfigurerSupport {
 
-	@Bean(name = "serverMainTask")
-	public Executor serverMainTask() {
+	@Bean(name = "clientMainTask")
+	public Executor clientMainTask() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 		executor.setCorePoolSize(1);
 		executor.setMaxPoolSize(1);
 		executor.setQueueCapacity(0);
-		executor.setThreadNamePrefix("serverMainTask-");
+		executor.setThreadNamePrefix("clientMainTask-");
 		executor.initialize();
 		return executor;
 	}
 	
-	@Bean(name = "serverTask")
-	public Executor serverTask() {
+	@Bean(name = "clientTask")
+	public Executor clientTask() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 		executor.setCorePoolSize(2);
 		executor.setMaxPoolSize(2);
 		executor.setQueueCapacity(0);
-		executor.setThreadNamePrefix("serverTask-");
+		executor.setThreadNamePrefix("clientTask-");
 		executor.initialize();
 		return executor;
 	}
