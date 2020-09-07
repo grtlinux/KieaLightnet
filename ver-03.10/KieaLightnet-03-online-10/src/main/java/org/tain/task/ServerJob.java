@@ -8,12 +8,17 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.tain.object.lns.LnsStream;
 import org.tain.object.lns.LnsStreamPacket;
+import org.tain.object.test.req._ReqData;
+import org.tain.object.test.res._ResData;
+import org.tain.object.test.res._ResName;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.Sleep;
+import org.tain.utils.SubString;
+import org.tain.utils.TransferStrAndJson;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,15 +43,46 @@ public class ServerJob {
 			log.info("KANG-20200907 >>>>> REMOTE_INFO = {}", lnsStreamPacket);
 		}
 		
+		////////////////////////////////////////////////////
+		LnsStream reqLnsStream = null;
 		if (Flag.flag) {
 			// recv
-			LnsStream reqLnsStream = lnsStreamPacket.recvStream();
+			reqLnsStream = lnsStreamPacket.recvStream();
 			if (Flag.flag) JsonPrint.getInstance().printPrettyJson("REQ", reqLnsStream);
+		}
+		
+		if (Flag.flag) {
+			// get res
+			_ReqData data = new _ReqData();
+			TransferStrAndJson.subString = new SubString(reqLnsStream.getContent());
+			data = (_ReqData) TransferStrAndJson.getObject(data);
+			JsonPrint.getInstance().printPrettyJson("REQ :", data);
+		}
+		
+		Sleep.run(2000);
+		
+		////////////////////////////////////////////////////
+		LnsStream resLnsStream = null;
+		if (Flag.flag) {
+			// get res
+			_ResName name = new _ResName();
+			name.setFirstName("SEOK");
+			name.setMiddleName("");
+			name.setLastName("KANG");
 			
-			Sleep.run(2000);
+			_ResData data = new _ResData();
+			data.setTitle("Res_Title");
+			data.setMessage("Message");
+			data.setStatus("Status");
+			data.setName(name);
+			JsonPrint.getInstance().printPrettyJson("RES :", data);
 			
+			String resStream = TransferStrAndJson.getStream(data);
+			resLnsStream = new LnsStream(String.format("%04d%7.7s%s", resStream.length() + 7, "0210200", resStream));
+		}
+		
+		if (Flag.flag) {
 			// send
-			LnsStream resLnsStream = new LnsStream(String.format("0019" + "0210200" + "LNS_RES_TEST"));
 			if (Flag.flag) JsonPrint.getInstance().printPrettyJson("RES", resLnsStream);
 			lnsStreamPacket.sendStream(resLnsStream);
 		}

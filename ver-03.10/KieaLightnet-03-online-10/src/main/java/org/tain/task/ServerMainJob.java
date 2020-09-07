@@ -76,6 +76,5 @@ public class ServerMainJob {
 			log.info("KANG-20200721 >>>>> SLEEP param = {}, sec = {}, {}", param, sec, CurrentInfo.get());
 			Sleep.run(sec * 1000);
 		}
-		
 	}
 }

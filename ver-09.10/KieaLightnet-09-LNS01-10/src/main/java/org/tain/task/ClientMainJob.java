@@ -30,6 +30,7 @@ public class ClientMainJob {
 		log.info("KANG-20200907 >>>>> START param = {}, {}", param, CurrentInfo.get());
 		
 		if (Flag.flag) {
+			// client
 			String host = this.projEnvJobProperties.getOnlineHost();
 			int port = this.projEnvJobProperties.getOnlinePort();
 			InetSocketAddress inetSocketAddress = new InetSocketAddress(host, port);

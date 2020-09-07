@@ -52,7 +52,7 @@ public class ClientTasksWorking {
 					try {
 						this.clientJob.clientJob("CLIENT-TASK-" + index);
 						index ++;
-						Sleep.run(3 * 1000);
+						Sleep.run(1 * 1000);
 					} catch (Exception e) {
 						//System.out.println(">>>>> EXCEPTION: " + e.getMessage());
 						Sleep.run(1 * 1000);
