@@ -14,6 +14,8 @@ import org.tain.utils.SubString;
 import org.tain.utils.TransferStrAndJson;
 import org.tain.utils.enums.JsonPrintType;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Component
@@ -100,7 +102,7 @@ public class AnnotationWorking {
 		}
 	}
 	
-	public void test02_testObjectAndJson() {
+	public void test02_testObjectAndJson() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -118,6 +120,28 @@ public class AnnotationWorking {
 			JsonPrint.getInstance(JsonPrintType.DEFAULT).printPrettyJson("REQ_DEFAULT", data);
 			JsonPrint.getInstance(JsonPrintType.STEP01).printPrettyJson("REQ_STEP01", data);
 			JsonPrint.getInstance(JsonPrintType.NORMAL).printPrettyJson("REQ_NORMAL", data);
+		}
+		
+		if (Flag.flag) {
+			// Xml <-> Json
+			_ReqName name = new _ReqName();
+			name.setFirstName("Seok");
+			name.setMiddleName("Kiea");
+			name.setLastName("Kang");
+			
+			_ReqData data = new _ReqData();
+			data.setTitle("TITLE");
+			data.setMessage("MESSAGE");
+			data.setName(name);
+			
+			//String strJson = JsonPrint.getInstance(JsonPrintType.DEFAULT).toPrettyJson(data);
+			
+			XmlMapper xmlMapper = new XmlMapper();
+			String xml = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(data);
+			System.out.println(">>>>> " + xml);
+			
+			_ReqData reqData = xmlMapper.readValue(xml, _ReqData.class);
+			System.out.println(">>>>> " + reqData);
 		}
 	}
 }
