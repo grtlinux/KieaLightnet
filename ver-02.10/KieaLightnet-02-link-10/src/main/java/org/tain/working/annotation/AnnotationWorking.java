@@ -5,11 +5,16 @@ import java.text.DecimalFormat;
 
 import org.springframework.stereotype.Component;
 import org.tain.object.dummy._Dummy;
+import org.tain.object.test.req._ReqData;
+import org.tain.object.test.req._ReqName;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.SubString;
 import org.tain.utils.TransferStrAndJson;
+import org.tain.utils.enums.JsonPrintType;
+
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -94,6 +99,49 @@ public class AnnotationWorking {
 			DecimalFormat df = new DecimalFormat("0");
 			df.setMaximumFractionDigits(340); // 340 = DecimalFormat.DOUBLE_FRACTION_DIGITS
 			System.out.println(">>>>> " + df.format(myValue)); // Output: 0.00000021
+		}
+	}
+	
+	public void test02_testObjectAndJson() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			// req
+			_ReqName name = new _ReqName();
+			name.setFirstName("Seok");
+			name.setMiddleName("Kiea");
+			name.setLastName("Kang");
+			
+			_ReqData data = new _ReqData();
+			data.setTitle("TITLE");
+			data.setMessage("MESSAGE");
+			data.setName(name);
+			
+			JsonPrint.getInstance(JsonPrintType.DEFAULT).printPrettyJson("REQ_DEFAULT", data);
+			JsonPrint.getInstance(JsonPrintType.STEP01).printPrettyJson("REQ_STEP01", data);
+			JsonPrint.getInstance(JsonPrintType.NORMAL).printPrettyJson("REQ_NORMAL", data);
+		}
+		
+		if (Flag.flag) {
+			// Xml <-> Json
+			_ReqName name = new _ReqName();
+			name.setFirstName("Seok");
+			name.setMiddleName("Kiea");
+			name.setLastName("Kang");
+			
+			_ReqData data = new _ReqData();
+			data.setTitle("TITLE");
+			data.setMessage("MESSAGE");
+			data.setName(name);
+			
+			//String strJson = JsonPrint.getInstance(JsonPrintType.DEFAULT).toPrettyJson(data);
+			
+			XmlMapper xmlMapper = new XmlMapper();
+			String xml = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(data);
+			System.out.println(">>>>> " + xml);
+			
+			_ReqData reqData = xmlMapper.readValue(xml, _ReqData.class);
+			System.out.println(">>>>> " + reqData);
 		}
 	}
 }
