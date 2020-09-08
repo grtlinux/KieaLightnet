@@ -8,9 +8,9 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.tain.object.lns.LnsStream;
 import org.tain.object.lns.LnsStreamPacket;
-import org.tain.object.test.req._ReqData;
-import org.tain.object.test.req._ReqName;
-import org.tain.object.test.res._ResData;
+import org.tain.object.test.req._ReqTestData;
+import org.tain.object.test.req._ReqTestName;
+import org.tain.object.test.res._ResTestData;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeClientTaskQueue;
 import org.tain.utils.CurrentInfo;
@@ -48,12 +48,12 @@ public class ClientJob {
 		LnsStream reqLnsStream = null;
 		if (Flag.flag) {
 			// req
-			_ReqName name = new _ReqName();
+			_ReqTestName name = new _ReqTestName();
 			name.setFirstName("Seok");
 			name.setMiddleName("Kiea");
 			name.setLastName("Kang");
 			
-			_ReqData data = new _ReqData();
+			_ReqTestData data = new _ReqTestData();
 			data.setTitle("REQ_TITLE");
 			data.setMessage("MESSAGE");
 			data.setName(name);
@@ -79,9 +79,9 @@ public class ClientJob {
 		
 		if (Flag.flag) {
 			// res
-			_ResData data = new _ResData();
+			_ResTestData data = new _ResTestData();
 			TransferStrAndJson.subString = new SubString(resLnsStream.getContent());
-			data = (_ResData) TransferStrAndJson.getObject(data);
+			data = (_ResTestData) TransferStrAndJson.getObject(data);
 			JsonPrint.getInstance().printPrettyJson("RES.data", data);
 		}
 		

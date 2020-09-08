@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ReqData {
+public class _ReqTestData {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "title")
@@ -17,7 +17,7 @@ public class _ReqData {
 	
 	@StreamAnnotation
 	@JsonProperty(value = "name")
-	private _ReqName name = new _ReqName();
+	private _ReqTestName name = new _ReqTestName();
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "message")
