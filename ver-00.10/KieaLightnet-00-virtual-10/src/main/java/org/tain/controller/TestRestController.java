@@ -9,9 +9,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.tain.object.test.req._ReqData;
-import org.tain.object.test.res._ResData;
-import org.tain.object.test.res._ResName;
+import org.tain.object.test.req._ReqTestData;
+import org.tain.object.test.res._ResTestData;
+import org.tain.object.test.res._ResTestName;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -39,23 +39,23 @@ public class TestRestController {
 			log.info("VIRTUAL >>>>> Body = {}", reqHttpEntity.getBody());
 		}
 		
-		_ReqData reqData = null;
-		_ResData resData = null;
+		_ReqTestData reqTestData = null;
+		_ResTestData resTestData = null;
 		
 		if (Flag.flag) {
-			reqData = new ObjectMapper().readValue(reqHttpEntity.getBody(), _ReqData.class);
-			log.info("VIRTUAL >>>>> reqData = {}", JsonPrint.getInstance().toPrettyJson(reqData));
+			reqTestData = new ObjectMapper().readValue(reqHttpEntity.getBody(), _ReqTestData.class);
+			log.info("VIRTUAL >>>>> reqData = {}", JsonPrint.getInstance().toPrettyJson(reqTestData));
 			
-			_ResName name = new _ResName();
+			_ResTestName name = new _ResTestName();
 			name.setFirstName("SEOK");
 			name.setLastName("KANG");
 			
-			resData = new _ResData();
-			resData.setTitle("Res_Title");
-			resData.setMessage("Message");
-			resData.setStatus("Status");
-			resData.setName(name);
-			log.info("VIRTUAL >>>>> resData = {}", JsonPrint.getInstance().toPrettyJson(resData));
+			resTestData = new _ResTestData();
+			resTestData.setTitle("Res_Title");
+			resTestData.setMessage("Message");
+			resTestData.setStatus("Status");
+			resTestData.setName(name);
+			log.info("VIRTUAL >>>>> resData = {}", JsonPrint.getInstance().toPrettyJson(resTestData));
 		}
 		
 		if (Flag.flag) log.info("========================================================");
@@ -63,6 +63,6 @@ public class TestRestController {
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
 		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		
-		return new ResponseEntity<>(resData, headers, HttpStatus.OK);
+		return new ResponseEntity<>(resTestData, headers, HttpStatus.OK);
 	}
 }
