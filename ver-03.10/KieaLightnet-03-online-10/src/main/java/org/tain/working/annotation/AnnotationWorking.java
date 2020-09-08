@@ -5,8 +5,8 @@ import java.text.DecimalFormat;
 
 import org.springframework.stereotype.Component;
 import org.tain.object.dummy._Dummy;
-import org.tain.object.test.req._ReqData;
-import org.tain.object.test.req._ReqName;
+import org.tain.object.test.req._ReqTestData;
+import org.tain.object.test.req._ReqTestName;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -107,12 +107,12 @@ public class AnnotationWorking {
 		
 		if (Flag.flag) {
 			// req
-			_ReqName name = new _ReqName();
+			_ReqTestName name = new _ReqTestName();
 			name.setFirstName("Seok");
 			name.setMiddleName("Kiea");
 			name.setLastName("Kang");
 			
-			_ReqData data = new _ReqData();
+			_ReqTestData data = new _ReqTestData();
 			data.setTitle("TITLE");
 			data.setMessage("MESSAGE");
 			data.setName(name);
@@ -124,12 +124,12 @@ public class AnnotationWorking {
 		
 		if (Flag.flag) {
 			// Xml <-> Json
-			_ReqName name = new _ReqName();
+			_ReqTestName name = new _ReqTestName();
 			name.setFirstName("Seok");
 			name.setMiddleName("Kiea");
 			name.setLastName("Kang");
 			
-			_ReqData data = new _ReqData();
+			_ReqTestData data = new _ReqTestData();
 			data.setTitle("TITLE");
 			data.setMessage("MESSAGE");
 			data.setName(name);
@@ -140,7 +140,7 @@ public class AnnotationWorking {
 			String xml = xmlMapper.writerWithDefaultPrettyPrinter().writeValueAsString(data);
 			System.out.println(">>>>> " + xml);
 			
-			_ReqData reqData = xmlMapper.readValue(xml, _ReqData.class);
+			_ReqTestData reqData = xmlMapper.readValue(xml, _ReqTestData.class);
 			System.out.println(">>>>> " + reqData);
 		}
 	}

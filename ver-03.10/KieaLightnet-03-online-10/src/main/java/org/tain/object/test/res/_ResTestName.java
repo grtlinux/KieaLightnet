@@ -9,21 +9,21 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ResData {
+public class _ResTestName {
 
 	@StreamAnnotation(length = 20)
-	@JsonProperty(value = "title")
-	private String title;
-	
-	@StreamAnnotation
-	@JsonProperty(value = "name")
-	private _ResName name = new _ResName();
+	@JsonProperty(value = "first_name")
+	private String firstName;
 	
 	@StreamAnnotation(length = 20)
-	@JsonProperty(value = "message")
-	private String message;
+	@JsonProperty(value = "middle_name")
+	private String middleName;
 	
 	@StreamAnnotation(length = 20)
-	@JsonProperty(value = "status")
-	private String status;
+	@JsonProperty(value = "last_name")
+	private String lastName;
+	
+	@StreamAnnotation(length = 5)
+	@JsonProperty(value = "sex")
+	private String sex;
 }

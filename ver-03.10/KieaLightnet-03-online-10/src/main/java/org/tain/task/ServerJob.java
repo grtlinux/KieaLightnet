@@ -8,9 +8,9 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.tain.object.lns.LnsStream;
 import org.tain.object.lns.LnsStreamPacket;
-import org.tain.object.test.req._ReqData;
-import org.tain.object.test.res._ResData;
-import org.tain.object.test.res._ResName;
+import org.tain.object.test.req._ReqTestData;
+import org.tain.object.test.res._ResTestData;
+import org.tain.object.test.res._ResTestName;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
 import org.tain.task.process.TestProcess;
@@ -106,9 +106,9 @@ public class ServerJob {
 		
 		if (Flag.flag) {
 			// get res
-			_ReqData data = new _ReqData();
+			_ReqTestData data = new _ReqTestData();
 			TransferStrAndJson.subString = new SubString(reqLnsStream.getContent());
-			data = (_ReqData) TransferStrAndJson.getObject(data);
+			data = (_ReqTestData) TransferStrAndJson.getObject(data);
 			JsonPrint.getInstance().printPrettyJson("REQ :", data);
 		}
 		
@@ -118,12 +118,12 @@ public class ServerJob {
 		LnsStream resLnsStream = null;
 		if (Flag.flag) {
 			// get res
-			_ResName name = new _ResName();
+			_ResTestName name = new _ResTestName();
 			name.setFirstName("SEOK");
 			//name.setMiddleName("");
 			name.setLastName("KANG");
 			
-			_ResData data = new _ResData();
+			_ResTestData data = new _ResTestData();
 			data.setTitle("Res_Title");
 			data.setMessage("Message");
 			data.setStatus("Status");
