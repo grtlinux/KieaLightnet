@@ -19,11 +19,11 @@ public class LnsJson implements Cloneable {
 	private String name;
 	private String title;
 	
-	private String workUrl;        // scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
-	private String division;       // trid/validate/commit/list/detail/callback
-	private String divisionType;   // REQ / RES
+	//private String workUrl;        // scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
+	//private String division;       // trid/validate/commit/list/detail/callback
+	//private String divisionType;   // REQ / RES
 	
-	private String dataType;       // STREAM / JSON / ALL
+	//private String dataType;       // STREAM / JSON / ALL
 	private String reqStrData;     // request stream data
 	private String reqJsonData;    // request json data
 	private String resStrData;     // response stream data
@@ -40,10 +40,10 @@ public class LnsJson implements Cloneable {
 	public LnsJson(
 			String name,
 			String title,
-			String workUrl,
-			String division,
-			String divisionType,
-			String dataType,
+			//String workUrl,
+			//String division,
+			//String divisionType,
+			//String dataType,
 			String reqStrData,
 			String reqJsonData,
 			String resStrData,
@@ -53,10 +53,10 @@ public class LnsJson implements Cloneable {
 			) {
 		this.name = name;
 		this.title = title;
-		this.workUrl = workUrl;
-		this.division = division;
-		this.divisionType = divisionType;
-		this.dataType = dataType;
+		//this.workUrl = workUrl;
+		//this.division = division;
+		//this.divisionType = divisionType;
+		//this.dataType = dataType;
 		this.reqStrData = reqStrData;
 		this.reqJsonData = reqJsonData;
 		this.resStrData = resStrData;

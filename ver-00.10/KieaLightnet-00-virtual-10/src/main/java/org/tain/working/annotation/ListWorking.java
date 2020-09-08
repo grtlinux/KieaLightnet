@@ -274,7 +274,7 @@ public class ListWorking {
 				printFileWriter.close();
 			}
 			
-			if (Flag.flag) System.exit(0);
+			//if (Flag.flag) System.exit(0);
 		}
 	}
 }

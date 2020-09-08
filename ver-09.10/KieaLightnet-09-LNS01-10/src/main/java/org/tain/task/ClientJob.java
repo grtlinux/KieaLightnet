@@ -60,7 +60,7 @@ public class ClientJob {
 			JsonPrint.getInstance().printPrettyJson("REQ :", data);
 			
 			String reqStream = TransferStrAndJson.getStream(data);
-			reqLnsStream = new LnsStream(String.format("%04d%7.7s%s", reqStream.length() + 7, "0200200", reqStream));
+			reqLnsStream = new LnsStream(String.format("%04d%7.7s%s", reqStream.length() + 7, "0200991", reqStream));
 		}
 		
 		if (Flag.flag) {

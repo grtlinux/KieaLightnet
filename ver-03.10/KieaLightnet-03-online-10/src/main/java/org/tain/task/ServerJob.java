@@ -13,6 +13,7 @@ import org.tain.object.test.res._ResData;
 import org.tain.object.test.res._ResName;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
+import org.tain.task.process.TestProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -34,6 +35,57 @@ public class ServerJob {
 	
 	@Async(value = "serverTask")
 	public void serverJob(String param) throws Exception {
+		log.info("KANG-20200908 >>>>> START param = {}, {}", param, CurrentInfo.get());
+		
+		LnsStreamPacket lnsStreamPacket = null;
+		if (Flag.flag) {
+			lnsStreamPacket = this.lnsStreamPacketQueue.get();  // blocking
+			log.info("KANG-20200907 >>>>> lnsStreamPacket: REMOTE_INFO = {}", lnsStreamPacket);
+		}
+		
+		////////////////////////////////////////////////////
+		if (Flag.flag) {
+			try {
+				LnsStream reqLnsStream = null;
+				LnsStream resLnsStream = null;
+				do {
+					// recv
+					reqLnsStream = lnsStreamPacket.recvStream();
+					if (Flag.flag) JsonPrint.getInstance().printPrettyJson("REQ", reqLnsStream);
+					
+					// process
+					switch (reqLnsStream.getTypeCode()) {
+					case "0200991":  // test
+						resLnsStream = TestProcess.process(reqLnsStream);
+						break;
+					default:
+						break;
+					}
+					
+					// send
+					lnsStreamPacket.sendStream(resLnsStream);
+				} while (true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		log.info("KANG-20200907 >>>>> END   param = {}, {}", param, CurrentInfo.get());
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	@Deprecated
+	public void serverJob_202009081035(String param) throws Exception {
 		log.info("KANG-20200907 >>>>> START param = {}, {}", param, CurrentInfo.get());
 		
 		LnsStreamPacket lnsStreamPacket = null;
@@ -78,7 +130,7 @@ public class ServerJob {
 			JsonPrint.getInstance().printPrettyJson("RES :", data);
 			
 			String resStream = TransferStrAndJson.getStream(data);
-			resLnsStream = new LnsStream(String.format("%04d%7.7s%s", resStream.length() + 7, "0210200", resStream));
+			resLnsStream = new LnsStream(String.format("%04d%7.7s%s", resStream.length() + 7, "0210991", resStream));
 		}
 		
 		if (Flag.flag) {
