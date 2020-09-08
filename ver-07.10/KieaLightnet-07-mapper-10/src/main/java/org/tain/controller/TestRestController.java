@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 public class TestRestController {
 
 	/*
-	 * 
+	 * http://localhost:18086/v1.0/mapper/test/req/s2j
 	 */
 	@RequestMapping(value = {"/req/s2j"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {
@@ -62,7 +62,7 @@ public class TestRestController {
 	}
 	
 	/*
-	 * 
+	 * http://localhost:18086/v1.0/mapper/test/res/j2s
 	 */
 	@RequestMapping(value = {"/res/j2s"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> resJsonToStr(HttpEntity<String> reqHttpEntity) throws Exception {

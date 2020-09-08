@@ -9,7 +9,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.tain.object.lns.LnsJson;
+import org.tain.object.test.req._ReqData;
 import org.tain.object.test.res._ResData;
 import org.tain.object.test.res._ResName;
 import org.tain.utils.CurrentInfo;
@@ -25,7 +25,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TestRestController {
 
-	@RequestMapping(value = {"/get"}, method = {RequestMethod.GET, RequestMethod.POST})
+	/*
+	 * curl -v -d '("clientId":"_TEST_", "secret":"_TEST_"}' -X POST http://localhost:18888/test/get | jq
+	 */
+	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
@@ -36,23 +39,23 @@ public class TestRestController {
 			log.info("VIRTUAL >>>>> Body = {}", reqHttpEntity.getBody());
 		}
 		
-		LnsJson lnsJson = null;
+		_ReqData reqData = null;
+		_ResData resData = null;
 		
 		if (Flag.flag) {
-			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
+			reqData = new ObjectMapper().readValue(reqHttpEntity.getBody(), _ReqData.class);
+			log.info("VIRTUAL >>>>> reqData = {}", JsonPrint.getInstance().toPrettyJson(reqData));
 			
 			_ResName name = new _ResName();
 			name.setFirstName("SEOK");
 			name.setLastName("KANG");
 			
-			_ResData data = new _ResData();
-			data.setTitle("Res_Title");
-			data.setMessage("Message");
-			data.setStatus("Status");
-			data.setName(name);
-			
-			lnsJson.setResJsonData(JsonPrint.getInstance().toJson(data));
-			log.info("VIRTUAL >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			resData = new _ResData();
+			resData.setTitle("Res_Title");
+			resData.setMessage("Message");
+			resData.setStatus("Status");
+			resData.setName(name);
+			log.info("VIRTUAL >>>>> resData = {}", JsonPrint.getInstance().toPrettyJson(resData));
 		}
 		
 		if (Flag.flag) log.info("========================================================");
@@ -60,6 +63,6 @@ public class TestRestController {
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
 		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		
-		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
+		return new ResponseEntity<>(resData, headers, HttpStatus.OK);
 	}
 }

@@ -55,11 +55,11 @@ public class TestRestController {
 				
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				reqHeaders.set("Authorization", "Bearer " + accessToken);
+				reqHeaders.set("Authorization", "Bearer " + accessToken);  // accessToken
 				reqHttpEntity = new HttpEntity<>(lnsJson.getReqJsonData(), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						"http://localhost:18082/v1.0/link/test/get"
+						"http://localhost:18888/test"
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);
@@ -70,7 +70,7 @@ public class TestRestController {
 				log.info(">>>>> getBody()            = {}", response.getBody());
 				log.info("===============================================================");
 				
-				lnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
+				lnsJson.setResJsonData(response.getBody());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
