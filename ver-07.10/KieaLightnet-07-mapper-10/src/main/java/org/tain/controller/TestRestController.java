@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.object.lns.LnsJson;
-import org.tain.object.test.req._ReqData;
-import org.tain.object.test.res._ResData;
+import org.tain.object.test.req._ReqTestData;
+import org.tain.object.test.res._ResTestData;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -45,9 +45,9 @@ public class TestRestController {
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
 			
-			_ReqData reqData = new _ReqData();
+			_ReqTestData reqData = new _ReqTestData();
 			TransferStrAndJson.subString = new SubString(lnsJson.getReqStrData());
-			reqData = (_ReqData) TransferStrAndJson.getObject(reqData);
+			reqData = (_ReqTestData) TransferStrAndJson.getObject(reqData);
 			
 			lnsJson.setReqJsonData(JsonPrint.getInstance().toJson(reqData));
 			log.info("MAPPER.req >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
@@ -79,7 +79,7 @@ public class TestRestController {
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
 			
-			_ResData resData = new ObjectMapper().readValue(lnsJson.getResJsonData(), _ResData.class);
+			_ResTestData resData = new ObjectMapper().readValue(lnsJson.getResJsonData(), _ResTestData.class);
 			String resStream = TransferStrAndJson.getStream(resData);
 			lnsJson.setResStrData(resStream);
 			log.info("MAPPER.res >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
