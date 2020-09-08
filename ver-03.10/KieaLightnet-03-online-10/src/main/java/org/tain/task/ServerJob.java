@@ -39,7 +39,7 @@ public class ServerJob {
 		LnsStreamPacket lnsStreamPacket = null;
 		
 		if (Flag.flag) {
-			lnsStreamPacket = this.lnsStreamPacketQueue.get();
+			lnsStreamPacket = this.lnsStreamPacketQueue.get();  // blocking
 			log.info("KANG-20200907 >>>>> REMOTE_INFO = {}", lnsStreamPacket);
 		}
 		
@@ -59,7 +59,7 @@ public class ServerJob {
 			JsonPrint.getInstance().printPrettyJson("REQ :", data);
 		}
 		
-		Sleep.run(2000);
+		Sleep.run(1000);
 		
 		////////////////////////////////////////////////////
 		LnsStream resLnsStream = null;
@@ -67,7 +67,7 @@ public class ServerJob {
 			// get res
 			_ResName name = new _ResName();
 			name.setFirstName("SEOK");
-			name.setMiddleName("");
+			//name.setMiddleName("");
 			name.setLastName("KANG");
 			
 			_ResData data = new _ResData();

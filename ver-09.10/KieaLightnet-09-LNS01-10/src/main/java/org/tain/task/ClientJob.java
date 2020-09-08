@@ -40,7 +40,7 @@ public class ClientJob {
 		
 		if (Flag.flag) {
 			// get StreamPacket from queue
-			lnsStreamPacket = this.lnsStreamPacketQueue.get();
+			lnsStreamPacket = this.lnsStreamPacketQueue.get();  // blocking
 			log.info("KANG-20200907 >>>>> REMOTE_INFO = {}", lnsStreamPacket);
 		}
 		

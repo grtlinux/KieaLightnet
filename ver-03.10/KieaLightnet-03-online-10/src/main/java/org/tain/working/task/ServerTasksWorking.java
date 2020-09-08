@@ -58,7 +58,7 @@ public class ServerTasksWorking {
 						Sleep.run(1 * 1000);
 					}
 				}
-				this.wakeServerTaskQueue.get();
+				this.wakeServerTaskQueue.get();  // blocking
 			}
 		}
 	}
