@@ -9,9 +9,12 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class _ResAuthData {
 
-	@JsonProperty(value = "name")
-	private String name;
+	@JsonProperty(value = "status")
+	private String status;
 	
-	@JsonProperty(value = "access_token")
+	@JsonProperty(value = "message")
+	private String message;
+	
+	@JsonProperty(value = "accessToken")
 	private String accessToken;
 }

@@ -1,5 +1,6 @@
 package org.tain.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -11,10 +12,10 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.tain.data.AccessToken;
 import org.tain.object.lns.LnsJson;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.JsonPrint;
 import org.tain.utils.RestTemplateConfig;
 import org.tain.utils.enums.RestTemplateType;
 
@@ -27,6 +28,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TestRestController {
 
+	@Autowired
+	private AccessToken accessToken;
+	
 	@RequestMapping(value = {"/get"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
@@ -38,16 +42,21 @@ public class TestRestController {
 			log.info("MAPPER >>>>> Body = {}", reqHttpEntity.getBody());
 		}
 		
+		String accessToken = null;
 		if (Flag.flag) {
 			// get AccessKey by auth
+			accessToken = this.accessToken.get();
 		}
 		
 		LnsJson lnsJson = null;
 		if (Flag.flag) {
 			try {
+				lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
+				
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(lnsJson), reqHeaders);
+				reqHeaders.set("Authorization", "Bearer " + accessToken);
+				reqHttpEntity = new HttpEntity<>(lnsJson.getReqJsonData(), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						"http://localhost:18082/v1.0/link/test/get"
@@ -65,25 +74,6 @@ public class TestRestController {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-		
-		if (!Flag.flag) {
-			/*
-			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			
-			_ResName name = new _ResName();
-			name.setFirstName("SEOK");
-			name.setLastName("KANG");
-			
-			_ResData data = new _ResData();
-			data.setTitle("Res_Title");
-			data.setMessage("Message");
-			data.setStatus("Status");
-			data.setName(name);
-			
-			lnsJson.setResJsonData(JsonPrint.getInstance().toJson(data));
-			log.info("MAPPER >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
-			*/
 		}
 		
 		if (Flag.flag) log.info("========================================================");

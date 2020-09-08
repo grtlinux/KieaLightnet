@@ -9,6 +9,9 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class _ReqAuthData {
 
-	@JsonProperty(value = "name")
-	private String name;
+	@JsonProperty(value = "clientId")
+	private String clientId;
+
+	@JsonProperty(value = "secret")
+	private String secret;
 }

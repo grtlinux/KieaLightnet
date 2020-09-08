@@ -5,6 +5,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.tain.object.auth.req._ReqAuthData;
 import org.tain.object.auth.res._ResAuthData;
 import org.tain.utils.CurrentInfo;
@@ -17,16 +18,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Component
 @Slf4j
 public class AccessToken {
 
-	public static String getAccessToken() throws Exception {
+	public String get() throws Exception {
 		log.info("KANG-20200623 >>>>> {} {}", CurrentInfo.get());
 		
 		_ReqAuthData reqAuthData = null;
 		if (Flag.flag) {
 			reqAuthData = new _ReqAuthData();
-			reqAuthData.setName("AUTH");
 		}
 		
 		_ResAuthData resAuthData = null;
@@ -37,7 +38,7 @@ public class AccessToken {
 				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(reqAuthData), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						"http://localhost:18081/v1.0/auth/auth"
+						"http://localhost:18081/v1.0/auth"
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);
