@@ -59,25 +59,6 @@ public class TestProcess {
 			resLnsStream = new LnsStream(String.format("%04d%7.7s%s", resStream.length() + 7, "0210991", resStream));
 		}
 		
-		if (Flag.flag) {
-			/*
-			// get res
-			_ResName name = new _ResName();
-			name.setFirstName("SEOK");
-			name.setLastName("KANG");
-			
-			_ResData data = new _ResData();
-			data.setTitle("Res_Title");
-			data.setMessage("Message");
-			data.setStatus("Status");
-			data.setName(name);
-			JsonPrint.getInstance().printPrettyJson("RES :", data);
-			
-			String resStream = TransferStrAndJson.getStream(data);
-			resLnsStream = new LnsStream(String.format("%04d%7.7s%s", resStream.length() + 7, "0210991", resStream));
-			*/
-		}
-		
 		return resLnsStream;
 	}
 	
