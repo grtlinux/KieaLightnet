@@ -13,6 +13,7 @@ import org.tain.utils.Flag;
 import org.tain.utils.LnsTimeZone;
 import org.tain.working.annotation.AnnotationWorking;
 import org.tain.working.async.AsyncWorking;
+import org.tain.working.authJob.AuthJobWorking;
 import org.tain.working.properties.PropertiesWorking;
 
 import lombok.extern.slf4j.Slf4j;
@@ -36,9 +37,9 @@ public class KieaLightnet01Auth10Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // async
-		if (Flag.flag) job03();  // annotation
-		if (Flag.flag) job04();
+		if (!Flag.flag) job02();  // async
+		if (!Flag.flag) job03();  // annotation
+		if (Flag.flag) job04();  // authJob
 		if (Flag.flag) job05();
 	}
 
@@ -85,11 +86,19 @@ public class KieaLightnet01Auth10Application implements CommandLineRunner {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	@Autowired
+	private AuthJobWorking authJobWorking;
+	
 	private void job04() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
+		if (Flag.flag) this.authJobWorking.running();
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	private void job05() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		

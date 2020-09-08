@@ -47,7 +47,7 @@ public class ClientJob {
 		////////////////////////////////////////////////////
 		LnsStream reqLnsStream = null;
 		if (Flag.flag) {
-			// get req
+			// req
 			_ReqName name = new _ReqName();
 			name.setFirstName("Seok");
 			name.setMiddleName("Kiea");
@@ -57,7 +57,7 @@ public class ClientJob {
 			data.setTitle("REQ_TITLE");
 			data.setMessage("MESSAGE");
 			data.setName(name);
-			JsonPrint.getInstance().printPrettyJson("REQ :", data);
+			JsonPrint.getInstance().printPrettyJson("REQ.data", data);
 			
 			String reqStream = TransferStrAndJson.getStream(data);
 			reqLnsStream = new LnsStream(String.format("%04d%7.7s%s", reqStream.length() + 7, "0200991", reqStream));
@@ -65,7 +65,7 @@ public class ClientJob {
 		
 		if (Flag.flag) {
 			// send
-			JsonPrint.getInstance().printPrettyJson("REQ", reqLnsStream);
+			JsonPrint.getInstance().printPrettyJson("REQ.lnsStream", reqLnsStream);
 			lnsStreamPacket.sendStream(reqLnsStream);
 		}
 		
@@ -74,15 +74,15 @@ public class ClientJob {
 		if (Flag.flag) {
 			// recv
 			resLnsStream = lnsStreamPacket.recvStream();
-			JsonPrint.getInstance().printPrettyJson("RES", resLnsStream);
+			JsonPrint.getInstance().printPrettyJson("RES.lnsStream", resLnsStream);
 		}
 		
 		if (Flag.flag) {
-			// get res
+			// res
 			_ResData data = new _ResData();
 			TransferStrAndJson.subString = new SubString(resLnsStream.getContent());
 			data = (_ResData) TransferStrAndJson.getObject(data);
-			JsonPrint.getInstance().printPrettyJson("RES :", data);
+			JsonPrint.getInstance().printPrettyJson("RES.data", data);
 		}
 		
 		log.info("KANG-20200907 >>>>> END   param = {}, {}", param, CurrentInfo.get());

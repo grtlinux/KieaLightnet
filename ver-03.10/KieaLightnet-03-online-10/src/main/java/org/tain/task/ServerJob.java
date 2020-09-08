@@ -51,7 +51,7 @@ public class ServerJob {
 				do {
 					// recv
 					reqLnsStream = lnsStreamPacket.recvStream();
-					if (Flag.flag) JsonPrint.getInstance().printPrettyJson("REQ", reqLnsStream);
+					if (Flag.flag) JsonPrint.getInstance().printPrettyJson("REQ.lnsStream", reqLnsStream);
 					
 					// process
 					switch (reqLnsStream.getTypeCode()) {
@@ -64,6 +64,7 @@ public class ServerJob {
 					
 					// send
 					lnsStreamPacket.sendStream(resLnsStream);
+					if (Flag.flag) JsonPrint.getInstance().printPrettyJson("RES.lnsStream", resLnsStream);
 				} while (true);
 			} catch (Exception e) {
 				e.printStackTrace();

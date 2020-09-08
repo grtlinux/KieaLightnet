@@ -27,6 +27,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TestRestController {
 
+	/*
+	 * 
+	 */
 	@RequestMapping(value = {"/req/s2j"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
@@ -34,8 +37,8 @@ public class TestRestController {
 		if (Flag.flag) log.info("========================================================");
 		
 		if (Flag.flag) {
-			log.info("MAPPER >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("MAPPER >>>>> Body = {}", reqHttpEntity.getBody());
+			log.info("MAPPER.req >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("MAPPER.req >>>>> Body = {}", reqHttpEntity.getBody());
 		}
 		
 		LnsJson lnsJson = null;
@@ -47,7 +50,7 @@ public class TestRestController {
 			reqData = (_ReqData) TransferStrAndJson.getObject(reqData);
 			
 			lnsJson.setReqJsonData(JsonPrint.getInstance().toJson(reqData));
-			log.info("MAPPER >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info("MAPPER.req >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
 		if (Flag.flag) log.info("========================================================");
@@ -58,6 +61,9 @@ public class TestRestController {
 		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
 	}
 	
+	/*
+	 * 
+	 */
 	@RequestMapping(value = {"/res/j2s"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> resJsonToStr(HttpEntity<String> reqHttpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
@@ -65,8 +71,8 @@ public class TestRestController {
 		if (Flag.flag) log.info("========================================================");
 		
 		if (Flag.flag) {
-			log.info("MAPPER >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("MAPPER >>>>> Body = {}", reqHttpEntity.getBody());
+			log.info("MAPPER.res >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("MAPPER.res >>>>> Body = {}", reqHttpEntity.getBody());
 		}
 		
 		LnsJson lnsJson = null;
@@ -76,7 +82,7 @@ public class TestRestController {
 			_ResData resData = new ObjectMapper().readValue(lnsJson.getResJsonData(), _ResData.class);
 			String resStream = TransferStrAndJson.getStream(resData);
 			lnsJson.setResStrData(resStream);
-			log.info("MAPPER >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			log.info("MAPPER.res >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
 		if (Flag.flag) log.info("========================================================");

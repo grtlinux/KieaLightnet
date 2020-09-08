@@ -7,13 +7,10 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.tain.object.lns.LnsJson;
 import org.tain.object.lns.LnsStream;
-import org.tain.object.test.res._ResData;
-import org.tain.object.test.res._ResName;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.RestTemplateConfig;
-import org.tain.utils.TransferStrAndJson;
 import org.tain.utils.enums.RestTemplateType;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,39 +23,44 @@ public class TestProcess {
 	public static LnsStream process(LnsStream reqLnsStream) throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		LnsStream resLnsStream = null;
 		LnsJson lnsJson = null;
-		
 		if (Flag.flag) {
-			// construct LnsJson
+			// 1. LnsJson
 			lnsJson = LnsJson.builder()
 					.name("TEST")
 					.title("This is for test.")
 					.reqStrData(reqLnsStream.getContent())
 					.build();
-			JsonPrint.getInstance().printPrettyJson("LnsJson - 1", lnsJson);
 			log.info("ONLINE-1 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
 		if (Flag.flag) {
-			// mapper TestReq Stream to Json
+			// 2. mapper TestReq Stream to Json
 			lnsJson = mapperReqStrToJson(lnsJson);
 			log.info("ONLINE-2 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
 		if (Flag.flag) {
-			// post link
+			// 3. post link
 			lnsJson = httpLinkPost(lnsJson);
 			log.info("ONLINE-3 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
 		if (Flag.flag) {
-			// mapper TestRes Json to Stream
+			// 4. mapper TestRes Json to Stream
 			lnsJson = mapperResJsonToStr(lnsJson);
 			log.info("ONLINE-4 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
+		LnsStream resLnsStream = null;
 		if (Flag.flag) {
+			// 5. lnsStream
+			String resStream = lnsJson.getResStrData();
+			resLnsStream = new LnsStream(String.format("%04d%7.7s%s", resStream.length() + 7, "0210991", resStream));
+		}
+		
+		if (Flag.flag) {
+			/*
 			// get res
 			_ResName name = new _ResName();
 			name.setFirstName("SEOK");
@@ -73,6 +75,7 @@ public class TestProcess {
 			
 			String resStream = TransferStrAndJson.getStream(data);
 			resLnsStream = new LnsStream(String.format("%04d%7.7s%s", resStream.length() + 7, "0210991", resStream));
+			*/
 		}
 		
 		return resLnsStream;
