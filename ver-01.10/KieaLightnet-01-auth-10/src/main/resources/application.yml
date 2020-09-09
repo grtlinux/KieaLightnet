@@ -151,8 +151,8 @@ proj-env:
   json:
     name: test json
   url:
-    lightnet1: http://test-hawis.lightnetapis.io/v1
-    lightnet11: http://test-hawis.lightnetapis.io/v1.1
+    lightnet1: https://test-hawis.lightnetapis.io/v1
+    lightnet11: https://test-hawis.lightnetapis.io/v1.1
     auth: http://localhost:18081/v1.0
     link: http://localhost:18082/v1.0
     mapper: http://localhost:18086/v1.0
