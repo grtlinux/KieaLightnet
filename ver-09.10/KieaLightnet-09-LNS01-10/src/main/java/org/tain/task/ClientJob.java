@@ -43,6 +43,9 @@ public class ClientJob {
 		log.info("KANG-20200907 >>>>> START param = {}, {}", param, CurrentInfo.get());
 		
 		switch (this.projEnvJsonProperties.getTrxName()) {
+		case "callback":
+			//this.callback();
+			break;
 		case "list11":
 			this.list11();
 			break;
