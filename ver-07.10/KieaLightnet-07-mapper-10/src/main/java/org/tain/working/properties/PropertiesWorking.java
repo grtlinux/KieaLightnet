@@ -6,6 +6,7 @@ import org.tain.properties.ProjEnvBaseProperties;
 import org.tain.properties.ProjEnvJobProperties;
 import org.tain.properties.ProjEnvJsonProperties;
 import org.tain.properties.ProjEnvParamProperties;
+import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -28,6 +29,9 @@ public class PropertiesWorking {
 	@Autowired
 	private ProjEnvJsonProperties projEnvJsonProperties;
 	
+	@Autowired
+	private ProjEnvUrlProperties projEnvUrlProperties;
+	
 	public void print() {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
@@ -36,6 +40,7 @@ public class PropertiesWorking {
 			JsonPrint.getInstance().printPrettyJson("PARAM", this.projEnvParamProperties);
 			JsonPrint.getInstance().printPrettyJson("JOB"  , this.projEnvJobProperties);
 			JsonPrint.getInstance().printPrettyJson("JSON" , this.projEnvJsonProperties);
+			JsonPrint.getInstance().printPrettyJson("URL"  , this.projEnvUrlProperties);
 		}
 	}
 }

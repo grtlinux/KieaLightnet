@@ -1,5 +1,6 @@
 package org.tain.task;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -9,6 +10,8 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.tain.data.AccessToken;
 import org.tain.object.auth.req._ReqAuthData;
+import org.tain.properties.ProjEnvJobProperties;
+import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -22,9 +25,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthJob {
 
-	///////////////////////////////////////////////////////////////////////////
+	@Autowired
+	private ProjEnvJobProperties projEnvJobProperties;
 	
-	private long LOOP_SEC = 10;
+	@Autowired
+	private ProjEnvUrlProperties projEnvUrlProperties;
+	
+	///////////////////////////////////////////////////////////////////////////
 	
 	@Async
 	public void authJob(String param) {
@@ -36,7 +43,7 @@ public class AuthJob {
 					log.info(">>>>> AuthJob.process()..");
 					process();
 					
-					Sleep.run(LOOP_SEC * 1000);
+					Sleep.run(this.projEnvJobProperties.getAuthLoopSec() * 1000);
 				} while (true);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -48,17 +55,14 @@ public class AuthJob {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String clientId = "pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT";
-	private String secret = "skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk";
-	
 	private void process() {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
 		_ReqAuthData reqAuthData = null;
 		if (Flag.flag) {
 			reqAuthData = new _ReqAuthData();
-			reqAuthData.setClientId(clientId);
-			reqAuthData.setSecret(secret);
+			reqAuthData.setClientId(this.projEnvJobProperties.getAuthClientId());
+			reqAuthData.setSecret(this.projEnvJobProperties.getAuthSecret());
 		}
 		
 		if (Flag.flag) {
@@ -68,7 +72,7 @@ public class AuthJob {
 				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(reqAuthData), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						"http://localhost:18888/auth"
+						this.projEnvUrlProperties.getLightnet1() + "/auth"
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);

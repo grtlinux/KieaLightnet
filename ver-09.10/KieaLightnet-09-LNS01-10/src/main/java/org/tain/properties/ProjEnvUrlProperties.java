@@ -6,13 +6,14 @@ import org.springframework.stereotype.Component;
 import lombok.Data;
 
 @Component
-@ConfigurationProperties(prefix = "proj-env.job")
+@ConfigurationProperties(prefix = "proj-env.url")
 @Data
-public class ProjEnvJobProperties {
+public class ProjEnvUrlProperties {
 
 	private String name;
 	
-	private long authLoopSec;
-	private String authClientId;
-	private String authSecret;
+	private String lightnet;
+	private String auth;
+	private String link;
+	private String mapper;
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.data.AccessToken;
 import org.tain.object.lns.LnsJson;
+import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.RestTemplateConfig;
@@ -28,6 +29,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TestRestController {
 
+	@Autowired
+	private ProjEnvUrlProperties projEnvUrlProperties;
+	
 	@Autowired
 	private AccessToken accessToken;
 	
@@ -59,7 +63,7 @@ public class TestRestController {
 				reqHttpEntity = new HttpEntity<>(lnsJson.getReqJsonData(), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						"http://localhost:18888/test"
+						this.projEnvUrlProperties.getLocalhost() + "/test"
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);

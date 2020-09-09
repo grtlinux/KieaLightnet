@@ -105,21 +105,47 @@ proj-env:
     
   json:
     name: default json   # not used
+
 ---
 # --------------------------------------------------------
+# virtual test
 spring.profiles: proj-local
 
 proj-env:
   json:
     name: local json
+  url:
+    lightnet: http://localhost:18888
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
 
 ---
 # --------------------------------------------------------
+# https://
 spring.profiles: proj-test
 
 proj-env:
   json:
     name: test json
+  url:
+    lightnet: https://test-public.lightnetapis.io
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+---
+# --------------------------------------------------------
+spring.profiles: proj-dfep
+
+proj-env:
+  json:
+    name: test json
+  url:
+    lightnet: http://test-hawis.lightnetapis.io
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
 
 ---
 # --------------------------------------------------------
@@ -128,7 +154,6 @@ spring.profiles: proj-real
 proj-env:
   json:
     name: real json
-
 
 
 

@@ -24,6 +24,7 @@ public class AuthRestController {
 
 	/*
 	 * curl -v -d '("clientId":"_TEST_", "secret":"_TEST_"}' -X POST http://localhost:18081/v1.0/auth | jq
+	 * curl -v -X POST http://localhost:18081/v1.0/auth | jq
 	 */
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {

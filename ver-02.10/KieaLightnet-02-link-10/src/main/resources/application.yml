@@ -114,29 +114,73 @@ proj-env:
     
   json:
     name: default json   # not used
+#---
+# --------------------------------------------------------
+#spring.profiles: proj-local
+#
+#proj-env:
+#  job:
+#    name: job variables
+#    #lightnet-url:
+#    #- https://test-public.lightnetapis.io
+#    #lightnet-start-idx: 0
+#    #auth-url: http://localhost:18081/v1.0/auth/auth
+#    #callback-url: http://localhost:18084/v1.0/callback/callback
+#    
+#  json:
+#    name: local json
+#  url:
+#    lightnet: http://localhost:18888
+#    auth: http://localhost:18081/v1.0
+#    link: http://localhost:18082/v1.0
+#    mapper: http://localhost:18086/v1.0
+
 ---
 # --------------------------------------------------------
+# virtual test
 spring.profiles: proj-local
 
 proj-env:
-  job:
-    name: job variables
-    lightnet-url:
-    - https://test-public.lightnetapis.io
-    #lightnet-start-idx: 0
-    #auth-url: http://localhost:18081/v1.0/auth/auth
-    #callback-url: http://localhost:18084/v1.0/callback/callback
-    
   json:
     name: local json
+  url:
+    localhost: http://localhost:18888
+    lightnet1: http://localhost:18888
+    lightnet11: http://localhost:18888
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
 
 ---
 # --------------------------------------------------------
+# https://
 spring.profiles: proj-test
 
 proj-env:
   json:
     name: test json
+  url:
+    localhost: http://localhost:18888
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+---
+# --------------------------------------------------------
+spring.profiles: proj-dfep
+
+proj-env:
+  json:
+    name: test json
+  url:
+    localhost: http://localhost:18888
+    lightnet1: http://test-hawis.lightnetapis.io/v1
+    lightnet11: http://test-hawis.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
 
 ---
 # --------------------------------------------------------
