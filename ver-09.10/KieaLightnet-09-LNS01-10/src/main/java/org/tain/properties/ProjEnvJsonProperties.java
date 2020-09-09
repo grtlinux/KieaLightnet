@@ -14,5 +14,7 @@ public class ProjEnvJsonProperties {
 
 	private String name;
 	
+	private String trxName;
+	
 	private Map<String,String> file;
 }
