@@ -33,6 +33,9 @@ public class ServerJob {
 	@Autowired
 	private LnsStreamPacketQueue lnsStreamPacketQueue;
 	
+	@Autowired
+	private TestProcess testProcess;
+	
 	@Async(value = "serverTask")
 	public void serverJob(String param) throws Exception {
 		log.info("KANG-20200908 >>>>> START param = {}, {}", param, CurrentInfo.get());
@@ -56,7 +59,7 @@ public class ServerJob {
 					// process
 					switch (reqLnsStream.getTypeCode()) {
 					case "0200991":  // test
-						resLnsStream = TestProcess.process(reqLnsStream);
+						resLnsStream = this.testProcess.process(reqLnsStream);
 						break;
 					default:
 						break;

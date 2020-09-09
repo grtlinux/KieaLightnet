@@ -1,12 +1,15 @@
 package org.tain.task.process;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.tain.object.lns.LnsJson;
 import org.tain.object.lns.LnsStream;
+import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -17,10 +20,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Component
 @Slf4j
 public class TestProcess {
 
-	public static LnsStream process(LnsStream reqLnsStream) throws Exception {
+	@Autowired
+	private ProjEnvUrlProperties projEnvUrlProperties;
+	
+	///////////////////////////////////////////////////////////////////////////
+	
+	public LnsStream process(LnsStream reqLnsStream) throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
 		LnsJson lnsJson = null;
@@ -64,7 +73,7 @@ public class TestProcess {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	public static LnsJson mapperReqStrToJson(LnsJson lnsJson) throws Exception {
+	public LnsJson mapperReqStrToJson(LnsJson lnsJson) throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -74,7 +83,7 @@ public class TestProcess {
 				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(lnsJson), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						"http://localhost:18086/v1.0/mapper/test/req/s2j"
+						this.projEnvUrlProperties.getMapper() + "/mapper/test/req/s2j"
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);
@@ -127,7 +136,7 @@ public class TestProcess {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	public static LnsJson mapperResJsonToStr(LnsJson lnsJson) throws Exception {
+	public LnsJson mapperResJsonToStr(LnsJson lnsJson) throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {

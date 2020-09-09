@@ -114,7 +114,9 @@ proj-env:
   json:
     name: local json
   url:
-    lightnet: http://localhost:18888
+    localhost: http://localhost:18888
+    lightnet1: http://localhost:18888
+    lightnet11: http://localhost:18888
     auth: http://localhost:18081/v1.0
     link: http://localhost:18082/v1.0
     mapper: http://localhost:18086/v1.0
@@ -128,7 +130,9 @@ proj-env:
   json:
     name: test json
   url:
-    lightnet: https://test-public.lightnetapis.io
+    localhost: http://localhost:18888
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
     auth: http://localhost:18081/v1.0
     link: http://localhost:18082/v1.0
     mapper: http://localhost:18086/v1.0
@@ -141,7 +145,9 @@ proj-env:
   json:
     name: test json
   url:
-    lightnet: http://test-hawis.lightnetapis.io
+    localhost: http://localhost:18888
+    lightnet1: http://test-hawis.lightnetapis.io/v1
+    lightnet11: http://test-hawis.lightnetapis.io/v1.1
     auth: http://localhost:18081/v1.0
     link: http://localhost:18082/v1.0
     mapper: http://localhost:18086/v1.0
