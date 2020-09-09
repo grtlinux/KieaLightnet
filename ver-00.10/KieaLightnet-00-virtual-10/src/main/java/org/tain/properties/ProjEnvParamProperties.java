@@ -15,7 +15,7 @@ public class ProjEnvParamProperties {
 	private String accessToken;
 	private String commitFile;
 	private String detailFile;
-	private String listFile;
 	private String list1File;
+	private String list11File;
 	private String validateFile;
 }

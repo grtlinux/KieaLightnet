@@ -95,8 +95,8 @@ proj-env:
     access-token:  12345678901234567890abcde
     commit-file:   /KANG/json/virtual/commit_res2.json
     detail-file:   /KANG/json/virtual/detail_res.json
-    list-file:     /KANG/json/virtual/list_res_v1.json
-    list1-file:    /KANG/json/virtual/list_res_v1.1.json
+    list1-file:     /KANG/json/virtual/list_res_v1.json
+    list11-file:    /KANG/json/virtual/list_res_v1.1.json
     validate-file: /KANG/json/virtual/validate_res2.json
 
   job:

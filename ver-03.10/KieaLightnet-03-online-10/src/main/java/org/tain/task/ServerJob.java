@@ -13,6 +13,7 @@ import org.tain.object.test.res._ResTestData;
 import org.tain.object.test.res._ResTestName;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
+import org.tain.task.process.List11Process;
 import org.tain.task.process.TestProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -32,6 +33,9 @@ public class ServerJob {
 	
 	@Autowired
 	private LnsStreamPacketQueue lnsStreamPacketQueue;
+	
+	@Autowired
+	private List11Process list11Process;
 	
 	@Autowired
 	private TestProcess testProcess;
@@ -58,6 +62,9 @@ public class ServerJob {
 					
 					// process
 					switch (reqLnsStream.getTypeCode()) {
+					case "0200701":  // list11
+						resLnsStream = this.list11Process.process(reqLnsStream);
+						break;
 					case "0200991":  // test
 						resLnsStream = this.testProcess.process(reqLnsStream);
 						break;

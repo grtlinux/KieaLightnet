@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import org.tain.object.list11.req._ReqList11Data;
+import org.tain.object.list11.res._ResList11Fep;
 import org.tain.object.lns.LnsStream;
 import org.tain.object.lns.LnsStreamPacket;
 import org.tain.object.test.req._ReqTestData;
@@ -73,6 +74,8 @@ public class ClientJob {
 		if (Flag.flag) {
 			// req
 			_ReqList11Data reqData = new _ReqList11Data();
+			JsonPrint.getInstance().printPrettyJson("REQ.reqData", reqData);
+			
 			String reqStream = TransferStrAndJson.getStream(reqData);
 			reqLnsStream = new LnsStream(String.format("%04d%7.7s%s", reqStream.length() + 7, "0200701", reqStream));
 			JsonPrint.getInstance().printPrettyJson("REQ.lnsStream", reqLnsStream);
@@ -84,7 +87,6 @@ public class ClientJob {
 		}
 		
 		////////////////////////////////////////////////////
-		/*
 		LnsStream resLnsStream = null;
 		if (Flag.flag) {
 			// recv
@@ -94,12 +96,11 @@ public class ClientJob {
 		
 		if (Flag.flag) {
 			// res
-			_ResTestData data = new _ResTestData();
+			_ResList11Fep resData = new _ResList11Fep();
 			TransferStrAndJson.subString = new SubString(resLnsStream.getContent());
-			data = (_ResTestData) TransferStrAndJson.getObject(data);
-			JsonPrint.getInstance().printPrettyJson("RES.data", data);
+			resData = (_ResList11Fep) TransferStrAndJson.getObject(resData);
+			JsonPrint.getInstance().printPrettyJson("RES.resData", resData);
 		}
-		*/
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
