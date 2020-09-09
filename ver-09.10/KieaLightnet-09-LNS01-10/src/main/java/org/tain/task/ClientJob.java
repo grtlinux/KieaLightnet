@@ -6,22 +6,14 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-import org.tain.object.list11.req._ReqList11Data;
-import org.tain.object.list11.res._ResList11Fep;
-import org.tain.object.lns.LnsStream;
-import org.tain.object.lns.LnsStreamPacket;
-import org.tain.object.test.req._ReqTestData;
-import org.tain.object.test.req._ReqTestName;
-import org.tain.object.test.res._ResTestData;
 import org.tain.properties.ProjEnvJsonProperties;
-import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeClientTaskQueue;
+import org.tain.task.process.CallbackProcess;
+import org.tain.task.process.List11Process;
+import org.tain.task.process.TestProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.JsonPrint;
 import org.tain.utils.Sleep;
-import org.tain.utils.SubString;
-import org.tain.utils.TransferStrAndJson;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,10 +25,20 @@ public class ClientJob {
 	private WakeClientTaskQueue wakeClientTaskQueue;
 	
 	@Autowired
-	private LnsStreamPacketQueue lnsStreamPacketQueue;
+	private ProjEnvJsonProperties projEnvJsonProperties;
+	
+	///////////////////////////////////////////////////////////////////////////
 	
 	@Autowired
-	private ProjEnvJsonProperties projEnvJsonProperties;
+	private TestProcess testProcess;
+	
+	@Autowired
+	private List11Process list11Process;
+	
+	@Autowired
+	private CallbackProcess callbackProcess;
+	
+	///////////////////////////////////////////////////////////////////////////
 	
 	@Async(value = "clientTask")
 	public void clientJob(String param) throws Exception {
@@ -44,121 +46,19 @@ public class ClientJob {
 		
 		switch (this.projEnvJsonProperties.getTrxName()) {
 		case "callback":
-			//this.callback();
+			this.callbackProcess.process();
 			break;
 		case "list11":
-			this.list11();
+			this.list11Process.process();
 			break;
 		case "test":
-			this.test();
+			this.testProcess.process();
 			break;
 		default:
 			break;
 		}
 		
 		log.info("KANG-20200907 >>>>> END   param = {}, {}", param, CurrentInfo.get());
-	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	
-	private void list11() throws Exception {
-		log.info("KANG-20200907 >>>>> {}", CurrentInfo.get());
-		
-		LnsStreamPacket lnsStreamPacket = null;
-		
-		if (Flag.flag) {
-			// get StreamPacket from queue
-			lnsStreamPacket = this.lnsStreamPacketQueue.get();  // blocking
-			log.info("KANG-20200907 >>>>> REMOTE_INFO = {}", lnsStreamPacket);
-		}
-		
-		////////////////////////////////////////////////////
-		LnsStream reqLnsStream = null;
-		if (Flag.flag) {
-			// req
-			_ReqList11Data reqData = new _ReqList11Data();
-			JsonPrint.getInstance().printPrettyJson("REQ.reqData", reqData);
-			
-			String reqStream = TransferStrAndJson.getStream(reqData);
-			reqLnsStream = new LnsStream(String.format("%04d%7.7s%s", reqStream.length() + 7, "0200701", reqStream));
-			JsonPrint.getInstance().printPrettyJson("REQ.lnsStream", reqLnsStream);
-		}
-		
-		if (Flag.flag) {
-			// send
-			lnsStreamPacket.sendStream(reqLnsStream);
-		}
-		
-		////////////////////////////////////////////////////
-		LnsStream resLnsStream = null;
-		if (Flag.flag) {
-			// recv
-			resLnsStream = lnsStreamPacket.recvStream();
-			JsonPrint.getInstance().printPrettyJson("RES.lnsStream", resLnsStream);
-		}
-		
-		if (Flag.flag) {
-			// res
-			_ResList11Fep resData = new _ResList11Fep();
-			TransferStrAndJson.subString = new SubString(resLnsStream.getContent());
-			resData = (_ResList11Fep) TransferStrAndJson.getObject(resData);
-			JsonPrint.getInstance().printPrettyJson("RES.resData", resData);
-		}
-	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	
-	private void test() throws Exception {
-		log.info("KANG-20200907 >>>>> {}", CurrentInfo.get());
-		
-		LnsStreamPacket lnsStreamPacket = null;
-		
-		if (Flag.flag) {
-			// get StreamPacket from queue
-			lnsStreamPacket = this.lnsStreamPacketQueue.get();  // blocking
-			log.info("KANG-20200907 >>>>> REMOTE_INFO = {}", lnsStreamPacket);
-		}
-		
-		////////////////////////////////////////////////////
-		LnsStream reqLnsStream = null;
-		if (Flag.flag) {
-			// req
-			_ReqTestName name = new _ReqTestName();
-			name.setFirstName("Seok");
-			name.setMiddleName("Kiea");
-			name.setLastName("Kang");
-			
-			_ReqTestData data = new _ReqTestData();
-			data.setTitle("REQ_TITLE");
-			data.setMessage("MESSAGE");
-			data.setName(name);
-			JsonPrint.getInstance().printPrettyJson("REQ.data", data);
-			
-			String reqStream = TransferStrAndJson.getStream(data);
-			reqLnsStream = new LnsStream(String.format("%04d%7.7s%s", reqStream.length() + 7, "0200991", reqStream));
-			JsonPrint.getInstance().printPrettyJson("REQ.lnsStream", reqLnsStream);
-		}
-		
-		if (Flag.flag) {
-			// send
-			lnsStreamPacket.sendStream(reqLnsStream);
-		}
-		
-		////////////////////////////////////////////////////
-		LnsStream resLnsStream = null;
-		if (Flag.flag) {
-			// recv
-			resLnsStream = lnsStreamPacket.recvStream();
-			JsonPrint.getInstance().printPrettyJson("RES.lnsStream", resLnsStream);
-		}
-		
-		if (Flag.flag) {
-			// res
-			_ResTestData data = new _ResTestData();
-			TransferStrAndJson.subString = new SubString(resLnsStream.getContent());
-			data = (_ResTestData) TransferStrAndJson.getObject(data);
-			JsonPrint.getInstance().printPrettyJson("RES.data", data);
-		}
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
