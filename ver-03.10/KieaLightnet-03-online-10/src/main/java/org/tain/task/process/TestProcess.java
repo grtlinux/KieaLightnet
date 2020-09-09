@@ -104,7 +104,7 @@ public class TestProcess {
 	}
 	///////////////////////////////////////////////////////////////////////////
 	
-	public static LnsJson httpLinkPost(LnsJson lnsJson) throws Exception {
+	public LnsJson httpLinkPost(LnsJson lnsJson) throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -114,7 +114,7 @@ public class TestProcess {
 				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(lnsJson), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						"http://localhost:18082/v1.0/link/test/get"
+						this.projEnvUrlProperties.getLink() + "/link/test/get"
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);
@@ -146,7 +146,7 @@ public class TestProcess {
 				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(lnsJson), reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						"http://localhost:18086/v1.0/mapper/test/res/j2s"
+						this.projEnvUrlProperties.getMapper() + "/mapper/test/res/j2s"
 						, HttpMethod.POST
 						, reqHttpEntity
 						, String.class);
