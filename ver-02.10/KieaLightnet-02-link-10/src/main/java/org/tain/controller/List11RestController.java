@@ -1,5 +1,8 @@
 package org.tain.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -12,6 +15,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 import org.tain.data.AccessToken;
 import org.tain.object.lns.LnsJson;
 import org.tain.properties.ProjEnvUrlProperties;
@@ -52,6 +57,22 @@ public class List11RestController {
 			accessToken = this.accessToken.get();
 		}
 		
+		UriComponents builder = null;
+		if (Flag.flag) {
+			try {
+				MultiValueMap<String, String> reqMap = new LinkedMultiValueMap<>();
+				Map<String,String> map = new HashMap<>();
+				map.put("limit", "20");
+				reqMap.setAll(map);
+				
+				builder = UriComponentsBuilder.fromHttpUrl(this.projEnvUrlProperties.getLightnet11() + "/remittances")
+						.queryParams(reqMap)
+						.build(true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		LnsJson lnsJson = null;
 		if (Flag.flag) {
 			try {
@@ -60,13 +81,15 @@ public class List11RestController {
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
 				reqHeaders.set("Authorization", "Bearer " + accessToken);  // accessToken
-				reqHttpEntity = new HttpEntity<>(lnsJson.getReqJsonData(), reqHeaders);
+				//reqHttpEntity = new HttpEntity<>(lnsJson.getReqJsonData(), reqHeaders);
+				reqHttpEntity = new HttpEntity<>(reqHeaders);
 				
 				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						this.projEnvUrlProperties.getLocalhost() + "/list11"
+						builder.toString()
 						//this.projEnvUrlProperties.getLocalhost() + "/list11"
-						, HttpMethod.POST
-						//, HttpMethod.GET
+						//this.projEnvUrlProperties.getLocalhost() + "/list11"
+						//, HttpMethod.POST
+						, HttpMethod.GET
 						, reqHttpEntity
 						, String.class);
 				
