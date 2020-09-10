@@ -1,4 +1,4 @@
-package org.tain.object.commit.req;
+package org.tain.object.detail.req;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -11,9 +11,14 @@ import lombok.Data;
 //@JsonIgnoreProperties(value = {"idLong", "idInt"})  // to the below
 @JsonIgnoreProperties(ignoreUnknown = true)
 //@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
-public class _ReqCommitData {
+public class _ReqDetailData {
 
 	@StreamAnnotation(length = 20)
-	@JsonProperty(value = "transactionId")
-	private String transactionId = "62bbb4b8-fe03-40d2-6f30-92baf54da82d";
+	@JsonProperty(value = "name")
+	private String sourceCountry = "KOR";
+	private String destinationCountry = "KHM";
+	private String destinationOperatorCode = "lyhour";
+	private String withDrawableAmount = "1.500";
+	private String transactionCurrency = "USD";
+	private String deliveryMethod = "cash";
 }

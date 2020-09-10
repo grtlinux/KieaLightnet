@@ -14,6 +14,30 @@ import lombok.Data;
 public class _ReqValidateData {
 
 	@StreamAnnotation(length = 20)
-	@JsonProperty(value = "name")
-	private String name = "Hello, world";
+	@JsonProperty(value = "deliveryMethod")
+	private String deliveryMethod = "Hello, world";
+	
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "remark")
+	private String remark = "Hello, world";
+	
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "saveReport")
+	private String saveReport = "Hello, world";
+	
+	@StreamAnnotation
+	@JsonProperty(value = "receiver")
+	private _ReqValidateReceiver receiver = new _ReqValidateReceiver();
+	
+	@StreamAnnotation
+	@JsonProperty(value = "sender")
+	private _ReqValidateSender sender = new _ReqValidateSender();
+	
+	@StreamAnnotation
+	@JsonProperty(value = "destination")
+	private _ReqValidateDestination destination = new _ReqValidateDestination();
+	
+	@StreamAnnotation
+	@JsonProperty(value = "source")
+	private _ReqValidateSource source = new _ReqValidateSource();
 }

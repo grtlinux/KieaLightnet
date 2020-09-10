@@ -14,6 +14,14 @@ import lombok.Data;
 public class _ResCommitData {
 
 	@StreamAnnotation(length = 20)
-	@JsonProperty(value = "name")
-	private String name = "Hello, world";
+	@JsonProperty(value = "status")
+	private String status = "success";
+	
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "message")
+	private String message = "OK";
+	
+	@StreamAnnotation
+	@JsonProperty(value = "data")
+	private _ResCommitSubData data = new _ResCommitSubData();
 }
