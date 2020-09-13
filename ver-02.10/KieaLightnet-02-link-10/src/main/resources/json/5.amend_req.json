@@ -1,0 +1,10 @@
+{
+    "terminalName": "TestTerminalName",
+    "receiver": {
+        "firstName": "TestFirstName",
+        "lastName": "TestLastName",
+        "secondLastName": "TestSecondLastName",
+        "middleName": "TestMiddleName"
+    },
+    "transactionId": "4324682635157306"
+}

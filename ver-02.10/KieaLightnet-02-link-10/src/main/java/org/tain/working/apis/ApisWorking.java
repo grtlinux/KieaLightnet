@@ -13,6 +13,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
+import org.tain.object.amend.req._ReqAmendData;
 import org.tain.object.auth.AuthReqJson;
 import org.tain.object.auth.req._ReqAuthData;
 import org.tain.object.commit.req._ReqCommitData;
@@ -21,6 +22,7 @@ import org.tain.object.detail.DetailReqJson;
 import org.tain.object.detail.req._ReqDetailData;
 import org.tain.object.histories.HistoriesReqJson;
 import org.tain.object.histories.req._ReqHistoriesData;
+import org.tain.object.refund.req._ReqRefundData;
 import org.tain.object.validate.ValidateReqJson;
 import org.tain.object.validate.req._ReqValidateData;
 import org.tain.properties.ProjEnvJobProperties;
@@ -351,7 +353,7 @@ public class ApisWorking {
 			
 			String reqJson = null;
 			if (Flag.flag) {
-				_ReqCommitData reqData = new _ReqCommitData();
+				_ReqAmendData reqData = new _ReqAmendData();
 				reqData.setTransactionId(this.transactionId);
 				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
 				//reqJson = ValidateReqJson.get_20200913();
@@ -360,7 +362,7 @@ public class ApisWorking {
 			
 			String httpUrl = null;
 			if (Flag.flag) {
-				httpUrl = this.projEnvUrlProperties.getLightnet11() + "/remittances.commit";
+				httpUrl = this.projEnvUrlProperties.getLightnet11() + "/remittances.amend";
 				log.info(">>>>> httpUrl              = {}", httpUrl);
 			}
 			
@@ -405,7 +407,7 @@ public class ApisWorking {
 			
 			String reqJson = null;
 			if (Flag.flag) {
-				_ReqCommitData reqData = new _ReqCommitData();
+				_ReqRefundData reqData = new _ReqRefundData();
 				reqData.setTransactionId(this.transactionId);
 				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
 				//reqJson = ValidateReqJson.get_20200913();
@@ -414,7 +416,7 @@ public class ApisWorking {
 			
 			String httpUrl = null;
 			if (Flag.flag) {
-				httpUrl = this.projEnvUrlProperties.getLightnet11() + "/remittances.commit";
+				httpUrl = this.projEnvUrlProperties.getLightnet11() + "/remittances.refund";
 				log.info(">>>>> httpUrl              = {}", httpUrl);
 			}
 			
