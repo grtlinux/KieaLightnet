@@ -1,12 +1,12 @@
-destinationCountry         : IDN
-//withdrawalId             : 82409098
-destinationOperatorCode    : mgi
-//terminalName             : terminalName
-//deliveryMethod           : cash
-destinationReceiveAmount   : 1000
-destinationReceiveCurrency : IDR
 sourceCountry              : KOR
 sourceSendCurrency         : THB
+destinationCountry         : IDN
+destinationReceiveAmount   : 1000
+destinationReceiveCurrency : IDR
+destinationOperatorCode    : mgi
+//withdrawalId             : 82409098
+//terminalName             : terminalName
+//deliveryMethod           : cash
 
 
 https://test-public.lightnetapis.io/v1.1/remittances.detail?destinationCountry=IDN&destinationOperatorCode=mgi&destinationReceiveAmount=1000&destinationReceiveCurrency=IDR&sourceCountry=KOR&sourceSendCurrency=THB
