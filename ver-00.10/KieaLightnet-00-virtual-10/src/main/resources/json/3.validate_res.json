@@ -38,38 +38,45 @@
             }
         },
         "sender": {
-            "lastName": "senderLastName",
-            "secondLastName": "senderSecondLastName",
-            "address": {
-                "city": "Bangkok",
-                "postalCode": "10400",
-                "line1": "Temp address"
-            },
             "idType": "GOV",
-            "purpose": "PURCHASE_GOODS",
-            "birthCountryCode": "THA",
-            "homePhone": {
-                "number": "45645645666",
-                "countryCode": "66"
-            },
             "idCountryCode": "MYS",
             "idNumber": "P83245384",
+
+            "dob": "1992-03-23",
+            "purpose": "PURCHASE_GOODS",
+            "birthCountryCode": "THA",
+            "relationshipToReceiver": "BUSINESS_PARTNER",
+            "citizenshipCountryCode": "THA",
+            "email": "senderEmail@test.com",
+
             "firstName": "IQLZSO",
+            "middleName": "senderMiddleName",
+            "lastName": "senderLastName",
+            "secondLastName": "senderSecondLastName",
+
             "notification": {
                 "marketingSMSOptIn": false,
                 "transactionSMSOptIn": false,
                 "transactionEmailOptIn": false,
                 "marketingEmailOptIn": false
             },
-            "dob": "1992-03-23",
-            "relationshipToReceiver": "BUSINESS_PARTNER",
-            "middleName": "senderMiddleName",
-            "citizenshipCountryCode": "THA",
-            "email": "senderEmail@test.com"
+            "address": {
+                "city": "Bangkok",
+                "postalCode": "10400",
+                "line1": "Temp address"
+            },
+            "homePhone": {
+                "number": "45645645666",
+                "countryCode": "66"
+            }
         },
         "receiver": {
+            "accountNumber": "MG-0012345",
+            "email": "receiverEmail@test.com",
+
             "firstName": "receiverFirstName",
             "lastName": "receiverLastName",
+
             "notification": {
                 "transactionSMSOptIn": false,
                 "transactionEmailOptIn": false
@@ -81,9 +88,7 @@
             "phone": {
                 "number": "345364566",
                 "countryCode": "33"
-            },
-            "accountNumber": "MG-0012345",
-            "email": "receiverEmail@test.com"
+            }
         },
         "status": "PENDING",
         "remittanceType": "MESSAGING",
