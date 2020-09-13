@@ -11,11 +11,15 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class _ReqCustomersData {
 
-	@StreamAnnotation(length = 40)
-	@JsonProperty(value = "clientId")
-	private String clientId;
+	@StreamAnnotation(length = 10)
+	@JsonProperty(value = "destinationOperatorCode")
+	private String destinationOperatorCode;
 
-	@StreamAnnotation(length = 100)
-	@JsonProperty(value = "secret")
-	private String secret;
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "senderHomePhone")
+	private String senderHomePhone;
+
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "senderCardNumber")
+	private String senderCardNumber;
 }

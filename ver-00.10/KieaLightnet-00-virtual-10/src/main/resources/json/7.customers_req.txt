@@ -1,6 +1,5 @@
 destinationOperatorCode:mgi
 senderHomePhone:120987654321
-
+senderCardNumber:204515304846
 
 https://test-public.lightnetapis.io/v1.1/remittances/customers?destinationOperatorCode=mgi&senderHomePhone=120987654321
-
