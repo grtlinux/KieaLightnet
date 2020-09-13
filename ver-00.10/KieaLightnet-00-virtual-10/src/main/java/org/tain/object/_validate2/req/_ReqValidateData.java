@@ -1,4 +1,4 @@
-package org.tain.object.validate.req;
+package org.tain.object._validate2.req;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -15,20 +15,15 @@ public class _ReqValidateData {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "deliveryMethod")
-	private String deliveryMethod = "cash";
+	private String deliveryMethod = "Hello, world";
 	
-	@StreamAnnotation(length = 50)
+	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "remark")
-	private String remark = "This is MGI test remark";
+	private String remark = "Hello, world";
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "saveReport")
-	private String saveReport;
-	
-	// TODO: issue for meeting
-	@StreamAnnotation(length = 20)
-	@JsonProperty(value = "promotionCodes")
-	private String[] promotionCodes;
+	private String saveReport = "Hello, world";
 	
 	@StreamAnnotation
 	@JsonProperty(value = "receiver")
