@@ -1,5 +1,8 @@
 package org.tain.object.histories.res;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.tain.annotation.StreamAnnotation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -19,7 +22,10 @@ public class _ResHistoriesData {
 	@JsonProperty(value = "message")
 	private String message;
 	
-	@StreamAnnotation(length = 40)
-	@JsonProperty(value = "accessToken")
-	private String accessToken;
+	@JsonProperty(value = "_metadata")
+	private _ResHistoriesMetadata metadata;
+	
+	@StreamAnnotation
+	@JsonProperty(value = "data")
+	private List<_ResHistoriesSubData> data = new ArrayList<>();
 }

@@ -11,11 +11,19 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class _ReqHistoriesData {
 
-	@StreamAnnotation(length = 40)
-	@JsonProperty(value = "clientId")
-	private String clientId;
+	@StreamAnnotation(length = 50)
+	@JsonProperty(value = "from")
+	private String from;
 
-	@StreamAnnotation(length = 100)
-	@JsonProperty(value = "secret")
-	private String secret;
+	@StreamAnnotation(length = 50)
+	@JsonProperty(value = "to")
+	private String to;
+	
+	@StreamAnnotation(length = 5)
+	@JsonProperty(value = "offset")
+	private int offset;
+
+	@StreamAnnotation(length = 5)
+	@JsonProperty(value = "limit")
+	private int limit;
 }

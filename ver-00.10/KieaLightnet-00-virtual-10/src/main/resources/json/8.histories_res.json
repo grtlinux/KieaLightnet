@@ -47,34 +47,37 @@
                 }
             },
             "sender": {
-                "address": {
-                    "city": "Bangkok",
-                    "line1": "Temp address",
-                    "postalCode": "10400"
-                },
-                "birthCountryCode": "THA",
-                "citizenshipCountryCode": "THA",
-                "dob": "1992-03-23",
-                "email": "senderEmail@test.com",
-                "firstName": "IQLZSO",
-                "homePhone": {
-                    "countryCode": "66",
-                    "number": "45645645666"
-                },
+                "idType": "GOV",
                 "idCountryCode": "MYS",
                 "idNumber": "P83245384",
-                "idType": "GOV",
-                "lastName": "senderLastName",
+
+                "dob": "1992-03-23",
+                "purpose": "PURCHASE_GOODS",
+                "birthCountryCode": "THA",
+                "relationshipToReceiver": "BUSINESS_PARTNER",
+                "citizenshipCountryCode": "THA",
+                
+                "email": "senderEmail@test.com",
+                "firstName": "IQLZSO",
                 "middleName": "senderMiddleName",
+                "lastName": "senderLastName",
+                "secondLastName": "senderSecondLastName",
+
                 "notification": {
                     "marketingEmailOptIn": false,
                     "marketingSMSOptIn": false,
                     "transactionEmailOptIn": false,
                     "transactionSMSOptIn": false
                 },
-                "purpose": "PURCHASE_GOODS",
-                "relationshipToReceiver": "BUSINESS_PARTNER",
-                "secondLastName": "senderSecondLastName"
+                "address": {
+                    "city": "Bangkok",
+                    "line1": "Temp address",
+                    "postalCode": "10400"
+                },
+                "homePhone": {
+                    "countryCode": "66",
+                    "number": "45645645666"
+                }
             },
             "receiver": {
                 "accountNumber": "MG-0012345",
