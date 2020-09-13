@@ -1,4 +1,4 @@
-package org.tain.object.auth.res;
+package org.tain.object.customers.res;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ResAuthData {
+public class _ResCustomersData {
 
 	@StreamAnnotation(length = 50)
 	@JsonProperty(value = "status")

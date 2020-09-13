@@ -1,4 +1,4 @@
-package org.tain.object.auth.req;
+package org.tain.object.histories.req;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ReqAuthData {
+public class _ReqHistoriesData {
 
 	@StreamAnnotation(length = 40)
 	@JsonProperty(value = "clientId")

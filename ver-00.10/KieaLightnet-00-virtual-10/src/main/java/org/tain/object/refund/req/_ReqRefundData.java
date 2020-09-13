@@ -1,4 +1,4 @@
-package org.tain.object.auth.req;
+package org.tain.object.refund.req;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ReqAuthData {
+public class _ReqRefundData {
 
 	@StreamAnnotation(length = 40)
 	@JsonProperty(value = "clientId")

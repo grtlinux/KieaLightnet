@@ -1,8 +1,14 @@
-package org.tain.object.validate.req;
+package org.tain.object._list.res;
 
 import org.tain.annotation.StreamAnnotation;
 
-public class _ReqValidateDestination {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Getter;
+
+@Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class _Destination {
 
 	@StreamAnnotation(length = 20)
 	private String transactionId;
@@ -14,7 +20,7 @@ public class _ReqValidateDestination {
 	private String country;
 	
 	@StreamAnnotation
-	private _ReqValidateMoney receive = new _ReqValidateMoney();
+	private _Money receive = new _Money();
 	
 	@StreamAnnotation(length = 10)
 	private String withdrawalId;

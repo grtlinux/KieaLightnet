@@ -4,10 +4,12 @@ import org.tain.annotation.StreamAnnotation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
+//@JsonIgnoreProperties(value = {"idLong", "idInt"})  // to the below
 @JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class _Dummy {
 
 	@StreamAnnotation(length = 30)
