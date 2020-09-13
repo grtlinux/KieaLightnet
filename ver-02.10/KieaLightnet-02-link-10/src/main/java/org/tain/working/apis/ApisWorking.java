@@ -13,8 +13,15 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
+import org.tain.object.auth.AuthReqJson;
 import org.tain.object.auth.req._ReqAuthData;
+import org.tain.object.commit.req._ReqCommitData;
+import org.tain.object.detail.DetailReqJson;
 import org.tain.object.detail.req._ReqDetailData;
+import org.tain.object.histories.HistoriesReqJson;
+import org.tain.object.histories.req._ReqHistoriesData;
+import org.tain.object.validate.ValidateReqJson;
+import org.tain.object.validate.req._ReqValidateData;
 import org.tain.properties.ProjEnvJobProperties;
 import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
@@ -40,6 +47,7 @@ public class ApisWorking {
 	private ProjEnvUrlProperties projEnvUrlProperties;
 	
 	private String accessToken;
+	private String transactionId;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -53,6 +61,19 @@ public class ApisWorking {
 		case "detail":
 			this.auth();
 			this.detail();
+			break;
+		case "validate":
+			this.auth();
+			this.validate();
+			break;
+		case "commit":
+			this.auth();
+			this.validate();
+			this.commit();
+			break;
+		case "histories":
+			this.auth();
+			this.histories();
 			break;
 		default:
 			this.auth();
@@ -75,15 +96,16 @@ public class ApisWorking {
 			Map<String,String> reqMap = null;
 			String reqJson = null;
 			if (Flag.flag) {
-				_ReqAuthData reqAuthData = new _ReqAuthData();
-				reqAuthData.setClientId(this.projEnvJobProperties.getAuthClientId());
-				reqAuthData.setSecret(this.projEnvJobProperties.getAuthSecret());
-				log.info(">>>>> REQ.reqJson of req~Data  = {}", JsonPrint.getInstance().toPrettyJson(reqAuthData));
-				reqJson = JsonPrint.getInstance().toJson(reqAuthData);
+				_ReqAuthData reqData = new _ReqAuthData();
+				reqData.setClientId(this.projEnvJobProperties.getAuthClientId());
+				reqData.setSecret(this.projEnvJobProperties.getAuthSecret());
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
+				reqJson = AuthReqJson.get_20200913();
+				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
 				
 				reqMap = new ObjectMapper().readValue(reqJson, new TypeReference<Map<String,String>>(){});
-				log.info(">>>>> REQ.reqJson of reqMap  = {}", JsonPrint.getInstance().toPrettyJson(reqMap));
-				reqJson = JsonPrint.getInstance().toJson(reqMap);
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqMap);
+				log.info(">>>>> REQ.reqJson of reqMap  = {}", reqJson);
 			}
 			
 			String httpUrl = null;
@@ -109,9 +131,11 @@ public class ApisWorking {
 					log.info(">>>>> getStatusCodeValue() = {}", response.getStatusCodeValue());
 					log.info(">>>>> getStatusCode()      = {}", response.getStatusCode());
 					log.info(">>>>> getBody()            = {}", response.getBody());
-					log.info(">>>>> this.accessToken     = {}", this.accessToken);
+					
+					log.info(">>>>> accessToken          = {}", this.accessToken);
 				} catch (Exception e) {
 					e.printStackTrace();
+					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
 			
@@ -132,13 +156,14 @@ public class ApisWorking {
 			Map<String,String> reqMap = null;
 			String reqJson = null;
 			if (Flag.flag) {
-				_ReqDetailData reqDetailData = new _ReqDetailData();
-				reqJson = JsonPrint.getInstance().toJson(reqDetailData);
-				log.info(">>>>> REQ.reqJson of req~Data  = {}", JsonPrint.getInstance().toPrettyJson(reqDetailData));
+				_ReqDetailData reqData = new _ReqDetailData();
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
+				reqJson = DetailReqJson.get_20200913();
+				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
 				
 				reqMap = new ObjectMapper().readValue(reqJson, new TypeReference<Map<String,String>>(){});
-				log.info(">>>>> REQ.reqJson of reqMap  = {}", JsonPrint.getInstance().toPrettyJson(reqMap));
-				reqJson = JsonPrint.getInstance().toJson(reqMap);
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqMap);
+				log.info(">>>>> REQ.reqJson of reqMap  = {}", reqJson);
 			}
 			
 			String httpUrl = null;
@@ -162,7 +187,7 @@ public class ApisWorking {
 				try {
 					HttpHeaders reqHeaders = new HttpHeaders();
 					reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-					reqHeaders.set("Authorization", "Bearer " + accessToken);  // accessToken
+					reqHeaders.set("Authorization", "Bearer " + accessToken);
 					HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqHeaders);
 					
 					ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
@@ -177,9 +202,188 @@ public class ApisWorking {
 					
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
-					
 				} catch (Exception e) {
 					e.printStackTrace();
+					log.error("ERROR >>>>> {}", e.getMessage());
+				}
+			}
+			
+			log.info("===============================================================");
+		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	private void validate() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			log.info("================== START: 3. validate(POST) =============");
+			
+			String reqJson = null;
+			if (Flag.flag) {
+				_ReqValidateData reqData = new _ReqValidateData();
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
+				reqJson = ValidateReqJson.get_20200913();
+				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
+			}
+			
+			String httpUrl = null;
+			if (Flag.flag) {
+				httpUrl = this.projEnvUrlProperties.getLightnet11() + "/remittances.validate";
+				log.info(">>>>> httpUrl              = {}", httpUrl);
+			}
+			
+			if (Flag.flag) {
+				try {
+					HttpHeaders reqHeaders = new HttpHeaders();
+					reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+					reqHeaders.set("Authorization", "Bearer " + accessToken);
+					HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+					
+					ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+							httpUrl
+							, HttpMethod.POST
+							, reqHttpEntity
+							, String.class);
+					
+					log.info(">>>>> getStatusCodeValue() = {}", response.getStatusCodeValue());
+					log.info(">>>>> getStatusCode()      = {}", response.getStatusCode());
+					log.info(">>>>> getBody()            = {}", response.getBody());
+					
+					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
+					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
+					
+					this.transactionId = jsonNode.at("/data/transactionId").asText();
+					log.info(">>>>> transactionId        = {}", this.transactionId);
+				} catch (Exception e) {
+					e.printStackTrace();
+					log.error("ERROR >>>>> {}", e.getMessage());
+				}
+			}
+			
+			log.info("===============================================================");
+		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	private void commit() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			log.info("================== START: 4. commit(POST) ===============");
+			
+			String reqJson = null;
+			if (Flag.flag) {
+				_ReqCommitData reqData = new _ReqCommitData();
+				reqData.setTransactionId(this.transactionId);
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
+				//reqJson = ValidateReqJson.get_20200913();
+				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
+			}
+			
+			String httpUrl = null;
+			if (Flag.flag) {
+				httpUrl = this.projEnvUrlProperties.getLightnet11() + "/remittances.commit";
+				log.info(">>>>> httpUrl              = {}", httpUrl);
+			}
+			
+			if (Flag.flag) {
+				try {
+					HttpHeaders reqHeaders = new HttpHeaders();
+					reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+					reqHeaders.set("Authorization", "Bearer " + accessToken);
+					HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+					
+					ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+							httpUrl
+							, HttpMethod.POST
+							, reqHttpEntity
+							, String.class);
+					
+					log.info(">>>>> getStatusCodeValue() = {}", response.getStatusCodeValue());
+					log.info(">>>>> getStatusCode()      = {}", response.getStatusCode());
+					log.info(">>>>> getBody()            = {}", response.getBody());
+					
+					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
+					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
+				} catch (Exception e) {
+					e.printStackTrace();
+					log.error("ERROR >>>>> {}", e.getMessage());
+				}
+			}
+			
+			log.info("===============================================================");
+		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	private void histories() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			log.info("================== START: 8. histories(GET) ===========");
+			
+			Map<String,String> reqMap = null;
+			String reqJson = null;
+			if (Flag.flag) {
+				_ReqHistoriesData reqData = new _ReqHistoriesData();
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
+				reqJson = HistoriesReqJson.get_20200913();
+				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
+				
+				reqMap = new ObjectMapper().readValue(reqJson, new TypeReference<Map<String,String>>(){});
+				reqJson = JsonPrint.getInstance().toPrettyJson(reqMap);
+				log.info(">>>>> REQ.reqJson of reqMap  = {}", reqJson);
+			}
+			
+			String httpUrl = null;
+			if (Flag.flag) {
+				httpUrl = this.projEnvUrlProperties.getLightnet11() + "/remittances";
+				log.info(">>>>> httpUrl              = {}", httpUrl);
+			}
+			
+			UriComponents builder = null;
+			if (Flag.flag) {
+				MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+				map.setAll(reqMap);
+				
+				builder = UriComponentsBuilder.fromHttpUrl(httpUrl)
+						.queryParams(map)
+						.build(true);
+				log.info(">>>>> builder.toString     = {}", builder.toString());
+			}
+			
+			if (Flag.flag) {
+				try {
+					HttpHeaders reqHeaders = new HttpHeaders();
+					reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+					reqHeaders.set("Authorization", "Bearer " + accessToken);
+					HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqHeaders);
+					
+					ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+							builder.toString()
+							, HttpMethod.GET
+							, reqHttpEntity
+							, String.class);
+					
+					log.info(">>>>> getStatusCodeValue() = {}", response.getStatusCodeValue());
+					log.info(">>>>> getStatusCode()      = {}", response.getStatusCode());
+					log.info(">>>>> getBody()            = {}", response.getBody());
+					
+					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
+					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
+				} catch (Exception e) {
+					e.printStackTrace();
+					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
 			
