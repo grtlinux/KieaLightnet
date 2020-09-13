@@ -11,11 +11,15 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class _ReqAmendData {
 
-	@StreamAnnotation(length = 40)
-	@JsonProperty(value = "clientId")
-	private String clientId;
+	@StreamAnnotation(length = 30)
+	@JsonProperty(value = "terminalName")
+	private String terminalName = "TestTerminalName";
 
-	@StreamAnnotation(length = 100)
-	@JsonProperty(value = "secret")
-	private String secret;
+	@StreamAnnotation(length = 50)
+	@JsonProperty(value = "transactionId")
+	private String transactionId = "4324682635157306";
+	
+	@StreamAnnotation
+	@JsonProperty(value = "receiver")
+	private _ReqAmendReceiver receiver = new _ReqAmendReceiver();
 }
