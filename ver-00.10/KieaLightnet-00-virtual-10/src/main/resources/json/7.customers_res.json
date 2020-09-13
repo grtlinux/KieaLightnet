@@ -3,31 +3,33 @@
     "message": "OK",
     "data": [
         {
+            "birthCountryCode": "THA",
+            "dob": "1992-03-23",
+            "firstName": "oneSenderFirstName",
+            "lastName": "sqsssenderLastName",
             "address": {
                 "city": "Bangkok",
                 "countryCode": "THA",
                 "line1": "Temp address",
                 "postalCode": "10400"
             },
-            "birthCountryCode": "THA",
-            "dob": "1992-03-23",
-            "firstName": "oneSenderFirstName",
             "homePhone": {
                 "number": "120987654321"
             },
-            "lastName": "sqsssenderLastName",
             "receiver": [
                 {
                     "deliveryMethod": "cash",
+                    "payoutCurrency": "IDR",
+
+                    "firstName": "RECEIVER",
+                    "lastName": "ONEELEVENRECEIVERLAST",
+
                     "destination": {
                         "country": "IDN",
                         "transaction": {
                             "currency": "IDR"
                         }
                     },
-                    "firstName": "RECEIVER",
-                    "lastName": "ONEELEVENRECEIVERLAST",
-                    "payoutCurrency": "IDR",
                     "source": {
                         "transaction": {
                             "amount": "100",
