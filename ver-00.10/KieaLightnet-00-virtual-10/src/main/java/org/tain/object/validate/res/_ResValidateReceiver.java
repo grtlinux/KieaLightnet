@@ -2,29 +2,45 @@ package org.tain.object.validate.res;
 
 import org.tain.annotation.StreamAnnotation;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Data;
-
-@Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class _ResValidateReceiver {
 
-	@StreamAnnotation(length = 35)
-	private String accountId;
+	@StreamAnnotation(length = 40)
+	@JsonProperty(value = "accountNumber")
+	private String accountNumber;
 	
-	@StreamAnnotation(length = 11)
-	private String bankCode;
+	@StreamAnnotation(length = 30)
+	@JsonProperty(value = "email")
+	private String email;
 	
-	@StreamAnnotation(length = 80)
+	
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "firstName")
 	private String firstName;
 	
-	@StreamAnnotation(length = 80)
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "middleName")
+	private String middleName;
+	
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "lastName")
 	private String lastName;
 	
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "secondLastName")
+	private String secondLastName;
+	
+	
 	@StreamAnnotation
+	@JsonProperty(value = "notification")
+	private _ResValidateNotification notification = new _ResValidateNotification();
+	
+	@StreamAnnotation
+	@JsonProperty(value = "address")
 	private _ResValidateAddress address = new _ResValidateAddress();
 	
 	@StreamAnnotation
-	private _ResValidateMobilePhone mobilePhone = new _ResValidateMobilePhone();
+	@JsonProperty(value = "phone")
+	private _ResValidatePhone phone = new _ResValidatePhone();
 }
