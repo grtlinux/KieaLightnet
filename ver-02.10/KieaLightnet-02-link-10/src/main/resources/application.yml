@@ -12,7 +12,8 @@ spring:
   profiles.active:
   - proj-default
   - proj-local
-  #- proj-test
+  - proj-test
+  #- proj-dfep
   #- proj-real
   h2.console:
     enabled: true
@@ -111,6 +112,13 @@ proj-env:
     lightnet-start-idx: 0
     auth-url: http://localhost:18081/v1.0/auth/auth
     callback-url: http://localhost:18084/v1.0/callback/callback
+    
+    # 1.Authentication
+    transaction: validate      # auth, detail
+    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
+    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
+    auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
+    auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
     
   json:
     name: default json   # not used

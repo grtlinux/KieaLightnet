@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.data.AccessToken;
-import org.tain.object.callback.res._ResCallbackData;
+import org.tain.object._callback2.res._ResCallbackData;
 import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;

@@ -17,5 +17,9 @@ public class ProjEnvJobProperties {
 	private String authUrl;
 	private String callbackUrl;
 	
+	private String transaction;
+	private String authClientId;
+	private String authSecret;
+	
 	private String dummy;
 }

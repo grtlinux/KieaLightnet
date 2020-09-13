@@ -11,6 +11,7 @@ import org.tain.utils.Flag;
 import org.tain.utils.LnsTimeZone;
 import org.tain.working.accessToken.AccessTokenWorking;
 import org.tain.working.annotation.AnnotationWorking;
+import org.tain.working.apis.ApisWorking;
 import org.tain.working.async.AsyncWorking;
 import org.tain.working.properties.PropertiesWorking;
 
@@ -36,8 +37,8 @@ public class KieaLightnet02Link10Application implements CommandLineRunner {
 		if (Flag.flag) job01();  // properties
 		if (!Flag.flag) job02();  // async
 		if (!Flag.flag) job03();  // annotation
-		if (Flag.flag) job04();  // accessToken
-		if (Flag.flag) job05();
+		if (!Flag.flag) job04();  // accessToken
+		if (Flag.flag) job05();  // apis
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -96,8 +97,12 @@ public class KieaLightnet02Link10Application implements CommandLineRunner {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job05() {
+	@Autowired
+	private ApisWorking apisWorking;
+	
+	private void job05() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
+		if (Flag.flag) this.apisWorking.transaction();
 	}
 }
