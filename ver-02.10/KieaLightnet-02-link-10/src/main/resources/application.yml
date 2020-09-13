@@ -120,8 +120,8 @@ proj-env:
     #transaction: commit      # 4. commit
     #transaction: amend       # 5. amend
     #transaction: refund      # 6. refund
-    #transaction: customers   # 7. customers
-    transaction: histories   # 8. histories
+    transaction: customers   # 7. customers
+    #transaction: histories   # 8. histories
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
     auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
