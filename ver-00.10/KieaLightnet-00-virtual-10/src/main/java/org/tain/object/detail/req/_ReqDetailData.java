@@ -41,13 +41,13 @@ public class _ReqDetailData {
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "withdrawalId")
-	private String withdrawalId = "82409098";
+	private String withdrawalId;  //  = "82409098";
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "terminalName")
-	private String terminalName = "terminalName";
+	private String terminalName;  //  = "terminalName";
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "deliveryMethod")
-	private String deliveryMethod = "cash";
+	private String deliveryMethod;  //  = "cash";
 }
