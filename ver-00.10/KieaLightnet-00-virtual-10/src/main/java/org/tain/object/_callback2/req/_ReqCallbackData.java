@@ -1,4 +1,4 @@
-package org.tain.object._callback.req;
+package org.tain.object._callback2.req;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
