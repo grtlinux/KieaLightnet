@@ -153,7 +153,7 @@ public class ApisWorking {
 					
 					log.info(">>>>> accessToken          = {}", this.accessToken);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
@@ -222,7 +222,7 @@ public class ApisWorking {
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
@@ -278,7 +278,7 @@ public class ApisWorking {
 					this.transactionId = jsonNode.at("/data/transactionId").asText();
 					log.info(">>>>> transactionId        = {}", this.transactionId);
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
@@ -332,7 +332,7 @@ public class ApisWorking {
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
@@ -386,7 +386,7 @@ public class ApisWorking {
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
@@ -440,7 +440,7 @@ public class ApisWorking {
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
@@ -578,7 +578,7 @@ public class ApisWorking {
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
 				} catch (Exception e) {
-					e.printStackTrace();
+					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
 				}
 			}
