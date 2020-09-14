@@ -751,7 +751,7 @@ public class ApisWorking {
 			log.info("================== START: 7. customers(GET) ===========");
 			
 			String httpPath = "/remittances/customers";
-			//httpPath = "/remittances.customers-lookup";
+			httpPath = "/remittances.customers-lookup";
 			String method = "get";
 			
 			String reqJson = null;
