@@ -39,7 +39,7 @@ public class ValidateReqJson {
 				"        \"citizenshipCountryCode\": \"THA\",\n" + 
 				"\n" + 
 				"        \"email\": \"senderEmail@test.com\",\n" + 
-				"        \"firstName\": \"IQLZSO\",\n" + 
+				"        \"firstName\": \"IQLZSOKANG\",\n" + 
 				"        \"middleName\": \"senderMiddleName\",\n" + 
 				"        \"lastName\": \"senderLastName\",\n" + 
 				"        \"secondLastName\": \"senderSecondLastName\",\n" + 
