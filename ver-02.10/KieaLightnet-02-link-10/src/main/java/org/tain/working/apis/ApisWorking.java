@@ -25,6 +25,7 @@ import org.tain.object.histories.req._ReqHistoriesData;
 import org.tain.object.refund.req._ReqRefundData;
 import org.tain.object.validate.ValidateReqJson;
 import org.tain.object.validate.req._ReqValidateData;
+import org.tain.object.validate.req._ReqValidateSource;
 import org.tain.properties.ProjEnvJobProperties;
 import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
@@ -50,7 +51,9 @@ public class ApisWorking {
 	private ProjEnvUrlProperties projEnvUrlProperties;
 	
 	private String accessToken;
-	private String transactionId;
+	private String lnsTransactionId;
+	private String srcTransactionId;
+	private String dstTransactionId;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -244,6 +247,9 @@ public class ApisWorking {
 			String reqJson = null;
 			if (Flag.flag) {
 				_ReqValidateData reqData = new _ReqValidateData();
+				_ReqValidateSource source = new _ReqValidateSource();
+				source.setTransactionId("43246826351573" + "00");
+				reqData.setSource(source);
 				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
 				reqJson = ValidateReqJson.get_20200913();
 				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
@@ -275,8 +281,12 @@ public class ApisWorking {
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
 					
-					this.transactionId = jsonNode.at("/data/transactionId").asText();
-					log.info(">>>>> transactionId        = {}", this.transactionId);
+					this.lnsTransactionId = jsonNode.at("/data/transactionId").asText();
+					this.srcTransactionId = jsonNode.at("/data/source/transactionId").asText();
+					this.dstTransactionId = jsonNode.at("/data/destination/transactionId").asText();
+					log.info(">>>>> lnsTransactionId     = {}", this.lnsTransactionId);
+					log.info(">>>>> srcTransactionId     = {}", this.srcTransactionId);
+					log.info(">>>>> dstTransactionId     = {}", this.dstTransactionId);
 				} catch (Exception e) {
 					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
@@ -300,7 +310,7 @@ public class ApisWorking {
 			String reqJson = null;
 			if (Flag.flag) {
 				_ReqCommitData reqData = new _ReqCommitData();
-				reqData.setTransactionId(this.transactionId);
+				reqData.setTransactionId(this.lnsTransactionId);
 				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
 				//reqJson = ValidateReqJson.get_20200913();
 				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
@@ -331,6 +341,13 @@ public class ApisWorking {
 					
 					JsonNode jsonNode = new ObjectMapper().readTree(response.getBody());
 					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
+					
+					this.lnsTransactionId = jsonNode.at("/data/transactionId").asText();
+					this.srcTransactionId = jsonNode.at("/data/source/transactionId").asText();
+					this.dstTransactionId = jsonNode.at("/data/destination/transactionId").asText();
+					log.info(">>>>> lnsTransactionId     = {}", this.lnsTransactionId);
+					log.info(">>>>> srcTransactionId     = {}", this.srcTransactionId);
+					log.info(">>>>> dstTransactionId     = {}", this.dstTransactionId);
 				} catch (Exception e) {
 					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());
@@ -354,7 +371,7 @@ public class ApisWorking {
 			String reqJson = null;
 			if (Flag.flag) {
 				_ReqAmendData reqData = new _ReqAmendData();
-				reqData.setTransactionId(this.transactionId);
+				reqData.setTransactionId(this.lnsTransactionId);
 				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
 				//reqJson = ValidateReqJson.get_20200913();
 				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);
@@ -408,7 +425,7 @@ public class ApisWorking {
 			String reqJson = null;
 			if (Flag.flag) {
 				_ReqRefundData reqData = new _ReqRefundData();
-				reqData.setTransactionId(this.transactionId);
+				reqData.setTransactionId(this.lnsTransactionId);
 				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
 				//reqJson = ValidateReqJson.get_20200913();
 				log.info(">>>>> REQ.reqJson of req~Data  = {}", reqJson);

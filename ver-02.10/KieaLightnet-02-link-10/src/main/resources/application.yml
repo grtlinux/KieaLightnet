@@ -113,13 +113,13 @@ proj-env:
     auth-url: http://localhost:18081/v1.0/auth/auth
     callback-url: http://localhost:18084/v1.0/callback/callback
     
-    transaction: auth        # 1. auth
+    #transaction: auth        # 1. auth
     #transaction: detail      # 2. detail
     #transaction: validate    # 3. validate
     #transaction: commit      # 4. commit
     #transaction: amend       # 5. amend      ERROR
     #transaction: refund      # 6. refund     ERROR
-    #transaction: customers   # 7. customers  ERROR
+    transaction: customers   # 7. customers  ERROR
     #transaction: histories   # 8. histories
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
