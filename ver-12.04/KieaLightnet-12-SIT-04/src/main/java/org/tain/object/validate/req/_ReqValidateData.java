@@ -15,11 +15,11 @@ public class _ReqValidateData {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "deliveryMethod")
-	private String deliveryMethod = "cash";
+	private String deliveryMethod;
 	
 	@StreamAnnotation(length = 50)
 	@JsonProperty(value = "remark")
-	private String remark = "This is MGI test remark";
+	private String remark;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "saveReport")

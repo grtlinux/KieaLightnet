@@ -1,5 +1,7 @@
 package org.tain.controller.apis;
 
+import java.util.Map;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -11,23 +13,25 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 import org.tain.data.LnsData;
-import org.tain.object.auth.req._ReqAuthData;
 import org.tain.object.lns.LnsReqWeb;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.JsonPrint;
 import org.tain.utils.RestTemplateConfig;
 import org.tain.utils.enums.RestTemplateType;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping(value = {"/apis/auth"})
+@RequestMapping(value = {"/apis/detail"})
 @Slf4j
-public class AuthController {
+public class DetailRestController {
 
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> http(HttpEntity<String> reqHttpEntity) throws Exception {
@@ -41,7 +45,7 @@ public class AuthController {
 		String resJson = null;
 		if (Flag.flag) {
 			LnsReqWeb lnsReqWeb = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsReqWeb.class);
-			resJson = this.auth(lnsReqWeb);
+			resJson = this.detail(lnsReqWeb);
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
@@ -54,16 +58,17 @@ public class AuthController {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
-	private String auth(LnsReqWeb lnsReqWeb) throws Exception {
+	private String detail(LnsReqWeb lnsReqWeb) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
+		String resJson = null;
 		if (Flag.flag) {
-			log.info("================== START: 1. authentication(POST) =============");
+			log.info("================== START: 2. detail(GET) =====================");
 			
 			String reqJson = null;
 			if (Flag.flag) {
-				_ReqAuthData reqData = new ObjectMapper().readValue(lnsReqWeb.getReqJson(), _ReqAuthData.class);
-				reqJson = JsonPrint.getInstance().toPrettyJson(reqData);
+				JsonNode jsonNode = new ObjectMapper().readTree(lnsReqWeb.getReqJson());
+				reqJson = jsonNode.toPrettyString();
 				log.info(">>>>> REQ.reqJson        = {}", reqJson);
 			}
 			
@@ -72,7 +77,7 @@ public class AuthController {
 			HttpEntity<String> reqHttpEntity = null;
 			ResponseEntity<String> response = null;
 			
-			if (Flag.flag) {
+			if ("POST".equalsIgnoreCase(lnsReqWeb.getHttpMethod())) {
 				// post method
 				httpUrl = lnsReqWeb.getHttpUrl();
 				httpMethod = HttpMethod.POST;
@@ -80,9 +85,32 @@ public class AuthController {
 				
 				HttpHeaders reqHeaders = new HttpHeaders();
 				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+				reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getAccessToken());
 				log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
 				
 				reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+			} else if ("GET".equalsIgnoreCase(lnsReqWeb.getHttpMethod())) {
+				// get method
+				httpUrl = lnsReqWeb.getHttpUrl();
+				httpMethod = HttpMethod.GET;
+				log.info(">>>>> REQ.httpUrl 1      = {} {}", httpMethod, httpUrl);
+				
+				Map<String,String> reqMap = new ObjectMapper().readValue(reqJson, new TypeReference<Map<String,String>>(){});
+				MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+				map.setAll(reqMap);
+				
+				UriComponents builder = UriComponentsBuilder.fromHttpUrl(httpUrl)
+						.queryParams(map)
+						.build(true);
+				httpUrl = builder.toString();
+				log.info(">>>>> REQ.httpUrl 2      = {} {}", httpMethod, httpUrl);
+				
+				HttpHeaders reqHeaders = new HttpHeaders();
+				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+				reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getAccessToken());
+				log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
+				
+				reqHttpEntity = new HttpEntity<>(reqHeaders);
 			}
 			
 			if (Flag.flag) {
@@ -96,24 +124,22 @@ public class AuthController {
 					log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 					log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
 					log.info(">>>>> RES.getBody()            = {}", response.getBody());
-					reqJson = response.getBody();
+					resJson = response.getBody();
 					
-					LnsData.getInstance().setAccessToken(response.getHeaders().get("AccessToken").get(0));
-					log.info(">>>>> RES.accessToken          = {}", LnsData.getInstance().getAccessToken());
+					JsonNode jsonNode = new ObjectMapper().readTree(resJson);
+					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
 				} catch (Exception e) {
 					//e.printStackTrace();
 					String message = e.getMessage();
 					log.error("ERROR >>>>> {}", message);
 					int pos1 = message.indexOf('[');
 					int pos2 = message.lastIndexOf(']');
-					reqJson = message.substring(pos1 + 1, pos2);
+					resJson = message.substring(pos1 + 1, pos2);
 				}
 			}
 			log.info("===============================================================");
-			
-			return reqJson;
 		}
 		
-		return null;
+		return resJson;
 	}
 }

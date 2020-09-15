@@ -15,5 +15,5 @@ public class _ReqCommitData {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "transactionId")
-	private String transactionId = "62bbb4b8-fe03-40d2-6f30-92baf54da82d";
+	private String transactionId;
 }

@@ -14,6 +14,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
+import org.tain.data.LnsData;
 import org.tain.domain.apis.Apis;
 import org.tain.object.amend.req._ReqAmendData;
 import org.tain.object.auth.req._ReqAuthData;
@@ -77,6 +78,16 @@ public class ApisWorking {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	
+	public void initialize() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			this.auth();
 		}
 	}
 	
@@ -229,7 +240,8 @@ public class ApisWorking {
 					log.info(">>>>> RES.getBody()            = {}", response.getBody());
 					
 					this.accessToken = response.getHeaders().get("AccessToken").get(0);
-					log.info(">>>>> RES.accessToken          = {}", this.accessToken);
+					LnsData.getInstance().setAccessToken(this.accessToken);
+					log.info(">>>>> RES.accessToken          = {}", LnsData.getInstance().getAccessToken());
 				} catch (Exception e) {
 					//e.printStackTrace();
 					log.error("ERROR >>>>> {}", e.getMessage());

@@ -17,11 +17,11 @@ public class _ReqValidateDestination {
 
 	@StreamAnnotation(length = 10)
 	@JsonProperty(value = "operatorCode")
-	private String operatorCode = "mgi";
+	private String operatorCode;
 	
 	@StreamAnnotation(length = 3)
 	@JsonProperty(value = "country")
-	private String country = "IDN";
+	private String country;
 	
 	@StreamAnnotation
 	@JsonProperty(value = "receive")

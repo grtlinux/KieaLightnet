@@ -13,57 +13,57 @@ public class _ReqValidateSender {
 
 	@StreamAnnotation(length = 8)
 	@JsonProperty(value = "idType")
-	private String idType = "GOV";
+	private String idType;
 	
 	@StreamAnnotation(length = 8)
 	@JsonProperty(value = "idCountryCode")
-	private String idCountryCode = "MYS";
+	private String idCountryCode ;
 	
 	@StreamAnnotation(length = 15)
 	@JsonProperty(value = "idNumber")
-	private String idNumber = "P83245384";
+	private String idNumber;
 	
 	
 	@StreamAnnotation(length = 10)
 	@JsonProperty(value = "dob")
-	private String dob = "1992-03-23";
+	private String dob;
 	
 	@StreamAnnotation(length = 50)
 	@JsonProperty(value = "purpose")
-	private String purpose = "PURCHASE_GOODS";
+	private String purpose;
 	
 	@StreamAnnotation(length = 10)
 	@JsonProperty(value = "birthCountryCode")
-	private String birthCountryCode = "THA";
+	private String birthCountryCode;
 	
 	@StreamAnnotation(length = 10)
 	@JsonProperty(value = "relationshipToReceiver")
-	private String relationshipToReceiver = "BUSINESS_PARTNER";
+	private String relationshipToReceiver;
 	
 	@StreamAnnotation(length = 5)
 	@JsonProperty(value = "citizenshipCountryCode")
-	private String citizenshipCountryCode = "THA";
+	private String citizenshipCountryCode;
 	
 	
 	@StreamAnnotation(length = 30)
 	@JsonProperty(value = "email")
-	private String email = "senderEmail@test.com";
+	private String email;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "firstName")
-	private String firstName = "IQLZSO";
+	private String firstName;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "middleName")
-	private String middleName = "senderMiddleName";
+	private String middleName;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "lastName")
-	private String lastName = "senderLastName";
+	private String lastName;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "secondLastName")
-	private String secondLastName = "senderSecondLastName";
+	private String secondLastName;
 	
 	
 	@StreamAnnotation

@@ -171,14 +171,14 @@
 		});
 		$('#btnCopyRequest').click(function() {
 			//alert('Hello btnCopyRequest');
-			var copyText = document.getElementById("modal_reqParameters");
+			var copyText = document.getElementById("modal_reqJson");
 			copyText.select();
 			copyText.setSelectionRange(0, 99999);
 			document.execCommand("copy");
 		});
 		$('#btnCopyResponse').click(function() {
 			//alert('Hello btnCopyResponse');
-			var copyText = document.getElementById("modal_resRetJson");
+			var copyText = document.getElementById("modal_resJson");
 			copyText.select();
 			copyText.setSelectionRange(0, 99999);
 			document.execCommand("copy");

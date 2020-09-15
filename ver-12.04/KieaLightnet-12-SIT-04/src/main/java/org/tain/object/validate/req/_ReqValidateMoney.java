@@ -13,9 +13,9 @@ public class _ReqValidateMoney {
 
 	@StreamAnnotation(length = 30)
 	@JsonProperty(value = "amount")
-	private String amount = "43366.3500";
+	private String amount;
 	
 	@StreamAnnotation(length = 3)
 	@JsonProperty(value = "currency")
-	private String currency = "IDR";
+	private String currency;
 }

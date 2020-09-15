@@ -13,9 +13,9 @@ public class _ReqValidatePhone {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "number")
-	private String number = "345364566";
+	private String number;
 
 	@StreamAnnotation(length = 3)
 	@JsonProperty(value = "countryCode")
-	private String countryCode = "33";
+	private String countryCode;
 }

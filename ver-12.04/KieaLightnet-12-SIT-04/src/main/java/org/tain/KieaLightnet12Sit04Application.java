@@ -115,6 +115,7 @@ public class KieaLightnet12Sit04Application implements CommandLineRunner {
 		log.info("KANG-20200808 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) this.apisWorking.loading();
+		if (Flag.flag) this.apisWorking.initialize();
 		if (!Flag.flag) this.apisWorking.transaction();
 	}
 

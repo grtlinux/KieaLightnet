@@ -13,16 +13,16 @@ public class _ReqValidateReceiver {
 
 	@StreamAnnotation(length = 40)
 	@JsonProperty(value = "accountNumber")
-	private String accountNumber = "MG-0012345";
+	private String accountNumber;
 	
 	@StreamAnnotation(length = 30)
 	@JsonProperty(value = "email")
-	private String email = "receiverEmail@test.com";
+	private String email;
 	
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "firstName")
-	private String firstName = "receiverFirstName";
+	private String firstName;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "middleName")
@@ -30,7 +30,7 @@ public class _ReqValidateReceiver {
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "lastName")
-	private String lastName = "receiverLastName";
+	private String lastName;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "secondLastName")

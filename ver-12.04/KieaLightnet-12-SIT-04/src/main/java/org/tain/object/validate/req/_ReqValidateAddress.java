@@ -17,15 +17,15 @@ public class _ReqValidateAddress {
 
 	@StreamAnnotation(length = 40)
 	@JsonProperty(value = "city")
-	private String city = "Bangkok";
+	private String city;
 	
 	@StreamAnnotation(length = 10)
 	@JsonProperty(value = "postalCode")
-	private String postalCode = "10400";
+	private String postalCode;
 	
 	@StreamAnnotation(length = 100)
 	@JsonProperty(value = "line1")
-	private String line1 = "MG-0012345";
+	private String line1;
 	
 	@StreamAnnotation(length = 40)
 	@JsonProperty(value = "state")

@@ -22,7 +22,7 @@ public class _ReqValidateSource {
 
 	@StreamAnnotation(length = 3)
 	@JsonProperty(value = "country")
-	private String country = "KOR";
+	private String country;
 	
 	@StreamAnnotation
 	@JsonProperty(value = "send")
