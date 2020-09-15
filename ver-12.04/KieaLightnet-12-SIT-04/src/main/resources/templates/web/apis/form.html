@@ -30,6 +30,10 @@
 				<td><input id="apis_name" type="text" class="col-md-1 form-control input-sm" th:value="${apis?.name}"/></td>
 			</tr>
 			<tr>
+				<th style="padding:13px 0 0 15px;">Mapping</th>
+				<td><input id="apis_mapping" type="text" class="col-md-1 form-control input-sm" th:value="${apis?.mapping}"/></td>
+			</tr>
+			<tr>
 				<th style="padding:13px 0 0 15px;">httpUrl</th>
 				<td><input id="apis_httpUrl" type="text" class="col-md-1 form-control input-sm" th:value="${apis?.httpUrl}"/></td>
 			</tr>
@@ -67,6 +71,7 @@
 		$('#insert1').click(function() {
 			var jsonData = JSON.stringify({
 				name: $('#apis_name').val(),
+				mapping: $('#apis_mapping').val(),
 				httpUrl: $('#apis_httpUrl').val(),
 				httpMethod: $('#apis_httpMethod').val(),
 				reqJson: $('#apis_reqJson').val()
@@ -94,6 +99,7 @@
 		$('#insert2').click(function() {
 			var jsonData = JSON.stringify({
 				name: $('#apis_name').val(),
+				mapping: $('#apis_mapping').val(),
 				httpUrl: $('#apis_httpUrl').val(),
 				httpMethod: $('#apis_httpMethod').val(),
 				reqJson: $('#apis_reqJson').val()
@@ -119,6 +125,7 @@
 		$('#update').click(function() {
 			var jsonData = JSON.stringify({
 				name: $('#apis_name').val(),
+				mapping: $('#apis_mapping').val(),
 				httpUrl: $('#apis_httpUrl').val(),
 				httpMethod: $('#apis_httpMethod').val(),
 				reqJson: $('#apis_reqJson').val()

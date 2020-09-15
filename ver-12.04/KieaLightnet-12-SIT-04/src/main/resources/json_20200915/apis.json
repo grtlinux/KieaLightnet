@@ -1,41 +1,49 @@
 [
 	{
 		"name": "auth - 1",
+		"mapping": "/apis/auth",
 		"httpUrl": "/v1/auth",
 		"httpMethod": "POST",
 		"reqJson": "auth-1.json"
 	}, {
 		"name": "detail - 1",
+		"mapping": "/apis/detail",
 		"httpUrl": "/v1.1/remittances.detail",
 		"httpMethod": "GET",
 		"reqJson": "detail-1.json"
 	}, {
 		"name": "validate - 1",
+		"mapping": "/apis/validate",
 		"httpUrl": "/v1.1/remittances.validate",
 		"httpMethod": "POST",
 		"reqJson": "validate-1.json"
 	}, {
 		"name": "commit - 1",
+		"mapping": "/apis/commit",
 		"httpUrl": "/v1.1/remittances.commit",
 		"httpMethod": "POST",
 		"reqJson": "commit-1.json"
 	}, {
 		"name": "amend - 1",
+		"mapping": "/apis/amend",
 		"httpUrl": "/v1.1/remittances.amend",
 		"httpMethod": "POST",
 		"reqJson": "amend-1.json"
 	}, {
 		"name": "refund - 1",
+		"mapping": "/apis/refund",
 		"httpUrl": "/v1.1/remittances.refund",
 		"httpMethod": "POST",
 		"reqJson": "refund-1.json"
 	}, {
 		"name": "customer - 1",
+		"mapping": "/apis/customer",
 		"httpUrl": "/v1.1/remittances.customer-lookup",
 		"httpMethod": "GET",
 		"reqJson": "customer-1.json"
 	}, {
 		"name": "histories - 1",
+		"mapping": "/apis/histories",
 		"httpUrl": "/v1.1/remittances",
 		"httpMethod": "GET",
 		"reqJson": "histories-1.json"

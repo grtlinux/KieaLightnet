@@ -27,7 +27,8 @@
 				<thead>
 					<tr>
 						<th class="col-md-1">id</th>
-						<th class="col-md-5">Name</th>
+						<th class="col-md-4">Name</th>
+						<th class="col-md-1">Mapping</th>
 						<th class="col-md-5">HttpUrl</th>
 						<th class="col-md-1">HttpMethod</th>
 					</tr>
@@ -36,6 +37,7 @@
 					<tr th:each="apis : ${apisList}">
 						<td th:text="${apis.id}">#</td>
 						<td><a th:href="@{/apis(id=${apis.id})}" th:text="${apis.name}">Name</a></td>
+						<td th:text="${apis.mapping}">mapping</td>
 						<td th:text="${apis.httpUrl}">httpUrl</td>
 						<td th:text="${apis.httpMethod}">httpMethod</td>
 					</tr>

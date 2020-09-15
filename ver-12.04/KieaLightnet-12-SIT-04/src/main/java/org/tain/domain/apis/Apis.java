@@ -23,6 +23,9 @@ public class Apis {
 	@Column(name = "name", length = 128)
 	private String name;
 	
+	@Column(name = "mapping", length = 128)
+	private String mapping;
+	
 	@Column(name = "http_url", length = 128)
 	private String httpUrl;
 	
