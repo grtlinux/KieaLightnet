@@ -53,6 +53,15 @@ public class ApisWorking {
 	private String srcTransactionId;
 	private String dstTransactionId;
 	
+	/*
+	 *  java -Dspring.profiles.active="proj-default,proj-test" -Dproj-env.job.transaction=detail -jar build/libs/KieaLightnet-02-link-10-0.0.1-SNAPSHOT.jar
+	 *  java -Dspring.profiles.active="proj-default,proj-test" -Dproj-env.job.transaction=validate -jar build/libs/KieaLightnet-02-link-10-0.0.1-SNAPSHOT.jar
+	 *  java -Dspring.profiles.active="proj-default,proj-test" -Dproj-env.job.transaction=commit -jar build/libs/KieaLightnet-02-link-10-0.0.1-SNAPSHOT.jar
+	 *  java -Dspring.profiles.active="proj-default,proj-test" -Dproj-env.job.transaction=amend -jar build/libs/KieaLightnet-02-link-10-0.0.1-SNAPSHOT.jar
+	 *  java -Dspring.profiles.active="proj-default,proj-test" -Dproj-env.job.transaction=refund -jar build/libs/KieaLightnet-02-link-10-0.0.1-SNAPSHOT.jar
+	 *  java -Dspring.profiles.active="proj-default,proj-test" -Dproj-env.job.transaction=customers -jar build/libs/KieaLightnet-02-link-10-0.0.1-SNAPSHOT.jar
+	 *  java -Dspring.profiles.active="proj-default,proj-test" -Dproj-env.job.transaction=histories -jar build/libs/KieaLightnet-02-link-10-0.0.1-SNAPSHOT.jar
+	 */
 	///////////////////////////////////////////////////////////////////////////
 	
 	public void transaction() throws Exception {
