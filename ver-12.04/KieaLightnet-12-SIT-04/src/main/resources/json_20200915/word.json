@@ -1,0 +1,10001 @@
+[ {
+  "id" : 1,
+  "word" : "capable",
+  "mean" : "할 수 있는, 유능한"
+}, {
+  "id" : 2,
+  "word" : "convenient",
+  "mean" : "편리한"
+}, {
+  "id" : 3,
+  "word" : "succeed",
+  "mean" : "성공하다, 계승하다, 계속되다"
+}, {
+  "id" : 4,
+  "word" : "figure",
+  "mean" : "모습, 인물, 숫자, 계산하다"
+}, {
+  "id" : 5,
+  "word" : "forgive",
+  "mean" : "용서하다"
+}, {
+  "id" : 6,
+  "word" : "blame",
+  "mean" : "나무라다, 비난하다"
+}, {
+  "id" : 7,
+  "word" : "subject",
+  "mean" : "주제, 학과, 지배를 받는"
+}, {
+  "id" : 8,
+  "word" : "effect",
+  "mean" : "효과, 결과"
+}, {
+  "id" : 9,
+  "word" : "introduce",
+  "mean" : "소개하다"
+}, {
+  "id" : 10,
+  "word" : "afford",
+  "mean" : "..할 여유가 있다"
+}, {
+  "id" : 11,
+  "word" : "inform",
+  "mean" : "..에게 알리다, 통지하다"
+}, {
+  "id" : 12,
+  "word" : "decide",
+  "mean" : "결정하다, 결심하다."
+}, {
+  "id" : 13,
+  "word" : "sense",
+  "mean" : "감각, 분별, 의미"
+}, {
+  "id" : 14,
+  "word" : "haste",
+  "mean" : "급함, 성급"
+}, {
+  "id" : 15,
+  "word" : "matter",
+  "mean" : "물질, 문제, 중요하다"
+}, {
+  "id" : 16,
+  "word" : "except",
+  "mean" : "..을 제외하고"
+}, {
+  "id" : 17,
+  "word" : "owe",
+  "mean" : "빚지다. 지불할 의무가 있다."
+}, {
+  "id" : 18,
+  "word" : "essential",
+  "mean" : "근본적인, 필수"
+}, {
+  "id" : 19,
+  "word" : "prefer",
+  "mean" : "..을 좋아하다"
+}, {
+  "id" : 20,
+  "word" : "suggest",
+  "mean" : "제안하다"
+}, {
+  "id" : 21,
+  "word" : "discuss",
+  "mean" : "토론하다"
+}, {
+  "id" : 22,
+  "word" : "angry",
+  "mean" : "성난, 노한"
+}, {
+  "id" : 23,
+  "word" : "due",
+  "mean" : "당연한, 정당한"
+}, {
+  "id" : 24,
+  "word" : "side",
+  "mean" : "측면, 방면, 편들다"
+}, {
+  "id" : 25,
+  "word" : "agree",
+  "mean" : "동의하다"
+}, {
+  "id" : 26,
+  "word" : "account",
+  "mean" : "설명, 계정, 설명하다"
+}, {
+  "id" : 27,
+  "word" : "distinct",
+  "mean" : "독특한, 별개의"
+}, {
+  "id" : 28,
+  "word" : "measure",
+  "mean" : "측정하다. 치수. 수단"
+}, {
+  "id" : 29,
+  "word" : "congratulate",
+  "mean" : "축하하다"
+}, {
+  "id" : 30,
+  "word" : "common",
+  "mean" : "공통의, 일반의, 흔히 있는"
+}, {
+  "id" : 31,
+  "word" : "accident",
+  "mean" : "사고, 우연"
+}, {
+  "id" : 32,
+  "word" : "enable",
+  "mean" : "가능하게 하다"
+}, {
+  "id" : 33,
+  "word" : "warn",
+  "mean" : "경고하다"
+}, {
+  "id" : 34,
+  "word" : "distant",
+  "mean" : "거리가 먼, (시간적으로) 먼"
+}, {
+  "id" : 35,
+  "word" : "admit",
+  "mean" : "인정하다"
+}, {
+  "id" : 36,
+  "word" : "express",
+  "mean" : "표현하다"
+}, {
+  "id" : 37,
+  "word" : "attention",
+  "mean" : "주의"
+}, {
+  "id" : 38,
+  "word" : "major",
+  "mean" : "큰, 주요한, 다수의, 전공하다"
+}, {
+  "id" : 39,
+  "word" : "worry",
+  "mean" : "걱정하다, 고민하다"
+}, {
+  "id" : 40,
+  "word" : "fix",
+  "mean" : "고정시키다, 수리하다"
+}, {
+  "id" : 41,
+  "word" : "respect",
+  "mean" : "존경(하다)"
+}, {
+  "id" : 42,
+  "word" : "expect",
+  "mean" : "기대하다"
+}, {
+  "id" : 43,
+  "word" : "mind",
+  "mean" : "마음, 주의하다, 꺼리다"
+}, {
+  "id" : 44,
+  "word" : "likely",
+  "mean" : "있음직한"
+}, {
+  "id" : 45,
+  "word" : "familiar",
+  "mean" : "친한"
+}, {
+  "id" : 46,
+  "word" : "face",
+  "mean" : "..에 직면하다. 얼굴"
+}, {
+  "id" : 47,
+  "word" : "hear",
+  "mean" : "듣다"
+}, {
+  "id" : 48,
+  "word" : "equal",
+  "mean" : "같은, 균등한"
+}, {
+  "id" : 49,
+  "word" : "famous",
+  "mean" : "유명한"
+}, {
+  "id" : 50,
+  "word" : "apply",
+  "mean" : "적용하다."
+}, {
+  "id" : 51,
+  "word" : "accuse",
+  "mean" : "꾸짖다. 고발하다"
+}, {
+  "id" : 52,
+  "word" : "frequent",
+  "mean" : "빈번한, 자주 방문하다"
+}, {
+  "id" : 53,
+  "word" : "sufficient",
+  "mean" : "충분한"
+}, {
+  "id" : 54,
+  "word" : "incline",
+  "mean" : "기울다. 마음이 기울다."
+}, {
+  "id" : 55,
+  "word" : "apt",
+  "mean" : "..하기 쉬운"
+}, {
+  "id" : 56,
+  "word" : "consist",
+  "mean" : "이루어지다. 일치하다."
+}, {
+  "id" : 57,
+  "word" : "correspond",
+  "mean" : "통신하다. 일치하다."
+}, {
+  "id" : 58,
+  "word" : "public",
+  "mean" : "공공의"
+}, {
+  "id" : 59,
+  "word" : "deny",
+  "mean" : "부정하다."
+}, {
+  "id" : 60,
+  "word" : "intend",
+  "mean" : "의도하다."
+}, {
+  "id" : 61,
+  "word" : "compare",
+  "mean" : "..와 비교하다."
+}, {
+  "id" : 62,
+  "word" : "allow",
+  "mean" : "허락하다."
+}, {
+  "id" : 63,
+  "word" : "support",
+  "mean" : "지지하다. 지탱하다."
+}, {
+  "id" : 64,
+  "word" : "abandon",
+  "mean" : "버리다. 단념하다."
+}, {
+  "id" : 65,
+  "word" : "continue",
+  "mean" : "계속하다."
+}, {
+  "id" : 66,
+  "word" : "reflect",
+  "mean" : "반사하다. 반영하다. 숙고하다."
+}, {
+  "id" : 67,
+  "word" : "refuse",
+  "mean" : "거절하다."
+}, {
+  "id" : 68,
+  "word" : "suppose",
+  "mean" : "추측하다."
+}, {
+  "id" : 69,
+  "word" : "boring",
+  "mean" : "따분한"
+}, {
+  "id" : 70,
+  "word" : "object",
+  "mean" : "반대하다. 대상"
+}, {
+  "id" : 71,
+  "word" : "suffer",
+  "mean" : "(고통을) 받다"
+}, {
+  "id" : 72,
+  "word" : "favorite",
+  "mean" : "좋아하는"
+}, {
+  "id" : 73,
+  "word" : "distinguish",
+  "mean" : "A와 B를 구별하다."
+}, {
+  "id" : 74,
+  "word" : "solve",
+  "mean" : "해결하다."
+}, {
+  "id" : 75,
+  "word" : "parallel",
+  "mean" : "평행의, 유사한."
+}, {
+  "id" : 76,
+  "word" : "delay",
+  "mean" : "미루다. 연기하다."
+}, {
+  "id" : 77,
+  "word" : "command",
+  "mean" : "명령하다. 명령"
+}, {
+  "id" : 78,
+  "word" : "curious",
+  "mean" : "호기심 있는. 기묘한"
+}, {
+  "id" : 79,
+  "word" : "affect",
+  "mean" : "영향을 주다"
+}, {
+  "id" : 80,
+  "word" : "delight",
+  "mean" : "기쁨, 기쁘게 하다"
+}, {
+  "id" : 81,
+  "word" : "superior",
+  "mean" : "보다 높은, 우수한"
+}, {
+  "id" : 82,
+  "word" : "search",
+  "mean" : "탐색, 조사"
+}, {
+  "id" : 83,
+  "word" : "rude",
+  "mean" : "무례한"
+}, {
+  "id" : 84,
+  "word" : "ignorant",
+  "mean" : "무지한"
+}, {
+  "id" : 85,
+  "word" : "independent",
+  "mean" : "독립한"
+}, {
+  "id" : 86,
+  "word" : "manage",
+  "mean" : "경영하다. 관리하다."
+}, {
+  "id" : 87,
+  "word" : "abstract",
+  "mean" : "추출하다. 추상적인"
+}, {
+  "id" : 88,
+  "word" : "contradict",
+  "mean" : "모순되다. 부정하다."
+}, {
+  "id" : 89,
+  "word" : "classify",
+  "mean" : "분류하다."
+}, {
+  "id" : 90,
+  "word" : "escape",
+  "mean" : "도망가다. 탈출"
+}, {
+  "id" : 91,
+  "word" : "graduate",
+  "mean" : "졸업하다. 졸업생"
+}, {
+  "id" : 92,
+  "word" : "shameful",
+  "mean" : "부끄러운"
+}, {
+  "id" : 93,
+  "word" : "remind",
+  "mean" : "생각나게 하다"
+}, {
+  "id" : 94,
+  "word" : "accept",
+  "mean" : "받아들이다. 수락하다"
+}, {
+  "id" : 95,
+  "word" : "prohibit",
+  "mean" : "금지하다."
+}, {
+  "id" : 96,
+  "word" : "insist",
+  "mean" : "주장하다"
+}, {
+  "id" : 97,
+  "word" : "hesitate",
+  "mean" : "망설이다"
+}, {
+  "id" : 98,
+  "word" : "calculate",
+  "mean" : "계산하다"
+}, {
+  "id" : 99,
+  "word" : "beware",
+  "mean" : "조심하다"
+}, {
+  "id" : 100,
+  "word" : "propose",
+  "mean" : "제안하다. 신청하다."
+}, {
+  "id" : 101,
+  "word" : "proper",
+  "mean" : "적당한, 고유의"
+}, {
+  "id" : 102,
+  "word" : "appoint",
+  "mean" : "임명하다. (시간/장소 등을) 정하다"
+}, {
+  "id" : 103,
+  "word" : "supply",
+  "mean" : "공급하다. 공급"
+}, {
+  "id" : 104,
+  "word" : "combine",
+  "mean" : "결합하다. 결부시키다."
+}, {
+  "id" : 105,
+  "word" : "apologize",
+  "mean" : "사과하다."
+}, {
+  "id" : 106,
+  "word" : "available",
+  "mean" : "이용할 수 있는"
+}, {
+  "id" : 107,
+  "word" : "qualify",
+  "mean" : "..에게 자격을 주다."
+}, {
+  "id" : 108,
+  "word" : "identify",
+  "mean" : "동일시하다"
+}, {
+  "id" : 109,
+  "word" : "claim",
+  "mean" : "요구하다. 주장하다. 요구.청구"
+}, {
+  "id" : 110,
+  "word" : "aim",
+  "mean" : "목표. 겨누다."
+}, {
+  "id" : 111,
+  "word" : "protect",
+  "mean" : "보호하다."
+}, {
+  "id" : 112,
+  "word" : "attain",
+  "mean" : "달성하다."
+}, {
+  "id" : 113,
+  "word" : "acquire",
+  "mean" : "획득하다. 습득하다."
+}, {
+  "id" : 114,
+  "word" : "comfortable",
+  "mean" : "편안한, 기분 좋은"
+}, {
+  "id" : 115,
+  "word" : "impress",
+  "mean" : "인상을 주다. 감동시키다."
+}, {
+  "id" : 116,
+  "word" : "prime",
+  "mean" : "제일의, 주요한"
+}, {
+  "id" : 117,
+  "word" : "evidently",
+  "mean" : "명백하게"
+}, {
+  "id" : 118,
+  "word" : "confidence",
+  "mean" : "신뢰, 자신"
+}, {
+  "id" : 119,
+  "word" : "amount",
+  "mean" : "총계, 양"
+}, {
+  "id" : 120,
+  "word" : "focus",
+  "mean" : "초점, 집중시키다."
+}, {
+  "id" : 121,
+  "word" : "efficient",
+  "mean" : "능률적인, 효과적인"
+}, {
+  "id" : 122,
+  "word" : "bore",
+  "mean" : "실증나게 하다."
+}, {
+  "id" : 123,
+  "word" : "consider",
+  "mean" : "숙고하다. ..로 여기다."
+}, {
+  "id" : 124,
+  "word" : "adapt",
+  "mean" : "적응시키다."
+}, {
+  "id" : 125,
+  "word" : "benefit",
+  "mean" : "이익, 은혜"
+}, {
+  "id" : 126,
+  "word" : "deliver",
+  "mean" : "배달하다."
+}, {
+  "id" : 127,
+  "word" : "forbid",
+  "mean" : "금하다."
+}, {
+  "id" : 128,
+  "word" : "reduce",
+  "mean" : "축소하다. 줄이다."
+}, {
+  "id" : 129,
+  "word" : "inquire",
+  "mean" : "문의하다. 묻다."
+}, {
+  "id" : 130,
+  "word" : "sight",
+  "mean" : "풍경. 시"
+}, {
+  "id" : 131,
+  "word" : "derive",
+  "mean" : "끌어내다. 유래를 찾다."
+}, {
+  "id" : 132,
+  "word" : "occupy",
+  "mean" : "점거하다. (시간/장소를) 차지하다."
+}, {
+  "id" : 133,
+  "word" : "provide",
+  "mean" : "공급하다."
+}, {
+  "id" : 134,
+  "word" : "bent",
+  "mean" : "소질, 경향, 구부러진, 결심한"
+}, {
+  "id" : 135,
+  "word" : "possess",
+  "mean" : "소유하다."
+}, {
+  "id" : 136,
+  "word" : "contrary",
+  "mean" : "반대의, 반대, 모순"
+}, {
+  "id" : 137,
+  "word" : "means",
+  "mean" : "수단, 재산"
+}, {
+  "id" : 138,
+  "word" : "risk",
+  "mean" : "위험, (목숨을) 걸다."
+}, {
+  "id" : 139,
+  "word" : "conscious",
+  "mean" : "지각하고 있는, 의식하고 있는"
+}, {
+  "id" : 140,
+  "word" : "charge",
+  "mean" : "고발하다. 요금, 책임"
+}, {
+  "id" : 141,
+  "word" : "degree",
+  "mean" : "정도"
+}, {
+  "id" : 142,
+  "word" : "favor",
+  "mean" : "호의, ..에게 호의를 보이다."
+}, {
+  "id" : 143,
+  "word" : "obey",
+  "mean" : "..에 따르다."
+}, {
+  "id" : 144,
+  "word" : "respond",
+  "mean" : "..에 대답하다. 반응하다."
+}, {
+  "id" : 145,
+  "word" : "steal",
+  "mean" : "훔치다. 몰래 빼았다."
+}, {
+  "id" : 146,
+  "word" : "submit",
+  "mean" : "제출하다. 복종시키다."
+}, {
+  "id" : 147,
+  "word" : "persist",
+  "mean" : "고집하다. 계속하다."
+}, {
+  "id" : 148,
+  "word" : "piece",
+  "mean" : "한 조각"
+}, {
+  "id" : 149,
+  "word" : "exchange",
+  "mean" : "교환하다. 교환"
+}, {
+  "id" : 150,
+  "word" : "responsible",
+  "mean" : "책임이 있는"
+}, {
+  "id" : 151,
+  "word" : "lack",
+  "mean" : "부족, 모자라다. 부족하다."
+}, {
+  "id" : 152,
+  "word" : "anxious",
+  "mean" : "걱정하는"
+}, {
+  "id" : 153,
+  "word" : "avail",
+  "mean" : "쓸모가 있다. 이익. 효용"
+}, {
+  "id" : 154,
+  "word" : "practically",
+  "mean" : "실제적으로, 사실상"
+}, {
+  "id" : 155,
+  "word" : "ashamed",
+  "mean" : "부끄러운"
+}, {
+  "id" : 156,
+  "word" : "accompany",
+  "mean" : "..에 동반하다."
+}, {
+  "id" : 157,
+  "word" : "indifferent",
+  "mean" : "무관심한, 냉담한"
+}, {
+  "id" : 158,
+  "word" : "collect",
+  "mean" : "모으다."
+}, {
+  "id" : 159,
+  "word" : "addition",
+  "mean" : "추가"
+}, {
+  "id" : 160,
+  "word" : "taste",
+  "mean" : "미각, 맛, 시식하다. 맛보다"
+}, {
+  "id" : 161,
+  "word" : "behalf",
+  "mean" : "이익, 측"
+}, {
+  "id" : 162,
+  "word" : "consent",
+  "mean" : "동의하다, 승인하다."
+}, {
+  "id" : 163,
+  "word" : "similar",
+  "mean" : "비슷한"
+}, {
+  "id" : 164,
+  "word" : "accord",
+  "mean" : "일치하다. 조회하다. 일치. 조화"
+}, {
+  "id" : 165,
+  "word" : "assure",
+  "mean" : "보증하다. 납득시키다."
+}, {
+  "id" : 166,
+  "word" : "proceed",
+  "mean" : "나아가다. 계속하다."
+}, {
+  "id" : 167,
+  "word" : "enforce",
+  "mean" : "실사하다. 강요하다."
+}, {
+  "id" : 168,
+  "word" : "astonish",
+  "mean" : "놀라게 하다"
+}, {
+  "id" : 169,
+  "word" : "acquaint",
+  "mean" : "알려주다. 알다."
+}, {
+  "id" : 170,
+  "word" : "refer",
+  "mean" : "언급하다. 조회하다."
+}, {
+  "id" : 171,
+  "word" : "respectable",
+  "mean" : "존경할 만한. 훌륭한"
+}, {
+  "id" : 172,
+  "word" : "excel",
+  "mean" : "능가하다."
+}, {
+  "id" : 173,
+  "word" : "multiply",
+  "mean" : "증가하다. 곱하다."
+}, {
+  "id" : 174,
+  "word" : "regard",
+  "mean" : "여기다. 관계, 존"
+}, {
+  "id" : 175,
+  "word" : "addict",
+  "mean" : "몰두시키다. 중독시키다. 중독자"
+}, {
+  "id" : 176,
+  "word" : "accustom",
+  "mean" : "익숙케 하다."
+}, {
+  "id" : 177,
+  "word" : "respective",
+  "mean" : "각자의, 각각의"
+}, {
+  "id" : 178,
+  "word" : "imaginary",
+  "mean" : "상상의, 가상의"
+}, {
+  "id" : 179,
+  "word" : "retain",
+  "mean" : "보유하다. 잊지 않고 있다."
+}, {
+  "id" : 180,
+  "word" : "constitute",
+  "mean" : "설립하다. 구성하다."
+}, {
+  "id" : 181,
+  "word" : "concord",
+  "mean" : "(의견의) 일치. 화합."
+}, {
+  "id" : 182,
+  "word" : "contribute",
+  "mean" : "공헌하다. 원인이 되다."
+}, {
+  "id" : 183,
+  "word" : "purpose",
+  "mean" : "목적"
+}, {
+  "id" : 184,
+  "word" : "contend",
+  "mean" : "주장하다. 논쟁하다."
+}, {
+  "id" : 185,
+  "word" : "dispose",
+  "mean" : "배치하다. 처분하다."
+}, {
+  "id" : 186,
+  "word" : "assume",
+  "mean" : "추측하다. 추정하다."
+}, {
+  "id" : 187,
+  "word" : "imaginable",
+  "mean" : "상상할 수 있는"
+}, {
+  "id" : 188,
+  "word" : "advance",
+  "mean" : "전진하다. 전진"
+}, {
+  "id" : 189,
+  "word" : "persuade",
+  "mean" : "설득하다."
+}, {
+  "id" : 190,
+  "word" : "endure",
+  "mean" : "참다"
+}, {
+  "id" : 191,
+  "word" : "restore",
+  "mean" : "회복하다. 부흥하다."
+}, {
+  "id" : 192,
+  "word" : "adhere",
+  "mean" : "부착하다."
+}, {
+  "id" : 193,
+  "word" : "scent",
+  "mean" : "향기, 향기, 냄새 맡다. 눈치채다"
+}, {
+  "id" : 194,
+  "word" : "senior",
+  "mean" : "연상의"
+}, {
+  "id" : 195,
+  "word" : "suspicious",
+  "mean" : "의심스러운, 수상쩍은"
+}, {
+  "id" : 196,
+  "word" : "subsequent",
+  "mean" : "차후의, 다음의"
+}, {
+  "id" : 197,
+  "word" : "remove",
+  "mean" : "이동시키다. 제거하다. 거리. 간격"
+}, {
+  "id" : 198,
+  "word" : "exceed",
+  "mean" : "초과하다, ..보다 뛰어나다."
+}, {
+  "id" : 199,
+  "word" : "concern",
+  "mean" : "..에 관계하다. 관심을 갖다. 관계, 관심"
+}, {
+  "id" : 200,
+  "word" : "permit",
+  "mean" : "허락하다."
+}, {
+  "id" : 201,
+  "word" : "divide",
+  "mean" : "나누다."
+}, {
+  "id" : 202,
+  "word" : "inherit",
+  "mean" : "상속하다. 유전하다."
+}, {
+  "id" : 203,
+  "word" : "result",
+  "mean" : "결과, 결과로 이루어지다."
+}, {
+  "id" : 204,
+  "word" : "forbear",
+  "mean" : "억제하다."
+}, {
+  "id" : 205,
+  "word" : "coincide",
+  "mean" : "일치하다."
+}, {
+  "id" : 206,
+  "word" : "discern",
+  "mean" : "구별하다."
+}, {
+  "id" : 207,
+  "word" : "prevent",
+  "mean" : "방해하다. 막다."
+}, {
+  "id" : 208,
+  "word" : "prepare",
+  "mean" : "준비하다."
+}, {
+  "id" : 209,
+  "word" : "utmost",
+  "mean" : "최대한의, 최대 한도"
+}, {
+  "id" : 210,
+  "word" : "relevant",
+  "mean" : "관련된, 적절한"
+}, {
+  "id" : 211,
+  "word" : "aptitude",
+  "mean" : "적성"
+}, {
+  "id" : 212,
+  "word" : "acknowledge",
+  "mean" : "인정하다."
+}, {
+  "id" : 213,
+  "word" : "contrive",
+  "mean" : "고안하다. 기획하다."
+}, {
+  "id" : 214,
+  "word" : "coordinate",
+  "mean" : "대등하게 하다. 동등한"
+}, {
+  "id" : 215,
+  "word" : "rely",
+  "mean" : "믿다. 의지하다."
+}, {
+  "id" : 216,
+  "word" : "trespass",
+  "mean" : "침입하다."
+}, {
+  "id" : 217,
+  "word" : "estimate",
+  "mean" : "평가하다. 견적하다. 평가. 견적"
+}, {
+  "id" : 218,
+  "word" : "dominate",
+  "mean" : "지배하다."
+}, {
+  "id" : 219,
+  "word" : "originate",
+  "mean" : "시작하다. (..로부터) 생기다."
+}, {
+  "id" : 220,
+  "word" : "notable",
+  "mean" : "주목할 만한"
+}, {
+  "id" : 221,
+  "word" : "urge",
+  "mean" : "권하다. 강조하다."
+}, {
+  "id" : 222,
+  "word" : "whole",
+  "mean" : "전체의, 완전한. 전체"
+}, {
+  "id" : 223,
+  "word" : "beckon",
+  "mean" : "손짓으로 부르다."
+}, {
+  "id" : 224,
+  "word" : "inspect",
+  "mean" : "조사하다. 검사하다."
+}, {
+  "id" : 225,
+  "word" : "preach",
+  "mean" : "설교하다."
+}, {
+  "id" : 226,
+  "word" : "meditate",
+  "mean" : "속고하다. 명심하다"
+}, {
+  "id" : 227,
+  "word" : "essence",
+  "mean" : "본질"
+}, {
+  "id" : 228,
+  "word" : "discriminate",
+  "mean" : "구별하다. 차별하다."
+}, {
+  "id" : 229,
+  "word" : "preserve",
+  "mean" : "보존하다. 보호하다."
+}, {
+  "id" : 230,
+  "word" : "coincident",
+  "mean" : "일치하는, 동시의"
+}, {
+  "id" : 231,
+  "word" : "involve",
+  "mean" : "연루시키다. 포함하다."
+}, {
+  "id" : 232,
+  "word" : "negotiate",
+  "mean" : "협상하다."
+}, {
+  "id" : 233,
+  "word" : "boast",
+  "mean" : "자랑하다. 자랑, 허풍"
+}, {
+  "id" : 234,
+  "word" : "allot",
+  "mean" : "할당하다."
+}, {
+  "id" : 235,
+  "word" : "persistent",
+  "mean" : "완고한, 계속적인"
+}, {
+  "id" : 236,
+  "word" : "confident",
+  "mean" : "확신하는, 자신 있는"
+}, {
+  "id" : 237,
+  "word" : "announce",
+  "mean" : "발표하다."
+}, {
+  "id" : 238,
+  "word" : "relieve",
+  "mean" : "구조하다."
+}, {
+  "id" : 239,
+  "word" : "swift",
+  "mean" : "빠른"
+}, {
+  "id" : 240,
+  "word" : "spread",
+  "mean" : "퍼지다. 펴다"
+}, {
+  "id" : 241,
+  "word" : "force",
+  "mean" : "힘, ..에게 강제하다."
+}, {
+  "id" : 242,
+  "word" : "sustain",
+  "mean" : "유지하다. 지지하다."
+}, {
+  "id" : 243,
+  "word" : "startle",
+  "mean" : "깜짝 놀라게 하다."
+}, {
+  "id" : 244,
+  "word" : "dispute",
+  "mean" : "논쟁하다. 논"
+}, {
+  "id" : 245,
+  "word" : "perplex",
+  "mean" : "당혹케 하다."
+}, {
+  "id" : 246,
+  "word" : "tolerate",
+  "mean" : "참다. 관대히 다루다."
+}, {
+  "id" : 247,
+  "word" : "remarkable",
+  "mean" : "주목할 만한"
+}, {
+  "id" : 248,
+  "word" : "peculiar",
+  "mean" : "독특한, 특유의"
+}, {
+  "id" : 249,
+  "word" : "conform",
+  "mean" : "(규칙 등을) 따르다."
+}, {
+  "id" : 250,
+  "word" : "invert",
+  "mean" : "거꾸로 하다. 뒤집다."
+}, {
+  "id" : 251,
+  "word" : "isolate",
+  "mean" : "분리하다."
+}, {
+  "id" : 252,
+  "word" : "complain",
+  "mean" : "불평하다. 호소하다."
+}, {
+  "id" : 253,
+  "word" : "obsess",
+  "mean" : "(귀신.망상 등에) 사로잡히다."
+}, {
+  "id" : 254,
+  "word" : "prevail",
+  "mean" : "우세하다. 널리 보급되다."
+}, {
+  "id" : 255,
+  "word" : "grant",
+  "mean" : "승인하다. 주다."
+}, {
+  "id" : 256,
+  "word" : "resume",
+  "mean" : "다시 시작하다."
+}, {
+  "id" : 257,
+  "word" : "diverse",
+  "mean" : "다양한"
+}, {
+  "id" : 258,
+  "word" : "distribute",
+  "mean" : "분해하다. 퍼뜨리다."
+}, {
+  "id" : 259,
+  "word" : "adjust",
+  "mean" : "조정하다. 맞추다."
+}, {
+  "id" : 260,
+  "word" : "minute",
+  "mean" : "미세한, 상세한, 분"
+}, {
+  "id" : 261,
+  "word" : "obvious",
+  "mean" : "명백한"
+}, {
+  "id" : 262,
+  "word" : "involved",
+  "mean" : "연관된"
+}, {
+  "id" : 263,
+  "word" : "prior",
+  "mean" : "이전의"
+}, {
+  "id" : 264,
+  "word" : "appropriate",
+  "mean" : "적당한, 충당하다. 전유하다."
+}, {
+  "id" : 265,
+  "word" : "proclaim",
+  "mean" : "선언하다."
+}, {
+  "id" : 266,
+  "word" : "explode",
+  "mean" : "폭발하다. 뒤엎다."
+}, {
+  "id" : 267,
+  "word" : "endurance",
+  "mean" : "인내, 지구력"
+}, {
+  "id" : 268,
+  "word" : "recall",
+  "mean" : "생각해 내다."
+}, {
+  "id" : 269,
+  "word" : "attach",
+  "mean" : "붙이다."
+}, {
+  "id" : 270,
+  "word" : "indispensable",
+  "mean" : "꼭 필요한"
+}, {
+  "id" : 271,
+  "word" : "approve",
+  "mean" : "찬성하다."
+}, {
+  "id" : 272,
+  "word" : "devise",
+  "mean" : "생각해 내다. 고안하다."
+}, {
+  "id" : 273,
+  "word" : "commence",
+  "mean" : "시작하다."
+}, {
+  "id" : 274,
+  "word" : "compel",
+  "mean" : "억지로 ..시키다."
+}, {
+  "id" : 275,
+  "word" : "compete",
+  "mean" : "경쟁하다."
+}, {
+  "id" : 276,
+  "word" : "convince",
+  "mean" : "확신시키다."
+}, {
+  "id" : 277,
+  "word" : "prominence",
+  "mean" : "돌출, 두드러짐, 탁월"
+}, {
+  "id" : 278,
+  "word" : "prompt",
+  "mean" : "신속한"
+}, {
+  "id" : 279,
+  "word" : "affirm",
+  "mean" : "단언하다. 공정하다."
+}, {
+  "id" : 280,
+  "word" : "grumble",
+  "mean" : "불평하다."
+}, {
+  "id" : 281,
+  "word" : "amaze",
+  "mean" : "깜짝 놀라게 하다."
+}, {
+  "id" : 282,
+  "word" : "concede",
+  "mean" : "양보하다. 인정하다."
+}, {
+  "id" : 283,
+  "word" : "assign",
+  "mean" : "할당하다. 임명하다."
+}, {
+  "id" : 284,
+  "word" : "inquiry",
+  "mean" : "문의, 조회"
+}, {
+  "id" : 285,
+  "word" : "deprive",
+  "mean" : "빼앗다."
+}, {
+  "id" : 286,
+  "word" : "ascribe",
+  "mean" : "(A를 B의) 탓으로 돌리다."
+}, {
+  "id" : 287,
+  "word" : "differ",
+  "mean" : "다르다."
+}, {
+  "id" : 288,
+  "word" : "equip",
+  "mean" : "..에 설비하다."
+}, {
+  "id" : 289,
+  "word" : "otherwise",
+  "mean" : "그렇지는 않고, 딴 방법으로"
+}, {
+  "id" : 290,
+  "word" : "regret",
+  "mean" : "후회하다. 후회"
+}, {
+  "id" : 291,
+  "word" : "significant",
+  "mean" : "중요한"
+}, {
+  "id" : 292,
+  "word" : "oppose",
+  "mean" : "반대하다."
+}, {
+  "id" : 293,
+  "word" : "excess",
+  "mean" : "과도, 초과, 초과의"
+}, {
+  "id" : 294,
+  "word" : "unite",
+  "mean" : "결합하다."
+}, {
+  "id" : 295,
+  "word" : "dwell",
+  "mean" : "거주하다."
+}, {
+  "id" : 296,
+  "word" : "share",
+  "mean" : "몫, 할당, 분배하다, 공유하다."
+}, {
+  "id" : 297,
+  "word" : "devote",
+  "mean" : "비치다. 전념하다."
+}, {
+  "id" : 298,
+  "word" : "infamous",
+  "mean" : "악명 높은"
+}, {
+  "id" : 299,
+  "word" : "impose",
+  "mean" : "부과하다."
+}, {
+  "id" : 300,
+  "word" : "replace",
+  "mean" : "제자리에 놓다. 대신하다."
+}, {
+  "id" : 301,
+  "word" : "substitute",
+  "mean" : "대신하다. 바꾸다."
+}, {
+  "id" : 302,
+  "word" : "yield",
+  "mean" : "생산하다. 산출하다."
+}, {
+  "id" : 303,
+  "word" : "temper",
+  "mean" : "기질, 기분"
+}, {
+  "id" : 304,
+  "word" : "reckon",
+  "mean" : "계산하다. 서다. 간주하다."
+}, {
+  "id" : 305,
+  "word" : "weary",
+  "mean" : "피로한, 싫증나는"
+}, {
+  "id" : 306,
+  "word" : "attribute",
+  "mean" : "속성, 특질. (A를 B의) 탓으로 돌리다."
+}, {
+  "id" : 307,
+  "word" : "bestow",
+  "mean" : "주다. 수여하다."
+}, {
+  "id" : 308,
+  "word" : "furnish",
+  "mean" : "공급하다."
+}, {
+  "id" : 309,
+  "word" : "cope",
+  "mean" : "대처하다. 극복하다."
+}, {
+  "id" : 310,
+  "word" : "indulge",
+  "mean" : "만족시키다."
+}, {
+  "id" : 311,
+  "word" : "akin",
+  "mean" : "유사한, 동종의"
+}, {
+  "id" : 312,
+  "word" : "access",
+  "mean" : "접근, 이용할 수 있는 권리"
+}, {
+  "id" : 313,
+  "word" : "approach",
+  "mean" : "접근, 접근하다."
+}, {
+  "id" : 314,
+  "word" : "dependent",
+  "mean" : "의존하는"
+}, {
+  "id" : 315,
+  "word" : "inhabit",
+  "mean" : "살다."
+}, {
+  "id" : 316,
+  "word" : "relevance",
+  "mean" : "관련, 적절"
+}, {
+  "id" : 317,
+  "word" : "concentrate",
+  "mean" : "집중하다."
+}, {
+  "id" : 318,
+  "word" : "absorb",
+  "mean" : "열중케 하다. 흡수하다."
+}, {
+  "id" : 319,
+  "word" : "harmonize",
+  "mean" : "조화하다. 조화시키다."
+}, {
+  "id" : 320,
+  "word" : "partake",
+  "mean" : "참가하다."
+}, {
+  "id" : 321,
+  "word" : "precede",
+  "mean" : "..에 선행하다."
+}, {
+  "id" : 322,
+  "word" : "commit",
+  "mean" : "위탁하다. 범하다."
+}, {
+  "id" : 323,
+  "word" : "prey",
+  "mean" : "먹이, 희생, 먹이로 하다."
+}, {
+  "id" : 324,
+  "word" : "scope",
+  "mean" : "범위, 시야"
+}, {
+  "id" : 325,
+  "word" : "withstand",
+  "mean" : "..에 저항하다. 참다."
+}, {
+  "id" : 326,
+  "word" : "inflict",
+  "mean" : "(상처.벌 등을) 주다."
+}, {
+  "id" : 327,
+  "word" : "provoke",
+  "mean" : "성나게 하다. 유발시키다."
+}, {
+  "id" : 328,
+  "word" : "lessen",
+  "mean" : "줄이다. 감소시키다."
+}, {
+  "id" : 329,
+  "word" : "entrust",
+  "mean" : "맡기다. 위임하다."
+}, {
+  "id" : 330,
+  "word" : "audible",
+  "mean" : "들을 수 있는"
+}, {
+  "id" : 331,
+  "word" : "medium",
+  "mean" : "매체, 중간의"
+}, {
+  "id" : 332,
+  "word" : "respectful",
+  "mean" : "경의를 표하다."
+}, {
+  "id" : 333,
+  "word" : "preferable",
+  "mean" : "오히려 더 나은"
+}, {
+  "id" : 334,
+  "word" : "notorious",
+  "mean" : "악명 높은"
+}, {
+  "id" : 335,
+  "word" : "proficient",
+  "mean" : "숙달은, 능숙한"
+}, {
+  "id" : 336,
+  "word" : "refrain",
+  "mean" : "그만두다, 참다"
+}, {
+  "id" : 337,
+  "word" : "yearn",
+  "mean" : "그리워하다."
+}, {
+  "id" : 338,
+  "word" : "succession",
+  "mean" : "연속, 계승"
+}, {
+  "id" : 339,
+  "word" : "reluctant",
+  "mean" : "꺼리는, 마지못해 하는"
+}, {
+  "id" : 340,
+  "word" : "presume",
+  "mean" : "추정하다."
+}, {
+  "id" : 341,
+  "word" : "destitute",
+  "mean" : "빈곤한. ..이 없는"
+}, {
+  "id" : 342,
+  "word" : "entitle",
+  "mean" : "..에게 자격을 주다."
+}, {
+  "id" : 343,
+  "word" : "dispense",
+  "mean" : "분배하다. 조제하다."
+}, {
+  "id" : 344,
+  "word" : "consistent",
+  "mean" : "일치하는, 시종일관된"
+}, {
+  "id" : 345,
+  "word" : "convert",
+  "mean" : "변화시키다. 개종자, 전향자"
+}, {
+  "id" : 346,
+  "word" : "meddle",
+  "mean" : "참견하다, 간섭하다."
+}, {
+  "id" : 347,
+  "word" : "consign",
+  "mean" : "건네주다. 위탁하다."
+}, {
+  "id" : 348,
+  "word" : "dedicate",
+  "mean" : "(시간.생애 등을) 바치다."
+}, {
+  "id" : 349,
+  "word" : "irresponsible",
+  "mean" : "무책임한. 책임감이 없는 사람."
+}, {
+  "id" : 350,
+  "word" : "allude",
+  "mean" : "언급하다."
+}, {
+  "id" : 351,
+  "word" : "distract",
+  "mean" : "(마음.주의 등을) 흩어지게 하다."
+}, {
+  "id" : 352,
+  "word" : "utter",
+  "mean" : "내다. 발언하다. 완전한. 전적인."
+}, {
+  "id" : 353,
+  "word" : "enact",
+  "mean" : "(법률을) 제정하다. 공연하다."
+}, {
+  "id" : 354,
+  "word" : "preside",
+  "mean" : "사회를 보다. 관장하다."
+}, {
+  "id" : 355,
+  "word" : "halfway",
+  "mean" : "중간의, 중간에"
+}, {
+  "id" : 356,
+  "word" : "endow",
+  "mean" : "..에게 주다. 부여하다."
+}, {
+  "id" : 357,
+  "word" : "infirm",
+  "mean" : "허약한. 우유 부단한"
+}, {
+  "id" : 358,
+  "word" : "unanimous",
+  "mean" : "만장일치의"
+}, {
+  "id" : 359,
+  "word" : "perceive",
+  "mean" : "지각하다. ..을 눈치채다."
+}, {
+  "id" : 360,
+  "word" : "stimulate",
+  "mean" : "자극하다. 격리하다."
+}, {
+  "id" : 361,
+  "word" : "decline",
+  "mean" : "쇠하다. 기울다. 쇠퇴. 경사"
+}, {
+  "id" : 362,
+  "word" : "pant",
+  "mean" : "숨차다. 헐덕거리다."
+}, {
+  "id" : 363,
+  "word" : "defend",
+  "mean" : "방어하다. 변호하다."
+}, {
+  "id" : 364,
+  "word" : "exclusive",
+  "mean" : "배타적인, 독점적인"
+}, {
+  "id" : 365,
+  "word" : "reproach",
+  "mean" : "비난하다. 비난, 질책"
+}, {
+  "id" : 366,
+  "word" : "extract",
+  "mean" : "추출물. ..로부터 추출하다."
+}, {
+  "id" : 367,
+  "word" : "coherent",
+  "mean" : "시종 일관한, 응집성의"
+}, {
+  "id" : 368,
+  "word" : "surpass",
+  "mean" : "..보다 낫다. ..을 넘다."
+}, {
+  "id" : 369,
+  "word" : "irrelevant",
+  "mean" : "부적절한, 무관계한"
+}, {
+  "id" : 370,
+  "word" : "defy",
+  "mean" : "..에 도전하다. 문제삼지 않다."
+}, {
+  "id" : 371,
+  "word" : "exert",
+  "mean" : "노력하다."
+}, {
+  "id" : 372,
+  "word" : "diffuse",
+  "mean" : "(지식 등을) 퍼뜨리다. 확산시키다. 널리 퍼진"
+}, {
+  "id" : 373,
+  "word" : "allege",
+  "mean" : "주장하다. 단언하다."
+}, {
+  "id" : 374,
+  "word" : "imaginative",
+  "mean" : "상상력이 풍부한"
+}, {
+  "id" : 375,
+  "word" : "subtract",
+  "mean" : "(..로부터) 빼다."
+}, {
+  "id" : 376,
+  "word" : "soul",
+  "mean" : "영혼, 사람"
+}, {
+  "id" : 377,
+  "word" : "elaborate",
+  "mean" : "공들여 만들다. 공들인"
+}, {
+  "id" : 378,
+  "word" : "release",
+  "mean" : "해방하다. 자유롭게 하다. 해방"
+}, {
+  "id" : 379,
+  "word" : "infect",
+  "mean" : "..에 감염시키다."
+}, {
+  "id" : 380,
+  "word" : "contemplate",
+  "mean" : "속고하다."
+}, {
+  "id" : 381,
+  "word" : "subdue",
+  "mean" : "정복하다. 억제하다."
+}, {
+  "id" : 382,
+  "word" : "discard",
+  "mean" : "버리다. 버림받는 것(사람)"
+}, {
+  "id" : 383,
+  "word" : "evade",
+  "mean" : "피하다."
+}, {
+  "id" : 384,
+  "word" : "eligible",
+  "mean" : "적격의, 자격이 되는"
+}, {
+  "id" : 385,
+  "word" : "momentary",
+  "mean" : "순간의, 시시각각의"
+}, {
+  "id" : 386,
+  "word" : "valid",
+  "mean" : "유효한, 정당한"
+}, {
+  "id" : 387,
+  "word" : "revolve",
+  "mean" : "회전하다."
+}, {
+  "id" : 388,
+  "word" : "quest",
+  "mean" : "탐구"
+}, {
+  "id" : 389,
+  "word" : "reside",
+  "mean" : "살다. 존재하다."
+}, {
+  "id" : 390,
+  "word" : "inherent",
+  "mean" : "타고난, 고유의"
+}, {
+  "id" : 391,
+  "word" : "recollect",
+  "mean" : "생각해 내다"
+}, {
+  "id" : 392,
+  "word" : "resource",
+  "mean" : "수단. 자원. 기지"
+}, {
+  "id" : 393,
+  "word" : "prominent",
+  "mean" : "저명한, 두드러진"
+}, {
+  "id" : 394,
+  "word" : "clue",
+  "mean" : "실마리"
+}, {
+  "id" : 395,
+  "word" : "deduct",
+  "mean" : "공제하다."
+}, {
+  "id" : 396,
+  "word" : "relic",
+  "mean" : "유적, 유물"
+}, {
+  "id" : 397,
+  "word" : "plunge",
+  "mean" : "던져 넣다, 뛰어들다, 돌진"
+}, {
+  "id" : 398,
+  "word" : "utterance",
+  "mean" : "발성, 발언"
+}, {
+  "id" : 399,
+  "word" : "exquisite",
+  "mean" : "절묘한, 정교한"
+}, {
+  "id" : 400,
+  "word" : "amuse",
+  "mean" : "즐겁게 하다."
+}, {
+  "id" : 401,
+  "word" : "require",
+  "mean" : "요구하다. 필요로 하다"
+}, {
+  "id" : 402,
+  "word" : "deceive",
+  "mean" : "속이다"
+}, {
+  "id" : 403,
+  "word" : "determine",
+  "mean" : "결심하다. 결정하다."
+}, {
+  "id" : 404,
+  "word" : "understand",
+  "mean" : "이해하다."
+}, {
+  "id" : 405,
+  "word" : "gradually",
+  "mean" : "점차로"
+}, {
+  "id" : 406,
+  "word" : "resemble",
+  "mean" : "..와 닮다"
+}, {
+  "id" : 407,
+  "word" : "criticize",
+  "mean" : "비평하다. ..의 흠을 찾다."
+}, {
+  "id" : 408,
+  "word" : "reject",
+  "mean" : "거절하다."
+}, {
+  "id" : 409,
+  "word" : "represent",
+  "mean" : "묘사하다. 대표하다."
+}, {
+  "id" : 410,
+  "word" : "establish",
+  "mean" : "설립하다. 확립하다."
+}, {
+  "id" : 411,
+  "word" : "despite",
+  "mean" : "..에도 불구하고."
+}, {
+  "id" : 412,
+  "word" : "compensate",
+  "mean" : "보상하다."
+}, {
+  "id" : 413,
+  "word" : "quit",
+  "mean" : "그만두다."
+}, {
+  "id" : 414,
+  "word" : "found",
+  "mean" : "설립하다."
+}, {
+  "id" : 415,
+  "word" : "confirm",
+  "mean" : "확실히 하다."
+}, {
+  "id" : 416,
+  "word" : "mention",
+  "mean" : "간단히 언급하다."
+}, {
+  "id" : 417,
+  "word" : "occur",
+  "mean" : "(사건 등이) 일어나다."
+}, {
+  "id" : 418,
+  "word" : "appear",
+  "mean" : "나타나다. ..로 보이다."
+}, {
+  "id" : 419,
+  "word" : "prove",
+  "mean" : "증명하다."
+}, {
+  "id" : 420,
+  "word" : "abolish",
+  "mean" : "폐지하다."
+}, {
+  "id" : 421,
+  "word" : "utilize",
+  "mean" : "이용하다."
+}, {
+  "id" : 422,
+  "word" : "recover",
+  "mean" : "..에서 회복하다."
+}, {
+  "id" : 423,
+  "word" : "bear",
+  "mean" : "참다. 곰"
+}, {
+  "id" : 424,
+  "word" : "encounter",
+  "mean" : "우연히 만나다"
+}, {
+  "id" : 425,
+  "word" : "save",
+  "mean" : "저장하다. 저축하다."
+}, {
+  "id" : 426,
+  "word" : "ponder",
+  "mean" : "숙고하다."
+}, {
+  "id" : 427,
+  "word" : "explain",
+  "mean" : "설명하다."
+}, {
+  "id" : 428,
+  "word" : "alternate",
+  "mean" : "교대로 하다. 번갈아 하는, 교대의"
+}, {
+  "id" : 429,
+  "word" : "ridicule",
+  "mean" : "비웃다. 조소, 비웃음"
+}, {
+  "id" : 430,
+  "word" : "visit",
+  "mean" : "방문하다."
+}, {
+  "id" : 431,
+  "word" : "start",
+  "mean" : "출발하다."
+}, {
+  "id" : 432,
+  "word" : "examine",
+  "mean" : "조사하다."
+}, {
+  "id" : 433,
+  "word" : "postpone",
+  "mean" : "연기하다."
+}, {
+  "id" : 434,
+  "word" : "sole",
+  "mean" : "유일한"
+}, {
+  "id" : 435,
+  "word" : "finish",
+  "mean" : "끝내다"
+}, {
+  "id" : 436,
+  "word" : "despise",
+  "mean" : "경멸하다."
+}, {
+  "id" : 437,
+  "word" : "overtake",
+  "mean" : "..을 따라잡다"
+}, {
+  "id" : 438,
+  "word" : "breed",
+  "mean" : "낳다."
+}, {
+  "id" : 439,
+  "word" : "emerge",
+  "mean" : "나오다. 나타나다."
+}, {
+  "id" : 440,
+  "word" : "undergo",
+  "mean" : "경험하다. (검사를) 받다."
+}, {
+  "id" : 441,
+  "word" : "generate",
+  "mean" : "낳다. 일으키다."
+}, {
+  "id" : 442,
+  "word" : "compose",
+  "mean" : "구성하다."
+}, {
+  "id" : 443,
+  "word" : "maintain",
+  "mean" : "유지하다. 주장하다."
+}, {
+  "id" : 444,
+  "word" : "pretend",
+  "mean" : "..인체하다. 가장하다."
+}, {
+  "id" : 445,
+  "word" : "exhaust",
+  "mean" : "다 써버리다. 피곤하게 하다."
+}, {
+  "id" : 446,
+  "word" : "satisfy",
+  "mean" : "만족시키다."
+}, {
+  "id" : 447,
+  "word" : "freedom",
+  "mean" : "자유, 해방"
+}, {
+  "id" : 448,
+  "word" : "exist",
+  "mean" : "존재하다. 생존하다."
+}, {
+  "id" : 449,
+  "word" : "thick",
+  "mean" : "두꺼운, 두껍게"
+}, {
+  "id" : 450,
+  "word" : "thin",
+  "mean" : "얇은"
+}, {
+  "id" : 451,
+  "word" : "hire",
+  "mean" : "고용하다. 임대하다."
+}, {
+  "id" : 452,
+  "word" : "area",
+  "mean" : "면적, 지역"
+}, {
+  "id" : 453,
+  "word" : "dessert",
+  "mean" : "디저트, 후식"
+}, {
+  "id" : 454,
+  "word" : "goods",
+  "mean" : "상품"
+}, {
+  "id" : 455,
+  "word" : "cheap",
+  "mean" : "값이 싼"
+}, {
+  "id" : 456,
+  "word" : "climate",
+  "mean" : "기후, 풍토"
+}, {
+  "id" : 457,
+  "word" : "lung",
+  "mean" : "폐"
+}, {
+  "id" : 458,
+  "word" : "demand",
+  "mean" : "요구하다. 수요, 요구"
+}, {
+  "id" : 459,
+  "word" : "system",
+  "mean" : "조직, 제도"
+}, {
+  "id" : 460,
+  "word" : "damage",
+  "mean" : "손해, 손해를 입다."
+}, {
+  "id" : 461,
+  "word" : "subway",
+  "mean" : "지하철"
+}, {
+  "id" : 462,
+  "word" : "culture",
+  "mean" : "문화, 교양"
+}, {
+  "id" : 463,
+  "word" : "traffic",
+  "mean" : "교통"
+}, {
+  "id" : 464,
+  "word" : "civilization",
+  "mean" : "문명, 문화"
+}, {
+  "id" : 465,
+  "word" : "company",
+  "mean" : "회사, 동료"
+}, {
+  "id" : 466,
+  "word" : "tax",
+  "mean" : "세금, 부담"
+}, {
+  "id" : 467,
+  "word" : "humanity",
+  "mean" : "인간성, 인류"
+}, {
+  "id" : 468,
+  "word" : "desert",
+  "mean" : "사막, 버리다"
+}, {
+  "id" : 469,
+  "word" : "religion",
+  "mean" : "종교"
+}, {
+  "id" : 470,
+  "word" : "nature",
+  "mean" : "자연, 성질"
+}, {
+  "id" : 471,
+  "word" : "harm",
+  "mean" : "해, 손해"
+}, {
+  "id" : 472,
+  "word" : "duty",
+  "mean" : "의무, 관세"
+}, {
+  "id" : 473,
+  "word" : "main",
+  "mean" : "주요한"
+}, {
+  "id" : 474,
+  "word" : "here",
+  "mean" : "여기에"
+}, {
+  "id" : 475,
+  "word" : "disease",
+  "mean" : "병"
+}, {
+  "id" : 476,
+  "word" : "ability",
+  "mean" : "능력, 재능"
+}, {
+  "id" : 477,
+  "word" : "borrow",
+  "mean" : "빌리다."
+}, {
+  "id" : 478,
+  "word" : "ancient",
+  "mean" : "고대의"
+}, {
+  "id" : 479,
+  "word" : "tale",
+  "mean" : "이야기"
+}, {
+  "id" : 480,
+  "word" : "air",
+  "mean" : "공기"
+}, {
+  "id" : 481,
+  "word" : "bow",
+  "mean" : "절하다. 인사. 절"
+}, {
+  "id" : 482,
+  "word" : "habit",
+  "mean" : "습관, 습성"
+}, {
+  "id" : 483,
+  "word" : "baggage",
+  "mean" : "수하물"
+}, {
+  "id" : 484,
+  "word" : "society",
+  "mean" : "사회"
+}, {
+  "id" : 485,
+  "word" : "education",
+  "mean" : "교육"
+}, {
+  "id" : 486,
+  "word" : "equality",
+  "mean" : "평등"
+}, {
+  "id" : 487,
+  "word" : "fair",
+  "mean" : "공정한, 올바른"
+}, {
+  "id" : 488,
+  "word" : "plenty",
+  "mean" : "많음, 풍부한"
+}, {
+  "id" : 489,
+  "word" : "tradition",
+  "mean" : "전통, 전설"
+}, {
+  "id" : 490,
+  "word" : "personality",
+  "mean" : "개성, 인격"
+}, {
+  "id" : 491,
+  "word" : "value",
+  "mean" : "가치, 평가하다."
+}, {
+  "id" : 492,
+  "word" : "curiosity",
+  "mean" : "호기심"
+}, {
+  "id" : 493,
+  "word" : "aircraft",
+  "mean" : "항공기"
+}, {
+  "id" : 494,
+  "word" : "parcel",
+  "mean" : "소포, 꾸러미"
+}, {
+  "id" : 495,
+  "word" : "current",
+  "mean" : "현재의"
+}, {
+  "id" : 496,
+  "word" : "annual",
+  "mean" : "1년의, 1년생 식물"
+}, {
+  "id" : 497,
+  "word" : "infant",
+  "mean" : "유아"
+}, {
+  "id" : 498,
+  "word" : "telegraph",
+  "mean" : "전보, 전보를 치다"
+}, {
+  "id" : 499,
+  "word" : "wheel",
+  "mean" : "차바퀴, 자동차 핸들"
+}, {
+  "id" : 500,
+  "word" : "suggestion",
+  "mean" : "제안"
+}, {
+  "id" : 501,
+  "word" : "centigrade",
+  "mean" : "섭시의"
+}, {
+  "id" : 502,
+  "word" : "publish",
+  "mean" : "출판하다. 발표하다."
+}, {
+  "id" : 503,
+  "word" : "neutral",
+  "mean" : "중립의, 중립국"
+}, {
+  "id" : 504,
+  "word" : "diet",
+  "mean" : "식품, 다이어트, (덴마크, 일본 등의) 국회(the Diet)"
+}, {
+  "id" : 505,
+  "word" : "tariff",
+  "mean" : "관세"
+}, {
+  "id" : 506,
+  "word" : "republic",
+  "mean" : "공화국"
+}, {
+  "id" : 507,
+  "word" : "wallet",
+  "mean" : "지갑"
+}, {
+  "id" : 508,
+  "word" : "misunderstand",
+  "mean" : "오해하다."
+}, {
+  "id" : 509,
+  "word" : "technology",
+  "mean" : "과학 기술"
+}, {
+  "id" : 510,
+  "word" : "petroleum",
+  "mean" : "석유"
+}, {
+  "id" : 511,
+  "word" : "organization",
+  "mean" : "조직, 기구"
+}, {
+  "id" : 512,
+  "word" : "press",
+  "mean" : "출판물, 신문, 잡지, 누르다. 압박하다."
+}, {
+  "id" : 513,
+  "word" : "popularity",
+  "mean" : "인기"
+}, {
+  "id" : 514,
+  "word" : "fund",
+  "mean" : "자금, 기금"
+}, {
+  "id" : 515,
+  "word" : "relation",
+  "mean" : "관계"
+}, {
+  "id" : 516,
+  "word" : "create",
+  "mean" : "참조하다."
+}, {
+  "id" : 517,
+  "word" : "pavement",
+  "mean" : "포장(도로)"
+}, {
+  "id" : 518,
+  "word" : "contract",
+  "mean" : "계약, 계약하다."
+}, {
+  "id" : 519,
+  "word" : "committee",
+  "mean" : "위원회"
+}, {
+  "id" : 520,
+  "word" : "scissors",
+  "mean" : "가위"
+}, {
+  "id" : 521,
+  "word" : "mutual",
+  "mean" : "서로의, 상호 관계가 있는"
+}, {
+  "id" : 522,
+  "word" : "income",
+  "mean" : "수입, 소득"
+}, {
+  "id" : 523,
+  "word" : "telegram",
+  "mean" : "전보"
+}, {
+  "id" : 524,
+  "word" : "manner",
+  "mean" : "방법, 태도, 풍습"
+}, {
+  "id" : 525,
+  "word" : "relative",
+  "mean" : "친척, 상대적인"
+}, {
+  "id" : 526,
+  "word" : "continent",
+  "mean" : "대륙"
+}, {
+  "id" : 527,
+  "word" : "courage",
+  "mean" : "용기"
+}, {
+  "id" : 528,
+  "word" : "atomic",
+  "mean" : "원자의"
+}, {
+  "id" : 529,
+  "word" : "aid",
+  "mean" : "원조, 돕다"
+}, {
+  "id" : 530,
+  "word" : "shame",
+  "mean" : "부끄럼, 수치"
+}, {
+  "id" : 531,
+  "word" : "wheat",
+  "mean" : "밀, 소맥"
+}, {
+  "id" : 532,
+  "word" : "exhibition",
+  "mean" : "전시회, 전시"
+}, {
+  "id" : 533,
+  "word" : "adolescence",
+  "mean" : "사춘기"
+}, {
+  "id" : 534,
+  "word" : "routine",
+  "mean" : "일상적인 일, 일과, 일상의"
+}, {
+  "id" : 535,
+  "word" : "male",
+  "mean" : "남성"
+}, {
+  "id" : 536,
+  "word" : "moral",
+  "mean" : "도덕의, 교훈"
+}, {
+  "id" : 537,
+  "word" : "merit",
+  "mean" : "장점"
+}, {
+  "id" : 538,
+  "word" : "minor",
+  "mean" : "적은, 소수의, 미성년자"
+}, {
+  "id" : 539,
+  "word" : "urban",
+  "mean" : "도시의"
+}, {
+  "id" : 540,
+  "word" : "research",
+  "mean" : "연구, 조사, 조사하다."
+}, {
+  "id" : 541,
+  "word" : "argue",
+  "mean" : "논쟁하다."
+}, {
+  "id" : 542,
+  "word" : "odd",
+  "mean" : "홀수의, 이상한"
+}, {
+  "id" : 543,
+  "word" : "vehicle",
+  "mean" : "탈것, 전달 수단"
+}, {
+  "id" : 544,
+  "word" : "suicide",
+  "mean" : "자살"
+}, {
+  "id" : 545,
+  "word" : "achieve",
+  "mean" : "완수하다. 달성하다."
+}, {
+  "id" : 546,
+  "word" : "conscience",
+  "mean" : "양심"
+}, {
+  "id" : 547,
+  "word" : "possible",
+  "mean" : "가능한"
+}, {
+  "id" : 548,
+  "word" : "globe",
+  "mean" : "지구, 구"
+}, {
+  "id" : 549,
+  "word" : "trifle",
+  "mean" : "사소한 일, 소홀히 다루다"
+}, {
+  "id" : 550,
+  "word" : "apparent",
+  "mean" : "명백한, 눈에 보이는"
+}, {
+  "id" : 551,
+  "word" : "thirst",
+  "mean" : "갈망, 갈망하다."
+}, {
+  "id" : 552,
+  "word" : "consult",
+  "mean" : "..의 의견을 듣다."
+}, {
+  "id" : 553,
+  "word" : "term",
+  "mean" : "용어, 기간, (복)사이, 조건"
+}, {
+  "id" : 554,
+  "word" : "proof",
+  "mean" : "증명, ..에 견뎌 내는"
+}, {
+  "id" : 555,
+  "word" : "pity",
+  "mean" : "동정"
+}, {
+  "id" : 556,
+  "word" : "frank",
+  "mean" : "솔직한, 명백한"
+}, {
+  "id" : 557,
+  "word" : "educate",
+  "mean" : "교육하다."
+}, {
+  "id" : 558,
+  "word" : "cure",
+  "mean" : "치료, 치료법, 치료하다."
+}, {
+  "id" : 559,
+  "word" : "bloom",
+  "mean" : "꽃, 꽃이 피다."
+}, {
+  "id" : 560,
+  "word" : "esteem",
+  "mean" : "존경, 평가, 존경하다."
+}, {
+  "id" : 561,
+  "word" : "aware",
+  "mean" : "깨닫고, 의식하고"
+}, {
+  "id" : 562,
+  "word" : "loss",
+  "mean" : "손해, 손실"
+}, {
+  "id" : 563,
+  "word" : "average",
+  "mean" : "평균"
+}, {
+  "id" : 564,
+  "word" : "adult",
+  "mean" : "성인"
+}, {
+  "id" : 565,
+  "word" : "prize",
+  "mean" : "상"
+}, {
+  "id" : 566,
+  "word" : "viewpoint",
+  "mean" : "관점, 견해"
+}, {
+  "id" : 567,
+  "word" : "tough",
+  "mean" : "튼튼한, 다루기 힘든"
+}, {
+  "id" : 568,
+  "word" : "cheat",
+  "mean" : "속이다."
+}, {
+  "id" : 569,
+  "word" : "talent",
+  "mean" : "재능"
+}, {
+  "id" : 570,
+  "word" : "sacrifice",
+  "mean" : "희생, 제물, 희생하다."
+}, {
+  "id" : 571,
+  "word" : "transfer",
+  "mean" : "이동하다. 이동"
+}, {
+  "id" : 572,
+  "word" : "injure",
+  "mean" : "상처를 입히다."
+}, {
+  "id" : 573,
+  "word" : "artificial",
+  "mean" : "인공의"
+}, {
+  "id" : 574,
+  "word" : "crisis",
+  "mean" : "위기"
+}, {
+  "id" : 575,
+  "word" : "debt",
+  "mean" : "빚, 부채"
+}, {
+  "id" : 576,
+  "word" : "attitude",
+  "mean" : "태도"
+}, {
+  "id" : 577,
+  "word" : "accurate",
+  "mean" : "정확한"
+}, {
+  "id" : 578,
+  "word" : "majority",
+  "mean" : "대다수"
+}, {
+  "id" : 579,
+  "word" : "pressure",
+  "mean" : "압력, 압박"
+}, {
+  "id" : 580,
+  "word" : "residence",
+  "mean" : "주택, 주거"
+}, {
+  "id" : 581,
+  "word" : "fuel",
+  "mean" : "연료, ..에 연료를 공급하다."
+}, {
+  "id" : 582,
+  "word" : "intellect",
+  "mean" : "지성"
+}, {
+  "id" : 583,
+  "word" : "cause",
+  "mean" : "원인, 야기하다."
+}, {
+  "id" : 584,
+  "word" : "attack",
+  "mean" : "공격, 공격하다."
+}, {
+  "id" : 585,
+  "word" : "experience",
+  "mean" : "경험, 경험하다."
+}, {
+  "id" : 586,
+  "word" : "absolute",
+  "mean" : "절대의"
+}, {
+  "id" : 587,
+  "word" : "personal",
+  "mean" : "개인적인"
+}, {
+  "id" : 588,
+  "word" : "expensive",
+  "mean" : "비싼"
+}, {
+  "id" : 589,
+  "word" : "social",
+  "mean" : "사회적인"
+}, {
+  "id" : 590,
+  "word" : "negative",
+  "mean" : "부정의, 소극적인"
+}, {
+  "id" : 591,
+  "word" : "comedy",
+  "mean" : "희극"
+}, {
+  "id" : 592,
+  "word" : "general",
+  "mean" : "일반적인, 전체적인"
+}, {
+  "id" : 593,
+  "word" : "biography",
+  "mean" : "전기, 일대기"
+}, {
+  "id" : 594,
+  "word" : "role",
+  "mean" : "역할"
+}, {
+  "id" : 595,
+  "word" : "opportunity",
+  "mean" : "기회"
+}, {
+  "id" : 596,
+  "word" : "waste",
+  "mean" : "낭비, 폐기물"
+}, {
+  "id" : 597,
+  "word" : "chest",
+  "mean" : "가슴"
+}, {
+  "id" : 598,
+  "word" : "contact",
+  "mean" : "접촉, 연락하다."
+}, {
+  "id" : 599,
+  "word" : "nod",
+  "mean" : "끄덕이다. 고개를 끄덕여 인사하다. 목례"
+}, {
+  "id" : 600,
+  "word" : "fur",
+  "mean" : "모피"
+}, {
+  "id" : 601,
+  "word" : "innocent",
+  "mean" : "무죄의, 순진한"
+}, {
+  "id" : 602,
+  "word" : "bride",
+  "mean" : "신부"
+}, {
+  "id" : 603,
+  "word" : "cell",
+  "mean" : "세포, 독방"
+}, {
+  "id" : 604,
+  "word" : "liberty",
+  "mean" : "자유"
+}, {
+  "id" : 605,
+  "word" : "tragedy",
+  "mean" : "비극"
+}, {
+  "id" : 606,
+  "word" : "individual",
+  "mean" : "개인의, 개인"
+}, {
+  "id" : 607,
+  "word" : "order",
+  "mean" : "명령, 순서, 질서, 명령하다. 주문하다."
+}, {
+  "id" : 608,
+  "word" : "basis",
+  "mean" : "기초"
+}, {
+  "id" : 609,
+  "word" : "flow",
+  "mean" : "흐르다. 밀물, 유입"
+}, {
+  "id" : 610,
+  "word" : "experiment",
+  "mean" : "실험, 실험하다."
+}, {
+  "id" : 611,
+  "word" : "tool",
+  "mean" : "도구"
+}, {
+  "id" : 612,
+  "word" : "advantage",
+  "mean" : "이점"
+}, {
+  "id" : 613,
+  "word" : "justice",
+  "mean" : "정의, 공정"
+}, {
+  "id" : 614,
+  "word" : "entertain",
+  "mean" : "환대하다. 즐겁게 하다."
+}, {
+  "id" : 615,
+  "word" : "extend",
+  "mean" : "확장하다. 연장하다."
+}, {
+  "id" : 616,
+  "word" : "enterprise",
+  "mean" : "기업, 진취적인 정신"
+}, {
+  "id" : 617,
+  "word" : "solid",
+  "mean" : "고체, 고체의, 견고한"
+}, {
+  "id" : 618,
+  "word" : "plague",
+  "mean" : "질병, 전염병, 괴롭히다."
+}, {
+  "id" : 619,
+  "word" : "obstruct",
+  "mean" : "방해하다."
+}, {
+  "id" : 620,
+  "word" : "autobiography",
+  "mean" : "자서전"
+}, {
+  "id" : 621,
+  "word" : "congest",
+  "mean" : "넘치게 하다. 붐비다."
+}, {
+  "id" : 622,
+  "word" : "fasten",
+  "mean" : "고정하다. 채우다."
+}, {
+  "id" : 623,
+  "word" : "commodity",
+  "mean" : "상품, 일용품"
+}, {
+  "id" : 624,
+  "word" : "depict",
+  "mean" : "묘사하다."
+}, {
+  "id" : 625,
+  "word" : "obligation",
+  "mean" : "의무"
+}, {
+  "id" : 626,
+  "word" : "postwar",
+  "mean" : "전후의"
+}, {
+  "id" : 627,
+  "word" : "thrift",
+  "mean" : "절약"
+}, {
+  "id" : 628,
+  "word" : "interior",
+  "mean" : "내부, 실내, 내부의"
+}, {
+  "id" : 629,
+  "word" : "frugal",
+  "mean" : "절약하는"
+}, {
+  "id" : 630,
+  "word" : "optimistic",
+  "mean" : "낙관적인"
+}, {
+  "id" : 631,
+  "word" : "positive",
+  "mean" : "긍정적인, 적극적인"
+}, {
+  "id" : 632,
+  "word" : "nephew",
+  "mean" : "남자조카"
+}, {
+  "id" : 633,
+  "word" : "occupation",
+  "mean" : "직업, 점령"
+}, {
+  "id" : 634,
+  "word" : "destiny",
+  "mean" : "운명"
+}, {
+  "id" : 635,
+  "word" : "liquid",
+  "mean" : "액체"
+}, {
+  "id" : 636,
+  "word" : "glance",
+  "mean" : "힐긋 보다, 대충 보다."
+}, {
+  "id" : 637,
+  "word" : "irony",
+  "mean" : "풍자, 반어법"
+}, {
+  "id" : 638,
+  "word" : "vapor",
+  "mean" : "증기"
+}, {
+  "id" : 639,
+  "word" : "rural",
+  "mean" : "시골의, 지방의"
+}, {
+  "id" : 640,
+  "word" : "quality",
+  "mean" : "질, 특질"
+}, {
+  "id" : 641,
+  "word" : "collide",
+  "mean" : "충돌하다."
+}, {
+  "id" : 642,
+  "word" : "midst",
+  "mean" : "중앙, 한가운데"
+}, {
+  "id" : 643,
+  "word" : "defeat",
+  "mean" : "쳐부수다."
+}, {
+  "id" : 644,
+  "word" : "feature",
+  "mean" : "특징, 용모"
+}, {
+  "id" : 645,
+  "word" : "inferior",
+  "mean" : "열등한"
+}, {
+  "id" : 646,
+  "word" : "ancestor",
+  "mean" : "조상, 선조"
+}, {
+  "id" : 647,
+  "word" : "prose",
+  "mean" : "산문"
+}, {
+  "id" : 648,
+  "word" : "literary",
+  "mean" : "문학의, 문학적인"
+}, {
+  "id" : 649,
+  "word" : "humble",
+  "mean" : "겸손한, 비천한, 낮추다."
+}, {
+  "id" : 650,
+  "word" : "fault",
+  "mean" : "결점, 과실"
+}, {
+  "id" : 651,
+  "word" : "microscope",
+  "mean" : "현미경"
+}, {
+  "id" : 652,
+  "word" : "complete",
+  "mean" : "완성하다. 완전한"
+}, {
+  "id" : 653,
+  "word" : "transaction",
+  "mean" : "처리, 취급"
+}, {
+  "id" : 654,
+  "word" : "simultaneous",
+  "mean" : "동시의"
+}, {
+  "id" : 655,
+  "word" : "aviation",
+  "mean" : "비행, 항공"
+}, {
+  "id" : 656,
+  "word" : "commemorate",
+  "mean" : "기념하다."
+}, {
+  "id" : 657,
+  "word" : "portable",
+  "mean" : "휴대용의"
+}, {
+  "id" : 658,
+  "word" : "register",
+  "mean" : "등록, 등록하다."
+}, {
+  "id" : 659,
+  "word" : "salute",
+  "mean" : "인사, 인사하다. 절하다."
+}, {
+  "id" : 660,
+  "word" : "pedestrian",
+  "mean" : "보행자, 도보의"
+}, {
+  "id" : 661,
+  "word" : "eruption",
+  "mean" : "(화산 등의)폭발"
+}, {
+  "id" : 662,
+  "word" : "descendant",
+  "mean" : "자손"
+}, {
+  "id" : 663,
+  "word" : "scold",
+  "mean" : "꾸짖다."
+}, {
+  "id" : 664,
+  "word" : "immortal",
+  "mean" : "불사의, 불멸의"
+}, {
+  "id" : 665,
+  "word" : "nutrition",
+  "mean" : "영양, 음식물"
+}, {
+  "id" : 666,
+  "word" : "vote",
+  "mean" : "투표, 투표하다."
+}, {
+  "id" : 667,
+  "word" : "feminine",
+  "mean" : "여자의, 여자다운"
+}, {
+  "id" : 668,
+  "word" : "applicant",
+  "mean" : "지원자"
+}, {
+  "id" : 669,
+  "word" : "proposal",
+  "mean" : "제안, 신청"
+}, {
+  "id" : 670,
+  "word" : "exclude",
+  "mean" : "제의하다."
+}, {
+  "id" : 671,
+  "word" : "verbal",
+  "mean" : "언어의, 구두의"
+}, {
+  "id" : 672,
+  "word" : "missing",
+  "mean" : "행방불명의"
+}, {
+  "id" : 673,
+  "word" : "promising",
+  "mean" : "유망한"
+}, {
+  "id" : 674,
+  "word" : "improve",
+  "mean" : "개선하다. 진보하다."
+}, {
+  "id" : 675,
+  "word" : "prescribe",
+  "mean" : "규정하다. 처방하다."
+}, {
+  "id" : 676,
+  "word" : "selfish",
+  "mean" : "이기적인"
+}, {
+  "id" : 677,
+  "word" : "starvation",
+  "mean" : "아사, 기아"
+}, {
+  "id" : 678,
+  "word" : "moisture",
+  "mean" : "습기"
+}, {
+  "id" : 679,
+  "word" : "fee",
+  "mean" : "요금, 수수료, 보수"
+}, {
+  "id" : 680,
+  "word" : "semester",
+  "mean" : "(2학기제의) 학기"
+}, {
+  "id" : 681,
+  "word" : "despair",
+  "mean" : "절망, 절망하다."
+}, {
+  "id" : 682,
+  "word" : "labor",
+  "mean" : "노동, 열심히 일하다."
+}, {
+  "id" : 683,
+  "word" : "monthly",
+  "mean" : "월간의, 매달의"
+}, {
+  "id" : 684,
+  "word" : "shortage",
+  "mean" : "부족"
+}, {
+  "id" : 685,
+  "word" : "Orient",
+  "mean" : "동양"
+}, {
+  "id" : 686,
+  "word" : "posterity",
+  "mean" : "자손"
+}, {
+  "id" : 687,
+  "word" : "estate",
+  "mean" : "재산, 지위"
+}, {
+  "id" : 688,
+  "word" : "appreciate",
+  "mean" : "인정하다. 평가하다. 감상하다."
+}, {
+  "id" : 689,
+  "word" : "property",
+  "mean" : "재산, 특성"
+}, {
+  "id" : 690,
+  "word" : "tendency",
+  "mean" : "경향"
+}, {
+  "id" : 691,
+  "word" : "industry",
+  "mean" : "산업, 공업, 근면"
+}, {
+  "id" : 692,
+  "word" : "equivalent",
+  "mean" : "동등한 것, 동등한"
+}, {
+  "id" : 693,
+  "word" : "astronaut",
+  "mean" : "우주 비행사"
+}, {
+  "id" : 694,
+  "word" : "harvest",
+  "mean" : "수확하다. 수확. 추수"
+}, {
+  "id" : 695,
+  "word" : "probability",
+  "mean" : "있음직함, 가망, 확률"
+}, {
+  "id" : 696,
+  "word" : "conceit",
+  "mean" : "자부심, 자만심"
+}, {
+  "id" : 697,
+  "word" : "vocation",
+  "mean" : "천직, 직업"
+}, {
+  "id" : 698,
+  "word" : "irrational",
+  "mean" : "불합리한, 이성이 없는"
+}, {
+  "id" : 699,
+  "word" : "executive",
+  "mean" : "간부, 경영진, 실행의"
+}, {
+  "id" : 700,
+  "word" : "satellite",
+  "mean" : "위성"
+}, {
+  "id" : 701,
+  "word" : "destination",
+  "mean" : "목적지"
+}, {
+  "id" : 702,
+  "word" : "fade",
+  "mean" : "사라지다. 바래다."
+}, {
+  "id" : 703,
+  "word" : "temperance",
+  "mean" : "자제, 절제"
+}, {
+  "id" : 704,
+  "word" : "gain",
+  "mean" : "얻다. 이득, 이익"
+}, {
+  "id" : 705,
+  "word" : "comfort",
+  "mean" : "위로, 편향"
+}, {
+  "id" : 706,
+  "word" : "minority",
+  "mean" : "소수파"
+}, {
+  "id" : 707,
+  "word" : "drastic",
+  "mean" : "격렬한, 철저한"
+}, {
+  "id" : 708,
+  "word" : "scatter",
+  "mean" : "흩뿌리다. 살포"
+}, {
+  "id" : 709,
+  "word" : "wholesome",
+  "mean" : "건강에 좋은, 유익한"
+}, {
+  "id" : 710,
+  "word" : "mortal",
+  "mean" : "죽을 운명의, 인간의, 인간"
+}, {
+  "id" : 711,
+  "word" : "adolescent",
+  "mean" : "청년기의, 청년기"
+}, {
+  "id" : 712,
+  "word" : "possibility",
+  "mean" : "가능성"
+}, {
+  "id" : 713,
+  "word" : "practice",
+  "mean" : "실행, 습관, 실행하다. 연습하다."
+}, {
+  "id" : 714,
+  "word" : "award",
+  "mean" : "수여, 수여하다. 상"
+}, {
+  "id" : 715,
+  "word" : "pessimism",
+  "mean" : "비관(주의)"
+}, {
+  "id" : 716,
+  "word" : "satire",
+  "mean" : "풍자"
+}, {
+  "id" : 717,
+  "word" : "volcano",
+  "mean" : "화산"
+}, {
+  "id" : 718,
+  "word" : "ebb",
+  "mean" : "썰물, 간조"
+}, {
+  "id" : 719,
+  "word" : "architecture",
+  "mean" : "건축, 건축물"
+}, {
+  "id" : 720,
+  "word" : "nevertheless",
+  "mean" : "그럼에도 불구하고"
+}, {
+  "id" : 721,
+  "word" : "competition",
+  "mean" : "경쟁"
+}, {
+  "id" : 722,
+  "word" : "throng",
+  "mean" : "군중, 인파, 모여들다."
+}, {
+  "id" : 723,
+  "word" : "intent",
+  "mean" : "의도, 열중해 있는"
+}, {
+  "id" : 724,
+  "word" : "grateful",
+  "mean" : "감사하는"
+}, {
+  "id" : 725,
+  "word" : "content",
+  "mean" : "내용, 만족하는"
+}, {
+  "id" : 726,
+  "word" : "extent",
+  "mean" : "정도, 범위"
+}, {
+  "id" : 727,
+  "word" : "description",
+  "mean" : "기술, 묘사"
+}, {
+  "id" : 728,
+  "word" : "fancy",
+  "mean" : "공상, 상상, 상상하다."
+}, {
+  "id" : 729,
+  "word" : "guarantee",
+  "mean" : "보증, 보증하다. 확언하다."
+}, {
+  "id" : 730,
+  "word" : "alter",
+  "mean" : "바꾸다. 변경하다."
+}, {
+  "id" : 731,
+  "word" : "particular",
+  "mean" : "특별한, 상세한, 항목, 상세"
+}, {
+  "id" : 732,
+  "word" : "site",
+  "mean" : "부지, 위치"
+}, {
+  "id" : 733,
+  "word" : "previous",
+  "mean" : "앞의, 이전의"
+}, {
+  "id" : 734,
+  "word" : "illustrate",
+  "mean" : "설명하다. 삽화를 넣다."
+}, {
+  "id" : 735,
+  "word" : "vice",
+  "mean" : "악덕"
+}, {
+  "id" : 736,
+  "word" : "survey",
+  "mean" : "조사, 조사하다."
+}, {
+  "id" : 737,
+  "word" : "muscle",
+  "mean" : "근육, 완력"
+}, {
+  "id" : 738,
+  "word" : "protest",
+  "mean" : "항의, 항의하다."
+}, {
+  "id" : 739,
+  "word" : "avoid",
+  "mean" : "피하다."
+}, {
+  "id" : 740,
+  "word" : "lean",
+  "mean" : "기대다. 야윈"
+}, {
+  "id" : 741,
+  "word" : "token",
+  "mean" : "표시, 상징"
+}, {
+  "id" : 742,
+  "word" : "extreme",
+  "mean" : "극단. 극단적인, 극도의"
+}, {
+  "id" : 743,
+  "word" : "detail",
+  "mean" : "세부, 상세, 상세히 기술하다."
+}, {
+  "id" : 744,
+  "word" : "participate",
+  "mean" : "참가하다."
+}, {
+  "id" : 745,
+  "word" : "circumstance",
+  "mean" : "환경, 상황"
+}, {
+  "id" : 746,
+  "word" : "compliment",
+  "mean" : "칭찬, 찬사"
+}, {
+  "id" : 747,
+  "word" : "agency",
+  "mean" : "기능, 대리점"
+}, {
+  "id" : 748,
+  "word" : "interval",
+  "mean" : "간격"
+}, {
+  "id" : 749,
+  "word" : "sensitive",
+  "mean" : "건강한"
+}, {
+  "id" : 750,
+  "word" : "purchase",
+  "mean" : "사다, 구입하다. 구입"
+}, {
+  "id" : 751,
+  "word" : "thermometer",
+  "mean" : "온도계"
+}, {
+  "id" : 752,
+  "word" : "deliberate",
+  "mean" : "신중한, 고의의, 숙고하다."
+}, {
+  "id" : 753,
+  "word" : "instinct",
+  "mean" : "본능"
+}, {
+  "id" : 754,
+  "word" : "institute",
+  "mean" : "설립하다. 학회, 연구소"
+}, {
+  "id" : 755,
+  "word" : "procedure",
+  "mean" : "진행, 절차"
+}, {
+  "id" : 756,
+  "word" : "inferiority",
+  "mean" : "열등, 하위"
+}, {
+  "id" : 757,
+  "word" : "inevitable",
+  "mean" : "피할 수 없는"
+}, {
+  "id" : 758,
+  "word" : "punctual",
+  "mean" : "시간을 잘 지키는"
+}, {
+  "id" : 759,
+  "word" : "resort",
+  "mean" : "휴양지, 호소하다."
+}, {
+  "id" : 760,
+  "word" : "Arctic",
+  "mean" : "북극의, 북극권"
+}, {
+  "id" : 761,
+  "word" : "Antarctic",
+  "mean" : "남극의, 남극권"
+}, {
+  "id" : 762,
+  "word" : "pessimist",
+  "mean" : "비관주의자"
+}, {
+  "id" : 763,
+  "word" : "probable",
+  "mean" : "있을 법한, 있음직한"
+}, {
+  "id" : 764,
+  "word" : "pile",
+  "mean" : "퇴적하다. 더미"
+}, {
+  "id" : 765,
+  "word" : "vertical",
+  "mean" : "수직의 세로의"
+}, {
+  "id" : 766,
+  "word" : "polite",
+  "mean" : "예의 바른"
+}, {
+  "id" : 767,
+  "word" : "maximum",
+  "mean" : "최대, 최대의"
+}, {
+  "id" : 768,
+  "word" : "audience",
+  "mean" : "청중, 추종자"
+}, {
+  "id" : 769,
+  "word" : "vacuum",
+  "mean" : "진공"
+}, {
+  "id" : 770,
+  "word" : "elementary",
+  "mean" : "기본의, 초등학교의"
+}, {
+  "id" : 771,
+  "word" : "multiple",
+  "mean" : "다수의, 북합의"
+}, {
+  "id" : 772,
+  "word" : "planet",
+  "mean" : "행성"
+}, {
+  "id" : 773,
+  "word" : "wealth",
+  "mean" : "부, 재산"
+}, {
+  "id" : 774,
+  "word" : "temperature",
+  "mean" : "온도"
+}, {
+  "id" : 775,
+  "word" : "anniversary",
+  "mean" : "기념일"
+}, {
+  "id" : 776,
+  "word" : "tidy",
+  "mean" : "단정한, 정돈된"
+}, {
+  "id" : 777,
+  "word" : "variety",
+  "mean" : "변화, 다양성"
+}, {
+  "id" : 778,
+  "word" : "ceremony",
+  "mean" : "의식, 의례"
+}, {
+  "id" : 779,
+  "word" : "humane",
+  "mean" : "인간적인"
+}, {
+  "id" : 780,
+  "word" : "principle",
+  "mean" : "주의, 원리"
+}, {
+  "id" : 781,
+  "word" : "faint",
+  "mean" : "기절하다. 졸도하다. 희미한."
+}, {
+  "id" : 782,
+  "word" : "spectator",
+  "mean" : "구경꾼, 관객, 방관자"
+}, {
+  "id" : 783,
+  "word" : "remark",
+  "mean" : "주목, 의견, 의견을 말하다."
+}, {
+  "id" : 784,
+  "word" : "female",
+  "mean" : "여성, 여성의"
+}, {
+  "id" : 785,
+  "word" : "suitable",
+  "mean" : "적합한, 어울리는"
+}, {
+  "id" : 786,
+  "word" : "mischief",
+  "mean" : "재난, 해악"
+}, {
+  "id" : 787,
+  "word" : "influence",
+  "mean" : "영향, 영향을 미치다."
+}, {
+  "id" : 788,
+  "word" : "insult",
+  "mean" : "모욕, 모욕하다."
+}, {
+  "id" : 789,
+  "word" : "document",
+  "mean" : "문서, 기록하다."
+}, {
+  "id" : 790,
+  "word" : "character",
+  "mean" : "성격, 문자, 인물"
+}, {
+  "id" : 791,
+  "word" : "flatter",
+  "mean" : "..에게 아첨하다."
+}, {
+  "id" : 792,
+  "word" : "virtue",
+  "mean" : "미덕, 장점"
+}, {
+  "id" : 793,
+  "word" : "cling",
+  "mean" : "달라붙다, 집착하다."
+}, {
+  "id" : 794,
+  "word" : "operate",
+  "mean" : "조작하다. 수술하다. 작동하다."
+}, {
+  "id" : 795,
+  "word" : "optimist",
+  "mean" : "낙천가"
+}, {
+  "id" : 796,
+  "word" : "raise",
+  "mean" : "올리다. 모금하다. 키우다."
+}, {
+  "id" : 797,
+  "word" : "laboratory",
+  "mean" : "실험실, 연구실"
+}, {
+  "id" : 798,
+  "word" : "exhibit",
+  "mean" : "전시하다. 보이다. 전시품"
+}, {
+  "id" : 799,
+  "word" : "spiritual",
+  "mean" : "정신적인"
+}, {
+  "id" : 800,
+  "word" : "envelop",
+  "mean" : "포장하다. 싸다."
+}, {
+  "id" : 801,
+  "word" : "stimulus",
+  "mean" : "자극"
+}, {
+  "id" : 802,
+  "word" : "separate",
+  "mean" : "분리하다. 분리된"
+}, {
+  "id" : 803,
+  "word" : "appetite",
+  "mean" : "식욕"
+}, {
+  "id" : 804,
+  "word" : "quantity",
+  "mean" : "양"
+}, {
+  "id" : 805,
+  "word" : "overseas",
+  "mean" : "해외로"
+}, {
+  "id" : 806,
+  "word" : "summarize",
+  "mean" : "요약하다."
+}, {
+  "id" : 807,
+  "word" : "enclose",
+  "mean" : "둘러싸다. 포위하다."
+}, {
+  "id" : 808,
+  "word" : "inhabitant",
+  "mean" : "주민, 거주자"
+}, {
+  "id" : 809,
+  "word" : "physical",
+  "mean" : "육체의, 물질의, 물질적인"
+}, {
+  "id" : 810,
+  "word" : "label",
+  "mean" : "꼬리표, 라벨, 라벨을 붙이다."
+}, {
+  "id" : 811,
+  "word" : "strict",
+  "mean" : "엄격한, 엄한"
+}, {
+  "id" : 812,
+  "word" : "optimism",
+  "mean" : "낙관주의"
+}, {
+  "id" : 813,
+  "word" : "cooperate",
+  "mean" : "협력하다. 합동하다."
+}, {
+  "id" : 814,
+  "word" : "instructive",
+  "mean" : "교육적인"
+}, {
+  "id" : 815,
+  "word" : "impartial",
+  "mean" : "공평한"
+}, {
+  "id" : 816,
+  "word" : "snob",
+  "mean" : "속물"
+}, {
+  "id" : 817,
+  "word" : "gravitation",
+  "mean" : "중력, 인력"
+}, {
+  "id" : 818,
+  "word" : "patriotism",
+  "mean" : "애국심"
+}, {
+  "id" : 819,
+  "word" : "affluent",
+  "mean" : "부유한, 풍족한"
+}, {
+  "id" : 820,
+  "word" : "initiative",
+  "mean" : "발의, 창시, 진취적 기상, 창시의"
+}, {
+  "id" : 821,
+  "word" : "diminish",
+  "mean" : "감소하다."
+}, {
+  "id" : 822,
+  "word" : "valuable",
+  "mean" : "귀중한, 값비싼."
+}, {
+  "id" : 823,
+  "word" : "hospitality",
+  "mean" : "환대"
+}, {
+  "id" : 824,
+  "word" : "masculine",
+  "mean" : "남성의"
+}, {
+  "id" : 825,
+  "word" : "vogue",
+  "mean" : "유행"
+}, {
+  "id" : 826,
+  "word" : "qualification",
+  "mean" : "자격, 권한"
+}, {
+  "id" : 827,
+  "word" : "adore",
+  "mean" : "숭배하다."
+}, {
+  "id" : 828,
+  "word" : "contemporary",
+  "mean" : "현대의, 동시대의, 동시대인"
+}, {
+  "id" : 829,
+  "word" : "erupt",
+  "mean" : "(용암.화산재를) 분출하다."
+}, {
+  "id" : 830,
+  "word" : "domestic",
+  "mean" : "국내의, 길들여진"
+}, {
+  "id" : 831,
+  "word" : "objective",
+  "mean" : "객관적인"
+}, {
+  "id" : 832,
+  "word" : "partial",
+  "mean" : "부분적인, 불공평한"
+}, {
+  "id" : 833,
+  "word" : "appliance",
+  "mean" : "전기기구"
+}, {
+  "id" : 834,
+  "word" : "consciousness",
+  "mean" : "의식, 지각"
+}, {
+  "id" : 835,
+  "word" : "sniff",
+  "mean" : "킁킁거리며 냄새 맡다. 냄새 맡음, 코웃음"
+}, {
+  "id" : 836,
+  "word" : "priority",
+  "mean" : "우선(권)"
+}, {
+  "id" : 837,
+  "word" : "regime",
+  "mean" : "정권, 통치 양식"
+}, {
+  "id" : 838,
+  "word" : "colleague",
+  "mean" : "동료"
+}, {
+  "id" : 839,
+  "word" : "restrain",
+  "mean" : "억제하다. 제지하다."
+}, {
+  "id" : 840,
+  "word" : "sympathize",
+  "mean" : "동정하다."
+}, {
+  "id" : 841,
+  "word" : "commitment",
+  "mean" : "위탁, 공약"
+}, {
+  "id" : 842,
+  "word" : "sultry",
+  "mean" : "무더운, 찌는 듯이 더운"
+}, {
+  "id" : 843,
+  "word" : "prescription",
+  "mean" : "처방(전)"
+}, {
+  "id" : 844,
+  "word" : "adjourn",
+  "mean" : "연기하다."
+}, {
+  "id" : 845,
+  "word" : "abstain",
+  "mean" : "그만두다. 삼가다."
+}, {
+  "id" : 846,
+  "word" : "discount",
+  "mean" : "할인, 할인하다."
+}, {
+  "id" : 847,
+  "word" : "equator",
+  "mean" : "적도"
+}, {
+  "id" : 848,
+  "word" : "murmur",
+  "mean" : "속삭이다. 불평하다."
+}, {
+  "id" : 849,
+  "word" : "interfere",
+  "mean" : "방해하다. 간섭하다."
+}, {
+  "id" : 850,
+  "word" : "input",
+  "mean" : "입력, 투입, 입력하다."
+}, {
+  "id" : 851,
+  "word" : "casualty",
+  "mean" : "(사고, 재해등의) 사상자"
+}, {
+  "id" : 852,
+  "word" : "facility",
+  "mean" : "쉬움, 관리, 설비"
+}, {
+  "id" : 853,
+  "word" : "discrimination",
+  "mean" : "구별, 차별"
+}, {
+  "id" : 854,
+  "word" : "regulate",
+  "mean" : "규제하다. 조절하다."
+}, {
+  "id" : 855,
+  "word" : "involuntary",
+  "mean" : "무의식적인, 본의 아닌"
+}, {
+  "id" : 856,
+  "word" : "install",
+  "mean" : "설치하다."
+}, {
+  "id" : 857,
+  "word" : "repent",
+  "mean" : "후회하다."
+}, {
+  "id" : 858,
+  "word" : "contradictory",
+  "mean" : "모순된"
+}, {
+  "id" : 859,
+  "word" : "hygiene",
+  "mean" : "위생(학)"
+}, {
+  "id" : 860,
+  "word" : "statistics",
+  "mean" : "통계"
+}, {
+  "id" : 861,
+  "word" : "coeducation",
+  "mean" : "남녀공학"
+}, {
+  "id" : 862,
+  "word" : "perpendicular",
+  "mean" : "수직의"
+}, {
+  "id" : 863,
+  "word" : "longitude",
+  "mean" : "경도"
+}, {
+  "id" : 864,
+  "word" : "sanitary",
+  "mean" : "위생의, 위생적인"
+}, {
+  "id" : 865,
+  "word" : "eption",
+  "mean" : "선택(권)"
+}, {
+  "id" : 866,
+  "word" : "surplus",
+  "mean" : "여분, 나머지, 나머지의"
+}, {
+  "id" : 867,
+  "word" : "foretell",
+  "mean" : "예언하다."
+}, {
+  "id" : 868,
+  "word" : "pledge",
+  "mean" : "서약, 맹세하다."
+}, {
+  "id" : 869,
+  "word" : "obstinate",
+  "mean" : "고집센"
+}, {
+  "id" : 870,
+  "word" : "surrender",
+  "mean" : "항복하다."
+}, {
+  "id" : 871,
+  "word" : "dignity",
+  "mean" : "위엄, 존엄"
+}, {
+  "id" : 872,
+  "word" : "characteristic",
+  "mean" : "특색을 이루는, 특질의, 특색, 특징"
+}, {
+  "id" : 873,
+  "word" : "drought",
+  "mean" : "가뭄, 한발"
+}, {
+  "id" : 874,
+  "word" : "accelerate",
+  "mean" : "가속하다."
+}, {
+  "id" : 875,
+  "word" : "forefather",
+  "mean" : "선조"
+}, {
+  "id" : 876,
+  "word" : "expel",
+  "mean" : "추방하다"
+}, {
+  "id" : 877,
+  "word" : "correct",
+  "mean" : "정정하다. 고치다. 바른"
+}, {
+  "id" : 878,
+  "word" : "literal",
+  "mean" : "문자의, 글자 그대로의"
+}, {
+  "id" : 879,
+  "word" : "distinction",
+  "mean" : "구별, 특성"
+}, {
+  "id" : 880,
+  "word" : "sympathy",
+  "mean" : "동정, 공감"
+}, {
+  "id" : 881,
+  "word" : "latitude",
+  "mean" : "위도"
+}, {
+  "id" : 882,
+  "word" : "welfare",
+  "mean" : "복지, 후생"
+}, {
+  "id" : 883,
+  "word" : "complicated",
+  "mean" : "복잡한"
+}, {
+  "id" : 884,
+  "word" : "consensus",
+  "mean" : "(의견의) 일치"
+}, {
+  "id" : 885,
+  "word" : "verse",
+  "mean" : "운문, 시"
+}, {
+  "id" : 886,
+  "word" : "declare",
+  "mean" : "선언하다. 발표하다."
+}, {
+  "id" : 887,
+  "word" : "transition",
+  "mean" : "변천, 변이"
+}, {
+  "id" : 888,
+  "word" : "perspiration",
+  "mean" : "발한, 땀, 노력"
+}, {
+  "id" : 889,
+  "word" : "blossom",
+  "mean" : "(나무의) 꽃, 개화, 꽃이 피다."
+}, {
+  "id" : 890,
+  "word" : "patent",
+  "mean" : "특허, 특허의, 명백한"
+}, {
+  "id" : 891,
+  "word" : "asset",
+  "mean" : "재산, 자산"
+}, {
+  "id" : 892,
+  "word" : "contagion",
+  "mean" : "접촉 전염, 전염병"
+}, {
+  "id" : 893,
+  "word" : "bureau",
+  "mean" : "사무소, 안내소"
+}, {
+  "id" : 894,
+  "word" : "skyscraper",
+  "mean" : "고층건물, 마천루"
+}, {
+  "id" : 895,
+  "word" : "eloquent",
+  "mean" : "웅변의, 달변인"
+}, {
+  "id" : 896,
+  "word" : "maternal",
+  "mean" : "어머니의"
+}, {
+  "id" : 897,
+  "word" : "consequence",
+  "mean" : "결과, 중대성"
+}, {
+  "id" : 898,
+  "word" : "corrupt",
+  "mean" : "부패한, 타락한, 타락시키다."
+}, {
+  "id" : 899,
+  "word" : "primeval",
+  "mean" : "원시의, 초기의"
+}, {
+  "id" : 900,
+  "word" : "manual",
+  "mean" : "소책자, 설명서"
+}, {
+  "id" : 901,
+  "word" : "outskirts",
+  "mean" : "교외"
+}, {
+  "id" : 902,
+  "word" : "antipathy",
+  "mean" : "반감, 혐오"
+}, {
+  "id" : 903,
+  "word" : "indigestion",
+  "mean" : "소화불량"
+}, {
+  "id" : 904,
+  "word" : "innumerable",
+  "mean" : "무수한, 설 수 없는"
+}, {
+  "id" : 905,
+  "word" : "amenity",
+  "mean" : "(장소, 기후 등이) 쾌적함"
+}, {
+  "id" : 906,
+  "word" : "abuse",
+  "mean" : "남용하다. 학대하다. 남용, 학대"
+}, {
+  "id" : 907,
+  "word" : "superfluous",
+  "mean" : "여분의, 남는"
+}, {
+  "id" : 908,
+  "word" : "memorandum",
+  "mean" : "비망록, 매모, 각서"
+}, {
+  "id" : 909,
+  "word" : "decrease",
+  "mean" : "감소, 축소, 감소하다. 줄다."
+}, {
+  "id" : 910,
+  "word" : "conscientious",
+  "mean" : "양심적인, 성실한"
+}, {
+  "id" : 911,
+  "word" : "victim",
+  "mean" : "희생, 희생자"
+}, {
+  "id" : 912,
+  "word" : "refuge",
+  "mean" : "피난, 피난소"
+}, {
+  "id" : 913,
+  "word" : "compatible",
+  "mean" : "양립하는, 모순되지 않는"
+}, {
+  "id" : 914,
+  "word" : "swear",
+  "mean" : "선서하다. 맹세하다."
+}, {
+  "id" : 915,
+  "word" : "adopt",
+  "mean" : "채용하다. 양자로 삼다."
+}, {
+  "id" : 916,
+  "word" : "garbage",
+  "mean" : "쓰레기, 찌꺼기"
+}, {
+  "id" : 917,
+  "word" : "accommodate",
+  "mean" : "숙박시키다. 편의를 도모하다."
+}, {
+  "id" : 918,
+  "word" : "bully",
+  "mean" : "못살게 굴다. 위협하다."
+}, {
+  "id" : 919,
+  "word" : "compound",
+  "mean" : "합성물, 합성의, 합성하다."
+}, {
+  "id" : 920,
+  "word" : "pretext",
+  "mean" : "구실, 핑계"
+}, {
+  "id" : 921,
+  "word" : "arbitrary",
+  "mean" : "임의의"
+}, {
+  "id" : 922,
+  "word" : "snobbery",
+  "mean" : "속물근성"
+}, {
+  "id" : 923,
+  "word" : "device",
+  "mean" : "고안, 장치"
+}, {
+  "id" : 924,
+  "word" : "intention",
+  "mean" : "의지, 의도"
+}, {
+  "id" : 925,
+  "word" : "recommend",
+  "mean" : "추천하다."
+}, {
+  "id" : 926,
+  "word" : "constitution",
+  "mean" : "헌법, 구성, 설"
+}, {
+  "id" : 927,
+  "word" : "congress",
+  "mean" : "(미국의) 의회, 국회"
+}, {
+  "id" : 928,
+  "word" : "parliament",
+  "mean" : "의회, 국회"
+}, {
+  "id" : 929,
+  "word" : "session",
+  "mean" : "회기"
+}, {
+  "id" : 930,
+  "word" : "nation",
+  "mean" : "국민, 국가, 민족"
+}, {
+  "id" : 931,
+  "word" : "propaganda",
+  "mean" : "(주의.신념의) 선전"
+}, {
+  "id" : 932,
+  "word" : "nationality",
+  "mean" : "국적, 국민성"
+}, {
+  "id" : 933,
+  "word" : "sovereign",
+  "mean" : "군주, 주권자, 주권이 있는"
+}, {
+  "id" : 934,
+  "word" : "president",
+  "mean" : "대통령, 사장"
+}, {
+  "id" : 935,
+  "word" : "minister",
+  "mean" : "장관, 성직자"
+}, {
+  "id" : 936,
+  "word" : "government",
+  "mean" : "정부, 통치"
+}, {
+  "id" : 937,
+  "word" : "cabinet",
+  "mean" : "내각, 내각의"
+}, {
+  "id" : 938,
+  "word" : "budget",
+  "mean" : "예산, 예산안"
+}, {
+  "id" : 939,
+  "word" : "policy",
+  "mean" : "정책, 방책"
+}, {
+  "id" : 940,
+  "word" : "suffrage",
+  "mean" : "선거권, 투표권"
+}, {
+  "id" : 941,
+  "word" : "candidate",
+  "mean" : "후보자, 지원자"
+}, {
+  "id" : 942,
+  "word" : "representative",
+  "mean" : "대표자, (미국의) 하원의원, 대표적인"
+}, {
+  "id" : 943,
+  "word" : "ambassador",
+  "mean" : "대사"
+}, {
+  "id" : 944,
+  "word" : "embassy",
+  "mean" : "대사관"
+}, {
+  "id" : 945,
+  "word" : "diplomacy",
+  "mean" : "외교(술)"
+}, {
+  "id" : 946,
+  "word" : "diplomatic",
+  "mean" : "외교의"
+}, {
+  "id" : 947,
+  "word" : "diplomat",
+  "mean" : "외교관"
+}, {
+  "id" : 948,
+  "word" : "autonomy",
+  "mean" : "자치, 자치권"
+}, {
+  "id" : 949,
+  "word" : "governor",
+  "mean" : "통치자, 주지사"
+}, {
+  "id" : 950,
+  "word" : "citizen",
+  "mean" : "시민, 민간인"
+}, {
+  "id" : 951,
+  "word" : "mayor",
+  "mean" : "시장"
+}, {
+  "id" : 952,
+  "word" : "domain",
+  "mean" : "영토, 영역"
+}, {
+  "id" : 953,
+  "word" : "territory",
+  "mean" : "영토"
+}, {
+  "id" : 954,
+  "word" : "treaty",
+  "mean" : "조약, 협정"
+}, {
+  "id" : 955,
+  "word" : "reign",
+  "mean" : "통치, 지배, 통치하다, 지배하다."
+}, {
+  "id" : 956,
+  "word" : "ally",
+  "mean" : "동맹을 맺다. 동맹국, 연합국"
+}, {
+  "id" : 957,
+  "word" : "alliance",
+  "mean" : "동맹(국)"
+}, {
+  "id" : 958,
+  "word" : "community",
+  "mean" : "공동 사회, 공동체"
+}, {
+  "id" : 959,
+  "word" : "delegate",
+  "mean" : "대표자, 파견위원, 대표로 파견하다."
+}, {
+  "id" : 960,
+  "word" : "mission",
+  "mean" : "사명, 사절(단)"
+}, {
+  "id" : 961,
+  "word" : "revenue",
+  "mean" : "소득, 세입"
+}, {
+  "id" : 962,
+  "word" : "reform",
+  "mean" : "개혁, 개혁하다."
+}, {
+  "id" : 963,
+  "word" : "conservative",
+  "mean" : "보수적인, 보수주의의, 보수주의자."
+}, {
+  "id" : 964,
+  "word" : "patriotic",
+  "mean" : "애국적인"
+}, {
+  "id" : 965,
+  "word" : "tyranny",
+  "mean" : "폭정, 전제정치"
+}, {
+  "id" : 966,
+  "word" : "dictator",
+  "mean" : "독재자"
+}, {
+  "id" : 967,
+  "word" : "feudal",
+  "mean" : "중세의, 봉건제의"
+}, {
+  "id" : 968,
+  "word" : "colony",
+  "mean" : "식민지"
+}, {
+  "id" : 969,
+  "word" : "aristocracy",
+  "mean" : "귀족정치, 귀족"
+}, {
+  "id" : 970,
+  "word" : "autocracy",
+  "mean" : "독재정치"
+}, {
+  "id" : 971,
+  "word" : "tyrant",
+  "mean" : "폭군, 전제군주"
+}, {
+  "id" : 972,
+  "word" : "communism",
+  "mean" : "공산주의"
+}, {
+  "id" : 973,
+  "word" : "segregation",
+  "mean" : "분리, 인종 차별"
+}, {
+  "id" : 974,
+  "word" : "mob",
+  "mean" : "폭도, 군중"
+}, {
+  "id" : 975,
+  "word" : "migrate",
+  "mean" : "이주하다."
+}, {
+  "id" : 976,
+  "word" : "immigrate",
+  "mean" : "(외국에서) 이주해 오다."
+}, {
+  "id" : 977,
+  "word" : "immigrant",
+  "mean" : "이민, 이주자"
+}, {
+  "id" : 978,
+  "word" : "emigrate",
+  "mean" : "(다른나라로) 이민가다."
+}, {
+  "id" : 979,
+  "word" : "emigrant",
+  "mean" : "이민, 이주인"
+}, {
+  "id" : 980,
+  "word" : "emigration",
+  "mean" : "이주"
+}, {
+  "id" : 981,
+  "word" : "contaminate",
+  "mean" : "오염시키다."
+}, {
+  "id" : 982,
+  "word" : "pollution",
+  "mean" : "오염, 공해"
+}, {
+  "id" : 983,
+  "word" : "weapon",
+  "mean" : "무기"
+}, {
+  "id" : 984,
+  "word" : "armament",
+  "mean" : "장비, 군비"
+}, {
+  "id" : 985,
+  "word" : "nuclear",
+  "mean" : "핵의, 핵무기의, 핵무기"
+}, {
+  "id" : 986,
+  "word" : "navy",
+  "mean" : "해군"
+}, {
+  "id" : 987,
+  "word" : "military",
+  "mean" : "군대의, 육군의"
+}, {
+  "id" : 988,
+  "word" : "submarine",
+  "mean" : "잠수함, 해저의"
+}, {
+  "id" : 989,
+  "word" : "warfare",
+  "mean" : "전쟁"
+}, {
+  "id" : 990,
+  "word" : "assault",
+  "mean" : "공격하다. 폭행하다. 습격, 폭행"
+}, {
+  "id" : 991,
+  "word" : "truce",
+  "mean" : "휴전"
+}, {
+  "id" : 992,
+  "word" : "disarm",
+  "mean" : "군비를 축소하다. 무장 해제하다."
+}, {
+  "id" : 993,
+  "word" : "disarmament",
+  "mean" : "군비 축소, 무장 해제"
+}, {
+  "id" : 994,
+  "word" : "economical",
+  "mean" : "경제적인, 절약하는"
+}, {
+  "id" : 995,
+  "word" : "financial",
+  "mean" : "제정(상)의, 금융의"
+}, {
+  "id" : 996,
+  "word" : "capitalism",
+  "mean" : "자본주의"
+}, {
+  "id" : 997,
+  "word" : "factory",
+  "mean" : "공장"
+}, {
+  "id" : 998,
+  "word" : "branch",
+  "mean" : "지사, 기지, 부문"
+}, {
+  "id" : 999,
+  "word" : "expense",
+  "mean" : "비용, 지출, 지출금, 소요경비"
+}, {
+  "id" : 1000,
+  "word" : "expenditure",
+  "mean" : "지출, 비용"
+}, {
+  "id" : 1001,
+  "word" : "employ",
+  "mean" : "고용하다."
+}, {
+  "id" : 1002,
+  "word" : "employer",
+  "mean" : "고용주"
+}, {
+  "id" : 1003,
+  "word" : "produce",
+  "mean" : "생산하다. 제품, 농산물"
+}, {
+  "id" : 1004,
+  "word" : "producer",
+  "mean" : "생산자, 제작자"
+}, {
+  "id" : 1005,
+  "word" : "production",
+  "mean" : "생산, 제작"
+}, {
+  "id" : 1006,
+  "word" : "fluid",
+  "mean" : "유동성의, 유동체, 액체"
+}, {
+  "id" : 1007,
+  "word" : "wage",
+  "mean" : "임금, 급료"
+}, {
+  "id" : 1008,
+  "word" : "monopoly",
+  "mean" : "독점, 독점권"
+}, {
+  "id" : 1009,
+  "word" : "product",
+  "mean" : "산물, 생산물"
+}, {
+  "id" : 1010,
+  "word" : "output",
+  "mean" : "생산고, 생산"
+}, {
+  "id" : 1011,
+  "word" : "manufacture",
+  "mean" : "제조, 제품, 제조하다."
+}, {
+  "id" : 1012,
+  "word" : "merchandise",
+  "mean" : "상품"
+}, {
+  "id" : 1013,
+  "word" : "ware",
+  "mean" : "상품"
+}, {
+  "id" : 1014,
+  "word" : "regulation",
+  "mean" : "규칙, 규제"
+}, {
+  "id" : 1015,
+  "word" : "wholesale",
+  "mean" : "도매, 도매의, 대규모의"
+}, {
+  "id" : 1016,
+  "word" : "retail",
+  "mean" : "소매, 소매하다."
+}, {
+  "id" : 1017,
+  "word" : "transport",
+  "mean" : "수송, 수송하다."
+}, {
+  "id" : 1018,
+  "word" : "fare",
+  "mean" : "운영"
+}, {
+  "id" : 1019,
+  "word" : "insurance",
+  "mean" : "보험(금)"
+}, {
+  "id" : 1020,
+  "word" : "consumption",
+  "mean" : "소비"
+}, {
+  "id" : 1021,
+  "word" : "consumer",
+  "mean" : "소비자"
+}, {
+  "id" : 1022,
+  "word" : "commerce",
+  "mean" : "상업, 무역"
+}, {
+  "id" : 1023,
+  "word" : "administer",
+  "mean" : "관리하다. 지배하다."
+}, {
+  "id" : 1024,
+  "word" : "sale",
+  "mean" : "판매. 매상"
+}, {
+  "id" : 1025,
+  "word" : "advertise",
+  "mean" : "광고하다."
+}, {
+  "id" : 1026,
+  "word" : "advertisement",
+  "mean" : "광고"
+}, {
+  "id" : 1027,
+  "word" : "consume",
+  "mean" : "소비하다."
+}, {
+  "id" : 1028,
+  "word" : "currency",
+  "mean" : "통화, 통용, 유통"
+}, {
+  "id" : 1029,
+  "word" : "circulate",
+  "mean" : "순환하다."
+}, {
+  "id" : 1030,
+  "word" : "circulation",
+  "mean" : "순환, 발행부수"
+}, {
+  "id" : 1031,
+  "word" : "periodical",
+  "mean" : "정기 간행물, 잡지, 정기적인"
+}, {
+  "id" : 1032,
+  "word" : "invest",
+  "mean" : "투자하다."
+}, {
+  "id" : 1033,
+  "word" : "investment",
+  "mean" : "투자"
+}, {
+  "id" : 1034,
+  "word" : "warrant",
+  "mean" : "보증하다. 근거, 보증"
+}, {
+  "id" : 1035,
+  "word" : "transact",
+  "mean" : "(업무,교섭 등을) 집행하다."
+}, {
+  "id" : 1036,
+  "word" : "profit",
+  "mean" : "이익, 이익을 내다"
+}, {
+  "id" : 1037,
+  "word" : "deficit",
+  "mean" : "부족, 적자"
+}, {
+  "id" : 1038,
+  "word" : "bankrupt",
+  "mean" : "파산한"
+}, {
+  "id" : 1039,
+  "word" : "unemployment",
+  "mean" : "실업, 실적"
+}, {
+  "id" : 1040,
+  "word" : "recession",
+  "mean" : "경기 후퇴"
+}, {
+  "id" : 1041,
+  "word" : "depression",
+  "mean" : "불경기, 우울"
+}, {
+  "id" : 1042,
+  "word" : "export",
+  "mean" : "수출, 수출하다."
+}, {
+  "id" : 1043,
+  "word" : "import",
+  "mean" : "수입, 수입하다."
+}, {
+  "id" : 1044,
+  "word" : "friction",
+  "mean" : "마찰"
+}, {
+  "id" : 1045,
+  "word" : "sanction",
+  "mean" : "인기, 제재"
+}, {
+  "id" : 1046,
+  "word" : "agent",
+  "mean" : "대리인"
+}, {
+  "id" : 1047,
+  "word" : "judicial",
+  "mean" : "사법의"
+}, {
+  "id" : 1048,
+  "word" : "legislation",
+  "mean" : "입법, 법률"
+}, {
+  "id" : 1049,
+  "word" : "decree",
+  "mean" : "법령, 판결, 정하다. 판결하다."
+}, {
+  "id" : 1050,
+  "word" : "judge",
+  "mean" : "판가름하다. 재판하다. 재판관"
+}, {
+  "id" : 1051,
+  "word" : "trial",
+  "mean" : "재판, 시험"
+}, {
+  "id" : 1052,
+  "word" : "legitimate",
+  "mean" : "합법의"
+}, {
+  "id" : 1053,
+  "word" : "legal",
+  "mean" : "합법의, 법률의"
+}, {
+  "id" : 1054,
+  "word" : "illegal",
+  "mean" : "불법의, 비합법의"
+}, {
+  "id" : 1055,
+  "word" : "violate",
+  "mean" : "어기다, 깨다"
+}, {
+  "id" : 1056,
+  "word" : "crime",
+  "mean" : "죄, 범죄"
+}, {
+  "id" : 1057,
+  "word" : "juvenile",
+  "mean" : "청소년의"
+}, {
+  "id" : 1058,
+  "word" : "affair",
+  "mean" : "사건, 일"
+}, {
+  "id" : 1059,
+  "word" : "murderer",
+  "mean" : "살인자"
+}, {
+  "id" : 1060,
+  "word" : "criminal",
+  "mean" : "법인, 범죄의"
+}, {
+  "id" : 1061,
+  "word" : "prisoner",
+  "mean" : "죄수, 포로"
+}, {
+  "id" : 1062,
+  "word" : "detain",
+  "mean" : "억류하다. 붙들다."
+}, {
+  "id" : 1063,
+  "word" : "appeal",
+  "mean" : "호소, 매력, 호소하다."
+}, {
+  "id" : 1064,
+  "word" : "suit",
+  "mean" : "소송, 한 벌, 적합하다. 어울리다."
+}, {
+  "id" : 1065,
+  "word" : "prosecution",
+  "mean" : "기소, 실행, 수행"
+}, {
+  "id" : 1066,
+  "word" : "attest",
+  "mean" : "입증하다."
+}, {
+  "id" : 1067,
+  "word" : "client",
+  "mean" : "(변호사 등의) 의뢰인, 고객"
+}, {
+  "id" : 1068,
+  "word" : "summon",
+  "mean" : "(법원 등에) 출두를 명하다, 소환하다."
+}, {
+  "id" : 1069,
+  "word" : "witness",
+  "mean" : "증인, 목격자, 목격하다."
+}, {
+  "id" : 1070,
+  "word" : "testify",
+  "mean" : "증언하다. 입증하다."
+}, {
+  "id" : 1071,
+  "word" : "testimony",
+  "mean" : "증언, 증거, 증명"
+}, {
+  "id" : 1072,
+  "word" : "evidence",
+  "mean" : "증거"
+}, {
+  "id" : 1073,
+  "word" : "guilty",
+  "mean" : "유죄의"
+}, {
+  "id" : 1074,
+  "word" : "heir",
+  "mean" : "상속인"
+}, {
+  "id" : 1075,
+  "word" : "battle",
+  "mean" : "전투. ..와 싸우다."
+}, {
+  "id" : 1076,
+  "word" : "army",
+  "mean" : "군대. 육군."
+}, {
+  "id" : 1077,
+  "word" : "action",
+  "mean" : "행동."
+}, {
+  "id" : 1078,
+  "word" : "shy",
+  "mean" : "수줍은."
+}, {
+  "id" : 1079,
+  "word" : "ugly",
+  "mean" : "추한."
+}, {
+  "id" : 1080,
+  "word" : "effort",
+  "mean" : "노력. 수고."
+}, {
+  "id" : 1081,
+  "word" : "horizon",
+  "mean" : "지평선, 수평선."
+}, {
+  "id" : 1082,
+  "word" : "hell",
+  "mean" : "지옥."
+}, {
+  "id" : 1083,
+  "word" : "skill",
+  "mean" : "기술. 숙련."
+}, {
+  "id" : 1084,
+  "word" : "develop",
+  "mean" : "개발하다. 발달하다."
+}, {
+  "id" : 1085,
+  "word" : "select",
+  "mean" : "고르다."
+}, {
+  "id" : 1086,
+  "word" : "tend",
+  "mean" : "..하는 경향이 있다."
+}, {
+  "id" : 1087,
+  "word" : "spend",
+  "mean" : "소비하다. (노력.시간 등을) 들이다."
+}, {
+  "id" : 1088,
+  "word" : "envy",
+  "mean" : "시기. 질투. 질투하다."
+}, {
+  "id" : 1089,
+  "word" : "event",
+  "mean" : "사건."
+}, {
+  "id" : 1090,
+  "word" : "carry",
+  "mean" : "나르다. 몸에 지니다."
+}, {
+  "id" : 1091,
+  "word" : "flesh",
+  "mean" : "육체. 살."
+}, {
+  "id" : 1092,
+  "word" : "circle",
+  "mean" : "원. 순환. 돌다. 선회하다."
+}, {
+  "id" : 1093,
+  "word" : "kindness",
+  "mean" : "친절. 친절한 태도."
+}, {
+  "id" : 1094,
+  "word" : "grow",
+  "mean" : "자라다."
+}, {
+  "id" : 1095,
+  "word" : "promise",
+  "mean" : "약속. 약속하다."
+}, {
+  "id" : 1096,
+  "word" : "example",
+  "mean" : "예. 보기."
+}, {
+  "id" : 1097,
+  "word" : "neighbor",
+  "mean" : "이웃(사람)"
+}, {
+  "id" : 1098,
+  "word" : "end",
+  "mean" : "목적. 결말. 끝."
+}, {
+  "id" : 1099,
+  "word" : "fortunate",
+  "mean" : "행운의, 운이 좋은."
+}, {
+  "id" : 1100,
+  "word" : "fame",
+  "mean" : "명성."
+}, {
+  "id" : 1101,
+  "word" : "view",
+  "mean" : "견해, 전망."
+}, {
+  "id" : 1102,
+  "word" : "method",
+  "mean" : "방법."
+}, {
+  "id" : 1103,
+  "word" : "treat",
+  "mean" : "다루다. 치료하다. 한턱. 큰 기쁨."
+}, {
+  "id" : 1104,
+  "word" : "memory",
+  "mean" : "기억."
+}, {
+  "id" : 1105,
+  "word" : "net",
+  "mean" : "그물. 순수한."
+}, {
+  "id" : 1106,
+  "word" : "actual",
+  "mean" : "실제의, 현재의."
+}, {
+  "id" : 1107,
+  "word" : "exact",
+  "mean" : "정확한."
+}, {
+  "id" : 1108,
+  "word" : "mainly",
+  "mean" : "주로."
+}, {
+  "id" : 1109,
+  "word" : "wool",
+  "mean" : "양모."
+}, {
+  "id" : 1110,
+  "word" : "gather",
+  "mean" : "모으다. 증가시키다."
+}, {
+  "id" : 1111,
+  "word" : "fatigue",
+  "mean" : "피로. 지치게 하다."
+}, {
+  "id" : 1112,
+  "word" : "indeed",
+  "mean" : "실로. 참으로."
+}, {
+  "id" : 1113,
+  "word" : "source",
+  "mean" : "근원. 근본."
+}, {
+  "id" : 1114,
+  "word" : "almost",
+  "mean" : "거의. 대체로."
+}, {
+  "id" : 1115,
+  "word" : "huge",
+  "mean" : "거대한. 막대한."
+}, {
+  "id" : 1116,
+  "word" : "seek",
+  "mean" : "탐구하다. 구하다."
+}, {
+  "id" : 1117,
+  "word" : "item",
+  "mean" : "항목. 품목. (신문의) 기사."
+}, {
+  "id" : 1118,
+  "word" : "nail",
+  "mean" : "못. 손발톱. 못을 박다."
+}, {
+  "id" : 1119,
+  "word" : "straight",
+  "mean" : "직선. 똑바로. 곧은."
+}, {
+  "id" : 1120,
+  "word" : "statue",
+  "mean" : "상. 형상."
+}, {
+  "id" : 1121,
+  "word" : "unfortunate",
+  "mean" : "불운한."
+}, {
+  "id" : 1122,
+  "word" : "choose",
+  "mean" : "선택하다."
+}, {
+  "id" : 1123,
+  "word" : "literature",
+  "mean" : "문학. 문예."
+}, {
+  "id" : 1124,
+  "word" : "way",
+  "mean" : "길. 방법."
+}, {
+  "id" : 1125,
+  "word" : "primitive",
+  "mean" : "원시적인."
+}, {
+  "id" : 1126,
+  "word" : "cancel",
+  "mean" : "취소하다."
+}, {
+  "id" : 1127,
+  "word" : "ray",
+  "mean" : "광선."
+}, {
+  "id" : 1128,
+  "word" : "economy",
+  "mean" : "경제. 절약."
+}, {
+  "id" : 1129,
+  "word" : "acute",
+  "mean" : "날카로운. 급성의."
+}, {
+  "id" : 1130,
+  "word" : "scientific",
+  "mean" : "과학적인."
+}, {
+  "id" : 1131,
+  "word" : "enemy",
+  "mean" : "적."
+}, {
+  "id" : 1132,
+  "word" : "grade",
+  "mean" : "등급. 학년. 성적."
+}, {
+  "id" : 1133,
+  "word" : "fact",
+  "mean" : "사실."
+}, {
+  "id" : 1134,
+  "word" : "unit",
+  "mean" : "단위."
+}, {
+  "id" : 1135,
+  "word" : "council",
+  "mean" : "회의."
+}, {
+  "id" : 1136,
+  "word" : "tender",
+  "mean" : "상냥한. 부드러운."
+}, {
+  "id" : 1137,
+  "word" : "catch",
+  "mean" : "잡다."
+}, {
+  "id" : 1138,
+  "word" : "knowledge",
+  "mean" : "자식."
+}, {
+  "id" : 1139,
+  "word" : "lead",
+  "mean" : "납. 이끌다. 인도하다."
+}, {
+  "id" : 1140,
+  "word" : "voyage",
+  "mean" : "항해."
+}, {
+  "id" : 1141,
+  "word" : "bare",
+  "mean" : "발가벗은. 사실 그대로의."
+}, {
+  "id" : 1142,
+  "word" : "sword",
+  "mean" : "칼. 무력."
+}, {
+  "id" : 1143,
+  "word" : "plain",
+  "mean" : "평야. 명백한."
+}, {
+  "id" : 1144,
+  "word" : "steel",
+  "mean" : "강철."
+}, {
+  "id" : 1145,
+  "word" : "temple",
+  "mean" : "절. 사원."
+}, {
+  "id" : 1146,
+  "word" : "pattern",
+  "mean" : "모범. 형. 양식."
+}, {
+  "id" : 1147,
+  "word" : "disappoint",
+  "mean" : "실망시키다."
+}, {
+  "id" : 1148,
+  "word" : "heal",
+  "mean" : "고치다."
+}, {
+  "id" : 1149,
+  "word" : "altogether",
+  "mean" : "아주. 전혀."
+}, {
+  "id" : 1150,
+  "word" : "post",
+  "mean" : "기둥. 우편. 지위."
+}, {
+  "id" : 1151,
+  "word" : "native",
+  "mean" : "토착의. 출생(지)의."
+}, {
+  "id" : 1152,
+  "word" : "theme",
+  "mean" : "주제."
+}, {
+  "id" : 1153,
+  "word" : "within",
+  "mean" : "내부, ..의 안으로, ..의 범위 내."
+}, {
+  "id" : 1154,
+  "word" : "lesson",
+  "mean" : "수업. 교훈."
+}, {
+  "id" : 1155,
+  "word" : "sell",
+  "mean" : "팔다."
+}, {
+  "id" : 1156,
+  "word" : "sin",
+  "mean" : "(도덕.종교상의) 죄"
+}, {
+  "id" : 1157,
+  "word" : "root",
+  "mean" : "뿌리. 원인."
+}, {
+  "id" : 1158,
+  "word" : "theory",
+  "mean" : "이론."
+}, {
+  "id" : 1159,
+  "word" : "stare",
+  "mean" : "응시하다."
+}, {
+  "id" : 1160,
+  "word" : "union",
+  "mean" : "결합. (노동) 조합."
+}, {
+  "id" : 1161,
+  "word" : "slight",
+  "mean" : "약간의, 하찮은. 얕보다. 경시하다."
+}, {
+  "id" : 1162,
+  "word" : "zone",
+  "mean" : "지역."
+}, {
+  "id" : 1163,
+  "word" : "nowadays",
+  "mean" : "요즈음."
+}, {
+  "id" : 1164,
+  "word" : "hole",
+  "mean" : "구멍. (짐승의) 굴"
+}, {
+  "id" : 1165,
+  "word" : "tail",
+  "mean" : "꼬리."
+}, {
+  "id" : 1166,
+  "word" : "especially",
+  "mean" : "특히."
+}, {
+  "id" : 1167,
+  "word" : "element",
+  "mean" : "요소. 성분."
+}, {
+  "id" : 1168,
+  "word" : "holy",
+  "mean" : "신성한."
+}, {
+  "id" : 1169,
+  "word" : "heaven",
+  "mean" : "천국."
+}, {
+  "id" : 1170,
+  "word" : "strike",
+  "mean" : "파업. 타격. 치다. 생각이 떠오르다."
+}, {
+  "id" : 1171,
+  "word" : "berry",
+  "mean" : "딸리류."
+}, {
+  "id" : 1172,
+  "word" : "castle",
+  "mean" : "성."
+}, {
+  "id" : 1173,
+  "word" : "agriculture",
+  "mean" : "농업."
+}, {
+  "id" : 1174,
+  "word" : "dumb",
+  "mean" : "벙어리의."
+}, {
+  "id" : 1175,
+  "word" : "spirit",
+  "mean" : "정신. 기분."
+}, {
+  "id" : 1176,
+  "word" : "deer",
+  "mean" : "사슴."
+}, {
+  "id" : 1177,
+  "word" : "plane",
+  "mean" : "비행기. 평면도."
+}, {
+  "id" : 1178,
+  "word" : "sorrow",
+  "mean" : "슬픔. 비통. 유감."
+}, {
+  "id" : 1179,
+  "word" : "certain",
+  "mean" : "틀림없는."
+}, {
+  "id" : 1180,
+  "word" : "fowl",
+  "mean" : "가금류."
+}, {
+  "id" : 1181,
+  "word" : "nourish",
+  "mean" : "영양분을 주다. 기르다."
+}, {
+  "id" : 1182,
+  "word" : "modest",
+  "mean" : "겸손한. 정숙한."
+}, {
+  "id" : 1183,
+  "word" : "fascinate",
+  "mean" : "홀리다. 매혹시키다."
+}, {
+  "id" : 1184,
+  "word" : "phase",
+  "mean" : "국면. 단계."
+}, {
+  "id" : 1185,
+  "word" : "companion",
+  "mean" : "친구. 동료."
+}, {
+  "id" : 1186,
+  "word" : "brief",
+  "mean" : "간결한."
+}, {
+  "id" : 1187,
+  "word" : "monotony",
+  "mean" : "단조로움. 무미 건조."
+}, {
+  "id" : 1188,
+  "word" : "explore",
+  "mean" : "탐험하다."
+}, {
+  "id" : 1189,
+  "word" : "jealousy",
+  "mean" : "질투. 시샘."
+}, {
+  "id" : 1190,
+  "word" : "offspring",
+  "mean" : "자식, 자손."
+}, {
+  "id" : 1191,
+  "word" : "privilege",
+  "mean" : "특권. 특전."
+}, {
+  "id" : 1192,
+  "word" : "perish",
+  "mean" : "죽다. 멸망하다."
+}, {
+  "id" : 1193,
+  "word" : "rugged",
+  "mean" : "튼튼한. 울통불퉁한."
+}, {
+  "id" : 1194,
+  "word" : "scenery",
+  "mean" : "풍경. 배경."
+}, {
+  "id" : 1195,
+  "word" : "trait",
+  "mean" : "특색."
+}, {
+  "id" : 1196,
+  "word" : "gravity",
+  "mean" : "근엄. 중력."
+}, {
+  "id" : 1197,
+  "word" : "ultimate",
+  "mean" : "최후의. 궁국의."
+}, {
+  "id" : 1198,
+  "word" : "messenger",
+  "mean" : "사자. 메신져. 심부름꾼."
+}, {
+  "id" : 1199,
+  "word" : "combat",
+  "mean" : "전투. 싸움. ..와 싸우다."
+}, {
+  "id" : 1200,
+  "word" : "dense",
+  "mean" : "진한. 밀집한."
+}, {
+  "id" : 1201,
+  "word" : "antique",
+  "mean" : "골동품. 골동품의. 고대의."
+}, {
+  "id" : 1202,
+  "word" : "mature",
+  "mean" : "성숙한."
+}, {
+  "id" : 1203,
+  "word" : "endeavor",
+  "mean" : "노력. 노력하다. 시도. 시도하다."
+}, {
+  "id" : 1204,
+  "word" : "inborn",
+  "mean" : "타고난. 선천적인."
+}, {
+  "id" : 1205,
+  "word" : "brilliant",
+  "mean" : "빛나는. 훌륭한."
+}, {
+  "id" : 1206,
+  "word" : "casual",
+  "mean" : "우연한."
+}, {
+  "id" : 1207,
+  "word" : "goodness",
+  "mean" : "선량. 우수."
+}, {
+  "id" : 1208,
+  "word" : "oversleep",
+  "mean" : "늦잠자다."
+}, {
+  "id" : 1209,
+  "word" : "reproduce",
+  "mean" : "재생하다. 번식하다."
+}, {
+  "id" : 1210,
+  "word" : "component",
+  "mean" : "성분. 구성요소. 구성하고 있는."
+}, {
+  "id" : 1211,
+  "word" : "roar",
+  "mean" : "으르렁거리다. 포효하다."
+}, {
+  "id" : 1212,
+  "word" : "refined",
+  "mean" : "세련된. 정제한."
+}, {
+  "id" : 1213,
+  "word" : "postscript",
+  "mean" : "추신."
+}, {
+  "id" : 1214,
+  "word" : "ignorance",
+  "mean" : "무지."
+}, {
+  "id" : 1215,
+  "word" : "overestimate",
+  "mean" : "고대평가하다."
+}, {
+  "id" : 1216,
+  "word" : "analogy",
+  "mean" : "유사."
+}, {
+  "id" : 1217,
+  "word" : "exception",
+  "mean" : "예외."
+}, {
+  "id" : 1218,
+  "word" : "allure",
+  "mean" : "유혹하다."
+}, {
+  "id" : 1219,
+  "word" : "complex",
+  "mean" : "복잡한."
+}, {
+  "id" : 1220,
+  "word" : "potential",
+  "mean" : "가능성. 가능핟. 잠재력. 잠재적인."
+}, {
+  "id" : 1221,
+  "word" : "stable",
+  "mean" : "마구간. 안정된. 견실한."
+}, {
+  "id" : 1222,
+  "word" : "mortality",
+  "mean" : "사망률. 죽을 수밖에 없는 운명."
+}, {
+  "id" : 1223,
+  "word" : "anxiety",
+  "mean" : "걱정. 근심."
+}, {
+  "id" : 1224,
+  "word" : "vex",
+  "mean" : "성가시게 하다. 짜증나게 하다."
+}, {
+  "id" : 1225,
+  "word" : "usage",
+  "mean" : "사용(법)"
+}, {
+  "id" : 1226,
+  "word" : "germ",
+  "mean" : "세균. 병균."
+}, {
+  "id" : 1227,
+  "word" : "waterproof",
+  "mean" : "방수의."
+}, {
+  "id" : 1228,
+  "word" : "standpoint",
+  "mean" : "입장. 관점."
+}, {
+  "id" : 1229,
+  "word" : "survival",
+  "mean" : "생존. 긴급용의."
+}, {
+  "id" : 1230,
+  "word" : "immoral",
+  "mean" : "부도덕한."
+}, {
+  "id" : 1231,
+  "word" : "critic",
+  "mean" : "비평가."
+}, {
+  "id" : 1232,
+  "word" : "relax",
+  "mean" : "늦추다. 편히 하다."
+}, {
+  "id" : 1233,
+  "word" : "profound",
+  "mean" : "깊은."
+}, {
+  "id" : 1234,
+  "word" : "gigantic",
+  "mean" : "거대한. 거인 같은."
+}, {
+  "id" : 1235,
+  "word" : "conceive",
+  "mean" : "품다. 착상하다."
+}, {
+  "id" : 1236,
+  "word" : "unity",
+  "mean" : "통일(성)"
+}, {
+  "id" : 1237,
+  "word" : "certificate",
+  "mean" : "증명서. 증명하다."
+}, {
+  "id" : 1238,
+  "word" : "savage",
+  "mean" : "야만인. 미개인. 야만의. 미개한."
+}, {
+  "id" : 1239,
+  "word" : "transmit",
+  "mean" : "전하다. 보내다."
+}, {
+  "id" : 1240,
+  "word" : "menace",
+  "mean" : "공갈. 협박. 위협. 위협하다."
+}, {
+  "id" : 1241,
+  "word" : "ardent",
+  "mean" : "열렬한."
+}, {
+  "id" : 1242,
+  "word" : "former",
+  "mean" : "이전의. 전자."
+}, {
+  "id" : 1243,
+  "word" : "plural",
+  "mean" : "복수의. 복수."
+}, {
+  "id" : 1244,
+  "word" : "rigidity",
+  "mean" : "견고함. 엄격."
+}, {
+  "id" : 1245,
+  "word" : "transform",
+  "mean" : "바꾸다. 변형시키다."
+}, {
+  "id" : 1246,
+  "word" : "broadcast",
+  "mean" : "방송. 방영. 방송(방영) 하다."
+}, {
+  "id" : 1247,
+  "word" : "constant",
+  "mean" : "일정한. 불변의."
+}, {
+  "id" : 1248,
+  "word" : "pomp",
+  "mean" : "장관. 화려."
+}, {
+  "id" : 1249,
+  "word" : "maintenance",
+  "mean" : "유지. 지속. 간수."
+}, {
+  "id" : 1250,
+  "word" : "prosper",
+  "mean" : "번영하다. 성공시키다."
+}, {
+  "id" : 1251,
+  "word" : "preservation",
+  "mean" : "보존. 보호."
+}, {
+  "id" : 1252,
+  "word" : "miniature",
+  "mean" : "모형. 축도. 작은. 소형의."
+}, {
+  "id" : 1253,
+  "word" : "vital",
+  "mean" : "생명의. 치명적인. 불가결한."
+}, {
+  "id" : 1254,
+  "word" : "explosion",
+  "mean" : "폭발"
+}, {
+  "id" : 1255,
+  "word" : "revive",
+  "mean" : "부활하다. 회복시키다."
+}, {
+  "id" : 1256,
+  "word" : "stern",
+  "mean" : "엄한. 단단한. 선미. 뒷부분."
+}, {
+  "id" : 1257,
+  "word" : "magnificent",
+  "mean" : "장대한. 장엄한. 멋진."
+}, {
+  "id" : 1258,
+  "word" : "illumination",
+  "mean" : "조명."
+}, {
+  "id" : 1259,
+  "word" : "complicate",
+  "mean" : "복잡하게 하다."
+}, {
+  "id" : 1260,
+  "word" : "condense",
+  "mean" : "농축하다."
+}, {
+  "id" : 1261,
+  "word" : "heroism",
+  "mean" : "영웅적 자질 및 행위."
+}, {
+  "id" : 1262,
+  "word" : "illusion",
+  "mean" : "환상. 환영."
+}, {
+  "id" : 1263,
+  "word" : "benefactor",
+  "mean" : "은인. 후원자."
+}, {
+  "id" : 1264,
+  "word" : "gloomy",
+  "mean" : "어두운. 우울한."
+}, {
+  "id" : 1265,
+  "word" : "majesty",
+  "mean" : "위엄. 장엄. 폐하."
+}, {
+  "id" : 1266,
+  "word" : "shiver",
+  "mean" : "(추위.공포.흥분 등으로) 떨다."
+}, {
+  "id" : 1267,
+  "word" : "denial",
+  "mean" : "부정. 거부."
+}, {
+  "id" : 1268,
+  "word" : "crawl",
+  "mean" : "기다."
+}, {
+  "id" : 1269,
+  "word" : "outstanding",
+  "mean" : "현저한."
+}, {
+  "id" : 1270,
+  "word" : "intermit",
+  "mean" : "중단시키다. 일시 멈추다."
+}, {
+  "id" : 1271,
+  "word" : "genius",
+  "mean" : "천재."
+}, {
+  "id" : 1272,
+  "word" : "entirely",
+  "mean" : "완전히. 아주."
+}, {
+  "id" : 1273,
+  "word" : "inclination",
+  "mean" : "기울기. 경향. 성향."
+}, {
+  "id" : 1274,
+  "word" : "hinder",
+  "mean" : "방해하다. 훼방놓다."
+}, {
+  "id" : 1275,
+  "word" : "steadfast",
+  "mean" : "확고한. 불변의."
+}, {
+  "id" : 1276,
+  "word" : "grieve",
+  "mean" : "몹시 슬퍼하다."
+}, {
+  "id" : 1277,
+  "word" : "detect",
+  "mean" : "발견하다. 찾아내다."
+}, {
+  "id" : 1278,
+  "word" : "convention",
+  "mean" : "전통적인 인습. 회의."
+}, {
+  "id" : 1279,
+  "word" : "testament",
+  "mean" : "유언."
+}, {
+  "id" : 1280,
+  "word" : "superficial",
+  "mean" : "표면의. 피상적인."
+}, {
+  "id" : 1281,
+  "word" : "intermediate",
+  "mean" : "중간의. 중간물. 중개자."
+}, {
+  "id" : 1282,
+  "word" : "spur",
+  "mean" : "박차. 자극. 자극하다."
+}, {
+  "id" : 1283,
+  "word" : "venture",
+  "mean" : "모험. 투기. 과감히 ..하다."
+}, {
+  "id" : 1284,
+  "word" : "capture",
+  "mean" : "체포. 붙잡다. 생포하다."
+}, {
+  "id" : 1285,
+  "word" : "disgrace",
+  "mean" : "창피. 불명예."
+}, {
+  "id" : 1286,
+  "word" : "punishment",
+  "mean" : "처벌. 형벌."
+}, {
+  "id" : 1287,
+  "word" : "divorce",
+  "mean" : "이혼. 이혼하다."
+}, {
+  "id" : 1288,
+  "word" : "overcome",
+  "mean" : "극복하다. 이겨내다."
+}, {
+  "id" : 1289,
+  "word" : "priceless",
+  "mean" : "귀중한."
+}, {
+  "id" : 1290,
+  "word" : "slang",
+  "mean" : "속어."
+}, {
+  "id" : 1291,
+  "word" : "fable",
+  "mean" : "우화. 꾸며낸 이야기."
+}, {
+  "id" : 1292,
+  "word" : "vanity",
+  "mean" : "무상함. 허영(심). 자만."
+}, {
+  "id" : 1293,
+  "word" : "medial",
+  "mean" : "중간의. 평균치의."
+}, {
+  "id" : 1294,
+  "word" : "emphasis",
+  "mean" : "강조."
+}, {
+  "id" : 1295,
+  "word" : "drowsy",
+  "mean" : "졸리는."
+}, {
+  "id" : 1296,
+  "word" : "expert",
+  "mean" : "전문가."
+}, {
+  "id" : 1297,
+  "word" : "genuine",
+  "mean" : "진짜의."
+}, {
+  "id" : 1298,
+  "word" : "predict",
+  "mean" : "예언하다."
+}, {
+  "id" : 1299,
+  "word" : "disturb",
+  "mean" : "방해하다."
+}, {
+  "id" : 1300,
+  "word" : "renew",
+  "mean" : "새롭게 하다."
+}, {
+  "id" : 1301,
+  "word" : "regain",
+  "mean" : "되찾다. 회복하다."
+}, {
+  "id" : 1302,
+  "word" : "legend",
+  "mean" : "전설. 설화."
+}, {
+  "id" : 1303,
+  "word" : "generalization",
+  "mean" : "일반화."
+}, {
+  "id" : 1304,
+  "word" : "peasant",
+  "mean" : "농부. 소작농."
+}, {
+  "id" : 1305,
+  "word" : "dismay",
+  "mean" : "낙담. 낙담시키다."
+}, {
+  "id" : 1306,
+  "word" : "gulf",
+  "mean" : "만."
+}, {
+  "id" : 1307,
+  "word" : "spokesman",
+  "mean" : "대변인."
+}, {
+  "id" : 1308,
+  "word" : "scorn",
+  "mean" : "경멸하다. 모욕하다."
+}, {
+  "id" : 1309,
+  "word" : "torture",
+  "mean" : "고문. 고문하다. 괴롭히다."
+}, {
+  "id" : 1310,
+  "word" : "layman",
+  "mean" : "속인. 비전문가."
+}, {
+  "id" : 1311,
+  "word" : "unify",
+  "mean" : "통일하다. 통합하다."
+}, {
+  "id" : 1312,
+  "word" : "nightmare",
+  "mean" : "악몽."
+}, {
+  "id" : 1313,
+  "word" : "boundary",
+  "mean" : "경계(선)"
+}, {
+  "id" : 1314,
+  "word" : "exploration",
+  "mean" : "탐험. 탐구."
+}, {
+  "id" : 1315,
+  "word" : "soothe",
+  "mean" : "진정시키다."
+}, {
+  "id" : 1316,
+  "word" : "reinforce",
+  "mean" : "보강하다. 강화하다."
+}, {
+  "id" : 1317,
+  "word" : "exterior",
+  "mean" : "외부의."
+}, {
+  "id" : 1318,
+  "word" : "everlasting",
+  "mean" : "영원한. 끝없는."
+}, {
+  "id" : 1319,
+  "word" : "stingy",
+  "mean" : "인색한. 부족한."
+}, {
+  "id" : 1320,
+  "word" : "demonstrate",
+  "mean" : "증명하다. 증거하다. 설명하다."
+}, {
+  "id" : 1321,
+  "word" : "prophecy",
+  "mean" : "예언."
+}, {
+  "id" : 1322,
+  "word" : "confront",
+  "mean" : "..에 직면하다."
+}, {
+  "id" : 1323,
+  "word" : "forecast",
+  "mean" : "예보. 예측하다."
+}, {
+  "id" : 1324,
+  "word" : "grace",
+  "mean" : "우아."
+}, {
+  "id" : 1325,
+  "word" : "vulgar",
+  "mean" : "상스러운. 천한."
+}, {
+  "id" : 1326,
+  "word" : "pierce",
+  "mean" : "꿰뚫다. 관통하다."
+}, {
+  "id" : 1327,
+  "word" : "destruction",
+  "mean" : "파괴. 파멸."
+}, {
+  "id" : 1328,
+  "word" : "pastime",
+  "mean" : "기분전환. 오락."
+}, {
+  "id" : 1329,
+  "word" : "collaborate",
+  "mean" : "협력하다. 공동으로 일하다."
+}, {
+  "id" : 1330,
+  "word" : "prejudice",
+  "mean" : "편견."
+}, {
+  "id" : 1331,
+  "word" : "mineral",
+  "mean" : "광물."
+}, {
+  "id" : 1332,
+  "word" : "charity",
+  "mean" : "자애. 자비."
+}, {
+  "id" : 1333,
+  "word" : "compassion",
+  "mean" : "동정."
+}, {
+  "id" : 1334,
+  "word" : "struggle",
+  "mean" : "노력. 투쟁. 투쟁하다. 노력하다."
+}, {
+  "id" : 1335,
+  "word" : "tease",
+  "mean" : "괴롭히다."
+}, {
+  "id" : 1336,
+  "word" : "dissolve",
+  "mean" : "녹이다. 해산시키다."
+}, {
+  "id" : 1337,
+  "word" : "interpret",
+  "mean" : "해석하다. 통역하다."
+}, {
+  "id" : 1338,
+  "word" : "aggressive",
+  "mean" : "공격적인. 진취적인."
+}, {
+  "id" : 1339,
+  "word" : "cultivate",
+  "mean" : "경작하다. 양성하다."
+}, {
+  "id" : 1340,
+  "word" : "arise",
+  "mean" : "일어나다. 나타나다."
+}, {
+  "id" : 1341,
+  "word" : "summit",
+  "mean" : "정상. 수뇌회담."
+}, {
+  "id" : 1342,
+  "word" : "accomplish",
+  "mean" : "완성하다."
+}, {
+  "id" : 1343,
+  "word" : "grain",
+  "mean" : "낟알. 곡물."
+}, {
+  "id" : 1344,
+  "word" : "react",
+  "mean" : "반응하다. 반작용하다."
+}, {
+  "id" : 1345,
+  "word" : "betray",
+  "mean" : "배반하다."
+}, {
+  "id" : 1346,
+  "word" : "sharpen",
+  "mean" : "날카롭게 하다. 같다."
+}, {
+  "id" : 1347,
+  "word" : "rejection",
+  "mean" : "거절."
+}, {
+  "id" : 1348,
+  "word" : "relate",
+  "mean" : "관계짓다. 결부시키다."
+}, {
+  "id" : 1349,
+  "word" : "construct",
+  "mean" : "건설하다."
+}, {
+  "id" : 1350,
+  "word" : "adorn",
+  "mean" : "장식하다."
+}, {
+  "id" : 1351,
+  "word" : "miraculous",
+  "mean" : "기적적인. 놀랄만한."
+}, {
+  "id" : 1352,
+  "word" : "cite",
+  "mean" : "인용하다. 예증하다."
+}, {
+  "id" : 1353,
+  "word" : "define",
+  "mean" : "정의하다. 규정짓다."
+}, {
+  "id" : 1354,
+  "word" : "stately",
+  "mean" : "당당한. 웅대한."
+}, {
+  "id" : 1355,
+  "word" : "fetch",
+  "mean" : "가져오다. 데려오다."
+}, {
+  "id" : 1356,
+  "word" : "shrink",
+  "mean" : "줄어들다."
+}, {
+  "id" : 1357,
+  "word" : "myriad",
+  "mean" : "무수한. 무수."
+}, {
+  "id" : 1358,
+  "word" : "expedition",
+  "mean" : "탐험, 탐험대."
+}, {
+  "id" : 1359,
+  "word" : "strain",
+  "mean" : "긴장. 피로. 잡아당기다."
+}, {
+  "id" : 1360,
+  "word" : "occasional",
+  "mean" : "가끔의"
+}, {
+  "id" : 1361,
+  "word" : "vision",
+  "mean" : "시력. 통팔력."
+}, {
+  "id" : 1362,
+  "word" : "easygoing",
+  "mean" : "태평한. 게으른."
+}, {
+  "id" : 1363,
+  "word" : "blink",
+  "mean" : "깜박임. 섬광. 감박이다. 명멸하다."
+}, {
+  "id" : 1364,
+  "word" : "tension",
+  "mean" : "긴장."
+}, {
+  "id" : 1365,
+  "word" : "false",
+  "mean" : "거짓의."
+}, {
+  "id" : 1366,
+  "word" : "clutch",
+  "mean" : "잡다. 껴안다."
+}, {
+  "id" : 1367,
+  "word" : "capacity",
+  "mean" : "능력. 수용 능력."
+}, {
+  "id" : 1368,
+  "word" : "generosity",
+  "mean" : "관대. 아량."
+}, {
+  "id" : 1369,
+  "word" : "ample",
+  "mean" : "광대한. 충분한."
+}, {
+  "id" : 1370,
+  "word" : "courteous",
+  "mean" : "예의바른."
+}, {
+  "id" : 1371,
+  "word" : "induce",
+  "mean" : "권유하다. 야기하다."
+}, {
+  "id" : 1372,
+  "word" : "textile",
+  "mean" : "직물의. 직물."
+}, {
+  "id" : 1373,
+  "word" : "accidental",
+  "mean" : "우연한. 우발적인."
+}, {
+  "id" : 1374,
+  "word" : "penetrate",
+  "mean" : "관통하다."
+}, {
+  "id" : 1375,
+  "word" : "cordial",
+  "mean" : "진심에서 우러나오는."
+}, {
+  "id" : 1376,
+  "word" : "trustworthy",
+  "mean" : "확실한. 신뢰할 수 있는."
+}, {
+  "id" : 1377,
+  "word" : "passage",
+  "mean" : "(문장의) 절. 통행. 통과."
+}, {
+  "id" : 1378,
+  "word" : "impulse",
+  "mean" : "충동. 추진(력)"
+}, {
+  "id" : 1379,
+  "word" : "bias",
+  "mean" : "편견. 선입관."
+}, {
+  "id" : 1380,
+  "word" : "recite",
+  "mean" : "낭송하다. 암송하다."
+}, {
+  "id" : 1381,
+  "word" : "timber",
+  "mean" : "목재."
+}, {
+  "id" : 1382,
+  "word" : "glacier",
+  "mean" : "빙하."
+}, {
+  "id" : 1383,
+  "word" : "overlook",
+  "mean" : "바라보다. 눈감아 주다."
+}, {
+  "id" : 1384,
+  "word" : "reverse",
+  "mean" : "반대의. 역. 반대. 뒤집다."
+}, {
+  "id" : 1385,
+  "word" : "traitor",
+  "mean" : "배반자. 반역자."
+}, {
+  "id" : 1386,
+  "word" : "ceremonial",
+  "mean" : "의식의. 정식의."
+}, {
+  "id" : 1387,
+  "word" : "pessimistic",
+  "mean" : "비관적인."
+}, {
+  "id" : 1388,
+  "word" : "reliable",
+  "mean" : "의지가 되는. 신뢰할 수 있는."
+}, {
+  "id" : 1389,
+  "word" : "alarm",
+  "mean" : "놀람. 경보. 깜짝 놀라게 하다."
+}, {
+  "id" : 1390,
+  "word" : "symmetry",
+  "mean" : "대칭. 균형."
+}, {
+  "id" : 1391,
+  "word" : "fatal",
+  "mean" : "운명의. 치명적인."
+}, {
+  "id" : 1392,
+  "word" : "prehistoric",
+  "mean" : "선사시대의. 유사이전의."
+}, {
+  "id" : 1393,
+  "word" : "digest",
+  "mean" : "요약. 소화하다. 요약하다."
+}, {
+  "id" : 1394,
+  "word" : "reaction",
+  "mean" : "반응. 반작용."
+}, {
+  "id" : 1395,
+  "word" : "myth",
+  "mean" : "신화. 전설."
+}, {
+  "id" : 1396,
+  "word" : "epidemic",
+  "mean" : "전염병. 전염병의. 유행하고 있는."
+}, {
+  "id" : 1397,
+  "word" : "symptom",
+  "mean" : "징후."
+}, {
+  "id" : 1398,
+  "word" : "scrutiny",
+  "mean" : "정밀 검사. 음이."
+}, {
+  "id" : 1399,
+  "word" : "pulse",
+  "mean" : "맥박. 맥박이 뛰다."
+}, {
+  "id" : 1400,
+  "word" : "particle",
+  "mean" : "입자."
+}, {
+  "id" : 1401,
+  "word" : "bullet",
+  "mean" : "탄환."
+}, {
+  "id" : 1402,
+  "word" : "diversity",
+  "mean" : "다양성. 변환."
+}, {
+  "id" : 1403,
+  "word" : "rotten",
+  "mean" : "부패한. 썩은."
+}, {
+  "id" : 1404,
+  "word" : "launch",
+  "mean" : "시작하다. 발사하다."
+}, {
+  "id" : 1405,
+  "word" : "evolve",
+  "mean" : "전개하다. 발전하다."
+}, {
+  "id" : 1406,
+  "word" : "machinery",
+  "mean" : "기계류."
+}, {
+  "id" : 1407,
+  "word" : "starve",
+  "mean" : "굶주리다."
+}, {
+  "id" : 1408,
+  "word" : "evolution",
+  "mean" : "진화. 발전."
+}, {
+  "id" : 1409,
+  "word" : "hydrogen",
+  "mean" : "수소."
+}, {
+  "id" : 1410,
+  "word" : "modesty",
+  "mean" : "겸손."
+}, {
+  "id" : 1411,
+  "word" : "resist",
+  "mean" : "저항하다."
+}, {
+  "id" : 1412,
+  "word" : "exertion",
+  "mean" : "노력."
+}, {
+  "id" : 1413,
+  "word" : "tremble",
+  "mean" : "떨다."
+}, {
+  "id" : 1414,
+  "word" : "imprison",
+  "mean" : "감금하다. 투옥하다."
+}, {
+  "id" : 1415,
+  "word" : "naughty",
+  "mean" : "행실이 나쁜. 장난꾸러기인."
+}, {
+  "id" : 1416,
+  "word" : "complement",
+  "mean" : "보어. 보충(물)"
+}, {
+  "id" : 1417,
+  "word" : "melancholy",
+  "mean" : "우울한. 우울. 울적한."
+}, {
+  "id" : 1418,
+  "word" : "detective",
+  "mean" : "탐정. 형사. 탐정의."
+}, {
+  "id" : 1419,
+  "word" : "signature",
+  "mean" : "서명."
+}, {
+  "id" : 1420,
+  "word" : "deserve",
+  "mean" : "..할 만하다."
+}, {
+  "id" : 1421,
+  "word" : "confusion",
+  "mean" : "혼란. 혼동."
+}, {
+  "id" : 1422,
+  "word" : "gallant",
+  "mean" : "용감한. 씩씩한."
+}, {
+  "id" : 1423,
+  "word" : "refresh",
+  "mean" : "원기를 주다."
+}, {
+  "id" : 1424,
+  "word" : "vigorous",
+  "mean" : "힘찬. 원기 왕성한."
+}, {
+  "id" : 1425,
+  "word" : "fulfill",
+  "mean" : "수행하다. 완수하다."
+}, {
+  "id" : 1426,
+  "word" : "describe",
+  "mean" : "묘사하다. 기술하다."
+}, {
+  "id" : 1427,
+  "word" : "carve",
+  "mean" : "조각하다."
+}, {
+  "id" : 1428,
+  "word" : "fulfillment",
+  "mean" : "수행. 이행."
+}, {
+  "id" : 1429,
+  "word" : "comprehensive",
+  "mean" : "범위가 넓은. 포용력이 큰."
+}, {
+  "id" : 1430,
+  "word" : "exalt",
+  "mean" : "(직위.명예 등을) 높이다."
+}, {
+  "id" : 1431,
+  "word" : "lure",
+  "mean" : "유혹하다. 매력."
+}, {
+  "id" : 1432,
+  "word" : "outlook",
+  "mean" : "전망. 조망."
+}, {
+  "id" : 1433,
+  "word" : "review",
+  "mean" : "재조사. 복습. 재검토하다."
+}, {
+  "id" : 1434,
+  "word" : "censor",
+  "mean" : "검열하다. 검열관."
+}, {
+  "id" : 1435,
+  "word" : "wither",
+  "mean" : "시들다."
+}, {
+  "id" : 1436,
+  "word" : "distort",
+  "mean" : "비틀다. 왜곡하다."
+}, {
+  "id" : 1437,
+  "word" : "thrive",
+  "mean" : "번영하다."
+}, {
+  "id" : 1438,
+  "word" : "perilous",
+  "mean" : "위험한."
+}, {
+  "id" : 1439,
+  "word" : "vigor",
+  "mean" : "원기. 활력."
+}, {
+  "id" : 1440,
+  "word" : "obstacle",
+  "mean" : "장애(물)"
+}, {
+  "id" : 1441,
+  "word" : "frustration",
+  "mean" : "좌절. 욕구불만."
+}, {
+  "id" : 1442,
+  "word" : "desirable",
+  "mean" : "바람직한. 호감이 가는"
+}, {
+  "id" : 1443,
+  "word" : "marvelous",
+  "mean" : "놀라운. 믿기 어려운."
+}, {
+  "id" : 1444,
+  "word" : "divine",
+  "mean" : "신성한. 예언하다."
+}, {
+  "id" : 1445,
+  "word" : "afterward",
+  "mean" : "나중에. 이후에."
+}, {
+  "id" : 1446,
+  "word" : "caricature",
+  "mean" : "풍자만화."
+}, {
+  "id" : 1447,
+  "word" : "debate",
+  "mean" : "논쟁. 토론. 논쟁하다."
+}, {
+  "id" : 1448,
+  "word" : "overwhelm",
+  "mean" : "압도하다."
+}, {
+  "id" : 1449,
+  "word" : "encircle",
+  "mean" : "둘러싸다."
+}, {
+  "id" : 1450,
+  "word" : "cherish",
+  "mean" : "소중히 하다. 품다."
+}, {
+  "id" : 1451,
+  "word" : "confer",
+  "mean" : "의논하다."
+}, {
+  "id" : 1452,
+  "word" : "tiresome",
+  "mean" : "지루한. 싫증나는."
+}, {
+  "id" : 1453,
+  "word" : "deposit",
+  "mean" : "예치하다. 예금."
+}, {
+  "id" : 1454,
+  "word" : "ascend",
+  "mean" : "오르다."
+}, {
+  "id" : 1455,
+  "word" : "sequence",
+  "mean" : "연속. 결과."
+}, {
+  "id" : 1456,
+  "word" : "infinite",
+  "mean" : "무한한. 무한."
+}, {
+  "id" : 1457,
+  "word" : "surmount",
+  "mean" : "(산에) 오르다. 이겨내다."
+}, {
+  "id" : 1458,
+  "word" : "potent",
+  "mean" : "유력한. 효능있는"
+}, {
+  "id" : 1459,
+  "word" : "serene",
+  "mean" : "잔잔한. 교요한."
+}, {
+  "id" : 1460,
+  "word" : "eminent",
+  "mean" : "저명한."
+}, {
+  "id" : 1461,
+  "word" : "overflow",
+  "mean" : "(물이) 넘쳐 흐르다."
+}, {
+  "id" : 1462,
+  "word" : "rebuke",
+  "mean" : "비난하다. 꾸짖다."
+}, {
+  "id" : 1463,
+  "word" : "recline",
+  "mean" : "기대다. 의지하다."
+}, {
+  "id" : 1464,
+  "word" : "abrupt",
+  "mean" : "돌연한. 통명스러운."
+}, {
+  "id" : 1465,
+  "word" : "cartoon",
+  "mean" : "만화(영화)"
+}, {
+  "id" : 1466,
+  "word" : "revolutionary",
+  "mean" : "혁명적인."
+}, {
+  "id" : 1467,
+  "word" : "dreary",
+  "mean" : "황량한. 지루한."
+}, {
+  "id" : 1468,
+  "word" : "navigation",
+  "mean" : "항해. 운항."
+}, {
+  "id" : 1469,
+  "word" : "fury",
+  "mean" : "격노."
+}, {
+  "id" : 1470,
+  "word" : "acid",
+  "mean" : "신성의. 신."
+}, {
+  "id" : 1471,
+  "word" : "furious",
+  "mean" : "격노한. 광포한."
+}, {
+  "id" : 1472,
+  "word" : "evaluation",
+  "mean" : "평가."
+}, {
+  "id" : 1473,
+  "word" : "omit",
+  "mean" : "생략하다."
+}, {
+  "id" : 1474,
+  "word" : "invisible",
+  "mean" : "보이지 않는."
+}, {
+  "id" : 1475,
+  "word" : "rational",
+  "mean" : "이성적인. 합리적인."
+}, {
+  "id" : 1476,
+  "word" : "stability",
+  "mean" : "안정."
+}, {
+  "id" : 1477,
+  "word" : "striking",
+  "mean" : "두드러진. 인상적인."
+}, {
+  "id" : 1478,
+  "word" : "eccentric",
+  "mean" : "보통과 다른. 괴상한."
+}, {
+  "id" : 1479,
+  "word" : "foul",
+  "mean" : "더러운. 반칙의."
+}, {
+  "id" : 1480,
+  "word" : "disciple",
+  "mean" : "제자. 사도."
+}, {
+  "id" : 1481,
+  "word" : "conceal",
+  "mean" : "숨기다. 비밀로 하다."
+}, {
+  "id" : 1482,
+  "word" : "persuasion",
+  "mean" : "설득."
+}, {
+  "id" : 1483,
+  "word" : "sneer",
+  "mean" : "비웃다. 냉소."
+}, {
+  "id" : 1484,
+  "word" : "pursuit",
+  "mean" : "추적. 추구."
+}, {
+  "id" : 1485,
+  "word" : "execute",
+  "mean" : "실행하다. 집행하다."
+}, {
+  "id" : 1486,
+  "word" : "damn",
+  "mean" : "비난하다. 저주하다."
+}, {
+  "id" : 1487,
+  "word" : "compromise",
+  "mean" : "타협. 타협하다. 화해. 양보하다."
+}, {
+  "id" : 1488,
+  "word" : "greedy",
+  "mean" : "탐욕스러운."
+}, {
+  "id" : 1489,
+  "word" : "embarrass",
+  "mean" : "당황하게 하다."
+}, {
+  "id" : 1490,
+  "word" : "lament",
+  "mean" : "비탄. 애도. 슬퍼하다. 비탄하다."
+}, {
+  "id" : 1491,
+  "word" : "draft",
+  "mean" : "밑그림. 초고."
+}, {
+  "id" : 1492,
+  "word" : "tedious",
+  "mean" : "지루한. 따분한."
+}, {
+  "id" : 1493,
+  "word" : "accumulate",
+  "mean" : "(재산을) 축적하다."
+}, {
+  "id" : 1494,
+  "word" : "bribe",
+  "mean" : "뇌물. 매수하다."
+}, {
+  "id" : 1495,
+  "word" : "famine",
+  "mean" : "기근."
+}, {
+  "id" : 1496,
+  "word" : "flour",
+  "mean" : "소맥분. 밀가루."
+}, {
+  "id" : 1497,
+  "word" : "vicious",
+  "mean" : "악의의. 나쁜."
+}, {
+  "id" : 1498,
+  "word" : "nuisance",
+  "mean" : "폐. 불쾌."
+}, {
+  "id" : 1499,
+  "word" : "desolate",
+  "mean" : "황량한. 황폐한."
+}, {
+  "id" : 1500,
+  "word" : "progressive",
+  "mean" : "진보적인."
+}, {
+  "id" : 1501,
+  "word" : "trend",
+  "mean" : "경향."
+}, {
+  "id" : 1502,
+  "word" : "well-being",
+  "mean" : "복지. 행복."
+}, {
+  "id" : 1503,
+  "word" : "tame",
+  "mean" : "순한. 길든. 길들이다."
+}, {
+  "id" : 1504,
+  "word" : "zeal",
+  "mean" : "열심. 열중."
+}, {
+  "id" : 1505,
+  "word" : "analyze",
+  "mean" : "분석하다."
+}, {
+  "id" : 1506,
+  "word" : "barren",
+  "mean" : "불모의. 메마른."
+}, {
+  "id" : 1507,
+  "word" : "investigate",
+  "mean" : "조사하다."
+}, {
+  "id" : 1508,
+  "word" : "extinguish",
+  "mean" : "(불을) 끄다. 소멸시키다."
+}, {
+  "id" : 1509,
+  "word" : "subjective",
+  "mean" : "주관적인."
+}, {
+  "id" : 1510,
+  "word" : "sly",
+  "mean" : "교활한. 간교한."
+}, {
+  "id" : 1511,
+  "word" : "monarch",
+  "mean" : "군주."
+}, {
+  "id" : 1512,
+  "word" : "calamity",
+  "mean" : "재난."
+}, {
+  "id" : 1513,
+  "word" : "investigation",
+  "mean" : "조사. 연구."
+}, {
+  "id" : 1514,
+  "word" : "invade",
+  "mean" : "..에 침입하다."
+}, {
+  "id" : 1515,
+  "word" : "translate",
+  "mean" : "..을 번역하다."
+}, {
+  "id" : 1516,
+  "word" : "inspire",
+  "mean" : "(감정.사상 등을) 불어넣다. 주입시키다."
+}, {
+  "id" : 1517,
+  "word" : "cruel",
+  "mean" : "무자비한."
+}, {
+  "id" : 1518,
+  "word" : "credible",
+  "mean" : "믿을 수 있는."
+}, {
+  "id" : 1519,
+  "word" : "vacant",
+  "mean" : "공허한. 빈."
+}, {
+  "id" : 1520,
+  "word" : "various",
+  "mean" : "다양한. 변화가 많은."
+}, {
+  "id" : 1521,
+  "word" : "instruct",
+  "mean" : "가르치다. 지시하다."
+}, {
+  "id" : 1522,
+  "word" : "surface",
+  "mean" : "표면. 외관."
+}, {
+  "id" : 1523,
+  "word" : "nerve",
+  "mean" : "신경. 신경과민."
+}, {
+  "id" : 1524,
+  "word" : "fierce",
+  "mean" : "격렬한."
+}, {
+  "id" : 1525,
+  "word" : "rescue",
+  "mean" : "구조. 구조하다. 구출."
+}, {
+  "id" : 1526,
+  "word" : "vast",
+  "mean" : "광대한. 막대한."
+}, {
+  "id" : 1527,
+  "word" : "credit",
+  "mean" : "신용."
+}, {
+  "id" : 1528,
+  "word" : "landscape",
+  "mean" : "풍경. 조망."
+}, {
+  "id" : 1529,
+  "word" : "medieval",
+  "mean" : "중세의. 낡은."
+}, {
+  "id" : 1530,
+  "word" : "honesty",
+  "mean" : "정직. 성실."
+}, {
+  "id" : 1531,
+  "word" : "misery",
+  "mean" : "비참함. 불행."
+}, {
+  "id" : 1532,
+  "word" : "imitate",
+  "mean" : "모방하다."
+}, {
+  "id" : 1533,
+  "word" : "opposite",
+  "mean" : "반대. 반대의."
+}, {
+  "id" : 1534,
+  "word" : "envelope",
+  "mean" : "봉투."
+}, {
+  "id" : 1535,
+  "word" : "telescope",
+  "mean" : "망원경."
+}, {
+  "id" : 1536,
+  "word" : "philosopher",
+  "mean" : "철학자."
+}, {
+  "id" : 1537,
+  "word" : "creature",
+  "mean" : "생물. 피조물."
+}, {
+  "id" : 1538,
+  "word" : "tribe",
+  "mean" : "부족. 종족."
+}, {
+  "id" : 1539,
+  "word" : "fellow",
+  "mean" : "동료. 친구."
+}, {
+  "id" : 1540,
+  "word" : "mode",
+  "mean" : "양식. 방법."
+}, {
+  "id" : 1541,
+  "word" : "bury",
+  "mean" : "묻다. 매장하다."
+}, {
+  "id" : 1542,
+  "word" : "absurd",
+  "mean" : "불합리한. 터무니없는."
+}, {
+  "id" : 1543,
+  "word" : "formal",
+  "mean" : "형식의. 형식적인."
+}, {
+  "id" : 1544,
+  "word" : "sob",
+  "mean" : "흐느겨 울다. 흐느낌."
+}, {
+  "id" : 1545,
+  "word" : "behave",
+  "mean" : "행동하다. 처신하다."
+}, {
+  "id" : 1546,
+  "word" : "empire",
+  "mean" : "제국. 통치(권)"
+}, {
+  "id" : 1547,
+  "word" : "millionaire",
+  "mean" : "백만장자."
+}, {
+  "id" : 1548,
+  "word" : "regular",
+  "mean" : "규칙적인. 정규의."
+}, {
+  "id" : 1549,
+  "word" : "victory",
+  "mean" : "승리."
+}, {
+  "id" : 1550,
+  "word" : "include",
+  "mean" : "포함하다."
+}, {
+  "id" : 1551,
+  "word" : "faith",
+  "mean" : "신념."
+}, {
+  "id" : 1552,
+  "word" : "mental",
+  "mean" : "미음의. 정신의."
+}, {
+  "id" : 1553,
+  "word" : "interrupt",
+  "mean" : "가로막다. 방해하다."
+}, {
+  "id" : 1554,
+  "word" : "originality",
+  "mean" : "독창성."
+}, {
+  "id" : 1555,
+  "word" : "friendly",
+  "mean" : "친절한. 친한."
+}, {
+  "id" : 1556,
+  "word" : "calm",
+  "mean" : "냉정한. 고용한."
+}, {
+  "id" : 1557,
+  "word" : "miracle",
+  "mean" : "기적."
+}, {
+  "id" : 1558,
+  "word" : "repeat",
+  "mean" : "반복하다."
+}, {
+  "id" : 1559,
+  "word" : "shade",
+  "mean" : "그늘, 땅거미."
+}, {
+  "id" : 1560,
+  "word" : "customer",
+  "mean" : "고객."
+}, {
+  "id" : 1561,
+  "word" : "reply",
+  "mean" : "대답. 대답하다."
+}, {
+  "id" : 1562,
+  "word" : "universal",
+  "mean" : "전세계의. 일반적인."
+}, {
+  "id" : 1563,
+  "word" : "cheerful",
+  "mean" : "즐거운. 쾌활한."
+}, {
+  "id" : 1564,
+  "word" : "reserve",
+  "mean" : "비축. 예비물. 비촉하다. 예약하다."
+}, {
+  "id" : 1565,
+  "word" : "gentle",
+  "mean" : "점잖은. 온화한. 부드러운."
+}, {
+  "id" : 1566,
+  "word" : "pure",
+  "mean" : "순수한. 깨끗한."
+}, {
+  "id" : 1567,
+  "word" : "seed",
+  "mean" : "종자. 씨를 뿌리다."
+}, {
+  "id" : 1568,
+  "word" : "bless",
+  "mean" : "축복하다."
+}, {
+  "id" : 1569,
+  "word" : "grief",
+  "mean" : "슬픔."
+}, {
+  "id" : 1570,
+  "word" : "ladder",
+  "mean" : "사다리."
+}, {
+  "id" : 1571,
+  "word" : "pleasant",
+  "mean" : "즐거운. 기쁜."
+}, {
+  "id" : 1572,
+  "word" : "ideal",
+  "mean" : "이상. 관념."
+}, {
+  "id" : 1573,
+  "word" : "vivid",
+  "mean" : "생생한. 활발한."
+}, {
+  "id" : 1574,
+  "word" : "kingdom",
+  "mean" : "왕국. 영역."
+}, {
+  "id" : 1575,
+  "word" : "empty",
+  "mean" : "빈."
+}, {
+  "id" : 1576,
+  "word" : "stupid",
+  "mean" : "어리석은."
+}, {
+  "id" : 1577,
+  "word" : "invent",
+  "mean" : "발명하다."
+}, {
+  "id" : 1578,
+  "word" : "tongue",
+  "mean" : "혀. 언어."
+}, {
+  "id" : 1579,
+  "word" : "eternal",
+  "mean" : "영원한."
+}, {
+  "id" : 1580,
+  "word" : "marriage",
+  "mean" : "결혼."
+}, {
+  "id" : 1581,
+  "word" : "position",
+  "mean" : "입장. 위치."
+}, {
+  "id" : 1582,
+  "word" : "vegetable",
+  "mean" : "채소. 식물."
+}, {
+  "id" : 1583,
+  "word" : "owner",
+  "mean" : "소유주."
+}, {
+  "id" : 1584,
+  "word" : "incident",
+  "mean" : "일어난 일. 사건."
+}, {
+  "id" : 1585,
+  "word" : "heap",
+  "mean" : "퇴적. 쌓아올린 것."
+}, {
+  "id" : 1586,
+  "word" : "bond",
+  "mean" : "묶는 것. 속박."
+}, {
+  "id" : 1587,
+  "word" : "nervous",
+  "mean" : "신경의. 신경질적인."
+}, {
+  "id" : 1588,
+  "word" : "alive",
+  "mean" : "살아 있는."
+}, {
+  "id" : 1589,
+  "word" : "keen",
+  "mean" : "예리한. 격렬한."
+}, {
+  "id" : 1590,
+  "word" : "obtain",
+  "mean" : "얻다."
+}, {
+  "id" : 1591,
+  "word" : "observe",
+  "mean" : "관찰하다. 지키다."
+}, {
+  "id" : 1592,
+  "word" : "emergency",
+  "mean" : "돌발사태. 비상사태."
+}, {
+  "id" : 1593,
+  "word" : "communicate",
+  "mean" : "전달하다. 통신하다."
+}, {
+  "id" : 1594,
+  "word" : "deed",
+  "mean" : "행동."
+}, {
+  "id" : 1595,
+  "word" : "cave",
+  "mean" : "동굴. ..에 굴을 파다. 함몰하다."
+}, {
+  "id" : 1596,
+  "word" : "district",
+  "mean" : "지구. 지역."
+}, {
+  "id" : 1597,
+  "word" : "critical",
+  "mean" : "위기의. 비평의."
+}, {
+  "id" : 1598,
+  "word" : "insolent",
+  "mean" : "오만한. 무례한."
+}, {
+  "id" : 1599,
+  "word" : "physician",
+  "mean" : "내과의(사)."
+}, {
+  "id" : 1600,
+  "word" : "environment",
+  "mean" : "환경."
+}, {
+  "id" : 1601,
+  "word" : "soil",
+  "mean" : "흙. 토양."
+}, {
+  "id" : 1602,
+  "word" : "fertile",
+  "mean" : "비옥한."
+}, {
+  "id" : 1603,
+  "word" : "humanism",
+  "mean" : "인도주의. 인문주의."
+}, {
+  "id" : 1604,
+  "word" : "anthropology",
+  "mean" : "인류학."
+}, {
+  "id" : 1605,
+  "word" : "geometry",
+  "mean" : "기하학."
+}, {
+  "id" : 1606,
+  "word" : "physics",
+  "mean" : "물리학."
+}, {
+  "id" : 1607,
+  "word" : "astronomy",
+  "mean" : "천문학."
+}, {
+  "id" : 1608,
+  "word" : "psychology",
+  "mean" : "심리학."
+}, {
+  "id" : 1609,
+  "word" : "geography",
+  "mean" : "지리학."
+}, {
+  "id" : 1610,
+  "word" : "philosophy",
+  "mean" : "철학."
+}, {
+  "id" : 1611,
+  "word" : "archaeology",
+  "mean" : "고고학."
+}, {
+  "id" : 1612,
+  "word" : "logic",
+  "mean" : "논리. 논리학."
+}, {
+  "id" : 1613,
+  "word" : "ethics",
+  "mean" : "윤리학."
+}, {
+  "id" : 1614,
+  "word" : "ecology",
+  "mean" : "생태학."
+}, {
+  "id" : 1615,
+  "word" : "biology",
+  "mean" : "생물학."
+}, {
+  "id" : 1616,
+  "word" : "botany",
+  "mean" : "식물학."
+}, {
+  "id" : 1617,
+  "word" : "geology",
+  "mean" : "지질학."
+}, {
+  "id" : 1618,
+  "word" : "chemistry",
+  "mean" : "화학."
+}, {
+  "id" : 1619,
+  "word" : "affection",
+  "mean" : "애정."
+}, {
+  "id" : 1620,
+  "word" : "piety",
+  "mean" : "경건. 신앙심."
+}, {
+  "id" : 1621,
+  "word" : "bravery",
+  "mean" : "용감. 용기."
+}, {
+  "id" : 1622,
+  "word" : "sacred",
+  "mean" : "신성한."
+}, {
+  "id" : 1623,
+  "word" : "quotation",
+  "mean" : "인용. 시세. 견적서."
+}, {
+  "id" : 1624,
+  "word" : "drain",
+  "mean" : "배수(구). 배수하다. 배출하다."
+}, {
+  "id" : 1625,
+  "word" : "intercourse",
+  "mean" : "교제."
+}, {
+  "id" : 1626,
+  "word" : "contempt",
+  "mean" : "경멸. 모욕."
+}, {
+  "id" : 1627,
+  "word" : "mislead",
+  "mean" : "잘못 인도하다."
+}, {
+  "id" : 1628,
+  "word" : "prospect",
+  "mean" : "조망. 전망."
+}, {
+  "id" : 1629,
+  "word" : "decent",
+  "mean" : "적당한. 알맞은."
+}, {
+  "id" : 1630,
+  "word" : "condemn",
+  "mean" : "비난하다."
+}, {
+  "id" : 1631,
+  "word" : "solitude",
+  "mean" : "고독."
+}, {
+  "id" : 1632,
+  "word" : "prolong",
+  "mean" : "연장하다. 늘이다."
+}, {
+  "id" : 1633,
+  "word" : "wretched",
+  "mean" : "불쌍한. 가엾은."
+}, {
+  "id" : 1634,
+  "word" : "strife",
+  "mean" : "분쟁. 투쟁."
+}, {
+  "id" : 1635,
+  "word" : "advocate",
+  "mean" : "주장하다. 옹호하다."
+}, {
+  "id" : 1636,
+  "word" : "remote",
+  "mean" : "멀리. 멀어진."
+}, {
+  "id" : 1637,
+  "word" : "dialect",
+  "mean" : "방언."
+}, {
+  "id" : 1638,
+  "word" : "notion",
+  "mean" : "개념. 관념."
+}, {
+  "id" : 1639,
+  "word" : "mammal",
+  "mean" : "포유동물."
+}, {
+  "id" : 1640,
+  "word" : "neglectful",
+  "mean" : "태만한. 부주의한."
+}, {
+  "id" : 1641,
+  "word" : "astray",
+  "mean" : "길을 잃은."
+}, {
+  "id" : 1642,
+  "word" : "conviction",
+  "mean" : "확신. 신념."
+}, {
+  "id" : 1643,
+  "word" : "picturesque",
+  "mean" : "아름다운. 그림 같은."
+}, {
+  "id" : 1644,
+  "word" : "correction",
+  "mean" : "수정. 정정."
+}, {
+  "id" : 1645,
+  "word" : "preface",
+  "mean" : "머리말. 서운."
+}, {
+  "id" : 1646,
+  "word" : "stir",
+  "mean" : "선동하다. 휘젓다."
+}, {
+  "id" : 1647,
+  "word" : "shrewd",
+  "mean" : "약삭빠른. 빈틈 없는."
+}, {
+  "id" : 1648,
+  "word" : "negligence",
+  "mean" : "태만. 부주의."
+}, {
+  "id" : 1649,
+  "word" : "torment",
+  "mean" : "고통. 고통을 주다."
+}, {
+  "id" : 1650,
+  "word" : "passionate",
+  "mean" : "열렬한. 정열적인."
+}, {
+  "id" : 1651,
+  "word" : "analysis",
+  "mean" : "분석."
+}, {
+  "id" : 1652,
+  "word" : "mold",
+  "mean" : "형. 특성."
+}, {
+  "id" : 1653,
+  "word" : "bewilder",
+  "mean" : "당혹케 하다."
+}, {
+  "id" : 1654,
+  "word" : "discourage",
+  "mean" : "용기를 잃게 하다. 낙담시키다."
+}, {
+  "id" : 1655,
+  "word" : "forsake",
+  "mean" : "저버리다. 버리고 가다."
+}, {
+  "id" : 1656,
+  "word" : "impair",
+  "mean" : "악화시키다. 해치다."
+}, {
+  "id" : 1657,
+  "word" : "fright",
+  "mean" : "공포. 놀람."
+}, {
+  "id" : 1658,
+  "word" : "controversy",
+  "mean" : "논쟁."
+}, {
+  "id" : 1659,
+  "word" : "lade",
+  "mean" : "(배.차 등에) 싣다."
+}, {
+  "id" : 1660,
+  "word" : "initial",
+  "mean" : "최초의. 머리글자."
+}, {
+  "id" : 1661,
+  "word" : "inspiration",
+  "mean" : "영감."
+}, {
+  "id" : 1662,
+  "word" : "locomotive",
+  "mean" : "기관차."
+}, {
+  "id" : 1663,
+  "word" : "arouse",
+  "mean" : "깨우다. 자극하다."
+}, {
+  "id" : 1664,
+  "word" : "transient",
+  "mean" : "일시적인."
+}, {
+  "id" : 1665,
+  "word" : "sober",
+  "mean" : "술에 취하지 않은. 맑은 정신의. 차분한."
+}, {
+  "id" : 1666,
+  "word" : "dominion",
+  "mean" : "지배(권)"
+}, {
+  "id" : 1667,
+  "word" : "clumsy",
+  "mean" : "서투른. 솜씨없는."
+}, {
+  "id" : 1668,
+  "word" : "conspicuous",
+  "mean" : "특징적인. 눈에 띄는."
+}, {
+  "id" : 1669,
+  "word" : "distress",
+  "mean" : "고통. 걱정. 괴롭히다."
+}, {
+  "id" : 1670,
+  "word" : "bough",
+  "mean" : "큰 가지."
+}, {
+  "id" : 1671,
+  "word" : "outlet",
+  "mean" : "배출구, 대리점."
+}, {
+  "id" : 1672,
+  "word" : "pregnant",
+  "mean" : "임신한."
+}, {
+  "id" : 1673,
+  "word" : "detest",
+  "mean" : "미워하다. 몹시 싫어하다."
+}, {
+  "id" : 1674,
+  "word" : "retire",
+  "mean" : "퇴직하다."
+}, {
+  "id" : 1675,
+  "word" : "curse",
+  "mean" : "저주. 욕설. 저주하다."
+}, {
+  "id" : 1676,
+  "word" : "comrade",
+  "mean" : "동료."
+}, {
+  "id" : 1677,
+  "word" : "chaos",
+  "mean" : "혼돈. 무질서."
+}, {
+  "id" : 1678,
+  "word" : "signify",
+  "mean" : "뜻하다. 나타나다."
+}, {
+  "id" : 1679,
+  "word" : "quote",
+  "mean" : "인용하다."
+}, {
+  "id" : 1680,
+  "word" : "enthusiasm",
+  "mean" : "열심. 열광."
+}, {
+  "id" : 1681,
+  "word" : "literate",
+  "mean" : "읽고 쓸 수 있는."
+}, {
+  "id" : 1682,
+  "word" : "supplement",
+  "mean" : "부록. 추가물. 보충물. 보충하다. 추가하다."
+}, {
+  "id" : 1683,
+  "word" : "assent",
+  "mean" : "동의. 동의하다."
+}, {
+  "id" : 1684,
+  "word" : "bundle",
+  "mean" : "다발. 묶음. 무리."
+}, {
+  "id" : 1685,
+  "word" : "skeptical",
+  "mean" : "회의적인."
+}, {
+  "id" : 1686,
+  "word" : "farewell",
+  "mean" : "송별의. 결별의."
+}, {
+  "id" : 1687,
+  "word" : "exaggerate",
+  "mean" : "과장하다."
+}, {
+  "id" : 1688,
+  "word" : "peer",
+  "mean" : "동료. 자세히 보다."
+}, {
+  "id" : 1689,
+  "word" : "hypocrisy",
+  "mean" : "위선. 위선행위."
+}, {
+  "id" : 1690,
+  "word" : "cynical",
+  "mean" : "냉소적인."
+}, {
+  "id" : 1691,
+  "word" : "catastrophe",
+  "mean" : "큰 재해. 대참사."
+}, {
+  "id" : 1692,
+  "word" : "astound",
+  "mean" : "깜짝 놀라게 하다."
+}, {
+  "id" : 1693,
+  "word" : "monotonous",
+  "mean" : "단조로운."
+}, {
+  "id" : 1694,
+  "word" : "somewhat",
+  "mean" : "어느 정도. 얼마간."
+}, {
+  "id" : 1695,
+  "word" : "arrogant",
+  "mean" : "기만한."
+}, {
+  "id" : 1696,
+  "word" : "treachery",
+  "mean" : "배반. 배신. 반역."
+}, {
+  "id" : 1697,
+  "word" : "alert",
+  "mean" : "경계, 경보. 방심하지 않는."
+}, {
+  "id" : 1698,
+  "word" : "applause",
+  "mean" : "박수 갈채."
+}, {
+  "id" : 1699,
+  "word" : "aloof",
+  "mean" : "멀어져. 멀리서."
+}, {
+  "id" : 1700,
+  "word" : "doom",
+  "mean" : "운명. 운명짓다. ..의 운명을 정하다."
+}, {
+  "id" : 1701,
+  "word" : "intense",
+  "mean" : "강렬한."
+}, {
+  "id" : 1702,
+  "word" : "intrude",
+  "mean" : "밀어 넣다. 강요하다. 끼어들다."
+}, {
+  "id" : 1703,
+  "word" : "scul[ture",
+  "mean" : "조각."
+}, {
+  "id" : 1704,
+  "word" : "justify",
+  "mean" : "정당화하다."
+}, {
+  "id" : 1705,
+  "word" : "mercy",
+  "mean" : "자비. 연민."
+}, {
+  "id" : 1706,
+  "word" : "allowance",
+  "mean" : "수당. ..비. 한도."
+}, {
+  "id" : 1707,
+  "word" : "epoch",
+  "mean" : "시대. 신기원."
+}, {
+  "id" : 1708,
+  "word" : "chat",
+  "mean" : "잡담. 잡담하다. 담소하다."
+}, {
+  "id" : 1709,
+  "word" : "instrument",
+  "mean" : "도구. 악기."
+}, {
+  "id" : 1710,
+  "word" : "spectacle",
+  "mean" : "광경. 안경."
+}, {
+  "id" : 1711,
+  "word" : "bondage",
+  "mean" : "속박. 노예의 신분."
+}, {
+  "id" : 1712,
+  "word" : "awkward",
+  "mean" : "서투른. 솜씨없는. 거북한."
+}, {
+  "id" : 1713,
+  "word" : "dismal",
+  "mean" : "음산한. 침울한."
+}, {
+  "id" : 1714,
+  "word" : "idle",
+  "mean" : "게으른, 한가한."
+}, {
+  "id" : 1715,
+  "word" : "feast",
+  "mean" : "축제."
+}, {
+  "id" : 1716,
+  "word" : "vein",
+  "mean" : "혈관. 기질. 기분."
+}, {
+  "id" : 1717,
+  "word" : "comment",
+  "mean" : "설명하다. 논평하다. 설명. 논평."
+}, {
+  "id" : 1718,
+  "word" : "equipment",
+  "mean" : "설비. 장비."
+}, {
+  "id" : 1719,
+  "word" : "disgust",
+  "mean" : "싫어지게 하다. 메스껍게 하다."
+}, {
+  "id" : 1720,
+  "word" : "sermon",
+  "mean" : "설교."
+}, {
+  "id" : 1721,
+  "word" : "substance",
+  "mean" : "본질. 물질."
+}, {
+  "id" : 1722,
+  "word" : "expose",
+  "mean" : "드러내다. 노출시키다."
+}, {
+  "id" : 1723,
+  "word" : "patience",
+  "mean" : "인내(력)"
+}, {
+  "id" : 1724,
+  "word" : "assemble",
+  "mean" : "모으다. 집합시키다."
+}, {
+  "id" : 1725,
+  "word" : "collapse",
+  "mean" : "붕괴."
+}, {
+  "id" : 1726,
+  "word" : "dread",
+  "mean" : "두려워하다. 무서워하다. 공포. 불한."
+}, {
+  "id" : 1727,
+  "word" : "plea",
+  "mean" : "탄원. 변명."
+}, {
+  "id" : 1728,
+  "word" : "perpetual",
+  "mean" : "영원한. 끊임없는."
+}, {
+  "id" : 1729,
+  "word" : "utility",
+  "mean" : "유익. 효용."
+}, {
+  "id" : 1730,
+  "word" : "intoxicate",
+  "mean" : "취하게 하다. 도취시키다."
+}, {
+  "id" : 1731,
+  "word" : "lunatic",
+  "mean" : "정신 이상의. 미치광이. 정신 이상자."
+}, {
+  "id" : 1732,
+  "word" : "fragile",
+  "mean" : "부서지기 쉬운."
+}, {
+  "id" : 1733,
+  "word" : "wicked",
+  "mean" : "사악한."
+}, {
+  "id" : 1734,
+  "word" : "sterile",
+  "mean" : "불모의."
+}, {
+  "id" : 1735,
+  "word" : "oath",
+  "mean" : "맹세. 선언. 서약."
+}, {
+  "id" : 1736,
+  "word" : "forlorn",
+  "mean" : "버림받은. 쓸쓸한."
+}, {
+  "id" : 1737,
+  "word" : "specific",
+  "mean" : "특정한."
+}, {
+  "id" : 1738,
+  "word" : "prudent",
+  "mean" : "사려 깊은. 분별 있는."
+}, {
+  "id" : 1739,
+  "word" : "sheer",
+  "mean" : "완전한. 순전한."
+}, {
+  "id" : 1740,
+  "word" : "tolerance",
+  "mean" : "인내."
+}, {
+  "id" : 1741,
+  "word" : "filthy",
+  "mean" : "더러운. 불길한."
+}, {
+  "id" : 1742,
+  "word" : "hostile",
+  "mean" : "적대적인."
+}, {
+  "id" : 1743,
+  "word" : "shelter",
+  "mean" : "은신처."
+}, {
+  "id" : 1744,
+  "word" : "ordinary",
+  "mean" : "보통의."
+}, {
+  "id" : 1745,
+  "word" : "puzzle",
+  "mean" : "당황하게 하다."
+}, {
+  "id" : 1746,
+  "word" : "haughty",
+  "mean" : "오만한."
+}, {
+  "id" : 1747,
+  "word" : "patient",
+  "mean" : "인내심이 강한. 환자."
+}, {
+  "id" : 1748,
+  "word" : "reckless",
+  "mean" : "무모한. 분별 없는."
+}, {
+  "id" : 1749,
+  "word" : "temporary",
+  "mean" : "일시적인."
+}, {
+  "id" : 1750,
+  "word" : "alternative",
+  "mean" : "양자택일의. 대안."
+}, {
+  "id" : 1751,
+  "word" : "internal",
+  "mean" : "내부의. 내면적인."
+}, {
+  "id" : 1752,
+  "word" : "flourish",
+  "mean" : "반영하다."
+}, {
+  "id" : 1753,
+  "word" : "incredible",
+  "mean" : "믿을 수 없는."
+}, {
+  "id" : 1754,
+  "word" : "descent",
+  "mean" : "하강. 저하."
+}, {
+  "id" : 1755,
+  "word" : "sane",
+  "mean" : "제정신의. 분별 있는."
+}, {
+  "id" : 1756,
+  "word" : "substantial",
+  "mean" : "실질적인. 상당한."
+}, {
+  "id" : 1757,
+  "word" : "intuition",
+  "mean" : "직관."
+}, {
+  "id" : 1758,
+  "word" : "profile",
+  "mean" : "옆모습. 윤곽. 인물 소개."
+}, {
+  "id" : 1759,
+  "word" : "emphasize",
+  "mean" : "강조하다."
+}, {
+  "id" : 1760,
+  "word" : "whimsical",
+  "mean" : "변덕스러운. 별난."
+}, {
+  "id" : 1761,
+  "word" : "pang",
+  "mean" : "비통. 마음의 고통."
+}, {
+  "id" : 1762,
+  "word" : "sinister",
+  "mean" : "불길한. 사악한."
+}, {
+  "id" : 1763,
+  "word" : "apparatus",
+  "mean" : "장치. 기구."
+}, {
+  "id" : 1764,
+  "word" : "upright",
+  "mean" : "똑바른. 곧은."
+}, {
+  "id" : 1765,
+  "word" : "outcome",
+  "mean" : "결과."
+}, {
+  "id" : 1766,
+  "word" : "dismiss",
+  "mean" : "해고하다. 해산시키다."
+}, {
+  "id" : 1767,
+  "word" : "agitate",
+  "mean" : "선동하다. 부추기다."
+}, {
+  "id" : 1768,
+  "word" : "remedy",
+  "mean" : "치료법. 치료약."
+}, {
+  "id" : 1769,
+  "word" : "sway",
+  "mean" : "흔들리다. 동요하다."
+}, {
+  "id" : 1770,
+  "word" : "trail",
+  "mean" : "흔적. 발자국. 추적하다."
+}, {
+  "id" : 1771,
+  "word" : "litter",
+  "mean" : "어지르다. 흩뜨리다."
+}, {
+  "id" : 1772,
+  "word" : "riot",
+  "mean" : "폭동. 소동. 폭동을 일으키다."
+}, {
+  "id" : 1773,
+  "word" : "tact",
+  "mean" : "약삭빠름. 기지. 요령."
+}, {
+  "id" : 1774,
+  "word" : "solitary",
+  "mean" : "고독한. 쓸쓸한."
+}, {
+  "id" : 1775,
+  "word" : "response",
+  "mean" : "반응. 응답."
+}, {
+  "id" : 1776,
+  "word" : "dialogue",
+  "mean" : "대화. 토론."
+}, {
+  "id" : 1777,
+  "word" : "resign",
+  "mean" : "시작하다."
+}, {
+  "id" : 1778,
+  "word" : "insert",
+  "mean" : "삽입하다. 끼우다. 삽입물."
+}, {
+  "id" : 1779,
+  "word" : "aspire",
+  "mean" : "열망하다."
+}, {
+  "id" : 1780,
+  "word" : "solution",
+  "mean" : "해결. 용해."
+}, {
+  "id" : 1781,
+  "word" : "precious",
+  "mean" : "귀중한."
+}, {
+  "id" : 1782,
+  "word" : "immediate",
+  "mean" : "직접의. 즉시의."
+}, {
+  "id" : 1783,
+  "word" : "excursion",
+  "mean" : "소풍. 짧은 여행."
+}, {
+  "id" : 1784,
+  "word" : "steer",
+  "mean" : "조종하다. ..의 키를 잡다."
+}, {
+  "id" : 1785,
+  "word" : "fluent",
+  "mean" : "유창한."
+}, {
+  "id" : 1786,
+  "word" : "pursue",
+  "mean" : "추적하다. 추구하다."
+}, {
+  "id" : 1787,
+  "word" : "ascertain",
+  "mean" : "확인하다. 조사하다."
+}, {
+  "id" : 1788,
+  "word" : "competent",
+  "mean" : "유능한."
+}, {
+  "id" : 1789,
+  "word" : "stubborn",
+  "mean" : "완고한. 고집센."
+}, {
+  "id" : 1790,
+  "word" : "vanish",
+  "mean" : "사라지다. 소실되다."
+}, {
+  "id" : 1791,
+  "word" : "speculate",
+  "mean" : "사색하다. 숙고하다."
+}, {
+  "id" : 1792,
+  "word" : "mourning",
+  "mean" : "슬픔. 한탄. 애도."
+}, {
+  "id" : 1793,
+  "word" : "ascent",
+  "mean" : "상승."
+}, {
+  "id" : 1794,
+  "word" : "malice",
+  "mean" : "악의."
+}, {
+  "id" : 1795,
+  "word" : "imply",
+  "mean" : "의미하다. 함축하다."
+}, {
+  "id" : 1796,
+  "word" : "restrict",
+  "mean" : "제한하다."
+}, {
+  "id" : 1797,
+  "word" : "trap",
+  "mean" : "올가미. 덫. ..을 덫으로 잡다."
+}, {
+  "id" : 1798,
+  "word" : "resemblance",
+  "mean" : "유사. 닮음."
+}, {
+  "id" : 1799,
+  "word" : "portrait",
+  "mean" : "초상(화)"
+}, {
+  "id" : 1800,
+  "word" : "adequate",
+  "mean" : "충분한. 적당한."
+}, {
+  "id" : 1801,
+  "word" : "praiseworthy",
+  "mean" : "칭찬할 만한."
+}, {
+  "id" : 1802,
+  "word" : "motive",
+  "mean" : "동기."
+}, {
+  "id" : 1803,
+  "word" : "temptation",
+  "mean" : "유혹. 마음을 끄는 것."
+}, {
+  "id" : 1804,
+  "word" : "evaluate",
+  "mean" : "평가하다."
+}, {
+  "id" : 1805,
+  "word" : "attract",
+  "mean" : "매혹하다. 끌어들이다."
+}, {
+  "id" : 1806,
+  "word" : "brute",
+  "mean" : "짐승. 잔인한 사람."
+}, {
+  "id" : 1807,
+  "word" : "attractive",
+  "mean" : "매력적인."
+}, {
+  "id" : 1808,
+  "word" : "chart",
+  "mean" : "도표. 차트."
+}, {
+  "id" : 1809,
+  "word" : "prophet",
+  "mean" : "예언자."
+}, {
+  "id" : 1810,
+  "word" : "reward",
+  "mean" : "보상. 보수. 보상하다."
+}, {
+  "id" : 1811,
+  "word" : "column",
+  "mean" : "기동. 칼럼."
+}, {
+  "id" : 1812,
+  "word" : "movement",
+  "mean" : "운동."
+}, {
+  "id" : 1813,
+  "word" : "swell",
+  "mean" : "부풀다. 팽창하다. 팽창."
+}, {
+  "id" : 1814,
+  "word" : "praise",
+  "mean" : "칭찬. 칭찬하다."
+}, {
+  "id" : 1815,
+  "word" : "confine",
+  "mean" : "제한하다. 감금하다. 경계선. 한계."
+}, {
+  "id" : 1816,
+  "word" : "target",
+  "mean" : "목표. 표적."
+}, {
+  "id" : 1817,
+  "word" : "cowardly",
+  "mean" : "겁 많은. 비겁한."
+}, {
+  "id" : 1818,
+  "word" : "route",
+  "mean" : "길."
+}, {
+  "id" : 1819,
+  "word" : "pioneer",
+  "mean" : "개철자. 선구자."
+}, {
+  "id" : 1820,
+  "word" : "faculty",
+  "mean" : "능력."
+}, {
+  "id" : 1821,
+  "word" : "brave",
+  "mean" : "용감한."
+}, {
+  "id" : 1822,
+  "word" : "species",
+  "mean" : "(생물의) 종."
+}, {
+  "id" : 1823,
+  "word" : "seize",
+  "mean" : "잡다."
+}, {
+  "id" : 1824,
+  "word" : "flavor",
+  "mean" : "향미. 향기를 곁들이다."
+}, {
+  "id" : 1825,
+  "word" : "craft",
+  "mean" : "기술."
+}, {
+  "id" : 1826,
+  "word" : "porter",
+  "mean" : "운반인. 짐꾼."
+}, {
+  "id" : 1827,
+  "word" : "competence",
+  "mean" : "능력. 적성."
+}, {
+  "id" : 1828,
+  "word" : "vary",
+  "mean" : "변화하다."
+}, {
+  "id" : 1829,
+  "word" : "bold",
+  "mean" : "대담한."
+}, {
+  "id" : 1830,
+  "word" : "anticipate",
+  "mean" : "기대하다. 예상하다."
+}, {
+  "id" : 1831,
+  "word" : "celebrate",
+  "mean" : "축하하다. 기념하다."
+}, {
+  "id" : 1832,
+  "word" : "courtesy",
+  "mean" : "예의바름. 호의."
+}, {
+  "id" : 1833,
+  "word" : "hare",
+  "mean" : "산토끼."
+}, {
+  "id" : 1834,
+  "word" : "lavatory",
+  "mean" : "화장실."
+}, {
+  "id" : 1835,
+  "word" : "sail",
+  "mean" : "돛. 항해하다."
+}, {
+  "id" : 1836,
+  "word" : "severe",
+  "mean" : "엄격한."
+}, {
+  "id" : 1837,
+  "word" : "concept",
+  "mean" : "개념."
+}, {
+  "id" : 1838,
+  "word" : "thorough",
+  "mean" : "철저한. 완전한."
+}, {
+  "id" : 1839,
+  "word" : "intimate",
+  "mean" : "친밀한."
+}, {
+  "id" : 1840,
+  "word" : "strive",
+  "mean" : "노력하다."
+}, {
+  "id" : 1841,
+  "word" : "royal",
+  "mean" : "왕의. 당당한."
+}, {
+  "id" : 1842,
+  "word" : "similarity",
+  "mean" : "유사."
+}, {
+  "id" : 1843,
+  "word" : "anecdote",
+  "mean" : "일화."
+}, {
+  "id" : 1844,
+  "word" : "vague",
+  "mean" : "막연한. 애매한."
+}, {
+  "id" : 1845,
+  "word" : "category",
+  "mean" : "부문. 종류. 범주."
+}, {
+  "id" : 1846,
+  "word" : "funeral",
+  "mean" : "장례(식)"
+}, {
+  "id" : 1847,
+  "word" : "enthusiastic",
+  "mean" : "열광적인. 열심인."
+}, {
+  "id" : 1848,
+  "word" : "barrier",
+  "mean" : "장애(물). 장벽."
+}, {
+  "id" : 1849,
+  "word" : "indicate",
+  "mean" : "가리키다. 징후를 보이다."
+}, {
+  "id" : 1850,
+  "word" : "polish",
+  "mean" : "연마하다. 닦다."
+}, {
+  "id" : 1851,
+  "word" : "upset",
+  "mean" : "뒤집어 엎다. 당황케 하다. 전복. 혼란."
+}, {
+  "id" : 1852,
+  "word" : "mankind",
+  "mean" : "인류. 남성."
+}, {
+  "id" : 1853,
+  "word" : "suite",
+  "mean" : "한벌. 스위트 룸."
+}, {
+  "id" : 1854,
+  "word" : "sigh",
+  "mean" : "한숨. 탄식. 한숨을 쉬다. 탄식하다."
+}, {
+  "id" : 1855,
+  "word" : "existence",
+  "mean" : "존재. 생활."
+}, {
+  "id" : 1856,
+  "word" : "phenomenon",
+  "mean" : "현상."
+}, {
+  "id" : 1857,
+  "word" : "descend",
+  "mean" : "내리다. 하강하다."
+}, {
+  "id" : 1858,
+  "word" : "principal",
+  "mean" : "주요한. 교장."
+}, {
+  "id" : 1859,
+  "word" : "recognize",
+  "mean" : "인정하다."
+}, {
+  "id" : 1860,
+  "word" : "tiny",
+  "mean" : "작은. 조그만."
+}, {
+  "id" : 1861,
+  "word" : "reference",
+  "mean" : "문의. 참조."
+}, {
+  "id" : 1862,
+  "word" : "flame",
+  "mean" : "화염. 불길. 타오르다. 불꽃을 내다."
+}, {
+  "id" : 1863,
+  "word" : "reap",
+  "mean" : "배다. 수확하다. 받다."
+}, {
+  "id" : 1864,
+  "word" : "dust",
+  "mean" : "먼지."
+}, {
+  "id" : 1865,
+  "word" : "project",
+  "mean" : "계획. 계획하다. 투영하다."
+}, {
+  "id" : 1866,
+  "word" : "destroy",
+  "mean" : "파괴하다."
+}, {
+  "id" : 1867,
+  "word" : "wholly",
+  "mean" : "전혀. 완전히."
+}, {
+  "id" : 1868,
+  "word" : "conflict",
+  "mean" : "투쟁. 충돌. 충돌하다. 모순되다."
+}, {
+  "id" : 1869,
+  "word" : "aspect",
+  "mean" : "국면. 양상. 모습."
+}, {
+  "id" : 1870,
+  "word" : "worship",
+  "mean" : "숭배. 예배. 숭배하다."
+}, {
+  "id" : 1871,
+  "word" : "decade",
+  "mean" : "10년간."
+}, {
+  "id" : 1872,
+  "word" : "awe",
+  "mean" : "두려움. 외경심."
+}, {
+  "id" : 1873,
+  "word" : "suspect",
+  "mean" : "의심하다. 용의자."
+}, {
+  "id" : 1874,
+  "word" : "stuff",
+  "mean" : "재료. 물질. 채우다."
+}, {
+  "id" : 1875,
+  "word" : "annoy",
+  "mean" : "괴롭히다. 성가시게 굴다."
+}, {
+  "id" : 1876,
+  "word" : "urgent",
+  "mean" : "긴급한."
+}, {
+  "id" : 1877,
+  "word" : "splendid",
+  "mean" : "화려한. 훌륭한."
+}, {
+  "id" : 1878,
+  "word" : "greed",
+  "mean" : "탐욕. 욕심."
+}, {
+  "id" : 1879,
+  "word" : "mere",
+  "mean" : "단순한. 전적인."
+}, {
+  "id" : 1880,
+  "word" : "invalid",
+  "mean" : "병약. 병약한. 근거없는. 무가치한. 무효한."
+}, {
+  "id" : 1881,
+  "word" : "slavery",
+  "mean" : "노예제도. 노예의 신분."
+}, {
+  "id" : 1882,
+  "word" : "associate",
+  "mean" : "교제하다. 관련시키다."
+}, {
+  "id" : 1883,
+  "word" : "unique",
+  "mean" : "유일한. 독특한."
+}, {
+  "id" : 1884,
+  "word" : "slender",
+  "mean" : "호리호리한. 가느다란."
+}, {
+  "id" : 1885,
+  "word" : "rigid",
+  "mean" : "단단한. 엄한."
+}, {
+  "id" : 1886,
+  "word" : "spoil",
+  "mean" : "망치다. 못쓰게 만들다."
+}, {
+  "id" : 1887,
+  "word" : "section",
+  "mean" : "구분. 구분하다."
+}, {
+  "id" : 1888,
+  "word" : "primary",
+  "mean" : "첫째의. 주요한."
+}, {
+  "id" : 1889,
+  "word" : "trace",
+  "mean" : "자취. 자국. 추적하다. 거슬러 올라가다."
+}, {
+  "id" : 1890,
+  "word" : "arithmetic",
+  "mean" : "산수. 계산. 산수의."
+}, {
+  "id" : 1891,
+  "word" : "remain",
+  "mean" : "남다. 잔존하다."
+}, {
+  "id" : 1892,
+  "word" : "twilight",
+  "mean" : "땅거미. 어스름."
+}, {
+  "id" : 1893,
+  "word" : "numerous",
+  "mean" : "다수의."
+}, {
+  "id" : 1894,
+  "word" : "mingle",
+  "mean" : "섞다. 혼합하다."
+}, {
+  "id" : 1895,
+  "word" : "winner",
+  "mean" : "승자."
+}, {
+  "id" : 1896,
+  "word" : "ornament",
+  "mean" : "장식. 장식품. 장식하다."
+}, {
+  "id" : 1897,
+  "word" : "material",
+  "mean" : "물질의. 육체적인."
+}, {
+  "id" : 1898,
+  "word" : "obscure",
+  "mean" : "모호한."
+}, {
+  "id" : 1899,
+  "word" : "institution",
+  "mean" : "설립."
+}, {
+  "id" : 1900,
+  "word" : "reasonable",
+  "mean" : "이상적인."
+}, {
+  "id" : 1901,
+  "word" : "peril",
+  "mean" : "위험."
+}, {
+  "id" : 1902,
+  "word" : "perfect",
+  "mean" : "완전한."
+}, {
+  "id" : 1903,
+  "word" : "oblige",
+  "mean" : "..에게 의무를 지우다."
+}, {
+  "id" : 1904,
+  "word" : "link",
+  "mean" : "고리. 연결."
+}, {
+  "id" : 1905,
+  "word" : "moderate",
+  "mean" : "적당한."
+}, {
+  "id" : 1906,
+  "word" : "convenience",
+  "mean" : "편의. 편리."
+}, {
+  "id" : 1907,
+  "word" : "visible",
+  "mean" : "눈에 보이는. 명백한."
+}, {
+  "id" : 1908,
+  "word" : "orthodox",
+  "mean" : "정통의. 정통파의."
+}, {
+  "id" : 1909,
+  "word" : "terminal",
+  "mean" : "종점의. 종점."
+}, {
+  "id" : 1910,
+  "word" : "threat",
+  "mean" : "위협."
+}, {
+  "id" : 1911,
+  "word" : "assert",
+  "mean" : "(권리를) 주장하다."
+}, {
+  "id" : 1912,
+  "word" : "dawn",
+  "mean" : "여명."
+}, {
+  "id" : 1913,
+  "word" : "visual",
+  "mean" : "시각의. 눈에 보이는."
+}, {
+  "id" : 1914,
+  "word" : "elect",
+  "mean" : "선추하다."
+}, {
+  "id" : 1915,
+  "word" : "tremendous",
+  "mean" : "무서운. 거대한."
+}, {
+  "id" : 1916,
+  "word" : "neglect",
+  "mean" : "무시하다. 무시. 태만. 게을리하다."
+}, {
+  "id" : 1917,
+  "word" : "imperial",
+  "mean" : "제국의. 황제의."
+}, {
+  "id" : 1918,
+  "word" : "limit",
+  "mean" : "제한하다. 한도."
+}, {
+  "id" : 1919,
+  "word" : "troublesome",
+  "mean" : "골치 아픈. 귀찮은."
+}, {
+  "id" : 1920,
+  "word" : "lonely",
+  "mean" : "고독한."
+}, {
+  "id" : 1921,
+  "word" : "suspicion",
+  "mean" : "혐의. 의심."
+}, {
+  "id" : 1922,
+  "word" : "caution",
+  "mean" : "주의. 경계."
+}, {
+  "id" : 1923,
+  "word" : "mourn",
+  "mean" : "슬퍼하다. 한탄하다."
+}, {
+  "id" : 1924,
+  "word" : "frame",
+  "mean" : "뼈대. 골조."
+}, {
+  "id" : 1925,
+  "word" : "forward",
+  "mean" : "전방의. 앞으로. 전방으로."
+}, {
+  "id" : 1926,
+  "word" : "alien",
+  "mean" : "와국의. 이질의. 외국인. 우주인."
+}, {
+  "id" : 1927,
+  "word" : "pious",
+  "mean" : "경건한. 신앙심이 깊은."
+}, {
+  "id" : 1928,
+  "word" : "dye",
+  "mean" : "염색하다. 염색."
+}, {
+  "id" : 1929,
+  "word" : "hasten",
+  "mean" : "서두르다. 재촉하다."
+}, {
+  "id" : 1930,
+  "word" : "grave",
+  "mean" : "무덤. 근엄한. 심각한."
+}, {
+  "id" : 1931,
+  "word" : "pier",
+  "mean" : "부두. 선창."
+}, {
+  "id" : 1932,
+  "word" : "heritage",
+  "mean" : "유산."
+}, {
+  "id" : 1933,
+  "word" : "folly",
+  "mean" : "어리석음. 어리석은 행동."
+}, {
+  "id" : 1934,
+  "word" : "concrete",
+  "mean" : "구체적인. 콘크리트. 구체물."
+}, {
+  "id" : 1935,
+  "word" : "hazard",
+  "mean" : "위험."
+}, {
+  "id" : 1936,
+  "word" : "status",
+  "mean" : "지위. 상태."
+}, {
+  "id" : 1937,
+  "word" : "abnormal",
+  "mean" : "비정상적인."
+}, {
+  "id" : 1938,
+  "word" : "relief",
+  "mean" : "경감. 안심. 구원."
+}, {
+  "id" : 1939,
+  "word" : "ridiculous",
+  "mean" : "옷기는. 어리석은."
+}, {
+  "id" : 1940,
+  "word" : "invitation",
+  "mean" : "초대."
+}, {
+  "id" : 1941,
+  "word" : "function",
+  "mean" : "기능. 역할."
+}, {
+  "id" : 1942,
+  "word" : "erect",
+  "mean" : "세우다. 곧은. 똑바로 선."
+}, {
+  "id" : 1943,
+  "word" : "argument",
+  "mean" : "논의."
+}, {
+  "id" : 1944,
+  "word" : "superstition",
+  "mean" : "미신."
+}, {
+  "id" : 1945,
+  "word" : "notice",
+  "mean" : "주의. 통치. 알아채다. 인지한다."
+}, {
+  "id" : 1946,
+  "word" : "situation",
+  "mean" : "위치. 정세."
+}, {
+  "id" : 1947,
+  "word" : "attempt",
+  "mean" : "시도하다. 시도. 기도."
+}, {
+  "id" : 1948,
+  "word" : "hatred",
+  "mean" : "증오. 원한."
+}, {
+  "id" : 1949,
+  "word" : "marvel",
+  "mean" : "경이. 감탄하다. 놀라다."
+}, {
+  "id" : 1950,
+  "word" : "passion",
+  "mean" : "열정."
+}, {
+  "id" : 1951,
+  "word" : "generation",
+  "mean" : "세대. 자손."
+}, {
+  "id" : 1952,
+  "word" : "circuit",
+  "mean" : "순회. 우회. 회로."
+}, {
+  "id" : 1953,
+  "word" : "insect",
+  "mean" : "곤충."
+}, {
+  "id" : 1954,
+  "word" : "orbit",
+  "mean" : "(천체의) 궤도."
+}, {
+  "id" : 1955,
+  "word" : "cancer",
+  "mean" : "암."
+}, {
+  "id" : 1956,
+  "word" : "structure",
+  "mean" : "구조."
+}, {
+  "id" : 1957,
+  "word" : "billion",
+  "mean" : "십억."
+}, {
+  "id" : 1958,
+  "word" : "perfume",
+  "mean" : "향수. 향수를 뿌리다. 풍기다."
+}, {
+  "id" : 1959,
+  "word" : "pray",
+  "mean" : "기도하다."
+}, {
+  "id" : 1960,
+  "word" : "manifest",
+  "mean" : "명백한. 명백히 하다."
+}, {
+  "id" : 1961,
+  "word" : "irritate",
+  "mean" : "짜증나게 하다."
+}, {
+  "id" : 1962,
+  "word" : "atmosphere",
+  "mean" : "대기. 분위기."
+}, {
+  "id" : 1963,
+  "word" : "manuscript",
+  "mean" : "원고. 사본."
+}, {
+  "id" : 1964,
+  "word" : "drift",
+  "mean" : "표류. 표류하다. 떠내려가다."
+}, {
+  "id" : 1965,
+  "word" : "secure",
+  "mean" : "안전한. 안전하게 하다. 확보하다."
+}, {
+  "id" : 1966,
+  "word" : "glory",
+  "mean" : "영광."
+}, {
+  "id" : 1967,
+  "word" : "chemical",
+  "mean" : "화학의. 화학약품."
+}, {
+  "id" : 1968,
+  "word" : "coward",
+  "mean" : "겁쟁이."
+}, {
+  "id" : 1969,
+  "word" : "surgeon",
+  "mean" : "외과의사."
+}, {
+  "id" : 1970,
+  "word" : "vow",
+  "mean" : "서약. 맹세. 서약하다."
+}, {
+  "id" : 1971,
+  "word" : "intention",
+  "mean" : "의향. 의지."
+}, {
+  "id" : 1972,
+  "word" : "calling",
+  "mean" : "부름. 소집. 소명. 천직."
+}, {
+  "id" : 1973,
+  "word" : "monologue",
+  "mean" : "독백."
+}, {
+  "id" : 1974,
+  "word" : "conserve",
+  "mean" : "보존하다. 보호하다."
+}, {
+  "id" : 1975,
+  "word" : "display",
+  "mean" : "전시. 전시하다."
+}, {
+  "id" : 1976,
+  "word" : "earnest",
+  "mean" : "진지한. 열심인."
+}, {
+  "id" : 1977,
+  "word" : "authority",
+  "mean" : "권위(자)"
+}, {
+  "id" : 1978,
+  "word" : "concise",
+  "mean" : "간결한."
+}, {
+  "id" : 1979,
+  "word" : "immense",
+  "mean" : "막대한. 거대한."
+}, {
+  "id" : 1980,
+  "word" : "reputation",
+  "mean" : "명성. 평판."
+}, {
+  "id" : 1981,
+  "word" : "punish",
+  "mean" : "벌하다."
+}, {
+  "id" : 1982,
+  "word" : "conduct",
+  "mean" : "인도하다. 지휘하다. 지도. 지휘."
+}, {
+  "id" : 1983,
+  "word" : "convey",
+  "mean" : "전하다. 나르다."
+}, {
+  "id" : 1984,
+  "word" : "final",
+  "mean" : "마지막의. 최후의."
+}, {
+  "id" : 1985,
+  "word" : "layer",
+  "mean" : "층."
+}, {
+  "id" : 1986,
+  "word" : "pronounce",
+  "mean" : "발음하다."
+}, {
+  "id" : 1987,
+  "word" : "stiff",
+  "mean" : "견고한. 딱딱한."
+}, {
+  "id" : 1988,
+  "word" : "scheme",
+  "mean" : "계획."
+}, {
+  "id" : 1989,
+  "word" : "triumph",
+  "mean" : "승리. 대성공."
+}, {
+  "id" : 1990,
+  "word" : "marble",
+  "mean" : "대리석."
+}, {
+  "id" : 1991,
+  "word" : "particularly",
+  "mean" : "특히."
+}, {
+  "id" : 1992,
+  "word" : "flood",
+  "mean" : "홍수. 범람하다. 쇄도하다."
+}, {
+  "id" : 1993,
+  "word" : "ambition",
+  "mean" : "대망. 야심."
+}, {
+  "id" : 1994,
+  "word" : "misfortune",
+  "mean" : "불운."
+}, {
+  "id" : 1995,
+  "word" : "responsibility",
+  "mean" : "책임."
+}, {
+  "id" : 1996,
+  "word" : "bound",
+  "mean" : "한계. 경계."
+}, {
+  "id" : 1997,
+  "word" : "luxury",
+  "mean" : "사치(품)"
+}, {
+  "id" : 1998,
+  "word" : "priest",
+  "mean" : "성직자."
+}, {
+  "id" : 1999,
+  "word" : "sincere",
+  "mean" : "성실한. 진심의."
+}, {
+  "id" : 2000,
+  "word" : "novel",
+  "mean" : "소설. 신기한."
+}, {
+  "id" : 2001,
+  "word" : "staple",
+  "mean" : "주요한. 주성분. 주요산물."
+}, {
+  "id" : 2002,
+  "word" : "petty",
+  "mean" : "작은. 사소한."
+}, {
+  "id" : 2003,
+  "word" : "cradle",
+  "mean" : "요람."
+}, {
+  "id" : 2004,
+  "word" : "revolution",
+  "mean" : "혁명. 회전."
+}, {
+  "id" : 2005,
+  "word" : "normal",
+  "mean" : "정상의."
+}, {
+  "id" : 2006,
+  "word" : "range",
+  "mean" : "범위. 한계."
+}, {
+  "id" : 2007,
+  "word" : "admire",
+  "mean" : "칭찬하다."
+}, {
+  "id" : 2008,
+  "word" : "glorious",
+  "mean" : "영광스러운."
+}, {
+  "id" : 2009,
+  "word" : "shift",
+  "mean" : "바꾸다. 옮기다."
+}, {
+  "id" : 2010,
+  "word" : "active",
+  "mean" : "충동적인."
+}, {
+  "id" : 2011,
+  "word" : "factor",
+  "mean" : "요인."
+}, {
+  "id" : 2012,
+  "word" : "explanation",
+  "mean" : "설명."
+}, {
+  "id" : 2013,
+  "word" : "steep",
+  "mean" : "가파른. 험준한. 잠기다."
+}, {
+  "id" : 2014,
+  "word" : "repair",
+  "mean" : "수리. 수리하다. 비상하다."
+}, {
+  "id" : 2015,
+  "word" : "disaster",
+  "mean" : "재난. 재해."
+}, {
+  "id" : 2016,
+  "word" : "conquer",
+  "mean" : "정복하다."
+}, {
+  "id" : 2017,
+  "word" : "shallow",
+  "mean" : "얇은."
+}, {
+  "id" : 2018,
+  "word" : "preparation",
+  "mean" : "준비."
+}, {
+  "id" : 2019,
+  "word" : "issue",
+  "mean" : "유출(물). 논쟁. 발행. 나오다. 발행하다."
+}, {
+  "id" : 2020,
+  "word" : "grasp",
+  "mean" : "붙잡다. 이해하다."
+}, {
+  "id" : 2021,
+  "word" : "fate",
+  "mean" : "운명. 죽음."
+}, {
+  "id" : 2022,
+  "word" : "typical",
+  "mean" : "전형적인."
+}, {
+  "id" : 2023,
+  "word" : "contain",
+  "mean" : "포함하다."
+}, {
+  "id" : 2024,
+  "word" : "supreme",
+  "mean" : "최고의."
+}, {
+  "id" : 2025,
+  "word" : "scene",
+  "mean" : "장면. 현장."
+}, {
+  "id" : 2026,
+  "word" : "redical",
+  "mean" : "근본적인. 급진적인. 급진주의자."
+}, {
+  "id" : 2027,
+  "word" : "delicious",
+  "mean" : "맛있는."
+}, {
+  "id" : 2028,
+  "word" : "precise",
+  "mean" : "정확한. 정밀한."
+}, {
+  "id" : 2029,
+  "word" : "confuse",
+  "mean" : "혼동하다. 혼란스럽게 하다."
+}, {
+  "id" : 2030,
+  "word" : "difficulty",
+  "mean" : "곤란."
+}, {
+  "id" : 2031,
+  "word" : "emotion",
+  "mean" : "감동. 감정."
+}, {
+  "id" : 2032,
+  "word" : "rapid",
+  "mean" : "급속한."
+}, {
+  "id" : 2033,
+  "word" : "meadow",
+  "mean" : "목초지."
+}, {
+  "id" : 2034,
+  "word" : "attend",
+  "mean" : "..에 출석하다."
+}, {
+  "id" : 2035,
+  "word" : "generous",
+  "mean" : "관대한. 너그러운."
+}, {
+  "id" : 2036,
+  "word" : "poverty",
+  "mean" : "빈곤."
+}, {
+  "id" : 2037,
+  "word" : "perform",
+  "mean" : "실행하다."
+}, {
+  "id" : 2038,
+  "word" : "horror",
+  "mean" : "공포."
+}, {
+  "id" : 2039,
+  "word" : "enormous",
+  "mean" : "거대한. 막대한."
+}, {
+  "id" : 2040,
+  "word" : "occasion",
+  "mean" : "경우. 기회."
+}, {
+  "id" : 2041,
+  "word" : "decoration",
+  "mean" : "장식."
+}, {
+  "id" : 2042,
+  "word" : "encourage",
+  "mean" : "용기를 주다. 격려하다."
+}, {
+  "id" : 2043,
+  "word" : "ruin",
+  "mean" : "파멸. 파멸시키다."
+}, {
+  "id" : 2044,
+  "word" : "silly",
+  "mean" : "어리석은."
+}, {
+  "id" : 2045,
+  "word" : "riddle",
+  "mean" : "수수께끼."
+}, {
+  "id" : 2046,
+  "word" : "expand",
+  "mean" : "확장하다. 넓히다."
+}, {
+  "id" : 2047,
+  "word" : "vain",
+  "mean" : "헛된. 허영심이 강한."
+}, {
+  "id" : 2048,
+  "word" : "opponent",
+  "mean" : "적. 반대자."
+}, {
+  "id" : 2049,
+  "word" : "survive",
+  "mean" : "살아남다."
+}, {
+  "id" : 2050,
+  "word" : "slave",
+  "mean" : "노예."
+}, {
+  "id" : 2051,
+  "word" : "sting",
+  "mean" : "찌르다. 괴롭히다. 침. 찌르기."
+}, {
+  "id" : 2052,
+  "word" : "undertake",
+  "mean" : "떠밀다. 의무를 지다."
+}, {
+  "id" : 2053,
+  "word" : "cast",
+  "mean" : "던지다. 배역."
+}, {
+  "id" : 2054,
+  "word" : "timid",
+  "mean" : "겁많은. 소심한."
+}, {
+  "id" : 2055,
+  "word" : "conclude",
+  "mean" : "결론짓다."
+}, {
+  "id" : 2056,
+  "word" : "tropical",
+  "mean" : "열대의."
+}, {
+  "id" : 2057,
+  "word" : "promote",
+  "mean" : "승진시키다. 촉진시키다."
+}, {
+  "id" : 2058,
+  "word" : "confess",
+  "mean" : "자백하다."
+}, {
+  "id" : 2059,
+  "word" : "engagement",
+  "mean" : "약속. 약혼."
+}, {
+  "id" : 2060,
+  "word" : "tide",
+  "mean" : "조수. 조류. 조류를 타게 하다."
+}, {
+  "id" : 2061,
+  "word" : "sweat",
+  "mean" : "땀. 땀흘리다."
+}, {
+  "id" : 2062,
+  "word" : "rumor",
+  "mean" : "소문. 풍문. 소문을 내다."
+}, {
+  "id" : 2063,
+  "word" : "summary",
+  "mean" : "요약."
+}, {
+  "id" : 2064,
+  "word" : "scratch",
+  "mean" : "할퀴다."
+}, {
+  "id" : 2065,
+  "word" : "evil",
+  "mean" : "사악한."
+}, {
+  "id" : 2066,
+  "word" : "steady",
+  "mean" : "확고한. 착실한."
+}, {
+  "id" : 2067,
+  "word" : "ceiling",
+  "mean" : "천장."
+}, {
+  "id" : 2068,
+  "word" : "surround",
+  "mean" : "애워싸다. 둘러싸다."
+}, {
+  "id" : 2069,
+  "word" : "ambiguous",
+  "mean" : "애매 모호한."
+}, {
+  "id" : 2070,
+  "word" : "fundamental",
+  "mean" : "기초의. 기본. 원칙."
+}, {
+  "id" : 2071,
+  "word" : "irregular",
+  "mean" : "불규칙한."
+}, {
+  "id" : 2072,
+  "word" : "gratitude",
+  "mean" : "감사."
+}, {
+  "id" : 2073,
+  "word" : "flexible",
+  "mean" : "유연한. 융통성 있는."
+}, {
+  "id" : 2074,
+  "word" : "canal",
+  "mean" : "운하."
+}, {
+  "id" : 2075,
+  "word" : "depth",
+  "mean" : "깊이."
+}, {
+  "id" : 2076,
+  "word" : "backward",
+  "mean" : "후방의. 후방으로."
+}, {
+  "id" : 2077,
+  "word" : "marine",
+  "mean" : "바다의."
+}, {
+  "id" : 2078,
+  "word" : "efficiency",
+  "mean" : "능률."
+}, {
+  "id" : 2079,
+  "word" : "awful",
+  "mean" : "무서운. 무시무시한."
+}, {
+  "id" : 2080,
+  "word" : "profession",
+  "mean" : "직업. 공언. 명언."
+}, {
+  "id" : 2081,
+  "word" : "disappear",
+  "mean" : "사라지다."
+}, {
+  "id" : 2082,
+  "word" : "terror",
+  "mean" : "공포."
+}, {
+  "id" : 2083,
+  "word" : "barbarian",
+  "mean" : "야만인. 미개인."
+}, {
+  "id" : 2084,
+  "word" : "beast",
+  "mean" : "짐승."
+}, {
+  "id" : 2085,
+  "word" : "comprehend",
+  "mean" : "이해하다."
+}, {
+  "id" : 2086,
+  "word" : "burden",
+  "mean" : "무거운. 부담. ..에게 짐을 지우다."
+}, {
+  "id" : 2087,
+  "word" : "trivial",
+  "mean" : "사소한. 하찮은."
+}, {
+  "id" : 2088,
+  "word" : "statement",
+  "mean" : "진술. 성명."
+}, {
+  "id" : 2089,
+  "word" : "ripe",
+  "mean" : "익은."
+}, {
+  "id" : 2090,
+  "word" : "therefore",
+  "mean" : "그 결과. 그런 까닭에."
+}, {
+  "id" : 2091,
+  "word" : "compulsory",
+  "mean" : "의무적인. 강제적인."
+}, {
+  "id" : 2092,
+  "word" : "subconscious",
+  "mean" : "잠재 의식(의)"
+}, {
+  "id" : 2093,
+  "word" : "antiquity",
+  "mean" : "태고, 고대."
+}, {
+  "id" : 2094,
+  "word" : "inadequate",
+  "mean" : "부적절한. 불충분한."
+}, {
+  "id" : 2095,
+  "word" : "subtle",
+  "mean" : "미묘한."
+}, {
+  "id" : 2096,
+  "word" : "avert",
+  "mean" : "(눈길을) 돌리다."
+}, {
+  "id" : 2097,
+  "word" : "marked",
+  "mean" : "현저한. 저명한. 표가 있는."
+}, {
+  "id" : 2098,
+  "word" : "profitable",
+  "mean" : "이익이 되는. 유리한."
+}, {
+  "id" : 2099,
+  "word" : "intended",
+  "mean" : "의도적인."
+}, {
+  "id" : 2100,
+  "word" : "eloquence",
+  "mean" : "웅변."
+}, {
+  "id" : 2101,
+  "word" : "designate",
+  "mean" : "나타나다. 가리키다."
+}, {
+  "id" : 2102,
+  "word" : "countenance",
+  "mean" : "표정. 인색."
+}, {
+  "id" : 2103,
+  "word" : "situated",
+  "mean" : "위치하고 있는."
+}, {
+  "id" : 2104,
+  "word" : "rein",
+  "mean" : "고삐. 제어. 제어하다."
+}, {
+  "id" : 2105,
+  "word" : "insane",
+  "mean" : "미친. 광기의."
+}, {
+  "id" : 2106,
+  "word" : "insight",
+  "mean" : "통찰(력)"
+}, {
+  "id" : 2107,
+  "word" : "snatch",
+  "mean" : "잡아채다. 강탈하다."
+}, {
+  "id" : 2108,
+  "word" : "exhausted",
+  "mean" : "지칠대로 지친."
+}, {
+  "id" : 2109,
+  "word" : "rage",
+  "mean" : "격노."
+}, {
+  "id" : 2110,
+  "word" : "impudent",
+  "mean" : "뻔뻔스러운. 철면피의."
+}, {
+  "id" : 2111,
+  "word" : "plead",
+  "mean" : "간청하다. 탄원하다. 변호하다."
+}, {
+  "id" : 2112,
+  "word" : "intervention",
+  "mean" : "게입. 조정."
+}, {
+  "id" : 2113,
+  "word" : "uneasy",
+  "mean" : "불안한."
+}, {
+  "id" : 2114,
+  "word" : "ceremonious",
+  "mean" : "예의의. 격식을 차리는."
+}, {
+  "id" : 2115,
+  "word" : "implement",
+  "mean" : "도구."
+}, {
+  "id" : 2116,
+  "word" : "vile",
+  "mean" : "몹시나쁜. 비열한."
+}, {
+  "id" : 2117,
+  "word" : "stifle",
+  "mean" : "질식시키다."
+}, {
+  "id" : 2118,
+  "word" : "persecute",
+  "mean" : "박해하다. 괴롭히다."
+}, {
+  "id" : 2119,
+  "word" : "fraction",
+  "mean" : "일부. 작은 부분. 파편."
+}, {
+  "id" : 2120,
+  "word" : "senseless",
+  "mean" : "무감각의. 몰상식한."
+}, {
+  "id" : 2121,
+  "word" : "haven",
+  "mean" : "항구. 피난처. 안식처."
+}, {
+  "id" : 2122,
+  "word" : "commonplace",
+  "mean" : "평범한. 진부한 말. 상투어."
+}, {
+  "id" : 2123,
+  "word" : "approximate",
+  "mean" : "대략의. 근사한."
+}, {
+  "id" : 2124,
+  "word" : "intervene",
+  "mean" : "개입하다. 조정하다."
+}, {
+  "id" : 2125,
+  "word" : "exploit",
+  "mean" : "개발하다. 착취하다."
+}, {
+  "id" : 2126,
+  "word" : "specialize",
+  "mean" : "전공하다. 전문으로 다루다."
+}, {
+  "id" : 2127,
+  "word" : "devoid",
+  "mean" : "..이 결여된."
+}, {
+  "id" : 2128,
+  "word" : "revenge",
+  "mean" : "복수하다. 복수."
+}, {
+  "id" : 2129,
+  "word" : "voluntary",
+  "mean" : "자발적인. 임의의."
+}, {
+  "id" : 2130,
+  "word" : "brisk",
+  "mean" : "활발한."
+}, {
+  "id" : 2131,
+  "word" : "altitude",
+  "mean" : "높이. 고도."
+}, {
+  "id" : 2132,
+  "word" : "ragged",
+  "mean" : "(옷 등이) 찢어진. 남루한."
+}, {
+  "id" : 2133,
+  "word" : "loyal",
+  "mean" : "충실한. 성실한."
+}, {
+  "id" : 2134,
+  "word" : "profess",
+  "mean" : "공연하다."
+}, {
+  "id" : 2135,
+  "word" : "incessant",
+  "mean" : "끊임없는. 그칠 새 없는."
+}, {
+  "id" : 2136,
+  "word" : "avenge",
+  "mean" : "복수하다."
+}, {
+  "id" : 2137,
+  "word" : "criterion",
+  "mean" : "표준. 기준."
+}, {
+  "id" : 2138,
+  "word" : "resignation",
+  "mean" : "사직."
+}, {
+  "id" : 2139,
+  "word" : "inference",
+  "mean" : "추론. 추리."
+}, {
+  "id" : 2140,
+  "word" : "propriety",
+  "mean" : "타당. 예의바름."
+}, {
+  "id" : 2141,
+  "word" : "hideous",
+  "mean" : "끔찍한. 소름끼치는."
+}, {
+  "id" : 2142,
+  "word" : "muse",
+  "mean" : "묵상하다. 명상하다."
+}, {
+  "id" : 2143,
+  "word" : "deceit",
+  "mean" : "사기."
+}, {
+  "id" : 2144,
+  "word" : "anguish",
+  "mean" : "고뇌. 고통."
+}, {
+  "id" : 2145,
+  "word" : "exaggeration",
+  "mean" : "과장."
+}, {
+  "id" : 2146,
+  "word" : "extravagant",
+  "mean" : "낭비하는. 사치스러운."
+}, {
+  "id" : 2147,
+  "word" : "indebted",
+  "mean" : "신세 진. 부채가 있는."
+}, {
+  "id" : 2148,
+  "word" : "modification",
+  "mean" : "변경. 수정."
+}, {
+  "id" : 2149,
+  "word" : "revolt",
+  "mean" : "반란. 반항. 혐오감."
+}, {
+  "id" : 2150,
+  "word" : "grudge",
+  "mean" : "원한을 품다. 원한."
+}, {
+  "id" : 2151,
+  "word" : "kindle",
+  "mean" : "..에 불을 붙이다. 태우다."
+}, {
+  "id" : 2152,
+  "word" : "ruthless",
+  "mean" : "무자비한."
+}, {
+  "id" : 2153,
+  "word" : "adversity",
+  "mean" : "불행. 재난."
+}, {
+  "id" : 2154,
+  "word" : "console",
+  "mean" : "위로하다."
+}, {
+  "id" : 2155,
+  "word" : "retort",
+  "mean" : "보복하다. 반박하다. 말대꾸."
+}, {
+  "id" : 2156,
+  "word" : "confirmation",
+  "mean" : "확인. 확정."
+}, {
+  "id" : 2157,
+  "word" : "transparent",
+  "mean" : "투명한. 비쳐 보이는."
+}, {
+  "id" : 2158,
+  "word" : "sociable",
+  "mean" : "사교적인."
+}, {
+  "id" : 2159,
+  "word" : "enchant",
+  "mean" : "매혹하다."
+}, {
+  "id" : 2160,
+  "word" : "conspiracy",
+  "mean" : "공모. 응모."
+}, {
+  "id" : 2161,
+  "word" : "relish",
+  "mean" : "맛. 풍미. 맛있게 먹다."
+}, {
+  "id" : 2162,
+  "word" : "tactics",
+  "mean" : "전술. 작전. 책략."
+}, {
+  "id" : 2163,
+  "word" : "remoteness",
+  "mean" : "멀리 떨어짐."
+}, {
+  "id" : 2164,
+  "word" : "frivolous",
+  "mean" : "시시한. 경솔한."
+}, {
+  "id" : 2165,
+  "word" : "righteous",
+  "mean" : "공정한. 올바른."
+}, {
+  "id" : 2166,
+  "word" : "formulate",
+  "mean" : "공식화하다."
+}, {
+  "id" : 2167,
+  "word" : "recount",
+  "mean" : "열거하다. 상세히 말하다."
+}, {
+  "id" : 2168,
+  "word" : "assimilate",
+  "mean" : "동화시키다. (문화 등에) 흡수하다."
+}, {
+  "id" : 2169,
+  "word" : "specimen",
+  "mean" : "견본. 표본."
+}, {
+  "id" : 2170,
+  "word" : "deficiency",
+  "mean" : "부족. 결핍."
+}, {
+  "id" : 2171,
+  "word" : "disgusting",
+  "mean" : "구역질나는. 넌더리나는."
+}, {
+  "id" : 2172,
+  "word" : "deficient",
+  "mean" : "불충분한."
+}, {
+  "id" : 2173,
+  "word" : "separable",
+  "mean" : "분리할 수 있는."
+}, {
+  "id" : 2174,
+  "word" : "repel",
+  "mean" : "격퇴하다. 불쾌감을 주다."
+}, {
+  "id" : 2175,
+  "word" : "reluctance",
+  "mean" : "싫음. 마음이 내키지 않음."
+}, {
+  "id" : 2176,
+  "word" : "scanty",
+  "mean" : "부족한. 빈약한."
+}, {
+  "id" : 2177,
+  "word" : "intricate",
+  "mean" : "복잡한. 뒤얽힘."
+}, {
+  "id" : 2178,
+  "word" : "synonym",
+  "mean" : "동의어."
+}, {
+  "id" : 2179,
+  "word" : "obstruction",
+  "mean" : "방해. 방해물."
+}, {
+  "id" : 2180,
+  "word" : "taint",
+  "mean" : "얼룩. 오염. 오염시키다."
+}, {
+  "id" : 2181,
+  "word" : "recede",
+  "mean" : "후퇴하다."
+}, {
+  "id" : 2182,
+  "word" : "emancipation",
+  "mean" : "(노예)해방."
+}, {
+  "id" : 2183,
+  "word" : "futile",
+  "mean" : "쓸데없는."
+}, {
+  "id" : 2184,
+  "word" : "figurative",
+  "mean" : "비유적인. 수식이 많은."
+}, {
+  "id" : 2185,
+  "word" : "supernatural",
+  "mean" : "초자연적인."
+}, {
+  "id" : 2186,
+  "word" : "expire",
+  "mean" : "소멸되다. 끝나다."
+}, {
+  "id" : 2187,
+  "word" : "transcend",
+  "mean" : "초월하다."
+}, {
+  "id" : 2188,
+  "word" : "reprove",
+  "mean" : "꾸짖다. 비난하다."
+}, {
+  "id" : 2189,
+  "word" : "disorder",
+  "mean" : "무질서. 혼란. 혼란시키다."
+}, {
+  "id" : 2190,
+  "word" : "precaution",
+  "mean" : "조심. 예방책."
+}, {
+  "id" : 2191,
+  "word" : "infuse",
+  "mean" : "주입하다. 불어넣다."
+}, {
+  "id" : 2192,
+  "word" : "censure",
+  "mean" : "비난. 비난하다."
+}, {
+  "id" : 2193,
+  "word" : "eccentricity",
+  "mean" : "남다름. 기발. 기아한 버릇."
+}, {
+  "id" : 2194,
+  "word" : "aesthetic",
+  "mean" : "미의. 심미적인."
+}, {
+  "id" : 2195,
+  "word" : "recess",
+  "mean" : "휴식. (의회의) 휴정."
+}, {
+  "id" : 2196,
+  "word" : "scrutinize",
+  "mean" : "자세히 조사하다. 음미하다."
+}, {
+  "id" : 2197,
+  "word" : "dignify",
+  "mean" : "..에 위임을 갖추다."
+}, {
+  "id" : 2198,
+  "word" : "incomparable",
+  "mean" : "비교할 수 없는."
+}, {
+  "id" : 2199,
+  "word" : "refine",
+  "mean" : "정제하다."
+}, {
+  "id" : 2200,
+  "word" : "genial",
+  "mean" : "온화한. 친절한."
+}, {
+  "id" : 2201,
+  "word" : "embrace",
+  "mean" : "포옹하다. 에워싸다."
+}, {
+  "id" : 2202,
+  "word" : "speculation",
+  "mean" : "사색. 숙고."
+}, {
+  "id" : 2203,
+  "word" : "indignation",
+  "mean" : "분노. 분개."
+}, {
+  "id" : 2204,
+  "word" : "modify",
+  "mean" : "수정하다. 변경하다."
+}, {
+  "id" : 2205,
+  "word" : "innovate",
+  "mean" : "쇄신하다. 혁신하다."
+}, {
+  "id" : 2206,
+  "word" : "portion",
+  "mean" : "일부. 몫. 1인분. 나누다. 분배하다."
+}, {
+  "id" : 2207,
+  "word" : "spontaneous",
+  "mean" : "자발적인."
+}, {
+  "id" : 2208,
+  "word" : "multitude",
+  "mean" : "다수. 군중."
+}, {
+  "id" : 2209,
+  "word" : "oracle",
+  "mean" : "신탁. 신의 계시."
+}, {
+  "id" : 2210,
+  "word" : "schema",
+  "mean" : "윤곽. 개요. 도해."
+}, {
+  "id" : 2211,
+  "word" : "region",
+  "mean" : "지방. 지역."
+}, {
+  "id" : 2212,
+  "word" : "temperament",
+  "mean" : "기질. 성질."
+}, {
+  "id" : 2213,
+  "word" : "evaporate",
+  "mean" : "증발하다."
+}, {
+  "id" : 2214,
+  "word" : "uphold",
+  "mean" : "지지하다."
+}, {
+  "id" : 2215,
+  "word" : "negligible",
+  "mean" : "하찮은. 사소한."
+}, {
+  "id" : 2216,
+  "word" : "renown",
+  "mean" : "명성."
+}, {
+  "id" : 2217,
+  "word" : "innate",
+  "mean" : "타고난. 선천적인."
+}, {
+  "id" : 2218,
+  "word" : "foremost",
+  "mean" : "최초의. 맨 먼저의."
+}, {
+  "id" : 2219,
+  "word" : "suspend",
+  "mean" : "매달다. 연기하다."
+}, {
+  "id" : 2220,
+  "word" : "negligent",
+  "mean" : "태만한. 소홀한. 부주의한."
+}, {
+  "id" : 2221,
+  "word" : "pensive",
+  "mean" : "생각에 잠긴."
+}, {
+  "id" : 2222,
+  "word" : "reserved",
+  "mean" : "보류된. 예약의."
+}, {
+  "id" : 2223,
+  "word" : "assail",
+  "mean" : "공격하다. 추궁하다."
+}, {
+  "id" : 2224,
+  "word" : "gene",
+  "mean" : "유전자."
+}, {
+  "id" : 2225,
+  "word" : "Occident",
+  "mean" : "서양. 사양 문명."
+}, {
+  "id" : 2226,
+  "word" : "simulation",
+  "mean" : "모의 실험."
+}, {
+  "id" : 2227,
+  "word" : "unprecedented",
+  "mean" : "전례가 없는. 공전의."
+}, {
+  "id" : 2228,
+  "word" : "subside",
+  "mean" : "가리앉다. 꺼지다."
+}, {
+  "id" : 2229,
+  "word" : "creed",
+  "mean" : "신조. 주의."
+}, {
+  "id" : 2230,
+  "word" : "degradation",
+  "mean" : "죄천. 타락."
+}, {
+  "id" : 2231,
+  "word" : "ignoble",
+  "mean" : "비열한. 저열한."
+}, {
+  "id" : 2232,
+  "word" : "prologue",
+  "mean" : "머리말."
+}, {
+  "id" : 2233,
+  "word" : "realm",
+  "mean" : "국토. 영역."
+}, {
+  "id" : 2234,
+  "word" : "solemn",
+  "mean" : "엄숙한. 진지한."
+}, {
+  "id" : 2235,
+  "word" : "tranquil",
+  "mean" : "조용한. 고요한."
+}, {
+  "id" : 2236,
+  "word" : "defect",
+  "mean" : "결점. 흠."
+}, {
+  "id" : 2237,
+  "word" : "colloquial",
+  "mean" : "구어의."
+}, {
+  "id" : 2238,
+  "word" : "definite",
+  "mean" : "명확한."
+}, {
+  "id" : 2239,
+  "word" : "foster",
+  "mean" : "조장하다. 기르다."
+}, {
+  "id" : 2240,
+  "word" : "withhold",
+  "mean" : "보류하다. 억누르다."
+}, {
+  "id" : 2241,
+  "word" : "gratify",
+  "mean" : "기쁘게 하다. 만족시키다."
+}, {
+  "id" : 2242,
+  "word" : "wreck",
+  "mean" : "난파. 난파시키다."
+}, {
+  "id" : 2243,
+  "word" : "perverse",
+  "mean" : "외고집의. 심술궂은."
+}, {
+  "id" : 2244,
+  "word" : "depress",
+  "mean" : "기를 껶다. 우울하게 하다."
+}, {
+  "id" : 2245,
+  "word" : "intolerable",
+  "mean" : "참을 수 없는."
+}, {
+  "id" : 2246,
+  "word" : "underestimate",
+  "mean" : "낮게 평가하다."
+}, {
+  "id" : 2247,
+  "word" : "defiance",
+  "mean" : "도전. 저항."
+}, {
+  "id" : 2248,
+  "word" : "suspense",
+  "mean" : "불안. 미결정. 중지."
+}, {
+  "id" : 2249,
+  "word" : "subscribe",
+  "mean" : "서명하다. 구독하다."
+}, {
+  "id" : 2250,
+  "word" : "complacent",
+  "mean" : "자기 만족의. 만족한."
+}, {
+  "id" : 2251,
+  "word" : "withdraw",
+  "mean" : "철수시키다. 물러나다."
+}, {
+  "id" : 2252,
+  "word" : "suppress",
+  "mean" : "억누르다. 억압하다."
+}, {
+  "id" : 2253,
+  "word" : "quaint",
+  "mean" : "기묘한. 고통스러운."
+}, {
+  "id" : 2254,
+  "word" : "bashful",
+  "mean" : "수줍어하는."
+}, {
+  "id" : 2255,
+  "word" : "transit",
+  "mean" : "통과. 통로."
+}, {
+  "id" : 2256,
+  "word" : "deplore",
+  "mean" : "애도하다. 통탄하다."
+}, {
+  "id" : 2257,
+  "word" : "degrade",
+  "mean" : "지위를 낮추다. 격하하다."
+}, {
+  "id" : 2258,
+  "word" : "revise",
+  "mean" : "개정하다. 교정하다."
+}, {
+  "id" : 2259,
+  "word" : "bliss",
+  "mean" : "기쁨."
+}, {
+  "id" : 2260,
+  "word" : "intruder",
+  "mean" : "침입자."
+}, {
+  "id" : 2261,
+  "word" : "animate",
+  "mean" : "활기를 띠게 하다."
+}, {
+  "id" : 2262,
+  "word" : "infancy",
+  "mean" : "유년기."
+}, {
+  "id" : 2263,
+  "word" : "inexperienced",
+  "mean" : "경험이 없는. 숙련되지 않은."
+}, {
+  "id" : 2264,
+  "word" : "reliance",
+  "mean" : "신뢰. 믿음."
+}, {
+  "id" : 2265,
+  "word" : "embark",
+  "mean" : "탑승시키다. 승선시키다."
+}, {
+  "id" : 2266,
+  "word" : "beguile",
+  "mean" : "속이다. 현혹시키다."
+}, {
+  "id" : 2267,
+  "word" : "paralyze",
+  "mean" : "마비시키다. 무력하게 하다."
+}, {
+  "id" : 2268,
+  "word" : "futility",
+  "mean" : "무익. 쓸데없음."
+}, {
+  "id" : 2269,
+  "word" : "sophisticated",
+  "mean" : "정교한. 세련된."
+}, {
+  "id" : 2270,
+  "word" : "altar",
+  "mean" : "제단."
+}, {
+  "id" : 2271,
+  "word" : "rebate",
+  "mean" : "할인. 할인하다. 환불."
+}, {
+  "id" : 2272,
+  "word" : "apprehend",
+  "mean" : "이해하다. 우려하다."
+}, {
+  "id" : 2273,
+  "word" : "discernment",
+  "mean" : "인식. 식별."
+}, {
+  "id" : 2274,
+  "word" : "disguise",
+  "mean" : "변장. 변장하다."
+}, {
+  "id" : 2275,
+  "word" : "likewise",
+  "mean" : "동일하게. 마찬가지로."
+}, {
+  "id" : 2276,
+  "word" : "intensify",
+  "mean" : "강렬하게 하다."
+}, {
+  "id" : 2277,
+  "word" : "resent",
+  "mean" : "분개하다. 원망하다."
+}, {
+  "id" : 2278,
+  "word" : "predecessor",
+  "mean" : "전임자. 선배."
+}, {
+  "id" : 2279,
+  "word" : "soak",
+  "mean" : "적시다. 담그다."
+}, {
+  "id" : 2280,
+  "word" : "amiable",
+  "mean" : "호감을 주는. 붙임성 있는."
+}, {
+  "id" : 2281,
+  "word" : "banish",
+  "mean" : "추방하다."
+}, {
+  "id" : 2282,
+  "word" : "heretic",
+  "mean" : "이단자. 이교도."
+}, {
+  "id" : 2283,
+  "word" : "adjoin",
+  "mean" : "..에 인접하다."
+}, {
+  "id" : 2284,
+  "word" : "pathetic",
+  "mean" : "감동적인. 애처로운."
+}, {
+  "id" : 2285,
+  "word" : "missionary",
+  "mean" : "선교사."
+}, {
+  "id" : 2286,
+  "word" : "context",
+  "mean" : "문맥. 전후 관계."
+}, {
+  "id" : 2287,
+  "word" : "stealth",
+  "mean" : "비밀. 몰래하기."
+}, {
+  "id" : 2288,
+  "word" : "disdain",
+  "mean" : "경멸. 경멸하다."
+}, {
+  "id" : 2289,
+  "word" : "discreet",
+  "mean" : "사려깊은. 분별있는."
+}, {
+  "id" : 2290,
+  "word" : "shortcoming",
+  "mean" : "결점. 단점."
+}, {
+  "id" : 2291,
+  "word" : "detach",
+  "mean" : "떼다. 분리하다."
+}, {
+  "id" : 2292,
+  "word" : "impertinent",
+  "mean" : "건방진. 적절하지 않은."
+}, {
+  "id" : 2293,
+  "word" : "informal",
+  "mean" : "비공식의."
+}, {
+  "id" : 2294,
+  "word" : "agony",
+  "mean" : "고민."
+}, {
+  "id" : 2295,
+  "word" : "oppress",
+  "mean" : "억압하다. 괴롭히다."
+}, {
+  "id" : 2296,
+  "word" : "meanwhile",
+  "mean" : "그 동안. 그 사이에."
+}, {
+  "id" : 2297,
+  "word" : "conspire",
+  "mean" : "음모를 꾸미다. 공모하다."
+}, {
+  "id" : 2298,
+  "word" : "exclaim",
+  "mean" : "외치다. 소리지르다."
+}, {
+  "id" : 2299,
+  "word" : "destine",
+  "mean" : "운명지어지다. 예정하다."
+}, {
+  "id" : 2300,
+  "word" : "embody",
+  "mean" : "구체화하다. 구현하다."
+}, {
+  "id" : 2301,
+  "word" : "slumber",
+  "mean" : "잠. 잠자며 시간을 보내다."
+}, {
+  "id" : 2302,
+  "word" : "eventually",
+  "mean" : "취후에. 결국."
+}, {
+  "id" : 2303,
+  "word" : "formula",
+  "mean" : "공식."
+}, {
+  "id" : 2304,
+  "word" : "plausible",
+  "mean" : "그럴듯한."
+}, {
+  "id" : 2305,
+  "word" : "doctrine",
+  "mean" : "주의. 학설."
+}, {
+  "id" : 2306,
+  "word" : "persecution",
+  "mean" : "박해."
+}, {
+  "id" : 2307,
+  "word" : "toil",
+  "mean" : "고생하다. 수고하다."
+}, {
+  "id" : 2308,
+  "word" : "retreat",
+  "mean" : "물러가다. 퇴각하다. 퇴각."
+}, {
+  "id" : 2309,
+  "word" : "seclude",
+  "mean" : "격리하다. 분리하다."
+}, {
+  "id" : 2310,
+  "word" : "interact",
+  "mean" : "상호 작용하다."
+}, {
+  "id" : 2311,
+  "word" : "feign",
+  "mean" : "..을 가장하다. 체하다."
+}, {
+  "id" : 2312,
+  "word" : "renounce",
+  "mean" : "포기하다. 부인하다."
+}, {
+  "id" : 2313,
+  "word" : "lofty",
+  "mean" : "높은. 고상한. 고위의."
+}, {
+  "id" : 2314,
+  "word" : "laborious",
+  "mean" : "힘드는. 고된. 고심한."
+}, {
+  "id" : 2315,
+  "word" : "adaptation",
+  "mean" : "적용. 조정."
+}, {
+  "id" : 2316,
+  "word" : "daring",
+  "mean" : "대담한."
+}, {
+  "id" : 2317,
+  "word" : "rebel",
+  "mean" : "반역자. 모반하다. 반항하다."
+}, {
+  "id" : 2318,
+  "word" : "simplify",
+  "mean" : "단순화하다. 간단하게 하다."
+}, {
+  "id" : 2319,
+  "word" : "comply",
+  "mean" : "따르다. 동의하다."
+}, {
+  "id" : 2320,
+  "word" : "supervise",
+  "mean" : "감독하다. 관리하다."
+}, {
+  "id" : 2321,
+  "word" : "resolve",
+  "mean" : "분해하다. 해결하다."
+}, {
+  "id" : 2322,
+  "word" : "oblivion",
+  "mean" : "망각."
+}, {
+  "id" : 2323,
+  "word" : "bulk",
+  "mean" : "크기. 부피."
+}, {
+  "id" : 2324,
+  "word" : "feat",
+  "mean" : "공적. 위업."
+}, {
+  "id" : 2325,
+  "word" : "heredity",
+  "mean" : "유전. 형질유전. 세습."
+}, {
+  "id" : 2326,
+  "word" : "restoration",
+  "mean" : "회복. 부흥."
+}, {
+  "id" : 2327,
+  "word" : "haunt",
+  "mean" : "종종 방문하다. 출몰하다."
+}, {
+  "id" : 2328,
+  "word" : "restless",
+  "mean" : "침착하지 못한. 들뜬."
+}, {
+  "id" : 2329,
+  "word" : "extraordinary",
+  "mean" : "대단한. 비범한."
+}, {
+  "id" : 2330,
+  "word" : "disclose",
+  "mean" : "폭로하다."
+}, {
+  "id" : 2331,
+  "word" : "cellar",
+  "mean" : "지하실."
+}, {
+  "id" : 2332,
+  "word" : "overact",
+  "mean" : "지나치게 하다. 과장하여 연기하다."
+}, {
+  "id" : 2333,
+  "word" : "whereas",
+  "mean" : "..인 까닭에. ..에 반하여."
+}, {
+  "id" : 2334,
+  "word" : "annihilate",
+  "mean" : "전멸시키다. 무효에 하다."
+}, {
+  "id" : 2335,
+  "word" : "disobedient",
+  "mean" : "순종치 않는. 위반하는."
+}, {
+  "id" : 2336,
+  "word" : "subordinate",
+  "mean" : "하위의. 종속하는.충족시키다."
+}, {
+  "id" : 2337,
+  "word" : "consolation",
+  "mean" : "위로. 위안."
+}, {
+  "id" : 2338,
+  "word" : "treason",
+  "mean" : "반역(죄). 모반. 배신."
+}, {
+  "id" : 2339,
+  "word" : "monotone",
+  "mean" : "단조. 단조로움."
+}, {
+  "id" : 2340,
+  "word" : "considerable",
+  "mean" : "중요한. 상당한."
+}, {
+  "id" : 2341,
+  "word" : "fallacy",
+  "mean" : "잘못된 생각. 오류."
+}, {
+  "id" : 2342,
+  "word" : "verify",
+  "mean" : "확인하다. 증명하다."
+}, {
+  "id" : 2343,
+  "word" : "affluence",
+  "mean" : "풍부한. 풍요. 유복."
+}, {
+  "id" : 2344,
+  "word" : "overburden",
+  "mean" : "..에게 부담을 많이 주다."
+}, {
+  "id" : 2345,
+  "word" : "ordain",
+  "mean" : "규정하다. (신.운명 등이) 정하다."
+}, {
+  "id" : 2346,
+  "word" : "conversion",
+  "mean" : "전환. 변환."
+}, {
+  "id" : 2347,
+  "word" : "confound",
+  "mean" : "혼동하다. 당황케 하다."
+}, {
+  "id" : 2348,
+  "word" : "compress",
+  "mean" : "압축하다. 요약하다."
+}, {
+  "id" : 2349,
+  "word" : "fake",
+  "mean" : "가짜의. 위조의. 가짜."
+}, {
+  "id" : 2350,
+  "word" : "admirable",
+  "mean" : "칭찬할 만한. 감탄할 만한."
+}, {
+  "id" : 2351,
+  "word" : "prodigal",
+  "mean" : "낭비하는. 방탕한."
+}, {
+  "id" : 2352,
+  "word" : "indignity",
+  "mean" : "경멸. 모욕."
+}, {
+  "id" : 2353,
+  "word" : "sojourn",
+  "mean" : "체류하다. 묵다."
+}, {
+  "id" : 2354,
+  "word" : "omen",
+  "mean" : "전조. 징조."
+}, {
+  "id" : 2355,
+  "word" : "manifestation",
+  "mean" : "명시. 표현."
+}, {
+  "id" : 2356,
+  "word" : "sagacious",
+  "mean" : "현명한. 총명한."
+}, {
+  "id" : 2357,
+  "word" : "reverence",
+  "mean" : "존경. 숭배. 숭배하다."
+}, {
+  "id" : 2358,
+  "word" : "dogma",
+  "mean" : "교리. 독단적 주장."
+}, {
+  "id" : 2359,
+  "word" : "decay",
+  "mean" : "부패. 부패하다. 썩다."
+}, {
+  "id" : 2360,
+  "word" : "perplexity",
+  "mean" : "당혹."
+}, {
+  "id" : 2361,
+  "word" : "aspiration",
+  "mean" : "멸망. 포부."
+}, {
+  "id" : 2362,
+  "word" : "eject",
+  "mean" : "추방하다."
+}, {
+  "id" : 2363,
+  "word" : "conventional",
+  "mean" : "전통적인. 틀에 박힌."
+}, {
+  "id" : 2364,
+  "word" : "perspective",
+  "mean" : "조망. 전망. 시각."
+}, {
+  "id" : 2365,
+  "word" : "stout",
+  "mean" : "튼튼한. 견고한. 동등한."
+}, {
+  "id" : 2366,
+  "word" : "hostage",
+  "mean" : "인질. 볼모."
+}, {
+  "id" : 2367,
+  "word" : "removal",
+  "mean" : "이동. 제거. 해임."
+}, {
+  "id" : 2368,
+  "word" : "amend",
+  "mean" : "수정하다."
+}, {
+  "id" : 2369,
+  "word" : "segment",
+  "mean" : "분할하다. 부분. 단편. 조각."
+}, {
+  "id" : 2370,
+  "word" : "premature",
+  "mean" : "조숙한. 때 이른."
+}, {
+  "id" : 2371,
+  "word" : "temperate",
+  "mean" : "삼가는. 중용의."
+}, {
+  "id" : 2372,
+  "word" : "perseverance",
+  "mean" : "인내. 참을성."
+}, {
+  "id" : 2373,
+  "word" : "sublime",
+  "mean" : "장대한. 최고의. 숭고한."
+}, {
+  "id" : 2374,
+  "word" : "mournful",
+  "mean" : "슬픔에 잠긴. 애처로운."
+}, {
+  "id" : 2375,
+  "word" : "preliminary",
+  "mean" : "예비의."
+}, {
+  "id" : 2376,
+  "word" : "refusal",
+  "mean" : "거절."
+}, {
+  "id" : 2377,
+  "word" : "outbreak",
+  "mean" : "폭동."
+}, {
+  "id" : 2378,
+  "word" : "rejoice",
+  "mean" : "기뻐하다."
+}, {
+  "id" : 2379,
+  "word" : "congregate",
+  "mean" : "모으다. 집합시키다."
+}, {
+  "id" : 2380,
+  "word" : "discharge",
+  "mean" : "(짐을) 내리다. 면제하다. 해임하다."
+}, {
+  "id" : 2381,
+  "word" : "disapprove",
+  "mean" : "반대하다. 승인하지 않다."
+}, {
+  "id" : 2382,
+  "word" : "howl",
+  "mean" : "(개가) 짖다. (사람이) 울부짖다."
+}, {
+  "id" : 2383,
+  "word" : "assess",
+  "mean" : "평가하다. 사정하다."
+}, {
+  "id" : 2384,
+  "word" : "admonish",
+  "mean" : "충고하다. 훈계하다."
+}, {
+  "id" : 2385,
+  "word" : "repose",
+  "mean" : "휴식. 휴식하다."
+}, {
+  "id" : 2386,
+  "word" : "befall",
+  "mean" : "..에게 일어나다."
+}, {
+  "id" : 2387,
+  "word" : "discord",
+  "mean" : "불화. 불일치. 내분."
+}, {
+  "id" : 2388,
+  "word" : "contentment",
+  "mean" : "만족."
+}, {
+  "id" : 2389,
+  "word" : "genetic",
+  "mean" : "유전의."
+}, {
+  "id" : 2390,
+  "word" : "hypothesis",
+  "mean" : "가설. 가정."
+}, {
+  "id" : 2391,
+  "word" : "reconcile",
+  "mean" : "화해시키다. 조정하다."
+}, {
+  "id" : 2392,
+  "word" : "breadth",
+  "mean" : "폭. 넓이."
+}, {
+  "id" : 2393,
+  "word" : "superintend",
+  "mean" : "감독하다. 관리하다."
+}, {
+  "id" : 2394,
+  "word" : "eliminate",
+  "mean" : "제거하다. 배제하다."
+}, {
+  "id" : 2395,
+  "word" : "dissent",
+  "mean" : "반대. 이의. 이의를 제기하다."
+}, {
+  "id" : 2396,
+  "word" : "pervade",
+  "mean" : "보급하다. ..에 널리 퍼지다."
+}, {
+  "id" : 2397,
+  "word" : "impatient",
+  "mean" : "참을성이 없는. 성급한."
+}, {
+  "id" : 2398,
+  "word" : "circumference",
+  "mean" : "원주."
+}, {
+  "id" : 2399,
+  "word" : "retrieve",
+  "mean" : "회복. 회복하다. 회수하다."
+}, {
+  "id" : 2400,
+  "word" : "synthesis",
+  "mean" : "종합. 통합."
+}, {
+  "id" : 2401,
+  "word" : "coarse",
+  "mean" : "조잡한. 저급풍의."
+}, {
+  "id" : 2402,
+  "word" : "vouch",
+  "mean" : "단언하다. 보증하다."
+}, {
+  "id" : 2403,
+  "word" : "resolute",
+  "mean" : "단호한. 결연한."
+}, {
+  "id" : 2404,
+  "word" : "outlive",
+  "mean" : "..보다 더 오래 살다."
+}, {
+  "id" : 2405,
+  "word" : "usher",
+  "mean" : "안내인. 안내하다."
+}, {
+  "id" : 2406,
+  "word" : "ingenious",
+  "mean" : "영리한. 재능 있는."
+}, {
+  "id" : 2407,
+  "word" : "exterminate",
+  "mean" : "몰살하다. 근절하다."
+}, {
+  "id" : 2408,
+  "word" : "repress",
+  "mean" : "억누르다. 제지하다."
+}, {
+  "id" : 2409,
+  "word" : "disinterested",
+  "mean" : "공평한. 사심이 없는. 무관심핟."
+}, {
+  "id" : 2410,
+  "word" : "maxim",
+  "mean" : "격언. 처세훈."
+}, {
+  "id" : 2411,
+  "word" : "anarchy",
+  "mean" : "무정부(상태). 무질서 상태."
+}, {
+  "id" : 2412,
+  "word" : "erroneous",
+  "mean" : "틀린. 잘못된."
+}, {
+  "id" : 2413,
+  "word" : "eminence",
+  "mean" : "고위. 탁월. 저명."
+}, {
+  "id" : 2414,
+  "word" : "imminent",
+  "mean" : "절박한. 긴급한."
+}, {
+  "id" : 2415,
+  "word" : "transfuse",
+  "mean" : "수혈하다. 옮겨 붓다."
+}, {
+  "id" : 2416,
+  "word" : "disposition",
+  "mean" : "기질. 경향. 배치. 처분."
+}, {
+  "id" : 2417,
+  "word" : "brevity",
+  "mean" : "간결."
+}, {
+  "id" : 2418,
+  "word" : "adverse",
+  "mean" : "역의. 반대의. 불리한."
+}, {
+  "id" : 2419,
+  "word" : "illiterate",
+  "mean" : "문명의. 무식한."
+}, {
+  "id" : 2420,
+  "word" : "maximal",
+  "mean" : "최대한의. 최고의."
+}, {
+  "id" : 2421,
+  "word" : "inject",
+  "mean" : "주입하다. 주시하다."
+}, {
+  "id" : 2422,
+  "word" : "lavish",
+  "mean" : "풍부한. 남아도는."
+}, {
+  "id" : 2423,
+  "word" : "predetermine",
+  "mean" : "예정하다. 미리 결정하다."
+}, {
+  "id" : 2424,
+  "word" : "suffice",
+  "mean" : "족하다. 충분하다."
+}, {
+  "id" : 2425,
+  "word" : "interference",
+  "mean" : "방해. 간섭."
+}, {
+  "id" : 2426,
+  "word" : "preoccupy",
+  "mean" : "미움을 빼앗다. 몰두시키다."
+}, {
+  "id" : 2427,
+  "word" : "snare",
+  "mean" : "덧. 올가미. 함정에 빠뜨리다."
+}, {
+  "id" : 2428,
+  "word" : "predominate",
+  "mean" : "우세하다. 뛰어나다."
+}, {
+  "id" : 2429,
+  "word" : "consolidate",
+  "mean" : "결합하다. 강화하다."
+}, {
+  "id" : 2430,
+  "word" : "outcast",
+  "mean" : "내쫒긴. 버림받은. 추방당한 사람."
+}, {
+  "id" : 2431,
+  "word" : "implore",
+  "mean" : "탄원하다. 애원하다."
+}, {
+  "id" : 2432,
+  "word" : "transcribe",
+  "mean" : "배끼다. 복사하다."
+}, {
+  "id" : 2433,
+  "word" : "magnify",
+  "mean" : "확대하다. 과장하다."
+}, {
+  "id" : 2434,
+  "word" : "consolidation",
+  "mean" : "강화."
+}, {
+  "id" : 2435,
+  "word" : "suppression",
+  "mean" : "억압. 진압."
+}, {
+  "id" : 2436,
+  "word" : "plausibility",
+  "mean" : "그럴 듯함. 있을 법한 일."
+}, {
+  "id" : 2437,
+  "word" : "domesticate",
+  "mean" : "(동물을) 길들이다."
+}, {
+  "id" : 2438,
+  "word" : "incidence",
+  "mean" : "발생."
+}, {
+  "id" : 2439,
+  "word" : "crucial",
+  "mean" : "결정적인. 중대한."
+}, {
+  "id" : 2440,
+  "word" : "celebrated",
+  "mean" : "유명한. 세상에 알려진."
+}, {
+  "id" : 2441,
+  "word" : "controversial",
+  "mean" : "논쟁의. 논란의 여지가 있는."
+}, {
+  "id" : 2442,
+  "word" : "prerequisite",
+  "mean" : "필수의. 필요조건. 미리 필요한."
+}, {
+  "id" : 2443,
+  "word" : "conclusive",
+  "mean" : "결정적인."
+}, {
+  "id" : 2444,
+  "word" : "deteriorate",
+  "mean" : "나쁘게 하다. 저하시키다."
+}, {
+  "id" : 2445,
+  "word" : "petition",
+  "mean" : "청원. 탄원. 탄원하다."
+}, {
+  "id" : 2446,
+  "word" : "predicate",
+  "mean" : "단정하다. 단언하다."
+}, {
+  "id" : 2447,
+  "word" : "exult",
+  "mean" : "크게 기뻐하다. 기뻐 날뛰다."
+}, {
+  "id" : 2448,
+  "word" : "invaluable",
+  "mean" : "아주 귀중한."
+}, {
+  "id" : 2449,
+  "word" : "persevere",
+  "mean" : "견디다. 참다."
+}, {
+  "id" : 2450,
+  "word" : "lurk",
+  "mean" : "숨다. 잠복하다."
+}, {
+  "id" : 2451,
+  "word" : "ensure",
+  "mean" : "책임지다. ..을 보증하다."
+}, {
+  "id" : 2452,
+  "word" : "concordance",
+  "mean" : "일치. 조화."
+}, {
+  "id" : 2453,
+  "word" : "strenuous",
+  "mean" : "격렬한. 정력적인. 열심인."
+}, {
+  "id" : 2454,
+  "word" : "denounce",
+  "mean" : "공공연히 비난하다."
+}, {
+  "id" : 2455,
+  "word" : "subsequence",
+  "mean" : "계속해서 일어나는 일."
+}, {
+  "id" : 2456,
+  "word" : "protract",
+  "mean" : "연장하다. 오래 끌게 하다."
+}, {
+  "id" : 2457,
+  "word" : "discourse",
+  "mean" : "강연. 이야기. 담화. 논술하다."
+}, {
+  "id" : 2458,
+  "word" : "transmission",
+  "mean" : "전달. 송신. 전염."
+}, {
+  "id" : 2459,
+  "word" : "perspire",
+  "mean" : "땀흘리다."
+}, {
+  "id" : 2460,
+  "word" : "pervasive",
+  "mean" : "퍼지는. 스며드는."
+}, {
+  "id" : 2461,
+  "word" : "initiate",
+  "mean" : "시작하다."
+}, {
+  "id" : 2462,
+  "word" : "dubious",
+  "mean" : "의심스러운."
+}, {
+  "id" : 2463,
+  "word" : "submission",
+  "mean" : "복종. 항복."
+}, {
+  "id" : 2464,
+  "word" : "possessed",
+  "mean" : "미친. 열중한. 흘린."
+}, {
+  "id" : 2465,
+  "word" : "pending",
+  "mean" : "미결의. 심리중의."
+}, {
+  "id" : 2466,
+  "word" : "predominant",
+  "mean" : "뛰어난. 유력한."
+}, {
+  "id" : 2467,
+  "word" : "reprehend",
+  "mean" : "꾸짖다. 비난하다."
+}, {
+  "id" : 2468,
+  "word" : "retrospect",
+  "mean" : "회상. 회고. 회고하다."
+}, {
+  "id" : 2469,
+  "word" : "applaud",
+  "mean" : "박수 갈채를 보내다."
+}, {
+  "id" : 2470,
+  "word" : "resourceful",
+  "mean" : "자원이 풍부한."
+}, {
+  "id" : 2471,
+  "word" : "primal",
+  "mean" : "최초의. 원시의."
+}, {
+  "id" : 2472,
+  "word" : "introspection",
+  "mean" : "자기 반성."
+}, {
+  "id" : 2473,
+  "word" : "confinement",
+  "mean" : "감금. 억류. 제한."
+}, {
+  "id" : 2474,
+  "word" : "inclusive",
+  "mean" : "..을 포함하여."
+}, {
+  "id" : 2475,
+  "word" : "norm",
+  "mean" : "기준. 규범."
+}, {
+  "id" : 2476,
+  "word" : "mutuality",
+  "mean" : "상호관계."
+}, {
+  "id" : 2477,
+  "word" : "implicit",
+  "mean" : "임시적인. 은연중의. 무조건의."
+}, {
+  "id" : 2478,
+  "word" : "explicit",
+  "mean" : "명백한."
+}, {
+  "id" : 2479,
+  "word" : "abstinence",
+  "mean" : "절제. 금욕."
+}, {
+  "id" : 2480,
+  "word" : "dispel",
+  "mean" : "없애다. 쫒아버리다."
+}, {
+  "id" : 2481,
+  "word" : "congenial",
+  "mean" : "같은 성질의. 마음이 맞는."
+}, {
+  "id" : 2482,
+  "word" : "depreciate",
+  "mean" : "평가 절하하다. 가치를 떨어뜨리다."
+}, {
+  "id" : 2483,
+  "word" : "evacuate",
+  "mean" : "피난시키다. 철수시키다."
+}, {
+  "id" : 2484,
+  "word" : "afflict",
+  "mean" : "괴롭히다."
+}, {
+  "id" : 2485,
+  "word" : "decease",
+  "mean" : "사망. 사망하다."
+}, {
+  "id" : 2486,
+  "word" : "incentive",
+  "mean" : "동기. 장려금. 자극적인. 고무적인. 장려하는."
+}, {
+  "id" : 2487,
+  "word" : "tribute",
+  "mean" : "공물. 조세. 찬사."
+}, {
+  "id" : 2488,
+  "word" : "intercept",
+  "mean" : "가로채다. 차단하다."
+}, {
+  "id" : 2489,
+  "word" : "elusion",
+  "mean" : "도피. 회피."
+}, {
+  "id" : 2490,
+  "word" : "impede",
+  "mean" : "방해하다. 저해하다."
+}, {
+  "id" : 2491,
+  "word" : "ingenuity",
+  "mean" : "발명의 재주. 재간."
+}, {
+  "id" : 2492,
+  "word" : "rapt",
+  "mean" : "넋을 빼앗긴. 황홀한."
+}, {
+  "id" : 2493,
+  "word" : "contention",
+  "mean" : "논쟁. 말다툼. 싸움."
+}, {
+  "id" : 2494,
+  "word" : "uttermost",
+  "mean" : "최대 한도의."
+}, {
+  "id" : 2495,
+  "word" : "posture",
+  "mean" : "자세. 사태."
+}, {
+  "id" : 2496,
+  "word" : "concession",
+  "mean" : "양보. 허가. 특권."
+}, {
+  "id" : 2497,
+  "word" : "extinct",
+  "mean" : "(불이) 까진. (생명력이) 끊어진."
+}, {
+  "id" : 2498,
+  "word" : "outnumber",
+  "mean" : "수적으로 우세하다."
+}, {
+  "id" : 2499,
+  "word" : "observance",
+  "mean" : "준수. 계율. 의식."
+}, {
+  "id" : 2500,
+  "word" : "expedite",
+  "mean" : "재촉하다. 촉진하다."
+} ]

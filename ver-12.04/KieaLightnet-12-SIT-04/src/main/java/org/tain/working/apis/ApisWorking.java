@@ -1,5 +1,6 @@
 package org.tain.working.apis;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
+import org.tain.domain.apis.Apis;
 import org.tain.object.amend.req._ReqAmendData;
 import org.tain.object.auth.req._ReqAuthData;
 import org.tain.object.commit.req._ReqCommitData;
@@ -24,7 +26,9 @@ import org.tain.object.validate.ValidateReqJson;
 import org.tain.object.validate.req._ReqValidateData;
 import org.tain.properties.ProjEnvJobProperties;
 import org.tain.properties.ProjEnvUrlProperties;
+import org.tain.repository.apis.ApisRepository;
 import org.tain.utils.CurrentInfo;
+import org.tain.utils.FileInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.RestTemplateConfig;
@@ -47,6 +51,36 @@ public class ApisWorking {
 	
 	@Autowired
 	private ProjEnvUrlProperties projEnvUrlProperties;
+	
+	///////////////////////////////////////////////////////////////////////////
+	
+	@Autowired
+	private ApisRepository apisRepository;
+	
+	public void loading() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			String filePath = "src/main/resources/json_20200915/apis.json";
+			
+			try {
+				List<Apis> lstApis = JsonPrint.getInstance().getObjectMapper().readValue(new FileInfo(filePath).toString(), new TypeReference<List<Apis>>() {});
+				
+				this.apisRepository.deleteAll();
+				
+				if (Flag.flag) lstApis.forEach(apis -> {
+					String reqJson = new FileInfo("src/main/resources/json_20200915/" + apis.getReqJson()).toString();
+					apis.setReqJson(reqJson);
+					this.apisRepository.save(apis);                     // personal save
+				});
+				if (!Flag.flag) this.apisRepository.saveAll(lstApis);    // array save
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
 	
 	private String accessToken;
 	private String lnsTransactionId;
@@ -751,7 +785,7 @@ public class ApisWorking {
 			log.info("================== START: 7. customers(GET) ===========");
 			
 			String httpPath = "/remittances/customers";
-			httpPath = "/remittances.customer-lookup";
+			httpPath = "/remittances.customers-lookup";
 			String method = "get";
 			
 			String reqJson = null;

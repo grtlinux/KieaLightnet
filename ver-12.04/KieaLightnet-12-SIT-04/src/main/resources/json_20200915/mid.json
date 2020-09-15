@@ -1,0 +1,6200 @@
+[ {
+  "divCode" : "001",
+  "divTitle" : "I wanna ...",
+  "divContent" : "~하고 싶어.",
+  "compStmtKr" : "난 동영상 보고싶어.",
+  "compStmtEn" : "I wanna see the video clip."
+}, {
+  "divCode" : "001",
+  "divTitle" : "I wanna ...",
+  "divContent" : "~하고 싶어.",
+  "compId" : 1,
+  "compIdx" : 1,
+  "compStmtKr" : "난 오늘밤 그를 만나고 싶어.",
+  "compStmtEn" : "I wanna meet him tonight."
+}, {
+  "divCode" : "001",
+  "divTitle" : "I wanna ...",
+  "divContent" : "~하고 싶어.",
+  "compId" : 2,
+  "compIdx" : 2,
+  "compStmtKr" : "난 파티에 가고 싶어.",
+  "compStmtEn" : "I wanna go to the party."
+}, {
+  "divCode" : "001",
+  "divTitle" : "I wanna ...",
+  "divContent" : "~하고 싶어.",
+  "compId" : 3,
+  "compIdx" : 3,
+  "compStmtKr" : "난 새로운 뭔가를 시도해 보고 싶어.",
+  "compStmtEn" : "I wanna try something new."
+}, {
+  "divCode" : "002",
+  "divTitle" : "I don't wanna ...",
+  "divContent" : "~하고 싶지 않아 / ~하는 건 싫어",
+  "compId" : 4,
+  "compStmtKr" : "난 그 사람 밑에서 일하기 싫어",
+  "compStmtEn" : "I don't wanna work for him."
+}, {
+  "divCode" : "002",
+  "divTitle" : "I don't wanna ...",
+  "divContent" : "~하고 싶지 않아 / ~하는 건 싫어",
+  "compId" : 5,
+  "compIdx" : 1,
+  "compStmtKr" : "나 너하고 얘기하기 실어.",
+  "compStmtEn" : "I don't wanna talk to you."
+}, {
+  "divCode" : "002",
+  "divTitle" : "I don't wanna ...",
+  "divContent" : "~하고 싶지 않아 / ~하는 건 싫어",
+  "compId" : 6,
+  "compIdx" : 2,
+  "compStmtKr" : "나 걔하고 데이트하기 싫어",
+  "compStmtEn" : "I don't wanna go out with him."
+}, {
+  "divCode" : "002",
+  "divTitle" : "I don't wanna ...",
+  "divContent" : "~하고 싶지 않아 / ~하는 건 싫어",
+  "compId" : 7,
+  "compIdx" : 3,
+  "compStmtKr" : "나 거기 혼자 가기 싫어",
+  "compStmtEn" : "I don't wanna go there by myself."
+}, {
+  "divCode" : "003",
+  "divTitle" : "I just wanted to ...",
+  "divContent" : "난 그냥 ~하고 싶었어/단지 ~하고 싶었을 뿐이야",
+  "compId" : 8,
+  "compStmtKr" : "그냥 고맙다는 말을 하고 싶었어.",
+  "compStmtEn" : "I just wanted to say thank you."
+}, {
+  "divCode" : "003",
+  "divTitle" : "I just wanted to ...",
+  "divContent" : "난 그냥 ~하고 싶었어/단지 ~하고 싶었을 뿐이야",
+  "compId" : 9,
+  "compIdx" : 1,
+  "compStmtKr" : "그냥 너한테 뭐 물어보고 싶었어.",
+  "compStmtEn" : "I just wanted to ask you something."
+}, {
+  "divCode" : "003",
+  "divTitle" : "I just wanted to ...",
+  "divContent" : "난 그냥 ~하고 싶었어/단지 ~하고 싶었을 뿐이야",
+  "compId" : 10,
+  "compIdx" : 2,
+  "compStmtKr" : "그냥 네가 보고 싶었어.",
+  "compStmtEn" : "I just wanted to see you."
+}, {
+  "divCode" : "003",
+  "divTitle" : "I just wanted to ...",
+  "divContent" : "난 그냥 ~하고 싶었어/단지 ~하고 싶었을 뿐이야",
+  "compId" : 11,
+  "compIdx" : 3,
+  "compStmtKr" : "난 단지 인정받는 사람이 되고 싶었을 뿐이야.",
+  "compStmtEn" : "I just wanted to be somebody."
+}, {
+  "divCode" : "004",
+  "divTitle" : "I never wanted to ...",
+  "divContent" : "난 ~하고 싶은 게 아니었어/난 ~하고 싶었던 적 없어",
+  "compId" : 12,
+  "compStmtKr" : "난 너에게 상처 주고 싶은 게 아니었어.",
+  "compStmtEn" : "I never wanted to hurt you."
+}, {
+  "divCode" : "004",
+  "divTitle" : "I never wanted to ...",
+  "divContent" : "난 ~하고 싶은 게 아니었어/난 ~하고 싶었던 적 없어",
+  "compId" : 13,
+  "compIdx" : 1,
+  "compStmtKr" : "난 너를 불쾌하게 하고 싶은 게 아니었어.",
+  "compStmtEn" : "I never wanted to offend you."
+}, {
+  "divCode" : "004",
+  "divTitle" : "I never wanted to ...",
+  "divContent" : "난 ~하고 싶은 게 아니었어/난 ~하고 싶었던 적 없어",
+  "compId" : 14,
+  "compIdx" : 2,
+  "compStmtKr" : "난 널 실망시키고 싶은 게 아니었어.",
+  "compStmtEn" : "I never wanted to let you down."
+}, {
+  "divCode" : "004",
+  "divTitle" : "I never wanted to ...",
+  "divContent" : "난 ~하고 싶은 게 아니었어/난 ~하고 싶었던 적 없어",
+  "compId" : 15,
+  "compIdx" : 3,
+  "compStmtKr" : "난 그를 떠나고 싶은 게 아니었어.",
+  "compStmtEn" : "I never wanted to leave him."
+}, {
+  "divCode" : "005",
+  "divTitle" : "You wanna ... ?",
+  "divContent" : "너 ~하고 싶어?/~할래?",
+  "compId" : 16,
+  "compStmtKr" : "오늘 영화 보러 갈래?",
+  "compStmtEn" : "You wanna hit the movies today?"
+}, {
+  "divCode" : "005",
+  "divTitle" : "You wanna ... ?",
+  "divContent" : "너 ~하고 싶어?/~할래?",
+  "compId" : 17,
+  "compIdx" : 1,
+  "compStmtKr" : "그것에 대해 얘기하고 싶어?",
+  "compStmtEn" : "You wanna talk about it?"
+}, {
+  "divCode" : "005",
+  "divTitle" : "You wanna ... ?",
+  "divContent" : "너 ~하고 싶어?/~할래?",
+  "compId" : 18,
+  "compIdx" : 2,
+  "compStmtKr" : "내기 할래?",
+  "compStmtEn" : "You wanna bet?"
+}, {
+  "divCode" : "005",
+  "divTitle" : "You wanna ... ?",
+  "divContent" : "너 ~하고 싶어?/~할래?",
+  "compId" : 19,
+  "compIdx" : 3,
+  "compStmtKr" : "너 다른 학교로 전학 가고 싶니?",
+  "compStmtEn" : "You wanna transfer to another school?"
+}, {
+  "divCode" : "006",
+  "divTitle" : "You wanted me to ...",
+  "divContent" : "네가 나더러 ~하랬잖아/저한테 ~하라고 하셨는데요",
+  "compId" : 20,
+  "compStmtKr" : "나더러 오늘 밤에 문자 보내라고 했잖아.",
+  "compStmtEn" : "You wanted me to text you tonight."
+}, {
+  "divCode" : "006",
+  "divTitle" : "You wanted me to ...",
+  "divContent" : "네가 나더러 ~하랬잖아/저한테 ~하라고 하셨는데요",
+  "compId" : 21,
+  "compIdx" : 1,
+  "compStmtKr" : "나더러 너 대신 걔한테 얘기해 달라고 했잖아.",
+  "compStmtEn" : "You wanted me to talk to him for you."
+}, {
+  "divCode" : "006",
+  "divTitle" : "You wanted me to ...",
+  "divContent" : "네가 나더러 ~하랬잖아/저한테 ~하라고 하셨는데요",
+  "compId" : 22,
+  "compIdx" : 2,
+  "compStmtKr" : "저한테 오늘 하루 쉬라고 하셨는데요.",
+  "compStmtEn" : "You wanted me to take the day off."
+}, {
+  "divCode" : "006",
+  "divTitle" : "You wanted me to ...",
+  "divContent" : "네가 나더러 ~하랬잖아/저한테 ~하라고 하셨는데요",
+  "compId" : 23,
+  "compIdx" : 3,
+  "compStmtKr" : "저한테 이거 내일까지 끝내라고 하셨는데요.",
+  "compStmtEn" : "You wanted me to finish this by tomorrow."
+}, {
+  "divCode" : "007",
+  "divTitle" : "You might wanna ...",
+  "divContent" : "~하는 게 좋을 것 같은데",
+  "compId" : 24,
+  "compStmtKr" : "다시 생각해 보는 게 좋을 것 같은데",
+  "compStmtEn" : "You might wanna think again."
+}, {
+  "divCode" : "007",
+  "divTitle" : "You might wanna ...",
+  "divContent" : "~하는 게 좋을 것 같은데",
+  "compId" : 25,
+  "compIdx" : 1,
+  "compStmtKr" : "이 과목 재수강하는 게 좋을 것 같은데",
+  "compStmtEn" : "You might wanna retake this course."
+}, {
+  "divCode" : "007",
+  "divTitle" : "You might wanna ...",
+  "divContent" : "~하는 게 좋을 것 같은데",
+  "compId" : 26,
+  "compIdx" : 2,
+  "compStmtKr" : "조심하는 게 좋을 것 같은데.",
+  "compStmtEn" : "You might wanna watch out."
+}, {
+  "divCode" : "007",
+  "divTitle" : "You might wanna ...",
+  "divContent" : "~하는 게 좋을 것 같은데",
+  "compId" : 27,
+  "compIdx" : 3,
+  "compStmtKr" : "개 충고를 듣는 게 좋을 것 같은데",
+  "compStmtEn" : "You might wanna listen to her advice."
+}, {
+  "divCode" : "008",
+  "divTitle" : "All I want is ...",
+  "divContent" : "내가 원하는 건 ~뿐이야/난 ~을 원할 뿐이야",
+  "compId" : 28,
+  "compStmtKr" : "내가 원하는 건 너뿐이야.",
+  "compStmtEn" : "All I want is you."
+}, {
+  "divCode" : "008",
+  "divTitle" : "All I want is ...",
+  "divContent" : "내가 원하는 건 ~뿐이야/난 ~을 원할 뿐이야",
+  "compId" : 29,
+  "compIdx" : 1,
+  "compStmtKr" : "난 나 혼자만의 시간을 원할 뿐이야",
+  "compStmtEn" : "All I want is some alone time."
+}, {
+  "divCode" : "008",
+  "divTitle" : "All I want is ...",
+  "divContent" : "내가 원하는 건 ~뿐이야/난 ~을 원할 뿐이야",
+  "compId" : 30,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 원하는 건 너의 정직함 뿐이야",
+  "compStmtEn" : "All I want is your honesty."
+}, {
+  "divCode" : "008",
+  "divTitle" : "All I want is ...",
+  "divContent" : "내가 원하는 건 ~뿐이야/난 ~을 원할 뿐이야",
+  "compId" : 31,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 원하는 건 행복해지는 것뿐이야",
+  "compStmtEn" : "All I want is to be happy."
+}, {
+  "divCode" : "009",
+  "divTitle" : "I got ...",
+  "divContent" : "나한테 ~가 있어",
+  "compId" : 32,
+  "compStmtKr" : "나한테 정말 좋은 생각이 있어",
+  "compStmtEn" : "I got a great idea."
+}, {
+  "divCode" : "009",
+  "divTitle" : "I got ...",
+  "divContent" : "나한테 ~가 있어",
+  "compId" : 33,
+  "compIdx" : 1,
+  "compStmtKr" : "나한테 너에게 전해 줄 소식이 있어.",
+  "compStmtEn" : "I got some news for you."
+}, {
+  "divCode" : "009",
+  "divTitle" : "I got ...",
+  "divContent" : "나한테 ~가 있어",
+  "compId" : 34,
+  "compIdx" : 2,
+  "compStmtKr" : "나 너한테 줄 게 있어",
+  "compStmtEn" : "I got something for you."
+}, {
+  "divCode" : "009",
+  "divTitle" : "I got ...",
+  "divContent" : "나한테 ~가 있어",
+  "compId" : 35,
+  "compIdx" : 3,
+  "compStmtKr" : "나 개한테 불평거리가/불만이 있어",
+  "compStmtEn" : "I got beef with him."
+}, {
+  "divCode" : "010",
+  "divTitle" : "I gotta ...",
+  "divContent" : "나 ~해야 돼/나 ~해야겠다.",
+  "compId" : 36,
+  "compStmtKr" : "나 가야겠다. 나중에 봐!",
+  "compStmtEn" : "I gotta go. See ya!"
+}, {
+  "divCode" : "010",
+  "divTitle" : "I gotta ...",
+  "divContent" : "나 ~해야 돼/나 ~해야겠다.",
+  "compId" : 37,
+  "compIdx" : 1,
+  "compStmtKr" : "나 이거 먼저 끝마쳐야 돼.",
+  "compStmtEn" : "I gotta finish this first."
+}, {
+  "divCode" : "010",
+  "divTitle" : "I gotta ...",
+  "divContent" : "나 ~해야 돼/나 ~해야겠다.",
+  "compId" : 38,
+  "compIdx" : 2,
+  "compStmtKr" : "난 더 인내심을 가져야 돼",
+  "compStmtEn" : "I gotta have more patience."
+}, {
+  "divCode" : "010",
+  "divTitle" : "I gotta ...",
+  "divContent" : "나 ~해야 돼/나 ~해야겠다.",
+  "compId" : 39,
+  "compIdx" : 3,
+  "compStmtKr" : "나 거기 시간 맞춰 가야 돼",
+  "compStmtEn" : "I gotta get there on time."
+}, {
+  "divCode" : "011",
+  "divTitle" : "You gotta ...",
+  "divContent" : "너 ~해야 돼",
+  "compId" : 40,
+  "compStmtKr" : "난 더 열심히 노력해야 돼",
+  "compStmtEn" : "You gotta try harder."
+}, {
+  "divCode" : "011",
+  "divTitle" : "You gotta ...",
+  "divContent" : "너 ~해야 돼",
+  "compId" : 41,
+  "compIdx" : 1,
+  "compStmtKr" : "너 그거 비밀로 해야 돼",
+  "compStmtEn" : "You gotta keep it a secret."
+}, {
+  "divCode" : "011",
+  "divTitle" : "You gotta ...",
+  "divContent" : "너 ~해야 돼",
+  "compId" : 42,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 말하기 전에 생각 좀 해야 돼",
+  "compStmtEn" : "You gotta think before you speak."
+}, {
+  "divCode" : "011",
+  "divTitle" : "You gotta ...",
+  "divContent" : "너 ~해야 돼",
+  "compId" : 43,
+  "compIdx" : 3,
+  "compStmtKr" : "너 지금 농담하는 거지?",
+  "compStmtEn" : "You gotta be kidding me."
+}, {
+  "divCode" : "012",
+  "divTitle" : "You're getting ...",
+  "divContent" : "너 (점점) ~해지고 있어",
+  "compId" : 44,
+  "compStmtKr" : "너 점점 날 짜증 나게 한다.",
+  "compStmtEn" : "You're getting annoying."
+}, {
+  "divCode" : "012",
+  "divTitle" : "You're getting ...",
+  "divContent" : "너 (점점) ~해지고 있어",
+  "compId" : 45,
+  "compIdx" : 1,
+  "compStmtKr" : "너 점점 건방져진다.",
+  "compStmtEn" : "You're getting conceited."
+}, {
+  "divCode" : "012",
+  "divTitle" : "You're getting ...",
+  "divContent" : "너 (점점) ~해지고 있어",
+  "compId" : 46,
+  "compIdx" : 2,
+  "compStmtKr" : "너 점점 더 날씬해지는구나",
+  "compStmtEn" : "You're getting thinner."
+}, {
+  "divCode" : "012",
+  "divTitle" : "You're getting ...",
+  "divContent" : "너 (점점) ~해지고 있어",
+  "compId" : 47,
+  "compIdx" : 3,
+  "compStmtKr" : "너 나한테 또 화내고 있잖아",
+  "compStmtEn" : "You're getting mad at me again."
+}, {
+  "divCode" : "013",
+  "divTitle" : "I'll go get .,.",
+  "divContent" : "내가 ~ 가지고 올께/나 ~하러 갈게.",
+  "compId" : 48,
+  "compStmtKr" : "내가 우리 마실 것 좀 갖고 올께",
+  "compStmtEn" : "I'll go get us something to drink."
+}, {
+  "divCode" : "013",
+  "divTitle" : "I'll go get .,.",
+  "divContent" : "내가 ~ 가지고 올께/나 ~하러 갈게.",
+  "compId" : 49,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 맥주 좀 갖고 올께.",
+  "compStmtEn" : "I'll go get some beer."
+}, {
+  "divCode" : "013",
+  "divTitle" : "I'll go get .,.",
+  "divContent" : "내가 ~ 가지고 올께/나 ~하러 갈게.",
+  "compId" : 50,
+  "compIdx" : 2,
+  "compStmtKr" : "난 좀 자러 갈께",
+  "compStmtEn" : "I'll go get some sleep."
+}, {
+  "divCode" : "013",
+  "divTitle" : "I'll go get .,.",
+  "divContent" : "내가 ~ 가지고 올께/나 ~하러 갈게.",
+  "compId" : 51,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 의자 갖고 올께",
+  "compStmtEn" : "I'll go get a chair."
+}, {
+  "divCode" : "014",
+  "divTitle" : "I don't get ...",
+  "divContent" : "~이 이해 안 돼",
+  "compId" : 52,
+  "compStmtKr" : "난 걔가 이해 안 돼",
+  "compStmtEn" : "I don't get him."
+}, {
+  "divCode" : "014",
+  "divTitle" : "I don't get ...",
+  "divContent" : "~이 이해 안 돼",
+  "compId" : 53,
+  "compIdx" : 1,
+  "compStmtKr" : "난 네 말의 요지가 이해가 안 돼",
+  "compStmtEn" : "I don't get your point."
+}, {
+  "divCode" : "014",
+  "divTitle" : "I don't get ...",
+  "divContent" : "~이 이해 안 돼",
+  "compId" : 54,
+  "compIdx" : 2,
+  "compStmtKr" : "난 무슨 말을 하려는 건지 이해가 안돼",
+  "compStmtEn" : "I don't get what you're trying to say."
+}, {
+  "divCode" : "014",
+  "divTitle" : "I don't get ...",
+  "divContent" : "~이 이해 안 돼",
+  "compId" : 55,
+  "compIdx" : 3,
+  "compStmtKr" : "난 걔가 왜 화가 났는지 이해 안 돼",
+  "compStmtEn" : "I don't get why he's upset."
+}, {
+  "divCode" : "015",
+  "divTitle" : "I get you ...",
+  "divContent" : "너 주려고 ~ 샀어.",
+  "compId" : 56,
+  "compStmtKr" : "널 위해 조그만 거 하나 샀어",
+  "compStmtEn" : "I got you a little something."
+}, {
+  "divCode" : "015",
+  "divTitle" : "I get you ...",
+  "divContent" : "너 주려고 ~ 샀어.",
+  "compId" : 57,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 제일 좋아하는 걸로 샀어",
+  "compStmtEn" : "I got you your favorite."
+}, {
+  "divCode" : "015",
+  "divTitle" : "I get you ...",
+  "divContent" : "너 주려고 ~ 샀어.",
+  "compId" : 58,
+  "compIdx" : 2,
+  "compStmtKr" : "너를 위해 이별 선물을 샀어",
+  "compStmtEn" : "I got you a going-away present."
+}, {
+  "divCode" : "015",
+  "divTitle" : "I get you ...",
+  "divContent" : "너 주려고 ~ 샀어.",
+  "compId" : 59,
+  "compIdx" : 3,
+  "compStmtKr" : "너 생일 선물로 목걸이 샀어",
+  "compStmtEn" : "I got you a necklace for your birthday."
+}, {
+  "divCode" : "016",
+  "divTitle" : "Do you ever get the feeling (that) ... ?",
+  "divContent" : "~이라는 느낌이 든 적 있어?",
+  "compId" : 60,
+  "compStmtKr" : "삶이 불공평하다는 느낌 든 적 있어?",
+  "compStmtEn" : "Do you ever get the feeling life is unfair?"
+}, {
+  "divCode" : "016",
+  "divTitle" : "Do you ever get the feeling (that) ... ?",
+  "divContent" : "~이라는 느낌이 든 적 있어?",
+  "compId" : 61,
+  "compIdx" : 1,
+  "compStmtKr" : "미행당하고 있다는 느낌 든 적 있어?",
+  "compStmtEn" : "Do you ever get the feeling you're being followed?"
+}, {
+  "divCode" : "016",
+  "divTitle" : "Do you ever get the feeling (that) ... ?",
+  "divContent" : "~이라는 느낌이 든 적 있어?",
+  "compId" : 62,
+  "compIdx" : 2,
+  "compStmtKr" : "이건 뭔가 아니라는 느낌 든 적 있어?",
+  "compStmtEn" : "Do you ever get the feeling something's not right?"
+}, {
+  "divCode" : "016",
+  "divTitle" : "Do you ever get the feeling (that) ... ?",
+  "divContent" : "~이라는 느낌이 든 적 있어?",
+  "compId" : 63,
+  "compIdx" : 3,
+  "compStmtKr" : "제대로 풀리는 일이 없다는 느낌 든적 있어?",
+  "compStmtEn" : "Do you ever get the feeling nothing's going right?"
+}, {
+  "divCode" : "017",
+  "divTitle" : "I'm gonna ...",
+  "divContent" : "난 ~할 거야",
+  "compId" : 64,
+  "compStmtKr" : "난 오늘 밤 외박할 거야",
+  "compStmtEn" : "I'm gonna stay out tonight."
+}, {
+  "divCode" : "017",
+  "divTitle" : "I'm gonna ...",
+  "divContent" : "난 ~할 거야",
+  "compId" : 65,
+  "compIdx" : 1,
+  "compStmtKr" : "난 언젠가 스타가 될 거야",
+  "compStmtEn" : "I'm gonna be a star some day."
+}, {
+  "divCode" : "017",
+  "divTitle" : "I'm gonna ...",
+  "divContent" : "난 ~할 거야",
+  "compId" : 66,
+  "compIdx" : 2,
+  "compStmtKr" : "나 내 남자 친구랑 헤어질 거야",
+  "compStmtEn" : "I'm gonna break up with my boyfriend."
+}, {
+  "divCode" : "017",
+  "divTitle" : "I'm gonna ...",
+  "divContent" : "난 ~할 거야",
+  "compId" : 67,
+  "compIdx" : 3,
+  "compStmtKr" : "난 오늘 밤샐거야",
+  "compStmtEn" : "I'm gonna stay up all night."
+}, {
+  "divCode" : "018",
+  "divTitle" : "I'm never gonna ...",
+  "divContent" : "나 절대 ~안 할 거야/못할 거야",
+  "compId" : 68,
+  "compStmtKr" : "난 절대 너한테 말 안 할 거야",
+  "compStmtEn" : "I'm never gonna tell you."
+}, {
+  "divCode" : "018",
+  "divTitle" : "I'm never gonna ...",
+  "divContent" : "나 절대 ~안 할 거야/못할 거야",
+  "compId" : 69,
+  "compIdx" : 1,
+  "compStmtKr" : "난 절대 널 떠나지 않을 거야",
+  "compStmtEn" : "I'm never gonna leave you."
+}, {
+  "divCode" : "018",
+  "divTitle" : "I'm never gonna ...",
+  "divContent" : "나 절대 ~안 할 거야/못할 거야",
+  "compId" : 70,
+  "compIdx" : 2,
+  "compStmtKr" : "난 절대 성공하지 못할 거야",
+  "compStmtEn" : "I'm never gonna make it."
+}, {
+  "divCode" : "018",
+  "divTitle" : "I'm never gonna ...",
+  "divContent" : "나 절대 ~안 할 거야/못할 거야",
+  "compId" : 71,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 절대 걔가 날 좋아하게 만들지 못할 거야",
+  "compStmtEn" : "I'm never gonna win her over."
+}, {
+  "divCode" : "019",
+  "divTitle" : "I think I'm gonna ...",
+  "divContent" : "나 ~할 것 같아/나 ~할까 해",
+  "compId" : 72,
+  "compStmtKr" : "나 토할 것 같아",
+  "compStmtEn" : "I think I'm gonna puke."
+}, {
+  "divCode" : "019",
+  "divTitle" : "I think I'm gonna ...",
+  "divContent" : "나 ~할 것 같아/나 ~할까 해",
+  "compId" : 73,
+  "compIdx" : 1,
+  "compStmtKr" : "나 잡힐/걸릴 것 같아",
+  "compStmtEn" : "I think I'm gonna get caught."
+}, {
+  "divCode" : "019",
+  "divTitle" : "I think I'm gonna ...",
+  "divContent" : "나 ~할 것 같아/나 ~할까 해",
+  "compId" : 74,
+  "compIdx" : 2,
+  "compStmtKr" : "나 5분간 쉴까 해",
+  "compStmtEn" : "I think I'm gonna take 5."
+}, {
+  "divCode" : "019",
+  "divTitle" : "I think I'm gonna ...",
+  "divContent" : "나 ~할 것 같아/나 ~할까 해",
+  "compId" : 75,
+  "compIdx" : 3,
+  "compStmtKr" : "나 자수할까 해",
+  "compStmtEn" : "I think I'm gonna turn myself in."
+}, {
+  "divCode" : "020",
+  "divTitle" : "You're not gonna ...",
+  "divContent" : "넌 ~하지 않을 거야/네가 ~할 리가 없어",
+  "compId" : 76,
+  "compStmtKr" : "넌 이걸 후회하지 않을 거야",
+  "compStmtEn" : "You're not gonna regret this."
+}, {
+  "divCode" : "020",
+  "divTitle" : "You're not gonna ...",
+  "divContent" : "넌 ~하지 않을 거야/네가 ~할 리가 없어",
+  "compId" : 77,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 이거 믿지 않을 거야(놀라운 소식 하나 알려줄께)",
+  "compStmtEn" : "You're not gonna believe this."
+}, {
+  "divCode" : "020",
+  "divTitle" : "You're not gonna ...",
+  "divContent" : "넌 ~하지 않을 거야/네가 ~할 리가 없어",
+  "compId" : 78,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 그한테 말할 리가 없어",
+  "compStmtEn" : "You're not gonna tell him."
+}, {
+  "divCode" : "020",
+  "divTitle" : "You're not gonna ...",
+  "divContent" : "넌 ~하지 않을 거야/네가 ~할 리가 없어",
+  "compId" : 79,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 걔를 이기지 못할 거야/이길 리가 없어",
+  "compStmtEn" : "You're not gonna beat him."
+}, {
+  "divCode" : "021",
+  "divTitle" : "You really gonna ...?",
+  "divContent" : "너 정말 ~할 거야?",
+  "compId" : 80,
+  "compStmtKr" : "너 정말 걔 용서할 거야?",
+  "compStmtEn" : "You really gonna forgive her?"
+}, {
+  "divCode" : "021",
+  "divTitle" : "You really gonna ...?",
+  "divContent" : "너 정말 ~할 거야?",
+  "compId" : 81,
+  "compIdx" : 1,
+  "compStmtKr" : "너 정말 걔 말대로 할 거야?",
+  "compStmtEn" : "You really gonna do what he says?"
+}, {
+  "divCode" : "021",
+  "divTitle" : "You really gonna ...?",
+  "divContent" : "너 정말 ~할 거야?",
+  "compId" : 82,
+  "compIdx" : 2,
+  "compStmtKr" : "너 정말 번지점프 할 거야?",
+  "compStmtEn" : "You really gonna go bungee jumping?"
+}, {
+  "divCode" : "021",
+  "divTitle" : "You really gonna ...?",
+  "divContent" : "너 정말 ~할 거야?",
+  "compId" : 83,
+  "compIdx" : 3,
+  "compStmtKr" : "너 정말 조용히 넘어갈 거야?",
+  "compStmtEn" : "You really gonna go quietly?"
+}, {
+  "divCode" : "022",
+  "divTitle" : "You're gonna wanna ...",
+  "divContent" : "너 ~하고 싶어질 걸/~하는 게 좋을 걸",
+  "compId" : 84,
+  "compStmtKr" : "너 그거 생각해 보는 게 좋을 거야",
+  "compStmtEn" : "You're gonna wanna think about that."
+}, {
+  "divCode" : "022",
+  "divTitle" : "You're gonna wanna ...",
+  "divContent" : "너 ~하고 싶어질 걸/~하는 게 좋을 걸",
+  "compId" : 85,
+  "compIdx" : 1,
+  "compStmtKr" : "너 이거 보고 싶을 걸",
+  "compStmtEn" : "You're gonna wanna watch this."
+}, {
+  "divCode" : "022",
+  "divTitle" : "You're gonna wanna ...",
+  "divContent" : "너 ~하고 싶어질 걸/~하는 게 좋을 걸",
+  "compId" : 86,
+  "compIdx" : 2,
+  "compStmtKr" : "이건 않아서 듣는 게 좋을 거야",
+  "compStmtEn" : "You're gonna wanna sit down for this."
+}, {
+  "divCode" : "022",
+  "divTitle" : "You're gonna wanna ...",
+  "divContent" : "너 ~하고 싶어질 걸/~하는 게 좋을 걸",
+  "compId" : 87,
+  "compIdx" : 3,
+  "compStmtKr" : "양쪽 얘기를 다 들어 보는 게 좋을 거야",
+  "compStmtEn" : "You're gonna wanna listen to both sides of the story."
+}, {
+  "divCode" : "023",
+  "divTitle" : "There's gonna be ...",
+  "divContent" : "~이 있게 될 거야",
+  "compId" : 88,
+  "compStmtKr" : "거기에 끝내주는 여자애들이 맣이 있을 거야",
+  "compStmtEn" : "There's gonna be lots of hot girls there."
+}, {
+  "divCode" : "023",
+  "divTitle" : "There's gonna be ...",
+  "divContent" : "~이 있게 될 거야",
+  "compId" : 89,
+  "compIdx" : 1,
+  "compStmtKr" : "앞으로 시련이 있을 거야",
+  "compStmtEn" : "There's gonna be tough times ahead."
+}, {
+  "divCode" : "023",
+  "divTitle" : "There's gonna be ...",
+  "divContent" : "~이 있게 될 거야",
+  "compId" : 90,
+  "compIdx" : 2,
+  "compStmtKr" : "저녁 때 폭풍이 있을 예정이래",
+  "compStmtEn" : "There's gonna be a storm in the evening."
+}, {
+  "divCode" : "023",
+  "divTitle" : "There's gonna be ...",
+  "divContent" : "~이 있게 될 거야",
+  "compId" : 91,
+  "compIdx" : 3,
+  "compStmtKr" : "8,000명이나 있을 거야",
+  "compStmtEn" : "There's gonna be 8,000 people."
+}, {
+  "divCode" : "024",
+  "divTitle" : "What am I gonna ...?",
+  "divContent" : "나 뭘 ~하지?",
+  "compId" : 92,
+  "compStmtKr" : "나 뭘 하지?(나 어쩌지?)",
+  "compStmtEn" : "What am I gonna do?"
+}, {
+  "divCode" : "024",
+  "divTitle" : "What am I gonna ...?",
+  "divContent" : "나 뭘 ~하지?",
+  "compId" : 93,
+  "compIdx" : 1,
+  "compStmtKr" : "나 걔한테 뭐라고 말하지?",
+  "compStmtEn" : "What am I gonna say to him?"
+}, {
+  "divCode" : "024",
+  "divTitle" : "What am I gonna ...?",
+  "divContent" : "나 뭘 ~하지?",
+  "compId" : 94,
+  "compIdx" : 2,
+  "compStmtKr" : "나 데이트에 뭘 입고 가지?",
+  "compStmtEn" : "What am I gonna wear to the date?"
+}, {
+  "divCode" : "024",
+  "divTitle" : "What am I gonna ...?",
+  "divContent" : "나 뭘 ~하지?",
+  "compId" : 95,
+  "compIdx" : 3,
+  "compStmtKr" : "나 걔 생일 선물로 뭘 사주지?",
+  "compStmtEn" : "What am I gonna get him for his birthday?"
+}, {
+  "divCode" : "025",
+  "divTitle" : "I have some ...",
+  "divContent" : "나한테 ~이 약간 있어",
+  "compId" : 96,
+  "compStmtKr" : "내 주머니에 잔돈 좀 있어",
+  "compStmtEn" : "I have some change in my pocket."
+}, {
+  "divCode" : "025",
+  "divTitle" : "I have some ...",
+  "divContent" : "나한테 ~이 약간 있어",
+  "compId" : 97,
+  "compIdx" : 1,
+  "compStmtKr" : "그 계획에 대해 걱정되는 부분이 좀 있어",
+  "compStmtEn" : "I have some concerns about the plan."
+}, {
+  "divCode" : "025",
+  "divTitle" : "I have some ...",
+  "divContent" : "나한테 ~이 약간 있어",
+  "compId" : 98,
+  "compIdx" : 2,
+  "compStmtKr" : "IT 분야에 경험이 좀 있습니다.",
+  "compStmtEn" : "I have some experience in the IT fields."
+}, {
+  "divCode" : "025",
+  "divTitle" : "I have some ...",
+  "divContent" : "나한테 ~이 약간 있어",
+  "compId" : 99,
+  "compIdx" : 3,
+  "compStmtKr" : "나한테 우리 ㅍ로젝트를 위한 아이디어가 몇개 있어",
+  "compStmtEn" : "I have some ideas for our project."
+}, {
+  "divCode" : "026",
+  "divTitle" : "I have nothing to ...",
+  "divContent" : "난 ~할 게 아무것도 없어",
+  "compId" : 100,
+  "compStmtKr" : "난 할 게 아무것도 없어",
+  "compStmtEn" : "I have nothing to do."
+}, {
+  "divCode" : "026",
+  "divTitle" : "I have nothing to ...",
+  "divContent" : "난 ~할 게 아무것도 없어",
+  "compId" : 101,
+  "compIdx" : 1,
+  "compStmtKr" : "난 잃을 게 아무것도 없어",
+  "compStmtEn" : "I have nothing to lose."
+}, {
+  "divCode" : "026",
+  "divTitle" : "I have nothing to ...",
+  "divContent" : "난 ~할 게 아무것도 없어",
+  "compId" : 102,
+  "compIdx" : 2,
+  "compStmtKr" : "난 너한테 할 말 없어",
+  "compStmtEn" : "I have nothing to say to you."
+}, {
+  "divCode" : "026",
+  "divTitle" : "I have nothing to ...",
+  "divContent" : "난 ~할 게 아무것도 없어",
+  "compId" : 103,
+  "compIdx" : 3,
+  "compStmtKr" : "난 여기서 득 볼 게 아무것도 없어",
+  "compStmtEn" : "I have nothing to gain from this."
+}, {
+  "divCode" : "027",
+  "divTitle" : "I have nothing to do with ...",
+  "divContent" : "난 ~과 마무 관련 없어",
+  "compId" : 104,
+  "compStmtKr" : "난 그것과 아무 관련 없어",
+  "compStmtEn" : "I have nothing to do with it."
+}, {
+  "divCode" : "027",
+  "divTitle" : "I have nothing to do with ...",
+  "divContent" : "난 ~과 마무 관련 없어",
+  "compId" : 105,
+  "compIdx" : 1,
+  "compStmtKr" : "난 그 사고와 아무 관련 없어",
+  "compStmtEn" : "I have nothing to do with the accident."
+}, {
+  "divCode" : "027",
+  "divTitle" : "I have nothing to do with ...",
+  "divContent" : "난 ~과 마무 관련 없어",
+  "compId" : 106,
+  "compIdx" : 2,
+  "compStmtKr" : "난 제임스하고 아무 관련 없어",
+  "compStmtEn" : "I have nothing to do with James."
+}, {
+  "divCode" : "027",
+  "divTitle" : "I have nothing to do with ...",
+  "divContent" : "난 ~과 마무 관련 없어",
+  "compId" : 107,
+  "compIdx" : 3,
+  "compStmtKr" : "난 그 사건과 아무 관련 없어",
+  "compStmtEn" : "I have nothing to do with the case."
+}, {
+  "divCode" : "028",
+  "divTitle" : "I didn't have ...",
+  "divContent" : "나에겐 ~이 없었어.",
+  "compId" : 108,
+  "compStmtKr" : "나한텐 얘기할 사람이 하나도 없었어",
+  "compStmtEn" : "I didn't have anyone to talk to."
+}, {
+  "divCode" : "028",
+  "divTitle" : "I didn't have ...",
+  "divContent" : "나에겐 ~이 없었어.",
+  "compId" : 109,
+  "compIdx" : 1,
+  "compStmtKr" : "나한테 돈이 한 푼도 없었어",
+  "compStmtEn" : "I didn't have a dime on me."
+}, {
+  "divCode" : "028",
+  "divTitle" : "I didn't have ...",
+  "divContent" : "나에겐 ~이 없었어.",
+  "compId" : 110,
+  "compIdx" : 2,
+  "compStmtKr" : "나에겐 그에게 맞설 배짱이 없었어",
+  "compStmtEn" : "I didn't have the guts to confront him."
+}, {
+  "divCode" : "028",
+  "divTitle" : "I didn't have ...",
+  "divContent" : "나에겐 ~이 없었어.",
+  "compId" : 111,
+  "compIdx" : 3,
+  "compStmtKr" : "걔한테 진실을 말하지 못하겠더라고",
+  "compStmtEn" : "I didn't have the heart to tell her the truth."
+}, {
+  "divCode" : "029",
+  "divTitle" : "You have no idea ...",
+  "divContent" : "넌 ~을 전혀 몰라",
+  "compId" : 112,
+  "compStmtKr" : "넌 내가 뭘 원하는지를 전혀 몰라",
+  "compStmtEn" : "You have no idea what I want."
+}, {
+  "divCode" : "029",
+  "divTitle" : "You have no idea ...",
+  "divContent" : "넌 ~을 전혀 몰라",
+  "compId" : 113,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 걔가 승낙할지 전혀 모르잖아",
+  "compStmtEn" : "You have no idea if she'll say yes."
+}, {
+  "divCode" : "029",
+  "divTitle" : "You have no idea ...",
+  "divContent" : "넌 ~을 전혀 몰라",
+  "compId" : 114,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 내가 널 얼마나 보고 싶어 하는지 전혀 몰라.(네가 너무 보고 싶어)",
+  "compStmtEn" : "You have no idea how much I miss you."
+}, {
+  "divCode" : "029",
+  "divTitle" : "You have no idea ...",
+  "divContent" : "넌 ~을 전혀 몰라",
+  "compId" : 115,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 내가 어떤 일을 겪었는지 전혀 몰라",
+  "compStmtEn" : "You have no idea what I've gone through."
+}, {
+  "divCode" : "030",
+  "divTitle" : "Do you have any idea ...?",
+  "divContent" : "너 ~알아?",
+  "compId" : 116,
+  "compStmtKr" : "너 그가 언제 돌아올지 알아?",
+  "compStmtEn" : "Do you have any idea when he'll be back?"
+}, {
+  "divCode" : "030",
+  "divTitle" : "Do you have any idea ...?",
+  "divContent" : "너 ~알아?",
+  "compId" : 117,
+  "compIdx" : 1,
+  "compStmtKr" : "너 걔가 왜 그 말 했는지 알아?",
+  "compStmtEn" : "Do you have any idea why he said that?"
+}, {
+  "divCode" : "030",
+  "divTitle" : "Do you have any idea ...?",
+  "divContent" : "너 ~알아?",
+  "compId" : 118,
+  "compIdx" : 2,
+  "compStmtKr" : "너 걔가 뭘 계획하고 있는지 알아?",
+  "compStmtEn" : "Do you have any idea what he's planning?"
+}, {
+  "divCode" : "030",
+  "divTitle" : "Do you have any idea ...?",
+  "divContent" : "너 ~알아?",
+  "compId" : 119,
+  "compIdx" : 3,
+  "compStmtKr" : "너 네가 지금 얼마나 바보같아 보이는지 알아?",
+  "compStmtEn" : "Do you have any idea how stupid you look right now?"
+}, {
+  "divCode" : "031",
+  "divTitle" : "I have to ...",
+  "divContent" : "난 ~해야 돼",
+  "compId" : 120,
+  "compStmtKr" : "난 오늘 안에 이거 끝내야 돼",
+  "compStmtEn" : "I have to get this done today."
+}, {
+  "divCode" : "031",
+  "divTitle" : "I have to ...",
+  "divContent" : "난 ~해야 돼",
+  "compId" : 121,
+  "compIdx" : 1,
+  "compStmtKr" : "나 이제 다시 일해야 돼/일하러 가야 돼",
+  "compStmtEn" : "I have to get back to work now."
+}, {
+  "divCode" : "031",
+  "divTitle" : "I have to ...",
+  "divContent" : "난 ~해야 돼",
+  "compId" : 122,
+  "compIdx" : 2,
+  "compStmtKr" : "난 5시까지 거기에 가야 돼",
+  "compStmtEn" : "I have to be there by 5."
+}, {
+  "divCode" : "031",
+  "divTitle" : "I have to ...",
+  "divContent" : "난 ~해야 돼",
+  "compId" : 123,
+  "compIdx" : 3,
+  "compStmtKr" : "나 기말고사 때문에 벼락치기해야 돼",
+  "compStmtEn" : "I have to cram for my final exam."
+}, {
+  "divCode" : "032",
+  "divTitle" : "I don't have to ...",
+  "divContent" : "난 ~할 필요 없어/~할 생각 없어",
+  "compId" : 124,
+  "compStmtKr" : "나 오늘 이거 제출할 필요 없어.",
+  "compStmtEn" : "I don't have to hand this in today."
+}, {
+  "divCode" : "032",
+  "divTitle" : "I don't have to ...",
+  "divContent" : "난 ~할 필요 없어/~할 생각 없어",
+  "compId" : 125,
+  "compIdx" : 1,
+  "compStmtKr" : "난 걔 말 들을 생각 없어!",
+  "compStmtEn" : "I don't have to listen to him!"
+}, {
+  "divCode" : "032",
+  "divTitle" : "I don't have to ...",
+  "divContent" : "난 ~할 필요 없어/~할 생각 없어",
+  "compId" : 126,
+  "compIdx" : 2,
+  "compStmtKr" : "난 그녀가 하라는 대로 할 생각없어.",
+  "compStmtEn" : "I don't have to do what she says."
+}, {
+  "divCode" : "032",
+  "divTitle" : "I don't have to ...",
+  "divContent" : "난 ~할 필요 없어/~할 생각 없어",
+  "compId" : 127,
+  "compIdx" : 3,
+  "compStmtKr" : "난 이런 대우받을 생각 없어",
+  "compStmtEn" : "I don't have to take this kind of crap."
+}, {
+  "divCode" : "033",
+  "divTitle" : "I'm gonna have to ...",
+  "divContent" : "난 ~해야 할 거야/나 ~해야겠어",
+  "compId" : 128,
+  "compStmtKr" : "내 감정을 그녀에게 말해야겠어",
+  "compStmtEn" : "I'm gonna have to tell her how I feel."
+}, {
+  "divCode" : "033",
+  "divTitle" : "I'm gonna have to ...",
+  "divContent" : "난 ~해야 할 거야/나 ~해야겠어",
+  "compId" : 129,
+  "compIdx" : 1,
+  "compStmtKr" : "다음을 기약해야겠네요.",
+  "compStmtEn" : "I'm gonna have to take a rain check."
+}, {
+  "divCode" : "033",
+  "divTitle" : "I'm gonna have to ...",
+  "divContent" : "난 ~해야 할 거야/나 ~해야겠어",
+  "compId" : 130,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 이따 다시 전화 걸어야겠다.(내가 이따 다시 전화할게)",
+  "compStmtEn" : "I'm gonna have to call you back later."
+}, {
+  "divCode" : "033",
+  "divTitle" : "I'm gonna have to ...",
+  "divContent" : "난 ~해야 할 거야/나 ~해야겠어",
+  "compId" : 131,
+  "compIdx" : 3,
+  "compStmtKr" : "그냥 걔 말을 믿을 수밖에 없겠어",
+  "compStmtEn" : "I'm just gonna have to take his word for it."
+}, {
+  "divCode" : "034",
+  "divTitle" : "You're gonna have to ...",
+  "divContent" : "너 ~해야 할 거야/넌 ~해야겠어",
+  "compId" : 132,
+  "compStmtKr" : "너 이것보단 더 잘해야겠어.(이것밖에 못하겠어?)",
+  "compStmtEn" : "You're gonna have to do better than this."
+}, {
+  "divCode" : "034",
+  "divTitle" : "You're gonna have to ...",
+  "divContent" : "너 ~해야 할 거야/넌 ~해야겠어",
+  "compId" : 133,
+  "compIdx" : 1,
+  "compStmtKr" : "다음번에 다시 오셔야 할 것 같네요.",
+  "compStmtEn" : "You're gonna have to come back another time."
+}, {
+  "divCode" : "034",
+  "divTitle" : "You're gonna have to ...",
+  "divContent" : "너 ~해야 할 거야/넌 ~해야겠어",
+  "compId" : 134,
+  "compIdx" : 2,
+  "compStmtKr" : "너 진실을 받아들여야 할 거야.",
+  "compStmtEn" : "You're gonna have to face the truth."
+}, {
+  "divCode" : "034",
+  "divTitle" : "You're gonna have to ...",
+  "divContent" : "너 ~해야 할 거야/넌 ~해야겠어",
+  "compId" : 135,
+  "compIdx" : 3,
+  "compStmtKr" : "너 결국엔 하나를 선택해야 할 거야.",
+  "compStmtEn" : "You're gonna have to make a choice eventually."
+}, {
+  "divCode" : "035",
+  "divTitle" : "Do I really have to ...?",
+  "divContent" : "나 꼭 ~해야 돼?",
+  "compId" : 136,
+  "compStmtKr" : "나 그거 꼭 먹어야 돼?",
+  "compStmtEn" : "Do I really have to eat that?"
+}, {
+  "divCode" : "035",
+  "divTitle" : "Do I really have to ...?",
+  "divContent" : "나 꼭 ~해야 돼?",
+  "compId" : 137,
+  "compIdx" : 1,
+  "compStmtKr" : "저 꼭 오늘 일해야/출근해야 돼요?",
+  "compStmtEn" : "Do I really have to work today?"
+}, {
+  "divCode" : "035",
+  "divTitle" : "Do I really have to ...?",
+  "divContent" : "나 꼭 ~해야 돼?",
+  "compId" : 138,
+  "compIdx" : 2,
+  "compStmtKr" : "걔를 꼭 초대해야 돼?",
+  "compStmtEn" : "Do I really have to invite him?"
+}, {
+  "divCode" : "035",
+  "divTitle" : "Do I really have to ...?",
+  "divContent" : "나 꼭 ~해야 돼?",
+  "compId" : 139,
+  "compIdx" : 3,
+  "compStmtKr" : "저 이게 꼭 다시 해야 되나요?",
+  "compStmtEn" : "Do I really have to do it over?"
+}, {
+  "divCode" : "036",
+  "divTitle" : "Do you have to ...?",
+  "divContent" : "너 ~해야 돼?/곡~해야겠냐?",
+  "compId" : 140,
+  "compStmtKr" : "너 직장 그만둬야 돼?",
+  "compStmtEn" : "Do you have to quit your job?"
+}, {
+  "divCode" : "036",
+  "divTitle" : "Do you have to ...?",
+  "divContent" : "너 ~해야 돼?/곡~해야겠냐?",
+  "compId" : 141,
+  "compIdx" : 1,
+  "compStmtKr" : "너 8시까지 거기 가야 되는 거야?",
+  "compStmtEn" : "Do you have to be there by 8?"
+}, {
+  "divCode" : "036",
+  "divTitle" : "Do you have to ...?",
+  "divContent" : "너 ~해야 돼?/곡~해야겠냐?",
+  "compId" : 142,
+  "compIdx" : 2,
+  "compStmtKr" : "말을 꼭 그렇게 해야겠냐?",
+  "compStmtEn" : "Do you have to say it like that?"
+}, {
+  "divCode" : "036",
+  "divTitle" : "Do you have to ...?",
+  "divContent" : "너 ~해야 돼?/곡~해야겠냐?",
+  "compId" : 143,
+  "compIdx" : 3,
+  "compStmtKr" : "너 꼭 그렇게 까다롭게 굴어야 되겠나?",
+  "compStmtEn" : "Do you have to be so picky?"
+}, {
+  "divCode" : "037",
+  "divTitle" : "All you have to do is ...",
+  "divContent" : "네가 해야 하는 건 ~뿐이야/넌 ~만 하면 돼",
+  "compId" : 144,
+  "compStmtKr" : "넌 나를 믿기만 하면 돼",
+  "compStmtEn" : "All you have to do is trust me."
+}, {
+  "divCode" : "037",
+  "divTitle" : "All you have to do is ...",
+  "divContent" : "네가 해야 하는 건 ~뿐이야/넌 ~만 하면 돼",
+  "compId" : 145,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 내 질문에 답변만 하면돼.",
+  "compStmtEn" : "All you have to do is answer my question."
+}, {
+  "divCode" : "037",
+  "divTitle" : "All you have to do is ...",
+  "divContent" : "네가 해야 하는 건 ~뿐이야/넌 ~만 하면 돼",
+  "compId" : 146,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 거기 가기만/있기만 하면 돼.",
+  "compStmtEn" : "All you have to do is be there."
+}, {
+  "divCode" : "037",
+  "divTitle" : "All you have to do is ...",
+  "divContent" : "네가 해야 하는 건 ~뿐이야/넌 ~만 하면 돼",
+  "compId" : 147,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 웃으면서 동의하는 척만 하면 돼",
+  "compStmtEn" : "All you have to do is smile and pretend that you agree."
+}, {
+  "divCode" : "038",
+  "divTitle" : "I think (that) ...",
+  "divContent" : "~할/인 것 같아",
+  "compId" : 148,
+  "compStmtKr" : "나 이제 가 봐야 할 것 같아.",
+  "compStmtEn" : "I think I should get going now."
+}, {
+  "divCode" : "038",
+  "divTitle" : "I think (that) ...",
+  "divContent" : "~할/인 것 같아",
+  "compId" : 149,
+  "compIdx" : 1,
+  "compStmtKr" : "나 인터뷰 완전 망친 것 같아.",
+  "compStmtEn" : "I think I bombed the interview."
+}, {
+  "divCode" : "038",
+  "divTitle" : "I think (that) ...",
+  "divContent" : "~할/인 것 같아",
+  "compId" : 150,
+  "compIdx" : 2,
+  "compStmtKr" : "너 과민반응을 보이는 것 같아.",
+  "compStmtEn" : "I think you're overreacting."
+}, {
+  "divCode" : "038",
+  "divTitle" : "I think (that) ...",
+  "divContent" : "~할/인 것 같아",
+  "compId" : 151,
+  "compIdx" : 3,
+  "compStmtKr" : "걔 자만심이 심한 것 같아.",
+  "compStmtEn" : "I think he's got a big ego."
+}, {
+  "divCode" : "039",
+  "divTitle" : "I've been thinking about ...",
+  "divContent" : "난 ~에 대해 계속 생각하고 있었어/생각해 보는 중이야",
+  "compId" : 152,
+  "compStmtKr" : "계속 너에 대해 생각하고 있었어",
+  "compStmtEn" : "I've been thinking about you."
+}, {
+  "divCode" : "039",
+  "divTitle" : "I've been thinking about ...",
+  "divContent" : "난 ~에 대해 계속 생각하고 있었어/생각해 보는 중이야",
+  "compId" : 153,
+  "compIdx" : 1,
+  "compStmtKr" : "다른 학교로 전학 가는 거에 대해 생각해 보는 중이야",
+  "compStmtEn" : "I've been thinking about transferring to another school."
+}, {
+  "divCode" : "039",
+  "divTitle" : "I've been thinking about ...",
+  "divContent" : "난 ~에 대해 계속 생각하고 있었어/생각해 보는 중이야",
+  "compId" : 154,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 아까 한 말에 대해 계속 생각하고 있어어.",
+  "compStmtEn" : "I've been thinking about what you said earlier."
+}, {
+  "divCode" : "039",
+  "divTitle" : "I've been thinking about ...",
+  "divContent" : "난 ~에 대해 계속 생각하고 있었어/생각해 보는 중이야",
+  "compId" : 155,
+  "compIdx" : 3,
+  "compStmtKr" : "전공 바꾸는 것에 대해 생각 중이야.",
+  "compStmtEn" : "I've been thinking about changing my major."
+}, {
+  "divCode" : "040",
+  "divTitle" : "I don't think (that) ...",
+  "divContent" : "~인 것 같지 않아",
+  "compId" : 156,
+  "compStmtKr" : "넌 더 이상 그를 사랑하지 않는 것 같아",
+  "compStmtEn" : "I don't think I love him anymore."
+}, {
+  "divCode" : "040",
+  "divTitle" : "I don't think (that) ...",
+  "divContent" : "~인 것 같지 않아",
+  "compId" : 157,
+  "compIdx" : 1,
+  "compStmtKr" : "그건 문제가 안 될 것 같아",
+  "compStmtEn" : "I don't think that will be an issue."
+}, {
+  "divCode" : "040",
+  "divTitle" : "I don't think (that) ...",
+  "divContent" : "~인 것 같지 않아",
+  "compId" : 158,
+  "compIdx" : 2,
+  "compStmtKr" : "너한테 설명할 의무가 없는 것 같은데",
+  "compStmtEn" : "I don't think I owe you an explanation."
+}, {
+  "divCode" : "040",
+  "divTitle" : "I don't think (that) ...",
+  "divContent" : "~인 것 같지 않아",
+  "compId" : 159,
+  "compIdx" : 3,
+  "compStmtKr" : "나한테는 이 일이 안 맞는 것 같아",
+  "compStmtEn" : "I don't think I'm cut out for this job."
+}, {
+  "divCode" : "041",
+  "divTitle" : "I don't think (that) I can ...",
+  "divContent" : "나 ~ 못할 것 같아",
+  "compId" : 160,
+  "compStmtKr" : "네 파티에 못 갈 석 같아",
+  "compStmtEn" : "I don't think I can come to your party."
+}, {
+  "divCode" : "041",
+  "divTitle" : "I don't think (that) I can ...",
+  "divContent" : "나 ~ 못할 것 같아",
+  "compId" : 161,
+  "compIdx" : 1,
+  "compStmtKr" : "이제 더 이상 못 참을 것 같아.",
+  "compStmtEn" : "I don't think I can take it anymore."
+}, {
+  "divCode" : "041",
+  "divTitle" : "I don't think (that) I can ...",
+  "divContent" : "나 ~ 못할 것 같아",
+  "compId" : 162,
+  "compIdx" : 2,
+  "compStmtKr" : "저 오늘 출근 못할 것 같아요.",
+  "compStmtEn" : "I don't think I can make it to work today."
+}, {
+  "divCode" : "041",
+  "divTitle" : "I don't think (that) I can ...",
+  "divContent" : "나 ~ 못할 것 같아",
+  "compId" : 163,
+  "compIdx" : 3,
+  "compStmtKr" : "난 이 헤어스타일을 소화하지 못할 것 같아(안 어울릴 것 같아)",
+  "compStmtEn" : "I don't think I can pull this hairstyle off."
+}, {
+  "divCode" : "042",
+  "divTitle" : "What do you think (that) ...?",
+  "divContent" : "넌 ~이 뭐라고 생각해?",
+  "compId" : 164,
+  "compStmtKr" : "넌 걔가 뭘 했다고 생각해?",
+  "compStmtEn" : "What do you think he did?"
+}, {
+  "divCode" : "042",
+  "divTitle" : "What do you think (that) ...?",
+  "divContent" : "넌 ~이 뭐라고 생각해?",
+  "compId" : 165,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 그녀가 뭐라고 말할 거라고 생각해?",
+  "compStmtEn" : "What do you think she'll say?"
+}, {
+  "divCode" : "042",
+  "divTitle" : "What do you think (that) ...?",
+  "divContent" : "넌 ~이 뭐라고 생각해?",
+  "compId" : 166,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 내가 뭘 해야 한다고 생각해?",
+  "compStmtEn" : "What do you think I should do?"
+}, {
+  "divCode" : "042",
+  "divTitle" : "What do you think (that) ...?",
+  "divContent" : "넌 ~이 뭐라고 생각해?",
+  "compId" : 167,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 해결책이 뭐라고 생각해?",
+  "compStmtEn" : "What do you think the solution is?"
+}, {
+  "divCode" : "043",
+  "divTitle" : "You think (that) ...?",
+  "divContent" : "넌 ~인 것 같아?/넌 ~이라고 생각한단 말이야?",
+  "compId" : 168,
+  "compStmtKr" : "넌 재가 거짓말하는 것 같아?",
+  "compStmtEn" : "You think he's lying?"
+}, {
+  "divCode" : "043",
+  "divTitle" : "You think (that) ...?",
+  "divContent" : "넌 ~인 것 같아?/넌 ~이라고 생각한단 말이야?",
+  "compId" : 169,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 그녀가 바람을 피우고 있는 것 같아?",
+  "compStmtEn" : "You think she's having an affair?"
+}, {
+  "divCode" : "043",
+  "divTitle" : "You think (that) ...?",
+  "divContent" : "넌 ~인 것 같아?/넌 ~이라고 생각한단 말이야?",
+  "compId" : 170,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 그럼 내가 이렇게 되길 원한 것 같아?(누군 이렇게 되길 바란 줄 알아?)",
+  "compStmtEn" : "You think I wanted this to happen?"
+}, {
+  "divCode" : "043",
+  "divTitle" : "You think (that) ...?",
+  "divContent" : "넌 ~인 것 같아?/넌 ~이라고 생각한단 말이야?",
+  "compId" : 171,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 네가 다른 사람들보다 낫다고 생각해?",
+  "compStmtEn" : "You think you're better than everyone else?"
+}, {
+  "divCode" : "044",
+  "divTitle" : "I know you ...",
+  "divContent" : "난 네가 ~이라는 걸 알고 있어/난 ~을 다 알아",
+  "compId" : 172,
+  "compStmtKr" : "난 네가 사랑에 빠져 있는 거 다 알아.",
+  "compStmtEn" : "I know you're in love."
+}, {
+  "divCode" : "044",
+  "divTitle" : "I know you ...",
+  "divContent" : "난 네가 ~이라는 걸 알고 있어/난 ~을 다 알아",
+  "compId" : 173,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 내 일기 몰래 훔쳐본 거 다 알아.",
+  "compStmtEn" : "I know you took a peek at my diary."
+}, {
+  "divCode" : "044",
+  "divTitle" : "I know you ...",
+  "divContent" : "난 네가 ~이라는 걸 알고 있어/난 ~을 다 알아",
+  "compId" : 174,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 이별 때문에 힘들어 하는 거 다 알아.",
+  "compStmtEn" : "I know you're going through a hard breakup."
+}, {
+  "divCode" : "044",
+  "divTitle" : "I know you ...",
+  "divContent" : "난 네가 ~이라는 걸 알고 있어/난 ~을 다 알아",
+  "compId" : 175,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 미드라면 사족 못 쓰는 거 다 알아.",
+  "compStmtEn" : "I know you're a sucker for American TV series."
+}, {
+  "divCode" : "045",
+  "divTitle" : "I don't know if ...",
+  "divContent" : "~인지 모르겠어.",
+  "compId" : 176,
+  "compStmtKr" : "내가 널 믿어야 할지 모르겠어.",
+  "compStmtEn" : "I don't know if I should believe you."
+}, {
+  "divCode" : "045",
+  "divTitle" : "I don't know if ...",
+  "divContent" : "~인지 모르겠어.",
+  "compId" : 177,
+  "compIdx" : 1,
+  "compStmtKr" : "그녀도 나를 좋아하는지 아닌지 모르겠어",
+  "compStmtEn" : "I don't know if she likes me back."
+}, {
+  "divCode" : "045",
+  "divTitle" : "I don't know if ...",
+  "divContent" : "~인지 모르겠어.",
+  "compId" : 178,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 그걸 감당할 수 있을지 모르겠어",
+  "compStmtEn" : "I don't know if I can handle it."
+}, {
+  "divCode" : "045",
+  "divTitle" : "I don't know if ...",
+  "divContent" : "~인지 모르겠어.",
+  "compId" : 179,
+  "compIdx" : 3,
+  "compStmtKr" : "걔가 널 좋아하는지 아닌지 모르겠어.",
+  "compStmtEn" : "I don't know if he has feelings for you."
+}, {
+  "divCode" : "046",
+  "divTitle" : "I don't know W4H",
+  "divContent" : "무엇을/언제/어떻게/어디에서/왜 ~을 모르겠어",
+  "compId" : 180,
+  "compStmtKr" : "집에 언제 도착할지 모르겠어",
+  "compStmtEn" : "I don't know when I'll be home."
+}, {
+  "divCode" : "046",
+  "divTitle" : "I don't know W4H",
+  "divContent" : "무엇을/언제/어떻게/어디에서/왜 ~을 모르겠어",
+  "compId" : 181,
+  "compIdx" : 1,
+  "compStmtKr" : "걔가 왜 나한테 화났는지 모르겠어.",
+  "compStmtEn" : "I don't know why he's mad at me."
+}, {
+  "divCode" : "046",
+  "divTitle" : "I don't know W4H",
+  "divContent" : "무엇을/언제/어떻게/어디에서/왜 ~을 모르겠어",
+  "compId" : 182,
+  "compIdx" : 2,
+  "compStmtKr" : "난 내가 뭘 하고 싶은지 모르겠어",
+  "compStmtEn" : "I don't know what I want to do with my life."
+}, {
+  "divCode" : "046",
+  "divTitle" : "I don't know W4H",
+  "divContent" : "무엇을/언제/어떻게/어디에서/왜 ~을 모르겠어",
+  "compId" : 183,
+  "compIdx" : 3,
+  "compStmtKr" : "사태가 어떻게 해서 걷잡을 수 없게 됐는지 모르겠어",
+  "compStmtEn" : "I don't know how things got out of control."
+}, {
+  "divCode" : "047",
+  "divTitle" : "I know ..., but ...",
+  "divContent" : "~이라는 거 알지만/아는데...",
+  "compId" : 184,
+  "compStmtKr" : "바쁜 거 아는데, 잠깐 얘기할 수 있을까?",
+  "compStmtEn" : "I know you're busy, but can I talk to you for a second?"
+}, {
+  "divCode" : "047",
+  "divTitle" : "I know ..., but ...",
+  "divContent" : "~이라는 거 알지만/아는데...",
+  "compId" : 185,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 걔 안 좋아하는 거 알지만, 잘해 줘.",
+  "compStmtEn" : "I know you don't like him, but be nice."
+}, {
+  "divCode" : "047",
+  "divTitle" : "I know ..., but ...",
+  "divContent" : "~이라는 거 알지만/아는데...",
+  "compId" : 186,
+  "compIdx" : 2,
+  "compStmtKr" : "하기 싫은 건 아는데, 해야 돼.",
+  "compStmtEn" : "I know you don't want to, but you have to"
+}, {
+  "divCode" : "047",
+  "divTitle" : "I know ..., but ...",
+  "divContent" : "~이라는 거 알지만/아는데...",
+  "compId" : 187,
+  "compIdx" : 3,
+  "compStmtKr" : "걔한테 화난 거 아는데, 계속 그러고 있을 순 없잖아.",
+  "compStmtEn" : "I know you're mad at him, but you can't stay angry forever."
+}, {
+  "divCode" : "048",
+  "divTitle" : "All I know is ...",
+  "divContent" : "내가 아는 건 ~뿐이야",
+  "compId" : 188,
+  "compStmtKr" : "내가 아는 건 걔가 널 만나기 싫어한다는 것뿐이야.",
+  "compStmtEn" : "All I know is he doesn't wanna see you."
+}, {
+  "divCode" : "048",
+  "divTitle" : "All I know is ...",
+  "divContent" : "내가 아는 건 ~뿐이야",
+  "compId" : 189,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 아는 건 그가 아직도 널 사랑한다는 거야.",
+  "compStmtEn" : "All I know is he's still in love with you."
+}, {
+  "divCode" : "048",
+  "divTitle" : "All I know is ...",
+  "divContent" : "내가 아는 건 ~뿐이야",
+  "compId" : 190,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 아는 건 그는 포기하는 사람이 아니라는 거야.",
+  "compStmtEn" : "All I know is he's not a quitter."
+}, {
+  "divCode" : "048",
+  "divTitle" : "All I know is ...",
+  "divContent" : "내가 아는 건 ~뿐이야",
+  "compId" : 191,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 아는 건 넌 툭하면 나와의 약속을 어긴다는 거야.",
+  "compStmtEn" : "All I know is you flake out on me all the time."
+}, {
+  "divCode" : "049",
+  "divTitle" : "You know what ...?",
+  "divContent" : "~이 뭔지 알아?",
+  "compId" : 192,
+  "compStmtKr" : "내 말이 뭔지 알겠어?",
+  "compStmtEn" : "You know what I'm saying?"
+}, {
+  "divCode" : "049",
+  "divTitle" : "You know what ...?",
+  "divContent" : "~이 뭔지 알아?",
+  "compId" : 193,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 이해 안되는 게 뭔지 알아?",
+  "compStmtEn" : "You know what I don't get?"
+}, {
+  "divCode" : "049",
+  "divTitle" : "You know what ...?",
+  "divContent" : "~이 뭔지 알아?",
+  "compId" : 194,
+  "compIdx" : 2,
+  "compStmtKr" : "여기서 웃긴 게 뭔지 알아?",
+  "compStmtEn" : "You know what's funny about this?"
+}, {
+  "divCode" : "049",
+  "divTitle" : "You know what ...?",
+  "divContent" : "~이 뭔지 알아?",
+  "compId" : 195,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 너의 어떤 점을 좋아하는지 알아?",
+  "compStmtEn" : "You know what I like about you?"
+}, {
+  "divCode" : "050",
+  "divTitle" : "You don't even know ...",
+  "divContent" : "넌 ~도 모르잖아",
+  "compId" : 196,
+  "compStmtKr" : "넌 브라이언을 잘 알지도 못하잖아.",
+  "compStmtEn" : "You don't even know Brian well."
+}, {
+  "divCode" : "050",
+  "divTitle" : "You don't even know ...",
+  "divContent" : "넌 ~도 모르잖아",
+  "compId" : 197,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 사랑이 뭔지도 모르잖아.",
+  "compStmtEn" : "You don't even know what love is."
+}, {
+  "divCode" : "050",
+  "divTitle" : "You don't even know ...",
+  "divContent" : "넌 ~도 모르잖아",
+  "compId" : 198,
+  "compIdx" : 2,
+  "compStmtKr" : "자기는 오늘이 우리 1년 기념일인지도 모르는구나.",
+  "compStmtEn" : "You don't even know that today is our one-year anniversary."
+}, {
+  "divCode" : "050",
+  "divTitle" : "You don't even know ...",
+  "divContent" : "넌 ~도 모르잖아",
+  "compId" : 199,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 사정을 다 알지도 못하잖아.",
+  "compStmtEn" : "You don't even know the whole story."
+}, {
+  "divCode" : "051",
+  "divTitle" : "You never know when ...",
+  "divContent" : "언제 ~일지는 모르는 거잖아",
+  "compId" : 200,
+  "compStmtKr" : "언제 상황이 나아질지 모르잖아.",
+  "compStmtEn" : "You never know when things will get better."
+}, {
+  "divCode" : "051",
+  "divTitle" : "You never know when ...",
+  "divContent" : "언제 ~일지는 모르는 거잖아",
+  "compId" : 201,
+  "compIdx" : 1,
+  "compStmtKr" : "언제 내 도움이 필요할지 모르잖아.",
+  "compStmtEn" : "You never know when you might need my help."
+}, {
+  "divCode" : "051",
+  "divTitle" : "You never know when ...",
+  "divContent" : "언제 ~일지는 모르는 거잖아",
+  "compId" : 202,
+  "compIdx" : 2,
+  "compStmtKr" : "언제 짐이 폭발할지는 아무도 몰라",
+  "compStmtEn" : "You never know when Jim is going to explode."
+}, {
+  "divCode" : "051",
+  "divTitle" : "You never know when ...",
+  "divContent" : "언제 ~일지는 모르는 거잖아",
+  "compId" : 203,
+  "compIdx" : 3,
+  "compStmtKr" : "언제 그게 쓸모 있어질지 모르잖아",
+  "compStmtEn" : "You never know when it'll come in handy."
+}, {
+  "divCode" : "052",
+  "divTitle" : "I have to say ...",
+  "divContent" : "정말이지, ~",
+  "compId" : 204,
+  "compStmtKr" : "정말이지, 나 쇼크 받았다고",
+  "compStmtEn" : "I have to say, I'm shocked."
+}, {
+  "divCode" : "052",
+  "divTitle" : "I have to say ...",
+  "divContent" : "정말이지, ~",
+  "compId" : 205,
+  "compIdx" : 1,
+  "compStmtKr" : "정말이지, 넌 날 실망시켰어",
+  "compStmtEn" : "I have to say, you let me down."
+}, {
+  "divCode" : "052",
+  "divTitle" : "I have to say ...",
+  "divContent" : "정말이지, ~",
+  "compId" : 206,
+  "compIdx" : 2,
+  "compStmtKr" : "정말이지, 너 오늘 아주 멋져 보이네!",
+  "compStmtEn" : "I have to say, you look fabulous today!"
+}, {
+  "divCode" : "052",
+  "divTitle" : "I have to say ...",
+  "divContent" : "정말이지, ~",
+  "compId" : 207,
+  "compIdx" : 3,
+  "compStmtKr" : "정말이지, 이거 참 기발한 아이디어야!",
+  "compStmtEn" : "I have to say, this is a brilliant idea!"
+}, {
+  "divCode" : "053",
+  "divTitle" : "I say ...",
+  "divContent" : "내가 한마디하건대 ~/내 생각에는 ~",
+  "compId" : 208,
+  "compStmtKr" : "내가 한마디하건대 우리는 그를 도와야겠어.",
+  "compStmtEn" : "I say we should help him."
+}, {
+  "divCode" : "053",
+  "divTitle" : "I say ...",
+  "divContent" : "내가 한마디하건대 ~/내 생각에는 ~",
+  "compId" : 209,
+  "compIdx" : 1,
+  "compStmtKr" : "내 생각에는 지금 당장 가서 걔한테 말해야겠어",
+  "compStmtEn" : "I say we go talk to him right now."
+}, {
+  "divCode" : "053",
+  "divTitle" : "I say ...",
+  "divContent" : "내가 한마디하건대 ~/내 생각에는 ~",
+  "compId" : 210,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 보기엔 네가 먼저 사과해야 되겠어.",
+  "compStmtEn" : "I say you should apologize first."
+}, {
+  "divCode" : "053",
+  "divTitle" : "I say ...",
+  "divContent" : "내가 한마디하건대 ~/내 생각에는 ~",
+  "compId" : 211,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 보기엔 우리 이거 비밀로 해야겠어.",
+  "compStmtEn" : "I say we keep this between us."
+}, {
+  "divCode" : "054",
+  "divTitle" : "They say ...",
+  "divContent" : "~이라고들 하지/원래 ~한 거잖아",
+  "compId" : 212,
+  "compStmtKr" : "캘리포니아에는 계절이 없다고들 하지.",
+  "compStmtEn" : "They say there are no seasons in California."
+}, {
+  "divCode" : "054",
+  "divTitle" : "They say ...",
+  "divContent" : "~이라고들 하지/원래 ~한 거잖아",
+  "compId" : 213,
+  "compIdx" : 1,
+  "compStmtKr" : "사랑은 모든 걸 정복한다고들 하지",
+  "compStmtEn" : "They say love conquers all."
+}, {
+  "divCode" : "054",
+  "divTitle" : "They say ...",
+  "divContent" : "~이라고들 하지/원래 ~한 거잖아",
+  "compId" : 214,
+  "compIdx" : 2,
+  "compStmtKr" : "반복해서 연습하면 완벽해진다고들 하지",
+  "compStmtEn" : "They say practice makes perfect."
+}, {
+  "divCode" : "054",
+  "divTitle" : "They say ...",
+  "divContent" : "~이라고들 하지/원래 ~한 거잖아",
+  "compId" : 215,
+  "compIdx" : 3,
+  "compStmtKr" : "모르는 게 약이라고들 하지",
+  "compStmtEn" : "They say ignorance is bliss."
+}, {
+  "divCode" : "055",
+  "divTitle" : "Let's say ...",
+  "divContent" : "~이라고 치자/~이라고 가정해 보자",
+  "compId" : 216,
+  "compStmtKr" : "네 말이 맞다고 치자.",
+  "compStmtEn" : "Let's say you're right."
+}, {
+  "divCode" : "055",
+  "divTitle" : "Let's say ...",
+  "divContent" : "~이라고 치자/~이라고 가정해 보자",
+  "compId" : 217,
+  "compIdx" : 1,
+  "compStmtKr" : "그녀도 너를 좋아한다고 치자.",
+  "compStmtEn" : "Let's say she likes you, too."
+}, {
+  "divCode" : "055",
+  "divTitle" : "Let's say ...",
+  "divContent" : "~이라고 치자/~이라고 가정해 보자",
+  "compId" : 218,
+  "compIdx" : 2,
+  "compStmtKr" : "제이슨이 사실을 말하고 있다고 치자.",
+  "compStmtEn" : "Let's say Jason is telling the truth."
+}, {
+  "divCode" : "055",
+  "divTitle" : "Let's say ...",
+  "divContent" : "~이라고 치자/~이라고 가정해 보자",
+  "compId" : 219,
+  "compIdx" : 3,
+  "compStmtKr" : "그게 오해였다고 치자.",
+  "compStmtEn" : "Let's say it was a misunderstanding."
+}, {
+  "divCode" : "056",
+  "divTitle" : "Let's just say ...",
+  "divContent" : "~이라고만 말해 두지",
+  "compId" : 220,
+  "compStmtKr" : "걔랑 나 사이는 끝이라고만 말해 둘께",
+  "compStmtEn" : "Let's just say he and I are through."
+}, {
+  "divCode" : "056",
+  "divTitle" : "Let's just say ...",
+  "divContent" : "~이라고만 말해 두지",
+  "compId" : 221,
+  "compIdx" : 1,
+  "compStmtKr" : "데이트가 좋게 끝나진 않았다고만 말해 두지.",
+  "compStmtEn" : "Let's just say the date didn't end well."
+}, {
+  "divCode" : "056",
+  "divTitle" : "Let's just say ...",
+  "divContent" : "~이라고만 말해 두지",
+  "compId" : 222,
+  "compIdx" : 2,
+  "compStmtKr" : "걔가 이젠 널 귀찮게 할 일은 없을 거라고만 말해 두지.",
+  "compStmtEn" : "Let's just say he won't bother you anymore."
+}, {
+  "divCode" : "056",
+  "divTitle" : "Let's just say ...",
+  "divContent" : "~이라고만 말해 두지",
+  "compId" : 223,
+  "compIdx" : 3,
+  "compStmtKr" : "난 다시는 제니하고 같이 일 안할 거라고만 말해 둘게.",
+  "compStmtEn" : "Let's just say I won't be working with Jenny again."
+}, {
+  "divCode" : "057",
+  "divTitle" : "It's/That's like saying ...",
+  "divContent" : "그건 ~이라고 말하는 거나 마찬가지야",
+  "compId" : 224,
+  "compStmtKr" : "그건 베컴이 축구를 못한다고 하는 거나 같잖아",
+  "compStmtEn" : "It's like saying Beckham sucks at soccer."
+}, {
+  "divCode" : "057",
+  "divTitle" : "It's/That's like saying ...",
+  "divContent" : "그건 ~이라고 말하는 거나 마찬가지야",
+  "compId" : 225,
+  "compIdx" : 1,
+  "compStmtKr" : "그건 내가 아인슈타인이라고 말하는 거나 같잖아",
+  "compStmtEn" : "That's like saying you're Einstein."
+}, {
+  "divCode" : "057",
+  "divTitle" : "It's/That's like saying ...",
+  "divContent" : "그건 ~이라고 말하는 거나 마찬가지야",
+  "compId" : 226,
+  "compIdx" : 2,
+  "compStmtKr" : "그건 도독질해도 괜찮다고 말하는 거나 마찬가지잖아",
+  "compStmtEn" : "It's like saying it's okay to steal."
+}, {
+  "divCode" : "057",
+  "divTitle" : "It's/That's like saying ...",
+  "divContent" : "그건 ~이라고 말하는 거나 마찬가지야",
+  "compId" : 227,
+  "compIdx" : 3,
+  "compStmtKr" : "그건 넌 아무 관련 없다고 말하는 거나 마찬가지잖아",
+  "compStmtEn" : "That's like saying you had nothing to do with it."
+}, {
+  "divCode" : "058",
+  "divTitle" : "S was/were like, ...",
+  "divContent" : "~이라고 말했지/생각했지",
+  "compId" : 228,
+  "compStmtKr" : "난 \"이거 완전 후졌어.\"라고 말했지.",
+  "compStmtEn" : "I was like, \"This totally sucks.\""
+}, {
+  "divCode" : "058",
+  "divTitle" : "S was/were like, ...",
+  "divContent" : "~이라고 말했지/생각했지",
+  "compId" : 229,
+  "compIdx" : 1,
+  "compStmtKr" : "그랬더니 걔가 \"닥쳐!\"라고 하는 거 있지.",
+  "compStmtEn" : "And then he was like, \"Shut up!\""
+}, {
+  "divCode" : "058",
+  "divTitle" : "S was/were like, ...",
+  "divContent" : "~이라고 말했지/생각했지",
+  "compId" : 230,
+  "compIdx" : 2,
+  "compStmtKr" : "걔가 막 이러더라고, \"으웩! 이거 뭐야?\"",
+  "compStmtEn" : "She was like, \"Eww! What is this?\""
+}, {
+  "divCode" : "058",
+  "divTitle" : "S was/were like, ...",
+  "divContent" : "~이라고 말했지/생각했지",
+  "compId" : 231,
+  "compIdx" : 3,
+  "compStmtKr" : "그래서 내가 막 \"정말이라니까!\"라고 했어.",
+  "compStmtEn" : "So I was like, \"I'm telling you!\""
+}, {
+  "divCode" : "059",
+  "divTitle" : "I told you to ...",
+  "divContent" : "내가 너한테 ~하라고 했잖아.",
+  "compId" : 232,
+  "compStmtKr" : "내가 에밀리 가까이 가지 말라고 했잖아",
+  "compStmtEn" : "I told you to stay away from Emily."
+}, {
+  "divCode" : "059",
+  "divTitle" : "I told you to ...",
+  "divContent" : "내가 너한테 ~하라고 했잖아.",
+  "compId" : 233,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 그 얘기 그만하라고 했잖아.",
+  "compStmtEn" : "I told you to drop the subject."
+}, {
+  "divCode" : "059",
+  "divTitle" : "I told you to ...",
+  "divContent" : "내가 너한테 ~하라고 했잖아.",
+  "compId" : 234,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 그쯤 해 두라고 했잖아.",
+  "compStmtEn" : "I told you to let it go."
+}, {
+  "divCode" : "059",
+  "divTitle" : "I told you to ...",
+  "divContent" : "내가 너한테 ~하라고 했잖아.",
+  "compId" : 235,
+  "compIdx" : 3,
+  "compStmtKr" : "네 일이나 신경 쓰라고 했잖아.",
+  "compStmtEn" : "I told you to mind your own business."
+}, {
+  "divCode" : "060",
+  "divTitle" : "I told you not to ...",
+  "divContent" : "너한테 ~하지 말라고 했잖아",
+  "compId" : 236,
+  "compStmtKr" : "아무 말도 하지 말라고 그랬잖아!",
+  "compStmtEn" : "I told you not to say anything!"
+}, {
+  "divCode" : "060",
+  "divTitle" : "I told you not to ...",
+  "divContent" : "너한테 ~하지 말라고 했잖아",
+  "compId" : 237,
+  "compIdx" : 1,
+  "compStmtKr" : "그러지 좀 말라고 그랬잖아",
+  "compStmtEn" : "I told you not to be like that."
+}, {
+  "divCode" : "060",
+  "divTitle" : "I told you not to ...",
+  "divContent" : "너한테 ~하지 말라고 했잖아",
+  "compId" : 238,
+  "compIdx" : 2,
+  "compStmtKr" : "너 걔 건드리지 말라고 그랬잖아.",
+  "compStmtEn" : "I told you not to mess with him."
+}, {
+  "divCode" : "060",
+  "divTitle" : "I told you not to ...",
+  "divContent" : "너한테 ~하지 말라고 했잖아",
+  "compId" : 239,
+  "compIdx" : 3,
+  "compStmtKr" : "그렇게 치사하게 굴지 말라고 그랬잖아.",
+  "compStmtEn" : "I told you not to be so cheap."
+}, {
+  "divCode" : "061",
+  "divTitle" : "Please tell me ...",
+  "divContent" : "~이라고 말해 줘",
+  "compId" : 240,
+  "compStmtKr" : "올 거라고 말해 줘",
+  "compStmtEn" : "Please tell me you'll come."
+}, {
+  "divCode" : "061",
+  "divTitle" : "Please tell me ...",
+  "divContent" : "~이라고 말해 줘",
+  "compId" : 241,
+  "compIdx" : 1,
+  "compStmtKr" : "좋은 소식이 있다고 말해 줘",
+  "compStmtEn" : "Please tell me you've got good news."
+}, {
+  "divCode" : "061",
+  "divTitle" : "Please tell me ...",
+  "divContent" : "~이라고 말해 줘",
+  "compId" : 242,
+  "compIdx" : 2,
+  "compStmtKr" : "나를 도로 받아주겠다고 말해 줘",
+  "compStmtEn" : "Please tell me you'll take me back."
+}, {
+  "divCode" : "061",
+  "divTitle" : "Please tell me ...",
+  "divContent" : "~이라고 말해 줘",
+  "compId" : 243,
+  "compIdx" : 3,
+  "compStmtKr" : "우리가 해어지는 게 아니라고 말해줘",
+  "compStmtEn" : "Please tell me we're not breaking up."
+}, {
+  "divCode" : "062",
+  "divTitle" : "You're telling me (that) ...?",
+  "divContent" : "너 지금 ~이라는 거야?",
+  "compId" : 244,
+  "compStmtKr" : "나더러 거짓말 하라는 거야?",
+  "compStmtEn" : "You're telling me I should lie?"
+}, {
+  "divCode" : "062",
+  "divTitle" : "You're telling me (that) ...?",
+  "divContent" : "너 지금 ~이라는 거야?",
+  "compId" : 245,
+  "compIdx" : 1,
+  "compStmtKr" : "저 외출금지라고 말씀하시는 거예요. 엄마?",
+  "compStmtEn" : "You're telling me I'm grounded, Mom?"
+}, {
+  "divCode" : "062",
+  "divTitle" : "You're telling me (that) ...?",
+  "divContent" : "너 지금 ~이라는 거야?",
+  "compId" : 246,
+  "compIdx" : 2,
+  "compStmtKr" : "나 이제 다시 안 보겠다는 거야?",
+  "compStmtEn" : "You're telling me you're not gonna see me again?"
+}, {
+  "divCode" : "062",
+  "divTitle" : "You're telling me (that) ...?",
+  "divContent" : "너 지금 ~이라는 거야?",
+  "compId" : 247,
+  "compIdx" : 3,
+  "compStmtKr" : "저 대신 그를 승진시키신다는 말씀입니까?",
+  "compStmtEn" : "You're telling me he's being promoted over me?"
+}, {
+  "divCode" : "063",
+  "divTitle" : "I can tell ...",
+  "divContent" : "난 ~을 알 수 있어",
+  "compId" : 248,
+  "compStmtKr" : "네가 거짓말하고 있다는 걸 알 수 있어.",
+  "compStmtEn" : "I can tell you're lying."
+}, {
+  "divCode" : "063",
+  "divTitle" : "I can tell ...",
+  "divContent" : "난 ~을 알 수 있어",
+  "compId" : 249,
+  "compIdx" : 1,
+  "compStmtKr" : "그녀가 뭔가 숨기고 있다는 걸 알 수 있어",
+  "compStmtEn" : "I can tell she's hiding something."
+}, {
+  "divCode" : "063",
+  "divTitle" : "I can tell ...",
+  "divContent" : "난 ~을 알 수 있어",
+  "compId" : 250,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 그녀한테 미쳐 있다는 걸 알 수 있어",
+  "compStmtEn" : "I can tell you're crazy about her."
+}, {
+  "divCode" : "063",
+  "divTitle" : "I can tell ...",
+  "divContent" : "난 ~을 알 수 있어",
+  "compId" : 251,
+  "compIdx" : 3,
+  "compStmtKr" : "네게 뭔가 고민거리가 있다는 걸 알 수 있어.",
+  "compStmtEn" : "I can tell something's troubling you."
+}, {
+  "divCode" : "064",
+  "divTitle" : "S talk about how ...",
+  "divContent" : "~이라고 하더라",
+  "compId" : 252,
+  "compStmtKr" : "그녀는 툭하면 제이가 자길 볼행하게 한다고 하더라.",
+  "compStmtEn" : "She always talks about how Jay makes her unhappy."
+}, {
+  "divCode" : "064",
+  "divTitle" : "S talk about how ...",
+  "divContent" : "~이라고 하더라",
+  "compId" : 253,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 툭하면 변하겠다고 하잖아",
+  "compStmtEn" : "You always talk about how you're going to change."
+}, {
+  "divCode" : "064",
+  "divTitle" : "S talk about how ...",
+  "divContent" : "~이라고 하더라",
+  "compId" : 254,
+  "compIdx" : 2,
+  "compStmtKr" : "걘 자기 삶이 불공평하다 그러더라고",
+  "compStmtEn" : "He talked about how his life is so unfair."
+}, {
+  "divCode" : "064",
+  "divTitle" : "S talk about how ...",
+  "divContent" : "~이라고 하더라",
+  "compId" : 255,
+  "compIdx" : 3,
+  "compStmtKr" : "그녀는 루저들하고는 사귀기 싫다고 하더라고.",
+  "compStmtEn" : "She talked about how she doesn't wanna date losers."
+}, {
+  "divCode" : "065",
+  "divTitle" : "I (just) need to ...",
+  "divContent" : "난 (단지) ~해야 돼/~(만) 하면 돼",
+  "compId" : 256,
+  "compStmtKr" : "나 샤워 좀해야 되겠어",
+  "compStmtEn" : "I need to take a shower."
+}, {
+  "divCode" : "065",
+  "divTitle" : "I (just) need to ...",
+  "divContent" : "난 (단지) ~해야 돼/~(만) 하면 돼",
+  "compId" : 257,
+  "compIdx" : 1,
+  "compStmtKr" : "나 오줌 좀 누워야겠어",
+  "compStmtEn" : "I need to pee."
+}, {
+  "divCode" : "065",
+  "divTitle" : "I (just) need to ...",
+  "divContent" : "난 (단지) ~해야 돼/~(만) 하면 돼",
+  "compId" : 258,
+  "compIdx" : 2,
+  "compStmtKr" : "너한테 몇 가지만 물어보면 돼",
+  "compStmtEn" : "I just need to ask you some questions."
+}, {
+  "divCode" : "065",
+  "divTitle" : "I (just) need to ...",
+  "divContent" : "난 (단지) ~해야 돼/~(만) 하면 돼",
+  "compId" : 259,
+  "compIdx" : 3,
+  "compStmtKr" : "나 현금출납기에서 돈만 좀 빼면 돼",
+  "compStmtEn" : "I just need to take out some cash from the ATM."
+}, {
+  "divCode" : "066",
+  "divTitle" : "We'll need to ...",
+  "divContent" : "우리 ~해야 할 거야",
+  "compId" : 260,
+  "compStmtKr" : "우리 더 빨리 일해야겠다",
+  "compStmtEn" : "We'll need to work faster."
+}, {
+  "divCode" : "066",
+  "divTitle" : "We'll need to ...",
+  "divContent" : "우리 ~해야 할 거야",
+  "compId" : 261,
+  "compIdx" : 1,
+  "compStmtKr" : "더 면밀히 봐야겠군요",
+  "compStmtEn" : "We'll need to look more closely."
+}, {
+  "divCode" : "066",
+  "divTitle" : "We'll need to ...",
+  "divContent" : "우리 ~해야 할 거야",
+  "compId" : 262,
+  "compIdx" : 2,
+  "compStmtKr" : "그녀에게 새 책상을 구해 줘야겠군요",
+  "compStmtEn" : "We'll need to get her a new desk."
+}, {
+  "divCode" : "066",
+  "divTitle" : "We'll need to ...",
+  "divContent" : "우리 ~해야 할 거야",
+  "compId" : 263,
+  "compIdx" : 3,
+  "compStmtKr" : "그녀의 통하 기록 좀 체크해야 할 겁니다.",
+  "compStmtEn" : "We'll need to check her phone records."
+}, {
+  "divCode" : "067",
+  "divTitle" : "I don't need to ...",
+  "divContent" : "난 ~하지 않아도 돼/내가 ~할 필요(이유)는 없어",
+  "compId" : 264,
+  "compStmtKr" : "그럼 난 오늘 밤엔 저녁 준비할 필요 없네",
+  "compStmtEn" : "I don't need to cook dinner tonight, then."
+}, {
+  "divCode" : "067",
+  "divTitle" : "I don't need to ...",
+  "divContent" : "난 ~하지 않아도 돼/내가 ~할 필요(이유)는 없어",
+  "compId" : 265,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 너한테 사과할 필요 없어",
+  "compStmtEn" : "I don't need to apologize to you."
+}, {
+  "divCode" : "067",
+  "divTitle" : "I don't need to ...",
+  "divContent" : "난 ~하지 않아도 돼/내가 ~할 필요(이유)는 없어",
+  "compId" : 266,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 한 일에 대해 너에게 해명할 필요 없어",
+  "compStmtEn" : "I don't need to explain myself to you."
+}, {
+  "divCode" : "067",
+  "divTitle" : "I don't need to ...",
+  "divContent" : "난 ~하지 않아도 돼/내가 ~할 필요(이유)는 없어",
+  "compId" : 267,
+  "compIdx" : 3,
+  "compStmtKr" : "내겐 그 질문에 답변할 이유 없어",
+  "compStmtEn" : "I don't need to answer that."
+}, {
+  "divCode" : "068",
+  "divTitle" : "You don't need to ...",
+  "divContent" : "넌 ~하지 않아도 돼",
+  "compId" : 268,
+  "compStmtKr" : "한 말 또 하지 않아도 돼",
+  "compStmtEn" : "You don't need to repeat yourself."
+}, {
+  "divCode" : "068",
+  "divTitle" : "You don't need to ...",
+  "divContent" : "넌 ~하지 않아도 돼",
+  "compId" : 269,
+  "compIdx" : 1,
+  "compStmtKr" : "미안하다는 말 하지 않아도 돼",
+  "compStmtEn" : "You don't need to say sorry."
+}, {
+  "divCode" : "068",
+  "divTitle" : "You don't need to ...",
+  "divContent" : "넌 ~하지 않아도 돼",
+  "compId" : 270,
+  "compIdx" : 2,
+  "compStmtKr" : "나를 위해서 그렇게까지 하지 않아도 돼",
+  "compStmtEn" : "You don't need to do all that for me."
+}, {
+  "divCode" : "068",
+  "divTitle" : "You don't need to ...",
+  "divContent" : "넌 ~하지 않아도 돼",
+  "compId" : 271,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 스스로를 너무 자책하지 않아도 돼",
+  "compStmtEn" : "You don't need to be so hard on yourself."
+}, {
+  "divCode" : "069",
+  "divTitle" : "I need you to ...",
+  "divContent" : "~ 좀 해 줘",
+  "compId" : 272,
+  "compStmtKr" : "좀 조용히 해줘",
+  "compStmtEn" : "I need you to keep it down a little."
+}, {
+  "divCode" : "069",
+  "divTitle" : "I need you to ...",
+  "divContent" : "~ 좀 해 줘",
+  "compId" : 273,
+  "compIdx" : 1,
+  "compStmtKr" : "내 말 잘 들어 줘",
+  "compStmtEn" : "I need you to listen carefully to what I say."
+}, {
+  "divCode" : "069",
+  "divTitle" : "I need you to ...",
+  "divContent" : "~ 좀 해 줘",
+  "compId" : 274,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 내 근무 시간 대신 일 좀 해 줘야겠어",
+  "compStmtEn" : "I need you to cover my shift."
+}, {
+  "divCode" : "069",
+  "divTitle" : "I need you to ...",
+  "divContent" : "~ 좀 해 줘",
+  "compId" : 275,
+  "compIdx" : 3,
+  "compStmtKr" : "이거 복사 10장 해 줘",
+  "compStmtEn" : "I need you to make 10 copies of this."
+}, {
+  "divCode" : "070",
+  "divTitle" : "All I need is ...",
+  "divContent" : "내가 필요한 건 ~이야/난 ~만 있으면 돼",
+  "compId" : 276,
+  "compStmtKr" : "내 곁에 너만 있으면 돼",
+  "compStmtEn" : "All I need is you beside me."
+}, {
+  "divCode" : "070",
+  "divTitle" : "All I need is ...",
+  "divContent" : "내가 필요한 건 ~이야/난 ~만 있으면 돼",
+  "compId" : 277,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 필요한 건 너의 5분이야(5분만 내줘)",
+  "compStmtEn" : "All I need is 5 minutes of your time."
+}, {
+  "divCode" : "070",
+  "divTitle" : "All I need is ...",
+  "divContent" : "내가 필요한 건 ~이야/난 ~만 있으면 돼",
+  "compId" : 278,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 필요한 건 너를 마지막으로 한번 더 보는 거야",
+  "compStmtEn" : "All I need is to see you one last time."
+}, {
+  "divCode" : "070",
+  "divTitle" : "All I need is ...",
+  "divContent" : "내가 필요한 건 ~이야/난 ~만 있으면 돼",
+  "compId" : 279,
+  "compIdx" : 3,
+  "compStmtKr" : "위로의 말 몇 마디만 있으면 돼",
+  "compStmtEn" : "All I need is a few words of comfort."
+}, {
+  "divCode" : "071",
+  "divTitle" : "I feel like N ...",
+  "divContent" : "~을 하고 싶어/~할 기분이 나",
+  "compId" : 280,
+  "compStmtKr" : "시원한 맥주 한잔 하고 싶어",
+  "compStmtEn" : "I feel like a cold beer."
+}, {
+  "divCode" : "071",
+  "divTitle" : "I feel like N ...",
+  "divContent" : "~을 하고 싶어/~할 기분이 나",
+  "compId" : 281,
+  "compIdx" : 1,
+  "compStmtKr" : "지금 피자가 좀 먹고 싶어",
+  "compStmtEn" : "I feel like some pizza now."
+}, {
+  "divCode" : "071",
+  "divTitle" : "I feel like N ...",
+  "divContent" : "~을 하고 싶어/~할 기분이 나",
+  "compId" : 282,
+  "compIdx" : 2,
+  "compStmtKr" : "오늘은 일 쉬고 싶어",
+  "compStmtEn" : "I feel like taking the day off."
+}, {
+  "divCode" : "071",
+  "divTitle" : "I feel like N ...",
+  "divContent" : "~을 하고 싶어/~할 기분이 나",
+  "compId" : 283,
+  "compIdx" : 3,
+  "compStmtKr" : "오늘은 그냥 집에서 뒹굴고 싶어",
+  "compStmtEn" : "I feel like just chilling at home today."
+}, {
+  "divCode" : "072",
+  "divTitle" : "I feel like S V ...",
+  "divContent" : "~하다는 생각이 들어/~ 같은 기분이야",
+  "compId" : 284,
+  "compStmtKr" : "뭔가 잘못된 것 같은 기분이야",
+  "compStmtEn" : "I feel like something's not right."
+}, {
+  "divCode" : "072",
+  "divTitle" : "I feel like S V ...",
+  "divContent" : "~하다는 생각이 들어/~ 같은 기분이야",
+  "compId" : 285,
+  "compIdx" : 1,
+  "compStmtKr" : "나 바가지 썼다는 생각이 들어",
+  "compStmtEn" : "I feel like I got ripped off."
+}, {
+  "divCode" : "072",
+  "divTitle" : "I feel like S V ...",
+  "divContent" : "~하다는 생각이 들어/~ 같은 기분이야",
+  "compId" : 286,
+  "compIdx" : 2,
+  "compStmtKr" : "난 소외된 것 같은 기분이야",
+  "compStmtEn" : "I feel like I'm left out."
+}, {
+  "divCode" : "072",
+  "divTitle" : "I feel like S V ...",
+  "divContent" : "~하다는 생각이 들어/~ 같은 기분이야",
+  "compId" : 287,
+  "compIdx" : 3,
+  "compStmtKr" : "미쳐 버리는 것 같은 기분이야",
+  "compStmtEn" : "I feel like I'm going out of my mind."
+}, {
+  "divCode" : "073",
+  "divTitle" : "I feel bad about/(that) ...",
+  "divContent" : "~ 때문에 속상해/~ 때문에 기분이 안 좋아",
+  "compId" : 288,
+  "compStmtKr" : "네가 면접을 잘 못 봤다니 나도 속상해",
+  "compStmtEn" : "I feel bad that you did bad on your job interview."
+}, {
+  "divCode" : "073",
+  "divTitle" : "I feel bad about/(that) ...",
+  "divContent" : "~ 때문에 속상해/~ 때문에 기분이 안 좋아",
+  "compId" : 289,
+  "compIdx" : 1,
+  "compStmtKr" : "그를 떠난 것 때문에 후회돼",
+  "compStmtEn" : "I feel bad about leaving him."
+}, {
+  "divCode" : "073",
+  "divTitle" : "I feel bad about/(that) ...",
+  "divContent" : "~ 때문에 속상해/~ 때문에 기분이 안 좋아",
+  "compId" : 290,
+  "compIdx" : 2,
+  "compStmtKr" : "앤드리아한테 한 말 때문에 죄책감이 느껴져",
+  "compStmtEn" : "I feel bad about what I said to Andrea."
+}, {
+  "divCode" : "073",
+  "divTitle" : "I feel bad about/(that) ...",
+  "divContent" : "~ 때문에 속상해/~ 때문에 기분이 안 좋아",
+  "compId" : 291,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 일을 다 하니까 미안함을 느껴",
+  "compStmtEn" : "I feel bad you're doing all the work."
+}, {
+  "divCode" : "074",
+  "divTitle" : "Feel free to ...",
+  "divContent" : "얼마든지 ~해/언제든지 ~하세요",
+  "compId" : 292,
+  "compStmtKr" : "얼마든지 둘러보세요",
+  "compStmtEn" : "Feel free to look around."
+}, {
+  "divCode" : "074",
+  "divTitle" : "Feel free to ...",
+  "divContent" : "얼마든지 ~해/언제든지 ~하세요",
+  "compId" : 293,
+  "compIdx" : 1,
+  "compStmtKr" : "얼마든지 네 피드백을 줘",
+  "compStmtEn" : "Feel free to give me your feedback."
+}, {
+  "divCode" : "074",
+  "divTitle" : "Feel free to ...",
+  "divContent" : "얼마든지 ~해/언제든지 ~하세요",
+  "compId" : 294,
+  "compIdx" : 2,
+  "compStmtKr" : "언제든지 편하실 때 연락 주십시오",
+  "compStmtEn" : "Feel free to contact me at your convenience."
+}, {
+  "divCode" : "074",
+  "divTitle" : "Feel free to ...",
+  "divContent" : "얼마든지 ~해/언제든지 ~하세요",
+  "compId" : 295,
+  "compIdx" : 3,
+  "compStmtKr" : "냉장고에 있는 거 아무거나 꺼내 먹어",
+  "compStmtEn" : "Feel free to grab anything from my fridge."
+}, {
+  "divCode" : "075",
+  "divTitle" : "I don't see any ...",
+  "divContent" : "아무 ~도 안 보이는데",
+  "compId" : 296,
+  "compStmtKr" : "여기에 우무도 안 보이는데",
+  "compStmtEn" : "I don't see anyone around here."
+}, {
+  "divCode" : "075",
+  "divTitle" : "I don't see any ...",
+  "divContent" : "아무 ~도 안 보이는데",
+  "compId" : 297,
+  "compIdx" : 1,
+  "compStmtKr" : "잘못된 거 아무것도 안 보이는데",
+  "compStmtEn" : "I don't see anything wrong with it."
+}, {
+  "divCode" : "075",
+  "divTitle" : "I don't see any ...",
+  "divContent" : "아무 ~도 안 보이는데",
+  "compId" : 298,
+  "compIdx" : 2,
+  "compStmtKr" : "여기에 아무 포인트도 안 보이는데",
+  "compStmtEn" : "I don't see any point to this."
+}, {
+  "divCode" : "075",
+  "divTitle" : "I don't see any ...",
+  "divContent" : "아무 ~도 안 보이는데",
+  "compId" : 299,
+  "compIdx" : 3,
+  "compStmtKr" : "그들 사이에 아무런 공통점도 안 보이는데",
+  "compStmtEn" : "I don't see any similarity between them."
+}, {
+  "divCode" : "076",
+  "divTitle" : "I see W4H ...",
+  "divContent" : "~인지 알겠어",
+  "compId" : 300,
+  "compStmtKr" : "네가 무슨 말 하는 건지 알겠어",
+  "compStmtEn" : "I see what you mean."
+}, {
+  "divCode" : "076",
+  "divTitle" : "I see W4H ...",
+  "divContent" : "~인지 알겠어",
+  "compId" : 301,
+  "compIdx" : 1,
+  "compStmtKr" : "걔가 외 그렇게 들떠 있는 건지 이제 알겠어",
+  "compStmtEn" : "I see now why she is so giddy."
+}, {
+  "divCode" : "076",
+  "divTitle" : "I see W4H ...",
+  "divContent" : "~인지 알겠어",
+  "compId" : 302,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 걔를 어떻게 속인 건지 알겠어",
+  "compStmtEn" : "I see how you tricked him."
+}, {
+  "divCode" : "076",
+  "divTitle" : "I see W4H ...",
+  "divContent" : "~인지 알겠어",
+  "compId" : 303,
+  "compIdx" : 3,
+  "compStmtKr" : "너희들이 무슨 생각하는지 알겠어",
+  "compStmtEn" : "I see what you guys are thinking."
+}, {
+  "divCode" : "077",
+  "divTitle" : "Sounds like ...",
+  "divContent" : "들어 보니 ~인 것 같네",
+  "compId" : 304,
+  "compStmtKr" : "들어 보니 재밌을 것 같네",
+  "compStmtEn" : "Sounds like fun."
+}, {
+  "divCode" : "077",
+  "divTitle" : "Sounds like ...",
+  "divContent" : "들어 보니 ~인 것 같네",
+  "compId" : 305,
+  "compIdx" : 1,
+  "compStmtKr" : "천생연분인 것 같네",
+  "compStmtEn" : "Sounds like a match made in heaven."
+}, {
+  "divCode" : "077",
+  "divTitle" : "Sounds like ...",
+  "divContent" : "들어 보니 ~인 것 같네",
+  "compId" : 306,
+  "compIdx" : 2,
+  "compStmtKr" : "들어 보니 그거 단지 소문인 것 같네",
+  "compStmtEn" : "Sounds like it's just a rumor."
+}, {
+  "divCode" : "077",
+  "divTitle" : "Sounds like ...",
+  "divContent" : "들어 보니 ~인 것 같네",
+  "compId" : 307,
+  "compIdx" : 3,
+  "compStmtKr" : "들어 보니 네가 다 통제하고 있는 거 같네(네가 다 잘 처리하고 있는 것 같네)",
+  "compStmtEn" : "Sounds like you've got it all under control."
+}, {
+  "divCode" : "078",
+  "divTitle" : "I'm into ...",
+  "divContent" : "나 ~ 좋아해/나 ~에 관심 있어.",
+  "compId" : 308,
+  "compStmtKr" : "난 긴 생머리를 가진 여자들이 좋더라",
+  "compStmtEn" : "I'm into girls with long, straight hair."
+}, {
+  "divCode" : "078",
+  "divTitle" : "I'm into ...",
+  "divContent" : "나 ~ 좋아해/나 ~에 관심 있어.",
+  "compId" : 309,
+  "compIdx" : 1,
+  "compStmtKr" : "나 요즘 미드에 빠져 있어",
+  "compStmtEn" : "I'm into American TV series nowadays."
+}, {
+  "divCode" : "078",
+  "divTitle" : "I'm into ...",
+  "divContent" : "나 ~ 좋아해/나 ~에 관심 있어.",
+  "compId" : 310,
+  "compIdx" : 2,
+  "compStmtKr" : "난 패션에 관심 없어",
+  "compStmtEn" : "I'm not into fashion."
+}, {
+  "divCode" : "078",
+  "divTitle" : "I'm into ...",
+  "divContent" : "나 ~ 좋아해/나 ~에 관심 있어.",
+  "compId" : 311,
+  "compIdx" : 3,
+  "compStmtKr" : "나 소개팅은 별로야",
+  "compStmtEn" : "I'm not really into blind dates."
+}, {
+  "divCode" : "079",
+  "divTitle" : "I'm good with ...",
+  "divContent" : "난 ~ 잘 다뤄",
+  "compId" : 312,
+  "compStmtKr" : "나 아이들을 잘 다뤄",
+  "compStmtEn" : "I'm good with children."
+}, {
+  "divCode" : "079",
+  "divTitle" : "I'm good with ...",
+  "divContent" : "난 ~ 잘 다뤄",
+  "compId" : 313,
+  "compIdx" : 1,
+  "compStmtKr" : "난 손재주가 있어",
+  "compStmtEn" : "I'm good with my hands."
+}, {
+  "divCode" : "079",
+  "divTitle" : "I'm good with ...",
+  "divContent" : "난 ~ 잘 다뤄",
+  "compId" : 314,
+  "compIdx" : 2,
+  "compStmtKr" : "난 숫자에 밝어",
+  "compStmtEn" : "I'm good with numbers."
+}, {
+  "divCode" : "079",
+  "divTitle" : "I'm good with ...",
+  "divContent" : "난 ~ 잘 다뤄",
+  "compId" : 315,
+  "compIdx" : 3,
+  "compStmtKr" : "난 말주변이 없어",
+  "compStmtEn" : "I'm good with words."
+}, {
+  "divCode" : "080",
+  "divTitle" : "I'm totally ...",
+  "divContent" : "나 완전 ~해/이야",
+  "compId" : 316,
+  "compStmtKr" : "나 완전 헷갈려",
+  "compStmtEn" : "I'm totally lost."
+}, {
+  "divCode" : "080",
+  "divTitle" : "I'm totally ...",
+  "divContent" : "나 완전 ~해/이야",
+  "compId" : 317,
+  "compIdx" : 1,
+  "compStmtKr" : "나 지금 완전 심각해/진지해",
+  "compStmtEn" : "I'm totally serious right now."
+}, {
+  "divCode" : "080",
+  "divTitle" : "I'm totally ...",
+  "divContent" : "나 완전 ~해/이야",
+  "compId" : 318,
+  "compIdx" : 2,
+  "compStmtKr" : "네 제안 완전 괜찮아",
+  "compStmtEn" : "I'm totally cool with your suggestion."
+}, {
+  "divCode" : "080",
+  "divTitle" : "I'm totally ...",
+  "divContent" : "나 완전 ~해/이야",
+  "compId" : 319,
+  "compIdx" : 3,
+  "compStmtKr" : "나 완전 취했어",
+  "compStmtEn" : "I'm totally wasted."
+}, {
+  "divCode" : "081",
+  "divTitle" : "I'm not big on ...",
+  "divContent" : "난 ~ 별로야",
+  "compId" : 320,
+  "compStmtKr" : "나 시끄럽고 사람 많은 곳은 별로야",
+  "compStmtEn" : "I'm not big on loud, crowded places."
+}, {
+  "divCode" : "081",
+  "divTitle" : "I'm not big on ...",
+  "divContent" : "난 ~ 별로야",
+  "compId" : 321,
+  "compIdx" : 1,
+  "compStmtKr" : "나 꼬맹이들 별로 안 좋아해",
+  "compStmtEn" : "I'm not big on little kids."
+}, {
+  "divCode" : "081",
+  "divTitle" : "I'm not big on ...",
+  "divContent" : "난 ~ 별로야",
+  "compId" : 322,
+  "compIdx" : 2,
+  "compStmtKr" : "난 내 자신에 대해 얘기하는 거 별로야",
+  "compStmtEn" : "I'm not big on talking about myself."
+}, {
+  "divCode" : "081",
+  "divTitle" : "I'm not big on ...",
+  "divContent" : "난 ~ 별로야",
+  "compId" : 323,
+  "compIdx" : 3,
+  "compStmtKr" : "나 문자 주고받는 거 별로 안 좋아해",
+  "compStmtEn" : "I'm not big on texting."
+}, {
+  "divCode" : "082",
+  "divTitle" : "I'm in the middle of ...",
+  "divContent" : "난 한창 ~ 중이야",
+  "compId" : 324,
+  "compStmtKr" : "나 한창 데이트 중이야",
+  "compStmtEn" : "I'm in the middle of a date."
+}, {
+  "divCode" : "082",
+  "divTitle" : "I'm in the middle of ...",
+  "divContent" : "난 한창 ~ 중이야",
+  "compId" : 325,
+  "compIdx" : 1,
+  "compStmtKr" : "나 한창 전화 통화 중이야",
+  "compStmtEn" : "I'm in the middle of a phone call."
+}, {
+  "divCode" : "082",
+  "divTitle" : "I'm in the middle of ...",
+  "divContent" : "난 한창 ~ 중이야",
+  "compId" : 326,
+  "compIdx" : 2,
+  "compStmtKr" : "나 한창 영화 보는 중이야",
+  "compStmtEn" : "I'm in the middle of watching a movie."
+}, {
+  "divCode" : "082",
+  "divTitle" : "I'm in the middle of ...",
+  "divContent" : "난 한창 ~ 중이야",
+  "compId" : 327,
+  "compIdx" : 3,
+  "compStmtKr" : "나 한창 일자리 구하는 중이야",
+  "compStmtEn" : "I'm in the middle of a job search."
+}, {
+  "divCode" : "083",
+  "divTitle" : "I'm not in the mood for/to ...",
+  "divContent" : "난 ~할 기분이 아니야/~이 안 내켜",
+  "compId" : 328,
+  "compStmtKr" : "나 저녁 먹을 기분이 아니야",
+  "compStmtEn" : "I'm not in the mood for dinner."
+}, {
+  "divCode" : "083",
+  "divTitle" : "I'm not in the mood for/to ...",
+  "divContent" : "난 ~할 기분이 아니야/~이 안 내켜",
+  "compId" : 329,
+  "compIdx" : 1,
+  "compStmtKr" : "나 오늘 저녁엔 피자가 안 내켜",
+  "compStmtEn" : "I'm not in the mood for pizza tonight."
+}, {
+  "divCode" : "083",
+  "divTitle" : "I'm not in the mood for/to ...",
+  "divContent" : "난 ~할 기분이 아니야/~이 안 내켜",
+  "compId" : 330,
+  "compIdx" : 2,
+  "compStmtKr" : "나 아무 데도 갈 기분이 아니야",
+  "compStmtEn" : "I'm not in the mood to go anywhere."
+}, {
+  "divCode" : "083",
+  "divTitle" : "I'm not in the mood for/to ...",
+  "divContent" : "난 ~할 기분이 아니야/~이 안 내켜",
+  "compId" : 331,
+  "compIdx" : 3,
+  "compStmtKr" : "나 지금 말할 기분이 아니야",
+  "compStmtEn" : "I'm not in the mood to talk now."
+}, {
+  "divCode" : "084",
+  "divTitle" : "I'm (just) asking you to ...",
+  "divContent" : "난 (단지) ~해 달라고 하는 거야",
+  "compId" : 332,
+  "compStmtKr" : "난 나하고 결혼해 달라고 말하는 거야",
+  "compStmtEn" : "I'm asking you to marry me."
+}, {
+  "divCode" : "084",
+  "divTitle" : "I'm (just) asking you to ...",
+  "divContent" : "난 (단지) ~해 달라고 하는 거야",
+  "compId" : 333,
+  "compIdx" : 1,
+  "compStmtKr" : "난 숨김없이 말해 달라는 거야",
+  "compStmtEn" : "I'm asking you to be straight with me."
+}, {
+  "divCode" : "084",
+  "divTitle" : "I'm (just) asking you to ...",
+  "divContent" : "난 (단지) ~해 달라고 하는 거야",
+  "compId" : 334,
+  "compIdx" : 2,
+  "compStmtKr" : "난 단지 내 말을 끝까지 들어 달라고 하는 거야",
+  "compStmtEn" : "I'm just asking you to hear me out."
+}, {
+  "divCode" : "084",
+  "divTitle" : "I'm (just) asking you to ...",
+  "divContent" : "난 (단지) ~해 달라고 하는 거야",
+  "compId" : 335,
+  "compIdx" : 3,
+  "compStmtKr" : "난 너한테 나잇값을 하라는 거야",
+  "compStmtEn" : "I'm asking you to act your age."
+}, {
+  "divCode" : "085",
+  "divTitle" : "You're so ...",
+  "divContent" : "너 정말 ~하다.",
+  "compId" : 336,
+  "compStmtKr" : "너 정말 충동적이구나",
+  "compStmtEn" : "You're so impulsive."
+}, {
+  "divCode" : "085",
+  "divTitle" : "You're so ...",
+  "divContent" : "너 정말 ~하다.",
+  "compId" : 337,
+  "compIdx" : 1,
+  "compStmtKr" : "너 정말 못됐구나",
+  "compStmtEn" : "You're so mean."
+}, {
+  "divCode" : "085",
+  "divTitle" : "You're so ...",
+  "divContent" : "너 정말 ~하다.",
+  "compId" : 338,
+  "compIdx" : 2,
+  "compStmtKr" : "너 오늘 정말 신경이 날카롭구나",
+  "compStmtEn" : "You're so tense today."
+}, {
+  "divCode" : "085",
+  "divTitle" : "You're so ...",
+  "divContent" : "너 정말 ~하다.",
+  "compId" : 339,
+  "compIdx" : 3,
+  "compStmtKr" : "너 정말 이기적이구나. 다른 사람 생각을 하긴 아니?",
+  "compStmtEn" : "You're so selfish. Do you ever think about other people?"
+}, {
+  "divCode" : "086",
+  "divTitle" : "You're not that ...",
+  "divContent" : "너 그렇게 ~하지 않아/~하지 않거든",
+  "compId" : 340,
+  "compStmtKr" : "너 그렇게 뚱뚱하지 않아",
+  "compStmtEn" : "You're not that fat."
+}, {
+  "divCode" : "086",
+  "divTitle" : "You're not that ...",
+  "divContent" : "너 그렇게 ~하지 않아/~하지 않거든",
+  "compId" : 341,
+  "compIdx" : 1,
+  "compStmtKr" : "너 그렇게 사려 깊은 거 아니거든",
+  "compStmtEn" : "You're not that considerate."
+}, {
+  "divCode" : "086",
+  "divTitle" : "You're not that ...",
+  "divContent" : "너 그렇게 ~하지 않아/~하지 않거든",
+  "compId" : 342,
+  "compIdx" : 2,
+  "compStmtKr" : "너 그렇게 미안해 하는 것도 아니잖아",
+  "compStmtEn" : "You're not that sorry."
+}, {
+  "divCode" : "086",
+  "divTitle" : "You're not that ...",
+  "divContent" : "너 그렇게 ~하지 않아/~하지 않거든",
+  "compId" : 343,
+  "compIdx" : 3,
+  "compStmtKr" : "솔직해져 봐. 너 걔 그렇게 좋아하는 거 아니잖아",
+  "compStmtEn" : "Be honest. You're not that into him."
+}, {
+  "divCode" : "087",
+  "divTitle" : "You're better off ...",
+  "divContent" : "넌 ~하는 게 나아/~하는 편이 나아",
+  "compId" : 344,
+  "compStmtKr" : "넌 모르는 게 나아",
+  "compStmtEn" : "You're better off not knowing."
+}, {
+  "divCode" : "087",
+  "divTitle" : "You're better off ...",
+  "divContent" : "넌 ~하는 게 나아/~하는 편이 나아",
+  "compId" : 345,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 걔한테서 도움 안 받는 게 나아",
+  "compStmtEn" : "You're better off without his help."
+}, {
+  "divCode" : "087",
+  "divTitle" : "You're better off ...",
+  "divContent" : "넌 ~하는 게 나아/~하는 편이 나아",
+  "compId" : 346,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 그냥 조용히 떠나는 편이 나아.",
+  "compStmtEn" : "You're better off just leaving quietly."
+}, {
+  "divCode" : "087",
+  "divTitle" : "You're better off ...",
+  "divContent" : "넌 ~하는 게 나아/~하는 편이 나아",
+  "compId" : 347,
+  "compIdx" : 3,
+  "compStmtKr" : "그 돈 다른 데에 쓰는 게 나아",
+  "compStmtEn" : "You're better off spending the money elsewhere."
+}, {
+  "divCode" : "088",
+  "divTitle" : "Are you saying (that) ...?",
+  "divContent" : "너 지금 ~이라고 말하는 거야?",
+  "compId" : 348,
+  "compStmtKr" : "너 지금 그게 전부 내 잘못이라고 말하는 거야?",
+  "compStmtEn" : "Are you saying it's all my fault?"
+}, {
+  "divCode" : "088",
+  "divTitle" : "Are you saying (that) ...?",
+  "divContent" : "너 지금 ~이라고 말하는 거야?",
+  "compId" : 349,
+  "compIdx" : 1,
+  "compStmtKr" : "너 지금 시험을 망쳤다고 말하는 거야?",
+  "compStmtEn" : "Are you saying you messed up the test?"
+}, {
+  "divCode" : "088",
+  "divTitle" : "Are you saying (that) ...?",
+  "divContent" : "너 지금 ~이라고 말하는 거야?",
+  "compId" : 350,
+  "compIdx" : 2,
+  "compStmtKr" : "너 지금 존하고 시귀고 있다고 말하는 거야?",
+  "compStmtEn" : "Are you saying you're seeing John?"
+}, {
+  "divCode" : "088",
+  "divTitle" : "Are you saying (that) ...?",
+  "divContent" : "너 지금 ~이라고 말하는 거야?",
+  "compId" : 351,
+  "compIdx" : 3,
+  "compStmtKr" : "너 지금 거래가 취소됐다고 말하는 거야?",
+  "compStmtEn" : "Are you saying the deal is off?"
+}, {
+  "divCode" : "089",
+  "divTitle" : "You're (not) ...~ing",
+  "divContent" : "~해/(~하지 마)",
+  "compId" : 352,
+  "compStmtKr" : "넌 아무 데도 못 가",
+  "compStmtEn" : "You're not going anywhere."
+}, {
+  "divCode" : "089",
+  "divTitle" : "You're (not) ...~ing",
+  "divContent" : "~해/(~하지 마)",
+  "compId" : 353,
+  "compIdx" : 1,
+  "compStmtKr" : "다 끝낼 때까지 넌 이방에서 못나가",
+  "compStmtEn" : "You're not leaving this room till you're done."
+}, {
+  "divCode" : "089",
+  "divTitle" : "You're (not) ...~ing",
+  "divContent" : "~해/(~하지 마)",
+  "compId" : 354,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 아무한테도 무슨 일이 있었는지 말 못해",
+  "compStmtEn" : "You're not telling anyone what happened."
+}, {
+  "divCode" : "089",
+  "divTitle" : "You're (not) ...~ing",
+  "divContent" : "~해/(~하지 마)",
+  "compId" : 355,
+  "compIdx" : 3,
+  "compStmtKr" : "나한테 아는 거 다 불어. 안 그러면 넌 족은 목숨이야.",
+  "compStmtEn" : "You're telling me everything you know or you're dead."
+}, {
+  "divCode" : "090",
+  "divTitle" : "You're the one who ...",
+  "divContent" : "~한 건 너잖아",
+  "compId" : 356,
+  "compStmtKr" : "그 얘기 꺼낸 건 너잖아",
+  "compStmtEn" : "You're the one who brought it up."
+}, {
+  "divCode" : "090",
+  "divTitle" : "You're the one who ...",
+  "divContent" : "~한 건 너잖아",
+  "compId" : 357,
+  "compIdx" : 1,
+  "compStmtKr" : "폴을 고자질한 건 너잖아",
+  "compStmtEn" : "You're the one who told on Paul."
+}, {
+  "divCode" : "090",
+  "divTitle" : "You're the one who ...",
+  "divContent" : "~한 건 너잖아",
+  "compId" : 358,
+  "compIdx" : 2,
+  "compStmtKr" : "그한테 애매한 태도를 보인 건 너잖아",
+  "compStmtEn" : "You're the one who sent him mixed signals."
+}, {
+  "divCode" : "090",
+  "divTitle" : "You're the one who ...",
+  "divContent" : "~한 건 너잖아",
+  "compId" : 359,
+  "compIdx" : 3,
+  "compStmtKr" : "이 난장판을 만든 건 너잖아",
+  "compStmtEn" : "You're the one who created this mess."
+}, {
+  "divCode" : "091",
+  "divTitle" : "What the hell are you ...?",
+  "divContent" : "너 도대체 뭐 ~하는 거야?",
+  "compId" : 360,
+  "compStmtKr" : "너 도대체 뭐 하는 거야?",
+  "compStmtEn" : "What the hell are you doing?"
+}, {
+  "divCode" : "091",
+  "divTitle" : "What the hell are you ...?",
+  "divContent" : "너 도대체 뭐 ~하는 거야?",
+  "compId" : 361,
+  "compIdx" : 1,
+  "compStmtKr" : "너 내 방에서 도대체 뭐 하는 거야?",
+  "compStmtEn" : "What the hell are you doing in my room?"
+}, {
+  "divCode" : "091",
+  "divTitle" : "What the hell are you ...?",
+  "divContent" : "너 도대체 뭐 ~하는 거야?",
+  "compId" : 362,
+  "compIdx" : 2,
+  "compStmtKr" : "너 도대체 뭐 때문에 웃는 거야?(뭐가 그렇게 웃겨?)",
+  "compStmtEn" : "What the hell are you laughing at?"
+}, {
+  "divCode" : "091",
+  "divTitle" : "What the hell are you ...?",
+  "divContent" : "너 도대체 뭐 ~하는 거야?",
+  "compId" : 363,
+  "compIdx" : 3,
+  "compStmtKr" : "너 도대체 무슨 생각이었던 거야?(네가 제정신이었나?)",
+  "compStmtEn" : "What the hell were you thinking?"
+}, {
+  "divCode" : "092",
+  "divTitle" : "That's exactly what ...",
+  "divContent" : "그게 바로 ~이야/~가 바로 그거야",
+  "compId" : 364,
+  "compStmtKr" : "내 말이 바로 그거야",
+  "compStmtEn" : "That's exactly what I'm talking about."
+}, {
+  "divCode" : "092",
+  "divTitle" : "That's exactly what ...",
+  "divContent" : "그게 바로 ~이야/~가 바로 그거야",
+  "compId" : 365,
+  "compIdx" : 1,
+  "compStmtKr" : "그게 바로 내가 의미하는 거야",
+  "compStmtEn" : "That's exactly what I mean."
+}, {
+  "divCode" : "092",
+  "divTitle" : "That's exactly what ...",
+  "divContent" : "그게 바로 ~이야/~가 바로 그거야",
+  "compId" : 366,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 이해가 안 되는 게 바로 그거야",
+  "compStmtEn" : "That's exactly what I don't get."
+}, {
+  "divCode" : "092",
+  "divTitle" : "That's exactly what ...",
+  "divContent" : "그게 바로 ~이야/~가 바로 그거야",
+  "compId" : 367,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 알아내려는 게 바로 그거야",
+  "compStmtEn" : "That's exactly what I'm trying to figure out."
+}, {
+  "divCode" : "093",
+  "divTitle" : "That's what I like/love about ...",
+  "divContent" : "그래서 내가 ~을 좋아하는/사랑하는 거야",
+  "compId" : 368,
+  "compStmtKr" : "그래서 내가 너를 좋아하는 거야",
+  "compStmtEn" : "That's what I like about you."
+}, {
+  "divCode" : "093",
+  "divTitle" : "That's what I like/love about ...",
+  "divContent" : "그래서 내가 ~을 좋아하는/사랑하는 거야",
+  "compId" : 369,
+  "compIdx" : 1,
+  "compStmtKr" : "그래서 내가 내 직업을 사랑하는 거야",
+  "compStmtEn" : "That's what I love about my job."
+}, {
+  "divCode" : "093",
+  "divTitle" : "That's what I like/love about ...",
+  "divContent" : "그래서 내가 ~을 좋아하는/사랑하는 거야",
+  "compId" : 370,
+  "compIdx" : 2,
+  "compStmtKr" : "그래서 내가 뉴욕을 좋아하는 거야",
+  "compStmtEn" : "That's what I love about New York."
+}, {
+  "divCode" : "093",
+  "divTitle" : "That's what I like/love about ...",
+  "divContent" : "그래서 내가 ~을 좋아하는/사랑하는 거야",
+  "compId" : 371,
+  "compIdx" : 3,
+  "compStmtKr" : "그래서 내가 긴 주말 연휴를 좋아하는 거야",
+  "compStmtEn" : "That's what I love about long weekends."
+}, {
+  "divCode" : "094",
+  "divTitle" : "Is that what ...?",
+  "divContent" : "그게 ~인 거야?",
+  "compId" : 372,
+  "compStmtKr" : "그게 걔가 한 말이야?",
+  "compStmtEn" : "Is that what he said?"
+}, {
+  "divCode" : "094",
+  "divTitle" : "Is that what ...?",
+  "divContent" : "그게 ~인 거야?",
+  "compId" : 373,
+  "compIdx" : 1,
+  "compStmtKr" : "그게 네가 나한테 원하는 거야?",
+  "compStmtEn" : "Is that what you want from me?"
+}, {
+  "divCode" : "094",
+  "divTitle" : "Is that what ...?",
+  "divContent" : "그게 ~인 거야?",
+  "compId" : 374,
+  "compIdx" : 2,
+  "compStmtKr" : "그게 네 생각이야?(넌 그렇게 생각해?)",
+  "compStmtEn" : "Is that what you think?"
+}, {
+  "divCode" : "094",
+  "divTitle" : "Is that what ...?",
+  "divContent" : "그게 ~인 거야?",
+  "compId" : 375,
+  "compIdx" : 3,
+  "compStmtKr" : "그거 내가 생각하는 그거야?",
+  "compStmtEn" : "Is that what I think it is?"
+}, {
+  "divCode" : "095",
+  "divTitle" : "That's all ...",
+  "divContent" : "내가 ~하는 건 그게 다야/난 그것만 ~해",
+  "compId" : 376,
+  "compStmtKr" : "내가 원한 건 그게 다였어",
+  "compStmtEn" : "That's all I ever wanted."
+}, {
+  "divCode" : "095",
+  "divTitle" : "That's all ...",
+  "divContent" : "내가 ~하는 건 그게 다야/난 그것만 ~해",
+  "compId" : 377,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 너한테 부탁하는 건 그게 다야",
+  "compStmtEn" : "That's all I'm asking you to do."
+}, {
+  "divCode" : "095",
+  "divTitle" : "That's all ...",
+  "divContent" : "내가 ~하는 건 그게 다야/난 그것만 ~해",
+  "compId" : 378,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 어렸을 때부터 그것만 꿈꿔 왔어",
+  "compStmtEn" : "That's all I've dreamed of since I was a kid."
+}, {
+  "divCode" : "095",
+  "divTitle" : "That's all ...",
+  "divContent" : "내가 ~하는 건 그게 다야/난 그것만 ~해",
+  "compId" : 379,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 지금 생각할 수 있는 건 그게 다야",
+  "compStmtEn" : "That's all I can think of at the moment."
+}, {
+  "divCode" : "096",
+  "divTitle" : "That's not why ...",
+  "divContent" : "그래서 ~한 게 아니야",
+  "compId" : 380,
+  "compStmtKr" : "그래서 그걸 한 게 아니야",
+  "compStmtEn" : "That's not why I did it."
+}, {
+  "divCode" : "096",
+  "divTitle" : "That's not why ...",
+  "divContent" : "그래서 ~한 게 아니야",
+  "compId" : 381,
+  "compIdx" : 1,
+  "compStmtKr" : "그래서 그와 수귀는 게 아니야",
+  "compStmtEn" : "That's not why I'm seeing him."
+}, {
+  "divCode" : "096",
+  "divTitle" : "That's not why ...",
+  "divContent" : "그래서 ~한 게 아니야",
+  "compId" : 382,
+  "compIdx" : 2,
+  "compStmtKr" : "그래서 그가 해고당한 게 아니야",
+  "compStmtEn" : "That's not why he was laid off."
+}, {
+  "divCode" : "096",
+  "divTitle" : "That's not why ...",
+  "divContent" : "그래서 ~한 게 아니야",
+  "compId" : 383,
+  "compIdx" : 3,
+  "compStmtKr" : "그래서 살 빼려는 건 아니야",
+  "compStmtEn" : "That's not why I'm trying to lose weight."
+}, {
+  "divCode" : "097",
+  "divTitle" : "It's like ...",
+  "divContent" : "(마치) ~인 것 같아/~ 같은 거네",
+  "compId" : 384,
+  "compStmtKr" : "마치 꿈이 실현된 것 같아(꿈만 같아)",
+  "compStmtEn" : "It's like a dream come true."
+}, {
+  "divCode" : "097",
+  "divTitle" : "It's like ...",
+  "divContent" : "(마치) ~인 것 같아/~ 같은 거네",
+  "compId" : 385,
+  "compIdx" : 1,
+  "compStmtKr" : "마치 그양이가 쥐 갖고 노는 것 같아",
+  "compStmtEn" : "It's like a cat playing with a mouse."
+}, {
+  "divCode" : "097",
+  "divTitle" : "It's like ...",
+  "divContent" : "(마치) ~인 것 같아/~ 같은 거네",
+  "compId" : 386,
+  "compIdx" : 2,
+  "compStmtKr" : "그녀가 마치 어디스 불쑥 뒤어나온 것 같았어",
+  "compStmtEn" : "It was like she came out of nowhere."
+}, {
+  "divCode" : "097",
+  "divTitle" : "It's like ...",
+  "divContent" : "(마치) ~인 것 같아/~ 같은 거네",
+  "compId" : 387,
+  "compIdx" : 3,
+  "compStmtKr" : "그녀가 마치 나를 알지도 못하는 것 같아.(나를 모르는 사람 취급하더라고)",
+  "compStmtEn" : "It's like she doesn't even know me."
+}, {
+  "divCode" : "098",
+  "divTitle" : "It's not like ...",
+  "divContent" : "~인 것도 아니잖아/~인 건 아니야",
+  "compId" : 388,
+  "compStmtKr" : "네가 잘못한 게 하나도 없는 것도 아니잖아",
+  "compStmtEn" : "It's not like you did nothing wrong."
+}, {
+  "divCode" : "098",
+  "divTitle" : "It's not like ...",
+  "divContent" : "~인 것도 아니잖아/~인 건 아니야",
+  "compId" : 389,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 어차피 상관하는 것도 아니면서, 뭘",
+  "compStmtEn" : "It's not like you care anyway."
+}, {
+  "divCode" : "098",
+  "divTitle" : "It's not like ...",
+  "divContent" : "~인 것도 아니잖아/~인 건 아니야",
+  "compId" : 390,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 혼자 다 한 것도 아니잖아",
+  "compStmtEn" : "It's not like you did all the work."
+}, {
+  "divCode" : "098",
+  "divTitle" : "It's not like ...",
+  "divContent" : "~인 것도 아니잖아/~인 건 아니야",
+  "compId" : 391,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 걔를 좋아한다거나 그런 건 아니고",
+  "compStmtEn" : "It's not like I like him or anything."
+}, {
+  "divCode" : "099",
+  "divTitle" : "It's just (that) ...",
+  "divContent" : "그게 말이야, ~",
+  "compId" : 392,
+  "compStmtKr" : "그게 말이야, 내가 50달러가 필요해서 말이야",
+  "compStmtEn" : "It's just... I need 50 bucks."
+}, {
+  "divCode" : "099",
+  "divTitle" : "It's just (that) ...",
+  "divContent" : "그게 말이야, ~",
+  "compId" : 393,
+  "compIdx" : 1,
+  "compStmtKr" : "그게 말이야, 난 아직 결혼할 준비가 안 됐어",
+  "compStmtEn" : "It's just I'm not ready to get married yet."
+}, {
+  "divCode" : "099",
+  "divTitle" : "It's just (that) ...",
+  "divContent" : "그게 말이야, ~",
+  "compId" : 394,
+  "compIdx" : 2,
+  "compStmtKr" : "그게 말이야, 그가 나를 사랑하는 것 같지 않아",
+  "compStmtEn" : "It's just he doesn't seem to care for me."
+}, {
+  "divCode" : "099",
+  "divTitle" : "It's just (that) ...",
+  "divContent" : "그게 말이야, ~",
+  "compId" : 395,
+  "compIdx" : 3,
+  "compStmtKr" : "그게 말이야, 가기 싫어서 그래, 그게 다야",
+  "compStmtEn" : "It's just that I don't wanna go. That's all."
+}, {
+  "divCode" : "100",
+  "divTitle" : "Maybe it was ...",
+  "divContent" : "~ 때문이었는지도 몰라/모르지",
+  "compId" : 396,
+  "compStmtKr" : "내 농담 때문이었는지도 몰라",
+  "compStmtEn" : "Maybe it was my jokes."
+}, {
+  "divCode" : "100",
+  "divTitle" : "Maybe it was ...",
+  "divContent" : "~ 때문이었는지도 몰라/모르지",
+  "compId" : 397,
+  "compIdx" : 1,
+  "compStmtKr" : "네 거만함  때문이었는지도 모르지",
+  "compStmtEn" : "Maybe it was your arrogance."
+}, {
+  "divCode" : "100",
+  "divTitle" : "Maybe it was ...",
+  "divContent" : "~ 때문이었는지도 몰라/모르지",
+  "compId" : 398,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 한 말 때문이었는지도 몰라",
+  "compStmtEn" : "Maybe it was something I said."
+}, {
+  "divCode" : "100",
+  "divTitle" : "Maybe it was ...",
+  "divContent" : "~ 때문이었는지도 몰라/모르지",
+  "compId" : 399,
+  "compIdx" : 3,
+  "compStmtKr" : "네 입 냄새 때문이었는지 모르지",
+  "compStmtEn" : "Maybe it was your breath."
+}, {
+  "divCode" : "101",
+  "divTitle" : "There's something ...",
+  "divContent" : "~한/할 게 있어",
+  "compId" : 400,
+  "compStmtKr" : "너한테 해야 할 말이 있어.",
+  "compStmtEn" : "There's something I need to tell you."
+}, {
+  "divCode" : "101",
+  "divTitle" : "There's something ...",
+  "divContent" : "~한/할 게 있어",
+  "compId" : 401,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 이해해야 할 게 있어.",
+  "compStmtEn" : "There's something you need to understand."
+}, {
+  "divCode" : "101",
+  "divTitle" : "There's something ...",
+  "divContent" : "~한/할 게 있어",
+  "compId" : 402,
+  "compIdx" : 2,
+  "compStmtKr" : "걔한텐 뭔가 이상한 게 있어(걔 뭔가 이상해)",
+  "compStmtEn" : "There's something weird about him."
+}, {
+  "divCode" : "101",
+  "divTitle" : "There's something ...",
+  "divContent" : "~한/할 게 있어",
+  "compId" : 403,
+  "compIdx" : 3,
+  "compStmtKr" : "너한테 뭔가 다른 게 있어.(너 어딘가 달라 보여)",
+  "compStmtEn" : "There's something different about you."
+}, {
+  "divCode" : "102",
+  "divTitle" : "There's nothing like ...",
+  "divContent" : "~만한 건 없어/~이 최고야",
+  "compId" : 404,
+  "compStmtKr" : "화이트 크라스마스 만한 건 없어.",
+  "compStmtEn" : "There's nothing like a white Christmas."
+}, {
+  "divCode" : "102",
+  "divTitle" : "There's nothing like ...",
+  "divContent" : "~만한 건 없어/~이 최고야",
+  "compId" : 405,
+  "compIdx" : 1,
+  "compStmtKr" : "분위기 잡는 데 촛불 만한 건 없어.",
+  "compStmtEn" : "There's nothing like some candles to set the mood."
+}, {
+  "divCode" : "102",
+  "divTitle" : "There's nothing like ...",
+  "divContent" : "~만한 건 없어/~이 최고야",
+  "compId" : 406,
+  "compIdx" : 2,
+  "compStmtKr" : "시간 때우는 데 컴퓨터 게임 만한 건 없어.",
+  "compStmtEn" : "There's nothing like computer games to kill time."
+}, {
+  "divCode" : "102",
+  "divTitle" : "There's nothing like ...",
+  "divContent" : "~만한 건 없어/~이 최고야",
+  "compId" : 407,
+  "compIdx" : 3,
+  "compStmtKr" : "힘든 하루의 일을 마친 후에 마시는 시원한 맥주 한 잔 만한 건 없어.",
+  "compStmtEn" : "There's nothing like a cold beer after a hard day's work."
+}, {
+  "divCode" : "103",
+  "divTitle" : "There's a chance (that) ...",
+  "divContent" : "~할 가능성이 있어/~할 수도 있어",
+  "compId" : 408,
+  "compStmtKr" : "그가 아직 살아 있을 수도 있어.",
+  "compStmtEn" : "There's a chance he's still alive."
+}, {
+  "divCode" : "103",
+  "divTitle" : "There's a chance (that) ...",
+  "divContent" : "~할 가능성이 있어/~할 수도 있어",
+  "compId" : 409,
+  "compIdx" : 1,
+  "compStmtKr" : "걔가 나나탈 가능성은 아직 있어",
+  "compStmtEn" : "There's a still a chance he might show up."
+}, {
+  "divCode" : "103",
+  "divTitle" : "There's a chance (that) ...",
+  "divContent" : "~할 가능성이 있어/~할 수도 있어",
+  "compId" : 410,
+  "compIdx" : 2,
+  "compStmtKr" : "걔가 마지막 순간에 빠질 수도 있어.",
+  "compStmtEn" : "There's a chance he might back out at the last minute."
+}, {
+  "divCode" : "103",
+  "divTitle" : "There's a chance (that) ...",
+  "divContent" : "~할 가능성이 있어/~할 수도 있어",
+  "compId" : 411,
+  "compIdx" : 3,
+  "compStmtKr" : "오늘 집에 못 돌아올 가능성이 높아.",
+  "compStmtEn" : "There's a good chance I won't be home today."
+}, {
+  "divCode" : "104",
+  "divTitle" : "There's no way (that) ...",
+  "divContent" : "~일 리가 없어",
+  "compId" : 412,
+  "compStmtKr" : "그게 내 사진을 리가 없어",
+  "compStmtEn" : "There's no way that's a picture of me."
+}, {
+  "divCode" : "104",
+  "divTitle" : "There's no way (that) ...",
+  "divContent" : "~일 리가 없어",
+  "compId" : 413,
+  "compIdx" : 1,
+  "compStmtKr" : "걔가 그렇게 바보 같을 리가 없어",
+  "compStmtEn" : "There's no way he's that stupid."
+}, {
+  "divCode" : "104",
+  "divTitle" : "There's no way (that) ...",
+  "divContent" : "~일 리가 없어",
+  "compId" : 414,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 떨어졌는데 걔가 붙었을 리가 없어",
+  "compStmtEn" : "There's no way he passed when I didn't."
+}, {
+  "divCode" : "104",
+  "divTitle" : "There's no way (that) ...",
+  "divContent" : "~일 리가 없어",
+  "compId" : 415,
+  "compIdx" : 3,
+  "compStmtKr" : "저 몸매로 전업주부일 리가 없어",
+  "compStmtEn" : "There's no way she's a full-time mom with that body."
+}, {
+  "divCode" : "105",
+  "divTitle" : "There's a reason ...",
+  "divContent" : "~하는 데에는 이유가 있어/괜히 ~이 아니야",
+  "compId" : 416,
+  "compStmtKr" : "괜히 너하고 얘기하러 온게 아니야",
+  "compStmtEn" : "There's a reason I came to talk to you."
+}, {
+  "divCode" : "105",
+  "divTitle" : "There's a reason ...",
+  "divContent" : "~하는 데에는 이유가 있어/괜히 ~이 아니야",
+  "compId" : 417,
+  "compIdx" : 1,
+  "compStmtKr" : "모든 것에는 이유가 있는 법이야",
+  "compStmtEn" : "There's a reason for everything."
+}, {
+  "divCode" : "105",
+  "divTitle" : "There's a reason ...",
+  "divContent" : "~하는 데에는 이유가 있어/괜히 ~이 아니야",
+  "compId" : 418,
+  "compIdx" : 2,
+  "compStmtKr" : "죄책감 느낄 필요 없어",
+  "compStmtEn" : "There's no reason to feel guilty."
+}, {
+  "divCode" : "105",
+  "divTitle" : "There's a reason ...",
+  "divContent" : "~하는 데에는 이유가 있어/괜히 ~이 아니야",
+  "compId" : 419,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 한동안 모습을 안 보인 데에는 이유가 있어.(잠수 탄 데에는 이유가 있어)",
+  "compStmtEn" : "There's a reason I haven't been arounc for a while."
+}, {
+  "divCode" : "106",
+  "divTitle" : "There's nothing I can ...",
+  "divContent" : "내가 ~할 수 있는 건 없어",
+  "compId" : 420,
+  "compStmtKr" : "그것에 대해 내가 할 수 있는 건 없어",
+  "compStmtEn" : "There's nothing I can do about it."
+}, {
+  "divCode" : "106",
+  "divTitle" : "There's nothing I can ...",
+  "divContent" : "내가 ~할 수 있는 건 없어",
+  "compId" : 421,
+  "compIdx" : 1,
+  "compStmtKr" : "너한테 해 줄 수 있는 말이 없어",
+  "compStmtEn" : "There's nothing I can tell you."
+}, {
+  "divCode" : "106",
+  "divTitle" : "There's nothing I can ...",
+  "divContent" : "내가 ~할 수 있는 건 없어",
+  "compId" : 422,
+  "compIdx" : 2,
+  "compStmtKr" : "이 시점에서 내가 더 할 수 있는 건 없어.",
+  "compStmtEn" : "There's nothing more I can do at this point."
+}, {
+  "divCode" : "106",
+  "divTitle" : "There's nothing I can ...",
+  "divContent" : "내가 ~할 수 있는 건 없어",
+  "compId" : 423,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 그의 마음을 바꾸기 위해 할 수 있는 말은 없어(무슨 말을 해도 그는 마음을 바꾸지 않을 거야)",
+  "compStmtEn" : "There's nothing I can say to change his mind."
+}, {
+  "divCode" : "107",
+  "divTitle" : "There's no such thing as ...",
+  "divContent" : "~같은 건 없어/~이라는 건 없어",
+  "compId" : 424,
+  "compStmtKr" : "불온 같은 건 없어",
+  "compStmtEn" : "There's no such thing as bad luck."
+}, {
+  "divCode" : "107",
+  "divTitle" : "There's no such thing as ...",
+  "divContent" : "~같은 건 없어/~이라는 건 없어",
+  "compId" : 425,
+  "compIdx" : 1,
+  "compStmtKr" : "우연이란 건 없어.",
+  "compStmtEn" : "There's no such thing as coincidence."
+}, {
+  "divCode" : "107",
+  "divTitle" : "There's no such thing as ...",
+  "divContent" : "~같은 건 없어/~이라는 건 없어",
+  "compId" : 426,
+  "compIdx" : 2,
+  "compStmtKr" : "모든 걸 갖는 삶이란 건 없어.",
+  "compStmtEn" : "There's no such thing as having it all."
+}, {
+  "divCode" : "107",
+  "divTitle" : "There's no such thing as ...",
+  "divContent" : "~같은 건 없어/~이라는 건 없어",
+  "compId" : 427,
+  "compIdx" : 3,
+  "compStmtKr" : "나쁜 홍보라는 건 없어(무관심보다는 비난을 받더라도 관심을 받는 게 낫다)",
+  "compStmtEn" : "There's no such thing as bad publicity."
+}, {
+  "divCode" : "108",
+  "divTitle" : "You don't wanna ...",
+  "divContent" : "~하지 않는 게 좋을 거야",
+  "compId" : 428,
+  "compStmtKr" : "이거 안 보는 게 좋을 거야",
+  "compStmtEn" : "You don't wanna watch this."
+}, {
+  "divCode" : "108",
+  "divTitle" : "You don't wanna ...",
+  "divContent" : "~하지 않는 게 좋을 거야",
+  "compId" : 429,
+  "compIdx" : 1,
+  "compStmtKr" : "그건 사람 밑에서 일하지 않는 게 좋을 거야",
+  "compStmtEn" : "You don't wanna work for a guy like that."
+}, {
+  "divCode" : "108",
+  "divTitle" : "You don't wanna ...",
+  "divContent" : "~하지 않는 게 좋을 거야",
+  "compId" : 430,
+  "compIdx" : 2,
+  "compStmtKr" : "나한테 까불지 않는 게 좋을 거야",
+  "compStmtEn" : "You don't wanna mess with me."
+}, {
+  "divCode" : "108",
+  "divTitle" : "You don't wanna ...",
+  "divContent" : "~하지 않는 게 좋을 거야",
+  "compId" : 431,
+  "compIdx" : 3,
+  "compStmtKr" : "그 얘기 꺼내지 않는 게 좋을 거야",
+  "compStmtEn" : "You don't wanna go there."
+}, {
+  "divCode" : "109",
+  "divTitle" : "Don't even ...",
+  "divContent" : "~하지도 마/~할 꿈도 꾸지마",
+  "compId" : 432,
+  "compStmtKr" : "그것에 대해 생각도 하지마.(그거 할 생각 하지도 마)",
+  "compStmtEn" : "Don't even think about it."
+}, {
+  "divCode" : "109",
+  "divTitle" : "Don't even ...",
+  "divContent" : "~하지도 마/~할 꿈도 꾸지마",
+  "compId" : 433,
+  "compIdx" : 1,
+  "compStmtKr" : "걔 앞에서는 내 이름도 꺼내지도 마",
+  "compStmtEn" : "Don't even say my name in front of him."
+}, {
+  "divCode" : "109",
+  "divTitle" : "Don't even ...",
+  "divContent" : "~하지도 마/~할 꿈도 꾸지마",
+  "compId" : 434,
+  "compIdx" : 2,
+  "compStmtKr" : "상관하는 척하지도 마. 상관 안하는 거 알아.",
+  "compStmtEn" : "Don't even pretend to care. I know you don't."
+}, {
+  "divCode" : "109",
+  "divTitle" : "Don't even ...",
+  "divContent" : "~하지도 마/~할 꿈도 꾸지마",
+  "compId" : 435,
+  "compIdx" : 3,
+  "compStmtKr" : "나한테 전화하려고 하지도 마.",
+  "compStmtEn" : "Don't even try to call me."
+}, {
+  "divCode" : "110",
+  "divTitle" : "Don't bother ...",
+  "divContent" : "~할 거 없어/~에 신경 쓰지마",
+  "compId" : 436,
+  "compStmtKr" : "커피 꿇여 줄 거 없어. 나 나갈 거야.",
+  "compStmtEn" : "Don't bother making me coffee. I'm heading out."
+}, {
+  "divCode" : "110",
+  "divTitle" : "Don't bother ...",
+  "divContent" : "~할 거 없어/~에 신경 쓰지마",
+  "compId" : 437,
+  "compIdx" : 1,
+  "compStmtKr" : "오늘 밤엔 설거지 안 해도 돼.",
+  "compStmtEn" : "Don't bother to do the dishes tonight."
+}, {
+  "divCode" : "110",
+  "divTitle" : "Don't bother ...",
+  "divContent" : "~할 거 없어/~에 신경 쓰지마",
+  "compId" : 438,
+  "compIdx" : 2,
+  "compStmtKr" : "그런 거 신경 쓸 거 없어.",
+  "compStmtEn" : "Don't bother with something like that."
+}, {
+  "divCode" : "110",
+  "divTitle" : "Don't bother ...",
+  "divContent" : "~할 거 없어/~에 신경 쓰지마",
+  "compId" : 439,
+  "compIdx" : 3,
+  "compStmtKr" : "해명할 것도 없어. 이제 네 핑계라면 지긋지긋해.",
+  "compStmtEn" : "Don't bother explaining yourself. I've had it with your excuses."
+}, {
+  "divCode" : "111",
+  "divTitle" : "Don't you dare ...!",
+  "divContent" : "감히 ~하기만 해 봐라/감히 ~하지마",
+  "compId" : 440,
+  "compStmtKr" : "계한테 말하기만 해 봐라!",
+  "compStmtEn" : "Don't you dare tell her!"
+}, {
+  "divCode" : "111",
+  "divTitle" : "Don't you dare ...!",
+  "divContent" : "감히 ~하기만 해 봐라/감히 ~하지마",
+  "compId" : 441,
+  "compIdx" : 1,
+  "compStmtKr" : "감히 나한테 그렇게 싸가지 없게 굴지 마!",
+  "compStmtEn" : "Don't you dare give me that attitude!"
+}, {
+  "divCode" : "111",
+  "divTitle" : "Don't you dare ...!",
+  "divContent" : "감히 ~하기만 해 봐라/감히 ~하지마",
+  "compId" : 442,
+  "compIdx" : 2,
+  "compStmtKr" : "나한테 설교하려 들지 마!",
+  "compStmtEn" : "Don't you dare lecture me!"
+}, {
+  "divCode" : "111",
+  "divTitle" : "Don't you dare ...!",
+  "divContent" : "감히 ~하기만 해 봐라/감히 ~하지마",
+  "compId" : 443,
+  "compIdx" : 3,
+  "compStmtKr" : "감히 나한테 손가락 하나라도 까딱하기만 해 봐라.",
+  "compStmtEn" : "Don't you dare lay a finger on me!"
+}, {
+  "divCode" : "112",
+  "divTitle" : "Didn't S V ...?",
+  "divContent" : "~하지 않았어?/~하지 않았던가?",
+  "compId" : 444,
+  "compStmtKr" : "우리 4시에 만나기로 했다고 계한테 말 안 했어?",
+  "compStmtEn" : "Didn't you tell him we're meeting at 4?"
+}, {
+  "divCode" : "112",
+  "divTitle" : "Didn't S V ...?",
+  "divContent" : "~하지 않았어?/~하지 않았던가?",
+  "compId" : 445,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 그 문제 처리하지 않았던가?",
+  "compStmtEn" : "Didn't you take care of that problem?"
+}, {
+  "divCode" : "112",
+  "divTitle" : "Didn't S V ...?",
+  "divContent" : "~하지 않았어?/~하지 않았던가?",
+  "compId" : 446,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 아무도 들여보내지 말하고 하지 않았던가?",
+  "compStmtEn" : "Didn't I tell you not to let anyone in?"
+}, {
+  "divCode" : "112",
+  "divTitle" : "Didn't S V ...?",
+  "divContent" : "~하지 않았어?/~하지 않았던가?",
+  "compId" : 447,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 차는 집에 두고 오라고 하지 않았던가?",
+  "compStmtEn" : "Didn't I tell you to leave the car at home?"
+}, {
+  "divCode" : "113",
+  "divTitle" : "Didn't think (that) ...",
+  "divContent" : "~할/일 거라고는 생각 못했어",
+  "compId" : 448,
+  "compStmtKr" : "너 오늘 출근할 거라고는 생각 못했어",
+  "compStmtEn" : "Didn't think you would be in today."
+}, {
+  "divCode" : "113",
+  "divTitle" : "Didn't think (that) ...",
+  "divContent" : "~할/일 거라고는 생각 못했어",
+  "compId" : 449,
+  "compIdx" : 1,
+  "compStmtKr" : "그녀가 날 다시 받아 주리라고는 생각 못했어.",
+  "compStmtEn" : "Didn't think she'd take me back."
+}, {
+  "divCode" : "113",
+  "divTitle" : "Didn't think (that) ...",
+  "divContent" : "~할/일 거라고는 생각 못했어",
+  "compId" : 450,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 날 팔아넘길 거라고는 생각 못했어",
+  "compStmtEn" : "Didn't think you'd sell me out."
+}, {
+  "divCode" : "113",
+  "divTitle" : "Didn't think (that) ...",
+  "divContent" : "~할/일 거라고는 생각 못했어",
+  "compId" : 451,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 그렇게 멍청한 짓을 할 거라고는 생각 못했어",
+  "compStmtEn" : "Didn't think you'd do something so dumb."
+}, {
+  "divCode" : "114",
+  "divTitle" : "Can you get me ...?",
+  "divContent" : "~ 좀 갖다/사다 줄 수 있겠어?",
+  "compId" : 452,
+  "compStmtKr" : "나 커피 한 잔 좀 갖다/사다 줄래?",
+  "compStmtEn" : "Can you get me a cup of coffee?"
+}, {
+  "divCode" : "114",
+  "divTitle" : "Can you get me ...?",
+  "divContent" : "~ 좀 갖다/사다 줄 수 있겠어?",
+  "compId" : 453,
+  "compIdx" : 1,
+  "compStmtKr" : "이것 좀 넣게 비닐봉지 좀 갖다 줄래?",
+  "compStmtEn" : "Can you get me a plastic bag to put this in?"
+}, {
+  "divCode" : "114",
+  "divTitle" : "Can you get me ...?",
+  "divContent" : "~ 좀 갖다/사다 줄 수 있겠어?",
+  "compId" : 454,
+  "compIdx" : 2,
+  "compStmtKr" : "일어선 김에 물 좀 갖다 줄래?",
+  "compStmtEn" : "Can you get me some water since you're up?"
+}, {
+  "divCode" : "114",
+  "divTitle" : "Can you get me ...?",
+  "divContent" : "~ 좀 갖다/사다 줄 수 있겠어?",
+  "compId" : 455,
+  "compIdx" : 3,
+  "compStmtKr" : "엄마, 생일 선물로 핸드폰 사 주실 수 있어요?",
+  "compStmtEn" : "Mom, can you get me a cell phone for my birthday?"
+}, {
+  "divCode" : "115",
+  "divTitle" : "Can you believe (that) ...?",
+  "divContent" : "~이 믿겨져?",
+  "compId" : 456,
+  "compStmtKr" : "걔 배짱이 믿겨지니?",
+  "compStmtEn" : "Can you believe her guts?"
+}, {
+  "divCode" : "115",
+  "divTitle" : "Can you believe (that) ...?",
+  "divContent" : "~이 믿겨져?",
+  "compId" : 457,
+  "compIdx" : 1,
+  "compStmtKr" : "니콜이 내가 자기를 믿을 거라고 생각했다는 게 믿어지니?",
+  "compStmtEn" : "Can you believe Nicole thought I'd believe her?"
+}, {
+  "divCode" : "115",
+  "divTitle" : "Can you believe (that) ...?",
+  "divContent" : "~이 믿겨져?",
+  "compId" : 458,
+  "compIdx" : 2,
+  "compStmtKr" : "션이 표절하고도 안 들키고 넘어가려고 했다는 게 믿어져?",
+  "compStmtEn" : "Can you believe Sean tried to get away with plagiarism?"
+}, {
+  "divCode" : "115",
+  "divTitle" : "Can you believe (that) ...?",
+  "divContent" : "~이 믿겨져?",
+  "compId" : 459,
+  "compIdx" : 3,
+  "compStmtKr" : "그런 일이 있은 후에 그녀를 만나러 가다니 그의 뻔뻔함이 믿어져?",
+  "compStmtEn" : "Can you believe he had the nerve to go see her after what happened?"
+}, {
+  "divCode" : "116",
+  "divTitle" : "I can't believe (that) ...",
+  "divContent" : "~이 안 믿어져",
+  "compId" : 460,
+  "compStmtKr" : "걔가 그 얘기를 다 지어났다니 안 믿어져",
+  "compStmtEn" : "I can't believe he made the whole story up."
+}, {
+  "divCode" : "116",
+  "divTitle" : "I can't believe (that) ...",
+  "divContent" : "~이 안 믿어져",
+  "compId" : 461,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 걔한테 깊이 없다고 얘기했다니 안 믿어져",
+  "compStmtEn" : "I can't believe you called him shallow."
+}, {
+  "divCode" : "116",
+  "divTitle" : "I can't believe (that) ...",
+  "divContent" : "~이 안 믿어져",
+  "compId" : 462,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 걔 같은 못된 놈한테 반했었다니 안 믿어져.",
+  "compStmtEn" : "I can't believe I fell for a jerk like him."
+}, {
+  "divCode" : "116",
+  "divTitle" : "I can't believe (that) ...",
+  "divContent" : "~이 안 믿어져",
+  "compId" : 463,
+  "compIdx" : 3,
+  "compStmtKr" : "매트가 학교를 그만뒀다니 안 믿어져",
+  "compStmtEn" : "I can't believe Matt dropped out of school."
+}, {
+  "divCode" : "117",
+  "divTitle" : "You can't just ...",
+  "divContent" : "그냥 ~하면 안 돼/그냥 ~하면 어떻해",
+  "compId" : 464,
+  "compStmtKr" : "그냥 그런 질문들을 하면 안 되지",
+  "compStmtEn" : "You can't just ask questions like that."
+}, {
+  "divCode" : "117",
+  "divTitle" : "You can't just ...",
+  "divContent" : "그냥 ~하면 안 돼/그냥 ~하면 어떻해",
+  "compId" : 465,
+  "compIdx" : 1,
+  "compStmtKr" : "그냥 그렇게 싸워 보지도 않고 포기하면 어떻해",
+  "compStmtEn" : "You can't just give up without a fight."
+}, {
+  "divCode" : "117",
+  "divTitle" : "You can't just ...",
+  "divContent" : "그냥 ~하면 안 돼/그냥 ~하면 어떻해",
+  "compId" : 466,
+  "compIdx" : 2,
+  "compStmtKr" : "그냥 그렇게 쳐들어오면 어떻해",
+  "compStmtEn" : "You can't just barge in like that."
+}, {
+  "divCode" : "117",
+  "divTitle" : "You can't just ...",
+  "divContent" : "그냥 ~하면 안 돼/그냥 ~하면 어떻해",
+  "compId" : 467,
+  "compIdx" : 3,
+  "compStmtKr" : "그냥 네가 하고 싶은 대로 하면 안 되지",
+  "compStmtEn" : "You can't just do whatever you want."
+}, {
+  "divCode" : "118",
+  "divTitle" : "Why can't you ...?",
+  "divContent" : "넌 왜 ~하면 안돼?/왜 ~을 못하겠다는 거야?",
+  "compId" : 468,
+  "compStmtKr" : "넌 왜 내 말을 못 믿겠다는 거야?",
+  "compStmtEn" : "Why can't you believe me?"
+}, {
+  "divCode" : "118",
+  "divTitle" : "Why can't you ...?",
+  "divContent" : "넌 왜 ~하면 안돼?/왜 ~을 못하겠다는 거야?",
+  "compId" : 469,
+  "compIdx" : 1,
+  "compStmtKr" : "왜 날 가만히 내버려두지를 못하는 거야?",
+  "compStmtEn" : "Why can't you just leave me alone?"
+}, {
+  "divCode" : "118",
+  "divTitle" : "Why can't you ...?",
+  "divContent" : "넌 왜 ~하면 안돼?/왜 ~을 못하겠다는 거야?",
+  "compId" : 470,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 왜 가만히 않아 있지를 못하는 거야?",
+  "compStmtEn" : "Why can't you sit still?"
+}, {
+  "divCode" : "118",
+  "divTitle" : "Why can't you ...?",
+  "divContent" : "넌 왜 ~하면 안돼?/왜 ~을 못하겠다는 거야?",
+  "compId" : 471,
+  "compIdx" : 3,
+  "compStmtKr" : "왜 내가 널 얼마나 사랑하는지를 모르는 거야?",
+  "compStmtEn" : "Why can't you see how much I love you?"
+}, {
+  "divCode" : "119",
+  "divTitle" : "Why can't we ...?",
+  "divContent" : "우리 왜 ~하면 안 되는 거야?",
+  "compId" : 472,
+  "compStmtKr" : "우리 왜 친구로 남을 수 없다는 거야?",
+  "compStmtEn" : "Why can't we stay friends?"
+}, {
+  "divCode" : "119",
+  "divTitle" : "Why can't we ...?",
+  "divContent" : "우리 왜 ~하면 안 되는 거야?",
+  "compId" : 473,
+  "compIdx" : 1,
+  "compStmtKr" : "우리 왜 이걸 나중에 하면 안 된다는 거야?",
+  "compStmtEn" : "Why can't we just do this later?"
+}, {
+  "divCode" : "119",
+  "divTitle" : "Why can't we ...?",
+  "divContent" : "우리 왜 ~하면 안 되는 거야?",
+  "compId" : 474,
+  "compIdx" : 2,
+  "compStmtKr" : "왜 우리 여자 친구를 파티에 데려오면 안 된다는 거야?",
+  "compStmtEn" : "Why can't we bring out girlfriends to the party?"
+}, {
+  "divCode" : "119",
+  "divTitle" : "Why can't we ...?",
+  "divContent" : "우리 왜 ~하면 안 되는 거야?",
+  "compId" : 475,
+  "compIdx" : 3,
+  "compStmtKr" : "우린 왜 친구 이상이 될 수 없다는 거야?",
+  "compStmtEn" : "Why can't we be more than friends?"
+}, {
+  "divCode" : "120",
+  "divTitle" : "The least you could do is ...",
+  "divContent" : "최소한 ~정도는 해 줄 수 있잖아.",
+  "compId" : 476,
+  "compStmtKr" : "최소한 전화라도 해 줄 수 있잖아",
+  "compStmtEn" : "The least you could do is phone me."
+}, {
+  "divCode" : "120",
+  "divTitle" : "The least you could do is ...",
+  "divContent" : "최소한 ~정도는 해 줄 수 있잖아.",
+  "compId" : 477,
+  "compIdx" : 1,
+  "compStmtKr" : "최소한 걔 안부라도 물어봐 줄 수는 있잖아.",
+  "compStmtEn" : "The least you could do is ask him how he is."
+}, {
+  "divCode" : "120",
+  "divTitle" : "The least you could do is ...",
+  "divContent" : "최소한 ~정도는 해 줄 수 있잖아.",
+  "compId" : 478,
+  "compIdx" : 2,
+  "compStmtKr" : "최소한 감사 편지라도 보내 줄 수 있잖아.",
+  "compStmtEn" : "The least you could do is send a thank-you note."
+}, {
+  "divCode" : "120",
+  "divTitle" : "The least you could do is ...",
+  "divContent" : "최소한 ~정도는 해 줄 수 있잖아.",
+  "compId" : 479,
+  "compIdx" : 3,
+  "compStmtKr" : "최소한 사과 정도는 할 수 있잖아.",
+  "compStmtEn" : "The least you could do is apologize."
+}, {
+  "divCode" : "121",
+  "divTitle" : "I've never P.P ...",
+  "divContent" : "난 ~해 본 적 없어",
+  "compId" : 480,
+  "compStmtKr" : "난 사랑에 빠져 본 적 없어",
+  "compStmtEn" : "I've never been in love."
+}, {
+  "divCode" : "121",
+  "divTitle" : "I've never P.P ...",
+  "divContent" : "난 ~해 본 적 없어",
+  "compId" : 481,
+  "compIdx" : 1,
+  "compStmtKr" : "난 그런 거 해 본 적 전혀 없어",
+  "compStmtEn" : "I've never done anything like that before."
+}, {
+  "divCode" : "121",
+  "divTitle" : "I've never P.P ...",
+  "divContent" : "난 ~해 본 적 없어",
+  "compId" : 482,
+  "compIdx" : 2,
+  "compStmtKr" : "이런 감정 느껴 분 적 없어",
+  "compStmtEn" : "I've never felt this way before."
+}, {
+  "divCode" : "121",
+  "divTitle" : "I've never P.P ...",
+  "divContent" : "난 ~해 본 적 없어",
+  "compId" : 483,
+  "compIdx" : 3,
+  "compStmtKr" : "난 평생 데이트해 본 적 없어",
+  "compStmtEn" : "I've never gone on a date in my life."
+}, {
+  "divCode" : "122",
+  "divTitle" : "You've P.P ...",
+  "divContent" : "넌 ~해 봤잖아/왔잖아",
+  "compId" : 484,
+  "compStmtKr" : "너 걔가 어디까지 갈 수 있는지 봤잖아",
+  "compStmtEn" : "You've seen how far he can go."
+}, {
+  "divCode" : "122",
+  "divTitle" : "You've P.P ...",
+  "divContent" : "넌 ~해 봤잖아/왔잖아",
+  "compId" : 485,
+  "compIdx" : 1,
+  "compStmtKr" : "너 거기 가 본 적 있잖아./너도 겪어 본 적 있잖아",
+  "compStmtEn" : "You've been there before."
+}, {
+  "divCode" : "122",
+  "divTitle" : "You've P.P ...",
+  "divContent" : "넌 ~해 봤잖아/왔잖아",
+  "compId" : 486,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 항상 이걸 원했잖아",
+  "compStmtEn" : "You've always wanted this."
+}, {
+  "divCode" : "122",
+  "divTitle" : "You've P.P ...",
+  "divContent" : "넌 ~해 봤잖아/왔잖아",
+  "compId" : 487,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 내 입장이 되어 본 적 없잖아. 넌 이게 어떤지 모른다고.",
+  "compStmtEn" : "You haven't been in my shoes. You don't know what it's like."
+}, {
+  "divCode" : "123",
+  "divTitle" : "I've been ~ing ...",
+  "divContent" : "난 ~해/하고 있어",
+  "compId" : 488,
+  "compStmtKr" : "나 세달 동안 다이어트하고 있어",
+  "compStmtEn" : "I've been dieting for three months."
+}, {
+  "divCode" : "123",
+  "divTitle" : "I've been ~ing ...",
+  "divContent" : "난 ~해/하고 있어",
+  "compId" : 489,
+  "compIdx" : 1,
+  "compStmtKr" : "나 요즘 (헬스장에서) 운동하고 있어",
+  "compStmtEn" : "I've been working out lately."
+}, {
+  "divCode" : "123",
+  "divTitle" : "I've been ~ing ...",
+  "divContent" : "난 ~해/하고 있어",
+  "compId" : 490,
+  "compIdx" : 2,
+  "compStmtKr" : "나 지난 한달 동안 네가 무척 보고 싶었어",
+  "compStmtEn" : "I've been dying to see you this past month."
+}, {
+  "divCode" : "123",
+  "divTitle" : "I've been ~ing ...",
+  "divContent" : "난 ~해/하고 있어",
+  "compId" : 491,
+  "compIdx" : 3,
+  "compStmtKr" : "너 찾느라 여기저기 다 다녔어!",
+  "compStmtEn" : "I've been looking everywhere for you!"
+}, {
+  "divCode" : "124",
+  "divTitle" : "Haven't you P.P ...?",
+  "divContent" : "너 ~해 본 적 없어?/~ 안 했어?",
+  "compId" : 492,
+  "compStmtKr" : "너 아직도 답을 생각해내지 못했어?",
+  "compStmtEn" : "Haven't you figured out the answer yet?"
+}, {
+  "divCode" : "124",
+  "divTitle" : "Haven't you P.P ...?",
+  "divContent" : "너 ~해 본 적 없어?/~ 안 했어?",
+  "compId" : 493,
+  "compIdx" : 1,
+  "compStmtKr" : "너 걔한테 아직 전화 안 했단 말이야?",
+  "compStmtEn" : "Haven't you called her yet?"
+}, {
+  "divCode" : "124",
+  "divTitle" : "Haven't you P.P ...?",
+  "divContent" : "너 ~해 본 적 없어?/~ 안 했어?",
+  "compId" : 494,
+  "compIdx" : 2,
+  "compStmtKr" : "걔한테 아직 아무 소식 없었어?",
+  "compStmtEn" : "Haven't you heard from him yet?"
+}, {
+  "divCode" : "124",
+  "divTitle" : "Haven't you P.P ...?",
+  "divContent" : "너 ~해 본 적 없어?/~ 안 했어?",
+  "compId" : 495,
+  "compIdx" : 3,
+  "compStmtKr" : "너 걔한테 질리지도 않았어?",
+  "compStmtEn" : "Haven't you had enough of her?"
+}, {
+  "divCode" : "125",
+  "divTitle" : "What have you P.P ...?",
+  "divContent" : "너 뭐 ~했어?",
+  "compId" : 496,
+  "compStmtKr" : "너 어떻게 지났어?",
+  "compStmtEn" : "What have you been up to?"
+}, {
+  "divCode" : "125",
+  "divTitle" : "What have you P.P ...?",
+  "divContent" : "너 뭐 ~했어?",
+  "compId" : 497,
+  "compIdx" : 1,
+  "compStmtKr" : "너 머리에다 무슨 짓을 한 거야?",
+  "compStmtEn" : "What have you done to your hair?"
+}, {
+  "divCode" : "125",
+  "divTitle" : "What have you P.P ...?",
+  "divContent" : "너 뭐 ~했어?",
+  "compId" : 498,
+  "compIdx" : 2,
+  "compStmtKr" : "너 내가 빌려준 CD는 어땠어?",
+  "compStmtEn" : "What have you done with the CD I lent you?"
+}, {
+  "divCode" : "125",
+  "divTitle" : "What have you P.P ...?",
+  "divContent" : "너 뭐 ~했어?",
+  "compId" : 499,
+  "compIdx" : 3,
+  "compStmtKr" : "졸업 후에 뭐 하기로 결정했어?",
+  "compStmtEn" : "What have you decided to do after graduation?"
+}, {
+  "divCode" : "126",
+  "divTitle" : "It's been ... (since ~)",
+  "divContent" : "(~한 지) ~나 됐어",
+  "compId" : 500,
+  "compStmtKr" : "벌써 3시간이나 됐잖아! 데이비드 도대체 어디 있는 거야?",
+  "compStmtEn" : "It's been 3 hours already! Where the hell is David?"
+}, {
+  "divCode" : "126",
+  "divTitle" : "It's been ... (since ~)",
+  "divContent" : "(~한 지) ~나 됐어",
+  "compId" : 501,
+  "compIdx" : 1,
+  "compStmtKr" : "그들이 헤어진 지 꽤 시간이 지났어",
+  "compStmtEn" : "It's been some time since they broke up."
+}, {
+  "divCode" : "126",
+  "divTitle" : "It's been ... (since ~)",
+  "divContent" : "(~한 지) ~나 됐어",
+  "compId" : 502,
+  "compIdx" : 2,
+  "compStmtKr" : "우리가 대학 졸업한 지 3년이나 됐구나",
+  "compStmtEn" : "It's been 3 years since we were in college."
+}, {
+  "divCode" : "126",
+  "divTitle" : "It's been ... (since ~)",
+  "divContent" : "(~한 지) ~나 됐어",
+  "compId" : 503,
+  "compIdx" : 3,
+  "compStmtKr" : "우리 다 뭉친 지 꽤 됐네",
+  "compStmtEn" : "It's been a while since all of us get together."
+}, {
+  "divCode" : "127",
+  "divTitle" : "You've been ~ing ...?",
+  "divContent" : "너 계속 ~했단 말이야?",
+  "compId" : 504,
+  "compStmtKr" : "너 하루 종일 잠만 잤단 말이야?",
+  "compStmtEn" : "You've been sleeping all day long?"
+}, {
+  "divCode" : "127",
+  "divTitle" : "You've been ~ing ...?",
+  "divContent" : "너 계속 ~했단 말이야?",
+  "compId" : 505,
+  "compIdx" : 1,
+  "compStmtKr" : "너 걔를 2시간씩이나 기다리고 있단 말이야?",
+  "compStmtEn" : "You've been waiting for him for 2 hours?"
+}, {
+  "divCode" : "127",
+  "divTitle" : "You've been ~ing ...?",
+  "divContent" : "너 계속 ~했단 말이야?",
+  "compId" : 506,
+  "compIdx" : 2,
+  "compStmtKr" : "너도 술 마시고 있던 거야?",
+  "compStmtEn" : "You've been drinking again?"
+}, {
+  "divCode" : "127",
+  "divTitle" : "You've been ~ing ...?",
+  "divContent" : "너 계속 ~했단 말이야?",
+  "compId" : 507,
+  "compIdx" : 3,
+  "compStmtKr" : "너 베타와 계속 연락 주고받았단 말이야?",
+  "compStmtEn" : "You've been keeping in touch with Betty?"
+}, {
+  "divCode" : "128",
+  "divTitle" : "What's so ...?",
+  "divContent" : "뭐가 그렇게 ~해?",
+  "compId" : 508,
+  "compStmtKr" : "뭐가 그렇게 재밌어(웃겨)?",
+  "compStmtEn" : "What's so funny?"
+}, {
+  "divCode" : "128",
+  "divTitle" : "What's so ...?",
+  "divContent" : "뭐가 그렇게 ~해?",
+  "compId" : 509,
+  "compIdx" : 1,
+  "compStmtKr" : "그게 뭐가 그렇게 특별해?",
+  "compStmtEn" : "What's so special about it?"
+}, {
+  "divCode" : "128",
+  "divTitle" : "What's so ...?",
+  "divContent" : "뭐가 그렇게 ~해?",
+  "compId" : 510,
+  "compIdx" : 2,
+  "compStmtKr" : "에드워드랑 일하는 게 뭐가 그렇게 나빠?",
+  "compStmtEn" : "What's so bad about working with Edward?"
+}, {
+  "divCode" : "128",
+  "divTitle" : "What's so ...?",
+  "divContent" : "뭐가 그렇게 ~해?",
+  "compId" : 511,
+  "compIdx" : 3,
+  "compStmtKr" : "이거 뭣 때문에 그렇게 쉬쉬하는 거야?",
+  "compStmtEn" : "What's so hush-hush about this?"
+}, {
+  "divCode" : "129",
+  "divTitle" : "What's with ...?",
+  "divContent" : "~가 왜 그러지?/웬 ~이야?",
+  "compId" : 512,
+  "compStmtKr" : "너 좀 봐! 표정이 왜 그래?",
+  "compStmtEn" : "Look at you! What's with the face?"
+}, {
+  "divCode" : "129",
+  "divTitle" : "What's with ...?",
+  "divContent" : "~가 왜 그러지?/웬 ~이야?",
+  "compId" : 513,
+  "compIdx" : 1,
+  "compStmtKr" : "너 머리가 왜 그모양이야?",
+  "compStmtEn" : "What's with your hair?"
+}, {
+  "divCode" : "129",
+  "divTitle" : "What's with ...?",
+  "divContent" : "~가 왜 그러지?/웬 ~이야?",
+  "compId" : 514,
+  "compIdx" : 2,
+  "compStmtKr" : "너 왜 그래? 너답지 않아",
+  "compStmtEn" : "What's with you? You're not yourself."
+}, {
+  "divCode" : "129",
+  "divTitle" : "What's with ...?",
+  "divContent" : "~가 왜 그러지?/웬 ~이야?",
+  "compId" : 515,
+  "compIdx" : 3,
+  "compStmtKr" : "잭 왜 저래? 오늘 하루 종일 한 마디도 안 했잖아.",
+  "compStmtEn" : "What's with Jack? He hasn't said a word all day."
+}, {
+  "divCode" : "130",
+  "divTitle" : "What's it like ...?",
+  "divContent" : "~은 어떤 기분이야?/~하니까 어때?",
+  "compId" : 516,
+  "compStmtKr" : "결혼하니까 어때?",
+  "compStmtEn" : "What's it like to be married?"
+}, {
+  "divCode" : "130",
+  "divTitle" : "What's it like ...?",
+  "divContent" : "~은 어떤 기분이야?/~하니까 어때?",
+  "compId" : 517,
+  "compIdx" : 1,
+  "compStmtKr" : "찰리하고 같이 일해 보니까 어때?",
+  "compStmtEn" : "What's it like to work with Charlie?"
+}, {
+  "divCode" : "130",
+  "divTitle" : "What's it like ...?",
+  "divContent" : "~은 어떤 기분이야?/~하니까 어때?",
+  "compId" : 518,
+  "compIdx" : 2,
+  "compStmtKr" : "거기는 어때?",
+  "compStmtEn" : "What's it like over there?"
+}, {
+  "divCode" : "130",
+  "divTitle" : "What's it like ...?",
+  "divContent" : "~은 어떤 기분이야?/~하니까 어때?",
+  "compId" : 519,
+  "compIdx" : 3,
+  "compStmtKr" : "잘나가는 주식 중개인이 된 기분이 어때?",
+  "compStmtEn" : "What's it like being a hotshot stockbroker?"
+}, {
+  "divCode" : "131",
+  "divTitle" : "What makes you think (that) ...?",
+  "divContent" : "뭐 때문에 ~이라고 생각하는 거야?",
+  "compId" : 520,
+  "compStmtKr" : "왜 우리가 헤어질 거라고 생각해?",
+  "compStmtEn" : "What makes you think we're gonna break up?"
+}, {
+  "divCode" : "131",
+  "divTitle" : "What makes you think (that) ...?",
+  "divContent" : "뭐 때문에 ~이라고 생각하는 거야?",
+  "compId" : 521,
+  "compIdx" : 1,
+  "compStmtKr" : "왜 뭔가 잘못됐다고 생각하는 거야?",
+  "compStmtEn" : "What makes you think there's something wrong?"
+}, {
+  "divCode" : "131",
+  "divTitle" : "What makes you think (that) ...?",
+  "divContent" : "뭐 때문에 ~이라고 생각하는 거야?",
+  "compId" : 522,
+  "compIdx" : 2,
+  "compStmtKr" : "왜 네가 실패했다고 생각하는 거야?",
+  "compStmtEn" : "What makes you think you failed?"
+}, {
+  "divCode" : "131",
+  "divTitle" : "What makes you think (that) ...?",
+  "divContent" : "뭐 때문에 ~이라고 생각하는 거야?",
+  "compId" : 523,
+  "compIdx" : 3,
+  "compStmtKr" : "왜 살인이라고 생각하는 거야?",
+  "compStmtEn" : "What makes you think there is foul play?"
+}, {
+  "divCode" : "132",
+  "divTitle" : "What did you do with/to ...?",
+  "divContent" : "~ 갖고 뭘 할 거야?/~한테 무슨 짓을 한 거야?",
+  "compId" : 524,
+  "compStmtKr" : "너 그 돈 갖고 뭘 한 거야?(그 돈 어쨌어?)",
+  "compStmtEn" : "What did you do with the money?"
+}, {
+  "divCode" : "132",
+  "divTitle" : "What did you do with/to ...?",
+  "divContent" : "~ 갖고 뭘 할 거야?/~한테 무슨 짓을 한 거야?",
+  "compId" : 525,
+  "compIdx" : 1,
+  "compStmtKr" : "너 동생한테 무슨 짓을 한 거야?",
+  "compStmtEn" : "What did you do to your brother?"
+}, {
+  "divCode" : "132",
+  "divTitle" : "What did you do with/to ...?",
+  "divContent" : "~ 갖고 뭘 할 거야?/~한테 무슨 짓을 한 거야?",
+  "compId" : 526,
+  "compIdx" : 2,
+  "compStmtKr" : "너 전에 몰던 차는 어쨌어?",
+  "compStmtEn" : "What did you do with your old car?"
+}, {
+  "divCode" : "132",
+  "divTitle" : "What did you do with/to ...?",
+  "divContent" : "~ 갖고 뭘 할 거야?/~한테 무슨 짓을 한 거야?",
+  "compId" : 527,
+  "compIdx" : 3,
+  "compStmtKr" : "이 재킷에다가 무슨 짓을 한 거야?",
+  "compStmtEn" : "What did you do to this jacket?"
+}, {
+  "divCode" : "133",
+  "divTitle" : "What matters is ...",
+  "divContent" : "중요한 건 ~이야",
+  "compId" : 528,
+  "compStmtKr" : "중요한 건 우리가 함께라는 거야",
+  "compStmtEn" : "What matters is we're together."
+}, {
+  "divCode" : "133",
+  "divTitle" : "What matters is ...",
+  "divContent" : "중요한 건 ~이야",
+  "compId" : 529,
+  "compIdx" : 1,
+  "compStmtKr" : "중요한 건 네가 지금 여기에 있다는 거야(늣었지만 지금이라도 왔으니 됐어)",
+  "compStmtEn" : "What matters is you're here now."
+}, {
+  "divCode" : "133",
+  "divTitle" : "What matters is ...",
+  "divContent" : "중요한 건 ~이야",
+  "compId" : 530,
+  "compIdx" : 2,
+  "compStmtKr" : "중요한 건 네가 정말로 원하는 게 무엇인가야.",
+  "compStmtEn" : "What matters is what you really want."
+}, {
+  "divCode" : "133",
+  "divTitle" : "What matters is ...",
+  "divContent" : "중요한 건 ~이야",
+  "compId" : 531,
+  "compIdx" : 3,
+  "compStmtKr" : "나한테 중요한 건 끌림이야.",
+  "compStmtEn" : "What matters to me is chemistry."
+}, {
+  "divCode" : "134",
+  "divTitle" : "What do you mean ...?",
+  "divContent" : "~이라니 그게 무슨 말이야?",
+  "compId" : 532,
+  "compStmtKr" : "그가 떠났다니 그게 무슨 말이야?",
+  "compStmtEn" : "What do you mean he left?"
+}, {
+  "divCode" : "134",
+  "divTitle" : "What do you mean ...?",
+  "divContent" : "~이라니 그게 무슨 말이야?",
+  "compId" : 533,
+  "compIdx" : 1,
+  "compStmtKr" : "네 말이 맞고 난 틀렸다니 그게 무슨 말이야?",
+  "compStmtEn" : "What do you mean you're right and I'm wrong?"
+}, {
+  "divCode" : "134",
+  "divTitle" : "What do you mean ...?",
+  "divContent" : "~이라니 그게 무슨 말이야?",
+  "compId" : 534,
+  "compIdx" : 2,
+  "compStmtKr" : "새 남자 친구라니 그게 무슨 말이야?",
+  "compStmtEn" : "What do you mean a new boyfriend?"
+}, {
+  "divCode" : "134",
+  "divTitle" : "What do you mean ...?",
+  "divContent" : "~이라니 그게 무슨 말이야?",
+  "compId" : 535,
+  "compIdx" : 3,
+  "compStmtKr" : "\"나 그만 좀 못살게 굴어\"라니 그게 무슨 말이야?",
+  "compStmtEn" : "What do you mean \"Get off my back\"?"
+}, {
+  "divCode" : "135",
+  "divTitle" : "What kind of ... are you?",
+  "divContent" : "넌 무슨 ~이 그래?",
+  "compId" : 536,
+  "compStmtKr" : "넌 무슨 친구가 그래?",
+  "compStmtEn" : "What kind of friend are you?"
+}, {
+  "divCode" : "135",
+  "divTitle" : "What kind of ... are you?",
+  "divContent" : "넌 무슨 ~이 그래?",
+  "compId" : 537,
+  "compIdx" : 1,
+  "compStmtKr" : "넌 아들이 돼서 뭐 그러냐?",
+  "compStmtEn" : "What kind of son are you?"
+}, {
+  "divCode" : "135",
+  "divTitle" : "What kind of ... are you?",
+  "divContent" : "넌 무슨 ~이 그래?",
+  "compId" : 538,
+  "compIdx" : 2,
+  "compStmtKr" : "단신은 이웃이 뭐 그럽니까?",
+  "compStmtEn" : "What kind of neighbor are you?"
+}, {
+  "divCode" : "135",
+  "divTitle" : "What kind of ... are you?",
+  "divContent" : "넌 무슨 ~이 그래?",
+  "compId" : 539,
+  "compIdx" : 3,
+  "compStmtKr" : "당신들은 경찰이 뭐 그렇습니까?",
+  "compStmtEn" : "What kind of cops are you?"
+}, {
+  "divCode" : "136",
+  "divTitle" : "How could ...?",
+  "divContent" : "어떻게 ~할 수가 있어?",
+  "compId" : 540,
+  "compStmtKr" : "어떻게 뒤에서 몰래 내 험담을 할 수가 있어?",
+  "compStmtEn" : "How could you talk behind my back?"
+}, {
+  "divCode" : "136",
+  "divTitle" : "How could ...?",
+  "divContent" : "어떻게 ~할 수가 있어?",
+  "compId" : 541,
+  "compIdx" : 1,
+  "compStmtKr" : "어떻게 그렇게 중요한 걸 간과할 수가 있어?",
+  "compStmtEn" : "How could you overlook something so important?"
+}, {
+  "divCode" : "136",
+  "divTitle" : "How could ...?",
+  "divContent" : "어떻게 ~할 수가 있어?",
+  "compId" : 542,
+  "compIdx" : 2,
+  "compStmtKr" : "어떻게 나한테 그 말 하는 걸 엊어버릴 수 있어?",
+  "compStmtEn" : "How could you forget to tell me that?"
+}, {
+  "divCode" : "136",
+  "divTitle" : "How could ...?",
+  "divContent" : "어떻게 ~할 수가 있어?",
+  "compId" : 543,
+  "compIdx" : 3,
+  "compStmtKr" : "걔가 어떻게 나한테 이럴 수가 있어?",
+  "compStmtEn" : "How could he do this to me?"
+}, {
+  "divCode" : "137",
+  "divTitle" : "How're you gonna ...?",
+  "divContent" : "너 어떻게 ~할 건데?",
+  "compId" : 544,
+  "compStmtKr" : "너 그건 어떻게 할 건데?",
+  "compStmtEn" : "How're you gonna do that?"
+}, {
+  "divCode" : "137",
+  "divTitle" : "How're you gonna ...?",
+  "divContent" : "너 어떻게 ~할 건데?",
+  "compId" : 545,
+  "compIdx" : 1,
+  "compStmtKr" : "너 그 비용을 어떻게 마련할 건데?",
+  "compStmtEn" : "How're you gonna find the money?"
+}, {
+  "divCode" : "137",
+  "divTitle" : "How're you gonna ...?",
+  "divContent" : "너 어떻게 ~할 건데?",
+  "compId" : 546,
+  "compIdx" : 2,
+  "compStmtKr" : "너 빚은 어떻게 갚을 건데?",
+  "compStmtEn" : "How're you gonna pay off your debt?"
+}, {
+  "divCode" : "137",
+  "divTitle" : "How're you gonna ...?",
+  "divContent" : "너 어떻게 ~할 건데?",
+  "compId" : 547,
+  "compIdx" : 3,
+  "compStmtKr" : "너 어떻게 그와 헤어지려는 거야?",
+  "compStmtEn" : "How're you gonna break it off with him?"
+}, {
+  "divCode" : "138",
+  "divTitle" : "How about S V ...?",
+  "divContent" : "~하는 게 어때?/~하면 어때?",
+  "compId" : 548,
+  "compStmtKr" : "네 일이나 신경 쓰는 게 어때?",
+  "compStmtEn" : "How about you mind your own business?"
+}, {
+  "divCode" : "138",
+  "divTitle" : "How about S V ...?",
+  "divContent" : "~하는 게 어때?/~하면 어때?",
+  "compId" : 549,
+  "compIdx" : 1,
+  "compStmtKr" : "우리 이따가 술 한잔 하는 게 어때?",
+  "compStmtEn" : "How about we meet for drinks later?"
+}, {
+  "divCode" : "138",
+  "divTitle" : "How about S V ...?",
+  "divContent" : "~하는 게 어때?/~하면 어때?",
+  "compId" : 550,
+  "compIdx" : 2,
+  "compStmtKr" : "우리 내일까지 잘 생각해 보는 게 어떨까?",
+  "compStmtEn" : "How about we sleep on it?"
+}, {
+  "divCode" : "138",
+  "divTitle" : "How about S V ...?",
+  "divContent" : "~하는 게 어때?/~하면 어때?",
+  "compId" : 551,
+  "compIdx" : 3,
+  "compStmtKr" : "내 사무실 잠깐 들르는 게 어때?",
+  "compStmtEn" : "How about you come by my office?"
+}, {
+  "divCode" : "139",
+  "divTitle" : "How did you ...?",
+  "divContent" : "너 어떻게 ~했어?",
+  "compId" : 552,
+  "compStmtKr" : "너 어떻게 여기 들어왔어?",
+  "compStmtEn" : "How did you get in here?"
+}, {
+  "divCode" : "139",
+  "divTitle" : "How did you ...?",
+  "divContent" : "너 어떻게 ~했어?",
+  "compId" : 553,
+  "compIdx" : 1,
+  "compStmtKr" : "너 그게 어떻게 알았어?",
+  "compStmtEn" : "How did you know that?"
+}, {
+  "divCode" : "139",
+  "divTitle" : "How did you ...?",
+  "divContent" : "너 어떻게 ~했어?",
+  "compId" : 554,
+  "compIdx" : 2,
+  "compStmtKr" : "너 네 여드름 어떻게 치료했어?",
+  "compStmtEn" : "How did you cure your acne?"
+}, {
+  "divCode" : "139",
+  "divTitle" : "How did you ...?",
+  "divContent" : "너 어떻게 ~했어?",
+  "compId" : 555,
+  "compIdx" : 3,
+  "compStmtKr" : "너 이 모든 걸 어떻게 해낸 거야?",
+  "compStmtEn" : "How did you manage all this?"
+}, {
+  "divCode" : "140",
+  "divTitle" : "How long have you P.P ...?",
+  "divContent" : "~한 지 얼마나 됐어?",
+  "compId" : 556,
+  "compStmtKr" : "여기에 얼마나 오래 있었어?",
+  "compStmtEn" : "How long have you been here?"
+}, {
+  "divCode" : "140",
+  "divTitle" : "How long have you P.P ...?",
+  "divContent" : "~한 지 얼마나 됐어?",
+  "compId" : 557,
+  "compIdx" : 1,
+  "compStmtKr" : "너희들 사귄 지 얼마나 됐어?",
+  "compStmtEn" : "How long have you guys been seeing each other?"
+}, {
+  "divCode" : "140",
+  "divTitle" : "How long have you P.P ...?",
+  "divContent" : "~한 지 얼마나 됐어?",
+  "compId" : 558,
+  "compIdx" : 2,
+  "compStmtKr" : "이 부서에서 근무한 지 얼마나 됐어?",
+  "compStmtEn" : "How long have you worked in this department?"
+}, {
+  "divCode" : "140",
+  "divTitle" : "How long have you P.P ...?",
+  "divContent" : "~한 지 얼마나 됐어?",
+  "compId" : 559,
+  "compIdx" : 3,
+  "compStmtKr" : "트위터 시작한 지 얼마나 됐어?",
+  "compStmtEn" : "How long have you been on Twitter?"
+}, {
+  "divCode" : "141",
+  "divTitle" : "How many times do I have to ...?",
+  "divContent" : "내가 (도대체) 몇 번 ~해야 되겠어?",
+  "compId" : 560,
+  "compStmtKr" : "내가 도대체 몇 번 말해야 되겠어?",
+  "compStmtEn" : "How many times do I have to tell you?"
+}, {
+  "divCode" : "141",
+  "divTitle" : "How many times do I have to ...?",
+  "divContent" : "내가 (도대체) 몇 번 ~해야 되겠어?",
+  "compId" : 561,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 도대체 몇 번 같은 말을 반복해야 되겠어?",
+  "compStmtEn" : "How many times do I have to repeat myself?"
+}, {
+  "divCode" : "141",
+  "divTitle" : "How many times do I have to ...?",
+  "divContent" : "내가 (도대체) 몇 번 ~해야 되겠어?",
+  "compId" : 562,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 도대체 몇 번 부탁(질문)해야 되겠어?",
+  "compStmtEn" : "How many times do I have to ask you?"
+}, {
+  "divCode" : "141",
+  "divTitle" : "How many times do I have to ...?",
+  "divContent" : "내가 (도대체) 몇 번 ~해야 되겠어?",
+  "compId" : 563,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 몇 번 여기에 와야 되겠어?",
+  "compStmtEn" : "How many times do I have to come here?"
+}, {
+  "divCode" : "142",
+  "divTitle" : "How is it (that) ...?",
+  "divContent" : "어째서 ~하는 거야?",
+  "compId" : 564,
+  "compStmtKr" : "어째서 며칠 동안이나 집에 안 들어온 거야?",
+  "compStmtEn" : "How is it you weren't home for days?"
+}, {
+  "divCode" : "142",
+  "divTitle" : "How is it (that) ...?",
+  "divContent" : "어째서 ~하는 거야?",
+  "compId" : 565,
+  "compIdx" : 1,
+  "compStmtKr" : "어째서 또 낙제 점수를 받어 갖고 온 거야?",
+  "compStmtEn" : "How is it that you brought home an F again?"
+}, {
+  "divCode" : "142",
+  "divTitle" : "How is it (that) ...?",
+  "divContent" : "어째서 ~하는 거야?",
+  "compId" : 566,
+  "compIdx" : 2,
+  "compStmtKr" : "너희들은 어째서 만나기만 하면 싸우나?",
+  "compStmtEn" : "How is it you're always at each other's throats?"
+}, {
+  "divCode" : "142",
+  "divTitle" : "How is it (that) ...?",
+  "divContent" : "어째서 ~하는 거야?",
+  "compId" : 567,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 어째서 남에 대해 그렇게 비판적인 거야?",
+  "compStmtEn" : "How is it you're so judgmental?"
+}, {
+  "divCode" : "143",
+  "divTitle" : "How dare you ...!",
+  "divContent" : "네가 감히 어떻게 ~해!/감히 ~하다니!",
+  "compId" : 568,
+  "compStmtKr" : "네가 감히 어떻게 날 바보라고 부를 수 있어?",
+  "compStmtEn" : "How dare you call me an idiot!"
+}, {
+  "divCode" : "143",
+  "divTitle" : "How dare you ...!",
+  "divContent" : "네가 감히 어떻게 ~해!/감히 ~하다니!",
+  "compId" : 569,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 감히 어떻게 나한테 이래라저래라 해?",
+  "compStmtEn" : "How dare you boss me around!"
+}, {
+  "divCode" : "143",
+  "divTitle" : "How dare you ...!",
+  "divContent" : "네가 감히 어떻게 ~해!/감히 ~하다니!",
+  "compId" : 570,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 감히 어떻게 날 노려봐?",
+  "compStmtEn" : "How dare you give me the cut-eye!"
+}, {
+  "divCode" : "143",
+  "divTitle" : "How dare you ...!",
+  "divContent" : "네가 감히 어떻게 ~해!/감히 ~하다니!",
+  "compId" : 571,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 감히 어떻게 내 뒤통수를 칠 수 있어?",
+  "compStmtEn" : "How dare you go behind my back!"
+}, {
+  "divCode" : "144",
+  "divTitle" : "Why did I ...?",
+  "divContent" : "내가 왜 ~했지?",
+  "compId" : 572,
+  "compStmtKr" : "내가 왜 네 말을 들은 걸까?(네 말 괜히 들었어)",
+  "compStmtEn" : "Why did I even listen to you?"
+}, {
+  "divCode" : "144",
+  "divTitle" : "Why did I ...?",
+  "divContent" : "내가 왜 ~했지?",
+  "compId" : 573,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 왜 이걸 한다고 했지?",
+  "compStmtEn" : "Why did I say I would do this?"
+}, {
+  "divCode" : "144",
+  "divTitle" : "Why did I ...?",
+  "divContent" : "내가 왜 ~했지?",
+  "compId" : 574,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 왜 졸리지도 않는데 낮잠을 잤지?",
+  "compStmtEn" : "Why did I take a nap when I wasn't even sleepy?"
+}, {
+  "divCode" : "144",
+  "divTitle" : "Why did I ...?",
+  "divContent" : "내가 왜 ~했지?",
+  "compId" : 575,
+  "compIdx" : 3,
+  "compStmtKr" : "걔가 자기가 변했다고 얘기했을 때 내가 왜 그 말을 믿었을까?",
+  "compStmtEn" : "Why did I believe him when he said he had changed?"
+}, {
+  "divCode" : "145",
+  "divTitle" : "Why do you wanna ...?",
+  "divContent" : "넌 왜 ~하고 싶은 거야?",
+  "compId" : 576,
+  "compStmtKr" : "당신은 왜 여기서 일하고 싶은 겁니까?",
+  "compStmtEn" : "Why do you wanna work here?"
+}, {
+  "divCode" : "145",
+  "divTitle" : "Why do you wanna ...?",
+  "divContent" : "넌 왜 ~하고 싶은 거야?",
+  "compId" : 577,
+  "compIdx" : 1,
+  "compStmtKr" : "왜 알고 싶은 건데?(알아서 뭐할 건데?)",
+  "compStmtEn" : "Why do you wanna know?"
+}, {
+  "divCode" : "145",
+  "divTitle" : "Why do you wanna ...?",
+  "divContent" : "넌 왜 ~하고 싶은 거야?",
+  "compId" : 578,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 왜 어릴 때(빨리) 결혼하고 싶어 하는 거야?",
+  "compStmtEn" : "Why do you wanna marry young?"
+}, {
+  "divCode" : "145",
+  "divTitle" : "Why do you wanna ...?",
+  "divContent" : "넌 왜 ~하고 싶은 거야?",
+  "compId" : 579,
+  "compIdx" : 3,
+  "compStmtKr" : "너 왜 네 직업을 바꾸고 싶다는 거야?(다른 직종을 택해서 좋은 게 뭐가 있다고?)",
+  "compStmtEn" : "Why do you wanna make a career change?"
+}, {
+  "divCode" : "146",
+  "divTitle" : "Why would S V ...?",
+  "divContent" : "왜 ~하겠어?/왜 ~하는 거야?",
+  "compId" : 580,
+  "compStmtKr" : "내가 왜 그런 걸 하겠어? 난 바보가 아냐.",
+  "compStmtEn" : "Why would I do that? I'm not stupid."
+}, {
+  "divCode" : "146",
+  "divTitle" : "Why would S V ...?",
+  "divContent" : "왜 ~하겠어?/왜 ~하는 거야?",
+  "compId" : 581,
+  "compIdx" : 1,
+  "compStmtKr" : "그런 말 하지마. 왜 그런 말을 하는 거야?",
+  "compStmtEn" : "Don't say that. Why would you say that?"
+}, {
+  "divCode" : "146",
+  "divTitle" : "Why would S V ...?",
+  "divContent" : "왜 ~하겠어?/왜 ~하는 거야?",
+  "compId" : 582,
+  "compIdx" : 2,
+  "compStmtKr" : "넌 왜 그런 고소득 직업을 그만두겠다는 거야?",
+  "compStmtEn" : "Why would you leave such a high-paying job?"
+}, {
+  "divCode" : "146",
+  "divTitle" : "Why would S V ...?",
+  "divContent" : "왜 ~하겠어?/왜 ~하는 거야?",
+  "compId" : 583,
+  "compIdx" : 3,
+  "compStmtKr" : "걔가 왜 그런 짓을 한 거지? 미쳤나?",
+  "compStmtEn" : "Why would he do something like that? Is he crazy?"
+}, {
+  "divCode" : "147",
+  "divTitle" : "Why do I have to ...?",
+  "divContent" : "내가 왜 ~해야 하는 거야?",
+  "compId" : 584,
+  "compStmtKr" : "왜 내가 사과해야 하는 거야?",
+  "compStmtEn" : "Why do I have to apologize?"
+}, {
+  "divCode" : "147",
+  "divTitle" : "Why do I have to ...?",
+  "divContent" : "내가 왜 ~해야 하는 거야?",
+  "compId" : 585,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 왜 집안 잡일을 다 해야 하는 거야?",
+  "compStmtEn" : "Why do I have to do all the chores?"
+}, {
+  "divCode" : "147",
+  "divTitle" : "Why do I have to ...?",
+  "divContent" : "내가 왜 ~해야 하는 거야?",
+  "compId" : 586,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 왜 이걸 참아야 하는 거야?",
+  "compStmtEn" : "Why do I have to put up with this?"
+}, {
+  "divCode" : "147",
+  "divTitle" : "Why do I have to ...?",
+  "divContent" : "내가 왜 ~해야 하는 거야?",
+  "compId" : 587,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 왜 네 징징대는 걸 들어 줘야 하는 거야?",
+  "compStmtEn" : "Why do I have to listen to your whining?"
+}, {
+  "divCode" : "148",
+  "divTitle" : "Who's gonna ...?",
+  "divContent" : "누가 ~할 거야?/누가 ~하겠나?",
+  "compId" : 588,
+  "compStmtKr" : "누가 나 이거 하는 거 도와줄 거야?",
+  "compStmtEn" : "Who's gonna help me with this?"
+}, {
+  "divCode" : "148",
+  "divTitle" : "Who's gonna ...?",
+  "divContent" : "누가 ~할 거야?/누가 ~하겠나?",
+  "compId" : 589,
+  "compIdx" : 1,
+  "compStmtKr" : "이번엔 누가 계산할 거야?",
+  "compStmtEn" : "Who's gonna pick up the tab this time?"
+}, {
+  "divCode" : "148",
+  "divTitle" : "Who's gonna ...?",
+  "divContent" : "누가 ~할 거야?/누가 ~하겠나?",
+  "compId" : 590,
+  "compIdx" : 2,
+  "compStmtKr" : "누가 네 말을 믿겠냐?",
+  "compStmtEn" : "Who's gonna believe you?"
+}, {
+  "divCode" : "148",
+  "divTitle" : "Who's gonna ...?",
+  "divContent" : "누가 ~할 거야?/누가 ~하겠나?",
+  "compId" : 591,
+  "compIdx" : 3,
+  "compStmtKr" : "무슨 일인지 누가 나한테 말해 줄 거야?",
+  "compStmtEn" : "Who's gonna tell me what's going on?"
+}, {
+  "divCode" : "149",
+  "divTitle" : "Who said ...?",
+  "divContent" : "누가 ~래?",
+  "compId" : 592,
+  "compStmtKr" : "누가 그렇게 말했어?",
+  "compStmtEn" : "Who said so?"
+}, {
+  "divCode" : "149",
+  "divTitle" : "Who said ...?",
+  "divContent" : "누가 ~래?",
+  "compId" : 593,
+  "compIdx" : 1,
+  "compStmtKr" : "누가 우리 헤어진대?",
+  "compStmtEn" : "Who said we're breaking up?"
+}, {
+  "divCode" : "149",
+  "divTitle" : "Who said ...?",
+  "divContent" : "누가 ~래?",
+  "compId" : 594,
+  "compIdx" : 2,
+  "compStmtKr" : "누가 결혼 얘기 했어?(난 생각도 안 하고 있는데 웬 결혼 얘기야?)",
+  "compStmtEn" : "Who said anything about marriage?"
+}, {
+  "divCode" : "149",
+  "divTitle" : "Who said ...?",
+  "divContent" : "누가 ~래?",
+  "compId" : 595,
+  "compIdx" : 3,
+  "compStmtKr" : "누가 나더러 기가 약하다고 했어?",
+  "compStmtEn" : "Who said I'm a pushover?"
+}, {
+  "divCode" : "150",
+  "divTitle" : "Who do you think ...?",
+  "divContent" : "누가 ~이라고 생각하니?/누가 ~한 것 같아?",
+  "compId" : 596,
+  "compStmtKr" : "누구 탓인 것 같아?",
+  "compStmtEn" : "Who do you think is to blame?"
+}, {
+  "divCode" : "150",
+  "divTitle" : "Who do you think ...?",
+  "divContent" : "누가 ~이라고 생각하니?/누가 ~한 것 같아?",
+  "compId" : 597,
+  "compIdx" : 1,
+  "compStmtKr" : "누가 이걸 제일 잘할 것 같아?",
+  "compStmtEn" : "Who do you think will do this best?"
+}, {
+  "divCode" : "150",
+  "divTitle" : "Who do you think ...?",
+  "divContent" : "누가 ~이라고 생각하니?/누가 ~한 것 같아?",
+  "compId" : 598,
+  "compIdx" : 2,
+  "compStmtKr" : "둘 중에서 누가 더 똑똑한 것 같아?",
+  "compStmtEn" : "Who do you think is smarter of the two?"
+}, {
+  "divCode" : "150",
+  "divTitle" : "Who do you think ...?",
+  "divContent" : "누가 ~이라고 생각하니?/누가 ~한 것 같아?",
+  "compId" : 599,
+  "compIdx" : 3,
+  "compStmtKr" : "누가 잘못한 것 같아, 나 아니면 재?",
+  "compStmtEn" : "Who do you think is at fault, me or him?"
+}, {
+  "divCode" : "151",
+  "divTitle" : "When was the last time you ...?",
+  "divContent" : "마지막으로 ~한 게 언제야?",
+  "compId" : 600,
+  "compStmtKr" : "마지막으로 그녀를 본게 언제야?",
+  "compStmtEn" : "When was the last time you saw her?"
+}, {
+  "divCode" : "151",
+  "divTitle" : "When was the last time you ...?",
+  "divContent" : "마지막으로 ~한 게 언제야?",
+  "compId" : 601,
+  "compIdx" : 1,
+  "compStmtKr" : "마지막으로 네 지갑 본게 언제야?",
+  "compStmtEn" : "When was the last time you saw your purse?"
+}, {
+  "divCode" : "151",
+  "divTitle" : "When was the last time you ...?",
+  "divContent" : "마지막으로 ~한 게 언제야?",
+  "compId" : 602,
+  "compIdx" : 2,
+  "compStmtKr" : "마지막으로 사이언한테 연락 들은 게 언제야?",
+  "compStmtEn" : "When was the last time you heard from Simon?"
+}, {
+  "divCode" : "151",
+  "divTitle" : "When was the last time you ...?",
+  "divContent" : "마지막으로 ~한 게 언제야?",
+  "compId" : 603,
+  "compIdx" : 3,
+  "compStmtKr" : "마지막으로 치과 간 게 언제야?",
+  "compStmtEn" : "When was the last time you visited the dentist?"
+}, {
+  "divCode" : "152",
+  "divTitle" : "When are you gonna ...?",
+  "divContent" : "넌 언제 ~할 거야?",
+  "compId" : 604,
+  "compStmtKr" : "너 언제 내 캠코더 돌려줄 거야?",
+  "compStmtEn" : "When are you gonna return my camcorder?"
+}, {
+  "divCode" : "152",
+  "divTitle" : "When are you gonna ...?",
+  "divContent" : "넌 언제 ~할 거야?",
+  "compId" : 605,
+  "compIdx" : 1,
+  "compStmtKr" : "너 언제 그녀한테 청혼할 거야?",
+  "compStmtEn" : "When are you gonna propose to her?"
+}, {
+  "divCode" : "152",
+  "divTitle" : "When are you gonna ...?",
+  "divContent" : "넌 언제 ~할 거야?",
+  "compId" : 606,
+  "compIdx" : 2,
+  "compStmtKr" : "너 언제 철들 거야?",
+  "compStmtEn" : "When are you gonna grow up?"
+}, {
+  "divCode" : "152",
+  "divTitle" : "When are you gonna ...?",
+  "divContent" : "넌 언제 ~할 거야?",
+  "compId" : 607,
+  "compIdx" : 3,
+  "compStmtKr" : "너 언제 무슨 일인지 우리한테 말할 거야?",
+  "compStmtEn" : "When are you gonna tell us what's going on?"
+}, {
+  "divCode" : "153",
+  "divTitle" : "Since when do/did you ...?",
+  "divContent" : "네가 언제부터 ~했다고 그래?",
+  "compId" : 608,
+  "compStmtKr" : "네가 언제부터 징크스를 믿었다고 그래?",
+  "compStmtEn" : "Since when do you believe in jinxes?"
+}, {
+  "divCode" : "153",
+  "divTitle" : "Since when do/did you ...?",
+  "divContent" : "네가 언제부터 ~했다고 그래?",
+  "compId" : 609,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 언제부터 원칙대로 했다고 그래?",
+  "compStmtEn" : "Since when do yo0u play by the book?"
+}, {
+  "divCode" : "153",
+  "divTitle" : "Since when do/did you ...?",
+  "divContent" : "네가 언제부터 ~했다고 그래?",
+  "compId" : 610,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 언제 환경에 신경 썼다고 그래?",
+  "compStmtEn" : "Since when did you care about the environment?"
+}, {
+  "divCode" : "153",
+  "divTitle" : "Since when do/did you ...?",
+  "divContent" : "네가 언제부터 ~했다고 그래?",
+  "compId" : 611,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 언제부터 그렇게 겸손했다고 그래?",
+  "compStmtEn" : "Since when did you get so modest?"
+}, {
+  "divCode" : "154",
+  "divTitle" : "Where did you ...?",
+  "divContent" : "너 어디서 ~했어?",
+  "compId" : 612,
+  "compStmtKr" : "너 그거 어디스 배웠어?",
+  "compStmtEn" : "Where did you learn that?"
+}, {
+  "divCode" : "154",
+  "divTitle" : "Where did you ...?",
+  "divContent" : "너 어디서 ~했어?",
+  "compId" : 613,
+  "compIdx" : 1,
+  "compStmtKr" : "너 학교 어디 다녔어?",
+  "compStmtEn" : "Where did you go to school?"
+}, {
+  "divCode" : "154",
+  "divTitle" : "Where did you ...?",
+  "divContent" : "너 어디서 ~했어?",
+  "compId" : 614,
+  "compIdx" : 2,
+  "compStmtKr" : "저녁 식사 하러 로라를 어디로 데리고 갔어?",
+  "compStmtEn" : "Where did you take Laura to dinner?"
+}, {
+  "divCode" : "154",
+  "divTitle" : "Where did you ...?",
+  "divContent" : "너 어디서 ~했어?",
+  "compId" : 615,
+  "compIdx" : 3,
+  "compStmtKr" : "어디서 영어 배웠어요?",
+  "compStmtEn" : "Where'd you learn to speak English?"
+}, {
+  "divCode" : "155",
+  "divTitle" : "S should be ...",
+  "divContent" : "~할 거야 / ~일 거야 / ~해야 하는데",
+  "compId" : 616,
+  "compStmtKr" : "그거면 충분할 거야",
+  "compStmtEn" : "That should be enough."
+}, {
+  "divCode" : "155",
+  "divTitle" : "S should be ...",
+  "divContent" : "~할 거야 / ~일 거야 / ~해야 하는데",
+  "compId" : 617,
+  "compIdx" : 1,
+  "compStmtKr" : "그가 거기서 우리를 기다리고 있을 거야",
+  "compStmtEn" : "He should be waiting for us there."
+}, {
+  "divCode" : "155",
+  "divTitle" : "S should be ...",
+  "divContent" : "~할 거야 / ~일 거야 / ~해야 하는데",
+  "compId" : 618,
+  "compIdx" : 2,
+  "compStmtKr" : "지금쯤이면 그들이 여기 도착해서 하는데",
+  "compStmtEn" : "They should be here by now."
+}, {
+  "divCode" : "155",
+  "divTitle" : "S should be ...",
+  "divContent" : "~할 거야 / ~일 거야 / ~해야 하는데",
+  "compId" : 619,
+  "compIdx" : 3,
+  "compStmtKr" : "일기예보에 의하면 지금 눈이 와야 하는데",
+  "compStmtEn" : "It should be snowing now according to the weather forecast."
+}, {
+  "divCode" : "156",
+  "divTitle" : "Maybe you should ...",
+  "divContent" : "~하는 게 좋을지도 모르겠어 / ~하는 게 좋을 것 같아",
+  "compId" : 620,
+  "compStmtKr" : "그녀를 좀 살살 대하는 게 좋을지도 모르겠어",
+  "compStmtEn" : "Maybe you should go easy on her."
+}, {
+  "divCode" : "156",
+  "divTitle" : "Maybe you should ...",
+  "divContent" : "~하는 게 좋을지도 모르겠어 / ~하는 게 좋을 것 같아",
+  "compId" : 621,
+  "compIdx" : 1,
+  "compStmtKr" : "너 잠 좀 자는 게 좋을지도 모르겠어",
+  "compStmtEn" : "Maybe you should get some sleep."
+}, {
+  "divCode" : "156",
+  "divTitle" : "Maybe you should ...",
+  "divContent" : "~하는 게 좋을지도 모르겠어 / ~하는 게 좋을 것 같아",
+  "compId" : 622,
+  "compIdx" : 2,
+  "compStmtKr" : "걔 말을 그냥 믿는 게 좋을 것 같아",
+  "compStmtEn" : "Maybe you should just take his word for it."
+}, {
+  "divCode" : "156",
+  "divTitle" : "Maybe you should ...",
+  "divContent" : "~하는 게 좋을지도 모르겠어 / ~하는 게 좋을 것 같아",
+  "compId" : 623,
+  "compIdx" : 3,
+  "compStmtKr" : "너 정신과 의사를 찾아가는 게 좋겠어",
+  "compStmtEn" : "Maybe you should go see a shrink."
+}, {
+  "divCode" : "157",
+  "divTitle" : "Shouldn't you be ...?",
+  "divContent" : "너 ~해야 되는 거 아니야?",
+  "compId" : 624,
+  "compStmtKr" : "너 이 시간에는 수업에 있어야 하는 거 아니야?",
+  "compStmtEn" : "Shouldn't you be in class at this hour?"
+}, {
+  "divCode" : "157",
+  "divTitle" : "Shouldn't you be ...?",
+  "divContent" : "너 ~해야 되는 거 아니야?",
+  "compId" : 625,
+  "compIdx" : 1,
+  "compStmtKr" : "너 지금 자고 있어야 하는 거 아니야?",
+  "compStmtEn" : "Shouldn't you be sleeping now?"
+}, {
+  "divCode" : "157",
+  "divTitle" : "Shouldn't you be ...?",
+  "divContent" : "너 ~해야 되는 거 아니야?",
+  "compId" : 626,
+  "compIdx" : 2,
+  "compStmtKr" : "너 제이크와 같이 있어야 하는 거 아니야?",
+  "compStmtEn" : "Shouldn't you be with Jake?"
+}, {
+  "divCode" : "157",
+  "divTitle" : "Shouldn't you be ...?",
+  "divContent" : "너 ~해야 되는 거 아니야?",
+  "compId" : 627,
+  "compIdx" : 3,
+  "compStmtKr" : "너 아파서 집에 있는 거 아니었어?(아프다고 결근(결석)했으면서 왜 집에 없는 거야)",
+  "compStmtEn" : "Shouldn't you be sick at home?"
+}, {
+  "divCode" : "158",
+  "divTitle" : "I should've P.P ...",
+  "divContent" : "~해야 했는데 / ~할 걸",
+  "compId" : 628,
+  "compStmtKr" : "더 깊에 생각해 봐야 하는 거얐는데",
+  "compStmtEn" : "I should've given it more thought."
+}, {
+  "divCode" : "158",
+  "divTitle" : "I should've P.P ...",
+  "divContent" : "~해야 했는데 / ~할 걸",
+  "compId" : 629,
+  "compIdx" : 1,
+  "compStmtKr" : "어젯밤에 핸드폰 충전시킬걸",
+  "compStmtEn" : "I should've charged my cell phone last night."
+}, {
+  "divCode" : "158",
+  "divTitle" : "I should've P.P ...",
+  "divContent" : "~해야 했는데 / ~할 걸",
+  "compId" : 630,
+  "compIdx" : 2,
+  "compStmtKr" : "내 감정에 충실했어야 했는데",
+  "compStmtEn" : "I should've followed my heart."
+}, {
+  "divCode" : "158",
+  "divTitle" : "I should've P.P ...",
+  "divContent" : "~해야 했는데 / ~할 걸",
+  "compId" : 631,
+  "compIdx" : 3,
+  "compStmtKr" : "저녁 식사 때 과식하지 말걸",
+  "compStmtEn" : "I shouldn't have eaten so much at dinner."
+}, {
+  "divCode" : "159",
+  "divTitle" : "You should've P.P ...",
+  "divContent" : "넌 ~해야 했어",
+  "compId" : 632,
+  "compStmtKr" : "넌 더 주의했어야 했어",
+  "compStmtEn" : "You should've been more careful."
+}, {
+  "divCode" : "159",
+  "divTitle" : "You should've P.P ...",
+  "divContent" : "넌 ~해야 했어",
+  "compId" : 633,
+  "compIdx" : 1,
+  "compStmtKr" : "너 그녀에게 한 말 취소해야 하는 거였어",
+  "compStmtEn" : "You should've taken back what you said to her."
+}, {
+  "divCode" : "159",
+  "divTitle" : "You should've P.P ...",
+  "divContent" : "넌 ~해야 했어",
+  "compId" : 634,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 얘초에 그 얘길 꺼내지 말았어야지",
+  "compStmtEn" : "You shouldn't have brought it up in the first place."
+}, {
+  "divCode" : "159",
+  "divTitle" : "You should've P.P ...",
+  "divContent" : "넌 ~해야 했어",
+  "compId" : 635,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 그것보다 더 잘 알아야 했어(나이를 그만큼 먹었으면 그정도는 알았어야지)",
+  "compStmtEn" : "You should've known better than that."
+}, {
+  "divCode" : "160",
+  "divTitle" : "You could've P.P ...",
+  "divContent" : "내가 ~할 수도 있었잖아",
+  "compId" : 636,
+  "compStmtKr" : "적어도 나한테 전화 정도는 해 줄 수 있었잖아",
+  "compStmtEn" : "You could've at least called me."
+}, {
+  "divCode" : "160",
+  "divTitle" : "You could've P.P ...",
+  "divContent" : "내가 ~할 수도 있었잖아",
+  "compId" : 637,
+  "compIdx" : 1,
+  "compStmtKr" : "그냥 나한테 진실을 말할 수도 있었잖아",
+  "compStmtEn" : "You could've told me the truth."
+}, {
+  "divCode" : "160",
+  "divTitle" : "You could've P.P ...",
+  "divContent" : "내가 ~할 수도 있었잖아",
+  "compId" : 638,
+  "compIdx" : 2,
+  "compStmtKr" : "미리 나한테 경고해 줄 수도 있었잖아",
+  "compStmtEn" : "You could've warned me in advance."
+}, {
+  "divCode" : "160",
+  "divTitle" : "You could've P.P ...",
+  "divContent" : "내가 ~할 수도 있었잖아",
+  "compId" : 639,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 알아서 이 일 처리할 수 있었잖아",
+  "compStmtEn" : "You could've handled this matter yourself."
+}, {
+  "divCode" : "161",
+  "divTitle" : "S might've P.P ...",
+  "divContent" : "~했을지도 몰라 / ~했었나 봐",
+  "compId" : 640,
+  "compStmtKr" : "나 집에 깜빡 두고 온 걸지도 몰라",
+  "compStmtEn" : "I might'veforgotten it at home."
+}, {
+  "divCode" : "161",
+  "divTitle" : "S might've P.P ...",
+  "divContent" : "~했을지도 몰라 / ~했었나 봐",
+  "compId" : 641,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 그를 과소평가했었나 봐",
+  "compStmtEn" : "I might've underestimated him."
+}, {
+  "divCode" : "161",
+  "divTitle" : "S might've P.P ...",
+  "divContent" : "~했을지도 몰라 / ~했었나 봐",
+  "compId" : 642,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 전화를 잘못 걸었을지도 몰라",
+  "compStmtEn" : "You might've misdialed."
+}, {
+  "divCode" : "161",
+  "divTitle" : "S might've P.P ...",
+  "divContent" : "~했을지도 몰라 / ~했었나 봐",
+  "compId" : 643,
+  "compIdx" : 3,
+  "compStmtKr" : "내 남자 친구가 내가 다른 남자랑 같이 있는 걸 봤을지도 몰라",
+  "compStmtEn" : "My boyfriend might've seen me with another guy."
+}, {
+  "divCode" : "162",
+  "divTitle" : "I guess ...",
+  "divContent" : "~인 것 같아 / ~이겠지 뭐",
+  "compId" : 644,
+  "compStmtKr" : "네 말이 맞는 것 같아",
+  "compStmtEn" : "I guess you're right."
+}, {
+  "divCode" : "162",
+  "divTitle" : "I guess ...",
+  "divContent" : "~인 것 같아 / ~이겠지 뭐",
+  "compId" : 645,
+  "compIdx" : 1,
+  "compStmtKr" : "우리한텐 선택의 여지가 없는 것 같아",
+  "compStmtEn" : "I guess we don't have a choice."
+}, {
+  "divCode" : "162",
+  "divTitle" : "I guess ...",
+  "divContent" : "~인 것 같아 / ~이겠지 뭐",
+  "compId" : 646,
+  "compIdx" : 2,
+  "compStmtKr" : "시도해 볼 수는 있겠지. 뭐",
+  "compStmtEn" : "I guess I can try."
+}, {
+  "divCode" : "162",
+  "divTitle" : "I guess ...",
+  "divContent" : "~인 것 같아 / ~이겠지 뭐",
+  "compId" : 647,
+  "compIdx" : 3,
+  "compStmtKr" : "나 혼자서 할 수 있겠지. 뭐",
+  "compStmtEn" : "I guess I can do it by myself."
+}, {
+  "divCode" : "163",
+  "divTitle" : "Guess W4H ...",
+  "divContent" : "~인지 알아? / ~인지 맞춰 봐",
+  "compId" : 648,
+  "compStmtKr" : "내가 방금 무슨 얘기를 들었는지 알아?",
+  "compStmtEn" : "Guess what I just heard."
+}, {
+  "divCode" : "163",
+  "divTitle" : "Guess W4H ...",
+  "divContent" : "~인지 알아? / ~인지 맞춰 봐",
+  "compId" : 649,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 여기 오는 길에 누구 봤는지 맞춰 봐",
+  "compStmtEn" : "Guess who I saw on my way here."
+}, {
+  "divCode" : "163",
+  "divTitle" : "Guess W4H ...",
+  "divContent" : "~인지 알아? / ~인지 맞춰 봐",
+  "compId" : 650,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 없는 사이에 무슨 일이 있었게?",
+  "compStmtEn" : "Guess what happended while you were gone."
+}, {
+  "divCode" : "163",
+  "divTitle" : "Guess W4H ...",
+  "divContent" : "~인지 알아? / ~인지 맞춰 봐",
+  "compId" : 651,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 너 생일 선물로 뭘 샀게?",
+  "compStmtEn" : "Guess what I got for your birthday."
+}, {
+  "divCode" : "164",
+  "divTitle" : "You're supposed to ...",
+  "divContent" : "~해야 하는 거잖아 / ~하기로 되어 있잖아",
+  "compId" : 652,
+  "compStmtKr" : "너 그거 오늘 끝내야 하는 거잖아",
+  "compStmtEn" : "You're supposed to finish it today."
+}, {
+  "divCode" : "164",
+  "divTitle" : "You're supposed to ...",
+  "divContent" : "~해야 하는 거잖아 / ~하기로 되어 있잖아",
+  "compId" : 653,
+  "compIdx" : 1,
+  "compStmtKr" : "너 지금쯤이면 여기 있어야 하는 거잖아",
+  "compStmtEn" : "You're supposed to be here by now."
+}, {
+  "divCode" : "164",
+  "divTitle" : "You're supposed to ...",
+  "divContent" : "~해야 하는 거잖아 / ~하기로 되어 있잖아",
+  "compId" : 654,
+  "compIdx" : 2,
+  "compStmtKr" : "너 그거 소리 내서 말하면 안 되는 거잖아",
+  "compStmtEn" : "You're not supposed to say it out loud."
+}, {
+  "divCode" : "164",
+  "divTitle" : "You're supposed to ...",
+  "divContent" : "~해야 하는 거잖아 / ~하기로 되어 있잖아",
+  "compId" : 655,
+  "compIdx" : 3,
+  "compStmtKr" : "월요일까지는 안 돌아오는 걸로 되어 있잖아",
+  "compStmtEn" : "You're not supposed to be back till Monday."
+}, {
+  "divCode" : "165",
+  "divTitle" : "You were supposed to ...",
+  "divContent" : "내가 ~하기로 되어 있었잖아 / 내가 ~한다고 그랬잖아",
+  "compId" : 656,
+  "compStmtKr" : "네가 그거 갖고 온다고 그랬잖아",
+  "compStmtEn" : "You were supposed to bring it."
+}, {
+  "divCode" : "165",
+  "divTitle" : "You were supposed to ...",
+  "divContent" : "내가 ~하기로 되어 있었잖아 / 내가 ~한다고 그랬잖아",
+  "compId" : 657,
+  "compIdx" : 1,
+  "compStmtKr" : "네가 어젯밤에 나한테 전화한다고 그랬잖아",
+  "compStmtEn" : "You were supposed to call me last night."
+}, {
+  "divCode" : "165",
+  "divTitle" : "You were supposed to ...",
+  "divContent" : "내가 ~하기로 되어 있었잖아 / 내가 ~한다고 그랬잖아",
+  "compId" : 658,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 설거지하기로 되어 있었잖아",
+  "compStmtEn" : "You were supposed to do the dishes."
+}, {
+  "divCode" : "165",
+  "divTitle" : "You were supposed to ...",
+  "divContent" : "내가 ~하기로 되어 있었잖아 / 내가 ~한다고 그랬잖아",
+  "compId" : 659,
+  "compIdx" : 3,
+  "compStmtKr" : "넌 그 말 들어서는 안되는 거였어",
+  "compStmtEn" : "You weren't supposed to hear that."
+}, {
+  "divCode" : "166",
+  "divTitle" : "What am I supposed to ...?",
+  "divContent" : "내가 뭘 ~해야 하는 거야?",
+  "compId" : 660,
+  "compStmtKr" : "걔한테 뭐라고 말해야 하지?",
+  "compStmtEn" : "What am I supposed to say to him?"
+}, {
+  "divCode" : "166",
+  "divTitle" : "What am I supposed to ...?",
+  "divContent" : "내가 뭘 ~해야 하는 거야?",
+  "compId" : 661,
+  "compIdx" : 1,
+  "compStmtKr" : "나더러 이제 뭘 하라는 거야?",
+  "compStmtEn" : "What am I supposed to do now?"
+}, {
+  "divCode" : "166",
+  "divTitle" : "What am I supposed to ...?",
+  "divContent" : "내가 뭘 ~해야 하는 거야?",
+  "compId" : 662,
+  "compIdx" : 2,
+  "compStmtKr" : "그런 경우엔 내가 뭘 해야 하는 거야?",
+  "compStmtEn" : "In that case, what am I supposed to do?"
+}, {
+  "divCode" : "166",
+  "divTitle" : "What am I supposed to ...?",
+  "divContent" : "내가 뭘 ~해야 하는 거야?",
+  "compId" : 663,
+  "compIdx" : 3,
+  "compStmtKr" : "난 내 삶으로 뭘 해야 하는 거야?(난 어떻게 살아가야 하는 걸까?/살아가지?)",
+  "compStmtEn" : "What am I supposed to do with my life?"
+}, {
+  "divCode" : "167",
+  "divTitle" : "How am I supposed to ...?",
+  "divContent" : "내가 어떻게 ~해? / 나더러 어떻게 ~하라는 거야?",
+  "compId" : 664,
+  "compStmtKr" : "내가 어떻게 알아?",
+  "compStmtEn" : "How am I supposed to know?"
+}, {
+  "divCode" : "167",
+  "divTitle" : "How am I supposed to ...?",
+  "divContent" : "내가 어떻게 ~해? / 나더러 어떻게 ~하라는 거야?",
+  "compId" : 665,
+  "compIdx" : 1,
+  "compStmtKr" : "나더러 어떻게 널 신뢰하라는 거야?",
+  "compStmtEn" : "How am I supposed to trust you?"
+}, {
+  "divCode" : "167",
+  "divTitle" : "How am I supposed to ...?",
+  "divContent" : "내가 어떻게 ~해? / 나더러 어떻게 ~하라는 거야?",
+  "compId" : 666,
+  "compIdx" : 2,
+  "compStmtKr" : "나더러 어떻게 진정하라는 거야?",
+  "compStmtEn" : "How am I supposed to calm down?"
+}, {
+  "divCode" : "167",
+  "divTitle" : "How am I supposed to ...?",
+  "divContent" : "내가 어떻게 ~해? / 나더러 어떻게 ~하라는 거야?",
+  "compId" : 667,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 어떻게 너 없이 살라는 거야?",
+  "compStmtEn" : "How am I supposed to live without you?"
+}, {
+  "divCode" : "168",
+  "divTitle" : "Suppose (that) ...",
+  "divContent" : "~이라고 가정해 보자",
+  "compId" : 668,
+  "compStmtKr" : "네 말이 맞다고 치자",
+  "compStmtEn" : "Suppose you're right."
+}, {
+  "divCode" : "168",
+  "divTitle" : "Suppose (that) ...",
+  "divContent" : "~이라고 가정해 보자",
+  "compId" : 669,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 과속하다가 걸린다고 가정해 보자",
+  "compStmtEn" : "Suppose you get caught speeding."
+}, {
+  "divCode" : "168",
+  "divTitle" : "Suppose (that) ...",
+  "divContent" : "~이라고 가정해 보자",
+  "compId" : 670,
+  "compIdx" : 2,
+  "compStmtKr" : "걔가 이미 떠났다고 가정해 보자. 어쩔 건야?",
+  "compStmtEn" : "Suppose he left already. What're you gonna do?"
+}, {
+  "divCode" : "168",
+  "divTitle" : "Suppose (that) ...",
+  "divContent" : "~이라고 가정해 보자",
+  "compId" : 671,
+  "compIdx" : 3,
+  "compStmtKr" : "그냐가 널 좋아하지 않는다고 치자",
+  "compStmtEn" : "Suppose she has no feelings for you."
+}, {
+  "divCode" : "169",
+  "divTitle" : "The thing is ...",
+  "divContent" : "문제는 ~ / 실은 ~/ 저기 ~",
+  "compId" : 672,
+  "compStmtKr" : "문제는 내가 그걸 살 돈이 없다는 거야",
+  "compStmtEn" : "The thing is I can't afford it."
+}, {
+  "divCode" : "169",
+  "divTitle" : "The thing is ...",
+  "divContent" : "문제는 ~ / 실은 ~/ 저기 ~",
+  "compId" : 673,
+  "compIdx" : 1,
+  "compStmtKr" : "문제는 우린 공통점이 하나도 없다는 거야",
+  "compStmtEn" : "The thing is we have nothing in common."
+}, {
+  "divCode" : "169",
+  "divTitle" : "The thing is ...",
+  "divContent" : "문제는 ~ / 실은 ~/ 저기 ~",
+  "compId" : 674,
+  "compIdx" : 2,
+  "compStmtKr" : "저기... 항상 미안하다는 말만 계속할 수는 없는 거잖아",
+  "compStmtEn" : "The thing is you can't keep saying sorry all the time."
+}, {
+  "divCode" : "169",
+  "divTitle" : "The thing is ...",
+  "divContent" : "문제는 ~ / 실은 ~/ 저기 ~",
+  "compId" : 675,
+  "compIdx" : 3,
+  "compStmtKr" : "문제는 이건 내 책임(내 할일)이 아니라는 거지.",
+  "compStmtEn" : "The thing is this is not my responsibility."
+}, {
+  "divCode" : "170",
+  "divTitle" : "... is/are not my thing ...",
+  "divContent" : "~은 내 취향이 아니야 / ~은 나하고 안 맞아 / 난 ~은 잘 못해",
+  "compId" : 676,
+  "compStmtKr" : "꽃미남은 내 취향이 아니야",
+  "compStmtEn" : "Pretty boys are not my thing."
+}, {
+  "divCode" : "170",
+  "divTitle" : "... is/are not my thing ...",
+  "divContent" : "~은 내 취향이 아니야 / ~은 나하고 안 맞아 / 난 ~은 잘 못해",
+  "compId" : 677,
+  "compIdx" : 1,
+  "compStmtKr" : "내숭 떠는 건 나하고 안 맞아",
+  "compStmtEn" : "Acting coy is not my thing."
+}, {
+  "divCode" : "170",
+  "divTitle" : "... is/are not my thing ...",
+  "divContent" : "~은 내 취향이 아니야 / ~은 나하고 안 맞아 / 난 ~은 잘 못해",
+  "compId" : 678,
+  "compIdx" : 2,
+  "compStmtKr" : "아첨하는 것은 나하고 안 맞아",
+  "compStmtEn" : "Sucking up is not my thing."
+}, {
+  "divCode" : "170",
+  "divTitle" : "... is/are not my thing ...",
+  "divContent" : "~은 내 취향이 아니야 / ~은 나하고 안 맞아 / 난 ~은 잘 못해",
+  "compId" : 679,
+  "compIdx" : 3,
+  "compStmtKr" : "난 멀티테스킹 잘 못해",
+  "compStmtEn" : "Multi-tasking is not my thing."
+}, {
+  "divCode" : "171",
+  "divTitle" : "The last thing I want/need is ...",
+  "divContent" : "내가 가장 원하지/필요하지 않는 건 ~이야 / 난 정말로 ~하고 싶지 않다.",
+  "compId" : 680,
+  "compStmtKr" : "난 정말로 술 마시고 싶지 않아",
+  "compStmtEn" : "The last thing I want to do is drink."
+}, {
+  "divCode" : "171",
+  "divTitle" : "The last thing I want/need is ...",
+  "divContent" : "내가 가장 원하지/필요하지 않는 건 ~이야 / 난 정말로 ~하고 싶지 않다.",
+  "compId" : 681,
+  "compIdx" : 1,
+  "compStmtKr" : "난 정말로 네게 상처 주고 싶지 않아",
+  "compStmtEn" : "The last thing I want to do is to hurt you."
+}, {
+  "divCode" : "171",
+  "divTitle" : "The last thing I want/need is ...",
+  "divContent" : "내가 가장 원하지/필요하지 않는 건 ~이야 / 난 정말로 ~하고 싶지 않다.",
+  "compId" : 682,
+  "compIdx" : 2,
+  "compStmtKr" : "난 정말로 너 필요 없어",
+  "compStmtEn" : "The last thing I need is you."
+}, {
+  "divCode" : "171",
+  "divTitle" : "The last thing I want/need is ...",
+  "divContent" : "내가 가장 원하지/필요하지 않는 건 ~이야 / 난 정말로 ~하고 싶지 않다.",
+  "compId" : 683,
+  "compIdx" : 3,
+  "compStmtKr" : "난 정말로 걔 같은 친구 필요 없어",
+  "compStmtEn" : "The last thing I need is a friend like him."
+}, {
+  "divCode" : "172",
+  "divTitle" : "Good thing (that) ...",
+  "divContent" : "~이라서 다행이댜 / ~하길 잘했다.",
+  "compId" : 684,
+  "compStmtKr" : "우산 가져오길 잘했다",
+  "compStmtEn" : "Good thing I brought an umbrella."
+}, {
+  "divCode" : "172",
+  "divTitle" : "Good thing (that) ...",
+  "divContent" : "~이라서 다행이댜 / ~하길 잘했다.",
+  "compId" : 685,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 연줄이 있으니 다행이지",
+  "compStmtEn" : "Good thing I'm connected."
+}, {
+  "divCode" : "172",
+  "divTitle" : "Good thing (that) ...",
+  "divContent" : "~이라서 다행이댜 / ~하길 잘했다.",
+  "compId" : 686,
+  "compIdx" : 2,
+  "compStmtKr" : "그거 만 사길 잘했다. 그게 짝통일 줄 누가 알았겠어?",
+  "compStmtEn" : "Good thing I didn't buy it. Who would've thought it's a fake?"
+}, {
+  "divCode" : "172",
+  "divTitle" : "Good thing (that) ...",
+  "divContent" : "~이라서 다행이댜 / ~하길 잘했다.",
+  "compId" : 687,
+  "compIdx" : 3,
+  "compStmtKr" : "그녀한테 임자가 없어서 다행이야",
+  "compStmtEn" : "Good thing she isn't spoken for."
+}, {
+  "divCode" : "173",
+  "divTitle" : "For one thing ...",
+  "divContent" : "우선 첫째로 ~",
+  "compId" : 688,
+  "compStmtKr" : "우선 첫째로, 난 할 일이 많아",
+  "compStmtEn" : "For one thing, I have a lot of work to do."
+}, {
+  "divCode" : "173",
+  "divTitle" : "For one thing ...",
+  "divContent" : "우선 첫째로 ~",
+  "compId" : 689,
+  "compIdx" : 1,
+  "compStmtKr" : "우선 첫째로, 그건 완전 불공평해",
+  "compStmtEn" : "For one thing, it's absolutely unfair."
+}, {
+  "divCode" : "173",
+  "divTitle" : "For one thing ...",
+  "divContent" : "우선 첫째로 ~",
+  "compId" : 690,
+  "compIdx" : 2,
+  "compStmtKr" : "우선 첫째로, 난 그럴 기분이 아니야",
+  "compStmtEn" : "For one thing, I'm not in the mood."
+}, {
+  "divCode" : "173",
+  "divTitle" : "For one thing ...",
+  "divContent" : "우선 첫째로 ~",
+  "compId" : 691,
+  "compIdx" : 3,
+  "compStmtKr" : "우선 첫째로, 걘 과시하기 좋아하는 애거든",
+  "compStmtEn" : "For one thing, he's such a show-off."
+}, {
+  "divCode" : "174",
+  "divTitle" : "I'm pretty sure (that)/about ...",
+  "divContent" : "아마 ~일 거야 / 분명 ~일텐데",
+  "compId" : 692,
+  "compStmtKr" : "그들 아마 바람피우고 있는 걸 거야",
+  "compStmtEn" : "I'm pretty sure they're having an affair."
+}, {
+  "divCode" : "174",
+  "divTitle" : "I'm pretty sure (that)/about ...",
+  "divContent" : "아마 ~일 거야 / 분명 ~일텐데",
+  "compId" : 693,
+  "compIdx" : 1,
+  "compStmtKr" : "걔 아마 금방 올 거야. 걱정 마",
+  "compStmtEn" : "I'm pretty sure he'll be here soon. Don't worry."
+}, {
+  "divCode" : "174",
+  "divTitle" : "I'm pretty sure (that)/about ...",
+  "divContent" : "아마 ~일 거야 / 분명 ~일텐데",
+  "compId" : 694,
+  "compIdx" : 2,
+  "compStmtKr" : "걔 아마 그거 극복할 거야/잊을 거야",
+  "compStmtEn" : "I'm pretty sure he'll get over it."
+}, {
+  "divCode" : "174",
+  "divTitle" : "I'm pretty sure (that)/about ...",
+  "divContent" : "아마 ~일 거야 / 분명 ~일텐데",
+  "compId" : 695,
+  "compIdx" : 3,
+  "compStmtKr" : "난 그것에 대해 거의 확신해",
+  "compStmtEn" : "I'm pretty sure about that."
+}, {
+  "divCode" : "175",
+  "divTitle" : "You're sure (that) ...?",
+  "divContent" : "~이라는 거 확실해?",
+  "compId" : 696,
+  "compStmtKr" : "우리가 이거 해결할 수 있다는 거 확실해?",
+  "compStmtEn" : "You're sure we can work this out?"
+}, {
+  "divCode" : "175",
+  "divTitle" : "You're sure (that) ...?",
+  "divContent" : "~이라는 거 확실해?",
+  "compId" : 697,
+  "compIdx" : 1,
+  "compStmtKr" : "너 이번엔 시간 지킬 거라는 거 확실해?",
+  "compStmtEn" : "You're sure you'll be on time this time?"
+}, {
+  "divCode" : "175",
+  "divTitle" : "You're sure (that) ...?",
+  "divContent" : "~이라는 거 확실해?",
+  "compId" : 698,
+  "compIdx" : 2,
+  "compStmtKr" : "너 패스워드 제대로 친 거 확실해?",
+  "compStmtEn" : "You're sure you typed in the right password?"
+}, {
+  "divCode" : "175",
+  "divTitle" : "You're sure (that) ...?",
+  "divContent" : "~이라는 거 확실해?",
+  "compId" : 699,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 걔를 이길 거라는 거 확실해?",
+  "compStmtEn" : "You're sure you can beet him?"
+}, {
+  "divCode" : "176",
+  "divTitle" : "S sure V ...",
+  "divContent" : "참 ~하구나",
+  "compId" : 700,
+  "compStmtKr" : "너 참 좋아/멋져 보이는구나",
+  "compStmtEn" : "You sure look good."
+}, {
+  "divCode" : "176",
+  "divTitle" : "S sure V ...",
+  "divContent" : "참 ~하구나",
+  "compId" : 701,
+  "compIdx" : 1,
+  "compStmtKr" : "걔 승진한 것에 대해 참 기뻐 보이더라고",
+  "compStmtEn" : "He sure looked happy about the promotion."
+}, {
+  "divCode" : "176",
+  "divTitle" : "S sure V ...",
+  "divContent" : "참 ~하구나",
+  "compId" : 702,
+  "compIdx" : 2,
+  "compStmtKr" : "너 참 부그러운 줄 모르는구나(뻔뻔하구나)",
+  "compStmtEn" : "You sure are shameless."
+}, {
+  "divCode" : "176",
+  "divTitle" : "S sure V ...",
+  "divContent" : "참 ~하구나",
+  "compId" : 703,
+  "compIdx" : 3,
+  "compStmtKr" : "네 말이 맞아. 확실히 그래 보이긴 하네",
+  "compStmtEn" : "You're right. It sure looks that way."
+}, {
+  "divCode" : "177",
+  "divTitle" : "I'm not sure ...",
+  "divContent" : "~인지 잘 모르겠어",
+  "compId" : 704,
+  "compStmtKr" : "네가 이걸 충분히 생각해 봤는지 잘 모르겠어",
+  "compStmtEn" : "I'm not sure if you've thought this through."
+}, {
+  "divCode" : "177",
+  "divTitle" : "I'm not sure ...",
+  "divContent" : "~인지 잘 모르겠어",
+  "compId" : 705,
+  "compIdx" : 1,
+  "compStmtKr" : "걔가 그것에 대해 어떻게 생각할지 잘 모르겠어",
+  "compStmtEn" : "I'm not sure how he'll feel about it."
+}, {
+  "divCode" : "177",
+  "divTitle" : "I'm not sure ...",
+  "divContent" : "~인지 잘 모르겠어",
+  "compId" : 706,
+  "compIdx" : 2,
+  "compStmtKr" : "그가 나한테 뭘 하라는 건지 잘 모르겠어",
+  "compStmtEn" : "I'm not sure what he wants me to do."
+}, {
+  "divCode" : "177",
+  "divTitle" : "I'm not sure ...",
+  "divContent" : "~인지 잘 모르겠어",
+  "compId" : 707,
+  "compIdx" : 3,
+  "compStmtKr" : "그게 좋은 건지 나쁜 건지 잘 모르겠어",
+  "compStmtEn" : "I'm not sure if it's a good thing or a bad thing."
+}, {
+  "divCode" : "178",
+  "divTitle" : "Sure/Of course S V ...",
+  "divContent" : "당연히 ~이지",
+  "compId" : 708,
+  "compStmtKr" : "당연히 내가 저기 사랑하지",
+  "compStmtEn" : "Sure I love you, honey."
+}, {
+  "divCode" : "178",
+  "divTitle" : "Sure/Of course S V ...",
+  "divContent" : "당연히 ~이지",
+  "compId" : 709,
+  "compIdx" : 1,
+  "compStmtKr" : "했으면서 뭘 그래. 네가 그녀한테 키스하는 거 내가 직접 봤어",
+  "compStmtEn" : "Sure you did. I saw you kiss her myself."
+}, {
+  "divCode" : "178",
+  "divTitle" : "Sure/Of course S V ...",
+  "divContent" : "당연히 ~이지",
+  "compId" : 710,
+  "compIdx" : 2,
+  "compStmtKr" : "당연히 내가 그거 할 수 있지. 식은 죽 먹기야!",
+  "compStmtEn" : "Of course I can do it. It's a piece of cake!"
+}, {
+  "divCode" : "178",
+  "divTitle" : "Sure/Of course S V ...",
+  "divContent" : "당연히 ~이지",
+  "compId" : 711,
+  "compIdx" : 3,
+  "compStmtKr" : "당연히 그러시겠지. 네가 모르는 게 뭐 있어?",
+  "compStmtEn" : "Of course you do. What don't you know?"
+}, {
+  "divCode" : "179",
+  "divTitle" : "..., that's for sure ...",
+  "divContent" : "그건 확실해",
+  "compId" : 712,
+  "compStmtKr" : "그 사람 그렇게 기분이 좋아 보이진 않더라고. 그건 확실해.",
+  "compStmtEn" : "He didn't look too happy, that's for sure."
+}, {
+  "divCode" : "179",
+  "divTitle" : "..., that's for sure ...",
+  "divContent" : "그건 확실해",
+  "compId" : 713,
+  "compIdx" : 1,
+  "compStmtKr" : "걔는 예민해(걔한텐 무슨 말을 못해), 그건 확실해",
+  "compStmtEn" : "He's touchy, that's for sure."
+}, {
+  "divCode" : "179",
+  "divTitle" : "..., that's for sure ...",
+  "divContent" : "그건 확실해",
+  "compId" : 714,
+  "compIdx" : 2,
+  "compStmtKr" : "나 같으면 내 직감을 따르겠어. 그건 확실해",
+  "compStmtEn" : "I'd go with my gut, that's for sure."
+}, {
+  "divCode" : "179",
+  "divTitle" : "..., that's for sure ...",
+  "divContent" : "그건 확실해",
+  "compId" : 715,
+  "compIdx" : 3,
+  "compStmtKr" : "나 오늘 밤 잠자긴 틀렸어. 그건 확실해",
+  "compStmtEn" : "I'm not getting any sleep tonight, that's for sure."
+}, {
+  "divCode" : "180",
+  "divTitle" : "What if ...?",
+  "divContent" : "만약 ~하면 어쩌지? / 어쩔 건데?",
+  "compId" : 716,
+  "compStmtKr" : "만약 그게 내 잘못이었다면 어쩌지?",
+  "compStmtEn" : "What if it was my fault?"
+}, {
+  "divCode" : "180",
+  "divTitle" : "What if ...?",
+  "divContent" : "만약 ~하면 어쩌지? / 어쩔 건데?",
+  "compId" : 717,
+  "compIdx" : 1,
+  "compStmtKr" : "만약 내가 거절하면 어쩔 건데?",
+  "compStmtEn" : "What if I say no?"
+}, {
+  "divCode" : "180",
+  "divTitle" : "What if ...?",
+  "divContent" : "만약 ~하면 어쩌지? / 어쩔 건데?",
+  "compId" : 718,
+  "compIdx" : 2,
+  "compStmtKr" : "너 음주운전으로 걸리면 어쩌려고 그래?",
+  "compStmtEn" : "What if you get caught for drunk driving?"
+}, {
+  "divCode" : "180",
+  "divTitle" : "What if ...?",
+  "divContent" : "만약 ~하면 어쩌지? / 어쩔 건데?",
+  "compId" : 719,
+  "compIdx" : 3,
+  "compStmtKr" : "만약 우리 사이가 잘 안 되면 어쩌지?",
+  "compStmtEn" : "What if things between us don't work out?"
+}, {
+  "divCode" : "181",
+  "divTitle" : "I'd ... if I were you.",
+  "divContent" : "내가 너라면 ~할 걸",
+  "compId" : 720,
+  "compStmtKr" : "내가 너라면 물러서겠어",
+  "compStmtEn" : "I'd back down if I were you."
+}, {
+  "divCode" : "181",
+  "divTitle" : "I'd ... if I were you.",
+  "divContent" : "내가 너라면 ~할 걸",
+  "compId" : 721,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 너라면 그거 안 할 텐데",
+  "compStmtEn" : "I wouldn't do that if I were you."
+}, {
+  "divCode" : "181",
+  "divTitle" : "I'd ... if I were you.",
+  "divContent" : "내가 너라면 ~할 걸",
+  "compId" : 722,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 너라면 그것에 대해 뻐기진 않을걸",
+  "compStmtEn" : "I wouldn't brag about it if I were you."
+}, {
+  "divCode" : "181",
+  "divTitle" : "I'd ... if I were you.",
+  "divContent" : "내가 너라면 ~할 걸",
+  "compId" : 723,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 너라면 그거 다시 생각해 볼걸",
+  "compStmtEn" : "If I were you, I'd rethink that."
+}, {
+  "divCode" : "182",
+  "divTitle" : "I'll ... if I have to.",
+  "divContent" : "필요하다면 ~할 거야 / ~이라도 할 거야",
+  "compId" : 724,
+  "compStmtKr" : "필요하다면 밤새워서라도 끝마칠 거야",
+  "compStmtEn" : "I'll stay up all night to finish if I have to."
+}, {
+  "divCode" : "182",
+  "divTitle" : "I'll ... if I have to.",
+  "divContent" : "필요하다면 ~할 거야 / ~이라도 할 거야",
+  "compId" : 725,
+  "compIdx" : 1,
+  "compStmtKr" : "필요하다면 내 차라도 팔 거야",
+  "compStmtEn" : "I'll sell my car if I have to."
+}, {
+  "divCode" : "182",
+  "divTitle" : "I'll ... if I have to.",
+  "divContent" : "필요하다면 ~할 거야 / ~이라도 할 거야",
+  "compId" : 726,
+  "compIdx" : 2,
+  "compStmtKr" : "필요하다면 그와 이혼이라도 할 거야",
+  "compStmtEn" : "I'll divorce him if I have to."
+}, {
+  "divCode" : "182",
+  "divTitle" : "I'll ... if I have to.",
+  "divContent" : "필요하다면 ~할 거야 / ~이라도 할 거야",
+  "compId" : 727,
+  "compIdx" : 3,
+  "compStmtKr" : "필요하다면 너에게 대가를 치르게 할 거야",
+  "compStmtEn" : "I'll make you pay if I have to."
+}, {
+  "divCode" : "183",
+  "divTitle" : "... if you ask me.",
+  "divContent" : "내 생각으론 말이야 ~ / 내가 보기엔 말이지 ~",
+  "compId" : 728,
+  "compStmtKr" : "내가 보기엔 말이야. 그건 명뱍한 거짓말이었어",
+  "compStmtEn" : "It was an outright lie if you ask me."
+}, {
+  "divCode" : "183",
+  "divTitle" : "... if you ask me.",
+  "divContent" : "내 생각으론 말이야 ~ / 내가 보기엔 말이지 ~",
+  "compId" : 729,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 보기엔 말이야. 걔 너무 가식적이야.",
+  "compStmtEn" : "He's way too pretentious if you ask me."
+}, {
+  "divCode" : "183",
+  "divTitle" : "... if you ask me.",
+  "divContent" : "내 생각으론 말이야 ~ / 내가 보기엔 말이지 ~",
+  "compId" : 730,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 보기엔 말이야. 이거 완전히 망쳤어",
+  "compStmtEn" : "This is a complete disaster if you ask me."
+}, {
+  "divCode" : "183",
+  "divTitle" : "... if you ask me.",
+  "divContent" : "내 생각으론 말이야 ~ / 내가 보기엔 말이지 ~",
+  "compId" : 731,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 보기엔 말이야. 걔 완전 루저야",
+  "compStmtEn" : "If you ask me, he's a total loser."
+}, {
+  "divCode" : "184",
+  "divTitle" : "I feel sorry for ...",
+  "divContent" : "~가 안됬어 / 불쌍해",
+  "compId" : 732,
+  "compStmtKr" : "젠이 불쌍해. 걔네 엄마가 돌아가셨대",
+  "compStmtEn" : "I feel sorry for Jen. Her mom passsed away."
+}, {
+  "divCode" : "184",
+  "divTitle" : "I feel sorry for ...",
+  "divContent" : "~가 안됬어 / 불쌍해",
+  "compId" : 733,
+  "compIdx" : 1,
+  "compStmtKr" : "벤이 네 새 상사라면서. 안됐다.",
+  "compStmtEn" : "I heard Ben is your new boss. I feel sorry for you."
+}, {
+  "divCode" : "184",
+  "divTitle" : "I feel sorry for ...",
+  "divContent" : "~가 안됬어 / 불쌍해",
+  "compId" : 734,
+  "compIdx" : 2,
+  "compStmtKr" : "난 요즘 내 스스로가 안됐다는 생각이 들어",
+  "compStmtEn" : "I feel sorry for my self these days."
+}, {
+  "divCode" : "184",
+  "divTitle" : "I feel sorry for ...",
+  "divContent" : "~가 안됬어 / 불쌍해",
+  "compId" : 735,
+  "compIdx" : 3,
+  "compStmtKr" : "밥의 여자 친구가 안됐어. 그녀를 당연하게 여기잖아(그녀가 잘해 주는 걸 당연하게 여기잖아)",
+  "compStmtEn" : "I feel sorry for Bob's girlfriend. He takes her for granted."
+}, {
+  "divCode" : "185",
+  "divTitle" : "I'm sorry, but ...",
+  "divContent" : "미안하지만 ~ / 실례지만 ~",
+  "compId" : 736,
+  "compStmtKr" : "미안하지만 내가 일이 밀려 있어서 말이야",
+  "compStmtEn" : "I'm sorry, but I'm behind in my work."
+}, {
+  "divCode" : "185",
+  "divTitle" : "I'm sorry, but ...",
+  "divContent" : "미안하지만 ~ / 실례지만 ~",
+  "compId" : 737,
+  "compIdx" : 1,
+  "compStmtKr" : "실례지만 혹시 전에 어디서 본 적 있나요?",
+  "compStmtEn" : "I'm sorry, but have we met before?"
+}, {
+  "divCode" : "185",
+  "divTitle" : "I'm sorry, but ...",
+  "divContent" : "미안하지만 ~ / 실례지만 ~",
+  "compId" : 738,
+  "compIdx" : 2,
+  "compStmtKr" : "죄송하지만 세부 사항은 말씀드릴 수 없습니다.",
+  "compStmtEn" : "I'm sorry, but I can't comment on the details."
+}, {
+  "divCode" : "185",
+  "divTitle" : "I'm sorry, but ...",
+  "divContent" : "미안하지만 ~ / 실례지만 ~",
+  "compId" : 739,
+  "compIdx" : 3,
+  "compStmtKr" : "미안하지만 그건 그다지 좋은 생각이 아닌 것 같은데",
+  "compStmtEn" : "I'm sorry, but I don't think that's such a good idea."
+}, {
+  "divCode" : "186",
+  "divTitle" : "(I'm) Sorry if I ...",
+  "divContent" : "내가 ~했다면 미안해",
+  "compId" : 740,
+  "compStmtKr" : "내가 기분 나쁘게 했다면 미안해",
+  "compStmtEn" : "Sorry if I offended you."
+}, {
+  "divCode" : "186",
+  "divTitle" : "(I'm) Sorry if I ...",
+  "divContent" : "내가 ~했다면 미안해",
+  "compId" : 741,
+  "compIdx" : 1,
+  "compStmtKr" : "너한테 그런 인상을 줬다면 미안해",
+  "compStmtEn" : "Sorry if I gave you that impression."
+}, {
+  "divCode" : "186",
+  "divTitle" : "(I'm) Sorry if I ...",
+  "divContent" : "내가 ~했다면 미안해",
+  "compId" : 742,
+  "compIdx" : 2,
+  "compStmtKr" : "내가 안 좋은 타이밍에 온 거라면 미안해",
+  "compStmtEn" : "Sorry if I came at a bad time."
+}, {
+  "divCode" : "186",
+  "divTitle" : "(I'm) Sorry if I ...",
+  "divContent" : "내가 ~했다면 미안해",
+  "compId" : 743,
+  "compIdx" : 3,
+  "compStmtKr" : "내가 너무 오래 머물렀다면 미안해",
+  "compStmtEn" : "I'm sorry if I overstayed my welcome."
+}, {
+  "divCode" : "187",
+  "divTitle" : "I just wanted to thank you for ...",
+  "divContent" : "~에 대해 고맙다는 말을 하고 싶었어",
+  "compId" : 744,
+  "compStmtKr" : "저한테 잘 대해 주셔서 감사드리고 싶었어요",
+  "compStmtEn" : "I just wanted to thank you for being nice to me."
+}, {
+  "divCode" : "187",
+  "divTitle" : "I just wanted to thank you for ...",
+  "divContent" : "~에 대해 고맙다는 말을 하고 싶었어",
+  "compId" : 745,
+  "compIdx" : 1,
+  "compStmtKr" : "날 도와줘서 고맙다는 말을 하고 싶었어",
+  "compStmtEn" : "I just wanted to thank you for helping me."
+}, {
+  "divCode" : "187",
+  "divTitle" : "I just wanted to thank you for ...",
+  "divContent" : "~에 대해 고맙다는 말을 하고 싶었어",
+  "compId" : 746,
+  "compIdx" : 2,
+  "compStmtKr" : "차 태워 줘서 고맙다는 말을 하고 싶었어",
+  "compStmtEn" : "I just wanted to thank you for the ride."
+}, {
+  "divCode" : "187",
+  "divTitle" : "I just wanted to thank you for ...",
+  "divContent" : "~에 대해 고맙다는 말을 하고 싶었어",
+  "compId" : 747,
+  "compIdx" : 3,
+  "compStmtKr" : "네가 날 위해 해 준 모든 일에 대해 고맙다는 말을 하고 싶었어",
+  "compStmtEn" : "I just wanted to thank you for everything you did for me."
+}, {
+  "divCode" : "188",
+  "divTitle" : "We should ...",
+  "divContent" : "우리 꼭 ~해야겠다 / 우리 ~하자",
+  "compId" : 748,
+  "compStmtKr" : "우리 꼭 여기 또 오자",
+  "compStmtEn" : "We should come here again."
+}, {
+  "divCode" : "188",
+  "divTitle" : "We should ...",
+  "divContent" : "우리 꼭 ~해야겠다 / 우리 ~하자",
+  "compId" : 749,
+  "compIdx" : 1,
+  "compStmtKr" : "우리 언제 데이트 한번 해야겠는걸요",
+  "compStmtEn" : "We should go out sometime."
+}, {
+  "divCode" : "188",
+  "divTitle" : "We should ...",
+  "divContent" : "우리 꼭 ~해야겠다 / 우리 ~하자",
+  "compId" : 750,
+  "compIdx" : 2,
+  "compStmtKr" : "이번 주말에 꼭 만나서 놀자",
+  "compStmtEn" : "We should totally hang out this weekend."
+}, {
+  "divCode" : "188",
+  "divTitle" : "We should ...",
+  "divContent" : "우리 꼭 ~해야겠다 / 우리 ~하자",
+  "compId" : 751,
+  "compIdx" : 3,
+  "compStmtKr" : "이거 다음에 또 하죠",
+  "compStmtEn" : "We should do this again."
+}, {
+  "divCode" : "189",
+  "divTitle" : "What kind of ...?",
+  "divContent" : "도대체 ~이 뭐 이래? / 어떤 ~이 ~해?",
+  "compId" : 752,
+  "compStmtKr" : "뭐 그런 질문이 다 있어?",
+  "compStmtEn" : "What kind of question is that?"
+}, {
+  "divCode" : "189",
+  "divTitle" : "What kind of ...?",
+  "divContent" : "도대체 ~이 뭐 이래? / 어떤 ~이 ~해?",
+  "compId" : 753,
+  "compIdx" : 1,
+  "compStmtKr" : "어떤 사람이 이런 짓을 하냐?",
+  "compStmtEn" : "What kind of person does this?"
+}, {
+  "divCode" : "189",
+  "divTitle" : "What kind of ...?",
+  "divContent" : "도대체 ~이 뭐 이래? / 어떤 ~이 ~해?",
+  "compId" : 754,
+  "compIdx" : 2,
+  "compStmtKr" : "서비스가 뭐 이래? 매니져 어디 있어요?",
+  "compStmtEn" : "What kind of service is this? Where's the manager?"
+}, {
+  "divCode" : "189",
+  "divTitle" : "What kind of ...?",
+  "divContent" : "도대체 ~이 뭐 이래? / 어떤 ~이 ~해?",
+  "compId" : 755,
+  "compIdx" : 3,
+  "compStmtKr" : "어떤 여자가 걔 같은 얼간이랑 결혼을 해?",
+  "compStmtEn" : "What kind of woman marries a jackass like him?"
+}, {
+  "divCode" : "190",
+  "divTitle" : "Care to ...?",
+  "divContent" : "~하고 싶어? / ~할래? / ~할 생각 있어?",
+  "compId" : 756,
+  "compStmtKr" : "우리하고 같이 갈래?",
+  "compStmtEn" : "Care to join us?"
+}, {
+  "divCode" : "190",
+  "divTitle" : "Care to ...?",
+  "divContent" : "~하고 싶어? / ~할래? / ~할 생각 있어?",
+  "compId" : 757,
+  "compIdx" : 1,
+  "compStmtKr" : "이것에 대해 한 말씀 하시겠습니까?",
+  "compStmtEn" : "Care to comment on this?"
+}, {
+  "divCode" : "190",
+  "divTitle" : "Care to ...?",
+  "divContent" : "~하고 싶어? / ~할래? / ~할 생각 있어?",
+  "compId" : 758,
+  "compIdx" : 2,
+  "compStmtKr" : "이거 한번 시도해 볼래(먹어 볼래/입어 볼래)?",
+  "compStmtEn" : "Care to try this?"
+}, {
+  "divCode" : "190",
+  "divTitle" : "Care to ...?",
+  "divContent" : "~하고 싶어? / ~할래? / ~할 생각 있어?",
+  "compId" : 759,
+  "compIdx" : 3,
+  "compStmtKr" : "나랑 저녁 식사 할래요?",
+  "compStmtEn" : "Care to have dinner with me?"
+}, {
+  "divCode" : "191",
+  "divTitle" : "I bet (that) ...",
+  "divContent" : "분명히 ~이다.",
+  "compId" : 760,
+  "compStmtKr" : "분명히 부모님이 널 자랑스러워 하실 거야",
+  "compStmtEn" : "I bet your parents will be proud of you."
+}, {
+  "divCode" : "191",
+  "divTitle" : "I bet (that) ...",
+  "divContent" : "분명히 ~이다.",
+  "compId" : 761,
+  "compIdx" : 1,
+  "compStmtKr" : "그녀는 분명히 완전 질겁할 거야",
+  "compStmtEn" : "I bet she's totally gonna freak out."
+}, {
+  "divCode" : "191",
+  "divTitle" : "I bet (that) ...",
+  "divContent" : "분명히 ~이다.",
+  "compId" : 762,
+  "compIdx" : 2,
+  "compStmtKr" : "걔 분명히 하나도 기억 안 날 거야",
+  "compStmtEn" : "I bet he doesn't remember a thing."
+}, {
+  "divCode" : "191",
+  "divTitle" : "I bet (that) ...",
+  "divContent" : "분명히 ~이다.",
+  "compId" : 763,
+  "compIdx" : 3,
+  "compStmtKr" : "분명히 여자들이 널 보면 군침을 흘릴 거야(넌 분명히 여자들한테 인기 많을 거야)",
+  "compStmtEn" : "I bet all the girls drool over you."
+}, {
+  "divCode" : "192",
+  "divTitle" : "Looks like ...",
+  "divContent" : "~깉아 보이네 / 보니까 ~인 것 같아",
+  "compId" : 764,
+  "compStmtKr" : "보니까 올해도 스키니 진이 유행인 것 같아",
+  "compStmtEn" : "Looks like skinny jeans are in again this year."
+}, {
+  "divCode" : "192",
+  "divTitle" : "Looks like ...",
+  "divContent" : "~깉아 보이네 / 보니까 ~인 것 같아",
+  "compId" : 765,
+  "compIdx" : 1,
+  "compStmtKr" : "우리 밤새 사무실에 갇혀 있을 것 같아(밤세 야근해야 할 것 같아)",
+  "compStmtEn" : "Looks like we'll be stuck in the office all night."
+}, {
+  "divCode" : "192",
+  "divTitle" : "Looks like ...",
+  "divContent" : "~깉아 보이네 / 보니까 ~인 것 같아",
+  "compId" : 766,
+  "compIdx" : 2,
+  "compStmtKr" : "보니까 너에 대해 오해했던 것 같아",
+  "compStmtEn" : "Looks like I was wrong about you."
+}, {
+  "divCode" : "192",
+  "divTitle" : "Looks like ...",
+  "divContent" : "~깉아 보이네 / 보니까 ~인 것 같아",
+  "compId" : 767,
+  "compIdx" : 3,
+  "compStmtKr" : "보니까 그녀는 얼굴에 성형한 것 같아",
+  "compStmtEn" : "Looks like she had work done on her face."
+}, {
+  "divCode" : "193",
+  "divTitle" : "Turns out (that) ...",
+  "divContent" : "알고 보니 ~이더라고",
+  "compId" : 768,
+  "compStmtKr" : "알고 보니 걔가 사실은 괜찮은 애더라고",
+  "compStmtEn" : "Turns out he's actually a nice guy."
+}, {
+  "divCode" : "193",
+  "divTitle" : "Turns out (that) ...",
+  "divContent" : "알고 보니 ~이더라고",
+  "compId" : 769,
+  "compIdx" : 1,
+  "compStmtKr" : "알고 보니 그건 그냥 엄청난 오해였더라고",
+  "compStmtEn" : "Turns out it was all just a big misunderstanding."
+}, {
+  "divCode" : "193",
+  "divTitle" : "Turns out (that) ...",
+  "divContent" : "알고 보니 ~이더라고",
+  "compId" : 770,
+  "compIdx" : 2,
+  "compStmtKr" : "알고 보니 걘 그냥 운으로 맞춘 거더라고",
+  "compStmtEn" : "Turns out he just made a lucky guess."
+}, {
+  "divCode" : "193",
+  "divTitle" : "Turns out (that) ...",
+  "divContent" : "알고 보니 ~이더라고",
+  "compId" : 771,
+  "compIdx" : 3,
+  "compStmtKr" : "알고 보니 우린 같은 초등학교를 다녔더라고",
+  "compStmtEn" : "Turns out we went to the same elementary school."
+}, {
+  "divCode" : "194",
+  "divTitle" : "Rumor has it (that) ...",
+  "divContent" : "소문에 의하면 ~이래 / ~이라는 소문이 있던데",
+  "compId" : 772,
+  "compStmtKr" : "소문에 의하면 걔네들이 결혼한대",
+  "compStmtEn" : "Rumor has it they're getting married."
+}, {
+  "divCode" : "194",
+  "divTitle" : "Rumor has it (that) ...",
+  "divContent" : "소문에 의하면 ~이래 / ~이라는 소문이 있던데",
+  "compId" : 773,
+  "compIdx" : 1,
+  "compStmtKr" : "소문에 의하면 그가 돈 세탁으로 구속됐대",
+  "compStmtEn" : "Rumor has it he was arrested for money laundering."
+}, {
+  "divCode" : "194",
+  "divTitle" : "Rumor has it (that) ...",
+  "divContent" : "소문에 의하면 ~이래 / ~이라는 소문이 있던데",
+  "compId" : 774,
+  "compIdx" : 2,
+  "compStmtKr" : "소문에 의하면 부사장님이 물러날 거래",
+  "compStmtEn" : "Rumor has it the vice president is stepping down."
+}, {
+  "divCode" : "194",
+  "divTitle" : "Rumor has it (that) ...",
+  "divContent" : "소문에 의하면 ~이래 / ~이라는 소문이 있던데",
+  "compId" : 775,
+  "compIdx" : 3,
+  "compStmtKr" : "소문에 의하면 헤일리가 다른 부서로 이동할 거래",
+  "compStmtEn" : "Rumor has it Hailey's being transferred to another department."
+}, {
+  "divCode" : "195",
+  "divTitle" : "You of all people ...",
+  "divContent" : "다른 사람도 아니고 네가 ~ / 다른 사람이면 몰라도 너는 ~",
+  "compId" : 776,
+  "compStmtKr" : "다른 사람도 아니고 너라면 알아야지",
+  "compStmtEn" : "You of all people should know."
+}, {
+  "divCode" : "195",
+  "divTitle" : "You of all people ...",
+  "divContent" : "다른 사람도 아니고 네가 ~ / 다른 사람이면 몰라도 너는 ~",
+  "compId" : 777,
+  "compIdx" : 1,
+  "compStmtKr" : "다른 사람도 아니고 너라면 이해할 거라 생각했어",
+  "compStmtEn" : "I thought you of all people would understand."
+}, {
+  "divCode" : "195",
+  "divTitle" : "You of all people ...",
+  "divContent" : "다른 사람도 아니고 네가 ~ / 다른 사람이면 몰라도 너는 ~",
+  "compId" : 778,
+  "compIdx" : 2,
+  "compStmtKr" : "다른 사람도 아니고 네가 날 배신하다니 믿을 수가 없어",
+  "compStmtEn" : "I can't believe you of all people betrayed me."
+}, {
+  "divCode" : "195",
+  "divTitle" : "You of all people ...",
+  "divContent" : "다른 사람도 아니고 네가 ~ / 다른 사람이면 몰라도 너는 ~",
+  "compId" : 779,
+  "compIdx" : 3,
+  "compStmtKr" : "다른 사람도 아니고 네가 내가 너한테 거짓말할 거라고 생각한단 말이야?",
+  "compStmtEn" : "You of all people think I'd lie to you?"
+}, {
+  "divCode" : "196",
+  "divTitle" : "Like ...",
+  "divContent" : "~일리가 없지/퍽도 ~하겠다./~하는 것도 아니면서 무슨",
+  "compId" : 780,
+  "compStmtKr" : "내가 널 믿을 리가 없지",
+  "compStmtEn" : "Like I'm gonna believe you."
+}, {
+  "divCode" : "196",
+  "divTitle" : "Like ...",
+  "divContent" : "~일리가 없지/퍽도 ~하겠다./~하는 것도 아니면서 무슨",
+  "compId" : 781,
+  "compIdx" : 1,
+  "compStmtKr" : "걔가 퍽도 네 말을 듣겠다",
+  "compStmtEn" : "Like he'll listen to you."
+}, {
+  "divCode" : "196",
+  "divTitle" : "Like ...",
+  "divContent" : "~일리가 없지/퍽도 ~하겠다./~하는 것도 아니면서 무슨",
+  "compId" : 782,
+  "compIdx" : 2,
+  "compStmtKr" : "네가 신경 쓰는 것도 아니면서 무슨",
+  "compStmtEn" : "Like you even care."
+}, {
+  "divCode" : "196",
+  "divTitle" : "Like ...",
+  "divContent" : "~일리가 없지/퍽도 ~하겠다./~하는 것도 아니면서 무슨",
+  "compId" : 783,
+  "compIdx" : 3,
+  "compStmtKr" : "그런 일이 일어날 리가 없지!",
+  "compStmtEn" : "Like that's gonna happen!"
+}, {
+  "divCode" : "197",
+  "divTitle" : "Now that ...",
+  "divContent" : "이제 ~하니까",
+  "compId" : 784,
+  "compStmtKr" : "네가 내 곁에 있으니까 기분이 한결 나아.",
+  "compStmtEn" : "Now that you're with me, I feel much better."
+}, {
+  "divCode" : "197",
+  "divTitle" : "Now that ...",
+  "divContent" : "이제 ~하니까",
+  "compId" : 785,
+  "compIdx" : 1,
+  "compStmtKr" : "이제 네가 왔으니까 시작하자",
+  "compStmtEn" : "Now that you're here, let's get started."
+}, {
+  "divCode" : "197",
+  "divTitle" : "Now that ...",
+  "divContent" : "이제 ~하니까",
+  "compId" : 786,
+  "compIdx" : 2,
+  "compStmtKr" : "생각해 보니까 말이 아주 잘 되네",
+  "compStmtEn" : "Now that I think about it, it makes perfect sense."
+}, {
+  "divCode" : "197",
+  "divTitle" : "Now that ...",
+  "divContent" : "이제 ~하니까",
+  "compId" : 787,
+  "compIdx" : 3,
+  "compStmtKr" : "말 나왔으니까 말인데 그거 괜찮은 생각이야",
+  "compStmtEn" : "Now that you mention it, it's a great idea."
+}, {
+  "divCode" : "198",
+  "divTitle" : "No offense, but ...",
+  "divContent" : "불쾌하게 하려는 건 아니지만 ~/ 이런 말하기 뭐하지만 ~",
+  "compId" : 788,
+  "compStmtKr" : "불쾌하게 하려는 건 아니지만, 넌 날 잘 모르잖아",
+  "compStmtEn" : "No offense, but you barely know me."
+}, {
+  "divCode" : "198",
+  "divTitle" : "No offense, but ...",
+  "divContent" : "불쾌하게 하려는 건 아니지만 ~/ 이런 말하기 뭐하지만 ~",
+  "compId" : 789,
+  "compIdx" : 1,
+  "compStmtKr" : "불쾌하게 하려는 건 아니지만, 넌 갈색은 영 아니다.(정말 안 어울려)",
+  "compStmtEn" : "No offense, but brown is definitely not your color."
+}, {
+  "divCode" : "198",
+  "divTitle" : "No offense, but ...",
+  "divContent" : "불쾌하게 하려는 건 아니지만 ~/ 이런 말하기 뭐하지만 ~",
+  "compId" : 790,
+  "compIdx" : 2,
+  "compStmtKr" : "이런 말 하기 뭐하지만, 너 음치구나",
+  "compStmtEn" : "No offense, but you're tone deaf."
+}, {
+  "divCode" : "198",
+  "divTitle" : "No offense, but ...",
+  "divContent" : "불쾌하게 하려는 건 아니지만 ~/ 이런 말하기 뭐하지만 ~",
+  "compId" : 791,
+  "compIdx" : 3,
+  "compStmtKr" : "이런 말 하기 뭐하지만, 그녀는 너와 격이 달라",
+  "compStmtEn" : "No offense, but she's out of your league."
+}, {
+  "divCode" : "199",
+  "divTitle" : "I take it (that) ...",
+  "divContent" : "~인가 보네 / ~인 것 같네",
+  "compId" : 792,
+  "compStmtKr" : "잠을 말 못 잤나 보네",
+  "compStmtEn" : "I take it you didn't sleep well."
+}, {
+  "divCode" : "199",
+  "divTitle" : "I take it (that) ...",
+  "divContent" : "~인가 보네 / ~인 것 같네",
+  "compId" : 793,
+  "compIdx" : 1,
+  "compStmtKr" : "너도 그 소문을 들었나 보구나",
+  "compStmtEn" : "I take it you heard the rumor, too."
+}, {
+  "divCode" : "199",
+  "divTitle" : "I take it (that) ...",
+  "divContent" : "~인가 보네 / ~인 것 같네",
+  "compId" : 794,
+  "compIdx" : 2,
+  "compStmtKr" : "너희 둘 서로 아는가 보네",
+  "compStmtEn" : "I take it you two know each other."
+}, {
+  "divCode" : "199",
+  "divTitle" : "I take it (that) ...",
+  "divContent" : "~인가 보네 / ~인 것 같네",
+  "compId" : 795,
+  "compIdx" : 3,
+  "compStmtKr" : "너희들 사이가 그다지 좋지는 않은가 봐",
+  "compStmtEn" : "I take it you guys don't get along so well."
+}, {
+  "divCode" : "200",
+  "divTitle" : "Just because ... doesn't mean ...",
+  "divContent" : "~이라고 해서 ~인 건 아니잖아.",
+  "compId" : 796,
+  "compStmtKr" : "혼자 있다고 해서 외로운 건 아니야",
+  "compStmtEn" : "Just because I'm alone doesn't mean I'm lonely."
+}, {
+  "divCode" : "200",
+  "divTitle" : "Just because ... doesn't mean ...",
+  "divContent" : "~이라고 해서 ~인 건 아니잖아.",
+  "compId" : 797,
+  "compIdx" : 1,
+  "compStmtKr" : "내가 할 수 있다고 해서 하겠다는 건 아니야",
+  "compStmtEn" : "Just because I can doesn't mean I will."
+}, {
+  "divCode" : "200",
+  "divTitle" : "Just because ... doesn't mean ...",
+  "divContent" : "~이라고 해서 ~인 건 아니잖아.",
+  "compId" : 798,
+  "compIdx" : 2,
+  "compStmtKr" : "우리가 헤어졌다고 해서 친구가 될 수 없는 건 아니야",
+  "compStmtEn" : "Just because we broke up doesn't mean we can't be friends."
+}, {
+  "divCode" : "200",
+  "divTitle" : "Just because ... doesn't mean ...",
+  "divContent" : "~이라고 해서 ~인 건 아니잖아.",
+  "compId" : 799,
+  "compIdx" : 3,
+  "compStmtKr" : "네 말이 맞다고 해서 내가 틀린 건 아니잖아!",
+  "compStmtEn" : "Just because you're right doesn't mean I'm wrong."
+} ]
