@@ -26,6 +26,7 @@ import org.tain.object.refund.req._ReqRefundData;
 import org.tain.object.validate.ValidateReqJson;
 import org.tain.object.validate.req._ReqValidateData;
 import org.tain.properties.ProjEnvJobProperties;
+import org.tain.properties.ProjEnvJsonProperties;
 import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.repository.apis.ApisRepository;
 import org.tain.utils.CurrentInfo;
@@ -51,6 +52,9 @@ public class ApisWorking {
 	private ProjEnvJobProperties projEnvJobProperties;
 	
 	@Autowired
+	private ProjEnvJsonProperties projEnvJsonProperties;
+	
+	@Autowired
 	private ProjEnvUrlProperties projEnvUrlProperties;
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -62,7 +66,9 @@ public class ApisWorking {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			String filePath = "src/main/resources/json_20200915/apis.json";
+			String basePath = this.projEnvJsonProperties.getHome()
+					+ this.projEnvJsonProperties.getBase() + "/";
+			String filePath = basePath + "apis.json";
 			
 			try {
 				List<Apis> lstApis = JsonPrint.getInstance().getObjectMapper().readValue(new FileInfo(filePath).toString(), new TypeReference<List<Apis>>() {});
@@ -71,7 +77,7 @@ public class ApisWorking {
 				
 				if (Flag.flag) lstApis.forEach(apis -> {
 					apis.setHttpUrl(this.projEnvUrlProperties.getLightnet() + apis.getHttpUrl());
-					apis.setReqJson(new FileInfo("src/main/resources/json_20200915/" + apis.getReqJson()).toString());
+					apis.setReqJson(new FileInfo(basePath + apis.getReqJson()).toString());
 					this.apisRepository.save(apis);                     // personal save
 				});
 				if (!Flag.flag) this.apisRepository.saveAll(lstApis);    // array save

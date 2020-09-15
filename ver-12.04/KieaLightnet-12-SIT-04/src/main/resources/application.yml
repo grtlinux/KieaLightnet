@@ -139,9 +139,7 @@ proj-env:
   json:
     name: json name on proj-local
     home: /Users/kangmac
-    base: /KANG/json/
-    source-apis-file: apis.json
-    source-trans-file: trans.json
+    base: /KANG/json/sit
   url:
     localhost: http://localhost:18888
     lightnet: http://localhost:18888
@@ -162,6 +160,8 @@ proj-env:
     name: job name on proj-test
   json:
     name: json name on proj-test
+    home: /Users/kangmac
+    base: /KANG/json/sit
   url:
     localhost: http://localhost:18888
     lightnet: https://test-public.lightnetapis.io
@@ -183,6 +183,8 @@ proj-env:
     name: job name on proj-dfep
   json:
     name: json name on proj-dfep
+    home: /hw01/ibridge
+    base: /KANG/json/sit
   url:
     localhost: http://localhost:18888
     lightnet: https://test-hawis.lightnetapis.io
@@ -202,6 +204,8 @@ proj-env:
     name: base name on proj-real
   job:
     name: job name on proj-real
+    home: /hw01/ibridge
+    base: /KANG/json/sit
   json:
     name: json name on proj-real
 
