@@ -23,8 +23,8 @@ public class Apis {
 	@Column(name = "name", length = 128)
 	private String name;
 	
-	@Column(name = "http_path", length = 64)
-	private String httpPath;
+	@Column(name = "http_url", length = 128)
+	private String httpUrl;
 	
 	@Column(name = "http_method", length = 16)
 	private String httpMethod;
@@ -35,12 +35,12 @@ public class Apis {
 	@Builder
 	public Apis(
 			String name,
-			String httpPath,
+			String httpUrl,
 			String httpMethod,
 			String reqJson
 			) {
 		this.name = name;
-		this.httpPath = httpPath;
+		this.httpUrl = httpUrl;
 		this.httpMethod = httpMethod;
 		this.reqJson = reqJson;
 	}

@@ -144,6 +144,7 @@ proj-env:
     source-trans-file: trans.json
   url:
     localhost: http://localhost:18888
+    lightnet: http://localhost:18888
     lightnet1: http://localhost:18888
     lightnet11: http://localhost:18888
     auth: http://localhost:18081/v1.0
@@ -163,6 +164,7 @@ proj-env:
     name: json name on proj-test
   url:
     localhost: http://localhost:18888
+    lightnet: https://test-public.lightnetapis.io
     lightnet1: https://test-public.lightnetapis.io/v1
     lightnet11: https://test-public.lightnetapis.io/v1.1
     auth: http://localhost:18081/v1.0
@@ -183,6 +185,7 @@ proj-env:
     name: json name on proj-dfep
   url:
     localhost: http://localhost:18888
+    lightnet: https://test-hawis.lightnetapis.io
     lightnet1: https://test-hawis.lightnetapis.io/v1
     lightnet11: https://test-hawis.lightnetapis.io/v1.1
     auth: http://localhost:18081/v1.0

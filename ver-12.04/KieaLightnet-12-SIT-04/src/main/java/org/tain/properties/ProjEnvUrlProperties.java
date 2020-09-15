@@ -13,6 +13,7 @@ public class ProjEnvUrlProperties {
 	private String name;
 	
 	private String localhost;
+	private String lightnet;
 	private String lightnet1;
 	private String lightnet11;
 	private String auth;

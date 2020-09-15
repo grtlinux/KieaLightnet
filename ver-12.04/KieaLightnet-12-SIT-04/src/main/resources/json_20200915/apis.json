@@ -1,42 +1,42 @@
 [
 	{
 		"name": "auth - 1",
-		"httpPath": "/v1/auth",
+		"httpUrl": "/v1/auth",
 		"httpMethod": "POST",
 		"reqJson": "auth-1.json"
 	}, {
 		"name": "detail - 1",
-		"httpPath": "/v1.1/remittances.detail",
+		"httpUrl": "/v1.1/remittances.detail",
 		"httpMethod": "GET",
 		"reqJson": "detail-1.json"
 	}, {
 		"name": "validate - 1",
-		"httpPath": "/v1.1/remittances.validate",
+		"httpUrl": "/v1.1/remittances.validate",
 		"httpMethod": "POST",
 		"reqJson": "validate-1.json"
 	}, {
 		"name": "commit - 1",
-		"httpPath": "/v1.1/remittances.commit",
+		"httpUrl": "/v1.1/remittances.commit",
 		"httpMethod": "POST",
 		"reqJson": "commit-1.json"
 	}, {
 		"name": "amend - 1",
-		"httpPath": "/v1.1/remittances.amend",
+		"httpUrl": "/v1.1/remittances.amend",
 		"httpMethod": "POST",
 		"reqJson": "amend-1.json"
 	}, {
 		"name": "refund - 1",
-		"httpPath": "/v1.1/remittances.refund",
+		"httpUrl": "/v1.1/remittances.refund",
 		"httpMethod": "POST",
 		"reqJson": "refund-1.json"
 	}, {
 		"name": "customer - 1",
-		"httpPath": "/v1.1/remittances.customer-lookup",
+		"httpUrl": "/v1.1/remittances.customer-lookup",
 		"httpMethod": "GET",
 		"reqJson": "customer-1.json"
 	}, {
-		"name": "histoories - 1",
-		"httpPath": "/v1.1/remittances",
+		"name": "histories - 1",
+		"httpUrl": "/v1.1/remittances",
 		"httpMethod": "GET",
 		"reqJson": "histories-1.json"
 	}

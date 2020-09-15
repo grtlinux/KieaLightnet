@@ -69,8 +69,8 @@ public class ApisWorking {
 				this.apisRepository.deleteAll();
 				
 				if (Flag.flag) lstApis.forEach(apis -> {
-					String reqJson = new FileInfo("src/main/resources/json_20200915/" + apis.getReqJson()).toString();
-					apis.setReqJson(reqJson);
+					apis.setHttpUrl(this.projEnvUrlProperties.getLightnet() + apis.getHttpUrl());
+					apis.setReqJson(new FileInfo("src/main/resources/json_20200915/" + apis.getReqJson()).toString());
 					this.apisRepository.save(apis);                     // personal save
 				});
 				if (!Flag.flag) this.apisRepository.saveAll(lstApis);    // array save

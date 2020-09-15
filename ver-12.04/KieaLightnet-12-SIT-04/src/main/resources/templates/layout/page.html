@@ -95,6 +95,37 @@
 
 
 
+<!-- page4 -->
+<th:block th:fragment="page4">
+	<!-- page4 -->
+	<nav aria-label="Page navigation" style="text-align:center;">
+		<ul class="pagination" th:with="startNumber=${T(Math).floor(apisList.number/10)}*10+1, endNumber=(${apisList.totalPages} > ${startNumber}+9) ? ${startNumber}+9 : ${apisList.totalPages}">
+			<li><a aria-label="Previous" th:href="@{/apis/list(page=1)}">&laquo;</a></li>
+			<li th:style="${apisList.first} ? 'display:none'">
+				<a th:href="@{/apis/list(page=${apisList.number})}">&lsaquo;</a>
+			</li>
+
+			<li th:each="page :${#numbers.sequence(startNumber, endNumber)}" th:class="(${page} == ${apisList.number}+1) ? 'active'">
+				<a th:href="@{/apis/list(page=${page})}" th:text="${page}"><span class="sr-only"></span></a>
+			</li>
+
+			<li th:style="${apisList.last} ? 'display:none'">
+				<a th:href="@{/apis/list(page=${apisList.number}+2)}">&rsaquo;</a>
+			</li>
+			<li><a aria-label="Next" th:href="@{/apis/list(page=${apisList.totalPages})}">&raquo;</a></li>
+		</ul>
+	</nav>
+	<div style="text-align:center;">
+		(<!-- th:block th:text="${apisList.content}"/ --> <th:block th:text="${apisList.totalElements}"/> : <th:block th:text="${apisList.numberOfElements}"/> : <th:block th:text="${apisList.number}+1"/> / <th:block th:text="${apisList.totalPages}"/>)
+	</div>
+	<!-- /page4 -->
+</th:block>
+<!-- /page4 -->
+
+
+
+
+
 
 
 </html>
