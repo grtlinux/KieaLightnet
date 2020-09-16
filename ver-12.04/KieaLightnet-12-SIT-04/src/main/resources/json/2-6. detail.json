@@ -3,6 +3,6 @@
   "sourceSendCurrency" : "THB",
   "destinationCountry" : "IDN",
   "destinationReceiveAmount" : "1000",
-  "destinationReceiveCurrency" : "IDR",
+  "destinationReceiveCurrency" : "IDN",
   "destinationOperatorCode" : "mgi"
 }

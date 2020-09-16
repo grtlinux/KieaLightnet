@@ -53,7 +53,6 @@
   "destination" : {
     "country" : "IDN",
     "receive" : {
-      "amount" : "43366.3500",
       "currency" : "IDR"
     },
     "operatorCode" : "mgi"
@@ -61,6 +60,7 @@
   "source" : {
     "country" : "KOR",
     "send" : {
+      "amount" : "43366.3500",
       "currency" : "THB"
     },
     "transactionId" : "HW2009151036A332"

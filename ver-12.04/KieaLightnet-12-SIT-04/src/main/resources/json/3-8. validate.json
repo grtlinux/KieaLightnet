@@ -1,5 +1,5 @@
 {
-  "deliveryMethod" : "cash",
+  "deliveryMethod" : "deposit",
   "remark" : "This is MGI test remark",
   "promotionCodes" : [ "FLATFEE" ],
   "receiver" : {

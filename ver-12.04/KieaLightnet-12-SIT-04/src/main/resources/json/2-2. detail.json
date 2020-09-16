@@ -4,5 +4,6 @@
   "destinationCountry" : "IDN",
   "destinationReceiveAmount" : "1000",
   "destinationReceiveCurrency" : "IDR",
-  "destinationOperatorCode" : "mgi"
+  "destinationOperatorCode" : "mgi",
+"deliveryMethod": "account_deposit"
 }

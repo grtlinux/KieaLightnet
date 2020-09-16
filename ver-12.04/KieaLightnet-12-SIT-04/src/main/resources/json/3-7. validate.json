@@ -35,8 +35,8 @@
     "lastName" : "senderLastName",
     "secondLastName" : "senderSecondLastName",
     "notification" : {
-      "transactionSMSOptIn" : false,
-      "transactionEmailOptIn" : false,
+      "transactionSMSOptIn" : true,
+      "transactionEmailOptIn" : true,
       "marketingSMSOptIn" : false,
       "marketingEmailOptIn" : false
     },

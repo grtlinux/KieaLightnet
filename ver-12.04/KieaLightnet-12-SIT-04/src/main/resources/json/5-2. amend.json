@@ -1,5 +1,5 @@
 {
-  "terminalName" : "TestTerminalName",
+  "terminal_Name" : "TestTerminalName",
   "transactionId" : "ce2fc9c0-b8e2-4832-5573-804189c1f1ea",
   "receiver" : {
     "firstName" : "TestFirstName",
