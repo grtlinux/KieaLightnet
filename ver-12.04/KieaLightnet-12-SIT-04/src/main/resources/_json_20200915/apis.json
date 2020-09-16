@@ -1,48 +1,204 @@
 [
 	{
-		"name": "auth - 1",
+		"name": "1. auth - init",
 		"mapping": "apis/auth",
 		"httpUrl": "/v1/auth",
 		"httpMethod": "POST",
 		"reqJson": "auth-1.json"
 	}, {
-		"name": "detail - 1",
+		"name": "2-1. detail - cash",
 		"mapping": "apis/detail",
 		"httpUrl": "/v1.1/remittances.detail",
 		"httpMethod": "GET",
 		"reqJson": "detail-1.json"
 	}, {
-		"name": "validate - 1",
+		"name": "2-2. detail - account deposit",
+		"mapping": "apis/detail",
+		"httpUrl": "/v1.1/remittances.detail",
+		"httpMethod": "GET",
+		"reqJson": "detail-1.json"
+	}, {
+		"name": "2-3. detail - no delivery method",
+		"mapping": "apis/detail",
+		"httpUrl": "/v1.1/remittances.detail",
+		"httpMethod": "GET",
+		"reqJson": "detail-1.json"
+	}, {
+		"name": "2-4. detail - promotion code",
+		"mapping": "apis/detail",
+		"httpUrl": "/v1.1/remittances.detail",
+		"httpMethod": "GET",
+		"reqJson": "detail-1.json"
+	}, {
+		"name": "2-5. detail - sender.rewardsNumber",
+		"mapping": "apis/detail",
+		"httpUrl": "/v1.1/remittances.detail",
+		"httpMethod": "GET",
+		"reqJson": "detail-1.json"
+	}, {
+		"name": "2-6. detail - error",
+		"mapping": "apis/detail",
+		"httpUrl": "/v1.1/remittances.detail",
+		"httpMethod": "GET",
+		"reqJson": "detail-1.json"
+	}, {
+		"name": "2-7. detail - 3rd party error",
+		"mapping": "apis/detail",
+		"httpUrl": "/v1.1/remittances.detail",
+		"httpMethod": "GET",
+		"reqJson": "detail-1.json"
+	}, {
+		"name": "3-1. validate - cash",
 		"mapping": "apis/validate",
 		"httpUrl": "/v1.1/remittances.validate",
 		"httpMethod": "POST",
 		"reqJson": "validate-1.json"
 	}, {
-		"name": "commit - 1",
+		"name": "3-2. validate - account deposit",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "3-3. validate - destination.receive.amount",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "3-4. validate - source.send.amount",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "3-5. validate - promotion code",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "3-6. validate - sender rewardsNumber",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "3-7. validate - sender notification params",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "3-8. validate - error",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "3-9. validate - 3rd party error",
+		"mapping": "apis/validate",
+		"httpUrl": "/v1.1/remittances.validate",
+		"httpMethod": "POST",
+		"reqJson": "validate-1.json"
+	}, {
+		"name": "4-1. commit - successfully",
 		"mapping": "apis/commit",
 		"httpUrl": "/v1.1/remittances.commit",
 		"httpMethod": "POST",
 		"reqJson": "commit-1.json"
 	}, {
-		"name": "amend - 1",
+		"name": "4-2. commit - error",
+		"mapping": "apis/commit",
+		"httpUrl": "/v1.1/remittances.commit",
+		"httpMethod": "POST",
+		"reqJson": "commit-1.json"
+	}, {
+		"name": "4-3. commit - 3rd party error",
+		"mapping": "apis/commit",
+		"httpUrl": "/v1.1/remittances.commit",
+		"httpMethod": "POST",
+		"reqJson": "commit-1.json"
+	}, {
+		"name": "5-1. amend - successfully",
 		"mapping": "apis/amend",
 		"httpUrl": "/v1.1/remittances.amend",
 		"httpMethod": "POST",
 		"reqJson": "amend-1.json"
 	}, {
-		"name": "refund - 1",
+		"name": "5-2. amend - error",
+		"mapping": "apis/amend",
+		"httpUrl": "/v1.1/remittances.amend",
+		"httpMethod": "POST",
+		"reqJson": "amend-1.json"
+	}, {
+		"name": "5-3. amend - 3rd party error",
+		"mapping": "apis/amend",
+		"httpUrl": "/v1.1/remittances.amend",
+		"httpMethod": "POST",
+		"reqJson": "amend-1.json"
+	}, {
+		"name": "6-1. refund - refund Y",
 		"mapping": "apis/refund",
 		"httpUrl": "/v1.1/remittances.refund",
 		"httpMethod": "POST",
 		"reqJson": "refund-1.json"
 	}, {
-		"name": "customer - 1",
+		"name": "6-2. refund - refund N",
+		"mapping": "apis/refund",
+		"httpUrl": "/v1.1/remittances.refund",
+		"httpMethod": "POST",
+		"reqJson": "refund-1.json"
+	}, {
+		"name": "6-3. refund - cancel",
+		"mapping": "apis/refund",
+		"httpUrl": "/v1.1/remittances.refund",
+		"httpMethod": "POST",
+		"reqJson": "refund-1.json"
+	}, {
+		"name": "6-4. refund - error",
+		"mapping": "apis/refund",
+		"httpUrl": "/v1.1/remittances.refund",
+		"httpMethod": "POST",
+		"reqJson": "refund-1.json"
+	}, {
+		"name": "6-5. refund - 3rd party error",
+		"mapping": "apis/refund",
+		"httpUrl": "/v1.1/remittances.refund",
+		"httpMethod": "POST",
+		"reqJson": "refund-1.json"
+	}, {
+		"name": "7-1. customer - senderHomePhone",
 		"mapping": "apis/customer",
 		"httpUrl": "/v1.1/remittances.customer-lookup",
 		"httpMethod": "GET",
 		"reqJson": "customer-1.json"
 	}, {
-		"name": "histories - 1",
+		"name": "7-2. customer - senderCardNumber",
+		"mapping": "apis/customer",
+		"httpUrl": "/v1.1/remittances.customer-lookup",
+		"httpMethod": "GET",
+		"reqJson": "customer-1.json"
+	}, {
+		"name": "7-3. customer - error",
+		"mapping": "apis/customer",
+		"httpUrl": "/v1.1/remittances.customer-lookup",
+		"httpMethod": "GET",
+		"reqJson": "customer-1.json"
+	}, {
+		"name": "7-4. customer - 3rd party error",
+		"mapping": "apis/customer",
+		"httpUrl": "/v1.1/remittances.customer-lookup",
+		"httpMethod": "GET",
+		"reqJson": "customer-1.json"
+	}, {
+		"name": "8-1. histories - successfully",
+		"mapping": "apis/histories",
+		"httpUrl": "/v1.1/remittances",
+		"httpMethod": "GET",
+		"reqJson": "histories-1.json"
+	}, {
+		"name": "8-2. histories - error",
 		"mapping": "apis/histories",
 		"httpUrl": "/v1.1/remittances",
 		"httpMethod": "GET",
