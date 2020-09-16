@@ -173,6 +173,29 @@ proj-env:
 
 
 ---
+# ---------- proj-aws ------------------
+spring.profiles: proj-aws
+
+proj-env:
+  base:
+    name: base name on proj-test
+  job:
+    name: job name on proj-test
+  json:
+    name: json name on proj-test
+    home: /home/ubuntu
+    base: /KANG/json/sit
+  url:
+    localhost: http://localhost:18888
+    lightnet: https://test-public.lightnetapis.io
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+
+---
 # ---------- proj-dfep ------------------
 spring.profiles: proj-dfep
 
