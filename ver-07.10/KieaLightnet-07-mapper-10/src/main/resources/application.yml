@@ -13,6 +13,7 @@ spring:
   - proj-default
   - proj-local
   #- proj-test
+  #- proj-dfep
   #- proj-real
   h2.console:
     enabled: true
