@@ -43,10 +43,6 @@ public class LnsStreamPacket {
 		}
 	}
 	
-	public String toString() {
-		return this.inetSocketAddress.toString();
-	}
-	
 	///////////////////////////////////////////////////////////
 	// recvPacket
 	
