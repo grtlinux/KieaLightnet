@@ -14,5 +14,9 @@ public class ProjEnvJsonProperties {
 
 	private String name;
 	
+	private String home;
+	private String base;
+	private String apisInfoFile;
+	
 	private Map<String,String> file;
 }

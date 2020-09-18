@@ -1,0 +1,8 @@
+{
+  "sourceCountry" : "KOR",
+  "sourceSendCurrency" : "XXX",
+  "destinationCountry" : "IDN",
+  "destinationReceiveAmount" : "1000",
+  "destinationReceiveCurrency" : "IDR",
+  "destinationOperatorCode" : "mgi"
+}
