@@ -55,7 +55,7 @@
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">reqStream</th>
-				<td><textarea id="apis_reqJson" class="col-md-1 form-control input-sm" rows="7" style="height:100px;" th:text="${apis?.reqJson}"></textarea></td>
+				<td><textarea id="apis_reqStream" class="col-md-1 form-control input-sm" rows="7" readonly style="height:100px;"></textarea></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;"> </th>
@@ -65,7 +65,7 @@
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;">resStream</th>
-				<td><textarea id="apis_reqJson" class="col-md-1 form-control input-sm" rows="7" style="height:100px;" th:text="${apis?.reqJson}"></textarea></td>
+				<td><textarea id="apis_resStream" class="col-md-1 form-control input-sm" rows="7" readonly style="height:100px;"></textarea></td>
 			</tr>
 			<tr>
 				<th style="padding:13px 0 0 15px;"> </th>
@@ -259,6 +259,7 @@
 		});
 		$('#btnCloseMakeReqStream').click(function() {
 			console.log('Hello btnCloseMakeReqStream');
+			$('#apis_reqStream').val($('#modal1_reqStream').val());
 		});
 	</script>
 	<!-- /script : MakeReqStream -->

@@ -21,13 +21,11 @@ import org.tain.object.lns.LnsReqWeb;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.RestTemplateConfig;
-import org.tain.utils.TransactionId;
 import org.tain.utils.enums.RestTemplateType;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -134,10 +132,10 @@ public class AuthRestController {
 		
 		String ret = null;
 		if (Flag.flag) {
-			LnsJson reqLnsJson = new LnsJson();
-			reqLnsJson.setReqJsonData(reqHttpEntity.getBody());
-			reqLnsJson = this.mapperReqJson2Str(reqLnsJson);
-			ret = "{\"reqStrData\":\"" + reqLnsJson.getReqStrData() + "\"}";
+			LnsJson lnsJson = new LnsJson();
+			lnsJson.setReqJsonData(reqHttpEntity.getBody());
+			lnsJson = this.mapperReqJson2Str(lnsJson);
+			ret = "{\"reqStrData\":\"" + lnsJson.getReqStrData() + "\"}";
 		}
 		
 		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
@@ -146,23 +144,23 @@ public class AuthRestController {
 		return new ResponseEntity<>(ret, headers, HttpStatus.OK);
 	}
 	
-	private LnsJson mapperReqJson2Str(LnsJson reqLnsJson) throws Exception {
+	private LnsJson mapperReqJson2Str(LnsJson lnsJson) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		String resJson = null;
+		//String resJson = null;
 		if (Flag.flag) {
 			log.info("================== START: 1. auth(POST) ===================");
 			
 			String reqJson = null;
 			if (Flag.flag) {
-				reqJson = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(reqLnsJson);
+				reqJson = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(lnsJson);
 				//JsonNode jsonNode = new ObjectMapper().readTree(lnsReqWeb.getReqJson());
 				//((ObjectNode) jsonNode.at("/source")).put("transactionId", TransactionId.get());
 				//reqJson = jsonNode.toPrettyString();
 				log.info(">>>>> REQ.reqJson        = {}", reqJson);
 			}
 			
-			String httpUrl = "";
+			String httpUrl = "http://localhost:18086/v1.0/mapper/auth/req/j2s";
 			HttpMethod httpMethod = HttpMethod.POST;
 			HttpEntity<String> reqHttpEntity = null;
 			ResponseEntity<String> response = null;
@@ -214,22 +212,22 @@ public class AuthRestController {
 					log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 					log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
 					log.info(">>>>> RES.getBody()            = {}", response.getBody());
-					resJson = response.getBody();
+					lnsJson = new ObjectMapper().readValue(response.getBody(), LnsJson.class);
 					
-					JsonNode jsonNode = new ObjectMapper().readTree(resJson);
-					log.info(">>>>> jsonNode             = {}", jsonNode.toPrettyString());
+					String strLnsJson = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(lnsJson);
+					log.info(">>>>> jsonNode             = {}", strLnsJson);
 				} catch (Exception e) {
 					//e.printStackTrace();
 					String message = e.getMessage();
 					log.error("ERROR >>>>> {}", message);
 					int pos1 = message.indexOf('[');
 					int pos2 = message.lastIndexOf(']');
-					resJson = message.substring(pos1 + 1, pos2);
+					lnsJson.setMessage(message.substring(pos1 + 1, pos2));
 				}
 			}
 			log.info("===============================================================");
 		}
 		
-		return null;
+		return lnsJson;
 	}
 }

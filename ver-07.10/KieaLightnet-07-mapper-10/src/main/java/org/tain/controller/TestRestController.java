@@ -45,8 +45,8 @@ public class TestRestController {
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
 			
-			_ReqTestData reqData = new _ReqTestData();
 			TransferStrAndJson.subString = new SubString(lnsJson.getReqStrData());
+			_ReqTestData reqData = new _ReqTestData();
 			reqData = (_ReqTestData) TransferStrAndJson.getObject(reqData);
 			
 			lnsJson.setReqJsonData(JsonPrint.getInstance().toJson(reqData));
