@@ -39,7 +39,7 @@ public class _ValidateAnalyze {
 			}
 		}
 		
-		if (!Flag.flag) {  // TODO
+		if (Flag.flag) {
 			try {
 				TransferStrAndJson.subString = new SubString(reqStream);
 				_ReqValidateData reqData = new _ReqValidateData();

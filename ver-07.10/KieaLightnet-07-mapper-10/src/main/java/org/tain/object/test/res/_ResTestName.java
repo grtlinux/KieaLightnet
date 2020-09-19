@@ -1,4 +1,4 @@
-package org.tain.object._test.req;
+package org.tain.object.test.res;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -7,10 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
 
-@Deprecated
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ReqTestName {
+public class _ResTestName {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "first_name")

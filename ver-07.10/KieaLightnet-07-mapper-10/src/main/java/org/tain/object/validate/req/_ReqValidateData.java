@@ -26,9 +26,9 @@ public class _ReqValidateData {
 	private String saveReport;
 	
 	// TODO: issue for meeting
-	@StreamAnnotation(length = 20)
+	//@StreamAnnotation(length = 20)
 	@JsonProperty(value = "promotionCodes")
-	private String[] promotionCodes;
+	private String[] promotionCodes = {"FLATFEE"};
 	
 	@StreamAnnotation
 	@JsonProperty(value = "receiver")

@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 import org.springframework.stereotype.Component;
-import org.tain.object._test.req._ReqTestData;
-import org.tain.object._test.req._ReqTestName;
 import org.tain.object.dummy._Dummy;
+import org.tain.object.test.req._ReqTestData;
+import org.tain.object.test.req._ReqTestName;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
