@@ -1,0 +1,237 @@
+
+
+server:
+  port: 8888
+  servlet.context-path: /v0.1
+
+spring:
+  profiles.active:
+  - proj-default
+  - proj-local
+  - proj-test
+  #- proj-dfep
+  #- proj-read
+
+  h2.console:
+    enabled: true
+    path: /h2
+    settings:
+      trace: false
+      web-allow-others: true
+  datasource:
+    #url: jdbc:h2:mem:testdb
+    url: jdbc:h2:tcp://localhost:9092/kangdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    #hikari:
+    #  #jdbc-url: jdbc:h2:tcp://localhost:9092/kangdb
+    #  jdbc-url: jdbc:h2:mem:testdb
+    #  driver-class-name: org.h2.Driver
+    #  username: sa
+    #  password:
+  jpa:
+    show-sql: true
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: update
+    properties:
+      hibernate.jdbc.time_zone: UTC+9
+  data.rest:
+    base-path: /api
+    default-page-size: 5
+    max-page-size: 50
+  thymeleaf:
+    enabled: true
+    encoding: utf-8
+    cache: false
+    prefix: classpath:templates/
+    suffix: .html
+  servlet.multipart:
+    enabled: true
+    location: ~/FILES
+    max-file-size: 5GB
+    max-request-size: 5GB
+  devtools:
+    livereload.enabled: true
+
+logging:
+  file:
+    path: logs/
+    max-size: 10MB
+    max-history: 30
+  pattern:
+    console: "%clr(%d{HH:mm:ss} %p){magenta} - %m%n"
+    file: "%d %p [%-10thread] [%-30logger{30}] - %m%n"
+  level:
+    root: info
+    org.tain.*: info
+    org.hibernate.SQL: info
+    org.hibernate.type: info
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.thymeleaf: info
+    org.h2.server.web: info
+
+---
+# ---------- proj-default ------------------
+spring.profiles: proj-default
+
+proj-info:
+  title: zero project
+  auhor: Kiea Seok Kang
+
+file:
+  home:    /Users/kangmac
+  base:    /KANG/json/lightnet
+  from:
+    board: src/main/resources/src/board.txt
+    word:  src/main/resources/src/org_word2500.txt
+    chun:  src/main/resources/src/org_1000.txt
+    mid:   src/main/resources/src/org_mid.txt
+  to:
+    board:     src/main/resources/json_20200915/board.json     # board
+    word:      src/main/resources/json_20200915/word.json      # word
+    chun:      src/main/resources/json_20200915/chun.json      # chun
+    grp:       src/main/resources/json_20200915/grp.json
+    sent:      src/main/resources/json_20200915/sent.json
+    tip:       src/main/resources/json_20200915/tip.json
+    mid:       src/main/resources/json_20200915/mid.json       # mid
+    division:  src/main/resources/json_20200915/division.json
+    comp:      src/main/resources/json_20200915/comp.json
+
+proj-env:
+  base:
+    name: base name on proj-default
+  job:
+    name: job name on proj-default
+    transaction: auth        # 1. auth
+    #transaction: detail      # 2. detail
+    #transaction: validate    # 3. validate
+    #transaction: commit      # 4. commit
+    #transaction: amend       # 5. amend      ERROR
+    #transaction: refund      # 6. refund     ERROR
+    #transaction: customers   # 7. customers  ERROR
+    #transaction: histories   # 8. histories
+    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
+    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
+    auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
+    auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
+  json:
+    name: json name on proj-default
+
+---
+# ---------- proj-local ------------------
+spring.profiles: proj-local
+
+proj-env:
+  base:
+    name: base name on proj-local
+    url: https://test-public.lightnetapis.io/
+  job:
+    name: job name on proj-local
+    loading:
+      source:
+        path: .../path
+        file: src.txt
+      target:
+        path: .../path
+        file: tgt.txt
+  json:
+    name: json name on proj-local
+    home: /Users/kangmac
+    base: /KANG/json/sit
+  url:
+    localhost: http://localhost:18888
+    lightnet: http://localhost:18888
+    lightnet1: http://localhost:18888
+    lightnet11: http://localhost:18888
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+---
+# ---------- proj-test ------------------
+spring.profiles: proj-test
+
+proj-env:
+  base:
+    name: base name on proj-test
+  job:
+    name: job name on proj-test
+  json:
+    name: json name on proj-test
+    home: /Users/kangmac
+    base: /KANG/json/sit
+  url:
+    localhost: http://localhost:18888
+    lightnet: https://test-public.lightnetapis.io
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+
+---
+# ---------- proj-aws ------------------
+spring.profiles: proj-aws
+
+proj-env:
+  base:
+    name: base name on proj-test
+  job:
+    name: job name on proj-test
+  json:
+    name: json name on proj-test
+    home: /home/ubuntu
+    base: /KANG/json/sit
+  url:
+    localhost: http://localhost:18888
+    lightnet: https://test-public.lightnetapis.io
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+
+---
+# ---------- proj-dfep ------------------
+spring.profiles: proj-dfep
+
+proj-env:
+  base:
+    name: base name on proj-dfep
+  job:
+    name: job name on proj-dfep
+  json:
+    name: json name on proj-dfep
+    home: /hw01/ibridge
+    base: /KANG/json/sit
+  url:
+    localhost: http://localhost:18888
+    lightnet: https://test-hawis.lightnetapis.io
+    lightnet1: https://test-hawis.lightnetapis.io/v1
+    lightnet11: https://test-hawis.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+
+---
+# ---------- proj-real ------------------
+spring.profiles: proj-real
+
+proj-env:
+  base:
+    name: base name on proj-real
+  job:
+    name: job name on proj-real
+    home: /hw01/ibridge
+    base: /KANG/json/sit
+  json:
+    name: json name on proj-real
+
+
+
+
