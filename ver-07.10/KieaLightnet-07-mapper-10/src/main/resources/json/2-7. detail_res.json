@@ -1,10 +1,9 @@
-# 2-4. detail req
+# 2-7. detail res
 {
   "sourceCountry" : "KOR",
-  "sourceSendCurrency" : "THB",
+  "sourceSendCurrency" : "XXX",
   "destinationCountry" : "IDN",
   "destinationReceiveAmount" : "1000",
   "destinationReceiveCurrency" : "IDR",
-  "destinationOperatorCode" : "mgi",
-"promotionCode": "FLATFEE"
+  "destinationOperatorCode" : "mgi"
 }
