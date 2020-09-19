@@ -1,5 +1,11 @@
 package org.tain.utils;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class StringTools {
 
 	// text.replaceAll("(?<=^.{47}).*$", "...");
@@ -71,5 +77,49 @@ public class StringTools {
 		} while (textWidth(text.substring(0, newEnd) + "...") < max);
 
 		return text.substring(0, end) + "...";
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+
+	// KANG-20200918
+	public static String stringFromFile(String filePath) {
+		StringBuffer sb = new StringBuffer();
+		if (Flag.flag) {
+			BufferedReader br = null;
+			
+			try {
+				br = new BufferedReader(new FileReader(filePath));
+				String line = null;
+				while ((line = br.readLine()) != null) {
+					if (line.trim().charAt(0) == '#')
+						continue;
+					sb.append(line).append("\n");
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (br != null) try { br.close(); } catch (Exception e) {}
+			}
+		}
+		return sb.toString();
+	}
+	
+	// KANG-20200918
+	public static void stringToFile(String strSource, String filePath) {
+		if (Flag.flag) {
+			PrintWriter pw = null;
+			
+			try {
+				pw = new PrintWriter(new FileWriter(filePath));
+				pw.print(strSource);
+				pw.flush();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (pw != null) try { pw.close(); } catch (Exception e) {}
+			}
+		}
 	}
 }

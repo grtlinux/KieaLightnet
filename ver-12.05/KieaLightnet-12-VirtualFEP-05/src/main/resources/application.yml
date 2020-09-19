@@ -1,7 +1,7 @@
 
 
 server:
-  port: 8888
+  port: 8080
   servlet.context-path: /v0.1
 
 spring:
@@ -140,6 +140,7 @@ proj-env:
     name: json name on proj-local
     home: /Users/kangmac
     base: /KANG/json/sit
+    apis-info-file: apis.json
   url:
     localhost: http://localhost:18888
     lightnet: http://localhost:18888
@@ -161,7 +162,8 @@ proj-env:
   json:
     name: json name on proj-test
     home: /Users/kangmac
-    base: /KANG/json/sit
+    base: /STS_GIT/KieaLightnet/ver-12.05/KieaLightnet-12-VirtualFEP-05/src/main/resources/json
+    apis-info-file: apis.json
   url:
     localhost: http://localhost:18888
     lightnet: https://test-public.lightnetapis.io
@@ -185,6 +187,7 @@ proj-env:
     name: json name on proj-test
     home: /home/ubuntu
     base: /KANG/json/sit
+    apis-info-file: apis.json
   url:
     localhost: http://localhost:18888
     lightnet: https://test-public.lightnetapis.io
@@ -208,6 +211,7 @@ proj-env:
     name: json name on proj-dfep
     home: /hw01/ibridge
     base: /KANG/json/sit
+    apis-info-file: apis.json
   url:
     localhost: http://localhost:18888
     lightnet: https://test-hawis.lightnetapis.io
@@ -229,6 +233,7 @@ proj-env:
     name: job name on proj-real
     home: /hw01/ibridge
     base: /KANG/json/sit
+    apis-info-file: apis.json
   json:
     name: json name on proj-real
 

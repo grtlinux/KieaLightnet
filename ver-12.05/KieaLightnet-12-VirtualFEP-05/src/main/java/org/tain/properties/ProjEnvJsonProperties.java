@@ -15,6 +15,7 @@ public class ProjEnvJsonProperties {
 	
 	private String home;
 	private String base;
+	private String apisInfoFile;
 	
 	@Value("${proj-env.job.loading.source.path}")
 	private String srcPath;

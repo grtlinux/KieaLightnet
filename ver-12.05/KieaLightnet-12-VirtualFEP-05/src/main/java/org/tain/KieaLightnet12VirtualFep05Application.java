@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.LnsTimeZone;
+import org.tain.working.apis.ApisWorking;
 import org.tain.working.properties.PropertiesWorking;
 
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +41,9 @@ public class KieaLightnet12VirtualFep05Application implements CommandLineRunner 
 		if (Flag.flag) job02();  // 
 		if (Flag.flag) job03();  // 
 		if (Flag.flag) job04();  // 
-		if (Flag.flag) job05();  // 
+		if (Flag.flag) job05();  // apis
+		
+		//if (Flag.flag) System.exit(0);
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -87,8 +90,14 @@ public class KieaLightnet12VirtualFep05Application implements CommandLineRunner 
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	@Autowired
+	private ApisWorking apisWorking;
+	
 	private void job05() throws Exception {
 		log.info("KANG-20200808 >>>>> {} {}", CurrentInfo.get());
 		
+		if (Flag.flag) this.apisWorking.loading();
+		if (!Flag.flag) this.apisWorking.initialize();
+		if (!Flag.flag) this.apisWorking.transaction();
 	}
 }
