@@ -52,7 +52,7 @@ public class _ResValidateSubData {
 	@JsonProperty(value = "remittanceType")
 	private String remittanceType;
 	
-	@StreamAnnotation
+	//@StreamAnnotation
 	@JsonProperty(value = "promotions")
 	private _ResValidatePromotion[] promotions;
 }

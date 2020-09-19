@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.tain.object.ApisObject;
+import org.tain.object.validate.res._ResValidateData;
 import org.tain.properties.ProjEnvJsonProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.StringTools;
+import org.tain.utils.TransferStrAndJson;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -82,6 +84,14 @@ public class ApisWorking {
 				default: break;
 				}
 			});
+		}
+	}
+	
+	public void getCStruct() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			System.out.println(">>>>> CStruct\n" + TransferStrAndJson.getCStruct(new _ResValidateData()));
 		}
 	}
 }

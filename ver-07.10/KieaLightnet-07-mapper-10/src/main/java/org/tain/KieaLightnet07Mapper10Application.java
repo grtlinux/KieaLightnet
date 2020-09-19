@@ -94,6 +94,7 @@ public class KieaLightnet07Mapper10Application implements CommandLineRunner {
 		
 		if (Flag.flag) this.apisWorking.jobFirst();
 		if (Flag.flag) this.apisWorking.jobReqApis();
+		if (Flag.flag) this.apisWorking.getCStruct();
 	}
 
 	///////////////////////////////////////////////////////////////////////////
