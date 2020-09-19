@@ -21,10 +21,10 @@ public class _AuthAnalyze {
 	}
 	
 	public void analyze() {
-		if (Flag.flag) analyze01();
+		if (Flag.flag) analyzeReq01();
 	}
 	
-	private void analyze01() {
+	private void analyzeReq01() {
 		String reqStream = null;
 		
 		if (Flag.flag) {
@@ -41,8 +41,8 @@ public class _AuthAnalyze {
 		
 		if (Flag.flag) {
 			try {
-				_ReqAuthData reqData = new _ReqAuthData();
 				TransferStrAndJson.subString = new SubString(reqStream);
+				_ReqAuthData reqData = new _ReqAuthData();
 				reqData = (_ReqAuthData) TransferStrAndJson.getObject(reqData);
 				System.out.printf("json of Req >>>>> [%s]%n", JsonPrint.getInstance().toPrettyJson(reqData));
 			} catch (Exception e) {

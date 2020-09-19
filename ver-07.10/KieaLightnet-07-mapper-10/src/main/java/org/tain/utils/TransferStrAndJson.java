@@ -40,6 +40,11 @@ public class TransferStrAndJson {
 							if (value == null) value = "";
 							log.trace("getStream().FIELD: '{}', String: '{}', length: {}", field.getName(), value, length);
 							sb.append(String.format("%-" + length + "." + length + "s", value));
+						} else if (type == String[].class) {
+							String[] value = (String[]) field.get(object);
+							if (value == null) value = null;
+							log.trace("getStream().FIELD: '{}', String[]: '{}', length: {}", field.getName(), value, length);
+							// TODO: sb.append(String.format("%-" + length + "." + length + "s", value));
 						} else if (type == long.class) {
 							long value = (long) field.get(object);
 							log.trace("getStream().FIELD: '{}', long: {}, length: {}", field.getName(), value, length);
@@ -61,6 +66,14 @@ public class TransferStrAndJson {
 							// TO DO: to fixed for scale precision
 							float value = (float) field.get(object);
 							log.trace("getStream().FIELD: '{}', float: {}, length: {}", field.getName(), value, length);
+							//DecimalFormat df = new DecimalFormat("#");
+							//df.setMaximumFractionDigits(5);
+							//sb.append(String.format("%" + length + "." + length + "s", df.format(value)));
+							sb.append(String.format("%" + length + "." + length + "s", String.valueOf(value)));
+						} else if (type == boolean.class) {
+							// TO DO: to fixed for scale precision
+							boolean value = (boolean) field.get(object);
+							log.trace("getStream().FIELD: '{}', boolean: {}, length: {}", field.getName(), value, length);
 							//DecimalFormat df = new DecimalFormat("#");
 							//df.setMaximumFractionDigits(5);
 							//sb.append(String.format("%" + length + "." + length + "s", df.format(value)));
@@ -119,6 +132,13 @@ public class TransferStrAndJson {
 								value = null;
 							field.set(object, value);
 							flagNull = false;
+						} else if (type == String[].class) {
+							String value = subString.get(length).trim();
+							log.trace("getObject().FIELD: '{}', String: '{}', length: {}", field.getName(), value, length);
+							if ("".equals(value) && useNullSpace == false)
+								value = null;
+							field.set(object, value);
+							flagNull = false;
 						} else if (type == long.class) {
 							long value = Long.parseLong(subString.get(length).trim());
 							log.trace("getObject().FIELD: '{}', long: {}, length: {}", field.getName(), value, length);
@@ -138,6 +158,11 @@ public class TransferStrAndJson {
 							float value = Float.parseFloat(subString.get(length).trim());
 							log.trace("getObject().FIELD: '{}', float: {}, length: {}", field.getName(), value, length);
 							field.setFloat(object, value);
+							flagNull = false;
+						} else if (type == boolean.class) {
+							boolean value = Boolean.parseBoolean(subString.get(length).trim());
+							log.trace("getObject().FIELD: '{}', boolean: {}, length: {}", field.getName(), value, length);
+							field.setBoolean(object, value);
 							flagNull = false;
 						} else {
 							Object obj = field.get(object);

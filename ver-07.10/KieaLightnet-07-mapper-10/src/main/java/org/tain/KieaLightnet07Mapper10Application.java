@@ -38,6 +38,8 @@ public class KieaLightnet07Mapper10Application implements CommandLineRunner {
 		if (!Flag.flag) job03();  // annotation
 		if (Flag.flag) job04();  // apis
 		if (Flag.flag) job05();
+		
+		if (Flag.flag) System.exit(0);
 	}
 
 	///////////////////////////////////////////////////////////////////////////

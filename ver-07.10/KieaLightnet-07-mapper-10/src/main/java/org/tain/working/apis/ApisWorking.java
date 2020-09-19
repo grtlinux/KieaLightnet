@@ -73,6 +73,12 @@ public class ApisWorking {
 				switch(apisObject.getMapping()) {
 				case "apis/auth": new _AuthAnalyze(rootPath, apisObject).analyze(); break;
 				case "apis/detail": new _DetailAnalyze(rootPath, apisObject).analyze(); break;
+				case "apis/validate": new _ValidateAnalyze(rootPath, apisObject).analyze(); break;
+				case "apis/commit": new _CommitAnalyze(rootPath, apisObject).analyze(); break;
+				case "apis/amend": new _AmendAnalyze(rootPath, apisObject).analyze(); break;
+				case "apis/refund": new _RefundAnalyze(rootPath, apisObject).analyze(); break;
+				case "apis/customer": new _CustomerAnalyze(rootPath, apisObject).analyze(); break;
+				case "apis/histories": new _HistoriesAnalyze(rootPath, apisObject).analyze(); break;
 				default: break;
 				}
 			});

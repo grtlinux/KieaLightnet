@@ -1,7 +1,7 @@
 package org.tain.working.apis;
 
 import org.tain.object.ApisObject;
-import org.tain.object.detail.req._ReqDetailData;
+import org.tain.object.validate.req._ReqValidateData;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.StringTools;
@@ -10,12 +10,12 @@ import org.tain.utils.TransferStrAndJson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class _DetailAnalyze {
+public class _ValidateAnalyze {
 
 	private String rootPath;
 	private ApisObject apisObject;
 	
-	public _DetailAnalyze(String rootPath, ApisObject apisObject) {
+	public _ValidateAnalyze(String rootPath, ApisObject apisObject) {
 		this.rootPath = rootPath;
 		this.apisObject = apisObject;
 	}
@@ -31,7 +31,7 @@ public class _DetailAnalyze {
 			try {
 				String jsonReqData = StringTools.stringFromFile(this.rootPath + this.apisObject.getReqJson());
 				
-				_ReqDetailData reqData = new ObjectMapper().readValue(jsonReqData, _ReqDetailData.class);
+				_ReqValidateData reqData = new ObjectMapper().readValue(jsonReqData, _ReqValidateData.class);
 				reqStream = TransferStrAndJson.getStream(reqData);
 				System.out.printf("stream of Req >>>>> [%s]%n", reqStream);
 			} catch (Exception e) {
@@ -39,11 +39,11 @@ public class _DetailAnalyze {
 			}
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {  // TODO
 			try {
 				TransferStrAndJson.subString = new SubString(reqStream);
-				_ReqDetailData reqData = new _ReqDetailData();
-				reqData = (_ReqDetailData) TransferStrAndJson.getObject(reqData);
+				_ReqValidateData reqData = new _ReqValidateData();
+				reqData = (_ReqValidateData) TransferStrAndJson.getObject(reqData);
 				System.out.printf("json of Req >>>>> [%s]%n", JsonPrint.getInstance().toPrettyJson(reqData));
 			} catch (Exception e) {
 				e.printStackTrace();
