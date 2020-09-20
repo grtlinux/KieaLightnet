@@ -54,7 +54,10 @@
 				</td>
 			</tr>
 			<tr>
-				<th style="padding:13px 0 0 15px;">reqStream</th>
+				<th style="padding:13px 0 0 15px;">
+					reqStream<br>
+					<button id="btnCopyReqStream" type="button" class="btn btn-info">copy</button>
+				</th>
 				<td><textarea id="apis_reqStream" class="col-md-1 form-control input-sm" rows="7" readonly style="height:100px;"></textarea></td>
 			</tr>
 			<tr>
@@ -64,7 +67,10 @@
 				</td>
 			</tr>
 			<tr>
-				<th style="padding:13px 0 0 15px;">resStream</th>
+				<th style="padding:13px 0 0 15px;">
+					resStream<br>
+					<button id="btnCopyResStream" type="button" class="btn btn-info">copy</button>
+				</th>
 				<td><textarea id="apis_resStream" class="col-md-1 form-control input-sm" rows="7" readonly style="height:100px;"></textarea></td>
 			</tr>
 			<tr>
@@ -133,7 +139,10 @@
 							</td>
 						</tr>
 						<tr>
-							<th style="padding:13px 0 0 15px;">ReqJson</th>
+							<th style="padding:13px 0 0 15px;">
+								ReqJson<br>
+								<button id="btnCopyReqJson" type="button" class="btn btn-info">copy</button>
+							</th>
 							<td><textarea id="modal1_reqJson" class="col-md-1 form-control input-sm" rows="7" style="height:100px;"></textarea></td>
 						</tr>
 						<tr>
@@ -178,7 +187,10 @@
 				<div class="modal-body">
 					<table class="table">
 						<tr>
-							<th style="padding:13px 0 0 15px;">Res Json</th>
+							<th style="padding:13px 0 0 15px;">
+								ResJson<br>
+								<button id="btnCopyResJson" type="button" class="btn btn-info">copy</button>
+							</th>
 							<td><textarea id="modal2_resJson" class="col-md-1 form-control input-sm" rows="7" style="height:200px;"></textarea></td>
 						</tr>
 					</table>
@@ -272,13 +284,27 @@
 	<!-- script : SendReqStream -->
 	<script>
 		$('#btnSendReqStream').click(function() {
-			//alert('Hello btnSendReqStream');
+			var reqData = JSON.stringify({
+				reqStrData: $('#apis_reqStream').val()
+			}, null, 2);
 			console.log('Hello btnSendReqStream');
-			//$('#modal_mapping').val($('#apis_mapping').val());
-			//$('#modal_httpUrl').val($('#apis_httpUrl').val());
-			//$('#modal_httpMethod').val($('#apis_httpMethod').val());
-			//$('#modal_reqJson').val($('#apis_reqJson').val());
-			//$('#modal_resJson').val('');
+			$.ajax({
+				url: _contextPath_ + "apis/auth/lns01",
+				type: "POST",
+				//data: reqData,
+				data: $('#apis_reqStream').val(),
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("havi" + ":" + "test")
+				},
+				dataType: "json",
+				success: function(data, status) {
+					$('#apis_resStream').val(data.resStrData);
+				},
+				error: function() {
+					alert('FAIL of SAVE1');
+				}
+			});
 		});
 	</script>
 	<!-- /script : SendReqStream -->
@@ -293,20 +319,75 @@
 	<!-- script : ShowResJson -->
 	<script>
 		$('#btnShowResJson').click(function() {
-			//alert('Hello btnShowResJson');
 			console.log('Hello btnShowResJson');
-			//$('#modal_mapping').val($('#apis_mapping').val());
-			//$('#modal_httpUrl').val($('#apis_httpUrl').val());
-			//$('#modal_httpMethod').val($('#apis_httpMethod').val());
-			//$('#modal_reqJson').val($('#apis_reqJson').val());
-			//$('#modal_resJson').val('');
+			var resData = JSON.stringify({
+				resStrData: $('#apis_resStream').val()
+			}, null, 2);
+			$.ajax({
+				url: _contextPath_ + "apis/auth/mapper/res/str2json",
+				type: "POST",
+				//data: resData,
+				data: $('#apis_resStream').val(),
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("havi" + ":" + "test")
+				},
+				dataType: "json",
+				success: function(data, status) {
+					var resJsonData = JSON.stringify(JSON.parse(data.resJsonData), null, 2);
+					$('#modal2_resJson').val(resJsonData);
+				},
+				error: function() {
+					alert('FAIL of SAVE1');
+				}
+			});
 		});
 		$('#btnCloseShowResJson').click(function() {
-			//alert('Hello btnCloseShowResJson');
 			console.log('Hello btnCloseShowResJson');
 		});
 	</script>
 	<!-- /script : ShowResJson -->
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- script : copy clipboard -->
+	<script>
+		$('#btnCopyReqStream').click(function() {
+			console.log('Hello btnCopyReqStream');
+			var copyText = document.getElementById("apis_reqStream");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopyResStream').click(function() {
+			console.log('Hello btnCopyResStream');
+			var copyText = document.getElementById("apis_resStream");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopyReqJson').click(function() {
+			console.log('Hello btnCopyReqJson');
+			var copyText = document.getElementById("modal1_reqJson");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopyResJson').click(function() {
+			console.log('Hello btnCopyResJson');
+			var copyText = document.getElementById("modal2_resJson");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+	</script>
+	<!-- /script : copy clipboard -->
+	
 	
 	
 	

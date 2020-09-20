@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -33,4 +34,31 @@ public class LnsJson {
 	@JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	//@CreationTimestamp  // use when repo.save
 	private Timestamp creDate = new Timestamp(System.currentTimeMillis());
+	
+	@Builder
+	public LnsJson(
+			String name,
+			String httpUrl,
+			String httpMethod,
+			String reqStrData,
+			String reqJsonData,
+			String resStrData,
+			String resJsonData,
+			String batData,
+			String code,
+			String status,
+			String msgJson
+			) {
+		this.name = name;
+		this.httpUrl = httpUrl;
+		this.httpMethod = httpMethod;
+		this.reqStrData = reqStrData;
+		this.reqJsonData = reqJsonData;
+		this.resStrData = resStrData;
+		this.resJsonData = resJsonData;
+		this.batData = batData;
+		this.code = code;
+		this.status = status;
+		this.msgJson = msgJson;
+	}
 }

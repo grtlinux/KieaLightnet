@@ -11,15 +11,15 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class _ResAuthData {
 
-	@StreamAnnotation(length = 50)
+	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "status")
 	private String status;
 	
-	@StreamAnnotation(length = 50)
+	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "message")
 	private String message;
 	
-	@StreamAnnotation(length = 40)
+	//@StreamAnnotation(length = 40)
 	@JsonProperty(value = "accessToken")
 	private String accessToken;
 }

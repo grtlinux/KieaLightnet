@@ -39,7 +39,7 @@ public class KieaLightnet09Lns0110Application implements CommandLineRunner {
 		if (Flag.flag) job01();  // properties
 		if (!Flag.flag) job02();  // async
 		if (!Flag.flag) job03();  // annotation
-		if (Flag.flag) job04();  // client main and task
+		if (!Flag.flag) job04();  // client main and task
 		if (Flag.flag) job05();
 	}
 

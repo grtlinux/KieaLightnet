@@ -37,7 +37,6 @@ public class List11Process {
 			// 1. LnsJson
 			lnsJson = LnsJson.builder()
 					.name("LIST11")
-					.title("list11 for version 1.1 on Lightnet")
 					.reqStrData(reqLnsStream.getContent())
 					.build();
 			log.info("ONLINE-1 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));

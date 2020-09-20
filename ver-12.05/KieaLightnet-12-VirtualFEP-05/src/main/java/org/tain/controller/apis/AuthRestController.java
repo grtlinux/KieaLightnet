@@ -21,97 +21,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthRestController {
 
-	/*
-	@Deprecated
-	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
-	public ResponseEntity<?> http(HttpEntity<String> reqHttpEntity) throws Exception {
-		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
-		
-		if (Flag.flag) {
-			log.info("SIT >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("SIT >>>>> Body = {}", reqHttpEntity.getBody());
-		}
-		
-		String resJson = null;
-		if (Flag.flag) {
-			LnsReqWeb lnsReqWeb = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsReqWeb.class);
-			resJson = this.auth(lnsReqWeb);
-		}
-		
-		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
-		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
-		
-		return new ResponseEntity<>(resJson, headers, HttpStatus.OK);
-	}
-	
-	@Deprecated
-	private String auth(LnsReqWeb lnsReqWeb) throws Exception {
-		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
-		
-		String resJson = null;
-		if (Flag.flag) {
-			log.info("================== START: 1. authentication(POST) =============");
-			
-			String reqJson = null;
-			if (Flag.flag) {
-				JsonNode jsonNode = new ObjectMapper().readTree(lnsReqWeb.getReqJson());
-				reqJson = jsonNode.toPrettyString();
-				log.info(">>>>> REQ.reqJson        = {}", reqJson);
-			}
-			
-			String httpUrl = null;
-			HttpMethod httpMethod = null;
-			HttpEntity<String> reqHttpEntity = null;
-			ResponseEntity<String> response = null;
-			
-			if (Flag.flag) {
-				// post method
-				httpUrl = lnsReqWeb.getHttpUrl();
-				httpMethod = HttpMethod.POST;
-				log.info(">>>>> REQ.httpUrl        = {} {}", httpMethod, httpUrl);
-				
-				HttpHeaders reqHeaders = new HttpHeaders();
-				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
-				
-				reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
-			}
-			
-			if (Flag.flag) {
-				try {
-					response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-							httpUrl
-							, httpMethod
-							, reqHttpEntity
-							, String.class);
-					
-					log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
-					log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
-					log.info(">>>>> RES.getBody()            = {}", response.getBody());
-					resJson = response.getBody();
-					
-					LnsData.getInstance().setAccessToken(response.getHeaders().get("AccessToken").get(0));
-					log.info(">>>>> RES.accessToken          = {}", LnsData.getInstance().getAccessToken());
-				} catch (Exception e) {
-					//e.printStackTrace();
-					String message = e.getMessage();
-					log.error("ERROR >>>>> {}", message);
-					int pos1 = message.indexOf('[');
-					int pos2 = message.lastIndexOf(']');
-					resJson = message.substring(pos1 + 1, pos2);
-				}
-			}
-			log.info("===============================================================");
-		}
-		
-		return resJson;
-	}
-	*/
-	
-	///////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////
-	
 	@RequestMapping(value = {"/mapper/req/json2str"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> mapperReqJson2Str(HttpEntity<String> reqHttpEntity) throws Exception {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
@@ -128,6 +37,64 @@ public class AuthRestController {
 			lnsJson.setHttpUrl("http://localhost:18086/v1.0/mapper/auth/req/j2s");
 			lnsJson.setHttpMethod("POST");
 			lnsJson.setReqJsonData(reqHttpEntity.getBody());
+			
+			lnsJson = LnsHttpClient.post(lnsJson);
+		}
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = {"/lns01"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public ResponseEntity<?> auth(HttpEntity<String> reqHttpEntity) throws Exception {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			log.info("SIT >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("SIT >>>>> Body = {}", reqHttpEntity.getBody());
+		}
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = new LnsJson();
+			lnsJson.setName("Auth lns01");
+			lnsJson.setHttpUrl("http://localhost:18091/v1.0/lns01/auth");
+			lnsJson.setHttpMethod("POST");
+			
+			//JsonNode jsonNode = new ObjectMapper().readTree(reqHttpEntity.getBody());
+			//lnsJson.setReqStrData("" + jsonNode.get("reqStrData").asText());  // len(4) + method(4) + division(3)
+			lnsJson.setReqStrData("" + reqHttpEntity.getBody());  // len(4) + method(4) + division(3)
+			
+			lnsJson = LnsHttpClient.post(lnsJson);
+		}
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = {"/mapper/res/str2json"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public ResponseEntity<?> mapperResStr2Json(HttpEntity<String> reqHttpEntity) throws Exception {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			log.info("SIT >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("SIT >>>>> Body = {}", reqHttpEntity.getBody());
+		}
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = new LnsJson();
+			lnsJson.setName("Auth mapperResStr2Json");
+			lnsJson.setHttpUrl("http://localhost:18086/v1.0/mapper/auth/res/s2j");
+			lnsJson.setHttpMethod("POST");
+			
+			//JsonNode jsonNode = new ObjectMapper().readTree(reqHttpEntity.getBody());
+			//lnsJson.setResStrData("" + jsonNode.get("resStrData").asText());  // len(4) + method(4) + division(3)
+			lnsJson.setResStrData("" + reqHttpEntity.getBody());  // len(4) + method(4) + division(3)
 			
 			lnsJson = LnsHttpClient.post(lnsJson);
 		}

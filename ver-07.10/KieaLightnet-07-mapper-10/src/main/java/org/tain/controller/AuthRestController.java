@@ -83,7 +83,7 @@ public class AuthRestController {
 			_ResAuthData resData = new _ResAuthData();
 			resData = (_ResAuthData) TransferStrAndJson.getObject(resData);
 			
-			lnsJson.setReqJsonData(JsonPrint.getInstance().toJson(resData));
+			lnsJson.setResJsonData(JsonPrint.getInstance().toJson(resData));
 			log.info("MAPPER.res >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		

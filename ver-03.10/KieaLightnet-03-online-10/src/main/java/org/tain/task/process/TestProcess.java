@@ -37,7 +37,6 @@ public class TestProcess {
 			// 1. LnsJson
 			lnsJson = LnsJson.builder()
 					.name("TEST")
-					.title("This is for test.")
 					.reqStrData(reqLnsStream.getContent())
 					.build();
 			log.info("ONLINE-1 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
