@@ -6,8 +6,11 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+import org.tain.object.lns.LnsStream;
 import org.tain.object.lns.LnsStreamPacket;
 import org.tain.properties.ProjEnvJsonProperties;
+import org.tain.queue.LnsQueueObject;
+import org.tain.queue.LnsSendQueue;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeClientTaskQueue;
 import org.tain.utils.CurrentInfo;
@@ -29,18 +32,8 @@ public class ClientJob {
 	@Autowired
 	private LnsStreamPacketQueue lnsStreamPacketQueue;
 	
-	///////////////////////////////////////////////////////////////////////////
-	
-	/*
 	@Autowired
-	private TestProcess testProcess;
-	
-	@Autowired
-	private List11Process list11Process;
-	
-	@Autowired
-	private CallbackProcess callbackProcess;
-	*/
+	private LnsSendQueue lnsSendQueue;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -54,7 +47,23 @@ public class ClientJob {
 		}
 		
 		if (Flag.flag) {
-			
+			try {
+				while (true) {
+					LnsQueueObject lnsQueueObject = (LnsQueueObject) this.lnsSendQueue.get();
+					
+					// send
+					LnsStream reqLnsStream = lnsQueueObject.getLnsStream();
+					lnsStreamPacket.sendStream(reqLnsStream);
+					
+					// recv
+					LnsStream resLnsStream = lnsStreamPacket.recvStream();
+					lnsQueueObject.getLnsRecvQueue().set(resLnsStream);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				lnsStreamPacket.close();
+			}
 		}
 		
 		log.info("KANG-20200907 >>>>> END   param = {}, {}", param, CurrentInfo.get());

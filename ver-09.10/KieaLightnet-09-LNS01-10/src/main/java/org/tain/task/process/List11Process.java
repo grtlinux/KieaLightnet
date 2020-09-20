@@ -15,6 +15,7 @@ import org.tain.utils.TransferStrAndJson;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Deprecated
 @Component
 @Slf4j
 public class List11Process {
