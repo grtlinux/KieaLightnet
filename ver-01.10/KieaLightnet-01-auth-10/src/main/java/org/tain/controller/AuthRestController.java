@@ -39,8 +39,8 @@ public class AuthRestController {
 		if (Flag.flag) log.info("========================================================");
 		
 		if (Flag.flag) {
-			log.info("VIRTUAL >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("VIRTUAL >>>>> Body = {}", reqHttpEntity.getBody());
+			log.info("AUTH >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("AUTH >>>>> Body = {}", reqHttpEntity.getBody());
 		}
 		
 		LnsJson lnsJson = null;

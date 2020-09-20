@@ -13,7 +13,7 @@ import org.tain.object.lns.LnsJson;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
-import org.tain.utils.LnsLightnetClient;
+import org.tain.utils.LnsHttpClient;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -37,21 +37,21 @@ public class AuthRestController {
 		
 		LnsJson lnsJson = null;
 		if (Flag.flag) {
+			/*
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
 			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth/lightnet");
 			lnsJson.setHttpMethod("POST");
-			lnsJson = LnsLightnetClient.auth(lnsJson);
+			lnsJson = LnsClient.post(lnsJson);
 			log.info(">>>>> RES-1.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			*/
 		}
 		
 		if (Flag.flag) {
-			/*
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
 			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth");
 			lnsJson.setHttpMethod("POST");
-			lnsJson = LnsLightnetClient.auth(lnsJson);
+			lnsJson = LnsHttpClient.post(lnsJson);
 			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
-			*/
 		}
 		
 		if (Flag.flag) log.info("========================================================");
