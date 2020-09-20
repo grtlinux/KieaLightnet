@@ -39,6 +39,7 @@ public class KieaLightnet02Link10Application implements CommandLineRunner {
 		if (!Flag.flag) job03();  // annotation
 		if (!Flag.flag) job04();  // accessToken
 		if (!Flag.flag) job05();  // apis
+		if (Flag.flag) job06();
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -104,5 +105,14 @@ public class KieaLightnet02Link10Application implements CommandLineRunner {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) this.apisWorking.transaction();
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	private void job06() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
 	}
 }

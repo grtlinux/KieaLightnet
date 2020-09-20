@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.tain.object.lns.LnsJson;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 import org.tain.utils.LnsLightnetClient;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,9 +38,20 @@ public class AuthRestController {
 		LnsJson lnsJson = null;
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1/auth");
+			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth/lightnet");
 			lnsJson.setHttpMethod("POST");
 			lnsJson = LnsLightnetClient.auth(lnsJson);
+			log.info(">>>>> RES-1.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+		}
+		
+		if (Flag.flag) {
+			/*
+			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
+			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth");
+			lnsJson.setHttpMethod("POST");
+			lnsJson = LnsLightnetClient.auth(lnsJson);
+			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			*/
 		}
 		
 		if (Flag.flag) log.info("========================================================");

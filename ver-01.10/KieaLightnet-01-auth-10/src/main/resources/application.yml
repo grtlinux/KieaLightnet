@@ -119,8 +119,12 @@ proj-env:
     mapper: http://localhost:18086/v1.0
   job:
     auth-loop-sec: 30
-    auth-clientId: _TEST_
-    auth-secret: _TEST_
+    # ver1
+    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
+    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
+    # ver2
+    auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
+    auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
 
 ---
 # --------------------------------------------------------

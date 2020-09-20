@@ -1,23 +1,18 @@
 package org.tain.task;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-import org.tain.data.AccessToken;
-import org.tain.object.auth.req._ReqAuthData;
+import org.tain.object.lns.LnsJson;
 import org.tain.properties.ProjEnvJobProperties;
-import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
-import org.tain.utils.RestTemplateConfig;
+import org.tain.utils.LnsHttpClient;
 import org.tain.utils.Sleep;
-import org.tain.utils.enums.RestTemplateType;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,9 +22,6 @@ public class AuthJob {
 
 	@Autowired
 	private ProjEnvJobProperties projEnvJobProperties;
-	
-	@Autowired
-	private ProjEnvUrlProperties projEnvUrlProperties;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -55,40 +47,40 @@ public class AuthJob {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void process() {
+	private void process() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		_ReqAuthData reqAuthData = null;
+		String reqJson = null;
 		if (Flag.flag) {
-			reqAuthData = new _ReqAuthData();
-			reqAuthData.setClientId(this.projEnvJobProperties.getAuthClientId());
-			reqAuthData.setSecret(this.projEnvJobProperties.getAuthSecret());
+			Map<String,String> map = new HashMap<>();
+			map.put("clientId", this.projEnvJobProperties.getAuthClientId());
+			map.put("secret", this.projEnvJobProperties.getAuthSecret());
+			
+			reqJson = JsonPrint.getInstance().toPrettyJson(map);
+			log.info(">>>>> REQ.reqJson  = {}", reqJson);
+		}
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = LnsJson.builder().name("Auth").build();
+			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth/lightnet");
+			lnsJson.setHttpMethod("POST");
+			lnsJson.setReqJsonData(reqJson);
+			
+			lnsJson = LnsHttpClient.post(lnsJson);
+			log.info(">>>>> RES-1.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
 		if (Flag.flag) {
-			try {
-				HttpHeaders reqHeaders = new HttpHeaders();
-				reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-				HttpEntity<String> reqHttpEntity = new HttpEntity<>(JsonPrint.getInstance().toJson(reqAuthData), reqHeaders);
-				
-				ResponseEntity<String> response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						this.projEnvUrlProperties.getLightnet1() + "/auth"
-						, HttpMethod.POST
-						, reqHttpEntity
-						, String.class);
-				
-				AccessToken.set(response.getHeaders().get("AccessToken").get(0));
-				
-				log.info("===============================================================");
-				log.info(">>>>> getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info(">>>>> getStatusCode()      = {}", response.getStatusCode());
-				log.info(">>>>> accessToken          = {}", AccessToken.get());
-				log.info(">>>>> getBody()            = {}", response.getBody());
-				log.info("===============================================================");
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			/*
+			lnsJson = LnsJson.builder().name("Auth").build();
+			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth");
+			lnsJson.setHttpMethod("POST");
+			lnsJson.setReqJsonData(reqJson);
+			
+			lnsJson = LnsHttpClient.post(lnsJson);
+			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			*/
 		}
 	}
 }
