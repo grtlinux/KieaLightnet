@@ -42,7 +42,7 @@ public class ServerMainJob {
 					Socket socket = serverSocket.accept(); // block waiting for connect
 					log.info(">>>>> client connection is OK!!!");
 					
-					this.lnsStreamPacketQueue.set(new LnsStreamPacket(socket));
+					if (Flag.flag) this.lnsStreamPacketQueue.set(new LnsStreamPacket(socket));
 					
 					Sleep.run(1000);
 				}

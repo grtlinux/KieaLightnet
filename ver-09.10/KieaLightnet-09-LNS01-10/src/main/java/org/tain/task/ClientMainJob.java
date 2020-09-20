@@ -42,10 +42,9 @@ public class ClientMainJob {
 					socket.connect(inetSocketAddress);
 					log.info(">>>>> connection is OK!!!");
 					
-					this.lnsStreamPacketQueue.set(new LnsStreamPacket(socket));
+					if (Flag.flag) this.lnsStreamPacketQueue.set(new LnsStreamPacket(socket));
 					
-					Sleep.run(1000);
-					
+					Sleep.run(2000);
 					break;
 				}
 			} catch (Exception e) {

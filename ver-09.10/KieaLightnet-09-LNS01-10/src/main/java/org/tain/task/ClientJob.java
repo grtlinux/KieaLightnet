@@ -6,11 +6,10 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+import org.tain.object.lns.LnsStreamPacket;
 import org.tain.properties.ProjEnvJsonProperties;
+import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeClientTaskQueue;
-import org.tain.task.process.CallbackProcess;
-import org.tain.task.process.List11Process;
-import org.tain.task.process.TestProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
@@ -27,8 +26,12 @@ public class ClientJob {
 	@Autowired
 	private ProjEnvJsonProperties projEnvJsonProperties;
 	
+	@Autowired
+	private LnsStreamPacketQueue lnsStreamPacketQueue;
+	
 	///////////////////////////////////////////////////////////////////////////
 	
+	/*
 	@Autowired
 	private TestProcess testProcess;
 	
@@ -37,6 +40,7 @@ public class ClientJob {
 	
 	@Autowired
 	private CallbackProcess callbackProcess;
+	*/
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -44,18 +48,13 @@ public class ClientJob {
 	public void clientJob(String param) throws Exception {
 		log.info("KANG-20200907 >>>>> START param = {}, {}", param, CurrentInfo.get());
 		
-		switch (this.projEnvJsonProperties.getTrxName()) {
-		case "callback":
-			this.callbackProcess.process();
-			break;
-		case "list11":
-			this.list11Process.process();
-			break;
-		case "test":
-			this.testProcess.process();
-			break;
-		default:
-			break;
+		LnsStreamPacket lnsStreamPacket = null;
+		if (Flag.flag) {
+			lnsStreamPacket = this.lnsStreamPacketQueue.get();
+		}
+		
+		if (Flag.flag) {
+			
 		}
 		
 		log.info("KANG-20200907 >>>>> END   param = {}, {}", param, CurrentInfo.get());
@@ -71,6 +70,28 @@ public class ClientJob {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	@Deprecated
+	public void clientJob_202009201357(String param) throws Exception {
+		log.info("KANG-20200907 >>>>> START param = {}, {}", param, CurrentInfo.get());
+		
+		switch (this.projEnvJsonProperties.getTrxName()) {
+		case "callback":
+			//this.callbackProcess.process();
+			break;
+		case "list11":
+			//this.list11Process.process();
+			break;
+		case "test":
+			//this.testProcess.process();
+			break;
+		default:
+			break;
+		}
+		
+		log.info("KANG-20200907 >>>>> END   param = {}, {}", param, CurrentInfo.get());
+	}
 	
 	@Deprecated
 	public void serverJob_202009070941(String param) throws Exception {
