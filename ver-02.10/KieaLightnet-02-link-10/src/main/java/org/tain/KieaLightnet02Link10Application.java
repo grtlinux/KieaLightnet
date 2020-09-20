@@ -38,7 +38,7 @@ public class KieaLightnet02Link10Application implements CommandLineRunner {
 		if (!Flag.flag) job02();  // async
 		if (!Flag.flag) job03();  // annotation
 		if (!Flag.flag) job04();  // accessToken
-		if (Flag.flag) job05();  // apis
+		if (!Flag.flag) job05();  // apis
 	}
 
 	///////////////////////////////////////////////////////////////////////////
