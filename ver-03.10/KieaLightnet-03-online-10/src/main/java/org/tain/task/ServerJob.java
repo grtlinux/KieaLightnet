@@ -15,6 +15,7 @@ import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
 import org.tain.task.process.AuthProcess;
 import org.tain.task.process.DetailProcess;
+import org.tain.task.process.HistoriesProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -41,6 +42,9 @@ public class ServerJob {
 	
 	@Autowired
 	private DetailProcess detailProcess;
+	
+	@Autowired
+	private HistoriesProcess historiesProcess;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -79,6 +83,9 @@ public class ServerJob {
 						break;
 					case "0200200":  // detail
 						resLnsStream = this.detailProcess.process(reqLnsStream);
+						break;
+					case "0200700":  // histories
+						resLnsStream = this.historiesProcess.process(reqLnsStream);
 						break;
 					default:
 						break;
