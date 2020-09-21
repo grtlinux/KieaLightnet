@@ -1,4 +1,4 @@
-package org.tain.object.customers.req;
+package org.tain.object.customer.req;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ReqCustomersData {
+public class _ReqCustomerData {
 
 	@StreamAnnotation(length = 10)
 	@JsonProperty(value = "destinationOperatorCode")

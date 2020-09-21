@@ -1,10 +1,10 @@
-package org.tain.object.customers.res;
+package org.tain.object.customer.res;
 
 import org.tain.annotation.StreamAnnotation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class _ResCustomersReceiver {
+public class _ResCustomerReceiver {
 
 	@StreamAnnotation(length = 10)
 	@JsonProperty(value = "deliveryMethod")
@@ -34,9 +34,9 @@ public class _ResCustomersReceiver {
 	
 	@StreamAnnotation
 	@JsonProperty(value = "destination")
-	private _ResCustomersDestination destination = new _ResCustomersDestination();
+	private _ResCustomerDestination destination = new _ResCustomerDestination();
 	
 	@StreamAnnotation
 	@JsonProperty(value = "source")
-	private _ResCustomersSource source = new _ResCustomersSource();
+	private _ResCustomerSource source = new _ResCustomerSource();
 }

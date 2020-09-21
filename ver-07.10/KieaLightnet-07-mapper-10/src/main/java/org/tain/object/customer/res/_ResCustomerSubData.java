@@ -1,4 +1,4 @@
-package org.tain.object.customers.res;
+package org.tain.object.customer.res;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ResCustomersSubData {
+public class _ResCustomerSubData {
 
 	@StreamAnnotation(length = 5)
 	@JsonProperty(value = "birthCountryCode")
@@ -43,13 +43,13 @@ public class _ResCustomersSubData {
 	
 	@StreamAnnotation
 	@JsonProperty(value = "address")
-	private _ResCustomersAddress address = new _ResCustomersAddress();
+	private _ResCustomerAddress address = new _ResCustomerAddress();
 	
 	@StreamAnnotation
 	@JsonProperty(value = "homePhone")
-	private _ResCustomersPhone phone = new _ResCustomersPhone();
+	private _ResCustomerPhone phone = new _ResCustomerPhone();
 	
 	@StreamAnnotation
 	@JsonProperty(value = "receiver")
-	private List<_ResCustomersReceiver> receiver = new ArrayList<>();
+	private List<_ResCustomerReceiver> receiver = new ArrayList<>();
 }

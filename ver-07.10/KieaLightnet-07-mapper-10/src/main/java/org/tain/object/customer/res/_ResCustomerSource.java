@@ -1,10 +1,10 @@
-package org.tain.object.customers.res;
+package org.tain.object.customer.res;
 
 import org.tain.annotation.StreamAnnotation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class _ResCustomersSource {
+public class _ResCustomerSource {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "transactionId")
@@ -20,5 +20,5 @@ public class _ResCustomersSource {
 	
 	@StreamAnnotation
 	@JsonProperty(value = "transaction")
-	private _ResCustomersMoney transaction = new _ResCustomersMoney();
+	private _ResCustomerMoney transaction = new _ResCustomerMoney();
 }

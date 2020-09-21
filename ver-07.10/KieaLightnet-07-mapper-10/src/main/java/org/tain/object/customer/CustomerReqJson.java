@@ -1,6 +1,6 @@
-package org.tain.object.customers;
+package org.tain.object.customer;
 
-public class CustomersReqJson {
+public class CustomerReqJson {
 
 	public static String get_20200913() {
 		return "{\n" + 

@@ -1,7 +1,7 @@
 package org.tain.working.apis;
 
 import org.tain.object.ApisObject;
-import org.tain.object.customers.req._ReqCustomersData;
+import org.tain.object.customer.req._ReqCustomerData;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.StringTools;
@@ -31,7 +31,7 @@ public class _CustomerAnalyze {
 			try {
 				String jsonReqData = StringTools.stringFromFile(this.rootPath + this.apisObject.getReqJson());
 				
-				_ReqCustomersData reqData = new ObjectMapper().readValue(jsonReqData, _ReqCustomersData.class);
+				_ReqCustomerData reqData = new ObjectMapper().readValue(jsonReqData, _ReqCustomerData.class);
 				reqStream = TransferStrAndJson.getStream(reqData);
 				System.out.printf("stream of Req >>>>> [%s]%n", reqStream);
 			} catch (Exception e) {
@@ -42,8 +42,8 @@ public class _CustomerAnalyze {
 		if (Flag.flag) {
 			try {
 				TransferStrAndJson.subString = new SubString(reqStream);
-				_ReqCustomersData reqData = new _ReqCustomersData();
-				reqData = (_ReqCustomersData) TransferStrAndJson.getObject(reqData);
+				_ReqCustomerData reqData = new _ReqCustomerData();
+				reqData = (_ReqCustomerData) TransferStrAndJson.getObject(reqData);
 				System.out.printf("json of Req >>>>> [%s]%n", JsonPrint.getInstance().toPrettyJson(reqData));
 			} catch (Exception e) {
 				e.printStackTrace();

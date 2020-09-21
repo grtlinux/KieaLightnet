@@ -1,4 +1,4 @@
-package org.tain.object.customers.res;
+package org.tain.object.customer.res;
 
 import org.tain.annotation.StreamAnnotation;
 
@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class _ResCustomersAddress {
+public class _ResCustomerAddress {
 
 	@StreamAnnotation(length = 40)
 	@JsonProperty(value = "address")
