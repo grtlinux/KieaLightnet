@@ -477,6 +477,13 @@
 			copyText.setSelectionRange(0, 99999);
 			document.execCommand("copy");
 		});
+		$('#btnCopyCStruct').click(function() {
+			console.log('Hello btnCopyCStruct');
+			var copyText = document.getElementById("modal3_cstruct");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
 	</script>
 	<!-- /script : copy clipboard -->
 	

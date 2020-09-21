@@ -206,7 +206,7 @@ public class AuthRestController {
 	/*
 	 * http://localhost:18086/v1.0/mapper/auth/res/cstruct
 	 */
-	@RequestMapping(value = {"/res/j2s"}, method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = {"/res/cstruct"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> authResCStruct(HttpEntity<String> reqHttpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
