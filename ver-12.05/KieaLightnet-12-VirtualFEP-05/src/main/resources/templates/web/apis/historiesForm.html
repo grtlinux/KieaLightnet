@@ -16,7 +16,7 @@
 	<!-- main -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Infra-FEP: Auth TEST</h1>
+			<h1>Infra-FEP: Histories TEST</h1>
 		</div>
 		<br/>
 		<input id="apis_id" type="hidden" th:value="${apis?.id}"/>
@@ -100,6 +100,10 @@
 			<button th:if="${apis?.id}" type="button" class="btn btn-danger" id="delete">delete</button>
 			-->
 		</div>
+		<div>
+			<!-- bottom space -->
+			<br><br><br><br><br><br>
+		</div>
 	</div>
 	<!-- /main -->
 	
@@ -127,12 +131,20 @@
 				<div class="modal-body">
 					<table class="table">
 						<tr>
-							<th style="padding:13px 0 0 15px;">clientId</th>
-							<td><input id="modal1_clientId" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+							<th style="padding:13px 0 0 15px;">from</th>
+							<td><input id="modal1_from" value="" type="text" class="col-md-1 form-control input-sm"/></td>
 						</tr>
 						<tr>
-							<th style="padding:13px 0 0 15px;">secret</th>
-							<td><input id="modal1_secret" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+							<th style="padding:13px 0 0 15px;">to</th>
+							<td><input id="modal1_to" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">offset</th>
+							<td><input id="modal1_offset" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">limit</th>
+							<td><input id="modal1_limit" value="" type="text" class="col-md-1 form-control input-sm"/></td>
 						</tr>
 						<tr>
 							<th style="padding:13px 0 0 15px;"> </th>
@@ -276,23 +288,25 @@
 	<script>
 		$('#btnMakeReqStream').click(function() {
 			console.log('Hello btnMakeReqStream');
-			//$('#modal_mapping').val($('#apis_mapping').val());
-			//$('#modal_resJson').val('');
-			$('#modal1_clientId').val(reqJson.clientId);
-			$('#modal1_secret').val(reqJson.secret);
+			$('#modal1_from').val(reqJson.from);
+			$('#modal1_to').val(reqJson.to);
+			$('#modal1_offset').val(reqJson.offset);
+			$('#modal1_limit').val(reqJson.limit);
 		});
 		$('#btnToJson').click(function() {
 			console.log('Hello btnToJson');
 			var reqJson = JSON.stringify({
-				clientId: $('#modal1_clientId').val(),
-				secret: $('#modal1_secret').val()
+				from: $('#modal1_from').val(),
+				to: $('#modal1_to').val(),
+				offset: $('#modal1_offset').val(),
+				limit: $('#modal1_limit').val()
 			}, null, 2);
 			$('#modal1_reqJson').val(reqJson);
 		});
 		$('#btnGetReqStream').click(function() {
 			console.log('Hello btnGetReqStream');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/req/json2str",
+				url: _contextPath_ + "apis/histories/mapper/req/json2str",
 				type: "POST",
 				data: $('#modal1_reqJson').val(),
 				contentType: "application/json",
@@ -325,7 +339,7 @@
 		$('#btnSendReqStream').click(function() {
 			console.log('Hello btnSendReqStream');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/lns01",
+				url: _contextPath_ + "apis/histories/lns01",
 				type: "POST",
 				data: $('#apis_reqStream').val(),
 				contentType: "application/json",
@@ -356,7 +370,7 @@
 		$('#btnShowResJson').click(function() {
 			console.log('Hello btnShowResJson');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/res/str2json",
+				url: _contextPath_ + "apis/histories/mapper/res/str2json",
 				type: "POST",
 				data: $('#apis_resStream').val(),
 				contentType: "application/json",
@@ -391,7 +405,7 @@
 		$('#btnShowReqCStruct').click(function() {
 			console.log('Hello btnShowReqCStruct');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/req/cstruct",
+				url: _contextPath_ + "apis/histories/mapper/req/cstruct",
 				type: "POST",
 				data: "{}",
 				contentType: "application/json",
@@ -411,7 +425,7 @@
 		$('#btnShowResCStruct').click(function() {
 			console.log('Hello btnShowResCStruct');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/res/cstruct",
+				url: _contextPath_ + "apis/histories/mapper/res/cstruct",
 				type: "POST",
 				data: "{}",
 				contentType: "application/json",

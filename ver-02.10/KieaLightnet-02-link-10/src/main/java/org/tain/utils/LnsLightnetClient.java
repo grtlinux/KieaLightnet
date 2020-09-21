@@ -120,6 +120,7 @@ public class LnsLightnetClient {
 			
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqHeaders);
 			log.info(">>>>> REQ.reqHttpEntity  = {}", reqHttpEntity);
+			log.info(">>>>> REQ.httpUrl(method) = {} ({})", httpUrl, httpMethod);
 			
 			ResponseEntity<String> response = null;
 			try {

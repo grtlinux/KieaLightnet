@@ -56,7 +56,7 @@ public class HistoriesProcess {
 			lnsJson.setHttpMethod("POST");
 			// TODO:
 			//lnsJson = LnsHttpClient.post(lnsJson); 
-			lnsJson.setResStrData("Hello, world!!!");
+			lnsJson.setResStrData("Hello, world!!! Histories");
 			log.info("ONLINE-4 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		

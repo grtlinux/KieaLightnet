@@ -38,7 +38,8 @@ public class HistoriesRestController {
 		LnsJson lnsJson = null;
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances.histories");
+			//lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances.histories");
+			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances");
 			lnsJson.setHttpMethod("GET");
 			lnsJson = LnsLightnetClient.get(lnsJson);
 			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
