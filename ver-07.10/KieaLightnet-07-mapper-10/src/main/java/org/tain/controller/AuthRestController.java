@@ -27,6 +27,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthRestController {
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	/*
 	 * http://localhost:18086/v1.0/mapper/auth/req/s2j
 	 */
@@ -95,6 +99,10 @@ public class AuthRestController {
 		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
 	}
 	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
 	/*
 	 * http://localhost:18086/v1.0/mapper/auth/req/j2s
 	 */
@@ -148,6 +156,74 @@ public class AuthRestController {
 			_ResAuthData resData = new ObjectMapper().readValue(lnsJson.getResJsonData(), _ResAuthData.class);
 			String resStream = TransferStrAndJson.getStream(resData);
 			lnsJson.setResStrData(resStream);
+			log.info("MAPPER.res >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+		}
+		
+		if (Flag.flag) log.info("========================================================");
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	/*
+	 * http://localhost:18086/v1.0/mapper/auth/req/cstruct
+	 */
+	@RequestMapping(value = {"/req/cstruct"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public ResponseEntity<?> authReqCStruct(HttpEntity<String> reqHttpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
+		
+		if (Flag.flag) log.info("========================================================");
+		
+		if (Flag.flag) {
+			log.info("MAPPER.req >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("MAPPER.req >>>>> Body = {}", reqHttpEntity.getBody());
+		}
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
+			
+			//_ReqAuthData reqData = new ObjectMapper().readValue(lnsJson.getReqJsonData(), _ReqAuthData.class);
+			String reqCStruct = TransferStrAndJson.getCStruct(new _ReqAuthData());
+			lnsJson.setBatData(reqCStruct);
+			log.info("MAPPER.req >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+		}
+		
+		if (Flag.flag) log.info("========================================================");
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
+	}
+	
+	/*
+	 * http://localhost:18086/v1.0/mapper/auth/res/cstruct
+	 */
+	@RequestMapping(value = {"/res/j2s"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public ResponseEntity<?> authResCStruct(HttpEntity<String> reqHttpEntity) throws Exception {
+		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
+		
+		if (Flag.flag) log.info("========================================================");
+		
+		if (Flag.flag) {
+			log.info("MAPPER.res >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("MAPPER.res >>>>> Body = {}", reqHttpEntity.getBody());
+		}
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
+			
+			//_ResAuthData resData = new ObjectMapper().readValue(lnsJson.getResJsonData(), _ResAuthData.class);
+			String resCStruct = TransferStrAndJson.getCStruct(new _ResAuthData());
+			lnsJson.setBatData(resCStruct);
 			log.info("MAPPER.res >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		

@@ -104,4 +104,56 @@ public class AuthRestController {
 		
 		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = {"/mapper/req/cstruct"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public ResponseEntity<?> mapperReqCStruct(HttpEntity<String> reqHttpEntity) throws Exception {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			log.info("SIT >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("SIT >>>>> Body = {}", reqHttpEntity.getBody());
+		}
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = new LnsJson();
+			lnsJson.setName("Auth mapperResStr2Json");
+			lnsJson.setHttpUrl("http://localhost:18086/v1.0/mapper/auth/req/cstruct");
+			lnsJson.setHttpMethod("POST");
+			lnsJson.setReqJsonData(reqHttpEntity.getBody());
+			
+			lnsJson = LnsHttpClient.post(lnsJson);
+		}
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = {"/mapper/res/cstruct"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public ResponseEntity<?> mapperResCStruct(HttpEntity<String> reqHttpEntity) throws Exception {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			log.info("SIT >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("SIT >>>>> Body = {}", reqHttpEntity.getBody());
+		}
+		
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			lnsJson = new LnsJson();
+			lnsJson.setName("Auth mapperResStr2Json");
+			lnsJson.setHttpUrl("http://localhost:18086/v1.0/mapper/auth/res/cstruct");
+			lnsJson.setHttpMethod("POST");
+			lnsJson.setReqJsonData(reqHttpEntity.getBody());
+			
+			lnsJson = LnsHttpClient.post(lnsJson);
+		}
+		
+		MultiValueMap<String,String> headers = new LinkedMultiValueMap<>();
+		headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		
+		return new ResponseEntity<>(lnsJson, headers, HttpStatus.OK);
+	}
 }

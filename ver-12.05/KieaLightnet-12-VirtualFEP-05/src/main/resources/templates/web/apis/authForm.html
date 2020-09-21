@@ -57,6 +57,7 @@
 				<th style="padding:13px 0 0 15px;">
 					reqStream<br>
 					<button id="btnCopyReqStream" type="button" class="btn btn-info btn-xs">copy</button>
+					<button id="btnShowReqCStruct" type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#modalShowCStruct">req c struct</button>
 				</th>
 				<td><textarea id="apis_reqStream" class="col-md-1 form-control input-sm" rows="7" readonly style="height:100px;"></textarea></td>
 			</tr>
@@ -70,6 +71,7 @@
 				<th style="padding:13px 0 0 15px;">
 					resStream<br>
 					<button id="btnCopyResStream" type="button" class="btn btn-info btn-xs">copy</button>
+					<button id="btnShowResCStruct" type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#modalShowCStruct">res c struct</button>
 				</th>
 				<td><textarea id="apis_resStream" class="col-md-1 form-control input-sm" rows="7" readonly style="height:100px;"></textarea></td>
 			</tr>
@@ -205,6 +207,44 @@
 		</div>
 	</div>
 	<!-- /Modal dialog : ShowResJson -->
+	
+	
+	
+	
+	
+	<!-- Modal dialog : ShowCStruct -->
+	<div class="modal fase" id="modalShowCStruct">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+			
+				<!-- Modal Header -->
+				<div class="modal-header bg-success">
+					<h4 class="modal-title">Show C Structure</h4>
+					<!-- button type="button" class="close" data-dismiss="modal">&times;</button -->
+				</div>
+				
+				<!-- Modal body -->
+				<div class="modal-body">
+					<table class="table">
+						<tr>
+							<th style="padding:13px 0 0 15px;">
+								C Structure<br>
+								<button id="btnCopyCStruct" type="button" class="btn btn-info btn-xs">copy</button>
+							</th>
+							<td><textarea id="modal3_cstruct" class="col-md-1 form-control input-sm" rows="7" style="height:200px;"></textarea></td>
+						</tr>
+					</table>
+				</div>
+				
+				<!-- Modal footer -->
+				<div class="modal-footer bg-success">
+					<button id="btnCloseShowCStruct" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- /Modal dialog : ShowCStruct -->
 	
 	
 	
@@ -347,6 +387,58 @@
 		});
 	</script>
 	<!-- /script : ShowResJson -->
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- script : show CStruct -->
+	<script>
+		$('#btnShowReqCStruct').click(function() {
+			console.log('Hello btnShowReqCStruct');
+			$.ajax({
+				url: _contextPath_ + "apis/auth/mapper/req/cstruct",
+				type: "POST",
+				data: "{}",
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("havi" + ":" + "test")
+				},
+				dataType: "json",
+				success: function(data, status) {
+					//var resJsonData = JSON.stringify(JSON.parse(data.resJsonData), null, 2);
+					$('#modal3_cstruct').val(data.batData);
+				},
+				error: function() {
+					alert('FAIL of SAVE1');
+				}
+			});
+		});
+		$('#btnShowResCStruct').click(function() {
+			console.log('Hello btnShowResCStruct');
+			$.ajax({
+				url: _contextPath_ + "apis/auth/mapper/res/cstruct",
+				type: "POST",
+				data: "{}",
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("havi" + ":" + "test")
+				},
+				dataType: "json",
+				success: function(data, status) {
+					//var resJsonData = JSON.stringify(JSON.parse(data.resJsonData), null, 2);
+					$('#modal3_cstruct').val(data.batData);
+				},
+				error: function() {
+					alert('FAIL of SAVE1');
+				}
+			});
+		});
+	</script>
+	<!-- script : show CStruct -->
 	
 	
 	
