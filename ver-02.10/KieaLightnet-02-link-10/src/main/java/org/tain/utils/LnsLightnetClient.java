@@ -158,7 +158,7 @@ public class LnsLightnetClient {
 	///////////////////////////////////////////////////////////////////////////
 	
 	public static LnsJson post(LnsJson lnsJson) throws Exception {
-		return post(lnsJson, false);
+		return post(lnsJson, true);
 	}
 	
 	public static LnsJson post(LnsJson lnsJson, boolean flagAccessToken) throws Exception {
@@ -173,15 +173,12 @@ public class LnsLightnetClient {
 			String httpUrl = lnsJson.getHttpUrl();
 			HttpMethod httpMethod = HttpMethod.POST;
 			
-			String json = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(lnsJson.getReqJsonData());
-			//JsonNode jsonNode = new ObjectMapper().readTree(lnsReqWeb.getReqJson());
-			//((ObjectNode) jsonNode.at("/source")).put("transactionId", TransactionId.get());
-			//reqJson = jsonNode.toPrettyString();
+			String json = lnsJson.getReqJsonData();
 			log.info(">>>>> REQ.lnsJson        = {}", json);
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			if (flagAccessToken) reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getAccessToken());
+			if (flagAccessToken) reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getHttpAccessToken());
 			log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
 			
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(json, reqHeaders);

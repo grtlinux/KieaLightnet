@@ -13,17 +13,17 @@ public class _ReqValidateNotification {
 
 	@StreamAnnotation(length = 5)
 	@JsonProperty(value = "transactionSMSOptIn")
-	private boolean transactionSMSOptIn;
+	private boolean transactionSMSOptIn = false;
 
 	@StreamAnnotation(length = 5)
 	@JsonProperty(value = "transactionEmailOptIn")
-	private boolean transactionEmailOptIn;
+	private boolean transactionEmailOptIn = false;
 	
 	@StreamAnnotation(length = 5)
 	@JsonProperty(value = "marketingSMSOptIn")
-	private boolean marketingSMSOptIn;
+	private boolean marketingSMSOptIn = false;
 
 	@StreamAnnotation(length = 5)
 	@JsonProperty(value = "marketingEmailOptIn")
-	private boolean marketingEmailOptIn;
+	private boolean marketingEmailOptIn = false;
 }

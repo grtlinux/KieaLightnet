@@ -14,8 +14,10 @@ import org.tain.object.test.res._ResTestName;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
 import org.tain.task.process.AuthProcess;
+import org.tain.task.process.CommitProcess;
 import org.tain.task.process.DetailProcess;
 import org.tain.task.process.HistoriesProcess;
+import org.tain.task.process.ValidateProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -45,6 +47,12 @@ public class ServerJob {
 	
 	@Autowired
 	private HistoriesProcess historiesProcess;
+	
+	@Autowired
+	private ValidateProcess validateProcess;
+	
+	@Autowired
+	private CommitProcess commitProcess;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -86,6 +94,12 @@ public class ServerJob {
 						break;
 					case "0200700":  // histories
 						resLnsStream = this.historiesProcess.process(reqLnsStream);
+						break;
+					case "0200300":  // validate
+						resLnsStream = this.validateProcess.process(reqLnsStream);
+						break;
+					case "0200400":  // commit
+						resLnsStream = this.commitProcess.process(reqLnsStream);
 						break;
 					default:
 						break;
