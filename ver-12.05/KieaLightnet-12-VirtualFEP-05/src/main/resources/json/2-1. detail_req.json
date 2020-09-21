@@ -3,8 +3,8 @@
   "sourceCountry" : "KOR",
   "sourceSendCurrency" : "THB",
   "destinationCountry" : "IDN",
-  "destinationReceiveAmount" : "1000",
   "destinationReceiveCurrency" : "IDR",
+  "destinationReceiveAmount" : "1000",
   "destinationOperatorCode" : "mgi",
 "deliveryMethod": "cash"
 }

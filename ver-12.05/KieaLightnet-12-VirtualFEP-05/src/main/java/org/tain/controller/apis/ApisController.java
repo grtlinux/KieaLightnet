@@ -39,9 +39,16 @@ public class ApisController {
 	///////////////////////////////////////////////////////////////////////////
 	
 	@RequestMapping(value = {"/authForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String formAuth(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+	public String authForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		return "web/apis/authForm";
+	}
+	
+	@RequestMapping(value = {"/detailForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String detailForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
+		model.addAttribute("apis", this.apisService.findApisById(id));
+		return "web/apis/detailForm";
 	}
 }

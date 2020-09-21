@@ -16,7 +16,7 @@
 	<!-- main -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Infra-FEP: Auth TEST</h1>
+			<h1>Infra-FEP: Detail TEST</h1>
 		</div>
 		<br/>
 		<input id="apis_id" type="hidden" th:value="${apis?.id}"/>
@@ -127,12 +127,32 @@
 				<div class="modal-body">
 					<table class="table">
 						<tr>
-							<th style="padding:13px 0 0 15px;">clientId</th>
-							<td><input id="modal1_clientId" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+							<th style="padding:13px 0 0 15px;">sourceCountry</th>
+							<td><input id="modal1_sourceCountry" value="" type="text" class="col-md-1 form-control input-sm"/></td>
 						</tr>
 						<tr>
-							<th style="padding:13px 0 0 15px;">secret</th>
-							<td><input id="modal1_secret" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+							<th style="padding:13px 0 0 15px;">sourceSendCurrency</th>
+							<td><input id="modal1_sourceSendCurrency" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">destinationCountry</th>
+							<td><input id="modal1_destinationCountry" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">destinationReceiveCurrency</th>
+							<td><input id="modal1_destinationReceiveCurrency" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">destinationReceiveAmount</th>
+							<td><input id="modal1_destinationReceiveAmount" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">destinationOperatorCode</th>
+							<td><input id="modal1_destinationOperatorCode" value="" type="text" class="col-md-1 form-control input-sm"/></td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">deliveryMethod</th>
+							<td><input id="modal1_deliveryMethod" value="" type="text" class="col-md-1 form-control input-sm"/></td>
 						</tr>
 						<tr>
 							<th style="padding:13px 0 0 15px;"> </th>
@@ -279,21 +299,31 @@
 			//$('#modal_mapping').val($('#apis_mapping').val());
 			//$('#modal_resJson').val('');
 			
-			$('#modal1_clientId').val(reqJson.clientId);
-			$('#modal1_secret').val(reqJson.secret);
+			$('#modal1_sourceCountry').val(reqJson.sourceCountry);
+			$('#modal1_sourceSendCurrency').val(reqJson.sourceSendCurrency);
+			$('#modal1_destinationCountry').val(reqJson.destinationCountry);
+			$('#modal1_destinationReceiveCurrency').val(reqJson.destinationReceiveCurrency);
+			$('#modal1_destinationReceiveAmount').val(reqJson.destinationReceiveAmount);
+			$('#modal1_destinationOperatorCode').val(reqJson.destinationOperatorCode);
+			$('#modal1_deliveryMethod').val(reqJson.deliveryMethod);
 		});
 		$('#btnToJson').click(function() {
 			console.log('Hello btnToJson');
 			var reqJson = JSON.stringify({
-				clientId: $('#modal1_clientId').val(),
-				secret: $('#modal1_secret').val()
+				sourceCountry: $('#modal1_sourceCountry').val(),
+				sourceSendCurrency: $('#modal1_sourceSendCurrency').val(),
+				destinationCountry: $('#modal1_destinationCountry').val(),
+				destinationReceiveCurrency: $('#modal1_destinationReceiveCurrency').val(),
+				destinationReceiveAmount: $('#modal1_destinationReceiveAmount').val(),
+				destinationOperatorCode: $('#modal1_destinationOperatorCode').val(),
+				deliveryMethod: $('#modal1_deliveryMethod').val()
 			}, null, 2);
 			$('#modal1_reqJson').val(reqJson);
 		});
 		$('#btnGetReqStream').click(function() {
 			console.log('Hello btnGetReqStream');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/req/json2str",
+				url: _contextPath_ + "apis/detail/mapper/req/json2str",
 				type: "POST",
 				data: $('#modal1_reqJson').val(),
 				contentType: "application/json",
