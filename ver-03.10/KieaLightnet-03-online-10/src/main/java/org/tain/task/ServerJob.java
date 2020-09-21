@@ -13,10 +13,13 @@ import org.tain.object.test.res._ResTestData;
 import org.tain.object.test.res._ResTestName;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
+import org.tain.task.process.AmendProcess;
 import org.tain.task.process.AuthProcess;
 import org.tain.task.process.CommitProcess;
+import org.tain.task.process.CustomerProcess;
 import org.tain.task.process.DetailProcess;
 import org.tain.task.process.HistoriesProcess;
+import org.tain.task.process.RefundProcess;
 import org.tain.task.process.ValidateProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
@@ -53,6 +56,15 @@ public class ServerJob {
 	
 	@Autowired
 	private CommitProcess commitProcess;
+	
+	@Autowired
+	private AmendProcess amendProcess;
+	
+	@Autowired
+	private RefundProcess refundProcess;
+	
+	@Autowired
+	private CustomerProcess customerProcess;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -100,6 +112,15 @@ public class ServerJob {
 						break;
 					case "0200400":  // commit
 						resLnsStream = this.commitProcess.process(reqLnsStream);
+						break;
+					case "0200500":  // amend
+						resLnsStream = this.amendProcess.process(reqLnsStream);
+						break;
+					case "0200600":  // refund
+						resLnsStream = this.refundProcess.process(reqLnsStream);
+						break;
+					case "0200800":  // customer
+						resLnsStream = this.customerProcess.process(reqLnsStream);
 						break;
 					default:
 						break;
