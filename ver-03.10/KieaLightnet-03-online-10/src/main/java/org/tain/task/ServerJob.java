@@ -14,6 +14,7 @@ import org.tain.object.test.res._ResTestName;
 import org.tain.queue.LnsStreamPacketQueue;
 import org.tain.queue.WakeServerTaskQueue;
 import org.tain.task.process.AuthProcess;
+import org.tain.task.process.DetailProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -35,16 +36,11 @@ public class ServerJob {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	/*
-	@Autowired
-	private List11Process list11Process;
-	
-	@Autowired
-	private TestProcess testProcess;
-	*/
-	
 	@Autowired
 	private AuthProcess authProcess;
+	
+	@Autowired
+	private DetailProcess detailProcess;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -80,6 +76,9 @@ public class ServerJob {
 					*/
 					case "0200900":  // auth
 						resLnsStream = this.authProcess.process(reqLnsStream);
+						break;
+					case "0200200":  // detail
+						resLnsStream = this.detailProcess.process(reqLnsStream);
 						break;
 					default:
 						break;

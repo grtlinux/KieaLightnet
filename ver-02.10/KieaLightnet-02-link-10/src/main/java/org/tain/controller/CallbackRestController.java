@@ -18,6 +18,7 @@ import org.tain.utils.Flag;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Deprecated
 @RestController
 @RequestMapping(value = {"/callback"})
 @Slf4j

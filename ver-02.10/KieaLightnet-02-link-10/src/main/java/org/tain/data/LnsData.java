@@ -1,5 +1,16 @@
 package org.tain.data;
 
+import org.tain.object.lns.LnsJson;
+import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
+import org.tain.utils.LnsHttpClient;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class LnsData {
 
 	private static LnsData instance = null;
@@ -20,6 +31,28 @@ public class LnsData {
 	}
 	
 	public synchronized String getAccessToken() {
+		return this.accessToken;
+	}
+	
+	public synchronized String getHttpAccessToken() {
+		LnsJson lnsJson = null;
+		if (Flag.flag) {
+			try {
+				lnsJson = new LnsJson();
+				lnsJson.setName("Link Call Auth");
+				lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth");
+				lnsJson.setHttpMethod("POST");
+				lnsJson = LnsHttpClient.post(lnsJson);
+				log.info(">>>>> Link Call Auth: lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+				
+				JsonNode jsonNode = new ObjectMapper().readTree(lnsJson.getResJsonData());
+				this.accessToken = jsonNode.get("accessToken").asText();
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "";
+			}
+		}
+		
 		return this.accessToken;
 	}
 	

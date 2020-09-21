@@ -85,7 +85,7 @@ public class LnsLightnetClient {
 	///////////////////////////////////////////////////////////////////////////
 	
 	public static LnsJson get(LnsJson lnsJson) throws Exception {
-		return get(lnsJson, false);
+		return get(lnsJson, true);
 	}
 	
 	public static LnsJson get(LnsJson lnsJson, boolean flagAccessToken) throws Exception {
@@ -100,7 +100,7 @@ public class LnsLightnetClient {
 			String httpUrl = lnsJson.getHttpUrl();
 			HttpMethod httpMethod = HttpMethod.GET;
 			
-			String json = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(lnsJson);
+			String json = JsonPrint.getInstance().toPrettyJson(lnsJson);
 			log.info(">>>>> REQ.lnsJson        = {}", json);
 			
 			Map<String,String> reqMap = new ObjectMapper().readValue(lnsJson.getReqJsonData(), new TypeReference<Map<String,String>>(){});
@@ -115,7 +115,7 @@ public class LnsLightnetClient {
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			if (flagAccessToken) reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getAccessToken());
+			if (flagAccessToken) reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getHttpAccessToken());
 			log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
 			
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqHeaders);
@@ -132,8 +132,8 @@ public class LnsLightnetClient {
 				log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> RES.getBody()            = {}", response.getBody());
-				json = response.getBody();
-				lnsJson = new ObjectMapper().readValue(json, LnsJson.class);
+				//json = response.getBody();
+				lnsJson.setResJsonData(response.getBody());
 				log.info(">>>>> RES.lnsJson              = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 			} catch (Exception e) {
 				//e.printStackTrace();

@@ -298,7 +298,6 @@
 			console.log('Hello btnMakeReqStream');
 			//$('#modal_mapping').val($('#apis_mapping').val());
 			//$('#modal_resJson').val('');
-			
 			$('#modal1_sourceCountry').val(reqJson.sourceCountry);
 			$('#modal1_sourceSendCurrency').val(reqJson.sourceSendCurrency);
 			$('#modal1_destinationCountry').val(reqJson.destinationCountry);
@@ -354,14 +353,10 @@
 	<!-- script : SendReqStream -->
 	<script>
 		$('#btnSendReqStream').click(function() {
-			var reqData = JSON.stringify({
-				reqStrData: $('#apis_reqStream').val()
-			}, null, 2);
 			console.log('Hello btnSendReqStream');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/lns01",
+				url: _contextPath_ + "apis/detail/lns01",
 				type: "POST",
-				//data: reqData,
 				data: $('#apis_reqStream').val(),
 				contentType: "application/json",
 				header: {
@@ -390,13 +385,9 @@
 	<script>
 		$('#btnShowResJson').click(function() {
 			console.log('Hello btnShowResJson');
-			var resData = JSON.stringify({
-				resStrData: $('#apis_resStream').val()
-			}, null, 2);
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/res/str2json",
+				url: _contextPath_ + "apis/detail/mapper/res/str2json",
 				type: "POST",
-				//data: resData,
 				data: $('#apis_resStream').val(),
 				contentType: "application/json",
 				header: {
@@ -430,7 +421,7 @@
 		$('#btnShowReqCStruct').click(function() {
 			console.log('Hello btnShowReqCStruct');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/req/cstruct",
+				url: _contextPath_ + "apis/detail/mapper/req/cstruct",
 				type: "POST",
 				data: "{}",
 				contentType: "application/json",
@@ -450,7 +441,7 @@
 		$('#btnShowResCStruct').click(function() {
 			console.log('Hello btnShowResCStruct');
 			$.ajax({
-				url: _contextPath_ + "apis/auth/mapper/res/cstruct",
+				url: _contextPath_ + "apis/detail/mapper/res/cstruct",
 				type: "POST",
 				data: "{}",
 				contentType: "application/json",

@@ -278,7 +278,6 @@
 			console.log('Hello btnMakeReqStream');
 			//$('#modal_mapping').val($('#apis_mapping').val());
 			//$('#modal_resJson').val('');
-			
 			$('#modal1_clientId').val(reqJson.clientId);
 			$('#modal1_secret').val(reqJson.secret);
 		});
@@ -324,14 +323,10 @@
 	<!-- script : SendReqStream -->
 	<script>
 		$('#btnSendReqStream').click(function() {
-			var reqData = JSON.stringify({
-				reqStrData: $('#apis_reqStream').val()
-			}, null, 2);
 			console.log('Hello btnSendReqStream');
 			$.ajax({
 				url: _contextPath_ + "apis/auth/lns01",
 				type: "POST",
-				//data: reqData,
 				data: $('#apis_reqStream').val(),
 				contentType: "application/json",
 				header: {
@@ -360,13 +355,9 @@
 	<script>
 		$('#btnShowResJson').click(function() {
 			console.log('Hello btnShowResJson');
-			var resData = JSON.stringify({
-				resStrData: $('#apis_resStream').val()
-			}, null, 2);
 			$.ajax({
 				url: _contextPath_ + "apis/auth/mapper/res/str2json",
 				type: "POST",
-				//data: resData,
 				data: $('#apis_resStream').val(),
 				contentType: "application/json",
 				header: {

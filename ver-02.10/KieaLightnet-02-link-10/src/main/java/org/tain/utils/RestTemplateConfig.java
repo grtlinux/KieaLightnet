@@ -76,7 +76,7 @@ public class RestTemplateConfig {
 	
 	private static RestTemplate _getCustomRestTemplate() {
 		HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
-		httpRequestFactory.setConnectTimeout(7 * 1000);
+		httpRequestFactory.setConnectTimeout(10 * 1000);
 		httpRequestFactory.setReadTimeout(60 * 1000);
 		HttpClient httpClient = HttpClientBuilder.create()
 				.setMaxConnTotal(200)
