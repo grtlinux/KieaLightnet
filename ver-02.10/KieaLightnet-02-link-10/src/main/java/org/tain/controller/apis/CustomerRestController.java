@@ -40,8 +40,8 @@ public class CustomerRestController {
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
 			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances.customer-lookup");
-			lnsJson.setHttpMethod("POST");
-			lnsJson = LnsLightnetClient.post(lnsJson);
+			lnsJson.setHttpMethod("GET");
+			lnsJson = LnsLightnetClient.get(lnsJson);
 			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		

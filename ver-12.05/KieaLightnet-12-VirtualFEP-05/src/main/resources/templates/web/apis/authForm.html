@@ -270,7 +270,10 @@
 				<div class="modal-body">
 					<table class="table">
 						<tr>
-							<th style="padding:13px 0 0 15px;">Req JSON</th>
+							<th style="padding:13px 0 0 15px;">
+								Req JSON<br>
+								<button id="btnCopy5ReqJson" type="button" class="btn btn-info btn-xs">copy</button>
+							</th>
 							<td><textarea id="modal5_reqJson" class="col-md-1 form-control input-sm" rows="7" style="height:100px;"></textarea></td>
 						</tr>
 						<tr>
@@ -280,7 +283,10 @@
 							</td>
 						</tr>
 						<tr>
-							<th style="padding:13px 0 0 15px;">Res JSON</th>
+							<th style="padding:13px 0 0 15px;">
+								Res JSON<br>
+								<button id="btnCopy5ResJson" type="button" class="btn btn-info btn-xs">copy</button>
+							</th>
 							<td><textarea id="modal5_resJson" class="col-md-1 form-control input-sm" rows="7" style="height:100px;"></textarea></td>
 						</tr>
 					</table>
@@ -557,6 +563,20 @@
 		$('#btnCopyCStruct').click(function() {
 			console.log('Hello btnCopyCStruct');
 			var copyText = document.getElementById("modal3_cstruct");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopy5ReqJson').click(function() {
+			console.log('Hello btnCopy5ReqJson');
+			var copyText = document.getElementById("modal5_reqJson");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopy5ResJson').click(function() {
+			console.log('Hello btnCopy5ResJson');
+			var copyText = document.getElementById("modal5_resJson");
 			copyText.select();
 			copyText.setSelectionRange(0, 99999);
 			document.execCommand("copy");

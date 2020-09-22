@@ -54,9 +54,8 @@ public class CustomerProcess {
 			// 4. mapper TestRes Json to Stream
 			lnsJson.setHttpUrl("http://localhost:18086/v1.0/mapper/customer/res/j2s");
 			lnsJson.setHttpMethod("POST");
-			// TODO:
-			//lnsJson = LnsHttpClient.post(lnsJson); 
-			lnsJson.setResStrData("Hello, world!!! Customer");
+			lnsJson = LnsHttpClient.post(lnsJson);
+			//lnsJson.setResStrData("Hello, world!!! Customer");
 			log.info("ONLINE-4 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		

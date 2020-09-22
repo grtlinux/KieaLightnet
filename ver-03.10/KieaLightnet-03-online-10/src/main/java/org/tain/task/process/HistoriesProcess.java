@@ -54,9 +54,8 @@ public class HistoriesProcess {
 			// 4. mapper TestRes Json to Stream
 			lnsJson.setHttpUrl("http://localhost:18086/v1.0/mapper/histories/res/j2s");
 			lnsJson.setHttpMethod("POST");
-			// TODO:
-			//lnsJson = LnsHttpClient.post(lnsJson); 
-			lnsJson.setResStrData("Hello, world!!! Histories");
+			lnsJson = LnsHttpClient.post(lnsJson);
+			//lnsJson.setResStrData("Hello, world!!! Histories");
 			log.info("ONLINE-4 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		

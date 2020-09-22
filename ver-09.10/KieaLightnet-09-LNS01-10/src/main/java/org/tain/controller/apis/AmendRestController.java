@@ -49,7 +49,7 @@ public class AmendRestController {
 			LnsStream reqLnsStream = null;
 			if (Flag.flag) {
 				String reqStrData = lnsJson.getReqStrData();
-				String reqTypeCode = "0200400";
+				String reqTypeCode = "0200500";
 				String reqLen = String.format("%04d", 7 + reqStrData.length());
 				reqLnsStream = new LnsStream(reqLen + reqTypeCode + reqStrData);
 				log.info("Lns01/Amend >>>>> reqLnsStream = {}", JsonPrint.getInstance().toPrettyJson(reqLnsStream));

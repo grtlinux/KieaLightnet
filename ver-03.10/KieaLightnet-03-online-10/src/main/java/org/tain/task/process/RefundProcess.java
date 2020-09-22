@@ -54,9 +54,8 @@ public class RefundProcess {
 			// 4. mapper TestRes Json to Stream
 			lnsJson.setHttpUrl("http://localhost:18086/v1.0/mapper/refund/res/j2s");
 			lnsJson.setHttpMethod("POST");
-			// TODO:
-			//lnsJson = LnsHttpClient.post(lnsJson); 
-			lnsJson.setResStrData("Hello, world!!! Refund");
+			lnsJson = LnsHttpClient.post(lnsJson);
+			//lnsJson.setResStrData("Hello, world!!! Refund");
 			log.info("ONLINE-4 >>>>> lnsJson = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		

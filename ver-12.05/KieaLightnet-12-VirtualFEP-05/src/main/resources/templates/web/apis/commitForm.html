@@ -65,6 +65,7 @@
 				<th style="padding:13px 0 0 15px;"> </th>
 				<td>
 					<button id="btnSendReqStream" type="button" class="btn btn-danger">Send ReqStream</button>
+					<button id="btnSendJson" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSendJson">Send JSON</button>
 				</td>
 			</tr>
 			<tr>
@@ -245,6 +246,57 @@
 		</div>
 	</div>
 	<!-- /Modal dialog : ShowCStruct -->
+	
+	
+	
+	
+	
+	<!-- Modal dialog : SendJson -->
+	<div class="modal fase" id="modalSendJson">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+			
+				<!-- Modal Header -->
+				<div class="modal-header bg-success">
+					<h4 class="modal-title">Send JSON(Req -> Res)</h4>
+					<!-- button type="button" class="close" data-dismiss="modal">&times;</button -->
+				</div>
+				
+				<!-- Modal body -->
+				<div class="modal-body">
+					<table class="table">
+						<tr>
+							<th style="padding:13px 0 0 15px;">
+								Req JSON<br>
+								<button id="btnCopy5ReqJson" type="button" class="btn btn-info btn-xs">copy</button>
+							</th>
+							<td><textarea id="modal5_reqJson" class="col-md-1 form-control input-sm" rows="7" style="height:100px;"></textarea></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<button id="btnSendRecvJson" type="button" class="btn btn-primary">Send/Recv JSON</button>
+							</td>
+						</tr>
+						<tr>
+							<th style="padding:13px 0 0 15px;">
+								Res JSON<br>
+								<button id="btnCopy5ResJson" type="button" class="btn btn-info btn-xs">copy</button>
+							</th>
+							<td><textarea id="modal5_resJson" class="col-md-1 form-control input-sm" rows="7" style="height:100px;"></textarea></td>
+						</tr>
+					</table>
+				</div>
+				
+				<!-- Modal footer -->
+				<div class="modal-footer bg-success">
+					<button id="btnCloseSendJson" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- /Modal dialog : SendJson -->
 	
 	
 	
@@ -434,6 +486,44 @@
 	
 	
 	
+	<!-- script : send Json -->
+	<script>
+		$('#btnSendJson').click(function() {
+			console.log('Hello btnSendJson');
+			//var reqJson = JSON.stringify(reqJson, null, 2);
+			$('#modal5_reqJson').val(JSON.stringify(reqJson, null, 2));
+		});
+		$('#btnSendRecvJson').click(function() {
+			console.log('Hello btnSendRecvJson');
+			$.ajax({
+				url: "http://localhost:18083/v1.0/online/commit",
+				type: "POST",
+				data: $('#modal5_reqJson').val(),
+				contentType: "application/json",
+				header: {
+					"Authorization": "Basic " + btoa("havi" + ":" + "test")
+				},
+				dataType: "json",
+				success: function(data, status) {
+					$('#modal5_resJson').val(JSON.stringify(data, null, 2));
+				},
+				error: function() {
+					alert('FAIL of SAVE1');
+				}
+			});
+		});
+		$('#btnCloseSendJson').click(function() {
+			console.log('Hello btnCloseSendJson');
+		});
+	</script>
+	<!-- /script : send Json -->
+	
+	
+	
+	
+	
+	
+	
 	<!-- script : copy clipboard -->
 	<script>
 		$('#btnCopyReqStream').click(function() {
@@ -467,6 +557,20 @@
 		$('#btnCopyCStruct').click(function() {
 			console.log('Hello btnCopyCStruct');
 			var copyText = document.getElementById("modal3_cstruct");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopy5ReqJson').click(function() {
+			console.log('Hello btnCopy5ReqJson');
+			var copyText = document.getElementById("modal5_reqJson");
+			copyText.select();
+			copyText.setSelectionRange(0, 99999);
+			document.execCommand("copy");
+		});
+		$('#btnCopy5ResJson').click(function() {
+			console.log('Hello btnCopy5ResJson');
+			var copyText = document.getElementById("modal5_resJson");
 			copyText.select();
 			copyText.setSelectionRange(0, 99999);
 			document.execCommand("copy");

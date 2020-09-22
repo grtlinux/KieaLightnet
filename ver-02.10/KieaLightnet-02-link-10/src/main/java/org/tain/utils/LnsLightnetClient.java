@@ -133,7 +133,7 @@ public class LnsLightnetClient {
 				log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> RES.getBody()            = {}", response.getBody());
-				//json = response.getBody();
+				
 				lnsJson.setResJsonData(response.getBody());
 				log.info(">>>>> RES.lnsJson              = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 			} catch (Exception e) {
@@ -174,7 +174,7 @@ public class LnsLightnetClient {
 			HttpMethod httpMethod = HttpMethod.POST;
 			
 			String json = lnsJson.getReqJsonData();
-			log.info(">>>>> REQ.lnsJson        = {}", json);
+			log.info(">>>>> REQ.json           = {}", json);
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
@@ -195,8 +195,8 @@ public class LnsLightnetClient {
 				log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> RES.getBody()            = {}", response.getBody());
-				json = response.getBody();
-				lnsJson = new ObjectMapper().readValue(json, LnsJson.class);
+				
+				lnsJson.setResJsonData(response.getBody());
 				log.info(">>>>> RES.lnsJson              = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 			} catch (Exception e) {
 				//e.printStackTrace();
