@@ -118,7 +118,7 @@ proj-env:
     link: http://localhost:18082/v1.0
     mapper: http://localhost:18086/v1.0
   job:
-    auth-loop-sec: 600
+    auth-loop-sec: 1200
     # ver1
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
@@ -141,7 +141,7 @@ proj-env:
     link: http://localhost:18082/v1.0
     mapper: http://localhost:18086/v1.0
   job:
-    auth-loop-sec: 600
+    auth-loop-sec: 1200
     # ver1
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
@@ -163,7 +163,7 @@ proj-env:
     link: http://localhost:18082/v1.0
     mapper: http://localhost:18086/v1.0
   job:
-    auth-loop-sec: 600
+    auth-loop-sec: 1200
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
     auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
