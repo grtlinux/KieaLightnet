@@ -1,4 +1,4 @@
-package org.tain.controller;
+package org.tain.controller.apis;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -20,9 +20,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/link/validate"})
+@RequestMapping(value = {"/link/commit"})
 @Slf4j
-public class ValidateRestController {
+public class CommitRestController {
 
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {
@@ -39,7 +39,7 @@ public class ValidateRestController {
 		
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances.validate");
+			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances.commit");
 			lnsJson.setHttpMethod("POST");
 			lnsJson = LnsLightnetClient.post(lnsJson);
 			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));

@@ -1,4 +1,4 @@
-package org.tain.controller;
+package org.tain.controller.apis;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -13,16 +13,16 @@ import org.tain.object.lns.LnsJson;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
-import org.tain.utils.LnsHttpClient;
+import org.tain.utils.LnsLightnetClient;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/link/auth"})
+@RequestMapping(value = {"/link/amend"})
 @Slf4j
-public class AuthRestController {
+public class AmendRestController {
 
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {
@@ -36,21 +36,12 @@ public class AuthRestController {
 		}
 		
 		LnsJson lnsJson = null;
-		if (Flag.flag) {
-			/*
-			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth/lightnet");
-			lnsJson.setHttpMethod("POST");
-			lnsJson = LnsClient.post(lnsJson);
-			log.info(">>>>> RES-1.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
-			*/
-		}
 		
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth");
+			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances.amend");
 			lnsJson.setHttpMethod("POST");
-			lnsJson = LnsHttpClient.post(lnsJson);
+			lnsJson = LnsLightnetClient.post(lnsJson);
 			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
 		}
 		
