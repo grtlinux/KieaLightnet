@@ -15,29 +15,30 @@ public class _ReqDetailData {
 
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "sourceCountry")
-	private String sourceCountry = "KOR";
+	private String sourceCountry;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "sourceSendCurrency")
-	private String sourceSendCurrency = "THB";
+	private String sourceSendCurrency;
 	
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "destinationCountry")
-	private String destinationCountry = "IDN";
+	private String destinationCountry;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "destinationReceiveAmount")
-	private String destinationReceiveAmount = "1000";
+	private String destinationReceiveAmount;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "destinationReceiveCurrency")
-	private String destinationReceiveCurrency = "IDR";
+	private String destinationReceiveCurrency;
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "destinationOperatorCode")
-	private String destinationOperatorCode = "mgi";
+	private String destinationOperatorCode;
 	
+	////////////////////////////////////////////////////////////
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "withdrawalId")
@@ -49,5 +50,5 @@ public class _ReqDetailData {
 	
 	@StreamAnnotation(length = 20)
 	@JsonProperty(value = "deliveryMethod")
-	private String deliveryMethod;  //  = "cash";
+	private String deliveryMethod;  //  = "cash"; "account_deposit"
 }

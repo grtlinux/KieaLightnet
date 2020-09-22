@@ -5,16 +5,11 @@ import java.text.DecimalFormat;
 
 import org.springframework.stereotype.Component;
 import org.tain.object.dummy._Dummy;
-import org.tain.object.test.req._ReqTestData;
-import org.tain.object.test.req._ReqTestName;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.SubString;
 import org.tain.utils.TransferStrAndJson;
-import org.tain.utils.enums.JsonPrintType;
-
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -105,6 +100,7 @@ public class AnnotationWorking {
 	public void test02_testObjectAndJson() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
+		/*
 		if (Flag.flag) {
 			// req
 			_ReqTestName name = new _ReqTestName();
@@ -143,5 +139,6 @@ public class AnnotationWorking {
 			_ReqTestData reqData = xmlMapper.readValue(xml, _ReqTestData.class);
 			System.out.println(">>>>> " + reqData);
 		}
+		*/
 	}
 }

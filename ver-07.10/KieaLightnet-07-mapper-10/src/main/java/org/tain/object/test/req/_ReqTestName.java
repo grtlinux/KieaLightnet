@@ -23,7 +23,11 @@ public class _ReqTestName {
 	@JsonProperty(value = "last_name")
 	private String lastName;
 	
+	@StreamAnnotation(length = 20)
+	@JsonProperty(value = "secondLast_name")
+	private String secondLastName;
+	
 	@StreamAnnotation(length = 5)
 	@JsonProperty(value = "sex")
-	private String sex;
+	private String sex;  // no-used
 }

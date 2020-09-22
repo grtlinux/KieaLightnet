@@ -92,9 +92,11 @@ public class KieaLightnet07Mapper10Application implements CommandLineRunner {
 	private void job04() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) this.apisWorking.jobFirst();
-		if (Flag.flag) this.apisWorking.jobReqApis();
-		if (Flag.flag) this.apisWorking.getCStruct();
+		if (!Flag.flag) this.apisWorking.jobFirst();
+		if (!Flag.flag) this.apisWorking.jobReqApis();
+		if (!Flag.flag) this.apisWorking.getCStruct();
+		
+		if (Flag.flag) this.apisWorking.analyzeApiTest();
 	}
 
 	///////////////////////////////////////////////////////////////////////////

@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.tain.object.ApisObject;
+import org.tain.object.test.req._ReqTestData;
 import org.tain.object.validate.res._ResValidateData;
 import org.tain.properties.ProjEnvJsonProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 import org.tain.utils.StringTools;
 import org.tain.utils.TransferStrAndJson;
 
@@ -92,6 +94,25 @@ public class ApisWorking {
 		
 		if (Flag.flag) {
 			System.out.println(">>>>> CStruct\n" + TransferStrAndJson.getCStruct(new _ResValidateData()));
+		}
+	}
+	
+	public void analyzeApiTest() throws Exception {
+		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			String filePath = this.projEnvJsonProperties.getHome() + this.projEnvJsonProperties.getBase() + "/test01.json";
+			String reqJsonTest = StringTools.stringFromFile(filePath);
+			if (Flag.flag) System.out.println("1 >>>>> " + reqJsonTest);
+			
+			JsonNode reqJsonNode = new ObjectMapper().readTree(reqJsonTest);
+			if (Flag.flag) System.out.println("2 >>>>> " + reqJsonNode.toPrettyString());
+			if (Flag.flag) System.out.println("2 >>>>> " + reqJsonNode.at("/receiver").toPrettyString());
+			
+			_ReqTestData reqTestData = new ObjectMapper().readValue(reqJsonTest, _ReqTestData.class);
+			if (Flag.flag) System.out.println("3 >>>>> " + reqTestData);
+			if (Flag.flag) System.out.println("3 >>>>> " + JsonPrint.getInstance().toPrettyJson(reqTestData));
+			if (Flag.flag) System.out.println("3 >>>>> count = " + reqTestData.getStrings().size());
 		}
 	}
 }
