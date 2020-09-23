@@ -1,5 +1,6 @@
 package org.tain.controller.apis;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.object.lns.LnsJson;
+import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -24,6 +26,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ValidateRestController {
 
+	@Autowired
+	private ProjEnvUrlProperties projEnvUrlProperties;
+	
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> reqStrToJson(HttpEntity<String> reqHttpEntity) throws Exception {
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
@@ -39,7 +44,7 @@ public class ValidateRestController {
 		
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1.1/remittances.validate");
+			lnsJson.setHttpUrl(this.projEnvUrlProperties.getLightnet11() + "/remittances.validate");
 			lnsJson.setHttpMethod("POST");
 			lnsJson = LnsLightnetClient.post(lnsJson);
 			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));

@@ -3,6 +3,7 @@ package org.tain.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.data.LnsData;
 import org.tain.object.lns.LnsJson;
+import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
@@ -28,6 +30,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AuthRestController {
 
+	@Autowired
+	private ProjEnvUrlProperties projEnvUrlProperties;
+	
 	/*
 	 * curl -v -d '("clientId":"_TEST_", "secret":"_TEST_"}' -X POST http://localhost:18081/v1.0/auth | jq
 	 * curl -v -X POST http://localhost:18081/v1.0/auth | jq
@@ -81,7 +86,7 @@ public class AuthRestController {
 		LnsJson lnsJson = null;
 		if (Flag.flag) {
 			lnsJson = new ObjectMapper().readValue(reqHttpEntity.getBody(), LnsJson.class);
-			lnsJson.setHttpUrl("https://test-public.lightnetapis.io/v1/auth");
+			lnsJson.setHttpUrl(this.projEnvUrlProperties.getLightnet1() + "/auth");
 			lnsJson.setHttpMethod("POST");
 			lnsJson = LnsLightnetClient.auth(lnsJson);
 		}
