@@ -48,7 +48,7 @@ public class ServerTasksWorking {
 			int index = 0;
 			
 			while (true) {
-				for (int i=0; i < 1; i++) {
+				for (int i=0; i < 3; i++) {
 					try {
 						this.serverJob.serverJob("SERVER-TASK-" + index);
 						index ++;
