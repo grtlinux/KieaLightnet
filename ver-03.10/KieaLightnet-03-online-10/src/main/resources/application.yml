@@ -12,7 +12,9 @@ spring:
   profiles.active:
   - proj-default
   - proj-local
-  #- proj-test
+  - proj-test
+  #- proj-aws
+  #- proj-dfep
   #- proj-real
   h2.console:
     enabled: true
@@ -107,7 +109,7 @@ proj-env:
 
 ---
 # --------------------------------------------------------
-# virtual test
+# virtual local
 spring.profiles: proj-local
 
 proj-env:
@@ -125,6 +127,22 @@ proj-env:
 # --------------------------------------------------------
 # https://
 spring.profiles: proj-test
+
+proj-env:
+  json:
+    name: test json
+  url:
+    localhost: http://localhost:18888
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
+
+---
+# --------------------------------------------------------
+# https://
+spring.profiles: proj-aws
 
 proj-env:
   json:

@@ -33,22 +33,24 @@ public class ClientMainJob {
 			// client
 			String host = this.projEnvJobProperties.getOnlineHost();
 			int port = this.projEnvJobProperties.getOnlinePort();
-			InetSocketAddress inetSocketAddress = new InetSocketAddress(host, port);
 			
-			try {
-				while (true) {
+			while (true) {
+				InetSocketAddress inetSocketAddress = new InetSocketAddress(host, port);
+				
+				try {
 					log.info(">>>>> connection....INFO = {}", inetSocketAddress);
 					Socket socket = new Socket();
 					socket.connect(inetSocketAddress);
 					log.info(">>>>> connection is OK!!!");
 					
 					if (Flag.flag) this.lnsStreamPacketQueue.set(new LnsStreamPacket(socket));
-					
-					Sleep.run(2000);
-					break;
+				} catch (Exception e) {
+					//e.printStackTrace();
+					log.error(">>>>> ERROR: {}", e.getMessage());
+					Sleep.run(10 * 1000);
+					continue;
 				}
-			} catch (Exception e) {
-				e.printStackTrace();
+				if (Flag.flag) break;
 			}
 		}
 		

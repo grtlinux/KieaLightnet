@@ -1,7 +1,8 @@
 
 
 server:
-  port: 8080
+  #port: 8080
+  port: 18088
   servlet.context-path: /v0.1
 
 spring:
@@ -9,6 +10,7 @@ spring:
   - proj-default
   - proj-local
   - proj-test
+  #- proj-aws
   #- proj-dfep
   #- proj-read
 
@@ -57,7 +59,7 @@ spring:
 
 logging:
   file:
-    path: logs/
+    path: logs/dfep/
     max-size: 10MB
     max-history: 30
   pattern:
@@ -210,7 +212,7 @@ proj-env:
   json:
     name: json name on proj-dfep
     home: /hw01/ibridge
-    base: /KANG/json/sit
+    base: /KANG/json/dfep
     apis-info-file: apis.json
   url:
     localhost: http://localhost:18888

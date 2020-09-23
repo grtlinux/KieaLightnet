@@ -12,7 +12,7 @@ spring:
   profiles.active:
   - proj-default
   - proj-local
-  #- proj-test
+  - proj-test
   #- proj-aws
   #- proj-dfep
   #- proj-real
@@ -171,7 +171,7 @@ proj-env:
   json:
     name: json name on proj-dfep
     home: /Users/kangmac
-    base: /KANG/json/sit
+    base: /KANG/json/dfep
     apis-info-file: apis.json
   url:
     localhost: http://localhost:18888
