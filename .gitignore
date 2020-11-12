@@ -30,3 +30,5 @@ bin/
 build/
 logs/
 
+.classpath
+.project
