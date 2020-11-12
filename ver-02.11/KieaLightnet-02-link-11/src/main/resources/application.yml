@@ -108,7 +108,10 @@ proj-env:
   param:
     name: PARAM (air)
     home: /Users/kang-air
-    base: /KANG/lightnet/20201111/jsonInfo
+    base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
+    # base: /KANG/lightnet/20201111
+    info-path: /jsonInfo
+    data-path: /jsonData
   job:
     name: JOB (air)
   json:
@@ -125,7 +128,10 @@ proj-env:
   param:
     name: PARAM (pro)
     home: /Users/kangmac
-    base: /KANG/lightnet/20201111/jsonInfo
+    base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
+    # base: /KANG/lightnet/20201111
+    info-path: /jsonInfo
+    data-path: /jsonData
   job:
     name: JOB (pro)
   json:
@@ -157,7 +163,9 @@ proj-env:
   param:
     name: PARAM (dfep)
     home: /hw01/ibridge
-    base: /KANG/lightnet/20201111/jsonInfo
+    base: /KANG/lightnet/20201111
+    info-path: /jsonInfo
+    data-path: /jsonData
   job:
     name: JOB (dfep)
   json:

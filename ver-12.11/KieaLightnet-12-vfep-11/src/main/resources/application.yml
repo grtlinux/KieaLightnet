@@ -4,7 +4,7 @@
 # BASE
 
 server:
-  port: 18087
+  port: 18092
   servlet.context-path: /v1.1
 
 
@@ -62,7 +62,7 @@ spring:
 
 logging:
   file:
-    path: logs/mapper/
+    path: logs/vfep/
     max-size: 10MB
     max-history: 30         # delete after a month
   pattern:
