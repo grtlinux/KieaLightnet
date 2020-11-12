@@ -1,2 +1,2 @@
 # KieaLightnet
-Kiea Lightnet project
+Kiea Lightnet Project
