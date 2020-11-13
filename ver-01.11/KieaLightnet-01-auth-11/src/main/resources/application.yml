@@ -92,6 +92,12 @@ proj-env:
     comment: This is Lightnet API project.
   param:
     name: PARAM (default)
+    access-token:  12345678901234567890abcde
+    # commit-file:   /KANG/json/virtual/commit_res2.json
+    # detail-file:   /KANG/json/virtual/detail_res.json
+    # list-file:     /KANG/json/virtual/list_res_v1.json
+    # list1-file:    /KANG/json/virtual/list_res_v1.1.json
+    # validate-file: /KANG/json/virtual/validate_res2.json
   job:
     name: JOB (default)
   json:
@@ -114,10 +120,22 @@ proj-env:
     data-path: /jsonData
   job:
     name: JOB (air)
+    auth-loop-sec: 600
+    # ver1
+    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
+    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
+    # ver2
+    auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
+    auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
   json:
     name: JSON (air)
   url:
     name: URL (air)
+    lightnet1: http://localhost:18888
+    lightnet11: http://localhost:18888
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
 
 ---
 # --------------------------------------------------------
@@ -134,10 +152,22 @@ proj-env:
     data-path: /jsonData
   job:
     name: JOB (pro)
+    auth-loop-sec: 600
+    # ver1
+    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
+    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
+    # ver2
+    auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
+    auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
   json:
     name: JSON (pro)
   url:
     name: URL (pro)
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
 
 ---
 # --------------------------------------------------------
@@ -168,10 +198,20 @@ proj-env:
     data-path: /jsonData
   job:
     name: JOB (dfep)
+    auth-loop-sec: 600
+    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
+    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
+    auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
+    auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
   json:
     name: JSON (dfep)
   url:
     name: URL (dfep)
+    lightnet1: https://test-hawis.lightnetapis.io/v1
+    lightnet11: https://test-hawis.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.0
+    link: http://localhost:18082/v1.0
+    mapper: http://localhost:18086/v1.0
 
 ---
 # --------------------------------------------------------
