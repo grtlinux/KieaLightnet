@@ -115,7 +115,7 @@ public class LnsMstInfo implements Cloneable {
 		}
 		
 		if (Flag.flag) {
-			JsonNode node = lnsJsonNode.get();
+			JsonNode node = lnsJsonNode.getJsonNode();
 			this.headDataInfoNode.fieldNames().forEachRemaining((String fieldName) -> {
 				String strInfo = this.headDataInfoNode.get(fieldName).asText();
 				LnsElementInfo info = new LnsElementInfo(strInfo);

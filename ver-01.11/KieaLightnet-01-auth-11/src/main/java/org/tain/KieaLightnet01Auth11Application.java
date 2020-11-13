@@ -11,6 +11,7 @@ import org.tain.utils.Flag;
 import org.tain.working.annotation.AnnotationWorking;
 import org.tain.working.async.AsyncWorking;
 import org.tain.working.authJob.AuthJobWorking;
+import org.tain.working.lnsJsonNode.LnsJsonNodeWorking;
 import org.tain.working.properties.PropertiesWorking;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,17 +30,17 @@ public class KieaLightnet01Auth11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (!Flag.flag) job02();  // async
-		if (!Flag.flag) job03();  // annotation
-		if (Flag.flag) job04();  // authJob
-		if (Flag.flag) job05();
+		if (!Flag.flag) job02();  // async on testing
+		if (!Flag.flag) job03();  // annotation on testing
+		if (!Flag.flag) job04();  // authJob 
+		if (Flag.flag) job05();  // LnsJsonNode on testing
 		if (Flag.flag) job06();
 		if (Flag.flag) job07();
 		if (Flag.flag) job08();
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
 		
-		//if (Flag.flag) System.exit(0);
+		if (Flag.flag) System.exit(0);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -96,10 +97,14 @@ public class KieaLightnet01Auth11Application implements CommandLineRunner {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job05() {
+	@Autowired
+	private LnsJsonNodeWorking lnsJsonNodeWorking;
+	
+	private void job05() throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
+			this.lnsJsonNodeWorking.test01();
 		}
 	}
 	

@@ -33,10 +33,8 @@ public class LnsJsonNode {
 	}
 	
 	///////////////////////////////////////////////////////////////
-	
-	public JsonNode get() {
-		return this.jsonNode;
-	}
+	///////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////
 	
 	public String toString() {
 		return this.jsonNode.toString();
@@ -46,18 +44,14 @@ public class LnsJsonNode {
 		return this.jsonNode.toPrettyString();
 	}
 	
+	///////////////////////////////////////////////////////////////
+	
 	public List<String> fieldNames() {
 		List<String> lstNames = new ArrayList<>();
 		this.jsonNode.fieldNames().forEachRemaining((String fieldName) -> {
 			lstNames.add(fieldName);
 		});
 		return lstNames;
-	}
-	
-	@SuppressWarnings("unused")
-	public String getValue(String fieldPath) {
-		LnsSpliter spliter = new LnsSpliter(fieldPath);
-		return this.jsonNode.get(fieldPath).textValue();
 	}
 	
 	///////////////////////////////////////////////////////////////
@@ -101,4 +95,30 @@ public class LnsJsonNode {
 			this.arrayNode.add((ArrayNode) obj);
 		}
 	}
+	
+	///////////////////////////////////////////////////////////////
+	
+	public JsonNode getJsonNode() {
+		return this.jsonNode;
+	}
+	
+	@SuppressWarnings("unused")
+	public String getValue(String fieldPath) {
+		LnsSpliter spliter = new LnsSpliter(fieldPath);
+		return this.jsonNode.get(fieldPath).textValue();
+	}
+	
+	public String getText(String branch, String fieldName) {
+		return this.jsonNode.at(branch).get(fieldName).textValue();
+	}
+	
+	public Number getNumber(String branch, String fieldName) {
+		return this.jsonNode.at(branch).get(fieldName).numberValue();
+	}
+	
+	public Boolean getBoolean(String branch, String fieldName) {
+		return this.jsonNode.at(branch).get(fieldName).booleanValue();
+	}
+	
+	///////////////////////////////////////////////////////////////
 }

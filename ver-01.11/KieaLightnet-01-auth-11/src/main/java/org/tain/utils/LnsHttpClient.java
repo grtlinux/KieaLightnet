@@ -119,8 +119,8 @@ public class LnsHttpClient {
 			LnsJsonNode reqNode = new LnsJsonNode(reqLnsJsonNode.getValue("reqJson"));
 			if (Flag.flag) log.info(">>>>> reqNode = {}", reqNode.toPrettyString());
 			
-			reqHeadNode = new LnsJsonNode(reqNode.get().path("__head_data"));
-			reqBodyNode = new LnsJsonNode(reqNode.get().path("__body_data"));
+			reqHeadNode = new LnsJsonNode(reqNode.getJsonNode().path("__head_data"));
+			reqBodyNode = new LnsJsonNode(reqNode.getJsonNode().path("__body_data"));
 			
 			strReqJson = reqBodyNode.toPrettyString();
 		}
@@ -151,7 +151,7 @@ public class LnsHttpClient {
 				String strResJson = response.getBody();
 				
 				if (Flag.flag) {
-					LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
+					LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.getJsonNode());
 					LnsJsonNode resBodyNode = new LnsJsonNode(strResJson);
 					
 					resHeadNode.put("length", "0000"); // changed by mapper
@@ -162,14 +162,14 @@ public class LnsHttpClient {
 					
 					// add reshead + resbody
 					LnsJsonNode resNode = new LnsJsonNode();
-					resNode.put("__head_data", resHeadNode.get());
-					resNode.put("__body_data", resBodyNode.get());
+					resNode.put("__head_data", resHeadNode.getJsonNode());
+					resNode.put("__body_data", resBodyNode.getJsonNode());
 					
 					resLnsJsonNode.put("httpUrl", reqLnsJsonNode.getValue("httpUrl"));
 					resLnsJsonNode.put("httpMethod", reqLnsJsonNode.getValue("httpMethod"));
 					resLnsJsonNode.put("reqResType", resHeadNode.getValue("reqres") + reqHeadNode.getValue("type"));
 					resLnsJsonNode.put("reqJson", reqLnsJsonNode.getValue("reqJson"));
-					resLnsJsonNode.put("resJson", resNode.get().toPrettyString());
+					resLnsJsonNode.put("resJson", resNode.getJsonNode().toPrettyString());
 				}
 				log.info(">>>>> RES.resLnsJsonNode          = {}", resLnsJsonNode.toPrettyString());
 			} catch (Exception e) {
