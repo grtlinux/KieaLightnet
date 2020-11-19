@@ -82,6 +82,8 @@ logging:
 
 ---
 # --------------------------------------------------------
+# --------------------------------------------------------
+# --------------------------------------------------------
 spring.profiles: proj-default
 
 proj-env:
@@ -93,11 +95,6 @@ proj-env:
   param:
     name: PARAM (default)
     access-token:  12345678901234567890abcde
-    # commit-file:   /KANG/json/virtual/commit_res2.json
-    # detail-file:   /KANG/json/virtual/detail_res.json
-    # list-file:     /KANG/json/virtual/list_res_v1.json
-    # list1-file:    /KANG/json/virtual/list_res_v1.1.json
-    # validate-file: /KANG/json/virtual/validate_res2.json
   job:
     name: JOB (default)
   json:
@@ -114,13 +111,15 @@ proj-env:
   param:
     name: PARAM (air)
     home: /Users/kang-air
-    base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201111
+    # base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
+    base: /KANG/lightnet/20201111
     info-path: /jsonInfo
     data-path: /jsonData
   job:
     name: JOB (air)
-    auth-loop-sec: 600
+    auth-loop-sec: 30     # 30 sec
+    #auth-loop-sec: 600     # 10 mins
+    #auth-loop-sec: 1200    # 20 mins
     # ver1
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
@@ -131,11 +130,13 @@ proj-env:
     name: JSON (air)
   url:
     name: URL (air)
-    lightnet1: http://localhost:18888
-    lightnet11: http://localhost:18888
-    auth: http://localhost:18081/v1.0
-    link: http://localhost:18082/v1.0
-    mapper: http://localhost:18086/v1.0
+    # lightnet1: http://localhost:18888
+    # lightnet11: http://localhost:18888
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------
@@ -146,13 +147,14 @@ proj-env:
   param:
     name: PARAM (pro)
     home: /Users/kangmac
-    base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201111
+    # base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
+    base: /KANG/lightnet/20201111
     info-path: /jsonInfo
     data-path: /jsonData
   job:
     name: JOB (pro)
-    auth-loop-sec: 600
+    auth-loop-sec: 600     # 10 mins
+    #auth-loop-sec: 1200    # 20 mins
     # ver1
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
@@ -165,9 +167,9 @@ proj-env:
     name: URL (pro)
     lightnet1: https://test-public.lightnetapis.io/v1
     lightnet11: https://test-public.lightnetapis.io/v1.1
-    auth: http://localhost:18081/v1.0
-    link: http://localhost:18082/v1.0
-    mapper: http://localhost:18086/v1.0
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------
@@ -198,7 +200,8 @@ proj-env:
     data-path: /jsonData
   job:
     name: JOB (dfep)
-    auth-loop-sec: 600
+    auth-loop-sec: 600     # 10 mins
+    #auth-loop-sec: 1200    # 20 mins
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
     auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
@@ -209,9 +212,9 @@ proj-env:
     name: URL (dfep)
     lightnet1: https://test-hawis.lightnetapis.io/v1
     lightnet11: https://test-hawis.lightnetapis.io/v1.1
-    auth: http://localhost:18081/v1.0
-    link: http://localhost:18082/v1.0
-    mapper: http://localhost:18086/v1.0
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------

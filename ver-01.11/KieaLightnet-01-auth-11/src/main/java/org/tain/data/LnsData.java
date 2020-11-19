@@ -22,42 +22,4 @@ public class LnsData {
 	public synchronized String getAccessToken() {
 		return this.accessToken;
 	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	
-	private String srcTransactionId = null;
-	
-	public synchronized void setSrcTrId(String srcTransactionId) {
-		this.srcTransactionId = srcTransactionId;
-	}
-	
-	public synchronized String getSrcTrId() {
-		return this.srcTransactionId;
-	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	
-	private String lnsTransactionId = null;
-	
-	public synchronized void setLnsTrId(String lnsTransactionId) {
-		this.lnsTransactionId = lnsTransactionId;
-	}
-	
-	public synchronized String getLnsTrId() {
-		return this.lnsTransactionId;
-	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	
-	private String dstTransactionId = null;
-	
-	public synchronized void setDstTrId(String dstTransactionId) {
-		this.dstTransactionId = dstTransactionId;
-	}
-	
-	public synchronized String getDstTrId() {
-		return this.dstTransactionId;
-	}
-	
-	///////////////////////////////////////////////////////////////////////////
 }

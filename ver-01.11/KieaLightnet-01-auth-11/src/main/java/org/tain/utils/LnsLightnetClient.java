@@ -1,48 +1,42 @@
 package org.tain.utils;
 
-import java.util.Map;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 import org.tain.data.LnsData;
-import org.tain.object.lns.LnsJson;
+import org.tain.mapper.LnsJsonNode;
 import org.tain.utils.enums.RestTemplateType;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class LnsLightnetClient {
 
-	public static LnsJson auth(LnsJson lnsJson) throws Exception {
+	public static LnsJsonNode auth(LnsJsonNode lnsJsonNode) throws Exception {
+		
+		log.info("=========================== LnsLightnetClient.auth =============================");
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			log.info("================== Lightnet START: {} ===================", lnsJson.getName());
-			log.info(">>>>> REQ.httpUrl(method): {} ({})", lnsJson.getHttpUrl(), lnsJson.getHttpMethod());
+			log.info(">>>>> REQ-0.lnsJsonNode: {}", lnsJsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			String httpUrl = lnsJson.getHttpUrl();
+			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.POST;
 			
-			String reqJson = lnsJson.getReqJsonData();
-			log.info(">>>>> REQ.reqJson        = {}", reqJson);
+			LnsJsonNode reqJsonNode = new LnsJsonNode();
+			reqJsonNode.put("clientId", lnsJsonNode.getText("clientId"));
+			reqJsonNode.put("secret", lnsJsonNode.getText("secret"));
+			log.info(">>>>> REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
 			log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
 			
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJson, reqHeaders);
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJsonNode.toPrettyString(), reqHeaders);
 			log.info(">>>>> REQ.reqHttpEntity  = {}", reqHttpEntity);
 			
 			ResponseEntity<String> response = null;
@@ -60,30 +54,31 @@ public class LnsLightnetClient {
 				LnsData.getInstance().setAccessToken(response.getHeaders().get("AccessToken").get(0));
 				log.info(">>>>> RES.accessToken          = {}", LnsData.getInstance().getAccessToken());
 				
-				String resJson = response.getBody().trim();
-				lnsJson.setResJsonData(resJson);
-				log.info(">>>>> RES.lnsJson              = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+				LnsJsonNode resJsonNode = new LnsJsonNode(response.getBody());
+				log.info(">>>>> RES.resJsonNode          = {}", resJsonNode.toPrettyString());
+				
+				lnsJsonNode.put("code", "00000");
+				lnsJsonNode.put("status", "success");
+				lnsJsonNode.put("message", "OK");
 			} catch (Exception e) {
 				//e.printStackTrace();
 				String message = e.getMessage();
 				log.error("ERROR >>>>> {}", message);
 				int pos1 = message.indexOf('[');
 				int pos2 = message.lastIndexOf(']');
-				lnsJson.setCode("99999");
-				lnsJson.setStatus("FAIL");
-				lnsJson.setMsgJson(message.substring(pos1 + 1, pos2));
+				lnsJsonNode.put("code", "99999");
+				lnsJsonNode.put("status", "fail");
+				lnsJsonNode.put("message", message.substring(pos1 + 1, pos2));
 			}
 		}
 		
-		if (Flag.flag) {
-			log.info("================== Lightnet FINISH: {} ===================", lnsJson.getName());
-		}
+		log.info("--------------------------- LnsLightnetClient.auth -----------------------------");
 		
-		return lnsJson;
+		return lnsJsonNode;
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
-	
+	/*
 	public static LnsJson get(LnsJson lnsJson) throws Exception {
 		return get(lnsJson, false);
 	}
@@ -218,4 +213,5 @@ public class LnsLightnetClient {
 		
 		return lnsJson;
 	}
+	*/
 }

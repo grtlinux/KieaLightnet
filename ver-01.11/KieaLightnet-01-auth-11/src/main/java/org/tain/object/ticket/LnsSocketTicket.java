@@ -1,4 +1,4 @@
-package org.tain.object.lns;
+package org.tain.object.ticket;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,10 +6,14 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
+import org.tain.object.lns.LnsStream;
+import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
 
-public class LnsStreamPacket {
+public class LnsSocketTicket {
 
+	private String name = null;
+	
 	private Socket socket = null;
 	private InetSocketAddress inetSocketAddress = null;
 	private InputStream inputStream = null;
@@ -18,18 +22,50 @@ public class LnsStreamPacket {
 	///////////////////////////////////////////////////////////
 	// constructor and close
 	
-	public LnsStreamPacket(Socket socket) throws Exception {
-		this.socket = socket;
-		this.inetSocketAddress = (InetSocketAddress) this.socket.getRemoteSocketAddress();
-		this.inputStream = this.socket.getInputStream();
-		this.outputStream = this.socket.getOutputStream();
+	public LnsSocketTicket() {
+		this("TICKET");
+	}
+	
+	public LnsSocketTicket(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public String toString() {
+		return this.name;
+	}
+	
+	/*
+	@Deprecated
+	public LnsSocketTicket(Socket socket) throws Exception {
+		if (Flag.flag) {
+			this.socket = socket;
+			this.inetSocketAddress = (InetSocketAddress) this.socket.getRemoteSocketAddress();
+			this.inputStream = this.socket.getInputStream();
+			this.outputStream = this.socket.getOutputStream();
+		}
+	}
+	*/
+	
+	public void set(Socket socket) throws Exception {
+		this.close();
+		
+		if (Flag.flag) {
+			this.socket = socket;
+			this.inetSocketAddress = (InetSocketAddress) this.socket.getRemoteSocketAddress();
+			this.inputStream = this.socket.getInputStream();
+			this.outputStream = this.socket.getOutputStream();
+		}
 	}
 	
 	public String getRemoteInfo() {
-		return this.inetSocketAddress.toString();
+		return String.format("[%s] %s", this.name, this.inetSocketAddress);
 	}
 	
-	public void close() {
+	public LnsSocketTicket close() {
 		if (this.outputStream != null) {
 			try { this.outputStream.close(); } catch (IOException e) {}
 		}
@@ -41,6 +77,30 @@ public class LnsStreamPacket {
 		if (this.socket != null) {
 			try { this.socket.close(); } catch (IOException e) {}
 		}
+		/*
+		while (!this.socket.isClosed()) {
+			Sleep.run(1 * 1000);
+			System.out.println("#");
+			System.out.flush();
+		}
+		*/
+		
+		return this;
+	}
+	
+	///////////////////////////////////////////////////////////
+	// message
+	
+	public String getReadyMessage() {
+		return String.format("[%s] READY to connect", this.name);
+	}
+	
+	public String getUseMessage() {
+		return String.format("[%s] USE this connection", this.name);
+	}
+	
+	public String getFinMessage() {
+		return String.format("[%s] FINISH this connection", this.name);
 	}
 	
 	///////////////////////////////////////////////////////////
@@ -51,12 +111,14 @@ public class LnsStreamPacket {
 	private String recvLength(int length) throws Exception {
 		byte[] bytLength = this.recv(length);
 		String strLength = new String(bytLength, "UTF-8");
+		//String strLength = new String(bytLength, "euc-kr");
 		return strLength;
 	}
 	
 	private String recvData(int length) throws Exception {
 		byte[] bytData = this.recv(length);
 		String strData = new String(bytData, "UTF-8");
+		//String strData = new String(bytData, "euc-kr");
 		return strData;
 	}
 	
@@ -64,7 +126,10 @@ public class LnsStreamPacket {
 		LnsStream lnsStream = null;
 		try {
 			String strLength = this.recvLength(DEFAULT_LENGTH_SIZE);
+			// length는 전문길이(4) 미포함
 			int length = Integer.parseInt(strLength);
+			// length는 전문길이(4) 포함
+			//int length = Integer.parseInt(strLength) - 4;
 			String strData = this.recvData(length);
 			lnsStream = new LnsStream(strLength + strData);
 		} catch (Exception e) {

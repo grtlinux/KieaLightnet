@@ -1,16 +1,13 @@
 package org.tain.task;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-import org.tain.object.lns.LnsJson;
+import org.tain.mapper.LnsJsonNode;
 import org.tain.properties.ProjEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.JsonPrint;
+import org.tain.utils.LnsHttpClient;
 import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
@@ -49,26 +46,21 @@ public class AuthJob {
 	private void process() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		String reqJson = null;
+		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
-			Map<String,String> map = new HashMap<>();
-			map.put("clientId", this.projEnvJobProperties.getAuthClientId());
-			map.put("secret", this.projEnvJobProperties.getAuthSecret());
+			lnsJsonNode = new LnsJsonNode();
+			lnsJsonNode.put("clientId", this.projEnvJobProperties.getAuthClientId());
+			lnsJsonNode.put("secret", this.projEnvJobProperties.getAuthSecret());
 			
-			reqJson = JsonPrint.getInstance().toPrettyJson(map);
-			log.info(">>>>> REQ.reqJson  = {}", reqJson);
+			log.info("AuthJob >>>>> REQ.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 		}
 		
-		LnsJson lnsJson = null;
 		if (Flag.flag) {
-			lnsJson = LnsJson.builder().name("Auth").build();
-			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth/lightnet");
-			lnsJson.setHttpMethod("POST");
-			lnsJson.setReqJsonData(reqJson);
+			lnsJsonNode.put("httpUrl", "http://localhost:18081/v1.1/auth/lightnet");
+			lnsJsonNode.put("httpMethod", "POST");
 			
-			// TODO 20201113: LnsLightnetClient.post(JSON);
-			//lnsJson = LnsHttpClient.post(lnsJson);
-			log.info(">>>>> RES-1.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+			lnsJsonNode = LnsHttpClient.post(lnsJsonNode);
+			log.info("AuthJob >>>>> RES.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
