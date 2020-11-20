@@ -1,20 +1,29 @@
-package org.tain.utils;
+package org.tain.httpClient;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.tain.data.LnsData;
 import org.tain.mapper.LnsJsonNode;
+import org.tain.utils.CurrentInfo;
+import org.tain.utils.Flag;
+import org.tain.utils.RestTemplateConfig;
 import org.tain.utils.enums.RestTemplateType;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Component
 @Slf4j
 public class LnsLightnetClient {
 
-	public static LnsJsonNode auth(LnsJsonNode lnsJsonNode) throws Exception {
+	@Autowired
+	private LnsData lnsData;
+	
+	public LnsJsonNode auth(LnsJsonNode lnsJsonNode) throws Exception {
 		
 		log.info("=========================== LnsLightnetClient.auth =============================");
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
@@ -51,8 +60,8 @@ public class LnsLightnetClient {
 				log.info(">>>>> AUTH.RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> RAUTH.ES.getBody()            = {}", response.getBody());
 				
-				LnsData.getInstance().setAccessToken(response.getHeaders().get("AccessToken").get(0));
-				log.info(">>>>> AUTH.RES.accessToken          = {}", LnsData.getInstance().getAccessToken());
+				this.lnsData.setAccessToken(response.getHeaders().get("AccessToken").get(0));
+				log.info(">>>>> AUTH.RES.accessToken          = {}", this.lnsData.getAccessToken());
 				
 				lnsJsonNode.put("code", "00000");
 				lnsJsonNode.put("status", "success");

@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.data.LnsData;
+import org.tain.httpClient.LnsLightnetClient;
 import org.tain.mapper.LnsJsonNode;
 import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.LnsLightnetClient;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,6 +28,12 @@ public class AuthRestController {
 
 	@Autowired
 	private ProjEnvUrlProperties projEnvUrlProperties;
+	
+	@Autowired
+	private LnsLightnetClient lnsLightnetClient;
+	
+	@Autowired
+	private LnsData lnsData;
 	
 	/*
 	 * curl -v -d '{"clientId":"_CLIENT_ID_", "secret":"_SECRET_"}' -X POST http://localhost:18081/v1.1/auth | jq
@@ -51,7 +57,7 @@ public class AuthRestController {
 			lnsJsonNode.put("code", "00000");
 			lnsJsonNode.put("status", "success");
 			lnsJsonNode.put("message", "OK");
-			lnsJsonNode.put("accessToken", LnsData.getInstance().getAccessToken());
+			lnsJsonNode.put("accessToken", this.lnsData.getAccessToken());
 		}
 		
 		if (Flag.flag) {
@@ -90,9 +96,9 @@ public class AuthRestController {
 		if (Flag.flag) {
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLightnet1() + "/auth");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode = LnsLightnetClient.auth(lnsJsonNode);
+			lnsJsonNode = this.lnsLightnetClient.auth(lnsJsonNode);
 			
-			lnsJsonNode.put("accessToken", LnsData.getInstance().getAccessToken());
+			lnsJsonNode.put("accessToken", this.lnsData.getAccessToken());
 		}
 		
 		if (Flag.flag) {

@@ -78,11 +78,14 @@ public class KieaLightnet01Auth11Application implements CommandLineRunner {
 	@Autowired
 	private AuthJobWorking authJobWorking;
 	
+	@Autowired
+	private LnsData lnsData;
+	
 	private void job03() {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			LnsData.getInstance().setAccessToken(this.projEnvParamProperties.getAccessToken());
+			this.lnsData.setAccessToken(this.projEnvParamProperties.getAccessToken());
 		}
 		
 		if (Flag.flag) {

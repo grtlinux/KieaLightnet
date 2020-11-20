@@ -1,18 +1,10 @@
 package org.tain.data;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class LnsData {
 
-	private static LnsData instance = null;
-	
-	public static LnsData getInstance() {
-		if (instance == null) {
-			instance = new LnsData();
-		}
-		return instance;
-	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	
 	private String accessToken = null;
 	
 	public synchronized void setAccessToken(String accessToken) {

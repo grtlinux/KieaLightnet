@@ -3,11 +3,11 @@ package org.tain.task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+import org.tain.httpClient.LnsHttpClient;
 import org.tain.mapper.LnsJsonNode;
 import org.tain.properties.ProjEnvJobProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.LnsHttpClient;
 import org.tain.utils.Sleep;
 
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +18,9 @@ public class AuthJob {
 
 	@Autowired
 	private ProjEnvJobProperties projEnvJobProperties;
+	
+	@Autowired
+	private LnsHttpClient lnsHttpClient;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -59,7 +62,7 @@ public class AuthJob {
 			lnsJsonNode.put("httpUrl", "http://localhost:18081/v1.1/auth/lightnet");
 			lnsJsonNode.put("httpMethod", "POST");
 			
-			lnsJsonNode = LnsHttpClient.post(lnsJsonNode);
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("AuthJob >>>>> RES.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 		}
 		
