@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tain.data.LnsData;
-import org.tain.httpClient.LnsLightnetClient;
+import org.tain.httpClient.LnsAuthClient;
 import org.tain.mapper.LnsJsonNode;
 import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
@@ -30,13 +30,13 @@ public class AuthRestController {
 	private ProjEnvUrlProperties projEnvUrlProperties;
 	
 	@Autowired
-	private LnsLightnetClient lnsLightnetClient;
+	private LnsAuthClient lnsAuthClient;
 	
 	@Autowired
 	private LnsData lnsData;
 	
 	/*
-	 * curl -v -d '{"clientId":"_CLIENT_ID_", "secret":"_SECRET_"}' -X POST http://localhost:18081/v1.1/auth | jq
+	 * curl -v -d '{"reqJson":{"clientId":"_CLIENT_ID_", "secret":"_SECRET_"}}' -X POST http://localhost:18081/v1.1/auth | jq
 	 * curl -v -X POST http://localhost:18081/v1.1/auth | jq
 	 */
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
@@ -47,10 +47,16 @@ public class AuthRestController {
 		
 		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
-			String body = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
-			lnsJsonNode = new LnsJsonNode(body);
-			log.info("AUTH.REQ >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("AUTH.REQ >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
+			if (reqHttpEntity.getBody() == null) {
+				lnsJsonNode = new LnsJsonNode();
+				log.info("AUTH.REQ >>>>> Headers = {}", reqHttpEntity.getHeaders());
+				log.info("AUTH.REQ >>>>> lnsJsonNode = {}", lnsJsonNode.toPrettyString());
+			} else {
+				String body = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
+				lnsJsonNode = new LnsJsonNode(body);
+				log.info("AUTH.REQ >>>>> Headers = {}", reqHttpEntity.getHeaders());
+				log.info("AUTH.REQ >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
+			}
 		}
 		
 		if (Flag.flag) {
@@ -76,7 +82,7 @@ public class AuthRestController {
 	}
 	
 	/*
-	 * curl -v -d '{"clientId":"pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT", "secret":"skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx"}' -X POST http://localhost:18081/v1.1/auth/lightnet | jq
+	 * curl -v -d '{"reqJson":{"clientId":"pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT", "secret":"skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx"}}' -X POST http://localhost:18081/v1.1/auth/lightnet | jq
 	 * curl -v -X POST http://localhost:18081/v1.1/auth/lightnet | jq
 	 */
 	@RequestMapping(value = {"/lightnet"}, method = {RequestMethod.GET, RequestMethod.POST})
@@ -88,7 +94,8 @@ public class AuthRestController {
 		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
 			String body = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
-			lnsJsonNode = new LnsJsonNode(body);
+			lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			lnsJsonNode.put("reqJson", new LnsJsonNode(body).get());
 			log.info("LIGHTNET.REQ >>>>> Headers = {}", reqHttpEntity.getHeaders());
 			log.info("LIGHTNET.REQ >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
 		}
@@ -96,7 +103,7 @@ public class AuthRestController {
 		if (Flag.flag) {
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLightnet1() + "/auth");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode = this.lnsLightnetClient.auth(lnsJsonNode);
+			lnsJsonNode = this.lnsAuthClient.auth(lnsJsonNode);
 			
 			lnsJsonNode.put("accessToken", this.lnsData.getAccessToken());
 		}

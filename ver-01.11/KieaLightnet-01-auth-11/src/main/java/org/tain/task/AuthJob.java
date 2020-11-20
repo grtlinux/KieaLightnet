@@ -31,8 +31,9 @@ public class AuthJob {
 		if (Flag.flag) {
 			try {
 				do {
-					log.info(">>>>> AuthJob.process()..");
+					log.info(">>>>> AuthJob.process() START >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 					process();
+					log.info(">>>>> AuthJob.process() END >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 					
 					Sleep.run(this.projEnvJobProperties.getAuthLoopSec() * 1000);
 				} while (true);
@@ -51,9 +52,9 @@ public class AuthJob {
 		
 		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
-			lnsJsonNode = new LnsJsonNode();
-			lnsJsonNode.put("clientId", this.projEnvJobProperties.getAuthClientId());
-			lnsJsonNode.put("secret", this.projEnvJobProperties.getAuthSecret());
+			lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			lnsJsonNode.put("/reqJson", "clientId", this.projEnvJobProperties.getAuthClientId());
+			lnsJsonNode.put("/reqJson", "secret", this.projEnvJobProperties.getAuthSecret());
 			
 			log.info("AuthJob >>>>> REQ.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 		}
@@ -65,17 +66,30 @@ public class AuthJob {
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("AuthJob >>>>> RES.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 		}
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	
+	@SuppressWarnings("unused")
+	@Deprecated
+	private void _process() throws Exception {
+		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
+		
+		LnsJsonNode lnsJsonNode = null;
+		if (Flag.flag) {
+			lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			lnsJsonNode.put("/reqJson", "clientId", "_CLIENT_ID_");
+			lnsJsonNode.put("/reqJson", "secret", "_SECRET_");
+			
+			log.info("AuthJob >>>>> REQ.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
+		}
 		
 		if (Flag.flag) {
-			/*
-			lnsJson = LnsJson.builder().name("Auth").build();
-			lnsJson.setHttpUrl("http://localhost:18081/v1.0/auth");
-			lnsJson.setHttpMethod("POST");
-			lnsJson.setReqJsonData(reqJson);
+			lnsJsonNode.put("httpUrl", "http://localhost:18081/v1.1/auth");
+			lnsJsonNode.put("httpMethod", "POST");
 			
-			lnsJson = LnsHttpClient.post(lnsJson);
-			log.info(">>>>> RES-2.lnsJson  = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
-			*/
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("AuthJob >>>>> RES.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 		}
 	}
 }

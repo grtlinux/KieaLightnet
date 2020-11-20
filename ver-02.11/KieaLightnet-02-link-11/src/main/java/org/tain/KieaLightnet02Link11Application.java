@@ -24,7 +24,7 @@ public class KieaLightnet02Link11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // testing
+		if (!Flag.flag) job02();  // testing
 		if (Flag.flag) job03();
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();

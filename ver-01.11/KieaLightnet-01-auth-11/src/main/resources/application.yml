@@ -94,7 +94,7 @@ proj-env:
     comment: This is Lightnet API project.
   param:
     name: PARAM (default)
-    access-token:  _IMSI_78901234567890abcde
+    access-token:  _NO_ACCESS_TOKEN_
   job:
     name: JOB (default)
   json:
