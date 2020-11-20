@@ -21,7 +21,7 @@ public class LnsJsonToStream {
 	
 	private StringBuffer sb = new StringBuffer();
 	
-	private int length = -1;
+	//private int length = -1;
 	
 	public LnsJsonToStream(LnsMstInfo lnsMstInfo, JsonNode dataNode) {
 		this.lnsMstInfo = lnsMstInfo;
@@ -40,7 +40,7 @@ public class LnsJsonToStream {
 	}
 	
 	public String get() {
-		this.length = 0;
+		//this.length = 0;
 		
 		if (Flag.flag) {
 			// BEFORE:
@@ -57,12 +57,16 @@ public class LnsJsonToStream {
 		
 		if (Flag.flag) {
 			// AFTER: stream length process
-			String strLength = String.format("%04d", this.length - 4);
-			sb.delete(0, 4);
-			sb.insert(0, strLength);
+			// 전문길이(4) 제외
+			//String strLength = String.format("%04d", this.length - 4);
+			// 전문길이(4) 포함
+			//String strLength = String.format("%04d", this.length);
+			String strLength = String.format("%04d", this.sb.length());
+			this.sb.delete(0, 4);
+			this.sb.insert(0, strLength);
 		}
 		
-		return sb.toString();
+		return this.sb.toString();
 	}
 	
 	private void traverse(JsonNode node, String prefix) {
@@ -151,12 +155,14 @@ public class LnsJsonToStream {
 					info.setFormat("%" + info.getLength() + "s");
 				}
 				
+				// TODO: thinking more
+				
 				//if (Flag.flag) System.out.printf(">>>>> %s [%s] %s%n", prefix, data, info.getFormat());
 				line = String.format("%s %s [" + info.getFormat() + "]", prefix, info.getFormat(), data);
 				if (Flag.flag) log.info(">>>>> {}", line);
 				String fieldValue = String.format(info.getFormat(), data);
-				sb.append(fieldValue);
-				this.length += info.getLength();
+				this.sb.append(fieldValue);
+				//this.length += info.getLength();
 			}
 		}
 	}

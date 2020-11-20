@@ -30,8 +30,8 @@ public class AuthRestController {
 	private ProjEnvUrlProperties projEnvUrlProperties;
 	
 	/*
-	 * curl -v -d '{"clientId":"_TEST_", "secret":"_TEST_"}' -X POST http://localhost:18081/v1.0/auth | jq
-	 * curl -v -X POST http://localhost:18081/v1.0/auth | jq
+	 * curl -v -d '{"clientId":"_CLIENT_ID_", "secret":"_SECRET_"}' -X POST http://localhost:18081/v1.1/auth | jq
+	 * curl -v -X POST http://localhost:18081/v1.1/auth | jq
 	 */
 	@RequestMapping(value = {""}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> auth(HttpEntity<String> reqHttpEntity) throws Exception {
@@ -43,8 +43,8 @@ public class AuthRestController {
 		if (Flag.flag) {
 			String body = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
 			lnsJsonNode = new LnsJsonNode(body);
-			log.info("AUTH >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("AUTH >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
+			log.info("AUTH.REQ >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("AUTH.REQ >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
@@ -52,6 +52,10 @@ public class AuthRestController {
 			lnsJsonNode.put("status", "success");
 			lnsJsonNode.put("message", "OK");
 			lnsJsonNode.put("accessToken", LnsData.getInstance().getAccessToken());
+		}
+		
+		if (Flag.flag) {
+			log.info("AUTH.RES >>>>> lnsJsonNode = {}", lnsJsonNode.toPrettyString());
 		}
 		
 		MultiValueMap<String,String> headers = null;
@@ -79,8 +83,8 @@ public class AuthRestController {
 		if (Flag.flag) {
 			String body = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
 			lnsJsonNode = new LnsJsonNode(body);
-			log.info("AUTH >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("AUTH >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
+			log.info("LIGHTNET.REQ >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("LIGHTNET.REQ >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
@@ -89,6 +93,10 @@ public class AuthRestController {
 			lnsJsonNode = LnsLightnetClient.auth(lnsJsonNode);
 			
 			lnsJsonNode.put("accessToken", LnsData.getInstance().getAccessToken());
+		}
+		
+		if (Flag.flag) {
+			log.info("LIGHTNET.RES >>>>> lnsJsonNode = {}", lnsJsonNode.toPrettyString());
 		}
 		
 		MultiValueMap<String,String> headers = null;

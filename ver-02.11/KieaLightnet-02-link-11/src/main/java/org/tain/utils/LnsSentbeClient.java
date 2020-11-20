@@ -1,40 +1,12 @@
 package org.tain.utils;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import javax.xml.bind.DatatypeConverter;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
-import org.tain.mapper.LnsJsonNode;
-import org.tain.object.lns.LnsJson;
-import org.tain.properties.ProjEnvParamProperties;
-import org.tain.utils.enums.RestTemplateType;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.github.mervick.aes_everywhere.Aes256;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Component
-@Slf4j
+//@Slf4j
 public class LnsSentbeClient {
 
+	/*
 	@Autowired
 	private ProjEnvParamProperties projEnvParamProperties;
 	
@@ -230,7 +202,7 @@ public class LnsSentbeClient {
 					JsonNode jsonResponseBody = JsonPrint.getInstance().getObjectMapper().readTree(response.getBody());
 					log.trace(">>>>> STEP-3 RES.response.getBody(): {}", jsonResponseBody.toPrettyString());
 					
-					/*
+					/ *
 					if (jsonResponseBody.at("/code").asInt() == 200 && !"".equals(jsonResponseBody.at("/data").asText())) {
 						String pass = this.projEnvParamProperties.getSentbeSecretKeyForData();  // secretKey for data
 						String decryptData = Aes256.decrypt(jsonResponseBody.at("/data").asText(), pass);
@@ -239,7 +211,7 @@ public class LnsSentbeClient {
 						lnsJson.setResJsonData(jsonResponseData.toPrettyString());
 						log.trace(">>>>> STEP-3 RES.getResJsonData: " + lnsJson.getResJsonData());
 					}
-					*/
+					* /
 					
 					if (jsonResponseBody.at("/code").asInt() == 200) {
 						String strData = jsonResponseBody.at("/data").asText();
@@ -424,7 +396,7 @@ public class LnsSentbeClient {
 					JsonNode jsonResponseBody = JsonPrint.getInstance().getObjectMapper().readTree(response.getBody());
 					log.trace(">>>>> STEP-3 RES.response.getBody(): {}", jsonResponseBody.toPrettyString());
 					
-					/*
+					/ *
 					if (jsonResponseBody.at("/code").asInt() == 200 && !"".equals(jsonResponseBody.at("/data").asText())) {
 						String pass = this.projEnvParamProperties.getSentbeSecretKeyForData();  // secretKey for data
 						String decryptData = Aes256.decrypt(jsonResponseBody.at("/data").asText(), pass);
@@ -433,7 +405,7 @@ public class LnsSentbeClient {
 						lnsJson.setResJsonData(jsonResponseData.toPrettyString());
 						log.trace(">>>>> STEP-3 RES.getResJsonData: " + lnsJson.getResJsonData());
 					}
-					*/
+					* /
 					
 					if (jsonResponseBody.at("/code").asInt() == 200) {
 						String strData = jsonResponseBody.at("/data").asText();
@@ -471,4 +443,5 @@ public class LnsSentbeClient {
 		
 		return lnsJson;
 	}
+	*/
 }

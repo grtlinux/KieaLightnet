@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.working.properties.PropertiesWorking;
+import org.tain.working.test.TestWorking;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,7 +24,7 @@ public class KieaLightnet02Link11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();
+		if (Flag.flag) job02();  // testing
 		if (Flag.flag) job03();
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();
@@ -51,10 +52,14 @@ public class KieaLightnet02Link11Application implements CommandLineRunner {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
+	@Autowired
+	private TestWorking testWorking;
+	
 	private void job02() {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
+			this.testWorking.test01();
 		}
 	}
 	

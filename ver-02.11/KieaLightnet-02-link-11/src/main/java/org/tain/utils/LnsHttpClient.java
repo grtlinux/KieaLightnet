@@ -1,38 +1,25 @@
 package org.tain.utils;
 
-import java.util.Map;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.tain.data.LnsData;
 import org.tain.mapper.LnsJsonNode;
-import org.tain.mapper.LnsNodeTools;
-import org.tain.object.lns.LnsJson;
 import org.tain.utils.enums.RestTemplateType;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Component
 @Slf4j
 public class LnsHttpClient {
 
-	public LnsJson get(LnsJson lnsJson) throws Exception {
+	/*
+	public static LnsJson get(LnsJson lnsJson) throws Exception {
 		return get(lnsJson, false);
 	}
 	
-	public LnsJson get(LnsJson lnsJson, boolean flagAccessToken) throws Exception {
+	public static LnsJson get(LnsJson lnsJson, boolean flagAccessToken) throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -59,6 +46,7 @@ public class LnsHttpClient {
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
+			if (flagAccessToken) reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getAccessToken());
 			log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
 			
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqHeaders);
@@ -96,140 +84,39 @@ public class LnsHttpClient {
 		
 		return lnsJson;
 	}
-	
+	*/
 	///////////////////////////////////////////////////////////////////////////
 	
-	public LnsJsonNode post(LnsJsonNode lnsJsonNode) throws Exception {
+	public static LnsJsonNode post(LnsJsonNode lnsJsonNode) throws Exception {
 		return post(lnsJsonNode, false);
 	}
 	
-	public LnsJsonNode post(LnsJsonNode reqLnsJsonNode, boolean flag) throws Exception {
-		if (Flag.flag) log.info("========================== START =========================");
-		if (Flag.flag) log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
+	public static LnsJsonNode post(LnsJsonNode lnsJsonNode, boolean flagAccessToken) throws Exception {
 		
-		if (Flag.flag) {
-			log.info(">>>>> flag: {}", flag);
-			log.info(">>>>> lnsJsonNode: {}", reqLnsJsonNode.toPrettyString());
-		}
-		
-		LnsJsonNode reqHeadNode = null;
-		LnsJsonNode reqBodyNode = null;
-		String strReqJson = null;
-		if (Flag.flag) {
-			LnsJsonNode reqNode = new LnsJsonNode(reqLnsJsonNode.getValue("reqJson"));
-			if (Flag.flag) log.info(">>>>> reqNode = {}", reqNode.toPrettyString());
-			
-			reqHeadNode = new LnsJsonNode(reqNode.get().path("__head_data"));
-			reqBodyNode = new LnsJsonNode(reqNode.get().path("__body_data"));
-			
-			strReqJson = reqBodyNode.toPrettyString();
-		}
-		
-		LnsJsonNode resLnsJsonNode = new LnsJsonNode();
-		if (Flag.flag) {
-			String httpUrl = reqLnsJsonNode.getValue("httpUrl");
-			HttpMethod httpMethod = HttpMethod.POST;
-			
-			HttpHeaders reqHeaders = new HttpHeaders();
-			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
-			
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(strReqJson, reqHeaders);
-			log.info(">>>>> REQ.reqHttpEntity  = {}", reqHttpEntity);
-			
-			ResponseEntity<String> response = null;
-			try {
-				response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
-						httpUrl
-						, httpMethod
-						, reqHttpEntity
-						, String.class);
-				
-				log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
-				log.info(">>>>> RES.getBody()            = {}", response.getBody());
-				String strResJson = response.getBody();
-				
-				if (Flag.flag) {
-					LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
-					LnsJsonNode resBodyNode = new LnsJsonNode(strResJson);
-					
-					resHeadNode.put("length", "0000"); // changed by mapper
-					resHeadNode.put("reqres", "0710");
-					resHeadNode.put("resTime", LnsNodeTools.getTime());
-					resHeadNode.put("resCode", "000");
-					resHeadNode.put("resMessage", "SUCCESS");
-					
-					// add reshead + resbody
-					LnsJsonNode resNode = new LnsJsonNode();
-					resNode.put("__head_data", resHeadNode.get());
-					resNode.put("__body_data", resBodyNode.get());
-					
-					resLnsJsonNode.put("httpUrl", reqLnsJsonNode.getValue("httpUrl"));
-					resLnsJsonNode.put("httpMethod", reqLnsJsonNode.getValue("httpMethod"));
-					resLnsJsonNode.put("reqResType", resHeadNode.getValue("reqres") + reqHeadNode.getValue("type"));
-					resLnsJsonNode.put("reqJson", reqLnsJsonNode.getValue("reqJson"));
-					resLnsJsonNode.put("resJson", resNode.get().toPrettyString());
-				}
-				log.info(">>>>> RES.resLnsJsonNode          = {}", resLnsJsonNode.toPrettyString());
-			} catch (Exception e) {
-				// TODO: 
-				//e.printStackTrace();
-				String message = e.getMessage();
-				log.error("ERROR >>>>> {}", message);
-				int pos1 = message.indexOf('[');
-				int pos2 = message.lastIndexOf(']');
-				reqLnsJsonNode.put("resCode", "999");
-				reqLnsJsonNode.put("resMessage", "FAIL");
-				reqLnsJsonNode.put("errMessage", message.substring(pos1 + 1, pos2));
-			}
-		}
-		
-		if (Flag.flag) log.info("========================== END ===========================");
-		
-		return resLnsJsonNode;
-	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	
-	@Deprecated
-	public LnsJson post(LnsJson lnsJson) throws Exception {
-		return post(lnsJson, false);
-	}
-	
-	@Deprecated
-	public LnsJson post(LnsJson lnsJson, boolean flagAccessToken) throws Exception {
+		log.info("=========================== LnsHttpClient.post =============================");
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			log.info("================== START: {} ===================", lnsJson.getName());
-			log.info(">>>>> REQ.httpUrl(method): {} ({})", lnsJson.getHttpUrl(), lnsJson.getHttpMethod());
+			log.info(">>>>> REQ-0.flagAccessToken: {}", flagAccessToken);
+			log.info(">>>>> REQ-0.lnsJsonNode: {}", lnsJsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			String httpUrl = lnsJson.getHttpUrl();
+			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.POST;
 			
-			//String json = JsonPrint.getInstance().toPrettyJson(lnsJson);
-			ObjectMapper objectMapper = new ObjectMapper();
-			JsonNode headNode = null;
-			JsonNode bodyNode = null;
-			String json = null;
-			if (Flag.flag) {
-				// del header
-				JsonNode node = objectMapper.readTree(lnsJson.getReqJsonData());
-				headNode = node.at("/__head_data");
-				bodyNode = node.at("/__body_data");
-				json = bodyNode.toPrettyString();
-			}
-			log.info(">>>>> REQ.lnsJson        = {}", json);
+			LnsJsonNode reqJsonNode = new LnsJsonNode();
+			reqJsonNode.put("clientId", lnsJsonNode.getText("clientId"));
+			reqJsonNode.put("secret", lnsJsonNode.getText("secret"));
+			log.info(">>>>> REQ-1.reqJsonNode        = {}", reqJsonNode.toPrettyString());
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
-			log.info(">>>>> REQ.reqHeaders     = {}", reqHeaders);
+			if (flagAccessToken) reqHeaders.set("Authorization", "Bearer " + LnsData.getInstance().getAccessToken());
+			log.info(">>>>> REQ-2.reqHeaders     = {}", reqHeaders);
 			
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(json, reqHeaders);
-			log.info(">>>>> REQ.reqHttpEntity  = {}", reqHttpEntity);
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJsonNode.toPrettyString(), reqHeaders);
+			log.info(">>>>> REQ-3.reqHttpEntity  = {}", reqHttpEntity);
 			
 			ResponseEntity<String> response = null;
 			try {
@@ -242,37 +129,25 @@ public class LnsHttpClient {
 				log.info(">>>>> RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info(">>>>> RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> RES.getBody()            = {}", response.getBody());
-				if (Flag.flag) {
-					// add header
-					ObjectNode node = (ObjectNode) headNode;
-					node.put("reqres", "0710");
-					node.put("resTime", LnsNodeTools.getTime());
-					node.put("resCode", "000");
-					node.put("resMessage", "SUCCESS");
-					
-					JsonNode jsonNode = (JsonNode) objectMapper.createObjectNode();
-					((ObjectNode) jsonNode).set("__head_data", node);
-					((ObjectNode) jsonNode).set("__body_data", objectMapper.readTree(response.getBody()));
-					json = jsonNode.toPrettyString();
-				}
-				lnsJson.setResJsonData(json);
-				log.info(">>>>> RES.lnsJson              = {}", JsonPrint.getInstance().toPrettyJson(lnsJson));
+				
+				//lnsJsonNode.put("accessToken", lnsJsonNode.getText("accessToken"));
+				lnsJsonNode = new LnsJsonNode(response.getBody());
+				log.info(">>>>> RES.lnsJsonNode = {}", lnsJsonNode.toPrettyString());
 			} catch (Exception e) {
 				//e.printStackTrace();
 				String message = e.getMessage();
 				log.error("ERROR >>>>> {}", message);
 				int pos1 = message.indexOf('[');
 				int pos2 = message.lastIndexOf(']');
-				lnsJson.setCode("99999");
-				lnsJson.setStatus("FAIL");
-				lnsJson.setMsgJson(message.substring(pos1 + 1, pos2));
+				lnsJsonNode.put("code", "99999");
+				lnsJsonNode.put("status", "fail");
+				lnsJsonNode.put("message", "FAIL");
+				lnsJsonNode.put("accessToken", message.substring(pos1 + 1, pos2));
 			}
 		}
 		
-		if (Flag.flag) {
-			log.info("================== FINISH: {} ===================", lnsJson.getName());
-		}
+		log.info("--------------------------- LnsHttpClient.post -----------------------------");
 		
-		return lnsJson;
+		return lnsJsonNode;
 	}
 }

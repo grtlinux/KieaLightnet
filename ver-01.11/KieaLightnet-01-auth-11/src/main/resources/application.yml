@@ -12,7 +12,7 @@ spring:
   profiles.active:
   - proj-default
   - proj-air
-  #- proj-pro
+  - proj-pro
   #- proj-aws
   #- proj-dfep
   #- proj-real
@@ -94,7 +94,7 @@ proj-env:
     comment: This is Lightnet API project.
   param:
     name: PARAM (default)
-    access-token:  12345678901234567890abcde
+    access-token:  _IMSI_78901234567890abcde
   job:
     name: JOB (default)
   json:
@@ -111,15 +111,14 @@ proj-env:
   param:
     name: PARAM (air)
     home: /Users/kang-air
-    # base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    base: /KANG/lightnet/20201111
+    base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:
     name: JOB (air)
-    auth-loop-sec: 30     # 30 sec
-    #auth-loop-sec: 600     # 10 mins
-    #auth-loop-sec: 1200    # 20 mins
+    # auth-loop-sec: 30     # 30 sec
+    auth-loop-sec: 600     # 10 mins
+    # auth-loop-sec: 1200    # 20 mins
     # ver1
     #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
     #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
@@ -147,18 +146,13 @@ proj-env:
   param:
     name: PARAM (pro)
     home: /Users/kangmac
-    # base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    base: /KANG/lightnet/20201111
+    base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:
     name: JOB (pro)
     auth-loop-sec: 600     # 10 mins
     #auth-loop-sec: 1200    # 20 mins
-    # ver1
-    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
-    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
-    # ver2
     auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
     auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
   json:
@@ -195,15 +189,13 @@ proj-env:
   param:
     name: PARAM (dfep)
     home: /hw01/ibridge
-    base: /KANG/lightnet/20201111
+    base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:
     name: JOB (dfep)
     auth-loop-sec: 600     # 10 mins
     #auth-loop-sec: 1200    # 20 mins
-    #auth-clientId: pkey_tUsjZ1aL8UhvJnNibssfEGo6Y4MhSzXT
-    #auth-secret: skey_D1ZL5MW4bKW7clFW2Vz3jH8sm2k7FUfWiu5wh1aL8Uivo6RMNOa74wxfSYo5ylmk
     auth-clientId: pkey_vGivg1gzuzukJQg62kVWCcw1x5QOMOWT
     auth-secret: skey_sWzFCnkZx9aoZf9K2I3fM3se8XJYwIEt5l3371gzuzvY0giyjwO6cQ49bC4UeBlx
   json:
