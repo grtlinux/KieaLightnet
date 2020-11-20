@@ -22,8 +22,6 @@ public class LnsData {
 		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
 			lnsJsonNode = new LnsJsonNode();
-			lnsJsonNode.put("clientId", "_CLIENT_ID_");
-			lnsJsonNode.put("secret", "_SECRET_");
 			
 			log.info("LINK.getAccessToken >>>>> REQ.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 		}

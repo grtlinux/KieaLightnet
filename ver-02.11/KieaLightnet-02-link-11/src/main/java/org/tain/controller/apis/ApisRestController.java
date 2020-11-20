@@ -60,12 +60,12 @@ public class ApisRestController {
 		String reqResType = null;
 		if (Flag.flag) {
 			lnsJsonNode = new LnsJsonNode(reqHttpEntity.getBody());
-			reqResType = lnsJsonNode.getValue("reqResType");
+			reqResType = lnsJsonNode.getText("reqResType");
 			log.info(">>>>> [{}] REQ.lnsJsonNode = {}", reqResType, lnsJsonNode.toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			String sentbe = this.projEnvUrlProperties.getSentbe();
+			String sentbe = this.projEnvUrlProperties.getLightnet11();
 			if (sentbe.contains("localhost")) {
 				lnsJsonNode.put("httpUrl", sentbe + "/apis/checkUser");
 				lnsJsonNode.put("httpMethod", "POST");
