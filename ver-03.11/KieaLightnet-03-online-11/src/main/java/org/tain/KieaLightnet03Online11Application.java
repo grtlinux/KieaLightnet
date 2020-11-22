@@ -11,6 +11,7 @@ import org.tain.utils.Flag;
 import org.tain.working.properties.PropertiesWorking;
 import org.tain.working.tasks.ServerTasksWorking;
 import org.tain.working.test.Test01Working;
+import org.tain.working.test._0200200_detail_Working;
 import org.tain.working.test._0700100_CheckUser_Working;
 import org.tain.working.test._0700200_GetCalculation_Working;
 import org.tain.working.test._0700300_DeleteUser_Working;
@@ -84,6 +85,9 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 	private Test01Working test01Working;
 	
 	@Autowired
+	private _0200200_detail_Working _0200200_detail_Working;
+	
+	@Autowired
 	private _0700100_CheckUser_Working _0700100_CheckUser_Working;
 	
 	@Autowired
@@ -112,7 +116,8 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 		
 		if (Flag.flag) {
 			if (!Flag.flag) this.test01Working.test01();
-			if (Flag.flag) this._0700100_CheckUser_Working.test01();
+			if (Flag.flag) this._0200200_detail_Working.test00();
+			if (!Flag.flag) this._0700100_CheckUser_Working.test01();
 			if (!Flag.flag) this._0700200_GetCalculation_Working.test01();
 			if (!Flag.flag) this._0700300_DeleteUser_Working.test01();
 			if (!Flag.flag) this._0700400_GetWebviewId_Working.test01();

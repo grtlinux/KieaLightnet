@@ -1,4 +1,5 @@
 # 2-1. detail req
+# KORTHBIDN1000      IDRmgi  cash      
 {
   "sourceCountry" : "KOR",
   "sourceSendCurrency" : "THB",
@@ -6,5 +7,5 @@
   "destinationReceiveAmount" : "1000",
   "destinationReceiveCurrency" : "IDR",
   "destinationOperatorCode" : "mgi",
-"deliveryMethod": "cash"
+  "deliveryMethod": "cash"
 }
