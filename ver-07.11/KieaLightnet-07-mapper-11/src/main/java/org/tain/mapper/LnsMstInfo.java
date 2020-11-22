@@ -75,6 +75,18 @@ public class LnsMstInfo implements Cloneable {
 		((ObjectNode) this.headBaseInfoNode).put("length", strLength);
 	}
 	
+	public void setExtHttpUrl(String extHttpUrl) {
+		String httpUrl = this.headBaseInfoNode.get("extHttpUrl").asText();
+		if (httpUrl == null || "".equals(httpUrl)) {
+			((ObjectNode) this.headBaseInfoNode).put("extHttpUrl", "");
+		} else {
+			httpUrl = extHttpUrl + httpUrl;
+			((ObjectNode) this.headBaseInfoNode).put("extHttpUrl", httpUrl);
+		}
+	}
+	
+	////////////////////////////////////////////////////////////////////////
+	
 	public boolean checkAndUpdate(File entry) throws Exception {
 		//log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		

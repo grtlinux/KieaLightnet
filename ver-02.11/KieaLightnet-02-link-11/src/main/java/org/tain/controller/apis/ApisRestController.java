@@ -64,7 +64,32 @@ public class ApisRestController {
 			log.info(">>>>> [{}] REQ.lnsJsonNode = {}", reqResType, lnsJsonNode.toPrettyString());
 		}
 		
+		String extHttpUrl = null;
+		String extHttpMethod = null;
 		if (Flag.flag) {
+			LnsJsonNode infoJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			infoJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
+			infoJsonNode.put("httpMethod", "POST");
+			infoJsonNode.put("/reqJson", "reqResType", reqResType);
+			infoJsonNode = this.lnsHttpClient.post(infoJsonNode);
+			log.info(">>>>> MAPPER.infoJsonNode {} = \n{}", infoJsonNode.getText("/resJson", "reqResType"), infoJsonNode.getText("/resJson", "jsonInfo"));
+			
+			LnsJsonNode jsonInfo = new LnsJsonNode(infoJsonNode.getText("/resJson", "jsonInfo"));
+			extHttpUrl = jsonInfo.getText("extHttpUrl");
+			extHttpMethod = jsonInfo.getText("extHttpMethod");
+			log.info(">>>>> LINK.extHttp = [{}] {}", extHttpMethod, extHttpUrl);
+		}
+		
+		if (Flag.flag) {
+			lnsJsonNode.put("httpUrl", extHttpUrl);
+			lnsJsonNode.put("httpMethod", extHttpMethod);
+			lnsJsonNode = this.lnsLightnetClient.post(lnsJsonNode);
+			
+			log.info(">>>>> RES.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
+		}
+		
+		if (!Flag.flag) {
+			/*
 			String sentbe = this.projEnvUrlProperties.getLightnet11();
 			if (sentbe.contains("localhost")) {
 				lnsJsonNode.put("httpUrl", sentbe + "/apis/checkUser");
@@ -76,6 +101,7 @@ public class ApisRestController {
 				lnsJsonNode = this.lnsLightnetClient.post(lnsJsonNode);
 			}
 			log.info(">>>>> RES.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
+			*/
 		}
 		
 		if (Flag.flag) {

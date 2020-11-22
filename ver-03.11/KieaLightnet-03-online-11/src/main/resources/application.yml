@@ -107,17 +107,20 @@ spring.profiles: proj-air
 proj-env:
   param:
     name: PARAM (air)
-    home: /Users/kang-air
-    base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201111
-    info-path: /jsonInfo
-    data-path: /jsonData
   job:
     name: JOB (air)
+    listen-port: 18090
   json:
     name: JSON (air)
   url:
     name: URL (air)
+    # lightnet1: http://localhost:18888
+    # lightnet11: http://localhost:18888
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------
@@ -127,17 +130,18 @@ spring.profiles: proj-pro
 proj-env:
   param:
     name: PARAM (pro)
-    home: /Users/kangmac
-    base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201111
-    info-path: /jsonInfo
-    data-path: /jsonData
   job:
     name: JOB (pro)
+    listen-port: 18090
   json:
     name: JSON (pro)
   url:
     name: URL (pro)
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------
@@ -162,16 +166,18 @@ spring.profiles: proj-dfep
 proj-env:
   param:
     name: PARAM (dfep)
-    home: /hw01/ibridge
-    base: /KANG/lightnet/20201111
-    info-path: /jsonInfo
-    data-path: /jsonData
   job:
     name: JOB (dfep)
+    listen-port: 18090
   json:
     name: JSON (dfep)
   url:
     name: URL (dfep)
+    lightnet1: https://test-hawis.lightnetapis.io/v1
+    lightnet11: https://test-hawis.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.tain.httpClient.LnsHttpClient;
 import org.tain.mapper.LnsJsonNode;
+import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 
@@ -14,6 +15,9 @@ import lombok.extern.slf4j.Slf4j;
 public class LnsData {
 
 	@Autowired
+	private ProjEnvUrlProperties projEnvUrlProperties;
+	
+	@Autowired
 	private LnsHttpClient lnsHttpClient;
 	
 	public String getAccessToken() throws Exception {
@@ -21,14 +25,10 @@ public class LnsData {
 		
 		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
-			lnsJsonNode = new LnsJsonNode();
-			
-			log.info("LINK.getAccessToken >>>>> REQ.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
-		}
-		
-		if (Flag.flag) {
-			lnsJsonNode.put("httpUrl", "http://localhost:18081/v1.1/auth");
+			lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getAuth() + "/auth");
 			lnsJsonNode.put("httpMethod", "POST");
+			log.info("LINK.getAccessToken >>>>> REQ.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
 			
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("LINK.getAccessToken >>>>> RES.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
@@ -36,7 +36,7 @@ public class LnsData {
 		
 		String strAccessToken = null;
 		if (Flag.flag) {
-			strAccessToken = lnsJsonNode.getText("accessToken");
+			strAccessToken = lnsJsonNode.getText("/resJson", "accessToken");
 		}
 		
 		return strAccessToken;

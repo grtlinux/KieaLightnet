@@ -44,7 +44,7 @@ public class ApisRestController {
 	 */
 	@RequestMapping(value = {"/s2j"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> strToJson(HttpEntity<String> reqHttpEntity) throws Exception {
-		if (Flag.flag) log.info("========================== START: mapper =========================");
+		if (Flag.flag) log.info("========================== START: /mapper/s2j =========================");
 		if (Flag.flag) log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -70,7 +70,7 @@ public class ApisRestController {
 			headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		}
 		
-		if (Flag.flag) log.info("========================== END: mapper =========================");
+		if (Flag.flag) log.info("-------------------------- END: /mapper/s2j -------------------------\n\n");
 		
 		return new ResponseEntity<>(lnsJsonNode.toPrettyString(), headers, HttpStatus.OK);
 	}
@@ -84,7 +84,7 @@ public class ApisRestController {
 	 */
 	@RequestMapping(value = {"/j2s"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> jsonToStr(HttpEntity<String> reqHttpEntity) throws Exception {
-		if (Flag.flag) log.info("========================== START: mapper =========================");
+		if (Flag.flag) log.info("========================== START: /mapper/j2s =========================");
 		if (Flag.flag) log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
@@ -112,7 +112,7 @@ public class ApisRestController {
 			headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		}
 		
-		if (Flag.flag) log.info("========================== END: mapper =========================");
+		if (Flag.flag) log.info("-------------------------- END: /mapper/j2s -------------------------\n\n");
 		
 		return new ResponseEntity<>(lnsJsonNode.toPrettyString(), headers, HttpStatus.OK);
 	}
@@ -126,7 +126,7 @@ public class ApisRestController {
 	 */
 	@RequestMapping(value = {"/cstruct"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> cstruct(HttpEntity<String> reqHttpEntity) throws Exception {
-		if (Flag.flag) log.info("========================== START: mapper =========================");
+		if (Flag.flag) log.info("========================== START: /mapper/cstruct =========================");
 		if (Flag.flag) log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -152,7 +152,7 @@ public class ApisRestController {
 			headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		}
 		
-		if (Flag.flag) log.info("========================== END: mapper =========================");
+		if (Flag.flag) log.info("-------------------------- END: /mapper/cstruct -------------------------\n\n");
 		
 		return new ResponseEntity<>(lnsJsonNode.toPrettyString(), headers, HttpStatus.OK);
 	}
@@ -166,7 +166,7 @@ public class ApisRestController {
 	 */
 	@RequestMapping(value = {"/info/get"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> infoGet(HttpEntity<String> reqHttpEntity) throws Exception {
-		if (Flag.flag) log.info("========================== START: mapper =========================");
+		if (Flag.flag) log.info("========================== START: /mapper/info/get =========================");
 		if (Flag.flag) log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		String strBody = null;
@@ -193,7 +193,7 @@ public class ApisRestController {
 			headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		}
 		
-		if (Flag.flag) log.info("========================== END: mapper =========================");
+		if (Flag.flag) log.info("-------------------------- END: /mapper/info/get -------------------------\n\n");
 		
 		return new ResponseEntity<>(lnsJsonNode.toPrettyString(), headers, HttpStatus.OK);
 	}
@@ -206,7 +206,7 @@ public class ApisRestController {
 	 */
 	@RequestMapping(value = {"/info/save"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> infoSave(HttpEntity<String> reqHttpEntity) throws Exception {
-		if (Flag.flag) log.info("========================== START: mapper =========================");
+		if (Flag.flag) log.info("========================== START: /mapper/info/save =========================");
 		if (Flag.flag) log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
 		
 		String strBody = null;
@@ -248,7 +248,47 @@ public class ApisRestController {
 			headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
 		}
 		
-		if (Flag.flag) log.info("========================== END: mapper =========================");
+		if (Flag.flag) log.info("-------------------------- END: /mapper/info/save -------------------------\n\n");
+		
+		return new ResponseEntity<>(lnsJsonNode.toPrettyString(), headers, HttpStatus.OK);
+	}
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	/*
+	 * http://localhost:18087/v1.1/mapper/info/headbase
+	 * $ curl -d '{"reqResType": "0700000"}' -H 'Context-Type: application/json' -X POST http://localhost:18087/v1.1/mapper/info/headbase
+	 */
+	@RequestMapping(value = {"/info/headbase"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public ResponseEntity<?> infoHeadBase(HttpEntity<String> reqHttpEntity) throws Exception {
+		if (Flag.flag) log.info("========================== START: /mapper/info/headbase =========================");
+		if (Flag.flag) log.info("KANG-20200623 >>>>> {}", CurrentInfo.get());
+		
+		String strBody = null;
+		if (Flag.flag) {
+			strBody = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
+			log.info("MAPPER.infoGet >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("MAPPER.infoGet >>>>> Body = {}", strBody);
+		}
+		
+		LnsJsonNode lnsJsonNode = null;
+		if (Flag.flag) {
+			lnsJsonNode = new LnsJsonNode(strBody);
+		}
+		if (Flag.flag) {
+			LnsMstInfo lnsMstInfo = this.mapperReaderJob.get(lnsJsonNode.getText("reqResType"));
+			String jsonInfo = lnsMstInfo.getHeadBaseInfoNode().toPrettyString();
+			lnsJsonNode.put("jsonInfo", jsonInfo);
+			log.info("MAPPER.infoGet >>>>> jsonInfo = {}", jsonInfo);
+		}
+		
+		MultiValueMap<String,String> headers = null;
+		if (Flag.flag) {
+			headers = new LinkedMultiValueMap<>();
+			headers.add(HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8");
+		}
+		
+		if (Flag.flag) log.info("-------------------------- END: /mapper/info/headbase -------------------------\n\n");
 		
 		return new ResponseEntity<>(lnsJsonNode.toPrettyString(), headers, HttpStatus.OK);
 	}

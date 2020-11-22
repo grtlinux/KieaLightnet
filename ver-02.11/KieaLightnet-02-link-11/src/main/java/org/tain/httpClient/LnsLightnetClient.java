@@ -15,6 +15,7 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.tain.data.LnsData;
 import org.tain.mapper.LnsJsonNode;
+import org.tain.mapper.LnsNodeTools;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.RestTemplateConfig;
@@ -131,7 +132,8 @@ public class LnsLightnetClient {
 			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.POST;
 			
-			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("reqJson"));
+			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getText("reqJson"));
+			LnsJsonNode reqBodyNode = new LnsJsonNode(reqJsonNode.getJsonNode("__body_data"));
 			log.info(">>>>> POST.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
@@ -139,7 +141,7 @@ public class LnsLightnetClient {
 			if (flagAccessToken) reqHeaders.set("Authorization", "Bearer " + this.lnsData.getAccessToken());
 			log.info(">>>>> POST.REQ.reqHeaders     = {}", reqHeaders);
 			
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJsonNode.toPrettyString(), reqHeaders);
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqBodyNode.toPrettyString(), reqHeaders);
 			log.info(">>>>> POST.REQ.reqHttpEntity  = {}", reqHttpEntity);
 			
 			ResponseEntity<String> response = null;
@@ -153,8 +155,15 @@ public class LnsLightnetClient {
 				log.info(">>>>> POST.RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info(">>>>> POST.RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> POST.RES.getBody()            = {}", response.getBody());
+				LnsJsonNode resBodyNode = new LnsJsonNode(response.getBody());
 				
-				LnsJsonNode resJsonNode = new LnsJsonNode(response.getBody());
+				LnsJsonNode resJsonNode = new LnsJsonNode(reqJsonNode.get());
+				resJsonNode.put("/__head_data", "reqres", "0710");
+				resJsonNode.put("/__head_data", "resTime", LnsNodeTools.getTime());
+				resJsonNode.put("/__head_data", "resCode", "000");
+				resJsonNode.put("/__head_data", "resMessage", "SUCCESS");
+				resJsonNode.put("/__body_data", resBodyNode.get());
+				
 				lnsJsonNode.put("resJson", resJsonNode);
 				log.info(">>>>> POST.RES-1.lnsJsonNode          = {}", lnsJsonNode.toPrettyString());
 				
