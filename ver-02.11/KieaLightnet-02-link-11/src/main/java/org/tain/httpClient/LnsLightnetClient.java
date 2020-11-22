@@ -52,10 +52,11 @@ public class LnsLightnetClient {
 			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.GET;
 			
-			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("reqJson"));
+			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getText("reqJson"));
+			LnsJsonNode reqBodyNode = new LnsJsonNode(reqJsonNode.getJsonNode("__body_data"));
 			log.info(">>>>> GET.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
 			
-			Map<String,String> reqMap = new ObjectMapper().readValue(reqJsonNode.toPrettyString(), new TypeReference<Map<String,String>>(){});
+			Map<String,String> reqMap = new ObjectMapper().readValue(reqBodyNode.toPrettyString(), new TypeReference<Map<String,String>>(){});
 			MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
 			map.setAll(reqMap);
 			

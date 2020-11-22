@@ -90,7 +90,7 @@ public class _0200200_detail_Working {
 			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "jsonInfo"));
 		}
 		
-		if (!Flag.flag) {
+		if (Flag.flag) {
 			// 8. link
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
@@ -106,25 +106,31 @@ public class _0200200_detail_Working {
 	public void test01() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		String strReqStream = "0116070010099999920201016125525125525                                                               "
+		String strReqStream = "0116020020099999920201016125525125525                                                               "
 				+ "701225-1234567      ";
 		
-		String strResStream = "0181071010099999920201016125525125525                                                               "
+		String strResStream = "0181021020099999920201016125525125525                                                               "
 				+ "7012251234567       true falsefalse                    1001088   05012345678900      ";
 		
 		String strReqJson = "{\n" + 
 				"  \"__head_data\" : {\n" + 
 				//"    \"length\" : \"0116\",\n" + 
 				"    \"length\" : \"0000\",\n" + 
-				"    \"reqres\" : \"0700\",\n" + 
-				"    \"type\" : \"100\",\n" + 
+				"    \"reqres\" : \"0200\",\n" + 
+				"    \"type\" : \"200\",\n" + 
 				"    \"trNo\" : \"999999\",\n" + 
 				"    \"reqDate\" : \"20201016\",\n" + 
 				"    \"reqTime\" : \"125525\",\n" + 
 				"    \"resTime\" : \"125525\"\n" + 
 				"  },\n" + 
 				"  \"__body_data\" : {\n" + 
-				"    \"id_number\" : \"701225-1234567\"\n" + 
+				"    \"sourceCountry\" : \"KOR\",\n" + 
+				"    \"sourceSendCurrency\" : \"THB\",\n" + 
+				"    \"destinationCountry\" : \"IDN\",\n" + 
+				"    \"destinationReceiveAmount\" : \"1000\",\n" + 
+				"    \"destinationReceiveCurrency\" : \"IDR\",\n" + 
+				"    \"destinationOperatorCode\" : \"mgi\",\n" + 
+				"    \"deliveryMethod\": \"cash\"\n" + 
 				"  }\n" + 
 				"}";
 		
@@ -132,8 +138,8 @@ public class _0200200_detail_Working {
 				"  \"__head_data\" : {\n" + 
 				//"    \"length\" : \"0181\",\n" + 
 				"    \"length\" : \"0000\",\n" + 
-				"    \"reqres\" : \"0710\",\n" + 
-				"    \"type\" : \"100\",\n" + 
+				"    \"reqres\" : \"0210\",\n" + 
+				"    \"type\" : \"200\",\n" + 
 				"    \"trNo\" : \"999999\",\n" + 
 				"    \"reqDate\" : \"20201016\",\n" + 
 				"    \"reqTime\" : \"125525\",\n" + 
@@ -154,7 +160,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0700100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-1 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
 		}
@@ -164,7 +170,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0710100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0210200");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-2 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
 		}
@@ -174,7 +180,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0700100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
 			lnsJsonNode.put("/reqJson", "stream", strReqStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
@@ -185,7 +191,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0710100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0210200");
 			lnsJsonNode.put("/reqJson", "stream", strResStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-4 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
@@ -196,7 +202,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0700100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
 			lnsJsonNode.put("/reqJson", "json", strReqJson);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
@@ -207,7 +213,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0710100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0210200");
 			lnsJsonNode.put("/reqJson", "json", strResJson);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-6 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
@@ -218,7 +224,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0700100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "jsonInfo"));
 		}
@@ -228,7 +234,7 @@ public class _0200200_detail_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0700100");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
 			// extHttpUrl, extHttpMethod
 			lnsJsonNode.put("/reqJson", "reqJson", strReqJson);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
