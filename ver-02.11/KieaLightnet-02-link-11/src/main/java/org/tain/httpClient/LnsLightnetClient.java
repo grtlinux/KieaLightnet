@@ -87,7 +87,7 @@ public class LnsLightnetClient {
 				log.info(">>>>> GET.RES.getBody()            = {}", response.getBody());
 				
 				LnsJsonNode resJsonNode = new LnsJsonNode(response.getBody());
-				lnsJsonNode.put("resJson", resJsonNode);
+				lnsJsonNode.put("resJson", resJsonNode.get());
 				log.info(">>>>> GET.RES-1.lnsJsonNode          = {}", lnsJsonNode.toPrettyString());
 				
 				lnsJsonNode.put("code", "00000");

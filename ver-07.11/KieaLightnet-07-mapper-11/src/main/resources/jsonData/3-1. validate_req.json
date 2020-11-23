@@ -1,0 +1,76 @@
+{
+    "saveReport": true,
+    "terminalName": "test",
+    "receiver": {
+        "agentId": "70641266",
+        "accountId": "320344321323",
+        "firstName": "receiverFirstName",
+        "lastName": "receiverLastName",
+        "address": {
+            "city": "Bangkok",
+            "line1": "MG-0012345",
+            "countryCode": "THA"
+        },
+        "notification": {
+            "transactionEmailOptIn": true,
+            "transactionSMSOptIn": true
+        },
+        "email": "abc@lightnet.io",
+        "phone": {
+            "number": "345364566",
+            "countryCode": "33"
+        },
+        "accountNumber": "MG-0012345",
+        "extraFields": {
+            "CIMBBANKNAME": "002"
+        }
+    },
+    "deliveryMethod": "account_deposit",
+    "sender": {
+        "cardNumber": "204515304846",
+        "firstName": "Sender",
+        "lastName": "Man",
+        "address": {
+            "city": "Bangkok",
+            "postalCode": "10400",
+            "line1": "Temp address"
+        },
+        "idType": "GOV",
+        "purpose": "PURCHASE_GOODS",
+        "birthCountryCode": "THA",
+        "notification": {
+            "transactionEmailOptIn": true,
+            "transactionSMSOptIn": true,
+            "marketingEmailOptIn": true,
+            "marketingSMSOptIn": true
+        },
+        "homePhone": {
+            "number": "45645645666",
+            "countryCode": "66"
+        },
+        "email": "abc@lightnet.io",
+        "idCountryCode": "MYS",
+        "idNumber": "P83245384",
+        "dob": "1992-03-23",
+        "relationshipToReceiver": "BUSINESS_PARTNER",
+        "middleName": "senderMiddleName",
+        "citizenshipCountryCode": "THA",
+        "occupation": "ADMIN"
+    },
+    "destination": {
+        "country": "IDN",
+        "receive": {
+            "currency": "IDR"
+        },
+        "operatorCode": "mgi"
+    },
+    "remark": "This is MGI test remark",
+    "source": {
+        "country": "KOR",
+        "send": {
+            "amount":"10.00",
+            "currency": "USD"
+        },
+        "transactionId": "1502293110098058"
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "status": "success",
+    "message": "OK",
+    "data": {
+        "transactionId": "25d48027-7087-4fe8-47f6-7a18f11c054f",
+        "destination": {
+            "transactionId": "9816101E1606120188344504081261NN",
+            "operatorCode": "mgi",
+            "country": "IDN",
+            "receive": {
+                "amount": "146550.0000",
+                "currency": "IDR"
+            },
+            "withdrawalId": "58564613"
+        },
+        "status": "RECEIVED",
+        "additionalInfo": {
+            "destinationCountryDisplayName": "INDONESIA",
+            "displayAccountId": "****1323",
+            "expectedDateOfDelivery": "2020-11-24",
+            "receiveAmountsReceiveFeesAreEstimated": "false",
+            "receiveAmountsReceiveTaxesAreEstimated": "false",
+            "receiveAmountsTotalReceiveTaxes": "0.00",
+            "receiveAmountsTotalReceiveTaxesCurrency": "IDR",
+            "receiveAmountsValidCurrencyIndicator": "true",
+            "receiveFeeDisclosureText": "false",
+            "receiveTaxDisclosureText": "false",
+            "sendAmountsSendAmount": "10.00",
+            "sendAmountsSendCurrency": "USD",
+            "sendAmountsTotalSendTaxes": "0.00",
+            "sendAmountsTotalSendTaxesCurrency": "USD",
+            "senderPurposeDisplayName": "Payment for Goods/Services",
+            "totalReceiveFees": "0.00",
+            "totalReceiveFeesCurrency": "IDR"
+        },
+        "source": {
+            "transactionId": "1502293110098058",
+            "operatorCode": "hanwha",
+            "country": "KOR",
+            "send": {
+                "amount": "20.0000",
+                "currency": "USD"
+            }
+        },
+        "sender": {
+            "address": {
+                "city": "Bangkok",
+                "line1": "Temp address",
+                "postalCode": "10400"
+            },
+            "birthCountryCode": "THA",
+            "cardNumber": "204515304846",
+            "citizenshipCountryCode": "THA",
+            "dob": "1992-03-23",
+            "email": "abc@lightnet.io",
+            "firstName": "Sender",
+            "homePhone": {
+                "countryCode": "66",
+                "number": "45645645666"
+            },
+            "idCountryCode": "MYS",
+            "idNumber": "P83245384",
+            "idType": "GOV",
+            "lastName": "Man",
+            "middleName": "senderMiddleName",
+            "notification": {
+                "marketingEmailOptIn": true,
+                "marketingSMSOptIn": true,
+                "transactionEmailOptIn": true,
+                "transactionSMSOptIn": true
+            },
+            "occupation": "ADMIN",
+            "purpose": "PURCHASE_GOODS",
+            "relationshipToReceiver": "BUSINESS_PARTNER"
+        },
+        "receiver": {
+            "accountId": "320344321323",
+            "accountNumber": "MG-0012345",
+            "address": {
+                "city": "Bangkok",
+                "countryCode": "THA",
+                "line1": "MG-0012345"
+            },
+            "agentId": "70641266",
+            "email": "abc@lightnet.io",
+            "extraFields": {
+                "CIMBBANKNAME": "002"
+            },
+            "firstName": "receiverFirstName",
+            "lastName": "receiverLastName",
+            "notification": {
+                "transactionEmailOptIn": true,
+                "transactionSMSOptIn": true
+            },
+            "phone": {
+                "countryCode": "33",
+                "number": "345364566"
+            }
+        },
+        "fee": {
+            "total": {
+                "amount": "10.0000",
+                "currency": "USD"
+            }
+        },
+        "terminalName": "test",
+        "rate": {
+            "from": {
+                "amount": "1",
+                "currency": "USD"
+            },
+            "to": {
+                "amount": "14655",
+                "currency": "IDR"
+            }
+        }
+    }
+}

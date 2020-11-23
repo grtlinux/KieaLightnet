@@ -1,9 +1,9 @@
 {
     "__head_base" : {
-        "name" : "checkUser",
-        "reqres" : "0700",
-        "type" : "100",
-        "extHttpUrl": "/checkUser",
+        "name" : "commit",
+        "reqres" : "0200",
+        "type" : "400",
+        "extHttpUrl": "/remittances.commit",
         "extHttpMethod": "POST"
     },
     "__head_data" : {
@@ -20,9 +20,9 @@
         "dummy" : "L:-100,T:string,C:안쓴다"
     },
     "__body_base" : {
-        "name" : "checkUser.REQ"
+        "name" : "commit.REQ"
     },
     "__body_data" : {
-        "id_number" : "L:20,T:string"
+        "deliveryMethod": "L:10,T:string"
     }
 }

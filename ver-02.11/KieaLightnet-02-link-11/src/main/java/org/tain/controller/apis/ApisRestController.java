@@ -77,8 +77,6 @@ public class ApisRestController {
 			LnsJsonNode jsonInfo = new LnsJsonNode(infoJsonNode.getText("/resJson", "jsonInfo"));
 			extHttpUrl = jsonInfo.getText("extHttpUrl");
 			extHttpMethod = jsonInfo.getText("extHttpMethod");
-			if (!"".equals(extHttpUrl))
-				extHttpUrl = this.projEnvUrlProperties.getLightnet11() + extHttpUrl;
 			log.info(">>>>> LINK.extHttp = [{}] {}", extHttpMethod, extHttpUrl);
 		}
 		
