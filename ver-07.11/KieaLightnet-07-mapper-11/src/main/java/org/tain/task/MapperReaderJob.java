@@ -112,9 +112,13 @@ public class MapperReaderJob {
 						if (lnsMstInfo == null) {
 							// new
 							lnsMstInfo = new LnsMstInfo(fileEntry.getParent(), fileEntry.getName());
+							String strLength = new LnsStreamLength(lnsMstInfo).getStrLength();
+							lnsMstInfo.setLength(strLength);
+							lnsMstInfo.setExtHttpUrl(this.projEnvUrlProperties.getLightnet11());
+							
 							String reqResType = lnsMstInfo.getReqResType();
-							String fileName = lnsMstInfo.getFileName();
 							this.mapInfo.put(reqResType, lnsMstInfo);
+							String fileName = lnsMstInfo.getFileName();
 							this.mapInfo.put(fileName, lnsMstInfo);
 							
 							if (Flag.flag) {
@@ -136,6 +140,7 @@ public class MapperReaderJob {
 							}
 						} else if (lnsMstInfo.checkAndUpdate(fileEntry)) {
 							// update
+							lnsMstInfo.setExtHttpUrl(this.projEnvUrlProperties.getLightnet11());
 							if (Flag.flag) log.info(">>>>> {} file is updated.", fileEntry.getName());
 						}
 					}

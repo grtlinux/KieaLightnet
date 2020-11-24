@@ -14,6 +14,8 @@ import org.tain.working.test.Test01Working;
 import org.tain.working.test._0200200_detail_Working;
 import org.tain.working.test._0200300_validate_Working;
 import org.tain.working.test._0200400_commit_Working;
+import org.tain.working.test._0200500_amend_Working;
+import org.tain.working.test._0200600_refund_Working;
 import org.tain.working.test._0200700_history_Working;
 import org.tain.working.test._0700100_CheckUser_Working;
 import org.tain.working.test._0700200_GetCalculation_Working;
@@ -123,6 +125,12 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 	private _0200400_commit_Working _0200400_commit_Working;
 	
 	@Autowired
+	private _0200500_amend_Working _0200500_amend_Working;
+	
+	@Autowired
+	private _0200600_refund_Working _0200600_refund_Working;
+	
+	@Autowired
 	private _0200700_history_Working _0200700_history_Working;
 	
 	private void job03() throws Exception {
@@ -132,8 +140,10 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 			if (!Flag.flag) this.test01Working.test01();
 			
 			if (!Flag.flag) this._0200200_detail_Working.test00();
-			if (Flag.flag) this._0200300_validate_Working.test00();
-			if (Flag.flag) this._0200400_commit_Working.test00();
+			if (!Flag.flag) this._0200300_validate_Working.test00();
+			if (!Flag.flag) this._0200400_commit_Working.test00();
+			if (!Flag.flag) this._0200500_amend_Working.test00();
+			if (Flag.flag) this._0200600_refund_Working.test00();
 			if (!Flag.flag) this._0200700_history_Working.test00();
 			
 			if (!Flag.flag) this._0700100_CheckUser_Working.test01();
