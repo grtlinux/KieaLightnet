@@ -12,6 +12,8 @@ import org.tain.working.properties.PropertiesWorking;
 import org.tain.working.tasks.ServerTasksWorking;
 import org.tain.working.test.Test01Working;
 import org.tain.working.test._0200200_detail_Working;
+import org.tain.working.test._0200300_validate_Working;
+import org.tain.working.test._0200400_commit_Working;
 import org.tain.working.test._0200700_history_Working;
 import org.tain.working.test._0700100_CheckUser_Working;
 import org.tain.working.test._0700200_GetCalculation_Working;
@@ -86,12 +88,6 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 	private Test01Working test01Working;
 	
 	@Autowired
-	private _0200200_detail_Working _0200200_detail_Working;
-	
-	@Autowired
-	private _0200700_history_Working _0200700_history_Working;
-	
-	@Autowired
 	private _0700100_CheckUser_Working _0700100_CheckUser_Working;
 	
 	@Autowired
@@ -115,6 +111,20 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 	@Autowired
 	private _0700800_MigrationUser_Working _0700800_MigrationUser_Working;
 	
+	///////////////////////////////////////////////////////////////////////////
+	
+	@Autowired
+	private _0200200_detail_Working _0200200_detail_Working;
+	
+	@Autowired
+	private _0200300_validate_Working _0200300_validate_Working;
+	
+	@Autowired
+	private _0200400_commit_Working _0200400_commit_Working;
+	
+	@Autowired
+	private _0200700_history_Working _0200700_history_Working;
+	
 	private void job03() throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
@@ -122,7 +132,9 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 			if (!Flag.flag) this.test01Working.test01();
 			
 			if (!Flag.flag) this._0200200_detail_Working.test00();
-			if (Flag.flag) this._0200700_history_Working.test00();
+			if (Flag.flag) this._0200300_validate_Working.test00();
+			if (Flag.flag) this._0200400_commit_Working.test00();
+			if (!Flag.flag) this._0200700_history_Working.test00();
 			
 			if (!Flag.flag) this._0700100_CheckUser_Working.test01();
 			if (!Flag.flag) this._0700200_GetCalculation_Working.test01();

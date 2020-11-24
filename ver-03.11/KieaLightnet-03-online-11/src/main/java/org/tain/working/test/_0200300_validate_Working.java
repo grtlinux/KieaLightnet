@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class _0200700_history_Working {
+public class _0200300_validate_Working {
 
 	@Autowired
 	private ProjEnvUrlProperties projEnvUrlProperties;
@@ -23,25 +23,100 @@ public class _0200700_history_Working {
 	public void test00() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		String strReqStream = "0116020070099999920201016125525125525                                                               "
-				+ "2020-09-08T00:00:00Z2020-09-08T23:59:59Z  1 20";
+		String strReqStream = "0814020030099999920201016125525125525                                                               "
+				+ "true test                70641266  320344321323        receiverFirstName   receiverLastName    Bangkok             "
+				+ "MG-0012345          THA  true true abc@lightnet.io                                   345364566      33   MG-0012345          "
+				+ "002       account_deposit     204515304846        Sender              Man                 Bangkok             10400               "
+				+ "Temp address        GOV                 PURCHASE_GOODS      THA  true true true true 45645645666         66 abc@lightnet.io     "
+				+ "MYSP83245384           1992-03-23          BUSINESS_PARTNER    senderMiddleName    THAADMIN               IDNIDRmgi"
+				+ "This is MGI test remark                           KOR10.00          USD1502293110098058              ";
 		
 		String strReqJson = "{\n" + 
 				"  \"__head_data\" : {\n" + 
 				//"    \"length\" : \"0116\",\n" + 
 				"    \"length\" : \"0000\",\n" + 
 				"    \"reqres\" : \"0200\",\n" + 
-				"    \"type\" : \"700\",\n" + 
+				"    \"type\" : \"300\",\n" + 
 				"    \"trNo\" : \"999999\",\n" + 
 				"    \"reqDate\" : \"20201016\",\n" + 
 				"    \"reqTime\" : \"125525\",\n" + 
 				"    \"resTime\" : \"125525\"\n" + 
 				"  },\n" + 
 				"  \"__body_data\" : {\n" + 
-				"    \"from\" : \"2020-09-08T00:00:00Z\",\n" + 
-				"    \"to\" : \"2020-09-08T23:59:59Z\",\n" + 
-				"    \"offset\" : 1,\n" + 
-				"    \"limit\" : 20\n" + 
+				"    \"saveReport\": true,\n" + 
+				"    \"terminalName\": \"test\",\n" + 
+				"    \"receiver\": {\n" + 
+				"        \"agentId\": \"70641266\",\n" + 
+				"        \"accountId\": \"320344321323\",\n" + 
+				"        \"firstName\": \"receiverFirstName\",\n" + 
+				"        \"lastName\": \"receiverLastName\",\n" + 
+				"        \"address\": {\n" + 
+				"            \"city\": \"Bangkok\",\n" + 
+				"            \"line1\": \"MG-0012345\",\n" + 
+				"            \"countryCode\": \"THA\"\n" + 
+				"        },\n" + 
+				"        \"notification\": {\n" + 
+				"            \"transactionEmailOptIn\": true,\n" + 
+				"            \"transactionSMSOptIn\": true\n" + 
+				"        },\n" + 
+				"        \"email\": \"abc@lightnet.io\",\n" + 
+				"        \"phone\": {\n" + 
+				"            \"number\": \"345364566\",\n" + 
+				"            \"countryCode\": \"33\"\n" + 
+				"        },\n" + 
+				"        \"accountNumber\": \"MG-0012345\",\n" + 
+				"        \"extraFields\": {\n" + 
+				"            \"CIMBBANKNAME\": \"002\"\n" + 
+				"        }\n" + 
+				"    },\n" + 
+				"    \"deliveryMethod\": \"account_deposit\",\n" + 
+				"    \"sender\": {\n" + 
+				"        \"cardNumber\": \"204515304846\",\n" + 
+				"        \"firstName\": \"Sender\",\n" + 
+				"        \"lastName\": \"Man\",\n" + 
+				"        \"address\": {\n" + 
+				"            \"city\": \"Bangkok\",\n" + 
+				"            \"postalCode\": \"10400\",\n" + 
+				"            \"line1\": \"Temp address\"\n" + 
+				"        },\n" + 
+				"        \"idType\": \"GOV\",\n" + 
+				"        \"purpose\": \"PURCHASE_GOODS\",\n" + 
+				"        \"birthCountryCode\": \"THA\",\n" + 
+				"        \"notification\": {\n" + 
+				"            \"transactionEmailOptIn\": true,\n" + 
+				"            \"transactionSMSOptIn\": true,\n" + 
+				"            \"marketingEmailOptIn\": true,\n" + 
+				"            \"marketingSMSOptIn\": true\n" + 
+				"        },\n" + 
+				"        \"homePhone\": {\n" + 
+				"            \"number\": \"45645645666\",\n" + 
+				"            \"countryCode\": \"66\"\n" + 
+				"        },\n" + 
+				"        \"email\": \"abc@lightnet.io\",\n" + 
+				"        \"idCountryCode\": \"MYS\",\n" + 
+				"        \"idNumber\": \"P83245384\",\n" + 
+				"        \"dob\": \"1992-03-23\",\n" + 
+				"        \"relationshipToReceiver\": \"BUSINESS_PARTNER\",\n" + 
+				"        \"middleName\": \"senderMiddleName\",\n" + 
+				"        \"citizenshipCountryCode\": \"THA\",\n" + 
+				"        \"occupation\": \"ADMIN\"\n" + 
+				"    },\n" + 
+				"    \"destination\": {\n" + 
+				"        \"country\": \"IDN\",\n" + 
+				"        \"receive\": {\n" + 
+				"            \"currency\": \"IDR\"\n" + 
+				"        },\n" + 
+				"        \"operatorCode\": \"mgi\"\n" + 
+				"    },\n" + 
+				"    \"remark\": \"This is MGI test remark\",\n" + 
+				"    \"source\": {\n" + 
+				"        \"country\": \"KOR\",\n" + 
+				"        \"send\": {\n" + 
+				"            \"amount\":\"10.00\",\n" + 
+				"            \"currency\": \"USD\"\n" + 
+				"        },\n" + 
+				"        \"transactionId\": \"1502293110098058\"\n" + 
+				"    }\n" + 
 				"  }\n" + 
 				"}";
 		
@@ -50,9 +125,20 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-1 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
+		}
+		
+		if (Flag.flag) {
+			// 2. Json to Stream
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
+			lnsJsonNode.put("httpMethod", "POST");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
+			lnsJsonNode.put("/reqJson", "json", strReqJson);
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
 		}
 		
 		if (Flag.flag) {
@@ -60,21 +146,10 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			lnsJsonNode.put("/reqJson", "stream", strReqStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
-		}
-		
-		if (Flag.flag) {
-			// 5. Json to Stream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
-			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
-			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
-			lnsJsonNode.put("/reqJson", "json", strReqJson);
-			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
 		}
 		
 		if (Flag.flag) {
@@ -82,7 +157,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "jsonInfo"));
 		}
@@ -92,7 +167,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			// extHttpUrl, extHttpMethod
 			lnsJsonNode.put("/reqJson", "reqJson", strReqJson);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
@@ -105,10 +180,10 @@ public class _0200700_history_Working {
 	public void test01() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		String strReqStream = "0116020070099999920201016125525125525                                                               "
+		String strReqStream = "0116020030099999920201016125525125525                                                               "
 				+ "701225-1234567      ";
 		
-		String strResStream = "0181021070099999920201016125525125525                                                               "
+		String strResStream = "0181021030099999920201016125525125525                                                               "
 				+ "7012251234567       true falsefalse                    1001088   05012345678900      ";
 		
 		String strReqJson = "{\n" + 
@@ -159,7 +234,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-1 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
 		}
@@ -169,7 +244,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0210700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0210300");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-2 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
 		}
@@ -179,7 +254,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			lnsJsonNode.put("/reqJson", "stream", strReqStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
@@ -190,7 +265,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0210700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0210300");
 			lnsJsonNode.put("/reqJson", "stream", strResStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-4 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
@@ -201,7 +276,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			lnsJsonNode.put("/reqJson", "json", strReqJson);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
@@ -212,7 +287,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0210700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0210300");
 			lnsJsonNode.put("/reqJson", "json", strResJson);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-6 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
@@ -223,7 +298,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "jsonInfo"));
 		}
@@ -233,7 +308,7 @@ public class _0200700_history_Working {
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200700");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200300");
 			// extHttpUrl, extHttpMethod
 			lnsJsonNode.put("/reqJson", "reqJson", strReqJson);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);

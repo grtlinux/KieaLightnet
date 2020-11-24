@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class _0200700_history_Working {
+public class _0200400_commit_Working {
 
 	@Autowired
 	private ProjEnvUrlProperties projEnvUrlProperties;

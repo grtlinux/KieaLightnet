@@ -103,6 +103,7 @@ public class _0200200_detail_Working {
 		}
 	}
 	
+	@Deprecated
 	public void test01() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
