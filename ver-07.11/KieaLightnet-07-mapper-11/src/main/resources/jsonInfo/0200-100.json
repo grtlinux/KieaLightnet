@@ -29,11 +29,4 @@
         "destinationCountry": "L:3,T:string",
         "destinationReceiveCurrency": "L:3,T:string"
     }
-    "__body_data" : {
-        "sourceCountry": "KOR",
-        "sourceSendCurrency": "USD",
-        "sourceSendAmount": "100.50",
-        "destinationCountry": "THA",
-        "destinationReceiveCurrency": "THB"
-    }
 }
