@@ -3,8 +3,8 @@
         "name" : "getFee",
         "reqres" : "0200",
         "type" : "100",
-        "extHttpUrl": "/remittances.getFee",
-        "extHttpMethod": "POST"
+        "extHttpUrl": "/remittances.fee-lookup",
+        "extHttpMethod": "GET"
     },
     "__head_data" : {
         "length" : "L:4,T:string,D:0000,C:길이",

@@ -23,8 +23,8 @@ public class _0200100_getFee_Working {
 	public void test00() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		String strReqStream = "0116020010099999920201016125525125525                                                               "
-				+ "KORTHBIDN1000      IDRmgi  cash      ";
+		String strReqStream = "0127020010099999920201016125525125525                                                               "
+				+ "KORUSD100.50         THATHB";
 		
 		String strReqJson = "{\n" + 
 				"  \"__head_data\" : {\n" + 
@@ -57,6 +57,17 @@ public class _0200100_getFee_Working {
 		}
 		
 		if (Flag.flag) {
+			// 2. Json to Stream
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
+			lnsJsonNode.put("httpMethod", "POST");
+			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
+			lnsJsonNode.put("/reqJson", "json", strReqJson);
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
+		}
+		
+		if (Flag.flag) {
 			// 3. Stream to Json of strReqStream
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
@@ -65,17 +76,6 @@ public class _0200100_getFee_Working {
 			lnsJsonNode.put("/reqJson", "stream", strReqStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
-		}
-		
-		if (Flag.flag) {
-			// 5. Json to Stream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
-			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
-			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
-			lnsJsonNode.put("/reqJson", "json", strReqJson);
-			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
 		}
 		
 		if (Flag.flag) {
