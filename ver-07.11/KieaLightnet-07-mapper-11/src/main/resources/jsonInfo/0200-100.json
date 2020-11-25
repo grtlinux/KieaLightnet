@@ -23,6 +23,17 @@
         "name" : "getFee.REQ"
     },
     "__body_data" : {
-        "deliveryMethod": "L:10,T:string"
+        "sourceCountry": "L:3,T:string",
+        "sourceSendCurrency": "L:3,T:string",
+        "sourceSendAmount": "L:15,T:string",
+        "destinationCountry": "L:3,T:string",
+        "destinationReceiveCurrency": "L:3,T:string"
+    }
+    "__body_data" : {
+        "sourceCountry": "KOR",
+        "sourceSendCurrency": "USD",
+        "sourceSendAmount": "100.50",
+        "destinationCountry": "THA",
+        "destinationReceiveCurrency": "THB"
     }
 }

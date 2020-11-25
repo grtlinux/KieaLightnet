@@ -23,6 +23,10 @@
         "name" : "refund.REQ"
     },
     "__body_data" : {
-        "deliveryMethod": "L:10,T:string"
+        "terminalName" : "L:20,T:string",
+        "reason" : "L:20,T:string",
+        "feeRefFund" : "L:3,T:string",
+        "reversalType" : "L:20,T:string",
+        "transactionId" : "L:50,T:string"
     }
 }

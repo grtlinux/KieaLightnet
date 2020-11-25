@@ -22,7 +22,14 @@
     "__body_base" : {
         "name" : "amend.REQ"
     },
-    "__body_data" : {
-        "deliveryMethod": "L:10,T:string"
+    "__body_data" :  {
+        "terminalName" : "L:20,T:string",
+        "transactionId" : "L:50,T:string",
+        "receiver" : {
+          "firstName" : "L:20,T:string",
+          "middleName" : "L:20,T:string",
+          "lastName" : "L:20,T:string",
+          "secondLastName" : "L:20,T:string"
+        }
     }
 }

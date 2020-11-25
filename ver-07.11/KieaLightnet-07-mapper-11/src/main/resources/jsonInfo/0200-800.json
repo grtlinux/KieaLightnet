@@ -3,8 +3,8 @@
         "name" : "customer",
         "reqres" : "0200",
         "type" : "800",
-        "extHttpUrl": "/remittances.customer",
-        "extHttpMethod": "POST"
+        "extHttpUrl": "/remittances.customer-lookup",
+        "extHttpMethod": "GET"
     },
     "__head_data" : {
         "length" : "L:4,T:string,D:0000,C:길이",
@@ -23,6 +23,7 @@
         "name" : "customer.REQ"
     },
     "__body_data" : {
-        "limit" : "L:3,T:int"
+        "destinationOperatorCode" : "L:3,T:string",
+        "senderHomePhone" : "L:20,T:string"
     }
 }

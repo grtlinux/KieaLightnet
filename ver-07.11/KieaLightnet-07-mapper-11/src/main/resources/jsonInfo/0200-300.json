@@ -23,6 +23,79 @@
         "name" : "validate.REQ"
     },
     "__body_data" : {
-        "deliveryMethod": "L:10,T:string"
+        "saveReport": "L:5,T:boolean",
+        "terminalName": "L:20,T:string",
+        "receiver": {
+            "agentId": "L:10,T:string",
+            "accountId": "L:20,T:string",
+            "firstName": "L:20,T:string",
+            "lastName": "L:20,T:string",
+            "address": {
+                "city": "L:20,T:string",
+                "line1": "L:20,T:string",
+                "countryCode": "L:5,T:string"
+            },
+            "notification": {
+                "transactionEmailOptIn": "L:5,T:boolean",
+                "transactionSMSOptIn": "L:5,T:boolean"
+            },
+            "email": "L:50,T:string",
+            "phone": {
+                "number": "L:15,T:string",
+                "countryCode": "L:5,T:string"
+            },
+            "accountNumber": "L:20,T:string",
+            "extraFields": {
+                "CIMBBANKNAME": "L:10,T:string"
+            }
+        },
+        "deliveryMethod": "L:20,T:string",
+        "sender": {
+            "cardNumber": "L:20,T:string",
+            "firstName": "L:20,T:string",
+            "lastName": "L:20,T:string",
+            "address": {
+                "city": "L:20,T:string",
+                "postalCode": "L:20,T:string",
+                "line1": "L:20,T:string"
+            },
+            "idType": "L:20,T:string",
+            "purpose": "L:20,T:string",
+            "birthCountryCode": "L:5,T:string",
+            "notification": {
+                "transactionEmailOptIn": "L:5,T:boolean",
+                "transactionSMSOptIn": "L:5,T:boolean",
+                "marketingEmailOptIn": "L:5,T:boolean",
+                "marketingSMSOptIn": "L:5,T:boolean"
+            },
+            "homePhone": {
+                "number": "L:20,T:string",
+                "countryCode": "L:3,T:string"
+            },
+            "email": "L:20,T:string",
+            "idCountryCode": "L:3,T:string",
+            "idNumber": "L:20,T:string",
+            "dob": "L:20,T:string",
+            "relationshipToReceiver": "L:20,T:string",
+            "middleName": "L:20,T:string",
+            "citizenshipCountryCode": "L:3,T:string",
+            "occupation": "L:20,T:string"
+        },
+        "destination": {
+            "country": "L:3,T:string",
+            "receive": {
+                "currency": "L:3,T:string"
+            },
+            "operatorCode": "L:3,T:string"
+        },
+        "remark": "L:50,T:string",
+        "source": {
+            "country": "L:3,T:string",
+            "send": {
+                "amount": "L:15,T:string",
+                "currency": "L:3,T:string"
+            },
+            "transactionId": "L:30,T:string"
+        }
     }
 }

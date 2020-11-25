@@ -17,12 +17,12 @@
         "resCode" : "L:3,T:string,C:응답코드",
         "resMessage" : "L:20,T:string,C:응답메시지",
         "reserved" : "L:40,T:string,C:예약공간",
-        "dummy" : "L:-100,T:string,C:안쓴다"
+        "dummy" : "L:-1000,T:string,C:안쓴다"
     },
     "__body_base" : {
         "name" : "commit.REQ"
     },
     "__body_data" : {
-        "deliveryMethod": "L:10,T:string"
+        "transactionId": "L:50,T:string"
     }
 }
