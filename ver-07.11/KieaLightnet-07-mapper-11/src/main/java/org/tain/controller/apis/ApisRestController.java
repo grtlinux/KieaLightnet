@@ -68,7 +68,7 @@ public class ApisRestController {
 		if (Flag.flag) {
 			LnsMstInfo lnsMstInfo = this.mapperReaderJob.get(reqJsonNode.getText("reqResType"));
 			JsonNode node = new LnsStreamToJson(lnsMstInfo, reqJsonNode.getText("stream")).get();
-			resJsonNode.put("json", node.toPrettyString());
+			resJsonNode.put("json", node);
 			log.info("MAPPER.req >>>>> resJsonNode = {}", resJsonNode.toPrettyString());
 		}
 		
@@ -114,9 +114,8 @@ public class ApisRestController {
 		}
 		
 		if (Flag.flag) {
-			
 			LnsMstInfo lnsMstInfo = this.mapperReaderJob.get(reqJsonNode.getText("reqResType"));
-			String stream = new LnsJsonToStream(lnsMstInfo, reqJsonNode.getText("json")).get();
+			String stream = new LnsJsonToStream(lnsMstInfo, reqJsonNode.getJsonNode("json").toPrettyString()).get();
 			resJsonNode.put("stream", stream);
 			log.info("MAPPER.req >>>>> resJsonNode = {}", resJsonNode.toPrettyString());
 		}
@@ -327,8 +326,8 @@ public class ApisRestController {
 		
 		if (Flag.flag) {
 			LnsMstInfo lnsMstInfo = this.mapperReaderJob.get(reqJsonNode.getText("reqResType"));
-			String jsonInfo = lnsMstInfo.getHeadBaseInfoNode().toPrettyString();
-			resJsonNode.put("jsonInfo", jsonInfo);
+			resJsonNode.put("jsonInfo", lnsMstInfo.getHeadBaseInfoNode());
+			String jsonInfo = resJsonNode.getJsonNode("jsonInfo").toPrettyString();
 			log.info("MAPPER.infoGet >>>>> jsonInfo = {}", jsonInfo);
 		}
 		
