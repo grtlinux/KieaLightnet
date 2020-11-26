@@ -148,6 +148,7 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 			if (!Flag.flag) this.test01Working.test01();
 			
 			if (Flag.flag) this._0200100_getFee_Working.test00();
+			if (!Flag.flag) this._0200100_getFee_Working.test01();
 			if (!Flag.flag) this._0200200_detail_Working.test00();
 			if (!Flag.flag) this._0200300_validate_Working.test00();
 			if (!Flag.flag) this._0200400_commit_Working.test00();

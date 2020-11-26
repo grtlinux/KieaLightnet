@@ -84,6 +84,7 @@ public class MapperReaderJob {
 						log.info(">>>>> infoNode = {}", lnsMstInfo.getInfoNode().toPrettyString());
 						log.info(">>>>> streamHead = [{}]", lnsMstInfo.getStreamHead());
 						log.info(">>>>> jsonHead = '{}'", lnsMstInfo.getJsonHead());
+						log.info(">>>>> cstruct = '{}'", lnsMstInfo.getCStruct());
 						//log.info(">>>>> headBaseInfoNode = {}", lnsMstInfo.getHeadBaseInfoNode().toPrettyString());
 						//log.info(">>>>> headDataInfoNode = {}", lnsMstInfo.getHeadDataInfoNode().toPrettyString());
 						//log.info(">>>>> bodyBaseInfoNode = {}", lnsMstInfo.getBodyBaseInfoNode().toPrettyString());

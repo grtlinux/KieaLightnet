@@ -48,68 +48,72 @@ public class _0200100_getFee_Working {
 		
 		if (Flag.flag) {
 			// 1. reqCStruct
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
+			lnsJsonNode.put("/request", "reqResType", "0200100");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-1 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 2. Json to Stream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
-			lnsJsonNode.put("/reqJson", "json", strReqJson);
+			lnsJsonNode.put("/request", "reqResType", "0200100");
+			lnsJsonNode.put("/request", "json", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 3. Stream to Json of strReqStream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
-			lnsJsonNode.put("/reqJson", "stream", strReqStream);
+			lnsJsonNode.put("/request", "reqResType", "0200100");
+			lnsJsonNode.put("/request", "stream", strReqStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 7. Info of Head Base
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
+			lnsJsonNode.put("/request", "reqResType", "0200100");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "jsonInfo"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 8. link
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
-			// extHttpUrl, extHttpMethod
-			lnsJsonNode.put("/reqJson", "reqJson", strReqJson);
+			lnsJsonNode.put("/request", "reqResType", "0200100");
+			lnsJsonNode.put("/request", "json", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-8 >>>>> lnsJsonNode.link {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "resJson"));
 		}
 	}
 	
-	@Deprecated
 	public void test01() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		String strReqStream = "0116020010099999920201016125525125525                                                               "
-				+ "701225-1234567      ";
+		String strReqStream = "0127020010099999920201016125525125525                                                               "
+				+ "KORTHB               IDNIDR";
 		
-		String strResStream = "0181021010099999920201016125525125525                                                               "
-				+ "7012251234567       true falsefalse                    1001088   05012345678900      ";
+		String strResStream = "0690021010099999920201016125525125525                                                               "
+				+ "success             OK        "
+				+ "cash                13.0000        USD  excluded            Cash                                              "
+				+ "MoneyGram 888                                                                                                           "
+				+ "1              USD  29.7332        THB  mgi  THA  "
+				+ "account_deposit     15.0000        USD  excluded            Account deposit                                   "
+				+ "MoneyGram 888                                     72412820            EARTHPORT- THAILAND                               "
+				+ "1              USD  30.34          THB  mgi  THA  ";
 		
 		String strReqJson = "{\n" + 
 				"  \"__head_data\" : {\n" + 
@@ -145,97 +149,148 @@ public class _0200100_getFee_Working {
 				"    \"resTime\" : \"125525\"\n" + 
 				"  },\n" + 
 				"  \"__body_data\" : {\n" + 
-				"    \"id_number\" : \"7012251234567\",\n" + 
-				"    \"sign_status\" : true,\n" + 
-				"    \"sentbe_exist_status\" : false,\n" + 
-				"    \"remittable_status\" : false,\n" + 
-				"    \"user_id\" : \"1001088\",\n" + 
-				"    \"account_number\" : \"05012345678900\"\n" + 
-				"  }\n" + 
+				"      \"status\" : \"success\",\n" + 
+				"      \"message\" : \"OK\",\n" + 
+				"      \"data\" : [ {\n" + 
+				"        \"deliveryMethod\" : \"cash\",\n" + 
+				"        \"fee\" : {\n" + 
+				"          \"amount\" : \"13.0000\",\n" + 
+				"          \"currency\" : \"USD\",\n" + 
+				"          \"model\" : \"excluded\"\n" + 
+				"        },\n" + 
+				"        \"metadata\" : {\n" + 
+				"          \"deliveryMethodDisplayName\" : \"Cash\",\n" + 
+				"          \"destinationOperatorName\" : \"MoneyGram 888\"\n" + 
+				"        },\n" + 
+				"        \"rate\" : {\n" + 
+				"          \"from\" : {\n" + 
+				"            \"amount\" : \"1\",\n" + 
+				"            \"currency\" : \"USD\"\n" + 
+				"          },\n" + 
+				"          \"to\" : {\n" + 
+				"            \"amount\" : \"29.7332\",\n" + 
+				"            \"currency\" : \"THB\"\n" + 
+				"          }\n" + 
+				"        },\n" + 
+				"        \"destination\" : {\n" + 
+				"          \"operatorCode\" : \"mgi\",\n" + 
+				"          \"country\" : \"THA\"\n" + 
+				"        }\n" + 
+				"      }, {\n" + 
+				"        \"deliveryMethod\" : \"account_deposit\",\n" + 
+				"        \"fee\" : {\n" + 
+				"          \"amount\" : \"15.0000\",\n" + 
+				"          \"currency\" : \"USD\",\n" + 
+				"          \"model\" : \"excluded\"\n" + 
+				"        },\n" + 
+				"        \"metadata\" : {\n" + 
+				"          \"deliveryMethodDisplayName\" : \"Account deposit\",\n" + 
+				"          \"destinationOperatorName\" : \"MoneyGram 888\",\n" + 
+				"          \"receiveAgentId\" : \"72412820\",\n" + 
+				"          \"receiveAgentName\" : \"EARTHPORT- THAILAND\"\n" + 
+				"        },\n" + 
+				"        \"rate\" : {\n" + 
+				"          \"from\" : {\n" + 
+				"            \"amount\" : \"1\",\n" + 
+				"            \"currency\" : \"USD\"\n" + 
+				"          },\n" + 
+				"          \"to\" : {\n" + 
+				"            \"amount\" : \"30.34\",\n" + 
+				"            \"currency\" : \"THB\"\n" + 
+				"          }\n" + 
+				"        },\n" + 
+				"        \"destination\" : {\n" + 
+				"          \"operatorCode\" : \"mgi\",\n" + 
+				"          \"country\" : \"THA\"\n" + 
+				"        }\n" + 
+				"      } ]\n" + 
+				"    }\n" + 
 				"}";
 		
 		if (Flag.flag) {
 			// 1. reqCStruct
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
+			lnsJsonNode.put("reqResType", "0200100");
+			lnsJsonNode.put("request", "{}");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-1 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 2. resCStruct
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0210100");
+			lnsJsonNode.put("reqResType", "0210100");
+			lnsJsonNode.put("request", "{}");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-2 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
 		}
 		
-		if (Flag.flag) {
-			// 3. Stream to Json of strReqStream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
-			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
-			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
-			lnsJsonNode.put("/reqJson", "stream", strReqStream);
-			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
-		}
-		
-		if (Flag.flag) {
-			// 4. Stream to Json of strResStream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
-			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
-			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0210100");
-			lnsJsonNode.put("/reqJson", "stream", strResStream);
-			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-4 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
-		}
-		
-		if (Flag.flag) {
-			// 5. Json to Stream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+		if (!Flag.flag) {
+			// 3. Json to Stream
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
-			lnsJsonNode.put("/reqJson", "json", strReqJson);
+			lnsJsonNode.put("reqResType", "0200100");
+			lnsJsonNode.put("request", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
 		}
 		
-		if (Flag.flag) {
-			// 6. Json to Stream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+		if (!Flag.flag) {
+			// 4. Json to Stream
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0210100");
-			lnsJsonNode.put("/reqJson", "json", strResJson);
+			lnsJsonNode.put("reqResType", "0210100");
+			lnsJsonNode.put("request", new LnsJsonNode(strResJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-6 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
+			// 5. Stream to Json of strReqStream
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
+			lnsJsonNode.put("httpMethod", "POST");
+			lnsJsonNode.put("reqResType", "0200100");
+			lnsJsonNode.put("request", strReqStream);
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
+		}
+		
+		if (!Flag.flag) {
+			// 6. Stream to Json of strResStream
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
+			lnsJsonNode.put("httpMethod", "POST");
+			lnsJsonNode.put("reqResType", "0210100");
+			lnsJsonNode.put("request", strResStream);
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("ONLINE-4 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
+		}
+		
+		if (!Flag.flag) {
 			// 7. Info of Head Base
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
+			lnsJsonNode.put("reqResType", "0200100");
+			lnsJsonNode.put("request", "{}");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "jsonInfo"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 8. link
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200100");
-			// extHttpUrl, extHttpMethod
-			lnsJsonNode.put("/reqJson", "reqJson", strReqJson);
+			lnsJsonNode.put("reqResType", "0200100");
+			lnsJsonNode.put("request", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-8 >>>>> lnsJsonNode.link {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "resJson"));
 		}

@@ -21,6 +21,8 @@ public class LnsCStruct {
 	public LnsCStruct(LnsMstInfo lnsMstInfo) {
 		this.lnsMstInfo = lnsMstInfo;
 		
+		this.sb.append("/* ReqResType: " + lnsMstInfo.getReqResType() + " */").append("\n");
+		
 		this.infoNode = (JsonNode) this.objectMapper.createObjectNode();
 		((ObjectNode) this.infoNode).set("__head_data", this.lnsMstInfo.getHeadDataInfoNode());
 		((ObjectNode) this.infoNode).set("__body_data", this.lnsMstInfo.getBodyDataInfoNode());
@@ -29,7 +31,7 @@ public class LnsCStruct {
 	
 	public String get() {
 		traverse(this.infoNode, "");
-		return sb.toString();
+		return this.sb.toString();
 	}
 	
 	private void traverse(JsonNode node, String prefix) {

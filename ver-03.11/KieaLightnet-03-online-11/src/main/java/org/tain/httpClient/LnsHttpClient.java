@@ -115,36 +115,36 @@ public class LnsHttpClient {
 			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.POST;
 			
-			LnsJsonNode reqJsonNode = null;
-			if (!Flag.flag && lnsJsonNode.getJsonNode("reqJson") == null) {
+			LnsJsonNode request = null;
+			if (!Flag.flag && lnsJsonNode.getJsonNode("request") == null) {
 				//reqJsonNode = new LnsJsonNode(lnsJsonNode.get());
 				//log.info(">>>>> POST.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
 			} else {
-				reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("reqJson"));
-				log.info(">>>>> POST.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
+				request = new LnsJsonNode(lnsJsonNode.getJsonNode("request"));
+				log.info(">>>>> POST.REQ.request    = {}", request.toPrettyString());
 			}
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
 			log.info(">>>>> POST.REQ.reqHeaders     = {}", reqHeaders);
 			
-			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqJsonNode.toPrettyString(), reqHeaders);
+			HttpEntity<String> reqHttpEntity = new HttpEntity<>(request.toPrettyString(), reqHeaders);
 			log.info(">>>>> POST.REQ.reqHttpEntity  = {}", reqHttpEntity);
 			
-			ResponseEntity<String> response = null;
+			ResponseEntity<String> responseEntity = null;
 			try {
-				response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
+				responseEntity = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						httpUrl
 						, httpMethod
 						, reqHttpEntity
 						, String.class);
 				
-				log.info(">>>>> POST.RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
-				log.info(">>>>> POST.RES.getStatusCode()      = {}", response.getStatusCode());
-				log.info(">>>>> POST.RES.getBody()            = {}", response.getBody());
+				log.info(">>>>> POST.RES.getStatusCodeValue() = {}", responseEntity.getStatusCodeValue());
+				log.info(">>>>> POST.RES.getStatusCode()      = {}", responseEntity.getStatusCode());
+				log.info(">>>>> POST.RES.getBody()            = {}", responseEntity.getBody());
 				
-				LnsJsonNode resJsonNode = new LnsJsonNode(response.getBody());
-				lnsJsonNode.put("resJson", resJsonNode.get());
+				LnsJsonNode response = new LnsJsonNode(responseEntity.getBody());
+				lnsJsonNode.put("response", response.get());
 				
 				log.info(">>>>> POST.RES-1.lnsJsonNode = {}", lnsJsonNode.toPrettyString());
 				

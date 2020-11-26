@@ -143,6 +143,10 @@ public class LnsMstInfo implements Cloneable {
 		return sb.toString();
 	}
 	
+	public String getCStruct() throws Exception {
+		return new LnsCStruct(this).get();
+	}
+	
 	////////////////////////////////////////////////////////////////////////
 	
 	private void updateInfo() throws Exception {
