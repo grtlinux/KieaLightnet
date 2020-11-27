@@ -25,7 +25,7 @@ public class LnsData {
 		
 		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
-			lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			lnsJsonNode = new LnsJsonNode("{\"request\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getAuth() + "/auth");
 			lnsJsonNode.put("httpMethod", "POST");
 			log.info("LINK.getAccessToken >>>>> REQ.lnsJsonNode  = {}", lnsJsonNode.toPrettyString());
@@ -36,7 +36,7 @@ public class LnsData {
 		
 		String strAccessToken = null;
 		if (Flag.flag) {
-			strAccessToken = lnsJsonNode.getText("/resJson", "accessToken");
+			strAccessToken = lnsJsonNode.getText("/response", "accessToken");
 		}
 		
 		return strAccessToken;

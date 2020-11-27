@@ -52,9 +52,12 @@ public class LnsLightnetClient {
 			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.GET;
 			
-			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getText("reqJson"));
-			LnsJsonNode reqBodyNode = new LnsJsonNode(reqJsonNode.getJsonNode("__body_data"));
+			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("request"));
 			log.info(">>>>> GET.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
+			LnsJsonNode reqHeadNode = new LnsJsonNode(reqJsonNode.getJsonNode("__head_data"));
+			log.info(">>>>> GET.REQ.reqHeadNode    = {}", reqHeadNode.toPrettyString());
+			LnsJsonNode reqBodyNode = new LnsJsonNode(reqJsonNode.getJsonNode("__body_data"));
+			log.info(">>>>> GET.REQ.reqBodyNode    = {}", reqBodyNode.toPrettyString());
 			
 			Map<String,String> reqMap = new ObjectMapper().readValue(reqBodyNode.toPrettyString(), new TypeReference<Map<String,String>>(){});
 			MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
@@ -86,8 +89,18 @@ public class LnsLightnetClient {
 				log.info(">>>>> GET.RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> GET.RES.getBody()            = {}", response.getBody());
 				
-				LnsJsonNode resJsonNode = new LnsJsonNode(response.getBody());
-				lnsJsonNode.put("resJson", resJsonNode.get());
+				LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
+				resHeadNode.put("reqres", "0710");
+				resHeadNode.put("resTime", LnsNodeTools.getTime());
+				resHeadNode.put("resCode", "000");
+				resHeadNode.put("resMessage", "SUCCESS");
+				LnsJsonNode resDataNode = new LnsJsonNode(response.getBody());
+				
+				LnsJsonNode resJsonNode = new LnsJsonNode("{}");
+				resJsonNode.put("__head_data", resHeadNode.get());
+				resJsonNode.put("__body_data", resDataNode.get());
+				lnsJsonNode.put("response", resJsonNode.get());
+				
 				log.info(">>>>> GET.RES-1.lnsJsonNode          = {}", lnsJsonNode.toPrettyString());
 				
 				lnsJsonNode.put("code", "00000");

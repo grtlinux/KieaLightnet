@@ -115,7 +115,7 @@ public class LnsHttpClient {
 			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.POST;
 			
-			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("reqJson"));
+			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("request"));
 			log.info(">>>>> POST.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
@@ -138,7 +138,7 @@ public class LnsHttpClient {
 				log.info(">>>>> POST.RES.getBody()            = {}", response.getBody());
 				
 				LnsJsonNode resJsonNode = new LnsJsonNode(response.getBody());
-				lnsJsonNode.put("resJson", resJsonNode.get());
+				lnsJsonNode.put("response", resJsonNode.get());
 				
 				log.info(">>>>> POST.RES-1.lnsJsonNode = {}", lnsJsonNode.toPrettyString());
 				

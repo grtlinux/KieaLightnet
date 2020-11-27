@@ -50,56 +50,55 @@ public class _0200200_detail_Working {
 		
 		if (Flag.flag) {
 			// 1. reqCStruct
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
+			lnsJsonNode.put("/request", "reqResType", "0200200");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-1 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "cstruct"));
+			log.info("ONLINE-1 >>>>> lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "cstruct"));
+		}
+		
+		if (Flag.flag) {
+			// 2. Json to Stream
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
+			lnsJsonNode.put("httpMethod", "POST");
+			lnsJsonNode.put("/request", "reqResType", "0200200");
+			lnsJsonNode.put("/request", "json", new LnsJsonNode(strReqJson).get());
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "stream"));
 		}
 		
 		if (Flag.flag) {
 			// 3. Stream to Json of strReqStream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
-			lnsJsonNode.put("/reqJson", "stream", strReqStream);
+			lnsJsonNode.put("/request", "reqResType", "0200200");
+			lnsJsonNode.put("/request", "stream", strReqStream);
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "json"));
+			log.info("ONLINE-3 >>>>> lnsJsonNode.s2j {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response", "json").toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			// 5. Json to Stream
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
-			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
-			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
-			lnsJsonNode.put("/reqJson", "json", strReqJson);
-			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "stream"));
-		}
-		
-		if (Flag.flag) {
-			// 7. Info of Head Base
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			// 4. Info of Head Base
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
+			lnsJsonNode.put("/request", "reqResType", "0200200");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "jsonInfo"));
+			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response", "jsonInfo").toPrettyString());
 		}
 		
 		if (Flag.flag) {
-			// 8. link
-			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			// 5. link
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
-			lnsJsonNode.put("/reqJson", "reqResType", "0200200");
-			// extHttpUrl, extHttpMethod
-			lnsJsonNode.put("/reqJson", "reqJson", strReqJson);
+			lnsJsonNode.put("/request", "reqResType", "0200200");
+			lnsJsonNode.put("/request", "json", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-8 >>>>> lnsJsonNode.link {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "resJson"));
+			log.info("ONLINE-8 >>>>> lnsJsonNode.link {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("response").toPrettyString());
 		}
 	}
 	

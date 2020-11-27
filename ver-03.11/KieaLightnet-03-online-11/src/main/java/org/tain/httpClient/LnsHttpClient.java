@@ -40,7 +40,7 @@ public class LnsHttpClient {
 			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.GET;
 			
-			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("reqJson"));
+			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("request"));
 			log.info(">>>>> GET.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
 			
 			Map<String,String> reqMap = new ObjectMapper().readValue(reqJsonNode.toPrettyString(), new TypeReference<Map<String,String>>(){});
@@ -73,7 +73,7 @@ public class LnsHttpClient {
 				log.info(">>>>> GET.RES.getBody()            = {}", response.getBody());
 				
 				LnsJsonNode resJsonNode = new LnsJsonNode(response.getBody());
-				lnsJsonNode.put("resJson", resJsonNode.toPrettyString());
+				lnsJsonNode.put("response", resJsonNode.toPrettyString());
 				log.info(">>>>> GET.RES-1.lnsJsonNode = {}", lnsJsonNode.toPrettyString());
 				
 				lnsJsonNode.put("code", "00000");

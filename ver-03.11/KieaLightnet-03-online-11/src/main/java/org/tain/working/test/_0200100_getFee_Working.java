@@ -64,7 +64,7 @@ public class _0200100_getFee_Working {
 			lnsJsonNode.put("/request", "reqResType", "0200100");
 			lnsJsonNode.put("/request", "json", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-5 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "stream"));
+			log.info("ONLINE-2 >>>>> lnsJsonNode.j2s {} = \n[{}]", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "stream"));
 		}
 		
 		if (Flag.flag) {
@@ -85,10 +85,10 @@ public class _0200100_getFee_Working {
 			lnsJsonNode.put("httpMethod", "POST");
 			lnsJsonNode.put("/request", "reqResType", "0200100");
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-7 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response", "jsonInfo").toPrettyString());
+			log.info("ONLINE-4 >>>>> lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response", "jsonInfo").toPrettyString());
 		}
 		
-		if (!Flag.flag) {
+		if (Flag.flag) {
 			// 5. link
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
@@ -96,7 +96,7 @@ public class _0200100_getFee_Working {
 			lnsJsonNode.put("/request", "reqResType", "0200100");
 			lnsJsonNode.put("/request", "json", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-8 >>>>> lnsJsonNode.link {} = \n[{}]", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "resJson"));
+			log.info("ONLINE-5 >>>>> lnsJsonNode.link {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("response").toPrettyString());
 		}
 	}
 	
@@ -127,13 +127,11 @@ public class _0200100_getFee_Working {
 				"    \"resTime\" : \"125525\"\n" + 
 				"  },\n" + 
 				"  \"__body_data\" : {\n" + 
-				"    \"sourceCountry\" : \"KOR\",\n" + 
-				"    \"sourceSendCurrency\" : \"THB\",\n" + 
-				"    \"destinationCountry\" : \"IDN\",\n" + 
-				"    \"destinationReceiveAmount\" : \"1000\",\n" + 
-				"    \"destinationReceiveCurrency\" : \"IDR\",\n" + 
-				"    \"destinationOperatorCode\" : \"mgi\",\n" + 
-				"    \"deliveryMethod\": \"cash\"\n" + 
+				"    \"sourceCountry\": \"KOR\",\n" + 
+				"    \"sourceSendCurrency\": \"USD\",\n" + 
+				"    \"sourceSendAmount\": \"100.50\",\n" + 
+				"    \"destinationCountry\": \"THA\",\n" + 
+				"    \"destinationReceiveCurrency\": \"THB\"\n" + 
 				"  }\n" + 
 				"}";
 		
@@ -282,14 +280,23 @@ public class _0200100_getFee_Working {
 		}
 		
 		if (Flag.flag) {
-			// 8. link
+			// 8-1. link
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getLink() + "/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
 			lnsJsonNode.put("/request", "reqResType", "0200100");
-			lnsJsonNode.put("/request", "request", new LnsJsonNode(strReqJson).get());
+			lnsJsonNode.put("/request", "json", new LnsJsonNode(strReqJson).get());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
-			log.info("ONLINE-8 >>>>> lnsJsonNode.link {} = \n[{}]", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "resJson"));
+			log.info("ONLINE-8-1 >>>>> lnsJsonNode.link {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("response").toPrettyString());
+			
+			// 8-2. Json to Stream
+			LnsJsonNode lnsJsonNode2 = new LnsJsonNode("{\"request\":{},\"response\":{}}");
+			lnsJsonNode2.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");
+			lnsJsonNode2.put("httpMethod", "POST");
+			lnsJsonNode2.put("/request", "reqResType", "0210100");
+			lnsJsonNode2.put("/request", "json", lnsJsonNode.getJsonNode("/response", "response"));
+			lnsJsonNode2 = this.lnsHttpClient.post(lnsJsonNode2);
+			log.info("ONLINE-8-2 >>>>> lnsJsonNode2.j2s {} = \n[{}]", lnsJsonNode2.getText("/request", "reqResType"), lnsJsonNode2.getText("/response", "stream"));
 		}
 	}
 }

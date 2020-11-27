@@ -49,40 +49,52 @@ public class ApisRestController {
 		log.info("=========================== LINK: /link/process =============================");
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		LnsJsonNode lnsJsonNode = null;
+		String body = null;
 		if (Flag.flag) {
-			String body = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
-			lnsJsonNode = new LnsJsonNode(body);
-			log.info("LINK.REQ >>>>> Headers = {}", reqHttpEntity.getHeaders());
-			log.info("LINK.REQ >>>>> lnsJsonNode = Body = {}", lnsJsonNode.toPrettyString());
+			body = URLDecoder.decode(reqHttpEntity.getBody(), "utf-8");
+			log.info("LINK.process >>>>> Headers = {}", reqHttpEntity.getHeaders());
+			log.info("LINK.process >>>>> Body = {}", body);
 		}
+		
+		LnsJsonNode reqJsonNode = null;
+		if (Flag.flag) {
+			reqJsonNode = new LnsJsonNode(body);
+			log.info("Link.process >>>>> reqJsonNode = {}", reqJsonNode.toPrettyString());
+		}
+		
+		//LnsJsonNode resJsonNode = null;
+		//if (Flag.flag) {
+		//	resJsonNode = new LnsJsonNode("{}");
+		//}
 		
 		String reqResType = null;
 		if (Flag.flag) {
-			lnsJsonNode = new LnsJsonNode(reqHttpEntity.getBody());
-			reqResType = lnsJsonNode.getText("reqResType");
-			log.info(">>>>> [{}] REQ.lnsJsonNode = {}", reqResType, lnsJsonNode.toPrettyString());
+			reqResType = reqJsonNode.getText("reqResType");
+			log.info(">>>>> LINK.reqResType = [{}]", reqResType);
 		}
 		
 		String extHttpUrl = null;
 		String extHttpMethod = null;
 		if (Flag.flag) {
-			LnsJsonNode infoJsonNode = new LnsJsonNode("{\"reqJson\":{}}");
+			LnsJsonNode infoJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			infoJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
 			infoJsonNode.put("httpMethod", "POST");
-			infoJsonNode.put("/reqJson", "reqResType", reqResType);
+			infoJsonNode.put("/request", "reqResType", reqResType);
 			infoJsonNode = this.lnsHttpClient.post(infoJsonNode);
-			log.info(">>>>> MAPPER.infoJsonNode {} = \n{}", infoJsonNode.getText("/resJson", "reqResType"), infoJsonNode.getText("/resJson", "jsonInfo"));
+			log.info(">>>>> LINK.infoJsonNode {} = \n{}", infoJsonNode.getText("/request", "reqResType"), infoJsonNode.getJsonNode("/response", "jsonInfo").toPrettyString());
 			
-			LnsJsonNode jsonInfo = new LnsJsonNode(infoJsonNode.getText("/resJson", "jsonInfo"));
+			LnsJsonNode jsonInfo = new LnsJsonNode(infoJsonNode.getJsonNode("/response", "jsonInfo"));
 			extHttpUrl = jsonInfo.getText("extHttpUrl");
 			extHttpMethod = jsonInfo.getText("extHttpMethod");
 			log.info(">>>>> LINK.extHttp = [{}] {}", extHttpMethod, extHttpUrl);
 		}
 		
+		LnsJsonNode lnsJsonNode = null;
 		if (Flag.flag) {
+			lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", extHttpUrl);
 			lnsJsonNode.put("httpMethod", extHttpMethod);
+			lnsJsonNode.put("request", reqJsonNode.getJsonNode("json"));
 			if ("POST".equals(extHttpMethod))
 				lnsJsonNode = this.lnsLightnetClient.post(lnsJsonNode);
 			else
