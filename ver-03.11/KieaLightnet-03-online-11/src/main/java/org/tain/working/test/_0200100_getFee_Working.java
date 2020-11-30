@@ -100,6 +100,7 @@ public class _0200100_getFee_Working {
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-5 >>>>> LINK_PROCESS lnsJsonNode.link {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("response").toPrettyString());
 			strResJson = lnsJsonNode.getJsonNode("/response", "response").toPrettyString();
+			log.info("ONLINE-5.2 >>>>> LINK_PROCESS lnsJsonNode.link {}    __body_data = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response/response", "__body_data").toPrettyString());
 		}
 		
 		if (Flag.flag) {

@@ -44,7 +44,7 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (!Flag.flag) job02();  // server
+		if (Flag.flag) job02();  // server
 		if (Flag.flag) job03();  // test
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();
@@ -150,8 +150,8 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 			if (!Flag.flag) this._0200100_getFee_Working.test00();
 			if (!Flag.flag) this._0200100_getFee_Working.test01();
 			if (!Flag.flag) this._0200200_detail_Working.test00();
-			if (Flag.flag) this._0200300_validate_Working.test00();
-			if (!Flag.flag) this._0200400_commit_Working.test00();
+			if (!Flag.flag) this._0200300_validate_Working.test00();
+			if (Flag.flag) this._0200400_commit_Working.test00();
 			if (!Flag.flag) this._0200500_amend_Working.test00();
 			if (!Flag.flag) this._0200600_refund_Working.test00();
 			if (!Flag.flag) this._0200700_history_Working.test00();

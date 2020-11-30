@@ -1,0 +1,16 @@
+0200-100   /remittances.fee-lookup
+0200-200   /remittances.detail
+0200-300   /remittances.validate
+0200-400   /remittances.commit
+0200-500   /remittances.amend
+0200-600   /remittances.refund
+0200-700   /remittances
+0200-800   /remittances.customer-lookup
+
+
+
+
+
+
+
+

@@ -175,10 +175,10 @@ public class _0200300_validate_Working {
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			log.info("ONLINE-5 >>>>> LINK_PROCESS lnsJsonNode.link {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("response").toPrettyString());
 			strResJson = lnsJsonNode.getJsonNode("/response", "response").toPrettyString();
+			log.info("ONLINE-5.2 >>>>> LINK_PROCESS lnsJsonNode.link {}    __body_data = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response/response", "__body_data").toPrettyString());
 		}
 		
-		if (!Flag.flag) {
-			// TODO: after info-json
+		if (Flag.flag) {
 			// 6. Info of Head Base
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
@@ -188,8 +188,7 @@ public class _0200300_validate_Working {
 			log.info("ONLINE-6 >>>>> HEADBASE lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response", "jsonInfo").toPrettyString());
 		}
 		
-		if (!Flag.flag) {
-			// TODO: after info-json
+		if (Flag.flag) {
 			// 7. Json to Stream
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");

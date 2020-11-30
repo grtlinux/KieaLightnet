@@ -146,9 +146,12 @@ public class LnsLightnetClient {
 			String httpUrl = lnsJsonNode.getText("httpUrl");
 			HttpMethod httpMethod = HttpMethod.POST;
 			
-			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getText("reqJson"));
-			LnsJsonNode reqBodyNode = new LnsJsonNode(reqJsonNode.getJsonNode("__body_data"));
+			LnsJsonNode reqJsonNode = new LnsJsonNode(lnsJsonNode.getJsonNode("request"));
 			log.info(">>>>> POST.REQ.reqJsonNode    = {}", reqJsonNode.toPrettyString());
+			LnsJsonNode reqHeadNode = new LnsJsonNode(reqJsonNode.getJsonNode("__head_data"));
+			log.info(">>>>> POST.REQ.reqHeadNode    = {}", reqHeadNode.toPrettyString());
+			LnsJsonNode reqBodyNode = new LnsJsonNode(reqJsonNode.getJsonNode("__body_data"));
+			log.info(">>>>> POST.REQ.reqBodyNode    = {}", reqBodyNode.toPrettyString());
 			
 			HttpHeaders reqHeaders = new HttpHeaders();
 			reqHeaders.setContentType(MediaType.APPLICATION_JSON);
@@ -169,16 +172,19 @@ public class LnsLightnetClient {
 				log.info(">>>>> POST.RES.getStatusCodeValue() = {}", response.getStatusCodeValue());
 				log.info(">>>>> POST.RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> POST.RES.getBody()            = {}", response.getBody());
-				LnsJsonNode resBodyNode = new LnsJsonNode(response.getBody());
 				
-				LnsJsonNode resJsonNode = new LnsJsonNode(reqJsonNode.get());
-				resJsonNode.put("/__head_data", "reqres", "0710");
-				resJsonNode.put("/__head_data", "resTime", LnsNodeTools.getTime());
-				resJsonNode.put("/__head_data", "resCode", "000");
-				resJsonNode.put("/__head_data", "resMessage", "SUCCESS");
-				resJsonNode.put("/__body_data", resBodyNode.get());
+				LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
+				resHeadNode.put("reqres", "0210");
+				resHeadNode.put("resTime", LnsNodeTools.getTime());
+				resHeadNode.put("resCode", "000");
+				resHeadNode.put("resMessage", "SUCCESS");
+				LnsJsonNode resDataNode = new LnsJsonNode(response.getBody());
 				
-				lnsJsonNode.put("resJson", resJsonNode);
+				LnsJsonNode resJsonNode = new LnsJsonNode("{}");
+				resJsonNode.put("__head_data", resHeadNode.get());
+				resJsonNode.put("__body_data", resDataNode.get());
+				lnsJsonNode.put("response", resJsonNode.get());
+				
 				log.info(">>>>> POST.RES-1.lnsJsonNode          = {}", lnsJsonNode.toPrettyString());
 				
 				lnsJsonNode.put("code", "00000");
