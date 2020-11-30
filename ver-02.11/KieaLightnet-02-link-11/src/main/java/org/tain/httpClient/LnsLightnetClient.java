@@ -90,7 +90,7 @@ public class LnsLightnetClient {
 				log.info(">>>>> GET.RES.getBody()            = {}", response.getBody());
 				
 				LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
-				resHeadNode.put("reqres", "0710");
+				resHeadNode.put("reqres", "0210");
 				resHeadNode.put("resTime", LnsNodeTools.getTime());
 				resHeadNode.put("resCode", "000");
 				resHeadNode.put("resMessage", "SUCCESS");
