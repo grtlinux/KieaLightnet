@@ -2,6 +2,7 @@ package org.tain.working.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tain.data.LnsData;
 import org.tain.httpClient.LnsHttpClient;
 import org.tain.mapper.LnsJsonNode;
 import org.tain.properties.ProjEnvUrlProperties;
@@ -19,6 +20,9 @@ public class _0200300_validate_Working {
 	
 	@Autowired
 	private LnsHttpClient lnsHttpClient;
+	
+	@Autowired
+	private LnsData lnsData;
 	
 	public void test00() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
@@ -176,9 +180,10 @@ public class _0200300_validate_Working {
 			log.info("ONLINE-5 >>>>> LINK_PROCESS lnsJsonNode.link {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("response").toPrettyString());
 			strResJson = lnsJsonNode.getJsonNode("/response", "response").toPrettyString();
 			log.info("ONLINE-5.2 >>>>> LINK_PROCESS lnsJsonNode.link {}    __body_data = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response/response", "__body_data").toPrettyString());
+			lnsData.setLnsTransactionId(lnsJsonNode.getText("/response/response/__body_data/data", "transactionId"));
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 6. Info of Head Base
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/info/headbase");
@@ -188,7 +193,7 @@ public class _0200300_validate_Working {
 			log.info("ONLINE-6 >>>>> HEADBASE lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response", "jsonInfo").toPrettyString());
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// 7. Json to Stream
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
 			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/j2s");

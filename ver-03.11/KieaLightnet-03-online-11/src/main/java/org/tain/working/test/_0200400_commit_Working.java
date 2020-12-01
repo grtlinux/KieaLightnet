@@ -2,6 +2,7 @@ package org.tain.working.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tain.data.LnsData;
 import org.tain.httpClient.LnsHttpClient;
 import org.tain.mapper.LnsJsonNode;
 import org.tain.properties.ProjEnvUrlProperties;
@@ -20,11 +21,14 @@ public class _0200400_commit_Working {
 	@Autowired
 	private LnsHttpClient lnsHttpClient;
 	
+	@Autowired
+	private LnsData lnsData;
+	
 	public void test00() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
 		String strReqStream = "0150020040099999920201016125525125525                                                               "
-				+ "f8135159-84f1-4557-576d-381ddafbdfd6              ";
+				+ lnsData.getLnsTransactionId() + "              ";
 		
 		String strReqJson = "{\n" + 
 				"  \"__head_data\" : {\n" + 
@@ -38,7 +42,7 @@ public class _0200400_commit_Working {
 				"    \"resTime\" : \"125525\"\n" + 
 				"  },\n" + 
 				"  \"__body_data\" : {\n" + 
-				"    \"transactionId\" : \"f8135159-84f1-4557-576d-381ddafbdfd6\"\n" + 
+				"    \"transactionId\" : \"" + lnsData.getLnsTransactionId() + "\"\n" + 
 				"  }\n" + 
 				"}";
 		

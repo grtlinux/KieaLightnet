@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.Sleep;
 import org.tain.working.properties.PropertiesWorking;
 import org.tain.working.tasks.ServerTasksWorking;
 import org.tain.working.test.Test01Working;
@@ -148,10 +149,11 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 			if (!Flag.flag) this.test01Working.test01();
 			
 			if (Flag.flag) this._0200100_getFee_Working.test00();
-			if (!Flag.flag) this._0200100_getFee_Working.test01();
+			Sleep.run(2 * 1000);
 			if (!Flag.flag) this._0200200_detail_Working.test00();
 			if (Flag.flag) this._0200300_validate_Working.test00();
-			if (!Flag.flag) this._0200400_commit_Working.test00();
+			Sleep.run(2 * 1000);
+			if (Flag.flag) this._0200400_commit_Working.test00();
 			if (!Flag.flag) this._0200500_amend_Working.test00();
 			if (!Flag.flag) this._0200600_refund_Working.test00();
 			if (!Flag.flag) this._0200700_history_Working.test00();
