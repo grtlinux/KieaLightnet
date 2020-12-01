@@ -104,7 +104,7 @@ public class _0200200_detail_Working {
 			strResJson = lnsJsonNode.getJsonNode("/response", "response").toPrettyString();
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// TODO: after info-json
 			// 6. Info of Head Base
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
@@ -115,7 +115,7 @@ public class _0200200_detail_Working {
 			log.info("ONLINE-6 >>>>> HEADBASE lnsJsonNode.j2s {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response", "jsonInfo").toPrettyString());
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			// TODO: after info-json
 			// 7. Json to Stream
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");

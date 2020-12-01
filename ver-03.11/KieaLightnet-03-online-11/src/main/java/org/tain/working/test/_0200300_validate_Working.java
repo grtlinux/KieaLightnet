@@ -73,7 +73,8 @@ public class _0200300_validate_Working {
 				"            \"CIMBBANKNAME\": \"002\"\n" + 
 				"        }\n" + 
 				"    },\n" + 
-				"    \"deliveryMethod\": \"account_deposit\",\n" + 
+				//"    \"deliveryMethod\": \"account_deposit\",\n" + // received 
+				"    \"deliveryMethod\": \"cash\",\n" + 
 				"    \"sender\": {\n" + 
 				"        \"cardNumber\": \"204515304846\",\n" + 
 				"        \"firstName\": \"Sender\",\n" + 
@@ -119,8 +120,94 @@ public class _0200300_validate_Working {
 				"            \"amount\":\"10.00\",\n" + 
 				"            \"currency\": \"USD\"\n" + 
 				"        },\n" + 
-				"        \"transactionId\": \"1502293110098058\"\n" + 
+				//"        \"transactionId\": \"1502293110098058\"\n" + 
+				"        \"transactionId\": \"1502293110098100\"\n" + 
 				"    }\n" + 
+				"  }\n" + 
+				"}";
+		
+		strReqJson = "{\n" + 
+				"  \"__head_data\" : {\n" + 
+				//"    \"length\" : \"0116\",\n" + 
+				"    \"length\" : \"0000\",\n" + 
+				"    \"reqres\" : \"0200\",\n" + 
+				"    \"type\" : \"300\",\n" + 
+				"    \"trNo\" : \"999999\",\n" + 
+				"    \"reqDate\" : \"20201016\",\n" + 
+				"    \"reqTime\" : \"125525\",\n" + 
+				"    \"resTime\" : \"125525\"\n" + 
+				"  },\n" + 
+				"  \"__body_data\" : {\n" + 
+				"    \"receiver\": {\n" + 
+				"        \"firstName\": \"receiverFirstName\",\n" + 
+				"        \"lastName\": \"receiverLastName\",\n" + 
+				"        \"notification\": {\n" + 
+				"            \"transactionSMSOptIn\": false,\n" + 
+				"            \"transactionEmailOptIn\": false\n" + 
+				"        },\n" + 
+				"        \"address\": {\n" + 
+				"            \"city\": \"Bangkok\",\n" + 
+				"            \"line1\": \"MG-0012345\"\n" + 
+				"        },\n" + 
+				"        \"phone\": {\n" + 
+				"            \"number\": \"345364566\",\n" + 
+				"            \"countryCode\": \"33\"\n" + 
+				"        },\n" + 
+				"        \"accountNumber\": \"MG-0012345\",\n" + 
+				"        \"email\": \"receiverEmail@test.com\"\n" + 
+				"    },\n" + 
+				"    \"deliveryMethod\": \"cash\",\n" +   // important account_deposit
+				"    \"sender\": {\n" + 
+				"        \"lastName\": \"senderLastNamex\",\n" + 
+				"        \"secondLastName\": \"senderSecondLastName\",\n" + 
+				"        \"address\": {\n" + 
+				"            \"city\": \"Bangkok\",\n" + 
+				"            \"postalCode\": \"10400\",\n" + 
+				"            \"line1\": \"Temp address\"\n" + 
+				"        },\n" + 
+				"        \"idType\": \"GOV\",\n" + 
+				"        \"purpose\": \"PURCHASE_GOODS\",\n" + 
+				"        \"birthCountryCode\": \"THA\",\n" + 
+				"        \"homePhone\": {\n" + 
+				"            \"number\": \"45645645666\",\n" + 
+				"            \"countryCode\": \"66\"\n" + 
+				"        },\n" + 
+				"        \"idCountryCode\": \"MYS\",\n" + 
+				"        \"idNumber\": \"P83245384\",\n" + 
+				"        \"firstName\": \"IQLZSO\",\n" + 
+				"        \"notification\": {\n" + 
+				"            \"marketingSMSOptIn\": false,\n" + 
+				"            \"transactionSMSOptIn\": false,\n" + 
+				"            \"transactionEmailOptIn\": false,\n" + 
+				"            \"marketingEmailOptIn\": false\n" + 
+				"        },\n" + 
+				"        \"dob\": \"1992-03-23\",\n" + 
+				"        \"relationshipToReceiver\": \"BUSINESS_PARTNER\",\n" + 
+				"        \"middleName\": \"senderMiddleName\",\n" + 
+				"        \"citizenshipCountryCode\": \"THA\",\n" + 
+				"        \"email\": \"senderEmail@test.com\",\n" + 
+				"        \"occupation\" : \"ADMIN\"\n" + 
+				"    },\n" + 
+				"    \"destination\": {\n" + 
+				"        \"country\": \"IDN\",\n" + 
+				"        \"receive\": {\n" + 
+				"            \"amount\": \"43366.3500\",\n" + 
+				"            \"currency\": \"IDR\"\n" + 
+				"        },\n" + 
+				"        \"operatorCode\": \"mgi\"\n" + 
+				"    },\n" + 
+				"    \"promotionCodes\": [\n" + 
+				"        \"FLATFEE\"\n" + 
+				"    ],\n" + 
+				"    \"remark\": \"This is MGI test remark\",\n" + 
+				"    \"source\": {\n" + 
+				"        \"country\": \"KOR\",\n" + 
+				"        \"send\": {\n" + 
+				"            \"currency\": \"USD\"\n" + 
+				"        },\n" + 
+				"        \"transactionId\": \"4324682635157307\"\n" + 
+				"    },\n" + 
+				"    \"terminalName\": \"ter-001\"\n" + 
 				"  }\n" + 
 				"}";
 		
