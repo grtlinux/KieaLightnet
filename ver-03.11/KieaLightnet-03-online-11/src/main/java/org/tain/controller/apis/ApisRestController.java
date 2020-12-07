@@ -60,7 +60,7 @@ public class ApisRestController {
 		if (Flag.flag) {
 			// 2. link
 			LnsJsonNode lnsJsonNode = new LnsJsonNode();
-			lnsJsonNode.put("httpUrl", "http://localhost:17082/v0.6/link/process");
+			lnsJsonNode.put("httpUrl", "http://localhost:18082/v1.1/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
 			lnsJsonNode.put("reqResType", reqResType);
 			lnsJsonNode.put("reqJson", reqJson);
