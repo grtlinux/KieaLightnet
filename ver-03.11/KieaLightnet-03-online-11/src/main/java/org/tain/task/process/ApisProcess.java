@@ -42,6 +42,7 @@ public class ApisProcess {
 			strReqJson = lnsJsonNode.getText("json");
 		}
 		*/
+		String reqResType = null;
 		JsonNode reqJsonNode = null;
 		if (Flag.flag) {
 			// 1. Stream to Json
@@ -52,8 +53,9 @@ public class ApisProcess {
 			lnsJsonNode.put("/request", "stream", reqLnsStream.getData());
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			
+			reqResType = lnsJsonNode.getText("/request", "reqResType");
 			reqJsonNode = lnsJsonNode.getJsonNode("/response", "json");
-			log.info("ONLINE-1 >>>>> after MAPPER.s2j {} = \n[{}]", lnsJsonNode.getText("/request", "reqResType"), reqJsonNode.toPrettyString());
+			log.info("ONLINE-1 >>>>> after MAPPER.s2j {} = \n[{}]", reqResType, reqJsonNode.toPrettyString());
 		}
 		
 		/*
@@ -74,7 +76,6 @@ public class ApisProcess {
 		}
 		*/
 		JsonNode resJsonNode = null;
-		String reqResType = null;
 		if (Flag.flag) {
 			// 2. link
 			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
@@ -85,7 +86,7 @@ public class ApisProcess {
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			
 			resJsonNode = lnsJsonNode.getJsonNode("/response", "response");
-			reqResType = resJsonNode.at("/__head_data").asText();
+			reqResType = resJsonNode.at("/__head_data").get("reqResType").asText();
 			log.info("ONLINE-2 >>>>> after LINK.process {} = \n{}", reqResType, resJsonNode.toPrettyString());
 			//strResJson = lnsJsonNode.getJsonNode("/response", "response").toPrettyString();
 			//log.info("ONLINE-2.2 >>>>> LINK_PROCESS lnsJsonNode.link {}    __body_data = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response/response", "__body_data").toPrettyString());
