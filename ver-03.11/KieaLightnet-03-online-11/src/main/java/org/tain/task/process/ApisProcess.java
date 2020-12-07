@@ -25,7 +25,7 @@ public class ApisProcess {
 		if (Flag.flag) {
 			// 1. Stream to Json
 			LnsJsonNode lnsJsonNode = new LnsJsonNode();
-			lnsJsonNode.put("httpUrl", "http://localhost:17087/v0.6/mapper/s2j");
+			lnsJsonNode.put("httpUrl", "http://localhost:18087/v1.1/mapper/s2j");
 			lnsJsonNode.put("httpMethod", "POST");
 			lnsJsonNode.put("reqResType", reqLnsStream.getTypeCode());
 			lnsJsonNode.put("stream", reqLnsStream.getData());
@@ -40,7 +40,7 @@ public class ApisProcess {
 		if (Flag.flag) {
 			// 2. link
 			LnsJsonNode lnsJsonNode = new LnsJsonNode();
-			lnsJsonNode.put("httpUrl", "http://localhost:17082/v0.6/link/process");
+			lnsJsonNode.put("httpUrl", "http://localhost:18082/v1.1/link/process");
 			lnsJsonNode.put("httpMethod", "POST");
 			lnsJsonNode.put("reqResType", reqLnsStream.getTypeCode());
 			lnsJsonNode.put("reqJson", strReqJson);
@@ -55,7 +55,7 @@ public class ApisProcess {
 		if (Flag.flag) {
 			// 3. Json to Stream
 			LnsJsonNode lnsJsonNode = new LnsJsonNode();
-			lnsJsonNode.put("httpUrl", "http://localhost:17087/v0.6/mapper/j2s");
+			lnsJsonNode.put("httpUrl", "http://localhost:18087/v1.1/mapper/j2s");
 			lnsJsonNode.put("httpMethod", "POST");
 			lnsJsonNode.put("reqResType", reqResType);
 			lnsJsonNode.put("json", strResJson);

@@ -45,7 +45,7 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // server
+		if (!Flag.flag) job02();  // server
 		if (Flag.flag) job03();  // test
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();
@@ -145,7 +145,7 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 	private void job03() throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			if (!Flag.flag) this.test01Working.test01();
 			
 			if (Flag.flag)  { this._0200100_getFee_Working.test00();   Sleep.run(2 * 1000); }
@@ -166,6 +166,14 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 			if (!Flag.flag) this._0700600_GetResult_Working.test01();
 			if (!Flag.flag) this._0700700_GetVerification_Working.test01();
 			if (!Flag.flag) this._0700800_MigrationUser_Working.test01();
+		}
+		
+		if (Flag.flag) {
+			if (Flag.flag) this._0200100_getFee_Working.test02CStruct();
+			if (Flag.flag) this._0200300_validate_Working.test02CStruct();
+			if (Flag.flag) this._0200400_commit_Working.test02CStruct();
+			if (Flag.flag) this._0200500_amend_Working.test02CStruct();
+			if (Flag.flag) this._0200600_refund_Working.test02CStruct();
 		}
 	}
 	

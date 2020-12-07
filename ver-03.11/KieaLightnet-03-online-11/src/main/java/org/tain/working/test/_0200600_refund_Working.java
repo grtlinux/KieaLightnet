@@ -271,4 +271,28 @@ public class _0200600_refund_Working {
 			log.info("ONLINE-8 >>>>> lnsJsonNode.link {} = \n[{}]", lnsJsonNode.getText("/resJson", "reqResType"), lnsJsonNode.getText("/resJson", "resJson"));
 		}
 	}
+	
+	public void test02CStruct() throws Exception {
+		log.info("KANG-202012003 >>>>> {}", CurrentInfo.get());
+		
+		if (Flag.flag) {
+			// 1. reqCStruct
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
+			lnsJsonNode.put("httpMethod", "POST");
+			lnsJsonNode.put("/request", "reqResType", "0200600");
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("ONLINE-1 >>>>> CSTRUCT lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "cstruct"));
+		}
+		
+		if (Flag.flag) {
+			// 1. reqCStruct
+			LnsJsonNode lnsJsonNode = new LnsJsonNode("{\"request\":{},\"response\":{}}");
+			lnsJsonNode.put("httpUrl", this.projEnvUrlProperties.getMapper() + "/mapper/cstruct");
+			lnsJsonNode.put("httpMethod", "POST");
+			lnsJsonNode.put("/request", "reqResType", "0210600");
+			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
+			log.info("ONLINE-1 >>>>> CSTRUCT lnsJsonNode.cstruct {} = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getText("/response", "cstruct"));
+		}
+	}
 }
