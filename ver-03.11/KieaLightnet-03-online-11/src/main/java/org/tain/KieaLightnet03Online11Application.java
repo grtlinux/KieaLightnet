@@ -45,7 +45,7 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (!Flag.flag) job02();  // server
+		if (Flag.flag) job02();  // server
 		if (Flag.flag) job03();  // test
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();
@@ -55,7 +55,7 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
 		
-		if (!Flag.flag) System.exit(0);
+		//if (Flag.flag) System.exit(0);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
