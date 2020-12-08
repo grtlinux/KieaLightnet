@@ -17,13 +17,10 @@ import org.tain.utils.Sample;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping(value = {"/online/rest/test"})
+@RequestMapping(value = {"/rest/test"})
 @Slf4j
 public class TestRestController {
 
-	/*
-	 * url: http://localhost:18083/v1.0/online/rest/test/data1
-	 */
 	@RequestMapping(value = {"/data1"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public ResponseEntity<?> data1(HttpEntity<String> httpEntity) throws Exception {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
@@ -36,9 +33,6 @@ public class TestRestController {
 		return new ResponseEntity<>(map, headers, HttpStatus.OK);
 	}
 	
-	/*
-	 * url: http://localhost:18083/v1.0/online/rest/test/data2
-	 */
 	@RequestMapping(value = {"/data2"}, method = {RequestMethod.GET, RequestMethod.POST})
 	public Map<?,?> data2() throws Exception {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());

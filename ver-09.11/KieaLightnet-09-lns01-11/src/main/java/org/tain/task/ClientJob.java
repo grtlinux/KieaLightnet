@@ -7,20 +7,20 @@ import org.tain.object.lns.LnsStream;
 import org.tain.object.ticket.LnsInfoTicket;
 import org.tain.object.ticket.LnsSocketTicket;
 import org.tain.queue.InfoTicketReadyQueue;
+import org.tain.queue.LnsQueueObject;
+import org.tain.queue.LnsSendQueue;
 import org.tain.queue.SocketTicketReadyQueue;
 import org.tain.queue.SocketTicketUseQueue;
-import org.tain.task.process.ApisProcess;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
-import org.tain.utils.JsonPrint;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class ServerJob {
+public class ClientJob {
 
-	private final String TITLE = "SERVER_JOB ";
+	private final String TITLE = "CLIENT_JOB ";
 	
 	@Autowired
 	private SocketTicketUseQueue socketTicketUseQueue;
@@ -34,41 +34,44 @@ public class ServerJob {
 	///////////////////////////////////////////////////////////////////////////
 	
 	@Autowired
-	private ApisProcess apiProcess;
+	private LnsSendQueue lnsSendQueue;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	@Async(value = "serverTask")
-	public void serverJob(LnsInfoTicket infoTicket) throws Exception {
+	@Async(value = "clientTask")
+	public void clientJob(LnsInfoTicket infoTicket) throws Exception {
 		log.info(TITLE + ">>>>> START param = {}, {}", infoTicket, CurrentInfo.get());
 		
 		LnsSocketTicket lnsSocketTicket = null;
 		if (Flag.flag) {
 			lnsSocketTicket = this.socketTicketUseQueue.get();  // blocking
-			log.info(TITLE + ">>>>> serverJob: INFO = {} {}", infoTicket, lnsSocketTicket);
+			log.info(TITLE + ">>>>> clientJob: INFO = {} {}", infoTicket, lnsSocketTicket);
 		}
 		
 		////////////////////////////////////////////////////
 		if (Flag.flag) {
+			LnsQueueObject lnsQueueObject = null;
 			try {
 				LnsStream reqLnsStream = null;
 				LnsStream resLnsStream = null;
 				while (true) {
-					// recv
-					reqLnsStream = lnsSocketTicket.recvStream();
-					if (Flag.flag) log.info(TITLE + ">>>>> reqLnsStream = {}", JsonPrint.getInstance().toPrettyJson(reqLnsStream));
-					
-					// other process
-					resLnsStream = this.apiProcess.process(reqLnsStream);
+					// from SendQueue
+					lnsQueueObject = (LnsQueueObject) this.lnsSendQueue.get();
 					
 					// send
-					lnsSocketTicket.sendStream(resLnsStream);
-					if (Flag.flag) log.info(TITLE + ">>>>> resLnsStream = {}", JsonPrint.getInstance().toPrettyJson(resLnsStream));
+					reqLnsStream = lnsQueueObject.getLnsStream();
+					lnsSocketTicket.sendStream(reqLnsStream);
+					
+					// recv
+					resLnsStream = lnsSocketTicket.recvStream();
+					lnsQueueObject.getLnsRecvQueue().set(resLnsStream);
 				}
 			} catch (Exception e) {
 				//e.printStackTrace();
 				// ERROR >>>>> ERROR: return value of read is negative(-)...
 				log.error(TITLE + " ERROR >>>>> {}", e.getMessage());
+				if (lnsQueueObject != null)
+					this.lnsSendQueue.set(lnsQueueObject);
 			} finally {
 				lnsSocketTicket.close();
 			}

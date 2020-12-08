@@ -21,7 +21,7 @@ public class FactoryMainJob {
 	private InfoTicketReadyQueue infoTicketReadyQueue;
 	
 	@Autowired
-	private ServerJob serverJob;
+	private ClientJob clientJob;
 	
 	@Async(value = "factoryMainTask")
 	public void factoryMainJob(String param) throws Exception {
@@ -32,8 +32,8 @@ public class FactoryMainJob {
 				LnsInfoTicket ticket = this.infoTicketReadyQueue.get();
 				Sleep.run(1 * 1000);
 				try {
-					this.serverJob.serverJob(ticket);
-					log.info(TITLE + ">>>>> serverJob = {}", ticket);
+					this.clientJob.clientJob(ticket);
+					log.info(TITLE + ">>>>> clientJob = {}", ticket);
 				} catch (Exception e) {
 					//e.printStackTrace();
 					log.error(TITLE + ">>>>> ERROR: " + e.getMessage());

@@ -12,7 +12,8 @@ public class ProjEnvJobProperties {
 
 	private String name;  // default
 	
-	private int listenPort;
+	private String onlineHost;
+	private int onlinePort;
 	
 	private String dummy;  // null
 }
