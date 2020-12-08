@@ -86,7 +86,7 @@ public class ApisProcess {
 			lnsJsonNode = this.lnsHttpClient.post(lnsJsonNode);
 			
 			resJsonNode = lnsJsonNode.getJsonNode("/response", "response");
-			reqResType = resJsonNode.at("/__head_data").get("reqResType").asText();
+			reqResType = resJsonNode.at("/__head_data").get("reqres").asText() + resJsonNode.at("/__head_data").get("type").asText();
 			log.info("ONLINE-2 >>>>> after LINK.process {} = \n{}", reqResType, resJsonNode.toPrettyString());
 			//strResJson = lnsJsonNode.getJsonNode("/response", "response").toPrettyString();
 			//log.info("ONLINE-2.2 >>>>> LINK_PROCESS lnsJsonNode.link {}    __body_data = \n{}", lnsJsonNode.getText("/request", "reqResType"), lnsJsonNode.getJsonNode("/response/response", "__body_data").toPrettyString());
