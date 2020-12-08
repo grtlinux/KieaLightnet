@@ -12,6 +12,12 @@ public class ProjEnvUrlProperties {
 
 	private String name;  // default
 	
+	private String lightnet1;
+	private String lightnet11;
+	private String auth;
+	private String link;
+	private String mapper;
+	
 	
 	private String dummy;  // null
 }

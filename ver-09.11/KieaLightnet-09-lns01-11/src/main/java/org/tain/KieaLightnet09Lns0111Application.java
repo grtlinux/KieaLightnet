@@ -11,6 +11,7 @@ import org.tain.utils.Flag;
 import org.tain.working.properties.PropertiesWorking;
 import org.tain.working.tasks.ClientTasksWorking;
 import org.tain.working.tasks.Task01Working;
+import org.tain.working.test.TestWorking;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,8 +28,8 @@ public class KieaLightnet09Lns0111Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // tasks
-		if (Flag.flag) job03();
+		if (Flag.flag) job02();  // tasks ClientTasksWorking
+		if (Flag.flag) job03();  // test of sample
 		if (Flag.flag) job04();
 		if (Flag.flag) job05();
 		if (Flag.flag) job06();
@@ -37,7 +38,7 @@ public class KieaLightnet09Lns0111Application implements CommandLineRunner {
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
 		
-		//if (Flag.flag) System.exit(0);
+		if (Flag.flag) System.exit(0);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -78,10 +79,16 @@ public class KieaLightnet09Lns0111Application implements CommandLineRunner {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job03() {
+	@Autowired
+	private TestWorking testWorking;
+	
+	private void job03() throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
+			for (int i=0; i < 3; i++) {
+				if (Flag.flag) this.testWorking.test01();
+			}
 		}
 	}
 	

@@ -148,16 +148,6 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 		if (!Flag.flag) {
 			if (!Flag.flag) this.test01Working.test01();
 			
-			if (Flag.flag)  { this._0200100_getFee_Working.test00();   Sleep.run(2 * 1000); }
-			if (Flag.flag)  { this._0200300_validate_Working.test00(); Sleep.run(2 * 1000); }
-			if (Flag.flag)  { this._0200400_commit_Working.test00();   Sleep.run(2 * 1000); }
-			if (Flag.flag)  { this._0200500_amend_Working.test00();    Sleep.run(2 * 1000); }
-			if (Flag.flag)  { this._0200600_refund_Working.test00();   Sleep.run(2 * 1000); }
-			
-			if (Flag.flag)  { this._0200700_history_Working.test00();  Sleep.run(2 * 1000); }  // array
-			if (Flag.flag)  { this._0200800_customer_Working.test00(); Sleep.run(2 * 1000); }  // array
-			if (Flag.flag)  { this._0200200_detail_Working.test00();   Sleep.run(2 * 1000); }  // so much
-			
 			if (!Flag.flag) this._0700100_CheckUser_Working.test01();
 			if (!Flag.flag) this._0700200_GetCalculation_Working.test01();
 			if (!Flag.flag) this._0700300_DeleteUser_Working.test01();
@@ -168,12 +158,26 @@ public class KieaLightnet03Online11Application implements CommandLineRunner {
 			if (!Flag.flag) this._0700800_MigrationUser_Working.test01();
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			if (Flag.flag) this._0200100_getFee_Working.test02CStruct();
 			if (Flag.flag) this._0200300_validate_Working.test02CStruct();
 			if (Flag.flag) this._0200400_commit_Working.test02CStruct();
 			if (Flag.flag) this._0200500_amend_Working.test02CStruct();
 			if (Flag.flag) this._0200600_refund_Working.test02CStruct();
+		}
+		
+		if (Flag.flag) {
+			if (!Flag.flag) this.test01Working.test01();
+			
+			if (Flag.flag)  { this._0200100_getFee_Working.test00();   Sleep.run(2 * 1000); }
+			if (Flag.flag)  { this._0200300_validate_Working.test00(); Sleep.run(2 * 1000); }
+			if (Flag.flag)  { this._0200400_commit_Working.test00();   Sleep.run(2 * 1000); }
+			if (Flag.flag)  { this._0200500_amend_Working.test00();    Sleep.run(2 * 1000); }
+			if (Flag.flag)  { this._0200600_refund_Working.test00();   Sleep.run(2 * 1000); }
+			
+			if (Flag.flag)  { this._0200700_history_Working.test00();  Sleep.run(2 * 1000); }  // array
+			if (Flag.flag)  { this._0200800_customer_Working.test00(); Sleep.run(2 * 1000); }  // array
+			if (Flag.flag)  { this._0200200_detail_Working.test00();   Sleep.run(2 * 1000); }  // so much
 		}
 	}
 	

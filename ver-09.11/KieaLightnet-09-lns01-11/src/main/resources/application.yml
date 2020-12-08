@@ -12,7 +12,7 @@ spring:
   profiles.active:
   - proj-default
   - proj-air
-  #- proj-pro
+  - proj-pro
   #- proj-aws
   #- proj-dfep
   #- proj-real
@@ -114,10 +114,17 @@ proj-env:
     data-path: /jsonData
   job:
     name: JOB (air)
+    online-host: 127.0.0.1
+    online-port: 18090
   json:
     name: JSON (air)
   url:
     name: URL (air)
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------
@@ -128,16 +135,23 @@ proj-env:
   param:
     name: PARAM (pro)
     home: /Users/kangmac
-    base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201111
+    # base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
+    base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:
     name: JOB (pro)
+    online-host: 127.0.0.1
+    online-port: 18090
   json:
     name: JSON (pro)
   url:
     name: URL (pro)
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------
@@ -168,10 +182,17 @@ proj-env:
     data-path: /jsonData
   job:
     name: JOB (dfep)
+    online-host: 127.0.0.1
+    online-port: 18090
   json:
     name: JSON (dfep)
   url:
     name: URL (dfep)
+    lightnet1: https://test-hawis.lightnetapis.io/v1
+    lightnet11: https://test-hawis.lightnetapis.io/v1.1
+    auth: http://localhost:18081/v1.1
+    link: http://localhost:18082/v1.1
+    mapper: http://localhost:18087/v1.1
 
 ---
 # --------------------------------------------------------
