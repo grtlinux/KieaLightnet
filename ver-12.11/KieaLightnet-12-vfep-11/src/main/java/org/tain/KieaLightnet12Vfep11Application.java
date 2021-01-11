@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
 @Slf4j
+// 홍연주 babo
 public class KieaLightnet12Vfep11Application implements CommandLineRunner {
 
 	public static void main(String[] args) {
