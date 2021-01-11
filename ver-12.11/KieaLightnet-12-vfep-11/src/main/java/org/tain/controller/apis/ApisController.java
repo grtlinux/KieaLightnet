@@ -30,7 +30,7 @@ public class ApisController {
 		model.addAttribute("apisList", this.apisService.findApisList(pageable));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/list";
 	}
 	
@@ -40,7 +40,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/form";
 	}
 	
@@ -83,7 +83,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/getCalculationForm";
 	}
 	
@@ -93,7 +93,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/getWebviewIdForm";
 	}
 	
@@ -103,7 +103,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/getResultForm";
 	}
 	
@@ -113,7 +113,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/getVerificationForm";
 		//return "redirect:/apis/list";
 		//return new RedirectView("/apis/list");
@@ -125,7 +125,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/checkUserForm";
 	}
 	
@@ -135,7 +135,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/deleteUserForm";
 	}
 	
@@ -145,7 +145,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/createUserForm";
 	}
 	
@@ -155,7 +155,7 @@ public class ApisController {
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getSbs01());
+		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/migrationUserForm";
 	}
 }

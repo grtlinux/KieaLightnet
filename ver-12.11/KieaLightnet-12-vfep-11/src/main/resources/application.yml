@@ -11,8 +11,8 @@ server:
 spring:
   profiles.active:
   - proj-default
-  - proj-air
-  #- proj-pro
+  #- proj-air
+  - proj-pro
   #- proj-aws
   #- proj-dfep
   #- proj-real
@@ -116,8 +116,13 @@ proj-env:
     name: JOB (air)
   json:
     name: JSON (air)
+    apis-info-file: apis.json
   url:
     name: URL (air)
+    lightnet: https://hanwha.dev.sentbe.com:10443
+    online: http://localhost:18083/v0.6
+    mapper: http://localhost:18087/v0.6
+    lns01:  http://localhost:18089/v0.6
 
 ---
 # --------------------------------------------------------
@@ -136,8 +141,13 @@ proj-env:
     name: JOB (pro)
   json:
     name: JSON (pro)
+    apis-info-file: apis.json
   url:
     name: URL (pro)
+    lightnet: https://hanwha.dev.sentbe.com:10443
+    online: http://localhost:18083/v0.6
+    mapper: http://localhost:18087/v0.6
+    lns01:  http://localhost:18089/v0.6
 
 ---
 # --------------------------------------------------------
@@ -170,8 +180,13 @@ proj-env:
     name: JOB (dfep)
   json:
     name: JSON (dfep)
+    apis-info-file: apis.json
   url:
     name: URL (dfep)
+    lightnet: https://hanwha.dev.sentbe.com:10443
+    online: http://localhost:18083/v0.6
+    mapper: http://localhost:18087/v0.6
+    lns01:  http://localhost:18089/v0.6
 
 ---
 # --------------------------------------------------------

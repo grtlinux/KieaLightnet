@@ -49,7 +49,7 @@ public class ApisWorking {
 				this.apisRepository.deleteAll();
 				
 				if (Flag.flag) lstApis.forEach(apis -> {
-					apis.setHttpUrl(this.projEnvUrlProperties.getSentbe() + apis.getHttpUrl());
+					apis.setHttpUrl(this.projEnvUrlProperties.getLightnet() + apis.getHttpUrl());
 					apis.setReqJson(StringTools.stringFromFile(rootPath + apis.getReqJson()));
 					apis.setResJson(StringTools.stringFromFile(rootPath + apis.getResJson()));
 					apis.setReqType("0700" + apis.getType());

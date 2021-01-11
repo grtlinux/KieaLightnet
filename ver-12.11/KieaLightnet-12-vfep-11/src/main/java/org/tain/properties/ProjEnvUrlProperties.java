@@ -12,13 +12,13 @@ public class ProjEnvUrlProperties {
 
 	private String name;  // default
 	
-	private String sentbe;
+	private String lightnet;
 	
 	private String online;
 	
 	private String mapper;
 	
-	private String sbs01;
+	private String lns01;
 	
 	private String dummy;  // null
 }
