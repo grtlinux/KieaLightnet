@@ -40,7 +40,9 @@ public class ApisWorking {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			String rootPath = this.projEnvParamProperties.getHome() + this.projEnvParamProperties.getBase() + "/";
+			String rootPath = this.projEnvParamProperties.getHome() 
+					+ this.projEnvParamProperties.getBase() 
+					+ this.projEnvParamProperties.getInfoPath() + "/";
 			String filePath = rootPath + this.projEnvJsonProperties.getApisInfoFile();
 			
 			try {
@@ -52,8 +54,8 @@ public class ApisWorking {
 					apis.setHttpUrl(this.projEnvUrlProperties.getLightnet() + apis.getHttpUrl());
 					apis.setReqJson(StringTools.stringFromFile(rootPath + apis.getReqJson()));
 					apis.setResJson(StringTools.stringFromFile(rootPath + apis.getResJson()));
-					apis.setReqType("0700" + apis.getType());
-					apis.setResType("0710" + apis.getType());
+					apis.setReqType("0200" + apis.getType());
+					apis.setResType("0210" + apis.getType());
 					//apis.setResJson("");
 					this.apisRepository.save(apis);                     // personal save
 				});

@@ -99,7 +99,7 @@ public class StringTools {
 					sb.append(line).append("\n");
 				}
 			} catch (IOException e) {
-				e.printStackTrace();
+				//e.printStackTrace();
 			} finally {
 				if (br != null) try { br.close(); } catch (Exception e) {}
 			}
