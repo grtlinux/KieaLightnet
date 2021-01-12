@@ -125,7 +125,9 @@
 		$('#btnMakeReqStream').click(function() {
 			console.log('Hello btnMakeReqStream');
 			// START: fields
-			$('#modal1_id_number').val(_reqJson.id_number);
+			//$('#modal1_id_number').val(_reqJson.id_number);
+			var strJson = JSON.stringify(_reqJson, null, 2);
+			$('#modal1_reqJson').val(strJson);
 			// END: fields
 		});
 		//////////////////////////////////////////////////////////////////////////////
@@ -187,7 +189,7 @@
 			var strJson = JSON.stringify({
 				__head_data: {
 					length: "0000",
-					reqres: "0700",
+					reqres: "0200",
 					type: _type,
 					trNo: "000001",
 					reqDate: "20201010",
@@ -292,18 +294,18 @@
 				<!-- Modal body -->
 				<div class="modal-body">
 					<table class="table">
-						<!-- START: input of fields -->
+						<!-- START: input of fields --  >
 						<tr>
 							<th style="padding:13px 0 0 15px;">id_number</th>
 							<td><input id="modal1_id_number" value="" type="text" class="col-md-1 form-control input-sm"/></td>
 						</tr>
-						<!-- END: input of fields -->
 						<tr>
 							<th style="padding:13px 0 0 15px;"> </th>
 							<td>
 								<button id="btnToJson" type="button" class="btn btn-primary">To Json</button>
 							</td>
 						</tr>
+						<  !  -- END: input of fields -->
 						<tr>
 							<th style="padding:13px 0 0 15px;">
 								ReqJson<br>
