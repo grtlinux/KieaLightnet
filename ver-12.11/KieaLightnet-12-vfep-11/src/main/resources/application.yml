@@ -109,7 +109,7 @@ proj-env:
     name: PARAM (air)
     home: /Users/kang-air
     base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201111
+    # base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:
@@ -120,9 +120,9 @@ proj-env:
   url:
     name: URL (air)
     lightnet: https://hanwha.dev.sentbe.com:10443
-    online: http://localhost:18083/v0.6
-    mapper: http://localhost:18087/v0.6
-    lns01:  http://localhost:18089/v0.6
+    online: http://localhost:18083/v1.1
+    mapper: http://localhost:18087/v1.1
+    lns01:  http://localhost:18089/v1.1
 
 ---
 # --------------------------------------------------------
@@ -133,8 +133,8 @@ proj-env:
   param:
     name: PARAM (pro)
     home: /Users/kangmac
-    base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201111
+    # base: /STS_GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
+    base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:
@@ -145,9 +145,9 @@ proj-env:
   url:
     name: URL (pro)
     lightnet: https://hanwha.dev.sentbe.com:10443
-    online: http://localhost:18083/v0.6
-    mapper: http://localhost:18087/v0.6
-    lns01:  http://localhost:18089/v0.6
+    online: http://localhost:18083/v1.1
+    mapper: http://localhost:18087/v1.1
+    lns01:  http://localhost:18089/v1.1
 
 ---
 # --------------------------------------------------------
@@ -173,7 +173,7 @@ proj-env:
   param:
     name: PARAM (dfep)
     home: /hw01/ibridge
-    base: /KANG/lightnet/20201111
+    base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:
@@ -184,9 +184,9 @@ proj-env:
   url:
     name: URL (dfep)
     lightnet: https://hanwha.dev.sentbe.com:10443
-    online: http://localhost:18083/v0.6
-    mapper: http://localhost:18087/v0.6
-    lns01:  http://localhost:18089/v0.6
+    online: http://localhost:18083/v1.1
+    mapper: http://localhost:18087/v1.1
+    lns01:  http://localhost:18089/v1.1
 
 ---
 # --------------------------------------------------------
