@@ -119,7 +119,9 @@ proj-env:
     apis-info-file: apis.json
   url:
     name: URL (air)
-    lightnet: https://hanwha.dev.sentbe.com:10443
+    lightnet: https://test-public.lightnetapis.io/v1.1
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
     online: http://localhost:18083/v1.1
     mapper: http://localhost:18087/v1.1
     lns01:  http://localhost:18089/v1.1
@@ -144,7 +146,9 @@ proj-env:
     apis-info-file: apis.json
   url:
     name: URL (pro)
-    lightnet: https://hanwha.dev.sentbe.com:10443
+    lightnet: https://test-public.lightnetapis.io/v1.1
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
     online: http://localhost:18083/v1.1
     mapper: http://localhost:18087/v1.1
     lns01:  http://localhost:18089/v1.1
@@ -183,7 +187,9 @@ proj-env:
     apis-info-file: apis.json
   url:
     name: URL (dfep)
-    lightnet: https://hanwha.dev.sentbe.com:10443
+    lightnet: https://test-public.lightnetapis.io/v1.1
+    lightnet1: https://test-public.lightnetapis.io/v1
+    lightnet11: https://test-public.lightnetapis.io/v1.1
     online: http://localhost:18083/v1.1
     mapper: http://localhost:18087/v1.1
     lns01:  http://localhost:18089/v1.1
