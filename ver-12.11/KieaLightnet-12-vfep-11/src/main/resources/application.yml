@@ -11,8 +11,8 @@ server:
 spring:
   profiles.active:
   - proj-default
-  #- proj-air
-  - proj-pro
+  - proj-air
+  #- proj-pro
   #- proj-aws
   #- proj-dfep
   #- proj-real
@@ -108,8 +108,8 @@ proj-env:
   param:
     name: PARAM (air)
     home: /Users/kang-air
-    base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
-    # base: /KANG/lightnet/20201120
+    #base: /STS/GIT/KieaLightnet/ver01.11/KieaLightnet-01-auth-11/src/main/resources
+    base: /KANG/lightnet/20201120
     info-path: /jsonInfo
     data-path: /jsonData
   job:

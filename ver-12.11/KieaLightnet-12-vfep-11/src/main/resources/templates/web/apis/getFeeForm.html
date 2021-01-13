@@ -35,7 +35,7 @@
 		console.log(">>>>> _urlMapper = ", _urlMapper);
 		
 		var _urlSbs01 = /*[[${urlSbs01}]]*/ 'default';
-		console.log(">>>>> _urlSbs01 = ", _urlSbs01);
+		console.log(">>>>> _urlLns01 = ", _urlLns01);
 	</script>
 	<!-- /script: variables -->
 </head>
@@ -47,7 +47,7 @@
 	<!-- main -->
 	<div class="container">
 		<div class="page-header">
-			<h1>Sentbe-vFEP: Check User TEST</h1>
+			<h1>Lightnet-vFEP: getFee TEST</h1>
 		</div>
 		<br/>
 		<input id="apis_id" type="hidden" th:value="${apis?.id}"/>
@@ -376,7 +376,7 @@
 			console.log('Hello btnGetReqStream');
 			var strJson = JSON.stringify({
 				reqResType: _reqType,
-				json: $('#modal1_reqJson').val()
+				json: JSON.parse($('#modal1_reqJson').val())
 			});
 			$.ajax({
 				url: _urlMapper + "/mapper/j2s",

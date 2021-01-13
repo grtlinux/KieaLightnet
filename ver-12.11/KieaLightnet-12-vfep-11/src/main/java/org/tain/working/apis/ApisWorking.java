@@ -40,10 +40,17 @@ public class ApisWorking {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			String rootPath = this.projEnvParamProperties.getHome() 
+			//String rootPath = this.projEnvParamProperties.getHome() 
+			//		+ this.projEnvParamProperties.getBase() 
+			//		// + this.projEnvParamProperties.getInfoPath() + "/";
+			//		+ this.projEnvParamProperties.getDataPath() + "/";
+			String infoPath = this.projEnvParamProperties.getHome() 
 					+ this.projEnvParamProperties.getBase() 
 					+ this.projEnvParamProperties.getInfoPath() + "/";
-			String filePath = rootPath + this.projEnvJsonProperties.getApisInfoFile();
+			String dataPath = this.projEnvParamProperties.getHome() 
+					+ this.projEnvParamProperties.getBase() 
+					+ this.projEnvParamProperties.getDataPath() + "/";
+			String filePath = infoPath + this.projEnvJsonProperties.getApisInfoFile();
 			
 			try {
 				List<Apis> lstApis = JsonPrint.getInstance().getObjectMapper().readValue(StringTools.stringFromFile(filePath), new TypeReference<List<Apis>>() {});
@@ -52,8 +59,8 @@ public class ApisWorking {
 				
 				if (Flag.flag) lstApis.forEach(apis -> {
 					apis.setHttpUrl(this.projEnvUrlProperties.getLightnet() + apis.getHttpUrl());
-					apis.setReqJson(StringTools.stringFromFile(rootPath + apis.getReqJson()));
-					apis.setResJson(StringTools.stringFromFile(rootPath + apis.getResJson()));
+					apis.setReqJson(StringTools.stringFromFile(dataPath + apis.getReqJson()));
+					apis.setResJson(StringTools.stringFromFile(dataPath + apis.getResJson()));
 					apis.setReqType("0200" + apis.getType());
 					apis.setResType("0210" + apis.getType());
 					//apis.setResJson("");
