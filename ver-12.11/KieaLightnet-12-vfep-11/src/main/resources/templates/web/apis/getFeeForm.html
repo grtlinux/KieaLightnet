@@ -34,7 +34,7 @@
 		var _urlMapper = /*[[${urlMapper}]]*/ 'default';
 		console.log(">>>>> _urlMapper = ", _urlMapper);
 		
-		var _urlSbs01 = /*[[${urlSbs01}]]*/ 'default';
+		var _urlLns01 = /*[[${urlLns01}]]*/ 'default';
 		console.log(">>>>> _urlLns01 = ", _urlLns01);
 	</script>
 	<!-- /script: variables -->
@@ -168,7 +168,7 @@
 				reqStream: $('#apis_reqStream').val()
 			}, null, 2);
 			$.ajax({
-				url: _urlSbs01 + "/sbs01/process",
+				url: _urlLns01 + "/lns01/process",
 				type: "POST",
 				data: strJson,
 				contentType: "application/json",
@@ -186,23 +186,7 @@
 		});
 		$('#btnSendJson').click(function() {
 			console.log('Hello btnSendJson');
-			var strJson = JSON.stringify({
-				__head_data: {
-					length: "0000",
-					reqres: "0200",
-					type: _type,
-					trNo: "000001",
-					reqDate: "20201010",
-					reqTime: "121212",
-					resTime: "",
-					resCode: "",
-					resMessage: "",
-					reserved: ""
-				},
-				__body_data: {
-					id_number: _reqJson.id_number
-				}
-			}, null, 2);
+			var strJson = JSON.stringify(_reqJson, null, 2);
 			//$('#modal1_reqJson').val(strJson);
 			$('#modal5_reqJson').val(strJson);
 		});
@@ -254,7 +238,7 @@
 				},
 				dataType: "json",
 				success: function(data, status) {
-					$('#modal2_resJson').val(data.json);
+					$('#modal2_resJson').val(JSON.stringify(data.json, null, 2));
 				},
 				error: function() {
 					alert('FAIL of SAVE1');

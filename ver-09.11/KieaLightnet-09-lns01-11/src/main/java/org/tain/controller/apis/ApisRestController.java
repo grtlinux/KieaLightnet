@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping(value = {"/sbs01"})
+@RequestMapping(value = {"/lns01"})
 @Slf4j
 public class ApisRestController {
 	
