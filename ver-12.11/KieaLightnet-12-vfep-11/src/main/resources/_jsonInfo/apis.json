@@ -1,0 +1,11 @@
+[
+	{
+		"name": "1. getFee",
+		"mapping": "apis/getFee",
+		"httpUrl": "/hanwha/getFee",
+		"httpMethod": "GET",
+		"type": "100",
+		"reqJson": "0200-100.json",
+		"resJson": "0210-100.json"
+	}
+]

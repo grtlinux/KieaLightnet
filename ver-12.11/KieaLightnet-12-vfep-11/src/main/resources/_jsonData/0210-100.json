@@ -1,0 +1,70 @@
+{
+  "__head_data" : {
+    "length" : "0000",
+    "reqres" : "0210",
+    "type" : "100",
+    "trNo" : "999999",
+    "reqDate" : "20201016",
+    "reqTime" : "125525",
+    "resTime" : "142115",
+    "resCode" : "000",
+    "resMessage" : "SUCCESS"
+  },
+  "__body_data" : {
+    "status" : "success",
+    "message" : "OK",
+    "data" : [ {
+      "deliveryMethod" : "cash",
+      "fee" : {
+        "amount" : "13.0000",
+        "currency" : "USD",
+        "model" : "excluded"
+      },
+      "metadata" : {
+        "deliveryMethodDisplayName" : "Cash",
+        "destinationOperatorName" : "MoneyGram 888"
+      },
+      "rate" : {
+        "from" : {
+          "amount" : "1",
+          "currency" : "USD"
+        },
+        "to" : {
+          "amount" : "29.4392",
+          "currency" : "THB"
+        }
+      },
+      "destination" : {
+        "operatorCode" : "mgi",
+        "country" : "THA"
+      }
+    }, {
+      "deliveryMethod" : "account_deposit",
+      "fee" : {
+        "amount" : "4.5000",
+        "currency" : "USD",
+        "model" : "excluded"
+      },
+      "metadata" : {
+        "deliveryMethodDisplayName" : "Account deposit",
+        "destinationOperatorName" : "MoneyGram 888",
+        "receiveAgentId" : "72412820",
+        "receiveAgentName" : "EARTHPORT- THAILAND"
+      },
+      "rate" : {
+        "from" : {
+          "amount" : "1",
+          "currency" : "USD"
+        },
+        "to" : {
+          "amount" : "30.04",
+          "currency" : "THB"
+        }
+      },
+      "destination" : {
+        "operatorCode" : "mgi",
+        "country" : "THA"
+      }
+    } ]
+  }
+}
