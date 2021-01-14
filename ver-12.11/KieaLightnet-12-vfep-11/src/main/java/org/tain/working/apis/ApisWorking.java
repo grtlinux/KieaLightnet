@@ -50,10 +50,10 @@ public class ApisWorking {
 			String dataPath = this.projEnvParamProperties.getHome() 
 					+ this.projEnvParamProperties.getBase() 
 					+ this.projEnvParamProperties.getDataPath() + "/";
-			String filePath = infoPath + this.projEnvJsonProperties.getApisInfoFile();
+			String apiFilePath = infoPath + this.projEnvJsonProperties.getApisInfoFile();
 			
 			try {
-				List<Apis> lstApis = JsonPrint.getInstance().getObjectMapper().readValue(StringTools.stringFromFile(filePath), new TypeReference<List<Apis>>() {});
+				List<Apis> lstApis = JsonPrint.getInstance().getObjectMapper().readValue(StringTools.stringFromFile(apiFilePath), new TypeReference<List<Apis>>() {});
 				
 				this.apisRepository.deleteAll();
 				
