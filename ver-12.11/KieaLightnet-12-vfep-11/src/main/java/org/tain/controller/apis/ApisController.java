@@ -55,6 +55,8 @@ public class ApisController {
 		//return "web/apis/pingForm";
 		return "redirect:/apis/list";
 		//return new RedirectView("/apis/list");
+		//return "redirect:/apis/list";
+		//return new RedirectView("/apis/list");
 	}
 	
 	@RequestMapping(value = {"/encryptForm"}, method = {RequestMethod.GET, RequestMethod.POST})
@@ -78,7 +80,7 @@ public class ApisController {
 	///////////////////////////////////////////////////////////////////////////
 	
 	@RequestMapping(value = {"/getFeeForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String detailForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+	public String getFeeForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
@@ -87,75 +89,43 @@ public class ApisController {
 		return "web/apis/getFeeForm";
 	}
 	
-	@RequestMapping(value = {"/getWebviewIdForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String getWebviewIdForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+	@RequestMapping(value = {"/validateForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String validateForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
-		return "web/apis/getWebviewIdForm";
+		model.addAttribute("urlLns01", this.projEnvUrlProperties.getLns01());
+		return "web/apis/validateForm";
 	}
 	
-	@RequestMapping(value = {"/getResultForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String getResultForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+	@RequestMapping(value = {"/commitForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String commitForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
-		return "web/apis/getResultForm";
+		model.addAttribute("urlLns01", this.projEnvUrlProperties.getLns01());
+		return "web/apis/commitForm";
 	}
 	
-	@RequestMapping(value = {"/getVerificationForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String getVerificationForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+	@RequestMapping(value = {"/amendForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String amendForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
-		return "web/apis/getVerificationForm";
-		//return "redirect:/apis/list";
-		//return new RedirectView("/apis/list");
+		model.addAttribute("urlLns01", this.projEnvUrlProperties.getLns01());
+		return "web/apis/amendForm";
 	}
 	
-	@RequestMapping(value = {"/checkUserForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String authForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+	@RequestMapping(value = {"/refundForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String refundForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
 		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
 		model.addAttribute("apis", this.apisService.findApisById(id));
 		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
 		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
-		return "web/apis/checkUserForm";
-	}
-	
-	@RequestMapping(value = {"/deleteUserForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String historiesForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
-		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
-		model.addAttribute("apis", this.apisService.findApisById(id));
-		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
-		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
-		return "web/apis/deleteUserForm";
-	}
-	
-	@RequestMapping(value = {"/createUserForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String createUserForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
-		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
-		model.addAttribute("apis", this.apisService.findApisById(id));
-		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
-		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
-		return "web/apis/createUserForm";
-	}
-	
-	@RequestMapping(value = {"/migrationUserForm"}, method = {RequestMethod.GET, RequestMethod.POST})
-	public String migrationUserForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
-		log.info("KANG-20200730 >>>>> {} {}", CurrentInfo.get());
-		model.addAttribute("apis", this.apisService.findApisById(id));
-		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
-		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
-		model.addAttribute("urlSbs01", this.projEnvUrlProperties.getLns01());
-		return "web/apis/migrationUserForm";
+		model.addAttribute("urlLns01", this.projEnvUrlProperties.getLns01());
+		return "web/apis/refundForm";
 	}
 }

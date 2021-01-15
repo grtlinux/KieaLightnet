@@ -7,5 +7,13 @@
 		"type": "100",
 		"reqJson": "0200-100.json",
 		"resJson": "0210-100.json"
+	},{
+		"name": "2. validate",
+		"mapping": "apis/validate",
+		"httpUrl": "/hanwha/validate",
+		"httpMethod": "POST",
+		"type": "300",
+		"reqJson": "0200-300.json",
+		"resJson": "0210-300.json"
 	}
 ]

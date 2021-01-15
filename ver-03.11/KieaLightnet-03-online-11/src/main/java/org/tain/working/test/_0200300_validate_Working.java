@@ -27,14 +27,21 @@ public class _0200300_validate_Working {
 	public void test00() throws Exception {
 		log.info("KANG-20200908 >>>>> {}", CurrentInfo.get());
 		
-		String strReqStream = "0814020030099999920201016125525125525                                                               "
+		String strReqStream = "0864020030099999920201016125525125525                                                               "
 				+ "true test                70641266  320344321323        receiverFirstName   receiverLastName    Bangkok             "
 				+ "MG-0012345          THA  true true abc@lightnet.io                                   345364566      33   MG-0012345          "
 				+ "002       account_deposit     204515304846        Sender              Man                 Bangkok             10400               "
 				+ "Temp address        GOV                 PURCHASE_GOODS      THA  true true true true 45645645666         66 abc@lightnet.io     "
 				+ "MYSP83245384           1992-03-23          BUSINESS_PARTNER    senderMiddleName    THAADMIN               IDNIDRmgi"
-				+ "This is MGI test remark                           KOR10.00          USD1502293110098058              ";
-		
+				+ "This is MGI test remark                           KOR10.00          USD1502293110098058              FLATFEE                                           ";
+		strReqStream = "0875020030099999920201016125525125525                                                               "
+				+ "ter-001                                           receiverFirstName   receiverLastName    Bangkok             "
+				+ "MG-0012345               falsefalsereceiverEmail@test.com                            345364566      33   MG-0012345                    "
+				+ "cash                                    IQLZSO              senderLastNamex     Bangkok             10400               "
+				+ "Temp address        GOV                 PURCHASE_GOODS      THA  falsefalsefalsefalse45645645666         66 senderEmail@test.com"
+				+ "MYSP83245384           1992-03-23          BUSINESS_PARTNER    senderMiddleName    THAADMIN               IDN"
+				+ "43366.3500     IDRmgiThis is MGI test remark                           KOR               USD4324682635157307              "
+				+ "true FLATFEE                                           ";
 		String strReqJson = "{\n" + 
 				"  \"__head_data\" : {\n" + 
 				//"    \"length\" : \"0116\",\n" + 
@@ -138,6 +145,7 @@ public class _0200300_validate_Working {
 				"    \"resTime\" : \"125525\"\n" + 
 				"  },\n" + 
 				"  \"__body_data\" : {\n" + 
+				"    \"terminalName\": \"ter-001\",\n" + 
 				"    \"receiver\": {\n" + 
 				"        \"firstName\": \"receiverFirstName\",\n" + 
 				"        \"lastName\": \"receiverLastName\",\n" + 
@@ -196,9 +204,6 @@ public class _0200300_validate_Working {
 				"        },\n" + 
 				"        \"operatorCode\": \"mgi\"\n" + 
 				"    },\n" + 
-				"    \"promotionCodes\": [\n" + 
-				"        \"FLATFEE\"\n" + 
-				"    ],\n" + 
 				"    \"remark\": \"This is MGI test remark\",\n" + 
 				"    \"source\": {\n" + 
 				"        \"country\": \"KOR\",\n" + 
@@ -207,7 +212,10 @@ public class _0200300_validate_Working {
 				"        },\n" + 
 				"        \"transactionId\": \"4324682635157307\"\n" + 
 				"    },\n" + 
-				"    \"terminalName\": \"ter-001\"\n" + 
+				"    \"promotionCodes\": [\n" + 
+				"        \"FLATFEE\"\n" + 
+				"    ],\n" + 
+				"    \"saveReport\": true\n" + 
 				"  }\n" + 
 				"}";
 		

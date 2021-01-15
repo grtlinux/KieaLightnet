@@ -190,9 +190,9 @@ proj-env:
     lightnet: https://test-public.lightnetapis.io/v1.1
     lightnet1: https://test-public.lightnetapis.io/v1
     lightnet11: https://test-public.lightnetapis.io/v1.1
-    online: http://localhost:18083/v1.1
-    mapper: http://localhost:18087/v1.1
-    lns01:  http://localhost:18089/v1.1
+    online: http://172.30.222.3:18083/v1.1
+    mapper: http://172.30.222.3:18087/v1.1
+    lns01:  http://172.30.222.3:18089/v1.1
 
 ---
 # --------------------------------------------------------
