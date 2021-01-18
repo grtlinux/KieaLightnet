@@ -9,8 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
+import org.tain.working.errorTest.ErrorTest01Working;
 import org.tain.working.infoTest.InfoTest01Working;
 import org.tain.working.properties.PropertiesWorking;
+import org.tain.working.tasks.ErrorReaderTask;
 import org.tain.working.tasks.MapperReaderTask;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,17 +31,17 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // tasks > MapperReaderJob
+		if (!Flag.flag) job02();  // tasks > MapperReaderJob
 		if (!Flag.flag) job03();  // jsonTest
 		if (!Flag.flag) job04();  // infoTest
-		if (Flag.flag) job05();
-		if (Flag.flag) job06();
+		if (!Flag.flag) job05();  // tasks > ErrorReaderJob
+		if (Flag.flag) job06();  // errrorTest
 		if (Flag.flag) job07();
 		if (Flag.flag) job08();
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
 		
-		//if (Flag.flag) System.exit(0);
+		if (Flag.flag) System.exit(0);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -67,7 +69,7 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 			if (Flag.flag) this.mapperReaderTask.runMapperReaderJob();
 		}
 		
-		if (Flag.flag) Sleep.run(3 * 1000);
+		if (Flag.flag) Sleep.run(1 * 1000);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -120,22 +122,34 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job05() {
+	@Autowired
+	private ErrorReaderTask errorReaderTask;
+	
+	private void job05() throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
+			if (Flag.flag) this.errorReaderTask.runErrorReaderJob();
 		}
+		
+		if (Flag.flag) Sleep.run(1 * 1000);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	private void job06() {
+	@Autowired
+	private ErrorTest01Working errorTest01Working;
+	
+	private void job06() throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
+			if (Flag.flag) this.errorTest01Working.test01();
 		}
 	}
 	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
 	private void job07() {

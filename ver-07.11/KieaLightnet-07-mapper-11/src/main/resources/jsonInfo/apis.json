@@ -1,0 +1,43 @@
+[
+	{
+		"name": "1. getFee",
+		"mapping": "apis/getFee",
+		"httpUrl": "/hanwha/getFee",
+		"httpMethod": "GET",
+		"type": "100",
+		"reqJson": "0200-100.json",
+		"resJson": "0210-100.json"
+	},{
+		"name": "2. validate",
+		"mapping": "apis/validate",
+		"httpUrl": "/hanwha/validate",
+		"httpMethod": "POST",
+		"type": "300",
+		"reqJson": "0200-300.json",
+		"resJson": "0210-300.json"
+	},{
+		"name": "3. commit",
+		"mapping": "apis/commit",
+		"httpUrl": "/hanwha/commit",
+		"httpMethod": "POST",
+		"type": "400",
+		"reqJson": "0200-400.json",
+		"resJson": "0210-400.json"
+	},{
+		"name": "4. amend",
+		"mapping": "apis/amend",
+		"httpUrl": "/hanwha/amend",
+		"httpMethod": "POST",
+		"type": "500",
+		"reqJson": "0200-500.json",
+		"resJson": "0210-500.json"
+	},{
+		"name": "5. refund",
+		"mapping": "apis/refund",
+		"httpUrl": "/hanwha/refund",
+		"httpMethod": "POST",
+		"type": "600",
+		"reqJson": "0200-600.json",
+		"resJson": "0210-600.json"
+	}
+]

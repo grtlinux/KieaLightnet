@@ -1,0 +1,11 @@
+[
+	{
+		"error_org":     "sbs",
+		"error_class":   "link",
+		"error_code":    "101",
+		"error_message": "connect time out",
+		"error_msg":     "CONN_TIME_OUT",
+		"error_regex":   "connect",
+		"comment":       "comment, key = org_class_code, msg[20]"
+	}
+]

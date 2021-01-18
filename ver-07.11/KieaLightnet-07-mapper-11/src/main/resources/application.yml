@@ -117,6 +117,8 @@ proj-env:
     name: JOB (air)
   json:
     name: JSON (air)
+    apis-info-file: apis.json
+    error-info-file: error.json
   url:
     name: URL (air)
     # lightnet1: http://localhost:18888
@@ -143,6 +145,8 @@ proj-env:
     name: JOB (pro)
   json:
     name: JSON (pro)
+    apis-info-file: apis.json
+    error-info-file: error.json
   url:
     name: URL (pro)
     lightnet1: https://test-public.lightnetapis.io/v1
@@ -182,6 +186,8 @@ proj-env:
     name: JOB (dfep)
   json:
     name: JSON (dfep)
+    apis-info-file: apis.json
+    error-info-file: error.json
   url:
     name: URL (dfep)
     lightnet1: https://test-hawis.lightnetapis.io/v1

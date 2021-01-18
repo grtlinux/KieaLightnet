@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class MapperReaderJob {
+public class ErrorReaderJob {
 
 	private String param;
 	
@@ -38,7 +38,7 @@ public class MapperReaderJob {
 	}
 	
 	@Async(value = "async_mapperReaderJob")
-	public void mapperReaderJob(String param) throws Exception {
+	public void errorReaderJob(String param) throws Exception {
 		this.param = param;
 		log.info("KANG-20200721 >>>>> {} {} {}", this.param, CurrentInfo.get());
 		
@@ -60,10 +60,7 @@ public class MapperReaderJob {
 				if (fileEntry.isFile()) {
 					log.info(">>>>> [{}] [{}]", fileEntry.getParent(), fileEntry.getName());
 					
-					if (!StringTools.isExtension(fileEntry.getName(), "json")
-							|| "apis.json".equals(fileEntry.getName())
-							|| "error.json".equals(fileEntry.getName())
-							)
+					if (!StringTools.isExtension(fileEntry.getName(), "json") || "apis.json".equals(fileEntry.getName()))
 						continue;
 					
 					LnsMstInfo lnsMstInfo = new LnsMstInfo(fileEntry.getParent(), fileEntry.getName());
@@ -109,10 +106,7 @@ public class MapperReaderJob {
 						// subdirectory
 					} else if (fileEntry.isFile()) {
 						// file
-						if (!StringTools.isExtension(fileEntry.getName(), "json")
-								|| "apis.json".equals(fileEntry.getName())
-								|| "error.json".equals(fileEntry.getName())
-								)
+						if (!StringTools.isExtension(fileEntry.getName(), "json") || "apis.json".equals(fileEntry.getName()))
 							continue;
 						
 						LnsMstInfo lnsMstInfo = this.mapInfo.get(fileEntry.getName());
