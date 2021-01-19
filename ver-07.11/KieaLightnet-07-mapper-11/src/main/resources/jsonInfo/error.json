@@ -1,11 +1,27 @@
 [
 	{
-		"error_org":     "sbs",
-		"error_class":   "link",
+		"error_org":     "lns",
+		"error_server":  "link",
 		"error_code":    "101",
-		"error_message": "connect time out",
-		"error_msg":     "CONN_TIME_OUT",
-		"error_regex":   "connect",
-		"comment":       "comment, key = org_class_code, msg[20]"
+		"error_message": "connect timeout",
+		"error_msg":     "CONNECT_TIMEOUT",
+		"error_regex":   "timeout",
+		"comment":       "connect timeout, key = org_server_code, msg[20]"
+	},{
+		"error_org":     "lns",
+		"error_server":  "link",
+		"error_code":    "102",
+		"error_message": "3rd party error",
+		"error_msg":     "3RD_PARTY_ERROR",
+		"error_regex":   "3rd",
+		"comment":       "3rd party error, key = org_server_code, msg[20]"
+	},{
+		"error_org":     "lns",
+		"error_server":  "all",
+		"error_code":    "999",
+		"error_message": "etc error",
+		"error_msg":     "ETC_ERROR",
+		"error_regex":   "*",
+		"comment":       "comment, key = org_server_code, msg[20]"
 	}
 ]

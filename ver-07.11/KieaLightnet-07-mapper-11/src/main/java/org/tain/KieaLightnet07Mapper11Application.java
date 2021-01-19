@@ -144,6 +144,7 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
+			if (Flag.flag) this.errorTest01Working.test00();  // regex
 			if (Flag.flag) this.errorTest01Working.test01();
 		}
 	}

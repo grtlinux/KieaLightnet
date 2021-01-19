@@ -1,21 +1,23 @@
 package org.tain.task;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-import org.tain.mapper.LnsMstInfo;
-import org.tain.mapper.LnsStreamLength;
+import org.tain.data.LnsError;
+import org.tain.properties.ProjEnvJsonProperties;
 import org.tain.properties.ProjEnvParamProperties;
-import org.tain.properties.ProjEnvUrlProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 import org.tain.utils.Sleep;
 import org.tain.utils.StringTools;
+
+import com.fasterxml.jackson.core.type.TypeReference;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,35 +25,75 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ErrorReaderJob {
 
-	private String param;
+	private static final int LOOP_SLEEP_SEC = 10;
 	
-	private Map<String, LnsMstInfo> mapInfo = new HashMap<>();
+	private String param;
 	
 	@Autowired
 	private ProjEnvParamProperties projEnvParamProperties;
 	
 	@Autowired
-	private ProjEnvUrlProperties projEnvUrlProperties;
+	private ProjEnvJsonProperties projEnvJsonProperties;
 	
-	public LnsMstInfo get(String key) {
-		return this.mapInfo.get(key);
+	private Map<String, LnsError> mapError = new HashMap<>();
+	
+	public LnsError get(String key) {
+		return this.mapError.get(key);
 	}
 	
-	@Async(value = "async_mapperReaderJob")
+	public LnsError search(String message) {
+		// regex
+		
+		for (Map.Entry<String, LnsError> entry : this.mapError.entrySet()) {
+			LnsError lnsError = entry.getValue();
+			if (Flag.flag) log.info(">>>>> " + lnsError.getError_regex());
+		}
+		return null;
+	}
+	
+	@Async(value = "async_errorReaderJob")
 	public void errorReaderJob(String param) throws Exception {
 		this.param = param;
 		log.info("KANG-20200721 >>>>> {} {} {}", this.param, CurrentInfo.get());
 		
-		String basePath = null;
+		String errorFile = null;
 		if (Flag.flag) {
 			String home = this.projEnvParamProperties.getHome();
 			String base = this.projEnvParamProperties.getBase();
 			String infoPath = this.projEnvParamProperties.getInfoPath();
-			basePath = home + base + infoPath;
-			log.info(">>>>> BaseInfoPath: " + basePath);
+			String errorInfoFile = this.projEnvJsonProperties.getErrorInfoFile();
+			errorFile = home + base + infoPath + File.separator + errorInfoFile;
+			
+			log.info(">>>>> errorFile: " + errorFile);
 		}
 		
 		if (Flag.flag) {
+			//
+			this.mapError.clear();
+			long oldLastModified = 0L;
+			File fileError = new File(errorFile);
+			
+			while (true) {
+				long lastModified = fileError.lastModified();
+				//if (Flag.flag) log.info("============ sleep 5 sec ================" + fileError.lastModified());
+				
+				if (oldLastModified != lastModified) {
+					if (Flag.flag) log.info(">>>>> update file error.json and doing some job... ");
+					oldLastModified = lastModified;
+					
+					List<LnsError> lstLnsError = JsonPrint.getInstance().getObjectMapper().readValue(StringTools.stringFromFile(errorFile), new TypeReference<List<LnsError>>() {});
+					if (Flag.flag) lstLnsError.forEach(lnsError -> {
+						if (Flag.flag) log.info(">>>>> {} = {}", lnsError.getKey(), lnsError);
+						this.mapError.put(lnsError.getKey(), lnsError);
+					});
+				}
+				
+				Sleep.run(LOOP_SLEEP_SEC * 1000);
+			}
+		}
+		
+		if (!Flag.flag) {
+			/*
 			// initialize
 			File fileBasePath = new File(basePath);
 			File[] files = fileBasePath.listFiles();
@@ -93,9 +135,11 @@ public class ErrorReaderJob {
 					}
 				}
 			}
+			*/
 		}
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
+			/*
 			// check and update every 10 seconds
 			File fileBasePath = new File(basePath);
 			while (true) {
@@ -149,6 +193,7 @@ public class ErrorReaderJob {
 				
 				Sleep.run(10 * 1000);
 			}
+			*/
 		}
 	}
 }
