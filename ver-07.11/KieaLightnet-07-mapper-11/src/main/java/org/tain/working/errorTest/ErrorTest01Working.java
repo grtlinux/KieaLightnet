@@ -1,8 +1,12 @@
 package org.tain.working.errorTest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.tain.data.LnsError;
+import org.tain.task.ErrorReaderJob;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
+import org.tain.utils.JsonPrint;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -42,19 +46,65 @@ public class ErrorTest01Working {
 		if (Flag.flag) {
 			String pattern = null;
 			
-			pattern = "Ab.";
-			if (Flag.flag) log.info("1. regex: {} {}", "Abc".matches(pattern), "Abc".matches(pattern));
+			pattern = ".*Ab.";
+			if (Flag.flag) log.info("1. regex: {} {}", "123  Abc".matches(pattern), " Abc".matches(pattern));
 			
 			pattern = "ab\\s+\\S";
-			if (Flag.flag) log.info("2. regex: {} {} {}", "ab  ".matches(pattern), "ab c".matches(pattern), "ab      c".matches(pattern));
+			if (Flag.flag) log.info("2. regex: {} {} {}", " ab  ".matches(pattern), "ab c".matches(pattern), "ab      c".matches(pattern));
+			
+			pattern = ".*\\btimeout\\b.*";
+			if (Flag.flag) log.info("2. regex: {}", "connection is timeout.".matches(pattern));
 		}
 	}
 
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	
+	@Autowired
+	private ErrorReaderJob errorReaderJob;
+	
 	public void test01() throws Exception {
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
-			
+			//if (Flag.flag) log.info(">>>>> lnsError = {}", this.errorReaderJob.get());
+			if (Flag.flag) log.info(">>>>> lnsError = {}", this.errorReaderJob.search("connection is timeout."));
+			if (Flag.flag) log.info(">>>>> lnsError = {}", this.errorReaderJob.search("[3rd party] error exception..."));
+			if (Flag.flag) log.info(">>>>> lnsError = {}", this.errorReaderJob.search("1003 NOTMATCH USER EXIST.."));
+		}
+		
+		if (Flag.flag) {
+			if (Flag.flag) log.info(">>>>> mapError = {}", JsonPrint.getInstance().toPrettyJson(this.errorReaderJob.getMap()));
+		}
+		
+		if (Flag.flag) {
+			LnsError lnsError = this.errorReaderJob.search("AccessToken is not allowed....");
+			if (Flag.flag) log.info("* error_org     : {}", lnsError.getError_org());
+			if (Flag.flag) log.info("* error_server  : {}", lnsError.getError_server());
+			if (Flag.flag) log.info("* error_code    : {}", lnsError.getError_code());
+			if (Flag.flag) log.info("* error_message : {}", lnsError.getError_message());
+			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getError_msg());
+			if (Flag.flag) log.info("* error_msg     : {}", String.format("%7.7s", lnsError.getError_msg()));
+			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
+			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
+			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getKey());
+		}
+		
+		if (Flag.flag) {
+			LnsError lnsError = null;
+			lnsError = this.errorReaderJob.search("Return Success....");
+			lnsError = this.errorReaderJob.search("SUCCESS");
+			lnsError = this.errorReaderJob.search("msg success....");
+			if (Flag.flag) log.info("* error_org     : {}", lnsError.getError_org());
+			if (Flag.flag) log.info("* error_server  : {}", lnsError.getError_server());
+			if (Flag.flag) log.info("* error_code    : {}", lnsError.getError_code());
+			if (Flag.flag) log.info("* error_message : {}", lnsError.getError_message());
+			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getError_msg());
+			if (Flag.flag) log.info("* error_msg     : {}", String.format("%7.7s", lnsError.getError_msg()));
+			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
+			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
+			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getKey());
 		}
 	}
 }

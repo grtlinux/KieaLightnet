@@ -15,8 +15,8 @@ public class AsyncConfig extends AsyncConfigurerSupport {
 	@Bean(name = "async_mapperReaderJob")
 	public Executor mapperMainTask() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setCorePoolSize(2);
-		executor.setMaxPoolSize(2);
+		executor.setCorePoolSize(1);
+		executor.setMaxPoolSize(1);
 		executor.setQueueCapacity(0);
 		executor.setThreadNamePrefix("async_mapperReaderJob-");
 		executor.initialize();
@@ -30,10 +30,10 @@ public class AsyncConfig extends AsyncConfigurerSupport {
 	@Bean(name = "async_errorReaderJob")
 	public Executor errorMainTask() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-		executor.setCorePoolSize(2);
-		executor.setMaxPoolSize(2);
+		executor.setCorePoolSize(1);
+		executor.setMaxPoolSize(1);
 		executor.setQueueCapacity(0);
-		executor.setThreadNamePrefix("async_mapperReaderJob-");
+		executor.setThreadNamePrefix("async_errorReaderJob-");
 		executor.initialize();
 		return executor;
 	}

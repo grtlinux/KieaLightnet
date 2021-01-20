@@ -37,19 +37,50 @@ public class ErrorReaderJob {
 	
 	private Map<String, LnsError> mapError = new HashMap<>();
 	
+	private LnsError error999 = null;
+	
+	public Map<String, LnsError> getMap() {
+		return this.mapError;
+	}
+	
 	public LnsError get(String key) {
+		if (key == null)
+			return this.error999;
+		
 		return this.mapError.get(key);
 	}
 	
-	public LnsError search(String message) {
-		// regex
-		
-		for (Map.Entry<String, LnsError> entry : this.mapError.entrySet()) {
-			LnsError lnsError = entry.getValue();
-			if (Flag.flag) log.info(">>>>> " + lnsError.getError_regex());
-		}
-		return null;
+	public LnsError get() {
+		return this.get(null);
 	}
+	
+	public LnsError search(String message) {
+		if (message != null) {
+			for (Map.Entry<String, LnsError> entry : this.mapError.entrySet()) {
+				LnsError lnsError = entry.getValue();
+				//if (Flag.flag) log.info(">>>>> " + lnsError.getError_regex());
+				
+				boolean isMatch = message.matches(lnsError.getError_regex());
+				if (isMatch) {
+					if (Flag.flag) log.info("# SEARCH_REGEX: '{}' -> '{}'", lnsError.getError_regex(), message);
+					return lnsError;
+				}
+			}
+		}
+		
+		if (Flag.flag) log.info("# SEARCH_REGEX: '{}' -> '{}'", this.error999.getError_regex(), message);
+		return this.error999;
+	}
+	
+	public LnsError search() {
+		return this.search(null);
+	}
+	
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////
 	
 	@Async(value = "async_errorReaderJob")
 	public void errorReaderJob(String param) throws Exception {
@@ -78,122 +109,22 @@ public class ErrorReaderJob {
 				//if (Flag.flag) log.info("============ sleep 5 sec ================" + fileError.lastModified());
 				
 				if (oldLastModified != lastModified) {
-					if (Flag.flag) log.info(">>>>> update file error.json and doing some job... ");
+					if (Flag.flag) log.info(">>>>> update file error.json and doing some job... {} {} ", lastModified, this.param);
 					oldLastModified = lastModified;
 					
 					List<LnsError> lstLnsError = JsonPrint.getInstance().getObjectMapper().readValue(StringTools.stringFromFile(errorFile), new TypeReference<List<LnsError>>() {});
 					if (Flag.flag) lstLnsError.forEach(lnsError -> {
 						if (Flag.flag) log.info(">>>>> {} = {}", lnsError.getKey(), lnsError);
-						this.mapError.put(lnsError.getKey(), lnsError);
+						if (lnsError.getError_code().equals("999")) {
+							this.error999 = lnsError;
+						} else {
+							this.mapError.put(lnsError.getKey(), lnsError);
+						}
 					});
 				}
 				
 				Sleep.run(LOOP_SLEEP_SEC * 1000);
 			}
-		}
-		
-		if (!Flag.flag) {
-			/*
-			// initialize
-			File fileBasePath = new File(basePath);
-			File[] files = fileBasePath.listFiles();
-			Arrays.sort(files);
-			for (final File fileEntry : files) {
-				if (fileEntry.isFile()) {
-					log.info(">>>>> [{}] [{}]", fileEntry.getParent(), fileEntry.getName());
-					
-					if (!StringTools.isExtension(fileEntry.getName(), "json") || "apis.json".equals(fileEntry.getName()))
-						continue;
-					
-					LnsMstInfo lnsMstInfo = new LnsMstInfo(fileEntry.getParent(), fileEntry.getName());
-					String strLength = new LnsStreamLength(lnsMstInfo).getStrLength();
-					lnsMstInfo.setLength(strLength);
-					lnsMstInfo.setExtHttpUrl(this.projEnvUrlProperties.getLightnet11());
-					
-					String reqResType = lnsMstInfo.getReqResType();
-					this.mapInfo.put(reqResType, lnsMstInfo);
-					String fileName = lnsMstInfo.getFileName();
-					this.mapInfo.put(fileName, lnsMstInfo);
-					
-					if (Flag.flag) {
-						log.info("======================= START: {} ==========================", lnsMstInfo.getFileName());
-						log.info(">>>>> basePath = {}", lnsMstInfo.getBasePath());
-						log.info(">>>>> fileName = {}", lnsMstInfo.getFileName());
-						log.info(">>>>> filePath = {}", lnsMstInfo.getFilePath());
-						log.info(">>>>> lastModified = {}", lnsMstInfo.getLastModfied());
-						log.info(">>>>> strJsonInfo = {}", lnsMstInfo.getStrJsonInfo());
-						log.info(">>>>> reqResType = {}", lnsMstInfo.getReqResType());
-						log.info(">>>>> infoNode = {}", lnsMstInfo.getInfoNode().toPrettyString());
-						log.info(">>>>> streamHead = [{}]", lnsMstInfo.getStreamHead());
-						log.info(">>>>> jsonHead = '{}'", lnsMstInfo.getJsonHead());
-						log.info(">>>>> cstruct = '{}'", lnsMstInfo.getCStruct());
-						//log.info(">>>>> headBaseInfoNode = {}", lnsMstInfo.getHeadBaseInfoNode().toPrettyString());
-						//log.info(">>>>> headDataInfoNode = {}", lnsMstInfo.getHeadDataInfoNode().toPrettyString());
-						//log.info(">>>>> bodyBaseInfoNode = {}", lnsMstInfo.getBodyBaseInfoNode().toPrettyString());
-						//log.info(">>>>> bodyDataInfoNode = {}", lnsMstInfo.getBodyDataInfoNode().toPrettyString());
-						log.info("----------------------- END: {} --------------------------", lnsMstInfo.getFileName());
-					}
-				}
-			}
-			*/
-		}
-		
-		if (!Flag.flag) {
-			/*
-			// check and update every 10 seconds
-			File fileBasePath = new File(basePath);
-			while (true) {
-				File[] files = fileBasePath.listFiles();
-				Arrays.sort(files);
-				for (final File fileEntry : files) {
-					if (fileEntry.isDirectory()) {
-						// subdirectory
-					} else if (fileEntry.isFile()) {
-						// file
-						if (!StringTools.isExtension(fileEntry.getName(), "json") || "apis.json".equals(fileEntry.getName()))
-							continue;
-						
-						LnsMstInfo lnsMstInfo = this.mapInfo.get(fileEntry.getName());
-						if (lnsMstInfo == null) {
-							// new
-							lnsMstInfo = new LnsMstInfo(fileEntry.getParent(), fileEntry.getName());
-							String strLength = new LnsStreamLength(lnsMstInfo).getStrLength();
-							lnsMstInfo.setLength(strLength);
-							lnsMstInfo.setExtHttpUrl(this.projEnvUrlProperties.getLightnet11());
-							
-							String reqResType = lnsMstInfo.getReqResType();
-							this.mapInfo.put(reqResType, lnsMstInfo);
-							String fileName = lnsMstInfo.getFileName();
-							this.mapInfo.put(fileName, lnsMstInfo);
-							
-							if (Flag.flag) {
-								log.info("======================= START: {} ==========================", lnsMstInfo.getFileName());
-								log.info(">>>>> basePath = {}", lnsMstInfo.getBasePath());
-								log.info(">>>>> fileName = {}", lnsMstInfo.getFileName());
-								log.info(">>>>> filePath = {}", lnsMstInfo.getFilePath());
-								log.info(">>>>> lastModified = {}", lnsMstInfo.getLastModfied());
-								log.info(">>>>> strJsonInfo = {}", lnsMstInfo.getStrJsonInfo());
-								log.info(">>>>> reqResType = {}", lnsMstInfo.getReqResType());
-								log.info(">>>>> infoNode = {}", lnsMstInfo.getInfoNode().toPrettyString());
-								log.info(">>>>> streamHead = [{}]", lnsMstInfo.getStreamHead());
-								log.info(">>>>> jsonHead = '{}'", lnsMstInfo.getJsonHead());
-								//log.info(">>>>> headBaseInfoNode = {}", lnsMstInfo.getHeadBaseInfoNode().toPrettyString());
-								//log.info(">>>>> headDataInfoNode = {}", lnsMstInfo.getHeadDataInfoNode().toPrettyString());
-								//log.info(">>>>> bodyBaseInfoNode = {}", lnsMstInfo.getBodyBaseInfoNode().toPrettyString());
-								//log.info(">>>>> bodyDataInfoNode = {}", lnsMstInfo.getBodyDataInfoNode().toPrettyString());
-								log.info("======================= END: {} ==========================", lnsMstInfo.getFileName());
-							}
-						} else if (lnsMstInfo.checkAndUpdate(fileEntry)) {
-							// update
-							lnsMstInfo.setExtHttpUrl(this.projEnvUrlProperties.getLightnet11());
-							if (Flag.flag) log.info(">>>>> {} file is updated.", fileEntry.getName());
-						}
-					}
-				}
-				
-				Sleep.run(10 * 1000);
-			}
-			*/
 		}
 	}
 }
