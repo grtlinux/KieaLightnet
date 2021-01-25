@@ -31,7 +31,7 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) job01();  // properties
-		if (!Flag.flag) job02();  // tasks > MapperReaderJob
+		if (Flag.flag) job02();  // tasks > MapperReaderJob
 		if (!Flag.flag) job03();  // jsonTest
 		if (!Flag.flag) job04();  // infoTest
 		if (Flag.flag) job05();  // tasks > ErrorReaderJob
@@ -41,7 +41,7 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 		if (Flag.flag) job09();
 		if (Flag.flag) job10();
 		
-		if (Flag.flag) System.exit(0);
+		//if (Flag.flag) System.exit(0);
 	}
 	
 	///////////////////////////////////////////////////////////////////////////

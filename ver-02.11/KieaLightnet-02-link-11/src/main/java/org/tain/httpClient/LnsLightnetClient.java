@@ -14,8 +14,10 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.tain.data.LnsData;
+import org.tain.data.LnsError;
 import org.tain.mapper.LnsJsonNode;
 import org.tain.mapper.LnsNodeTools;
+import org.tain.task.ErrorReaderJob;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.RestTemplateConfig;
@@ -32,6 +34,9 @@ public class LnsLightnetClient {
 
 	@Autowired
 	private LnsData lnsData;
+	
+	@Autowired
+	private ErrorReaderJob errorReaderJob;
 	
 	///////////////////////////////////////////////////////////////////////////
 	
@@ -78,6 +83,9 @@ public class LnsLightnetClient {
 			log.info(">>>>> GET.REQ.reqHttpEntity  = {}", reqHttpEntity);
 			
 			ResponseEntity<String> response = null;
+			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
+			resHeadNode.put("reqres", "0210");
+			resHeadNode.put("resTime", LnsNodeTools.getTime());
 			try {
 				response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						httpUrl
@@ -89,12 +97,15 @@ public class LnsLightnetClient {
 				log.info(">>>>> GET.RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> GET.RES.getBody()            = {}", response.getBody());
 				
-				LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
-				resHeadNode.put("reqres", "0210");
-				resHeadNode.put("resTime", LnsNodeTools.getTime());
-				resHeadNode.put("resCode", "000");
-				resHeadNode.put("resMessage", "SUCCESS");
+				// TODO: for repair
+				if (Flag.flag) {
+					LnsError lnsError = this.errorReaderJob.search("SUCCESS");
+					resHeadNode.put("resCode", lnsError.getError_code());
+					resHeadNode.put("resMessage", "SUCCESS");
+				}
+				
 				LnsJsonNode resDataNode = new LnsJsonNode(response.getBody());
+				
 				
 				LnsJsonNode resJsonNode = new LnsJsonNode("{}");
 				resJsonNode.put("__head_data", resHeadNode.get());
