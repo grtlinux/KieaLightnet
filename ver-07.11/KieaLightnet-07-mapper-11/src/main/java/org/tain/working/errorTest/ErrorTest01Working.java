@@ -85,7 +85,7 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info("* error_code    : {}", lnsError.getError_code());
 			if (Flag.flag) log.info("* error_message : {}", lnsError.getError_message());
 			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getError_msg());
-			if (Flag.flag) log.info("* error_msg     : {}", String.format("%7.7s", lnsError.getError_msg()));
+			if (Flag.flag) log.info("* error_msg2    : {}", String.format("%7.7s", lnsError.getError_msg()));
 			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
 			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
 			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getKey());
@@ -101,7 +101,7 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info("* error_code    : {}", lnsError.getError_code());
 			if (Flag.flag) log.info("* error_message : {}", lnsError.getError_message());
 			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getError_msg());
-			if (Flag.flag) log.info("* error_msg     : {}", String.format("%7.7s", lnsError.getError_msg()));
+			if (Flag.flag) log.info("* error_msg2    : {}", String.format("%7.7s", lnsError.getError_msg()));
 			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
 			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
 			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getKey());
