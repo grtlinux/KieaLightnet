@@ -1,0 +1,131 @@
+{
+    "__head_data" : {
+      "length" : "0000",
+      "reqres" : "0210",
+      "type" : "400",
+      "trNo" : "999999",
+      "reqDate" : "20201016",
+      "reqTime" : "125525",
+      "resTime" : "125512",
+      "resCode" : "000",
+      "resMessage" : "SUCCESS"
+    },
+    "__body_data" : {
+      "status" : "success",
+      "message" : "OK",
+      "data" : {
+        "transactionId" : "68fe8df3-153f-40b8-6b16-466e1559be46",
+        "destination" : {
+          "transactionId" : "9816101E1611633299820495855370NN",
+          "operatorCode" : "mgi",
+          "country" : "IDN",
+          "receive" : {
+            "amount" : "43366.3500",
+            "currency" : "IDR"
+          },
+          "withdrawalId" : "22195655"
+        },
+        "status" : "READY",
+        "additionalInfo" : {
+          "destinationCountryDisplayName" : "INDONESIA",
+          "expectedDateOfDelivery" : "2021-01-26",
+          "receiveAmountsReceiveFeesAreEstimated" : "false",
+          "receiveAmountsReceiveTaxesAreEstimated" : "false",
+          "receiveAmountsTotalReceiveTaxes" : "0.00",
+          "receiveAmountsTotalReceiveTaxesCurrency" : "IDR",
+          "receiveAmountsValidCurrencyIndicator" : "true",
+          "receiveFeeDisclosureText" : "false",
+          "receiveTaxDisclosureText" : "false",
+          "sendAmountsSendAmount" : "3.02",
+          "sendAmountsSendCurrency" : "USD",
+          "sendAmountsTotalSendTaxes" : "0.00",
+          "sendAmountsTotalSendTaxesCurrency" : "USD",
+          "senderPurposeDisplayName" : "Payment for Goods/Services",
+          "totalReceiveFees" : "0.00",
+          "totalReceiveFeesCurrency" : "IDR"
+        },
+        "source" : {
+          "transactionId" : "4324682635157307",
+          "operatorCode" : "hanwha",
+          "country" : "KOR",
+          "send" : {
+            "amount" : "5.0200",
+            "currency" : "USD"
+          }
+        },
+        "sender" : {
+          "address" : {
+            "city" : "Bangkok",
+            "line1" : "Temp address",
+            "postalCode" : "10400"
+          },
+          "birthCountryCode" : "THA",
+          "citizenshipCountryCode" : "THA",
+          "dob" : "1992-03-23",
+          "email" : "senderEmail@test.com",
+          "firstName" : "IQLZSO",
+          "homePhone" : {
+            "countryCode" : "66",
+            "number" : "45645645666"
+          },
+          "idCountryCode" : "MYS",
+          "idNumber" : "P83245384",
+          "idType" : "GOV",
+          "lastName" : "senderLastNamex",
+          "middleName" : "senderMiddleName",
+          "notification" : {
+            "marketingEmailOptIn" : false,
+            "marketingSMSOptIn" : false,
+            "transactionEmailOptIn" : false,
+            "transactionSMSOptIn" : false
+          },
+          "occupation" : "ADMIN",
+          "purpose" : "PURCHASE_GOODS",
+          "relationshipToReceiver" : "BUSINESS_PARTNER",
+          "secondLastName" : "senderSecondLastName"
+        },
+        "receiver" : {
+          "accountNumber" : "MG-0012345",
+          "address" : {
+            "city" : "Bangkok",
+            "line1" : "MG-0012345"
+          },
+          "email" : "receiverEmail@test.com",
+          "firstName" : "receiverFirstName",
+          "lastName" : "receiverLastName",
+          "notification" : {
+            "transactionEmailOptIn" : false,
+            "transactionSMSOptIn" : false
+          },
+          "phone" : {
+            "countryCode" : "33",
+            "number" : "345364566"
+          }
+        },
+        "fee" : {
+          "total" : {
+            "amount" : "2.0000",
+            "currency" : "USD"
+          }
+        },
+        "promotions" : [ {
+          "code" : "FLATFEE",
+          "discount" : {
+            "amount" : "8.0000",
+            "currency" : "USD"
+          }
+        } ],
+        "terminalName" : "ter-001",
+        "rate" : {
+          "from" : {
+            "amount" : "1",
+            "currency" : "USD"
+          },
+          "to" : {
+            "amount" : "14347.245",
+            "currency" : "IDR"
+          }
+        }
+      }
+    }
+}

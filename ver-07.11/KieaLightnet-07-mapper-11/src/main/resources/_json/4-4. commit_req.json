@@ -1,0 +1,16 @@
+{
+    "__head_data" : {
+      "length" : "0000",
+      "reqres" : "0210",
+      "type" : "400",
+      "trNo" : "999999",
+      "reqDate" : "20201016",
+      "reqTime" : "125525",
+      "resTime" : "125512",
+      "resCode" : "000",
+      "resMessage" : "SUCCESS"
+    },
+    "__body_data" : {
+      "transactionId" : "68fe8df3-153f-40b8-6b16-466e1559be46"
+    }
+}
