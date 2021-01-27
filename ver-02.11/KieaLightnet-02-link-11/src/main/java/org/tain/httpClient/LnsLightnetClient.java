@@ -46,7 +46,7 @@ public class LnsLightnetClient {
 	
 	public LnsJsonNode get(LnsJsonNode lnsJsonNode, boolean flagAccessToken) throws Exception {
 		
-		log.info("=========================== LnsLightnetClient.get =============================");
+		log.info("\n\n\n=========================== LnsLightnetClient.GET START =============================");
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -82,12 +82,20 @@ public class LnsLightnetClient {
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqHeaders);
 			log.info(">>>>> GET.REQ.reqHttpEntity  = {}", reqHttpEntity);
 			
-			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
-			resHeadNode.put("reqres", "0210");
-			resHeadNode.put("resTime", LnsNodeTools.getTime());
+			//////////////////////////////////////////////////////////////////////////
+			// response json
+			LnsJsonNode resJsonNode = new LnsJsonNode("{}");
+			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());  // head
+			LnsJsonNode resDataNode = new LnsJsonNode("{}");               // body
 			
 			ResponseEntity<String> response = null;
 			try {
+				if (Flag.flag) {
+					// head
+					resHeadNode.put("reqres", "0210");
+					resHeadNode.put("resTime", LnsNodeTools.getTime());
+				}
+				
 				response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						httpUrl
 						, httpMethod
@@ -98,26 +106,19 @@ public class LnsLightnetClient {
 				log.info(">>>>> GET.RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> GET.RES.getBody()            = {}", response.getBody());
 				
-				// TODO: for repair
-				if (Flag.flag) {
-					LnsError lnsError = this.errorReaderJob.search("SUCCESS");
-					resHeadNode.put("resCode", lnsError.getError_code());
-					resHeadNode.put("resMessage", "SUCCESS");
-				}
-				
-				LnsJsonNode resDataNode = new LnsJsonNode(response.getBody());
-				
-				
-				LnsJsonNode resJsonNode = new LnsJsonNode("{}");
-				resJsonNode.put("__head_data", resHeadNode.get());
-				resJsonNode.put("__body_data", resDataNode.get());
-				lnsJsonNode.put("response", resJsonNode.get());
-				
-				log.info(">>>>> GET.RES-1.lnsJsonNode          = {}", lnsJsonNode.toPrettyString());
-				
 				lnsJsonNode.put("code", "00000");
 				lnsJsonNode.put("status", "success");
 				lnsJsonNode.put("message", "OK");
+				
+				if (Flag.flag) {
+					// head
+					LnsError lnsError = this.errorReaderJob.search("SUCCESS");
+					resHeadNode.put("resCode", lnsError.getError_code());
+					resHeadNode.put("resMessage", "SUCCESS");
+					
+					// body
+					resDataNode = new LnsJsonNode(response.getBody());
+				}
 			} catch (Exception e) {
 				//e.printStackTrace();
 				String message = e.getMessage();
@@ -127,14 +128,27 @@ public class LnsLightnetClient {
 				lnsJsonNode.put("code", "99999");
 				lnsJsonNode.put("status", "fail");
 				lnsJsonNode.put("message", message.substring(pos1 + 1, pos2));
+				if (Flag.flag) {
+					// head
+					LnsError lnsError = this.errorReaderJob.search(message);
+					resHeadNode.put("resCode", lnsError.getError_code());
+					resHeadNode.put("resMessage", lnsError.getError_msg());
+				}
+			}
+			
+			if (Flag.flag) {
+				// lnsJsonNode  response
+				resJsonNode.put("__head_data", resHeadNode.get());
+				resJsonNode.put("__body_data", resDataNode.get());
+				lnsJsonNode.put("response", resJsonNode.get());
 			}
 		}
 		
 		if (Flag.flag) {
-			log.info(">>>>> GET.RES-2.lnsJsonNode: {}", lnsJsonNode.toPrettyString());
+			log.info(">>>>> GET.RES.lnsJsonNode: {}", lnsJsonNode.toPrettyString());
 		}
 		
-		log.info("--------------------------- LnsLightnetClient.get -----------------------------");
+		log.info("--------------------------- LnsLightnetClient.GET END -----------------------------\n\n\n");
 		
 		return lnsJsonNode;
 	}
@@ -147,7 +161,7 @@ public class LnsLightnetClient {
 	
 	public LnsJsonNode post(LnsJsonNode lnsJsonNode, boolean flagAccessToken) throws Exception {
 		
-		log.info("=========================== LnsLightnetClient.post =============================");
+		log.info("\n\n\n=========================== LnsLightnetClient.POST START =============================");
 		log.info("KANG-20200721 >>>>> {} {}", CurrentInfo.get());
 		
 		if (Flag.flag) {
@@ -173,8 +187,20 @@ public class LnsLightnetClient {
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqBodyNode.toPrettyString(), reqHeaders);
 			log.info(">>>>> POST.REQ.reqHttpEntity  = {}", reqHttpEntity);
 			
+			//////////////////////////////////////////////////////////////////////////
+			// response json
+			LnsJsonNode resJsonNode = new LnsJsonNode("{}");
+			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());  // head
+			LnsJsonNode resDataNode = new LnsJsonNode("{}");               // body
+			
 			ResponseEntity<String> response = null;
 			try {
+				if (Flag.flag) {
+					// head
+					resHeadNode.put("reqres", "0210");
+					resHeadNode.put("resTime", LnsNodeTools.getTime());
+				}
+				
 				response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						httpUrl
 						, httpMethod
@@ -185,23 +211,19 @@ public class LnsLightnetClient {
 				log.info(">>>>> POST.RES.getStatusCode()      = {}", response.getStatusCode());
 				log.info(">>>>> POST.RES.getBody()            = {}", response.getBody());
 				
-				LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
-				resHeadNode.put("reqres", "0210");
-				resHeadNode.put("resTime", LnsNodeTools.getTime());
-				resHeadNode.put("resCode", "000");
-				resHeadNode.put("resMessage", "SUCCESS");
-				LnsJsonNode resDataNode = new LnsJsonNode(response.getBody());
-				
-				LnsJsonNode resJsonNode = new LnsJsonNode("{}");
-				resJsonNode.put("__head_data", resHeadNode.get());
-				resJsonNode.put("__body_data", resDataNode.get());
-				lnsJsonNode.put("response", resJsonNode.get());
-				
-				log.info(">>>>> POST.RES-1.lnsJsonNode          = {}", lnsJsonNode.toPrettyString());
-				
 				lnsJsonNode.put("code", "00000");
 				lnsJsonNode.put("status", "success");
 				lnsJsonNode.put("message", "OK");
+				
+				if (Flag.flag) {
+					// head
+					LnsError lnsError = this.errorReaderJob.search("SUCCESS");
+					resHeadNode.put("resCode", lnsError.getError_code());
+					resHeadNode.put("resMessage", "SUCCESS");
+					
+					// body
+					resDataNode = new LnsJsonNode(response.getBody());
+				}
 			} catch (Exception e) {
 				//e.printStackTrace();
 				String message = e.getMessage();
@@ -211,14 +233,27 @@ public class LnsLightnetClient {
 				lnsJsonNode.put("code", "99999");
 				lnsJsonNode.put("status", "fail");
 				lnsJsonNode.put("message", message.substring(pos1 + 1, pos2));
+				if (Flag.flag) {
+					// head
+					LnsError lnsError = this.errorReaderJob.search(message);
+					resHeadNode.put("resCode", lnsError.getError_code());
+					resHeadNode.put("resMessage", lnsError.getError_msg());
+				}
+			}
+			
+			if (Flag.flag) {
+				// lnsJsonNode  response
+				resJsonNode.put("__head_data", resHeadNode.get());
+				resJsonNode.put("__body_data", resDataNode.get());
+				lnsJsonNode.put("response", resJsonNode.get());
 			}
 		}
 		
 		if (Flag.flag) {
-			log.info(">>>>> POST.RES-2.lnsJsonNode: {}", lnsJsonNode.toPrettyString());
+			log.info(">>>>> POST.RES.lnsJsonNode: {}", lnsJsonNode.toPrettyString());
 		}
 		
-		log.info("--------------------------- LnsLightnetClient.post -----------------------------");
+		log.info("--------------------------- LnsLightnetClient.POST END -----------------------------\n\n\n");
 		
 		return lnsJsonNode;
 	}
