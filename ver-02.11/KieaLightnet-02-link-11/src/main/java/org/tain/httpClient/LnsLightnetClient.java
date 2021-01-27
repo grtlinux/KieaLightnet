@@ -85,8 +85,8 @@ public class LnsLightnetClient {
 			//////////////////////////////////////////////////////////////////////////
 			// response json
 			LnsJsonNode resJsonNode = new LnsJsonNode("{}");
-			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());  // head
-			LnsJsonNode resDataNode = new LnsJsonNode("{}");               // body
+			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get().toString());  // head
+			LnsJsonNode resDataNode = new LnsJsonNode("{}");                          // body
 			
 			ResponseEntity<String> response = null;
 			try {
@@ -190,8 +190,8 @@ public class LnsLightnetClient {
 			//////////////////////////////////////////////////////////////////////////
 			// response json
 			LnsJsonNode resJsonNode = new LnsJsonNode("{}");
-			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());  // head
-			LnsJsonNode resDataNode = new LnsJsonNode("{}");               // body
+			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get().toString());  // head
+			LnsJsonNode resDataNode = new LnsJsonNode("{}");                          // body
 			
 			ResponseEntity<String> response = null;
 			try {
