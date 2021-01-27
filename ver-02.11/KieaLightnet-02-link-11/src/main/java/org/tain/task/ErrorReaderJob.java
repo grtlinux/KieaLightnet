@@ -39,6 +39,8 @@ public class ErrorReaderJob {
 	
 	private LnsError error999 = null;
 	
+	///////////////////////////////////////////////////////////////////////////
+	
 	public Map<String, LnsError> getMap() {
 		return this.mapError;
 	}
@@ -106,7 +108,7 @@ public class ErrorReaderJob {
 			
 			while (true) {
 				long lastModified = fileError.lastModified();
-				//if (Flag.flag) log.info("============ sleep 5 sec ================" + fileError.lastModified());
+				//if (Flag.flag) log.info("============ sleep 10 sec ================" + fileError.lastModified());
 				
 				if (oldLastModified != lastModified) {
 					if (Flag.flag) log.info(">>>>> update file error.json and doing some job... {} {} ", lastModified, this.param);

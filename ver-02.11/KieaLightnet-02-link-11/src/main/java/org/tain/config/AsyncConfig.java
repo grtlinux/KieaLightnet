@@ -27,6 +27,7 @@ public class AsyncConfig extends AsyncConfigurerSupport {
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
 	
+	/*
 	@Bean(name = "task01Task")
 	public Executor task01Task() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
@@ -37,6 +38,7 @@ public class AsyncConfig extends AsyncConfigurerSupport {
 		executor.initialize();
 		return executor;
 	}
+	*/
 	
 	///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////
@@ -52,6 +54,7 @@ public class AsyncConfig extends AsyncConfigurerSupport {
 	 * 10개의 쓰레드가 모두 실행되고 있는 도중에 추가 요청이 들어오면 QueueCapacity에서 설정한 사이즈 만큼
 	 * 대기열에서 기다리고 있습니다. 실행되고 있는 쓰레드가 종료되면 순차적으로 처리됩니다.
 	 */
+	/*
 	@Bean(name = "fooExecutor")
 	public Executor fooExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
@@ -62,10 +65,12 @@ public class AsyncConfig extends AsyncConfigurerSupport {
 		executor.initialize();
 		return executor;
 	}
+	*/
 
 	/*
 	 * 3개의 고정 크기로 3개의 쓰레드가 모두 처리중일때 추가 요청이 들어오면 4번째 요청은 Exception을 발생시킵니다.
 	 */
+	/*
 	@Bean(name = "fooExecutor2")
 	public Executor fooExecutor2() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
@@ -76,4 +81,5 @@ public class AsyncConfig extends AsyncConfigurerSupport {
 		executor.initialize();
 		return executor;
 	}
+	*/
 }

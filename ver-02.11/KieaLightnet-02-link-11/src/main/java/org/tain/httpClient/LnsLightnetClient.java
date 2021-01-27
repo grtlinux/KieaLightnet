@@ -82,10 +82,11 @@ public class LnsLightnetClient {
 			HttpEntity<String> reqHttpEntity = new HttpEntity<>(reqHeaders);
 			log.info(">>>>> GET.REQ.reqHttpEntity  = {}", reqHttpEntity);
 			
-			ResponseEntity<String> response = null;
 			LnsJsonNode resHeadNode = new LnsJsonNode(reqHeadNode.get());
 			resHeadNode.put("reqres", "0210");
 			resHeadNode.put("resTime", LnsNodeTools.getTime());
+			
+			ResponseEntity<String> response = null;
 			try {
 				response = RestTemplateConfig.get(RestTemplateType.SETENV).exchange(
 						httpUrl
