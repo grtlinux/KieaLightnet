@@ -1,5 +1,7 @@
 link_log
 
+----------------------------------------------------------------------> validate
+
 19:11:52 INFO - >>>>> POST.RES.getStatusCodeValue() = 200
 19:11:52 INFO - >>>>> POST.RES.getStatusCode()      = 200 OK
 19:11:52 INFO - >>>>> POST.RES.getBody()            = {"status":"success","message":"OK","data":{"transactionId":"a5ae4612-ca46-4190-58ae-af08fdc47918","deliveryMethod":"cash","source":{"transactionId":"4324682635157307","operatorCode":"hanwha","country":"KOR","send":{"amount":"5.0200","currency":"USD"}},"destination":{"transactionId":"9816101E1611742290144526108290NN","operatorCode":"mgi","country":"IDN","receive":{"amount":"43366.3500","currency":"IDR"}},"fee":{"amount":"2.0000","currency":"USD","model":"excluded"},"rate":{"from":{"amount":"1","currency":"USD"},"to":{"amount":"14347.245","currency":"IDR"}},"sender":{"lastName":"senderLastNamex","secondLastName":"senderSecondLastName","address":{"city":"Bangkok","postalCode":"10400","line1":"Temp address"},"idType":"GOV","purpose":"PURCHASE_GOODS","birthCountryCode":"THA","homePhone":{"number":"45645645666","countryCode":"66"},"idCountryCode":"MYS","idNumber":"P83245384","firstName":"IQLZSO","notification":{"marketingSMSOptIn":false,"transactionSMSOptIn":false,"transactionEmailOptIn":false,"marketingEmailOptIn":false},"dob":"1992-03-23","relationshipToReceiver":"BUSINESS_PARTNER","middleName":"senderMiddleName","citizenshipCountryCode":"THA","email":"senderEmail@test.com","occupation":"ADMIN"},"receiver":{"firstName":"receiverFirstName","lastName":"receiverLastName","notification":{"transactionSMSOptIn":false,"transactionEmailOptIn":false},"address":{"city":"Bangkok","line1":"MG-0012345"},"phone":{"number":"345364566","countryCode":"33"},"accountNumber":"MG-0012345","email":"receiverEmail@test.com"},"status":"PENDING","remittanceType":"MESSAGING","terminalName":"ter-001","promotions":[{"code":"FLATFEE","discount":{"amount":"8.0000","currency":"USD"}}],"additionalInfo":{"destinationCountryDisplayName":"INDONESIA","receiveAmountsReceiveFeesAreEstimated":"false","receiveAmountsReceiveTaxesAreEstimated":"false","receiveAmountsTotalReceiveTaxes":"0.00","receiveAmountsTotalReceiveTaxesCurrency":"IDR","receiveAmountsValidCurrencyIndicator":"true","receiveFeeDisclosureText":"false","receiveTaxDisclosureText":"false","sendAmountsSendAmount":"3.02","sendAmountsSendCurrency":"USD","sendAmountsTotalSendTaxes":"0.00","sendAmountsTotalSendTaxesCurrency":"USD","senderPurposeDisplayName":"Payment for Goods/Services","totalReceiveFees":"0.00","totalReceiveFeesCurrency":"IDR"}}}
@@ -237,6 +239,9 @@ link_log
 
 
 
+----------------------------------------------------------------------> commit
+
+
 19:12:16 INFO - >>>>> POST.RES.getStatusCodeValue() = 200
 19:12:16 INFO - >>>>> POST.RES.getStatusCode()      = 200 OK
 19:12:16 INFO - >>>>> POST.RES.getBody()            = {"status":"success","message":"OK","data":{"transactionId":"a5ae4612-ca46-4190-58ae-af08fdc47918","destination":{"transactionId":"9816101E1611742290144526108290NN","operatorCode":"mgi","country":"IDN","receive":{"amount":"43366.3500","currency":"IDR"},"withdrawalId":"46122927"},"status":"READY","additionalInfo":{"destinationCountryDisplayName":"INDONESIA","expectedDateOfDelivery":"2021-01-27","receiveAmountsReceiveFeesAreEstimated":"false","receiveAmountsReceiveTaxesAreEstimated":"false","receiveAmountsTotalReceiveTaxes":"0.00","receiveAmountsTotalReceiveTaxesCurrency":"IDR","receiveAmountsValidCurrencyIndicator":"true","receiveFeeDisclosureText":"false","receiveTaxDisclosureText":"false","sendAmountsSendAmount":"3.02","sendAmountsSendCurrency":"USD","sendAmountsTotalSendTaxes":"0.00","sendAmountsTotalSendTaxesCurrency":"USD","senderPurposeDisplayName":"Payment for Goods/Services","totalReceiveFees":"0.00","totalReceiveFeesCurrency":"IDR"},"source":{"transactionId":"4324682635157307","operatorCode":"hanwha","country":"KOR","send":{"amount":"5.0200","currency":"USD"}},"sender":{"address":{"city":"Bangkok","line1":"Temp address","postalCode":"10400"},"birthCountryCode":"THA","citizenshipCountryCode":"THA","dob":"1992-03-23","email":"senderEmail@test.com","firstName":"IQLZSO","homePhone":{"countryCode":"66","number":"45645645666"},"idCountryCode":"MYS","idNumber":"P83245384","idType":"GOV","lastName":"senderLastNamex","middleName":"senderMiddleName","notification":{"marketingEmailOptIn":false,"marketingSMSOptIn":false,"transactionEmailOptIn":false,"transactionSMSOptIn":false},"occupation":"ADMIN","purpose":"PURCHASE_GOODS","relationshipToReceiver":"BUSINESS_PARTNER","secondLastName":"senderSecondLastName"},"receiver":{"accountNumber":"MG-0012345","address":{"city":"Bangkok","line1":"MG-0012345"},"email":"receiverEmail@test.com","firstName":"receiverFirstName","lastName":"receiverLastName","notification":{"transactionEmailOptIn":false,"transactionSMSOptIn":false},"phone":{"countryCode":"33","number":"345364566"}},"fee":{"total":{"amount":"2.0000","currency":"USD"}},"promotions":[{"code":"FLATFEE","discount":{"amount":"8.0000","currency":"USD"}}],"terminalName":"ter-001","rate":{"from":{"amount":"1","currency":"USD"},"to":{"amount":"14347.245","currency":"IDR"}}}}
@@ -408,6 +413,9 @@ link_log
 
 
 
+----------------------------------------------------------------------> amend error
+
+
 
 19:12:46 ERROR - ERROR >>>>> 400 Bad Request: [{"status":"fail","message":"Post https://extws.moneygram.com/extws/services/AgentConnect1512"}
 ]
@@ -470,6 +478,9 @@ link_log
 
 
 
+
+
+----------------------------------------------------------------------> amend
 
 
 19:40:03 INFO - >>>>> POST.RES.getStatusCodeValue() = 200
@@ -651,6 +662,9 @@ link_log
 
 
 
+
+
+----------------------------------------------------------------------> refund
 
 
 19:13:13 INFO - >>>>> POST.RES.getStatusCodeValue() = 200
