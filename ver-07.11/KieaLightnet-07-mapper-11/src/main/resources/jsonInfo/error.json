@@ -2,7 +2,7 @@
 	{
 		"error_org":     "lns",
 		"error_server":  "all",
-		"error_code":    "100",
+		"error_code":    "000",
 		"error_message": "success",
 		"error_msg":     "SUCCESS",
 		"error_regex":   "(.*success.*)|(.*SUCCESS.*)|(.*Success.*)",
@@ -21,7 +21,7 @@
 		"error_code":    "102",
 		"error_message": "3rd party error",
 		"error_msg":     "3RD_PARTY_ERROR",
-		"error_regex":   ".*\\b3rd party\\b.*",
+		"error_regex":   ".*\\b3rd party\\b.*\\R*.*",
 		"comment":       "3rd party error, key = org_server_code, msg[20]"
 	},{
 		"error_org":     "lns",
@@ -31,6 +31,14 @@
 		"error_msg":     "ACCESSTOKEN EXPIRED",
 		"error_regex":   ".*AccessToken\\b.*",
 		"comment":       "AccessToken errror, key = org_server_code, msg[20]"
+	},{
+		"error_org":     "lns",
+		"error_server":  "link",
+		"error_code":    "104",
+		"error_message": "miss terminalName",
+		"error_msg":     "MISS TERMINALNAME",
+		"error_regex":   ".*terminalName\\b.*\\R*.*",
+		"comment":       "missing terminalName, key = org_server_code, msg[20]"
 	},{
 		"error_org":     "sbs",
 		"error_server":  "link",
