@@ -33,7 +33,7 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 		if (Flag.flag) job01();  // properties
 		if (Flag.flag) job02();  // tasks > MapperReaderJob
 		if (!Flag.flag) job03();  // jsonTest
-		if (!Flag.flag) job04();  // infoTest
+		if (Flag.flag) job04();  // infoTest
 		if (Flag.flag) job05();  // tasks > ErrorReaderJob
 		if (Flag.flag) job06();  // errrorTest
 		if (Flag.flag) job07();
@@ -115,8 +115,13 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 	private void job04() throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) {
+		if (!Flag.flag) {
 			if (Flag.flag) this.infoTest01Working.test01();
+		}
+		
+		if (Flag.flag) {
+			// LnsElementInfo.option TEST
+			if (Flag.flag) this.infoTest01Working.test02();
 		}
 	}
 	
