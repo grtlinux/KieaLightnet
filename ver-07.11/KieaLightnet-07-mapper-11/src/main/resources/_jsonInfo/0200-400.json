@@ -1,10 +1,10 @@
 {
     "__head_base" : {
-        "name" : "customer",
+        "name" : "commit",
         "reqres" : "0200",
-        "type" : "800",
-        "extHttpUrl": "/remittances.customer-lookup",
-        "extHttpMethod": "GET"
+        "type" : "400",
+        "extHttpUrl": "/remittances.commit",
+        "extHttpMethod": "POST"
     },
     "__head_data" : {
         "length" : "L:4,T:string,D:0000,C:길이",
@@ -17,13 +17,12 @@
         "resCode" : "L:3,T:string,C:응답코드",
         "resMessage" : "L:20,T:string,C:응답메시지",
         "reserved" : "L:40,T:string,C:예약공간",
-        "dummy" : "L:-100,T:string,C:안쓴다"
+        "dummy" : "L:-1000,T:string,C:안쓴다"
     },
     "__body_base" : {
-        "name" : "customer.REQ"
+        "name" : "commit.REQ"
     },
     "__body_data" : {
-        "destinationOperatorCode" : "L:3,T:string",
-        "senderHomePhone" : "L:20,T:string"
+        "transactionId": "L:50,T:string"
     }
 }

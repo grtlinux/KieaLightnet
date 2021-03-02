@@ -1,0 +1,84 @@
+{
+    "__head_data" : {
+      "length" : "0000",
+      "reqres" : "0200",
+      "type" : "300",
+      "trNo" : "999999",
+      "reqDate" : "20201016",
+      "reqTime" : "125525",
+      "resTime" : "",
+      "resCode" : "",
+      "resMessage" : ""
+    },
+    "__body_data" : {
+      "terminalName" : "ter-001",
+      "receiver" : {
+        "firstName" : "receiverFirstName",
+        "lastName" : "receiverLastName",
+        "notification" : {
+          "transactionSMSOptIn" : false,
+          "transactionEmailOptIn" : false
+        },
+        "address" : {
+          "city" : "Bangkok",
+          "line1" : "MG-0012345"
+        },
+        "phone" : {
+          "number" : "345364566",
+          "countryCode" : "33"
+        },
+        "accountNumber" : "MG-0012345",
+        "email" : "receiverEmail@test.com"
+      },
+      "deliveryMethod" : "cash",
+      "sender" : {
+        "lastName" : "senderLastNamex",
+        "secondLastName" : "senderSecondLastName",
+        "address" : {
+          "city" : "Bangkok",
+          "postalCode" : "10400",
+          "line1" : "Temp address"
+        },
+        "idType" : "GOV",
+        "purpose" : "PURCHASE_GOODS",
+        "birthCountryCode" : "THA",
+        "homePhone" : {
+          "number" : "45645645666",
+          "countryCode" : "66"
+        },
+        "idCountryCode" : "MYS",
+        "idNumber" : "P83245384",
+        "firstName" : "IQLZSO",
+        "notification" : {
+          "marketingSMSOptIn" : false,
+          "transactionSMSOptIn" : false,
+          "transactionEmailOptIn" : false,
+          "marketingEmailOptIn" : false
+        },
+        "dob" : "1992-03-23",
+        "relationshipToReceiver" : "BUSINESS_PARTNER",
+        "middleName" : "senderMiddleName",
+        "citizenshipCountryCode" : "THA",
+        "email" : "senderEmail@test.com",
+        "occupation" : "ADMIN"
+      },
+      "destination" : {
+        "country" : "IDN",
+        "receive" : {
+          "amount" : "43366.3500",
+          "currency" : "IDR"
+        },
+        "operatorCode" : "mgi"
+      },
+      "remark" : "This is MGI test remark",
+      "source" : {
+        "country" : "KOR",
+        "send" : {
+          "currency" : "USD"
+        },
+        "transactionId" : "4324682635157307"
+      },
+      "promotionCodes" : [ "FLATFEE" ],
+      "saveReport": true
+    }
+}

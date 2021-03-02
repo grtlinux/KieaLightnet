@@ -1,0 +1,23 @@
+{
+  "__head_data" : {
+    "length" : "0000",
+    "reqres" : "0200",
+    "type" : "500",
+    "trNo" : "999999",
+    "reqDate" : "20201016",
+    "reqTime" : "125525",
+    "resTime" : "",
+    "resCode" : "",
+    "resMessage" : ""
+  },
+  "__body_data" : {
+    "terminalName" : "ter-001",
+    "transactionId" : "761409c8-1bbb-4a2e-5db7-8c9dc2c10262",
+    "receiver" : {
+      "firstName" : "TestFirstName",
+      "middleName" : "TestMiddleName",
+      "lastName" : "TestLastName",
+      "secondLastName" : "TestSecondLastName"
+    }
+  }
+}

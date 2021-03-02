@@ -1,9 +1,9 @@
 {
     "__head_base" : {
-        "name" : "customer",
+        "name" : "history",
         "reqres" : "0200",
-        "type" : "800",
-        "extHttpUrl": "/remittances.customer-lookup",
+        "type" : "700",
+        "extHttpUrl": "/remittances",
         "extHttpMethod": "GET"
     },
     "__head_data" : {
@@ -20,10 +20,12 @@
         "dummy" : "L:-100,T:string,C:안쓴다"
     },
     "__body_base" : {
-        "name" : "customer.REQ"
+        "name" : "history.REQ"
     },
     "__body_data" : {
-        "destinationOperatorCode" : "L:3,T:string",
-        "senderHomePhone" : "L:20,T:string"
+        "from" : "L:20,T:string",
+        "to" : "L:20,T:string",
+        "offset" : "L:3,T:int",
+        "limit" : "L:3,T:int"
     }
 }

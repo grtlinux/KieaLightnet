@@ -1,9 +1,9 @@
 {
     "__head_base" : {
-        "name" : "customer",
+        "name" : "detail",
         "reqres" : "0200",
-        "type" : "800",
-        "extHttpUrl": "/remittances.customer-lookup",
+        "type" : "200",
+        "extHttpUrl": "/remittances.detail",
         "extHttpMethod": "GET"
     },
     "__head_data" : {
@@ -20,10 +20,15 @@
         "dummy" : "L:-100,T:string,C:안쓴다"
     },
     "__body_base" : {
-        "name" : "customer.REQ"
+        "name" : "detail.REQ"
     },
     "__body_data" : {
-        "destinationOperatorCode" : "L:3,T:string",
-        "senderHomePhone" : "L:20,T:string"
+        "sourceCountry" : "L:3,T:string",
+        "sourceSendCurrency" : "L:3,T:string",
+        "destinationCountry" : "L:3,T:string",
+        "destinationReceiveAmount" : "L:10,T:string",
+        "destinationReceiveCurrency" : "L:3,T:string",
+        "destinationOperatorCode" : "L:5,T:string",
+        "deliveryMethod": "L:10,T:string"
     }
 }

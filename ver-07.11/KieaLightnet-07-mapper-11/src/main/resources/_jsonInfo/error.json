@@ -28,7 +28,7 @@
 		"error_server":  "link",
 		"error_code":    "103",
 		"error_message": "AccessToken error",
-		"error_msg":     "ACCESSTOKEN_EXPIRED",
+		"error_msg":     "ACCESSTOKEN EXPIRED",
 		"error_regex":   ".*AccessToken\\b.*",
 		"comment":       "AccessToken errror, key = org_server_code, msg[20]"
 	},{
@@ -36,40 +36,24 @@
 		"error_server":  "link",
 		"error_code":    "104",
 		"error_message": "miss terminalName",
-		"error_msg":     "MISS_TERMINALNAME",
-		"error_regex":   "\\bterminalName\\b.*\\R*.*",
+		"error_msg":     "MISS TERMINALNAME",
+		"error_regex":   ".*terminalName\\b.*\\R*.*",
 		"comment":       "missing terminalName, key = org_server_code, msg[20]"
 	},{
-		"error_org":     "lns",
+		"error_org":     "sbs",
 		"error_server":  "link",
-		"error_code":    "105",
-		"error_message": "invalid access token",
-		"error_msg":     "INVALID_TOKEN",
-		"error_regex":   "\\binvalid access token\\b",
-		"comment":       "invalid access token, key = org_server_code, msg[20]"
-	},{
-		"error_org":     "lns",
-		"error_server":  "link",
-		"error_code":    "106",
-		"error_message": "invalid transaction information",
-		"error_msg":     "INVALID_TRID",
-		"error_regex":   "\\binvalid transaction information\\b",
-		"comment":       "invalid transaction information, key = org_server_code, msg[20]"
-	},{
-		"error_org":     "lns",
-		"error_server":  "link",
-		"error_code":    "107",
-		"error_message": "access token expired",
-		"error_msg":     "TOKEN_EXPIRED",
-		"error_regex":   "\\baccess token expired\\b",
-		"comment":       "access token expired, key = org_server_code, msg[20]"
+		"error_code":    "103",
+		"error_message": "not match user exist",
+		"error_msg":     "NOT_MATCH_EXIST_USER",
+		"error_regex":   "^1003\\b.*",
+		"comment":       "not match user exist, key = org_server_code, msg[20]"
 	},{
 		"error_org":     "lns",
 		"error_server":  "all",
 		"error_code":    "999",
 		"error_message": "etc error",
 		"error_msg":     "ETC_ERROR",
-		"error_regex":   "[0-9A-Za-z]",
+		"error_regex":   "^$",
 		"comment":       "comment, key = org_server_code, msg[20]"
 	}
 ]

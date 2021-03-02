@@ -1,10 +1,10 @@
 {
     "__head_base" : {
-        "name" : "customer",
+        "name" : "amend",
         "reqres" : "0200",
-        "type" : "800",
-        "extHttpUrl": "/remittances.customer-lookup",
-        "extHttpMethod": "GET"
+        "type" : "500",
+        "extHttpUrl": "/remittances.amend",
+        "extHttpMethod": "POST"
     },
     "__head_data" : {
         "length" : "L:4,T:string,D:0000,C:길이",
@@ -20,10 +20,16 @@
         "dummy" : "L:-100,T:string,C:안쓴다"
     },
     "__body_base" : {
-        "name" : "customer.REQ"
+        "name" : "amend.REQ"
     },
-    "__body_data" : {
-        "destinationOperatorCode" : "L:3,T:string",
-        "senderHomePhone" : "L:20,T:string"
+    "__body_data" :  {
+        "terminalName" : "L:20,T:string",
+        "transactionId" : "L:50,T:string",
+        "receiver" : {
+          "firstName" : "L:20,T:string",
+          "middleName" : "L:20,T:string",
+          "lastName" : "L:20,T:string",
+          "secondLastName" : "L:20,T:string"
+        }
     }
 }

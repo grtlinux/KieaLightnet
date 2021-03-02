@@ -24,6 +24,7 @@
     },
     "__body_data" : {
         "destinationOperatorCode" : "L:3,T:string",
-        "senderHomePhone" : "L:20,T:string"
+        "senderHomePhone" : "L:20,T:string",
+        "sourceCountry" : "L:5,T:string"
     }
 }

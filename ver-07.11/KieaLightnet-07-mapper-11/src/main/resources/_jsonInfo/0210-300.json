@@ -1,0 +1,143 @@
+{
+    "__head_base" : {
+        "name" : "validate",
+        "reqres" : "0210",
+        "type" : "300",
+        "extHttpUrl": "/remittances.validate",
+        "extHttpMethod": "POST"
+    },
+    "__head_data" : {
+        "length" : "L:4,T:string,D:0000,C:길이",
+        "reqres" : "L:4,T:string,D:0000,C:송수신",
+        "type" : "L:3,T:string,D:000,C:전문명",
+        "trNo" : "L:6,T:string,C:TR번호",
+        "reqDate" : "L:8,T:string,C:요청일자",
+        "reqTime" : "L:6,T:string,C:요청시간",
+        "resTime" : "L:6,T:string,C:응답시간",
+        "resCode" : "L:3,T:string,C:응답코드",
+        "resMessage" : "L:20,T:string,C:응답메시지",
+        "reserved" : "L:40,T:string,C:예약공간",
+        "dummy" : "L:-100,T:string,C:안쓴다"
+    },
+    "__body_base" : {
+        "name" : "validate.REQ"
+    },
+    "__body_data" : {
+      "status" : "L:20,T:string",
+      "message" : "L:20,T:string",
+      "data" : {
+        "transactionId" : "L:50,T:string",
+        "deliveryMethod" : "L:20,T:string",
+        "source" : {
+          "transactionId" : "L:20,T:string",
+          "operatorCode" : "L:20,T:string",
+          "country" : "L:5,T:string",
+          "send" : {
+            "amount" : "L:15,T:string",
+            "currency" : "L:5,T:string"
+          }
+        },
+        "destination" : {
+          "transactionId" : "L:20,T:string",
+          "operatorCode" : "L:5,T:string",
+          "country" : "L:5,T:string",
+          "receive" : {
+            "amount" : "L:15,T:string",
+            "currency" : "L:5,T:string"
+          }
+        },
+        "fee" : {
+          "amount" : "L:15,T:string",
+          "currency" : "L:5,T:string",
+          "model" : "L:20,T:string"
+        },
+        "rate" : {
+          "from" : {
+            "amount" : "L:15,T:string",
+            "currency" : "L:5,T:string"
+          },
+          "to" : {
+            "amount" : "L:15,T:string",
+            "currency" : "L:5,T:string"
+          }
+        },
+        "sender" : {
+          "cardNumber" : "L:20,T:string",
+          "firstName" : "L:20,T:string",
+          "middleName" : "L:20,T:string",
+          "lastName" : "L:20,T:string",
+          "address" : {
+            "postalCode" : "L:10,T:string",
+            "city" : "L:20,T:string",
+            "line1" : "L:20,T:string"
+          },
+          "idType" : "L:5,T:string",
+          "purpose" : "L:20,T:string",
+          "birthCountryCode" : "L:5,T:string",
+          "notification" : {
+            "transactionEmailOptIn" : "L:5,T:boolean",
+            "transactionSMSOptIn" : "L:5,T:boolean",
+            "marketingEmailOptIn" : "L:5,T:boolean",
+            "marketingSMSOptIn" : "L:5,T:boolean"
+          },
+          "homePhone" : {
+            "number" : "L:20,T:string",
+            "countryCode" : "L:3,T:string"
+          },
+          "email" : "L:40,T:string",
+          "idCountryCode" : "L:3,T:string",
+          "idNumber" : "L:20,T:string",
+          "dob" : "L:10,T:string",
+          "relationshipToReceiver" : "L:20,T:string",
+          "citizenshipCountryCode" : "L:5,T:string",
+          "occupation" : "L:20,T:string"
+        },
+        "receiver" : {
+          "agentId" : "L:10,T:string",
+          "accountId" : "L:20,T:string",
+          "firstName" : "L:20,T:string",
+          "middleName" : "L:20,T:string",
+          "lastName" : "L:20,T:string",
+          "address" : {
+            "countryCode" : "L:5,T:string",
+            "city" : "L:20,T:string",
+            "line1" : "L:20,T:string"
+          },
+          "notification" : {
+            "transactionEmailOptIn" : "L:5,T:boolean",
+            "transactionSMSOptIn" : "L:5,T:boolean"
+          },
+          "email" : "L:40,T:string",
+          "phone" : {
+            "number" : "L:20,T:string",
+            "countryCode" : "L:3,T:string"
+          },
+          "accountNumber" : "L:20,T:string",
+          "extraFields" : {
+            "CIMBBANKNAME" : "L:10,T:string"
+          }
+        },
+        "status" : "L:10,T:string",
+        "remittanceType" : "L:20,T:string",
+        "terminalName" : "L:20,T:string",
+        "additionalInfo" : {
+          "destinationCountryDisplayName" : "L:20,T:string",
+          "displayAccountId" : "L:20,T:string",
+          "receiveAmountsReceiveFeesAreEstimated" : "L:5,T:boolean",
+          "receiveAmountsReceiveTaxesAreEstimated" : "L:5,T:boolean",
+          "receiveAmountsTotalReceiveTaxes" : "L:15,T:string",
+          "receiveAmountsTotalReceiveTaxesCurrency" : "L:3,T:string",
+          "receiveAmountsValidCurrencyIndicator" : "L:5,T:boolean",
+          "receiveFeeDisclosureText" : "L:5,T:boolean",
+          "receiveTaxDisclosureText" : "L:5,T:boolean",
+          "sendAmountsSendAmount" : "L:15,T:string",
+          "sendAmountsSendCurrency" : "L:5,T:string",
+          "sendAmountsTotalSendTaxes" : "L:15,T:string",
+          "sendAmountsTotalSendTaxesCurrency" : "L:5,T:string",
+          "senderPurposeDisplayName" : "L:50,T:string",
+          "totalReceiveFees" : "L:15,T:string",
+          "totalReceiveFeesCurrency" : "L:5,T:string"
+        }
+      }
+    }
+}

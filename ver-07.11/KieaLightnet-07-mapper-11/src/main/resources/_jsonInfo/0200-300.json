@@ -20,10 +20,10 @@
         "dummy" : "L:-100,T:string,C:안쓴다"
     },
     "__body_base" : {
-        "name" : "validate.REQ",
-        "/__body_data/promotionCodes__arrSize" : 5
+        "name" : "validate.REQ"
     },
     "__body_data" : {
+        "saveReport": "L:5,T:boolean",
         "terminalName": "L:20,T:string",
         "receiver": {
             "agentId": "L:10,T:string",
@@ -84,7 +84,6 @@
         "destination": {
             "country": "L:3,T:string",
             "receive": {
-                "amount": "L:15,T:string",
                 "currency": "L:3,T:string"
             },
             "operatorCode": "L:3,T:string"
@@ -97,8 +96,6 @@
                 "currency": "L:3,T:string"
             },
             "transactionId": "L:30,T:string"
-        },
-        "saveReport": "L:5,T:boolean",
-        "promotionCodes" : [ "L:10,T:string" ]
+        }
     }
 }

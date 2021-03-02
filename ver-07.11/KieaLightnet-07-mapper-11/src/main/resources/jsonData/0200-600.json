@@ -1,0 +1,20 @@
+{
+  "__head_data" : {
+    "length" : "0000",
+    "reqres" : "0200",
+    "type" : "600",
+    "trNo" : "999999",
+    "reqDate" : "20201016",
+    "reqTime" : "125525",
+    "resTime" : "",
+    "resCode" : "",
+    "resMessage" : ""
+  },
+  "__body_data" : {
+    "terminalName" : "ter-001",
+    "reason" : "NO_RCV_LOC",
+    "feeRefFund" : "Y",
+    "reversalType" : "cancel",
+    "transactionId" : "3d11c0d6-a4ea-4743-5718-88a77165fbf5"
+  }
+}
