@@ -73,9 +73,9 @@ public class InfoTest01Working {
 		if (Flag.flag) {
 			int val = 0;
 			log.info("KANG-20210228 >>>>> STEP-03");
-			log.info("KANG-20210228 >>>>>>>>>> RM_NULL = {}", OptionType.RM_NULL.getValue());
-			log.info("KANG-20210228 >>>>>>>>>> RM_SPACE = {}", OptionType.RM_SPACE.getValue());
-			log.info("KANG-20210228 >>>>>>>>>> OPTION = {}", OptionType.OPTION16.getValue());
+			log.info("KANG-20210228 >>>>>>>>>> RM_NULL = {} {}", OptionType.RM_NULL, OptionType.RM_NULL.getValue());
+			log.info("KANG-20210228 >>>>>>>>>> RM_SPACE = {} {}", OptionType.RM_SPACE.getName(), OptionType.RM_SPACE.getValue());
+			log.info("KANG-20210228 >>>>>>>>>> OPTION = {} {}", OptionType.OPTION16.getName(), OptionType.OPTION16.getValue());
 			
 			val = OptionType.RM_NULL.getValue() | OptionType.RM_SPACE.getValue() | OptionType.OPTION16.getValue();
 			log.info("KANG-20210228 >>>>>>>>>> val = {}", val);
