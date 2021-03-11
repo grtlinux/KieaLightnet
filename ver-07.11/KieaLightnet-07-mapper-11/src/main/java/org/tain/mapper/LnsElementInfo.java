@@ -1,5 +1,7 @@
 package org.tain.mapper;
 
+import org.tain.utils.enums.OptionType;
+
 import lombok.Data;
 
 @Data
@@ -13,6 +15,8 @@ public class LnsElementInfo {
 	private String format = "%s";
 	private String comment = "";
 	
+	private int optionType = 0;
+	
 	/*
 	 *   length     = L:4,T:0int
 	 *   reqres     = L:4,T:string,D:0700
@@ -23,6 +27,7 @@ public class LnsElementInfo {
 	 *   dummy      = L:-100,T:string
 	 */
 	public LnsElementInfo(String strInfo) {
+		//String[] split = strInfo.split("\\w*,\\w*");
 		String[] split = strInfo.split(",");
 		for (int i=0; i < split.length; i++) {
 			String info = split[i];
@@ -44,6 +49,9 @@ public class LnsElementInfo {
 				break;
 			case 'C':
 				this.comment = info.substring(2);
+				break;
+			case 'O':
+				this.optionType = this.optionType | OptionType.valueOf(info.substring(2).trim()).getValue();
 				break;
 			default:
 				throw new RuntimeException("Couldn't be parsing the string of info [" + strInfo + "].");

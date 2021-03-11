@@ -16,6 +16,8 @@ public class ProjEnvBaseProperties {
 	private String version;
 	private String comment;
 	
+	private boolean testFlag;
+	
 	/*
 	@Value("${proj-env.job.loading.source.path}")
 	private String srcPath;

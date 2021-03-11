@@ -92,6 +92,7 @@ proj-env:
     program: KieaLightnet API program
     version: ver 1.1_2020.11.11
     comment: This is Lightnet API project.
+    test-flag: true
   param:
     name: PARAM (default)
   job:

@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.tain.mapper.LnsJsonNode;
 import org.tain.mapper.LnsMstInfo;
+import org.tain.mapper.LnsStreamToJson;
 import org.tain.task.MapperReaderJob;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.JsonPrint;
 import org.tain.utils.enums.OptionType;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -82,5 +85,34 @@ public class InfoTest01Working {
 			log.info("KANG-20210228 >>>>>>>>>> val = {}", Integer.toBinaryString(val));
 		}
 		
+		if (Flag.flag) {
+			log.info("KANG-20210228 >>>>> STEP-04");
+			log.info("KANG-20210228 >>>>>>>>>> val = {}", OptionType.valueOf("RM_NULL"));
+			log.info("KANG-20210228 >>>>>>>>>> val = {}", OptionType.valueOf("RM_SPACE"));
+			log.info("KANG-20210228 >>>>>>>>>> val = {}", OptionType.valueOf("OPTION16"));
+			try {
+				log.info("KANG-20210228 >>>>>>>>>> val = {}", OptionType.valueOf("_OPTION16"));
+			} catch (IllegalArgumentException e) {
+				log.info("KANG-20210228 >>>>>>>>>> val = {}", 0);
+			}
+		}
+		
+		if (Flag.flag) {
+			String stream = "0875020030099999920201016125525125525                                                               "
+					+ "ter-001                                           receiverFirstName   receiverLastName    Bangkok             "
+					//+ "MG-0012345               falsefalsereceiverEmail@test.com                            345364566      33   MG-0012345                    "
+					+ "MG-0012345               falsefalse                                                  345364566      33   MG-0012345                    "
+					+ "cash                                    IQLZSO              senderLastNamex     Bangkok             10400               "
+					+ "Temp address        GOV                 PURCHASE_GOODS      THA  falsefalsefalsefalse45645645666         66 senderEmail@test.com"
+					+ "MYSP83245384           1992-03-23          BUSINESS_PARTNER    senderMiddleName    THAADMIN               IDN"
+					+ "43366.3500     IDRmgiThis is MGI test remark                           KOR               USD4324682635157307              "
+					+ "true FLATFEE                                           ";
+
+			LnsMstInfo lnsMstInfo = this.mapperReaderJob.get("0200300");
+			JsonNode node = new LnsStreamToJson(lnsMstInfo, stream).get();
+			
+			log.info("KANG-20210228 >>>>> STEP-05");
+			log.info("KANG-20210228 >>>>>>>>>> json = {}", node.toPrettyString());
+		}
 	}
 }

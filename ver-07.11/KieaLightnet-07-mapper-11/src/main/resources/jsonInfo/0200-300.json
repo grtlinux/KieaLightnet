@@ -39,7 +39,7 @@
                 "transactionEmailOptIn": "L:5,T:boolean",
                 "transactionSMSOptIn": "L:5,T:boolean"
             },
-            "email": "L:50,T:string",
+            "email": "L:50,T:string,O:RM_NULL,O:RM_SPACE",
             "phone": {
                 "number": "L:15,T:string",
                 "countryCode": "L:5,T:string"

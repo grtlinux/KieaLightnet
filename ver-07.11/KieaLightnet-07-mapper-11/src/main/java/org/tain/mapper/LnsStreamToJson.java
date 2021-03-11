@@ -57,6 +57,7 @@ public class LnsStreamToJson {
 				objectNode.set(fieldName, retNode);
 			} else {
 				LnsElementInfo info = new LnsElementInfo(childNode.textValue());
+				if (Flag.flag) log.info("KANG-20210303 >>>>> {} info = {}", fieldName, info);
 				if (info.isUsable()) {
 					int idxStart = this.offset;
 					int idxEnd = this.offset + info.getLength();
