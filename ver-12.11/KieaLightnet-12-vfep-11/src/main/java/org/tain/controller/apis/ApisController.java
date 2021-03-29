@@ -128,4 +128,14 @@ public class ApisController {
 		model.addAttribute("urlLns01", this.projEnvUrlProperties.getLns01());
 		return "web/apis/refundForm";
 	}
+	
+	@RequestMapping(value = {"/detailForm"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String detailForm(@RequestParam(value = "id", defaultValue = "0") Long id, Model model) {
+		log.info("KANG-20210329 >>>>> {} {}", CurrentInfo.get());
+		model.addAttribute("apis", this.apisService.findApisById(id));
+		model.addAttribute("urlOnline", this.projEnvUrlProperties.getOnline());
+		model.addAttribute("urlMapper", this.projEnvUrlProperties.getMapper());
+		model.addAttribute("urlLns01", this.projEnvUrlProperties.getLns01());
+		return "web/apis/detailForm";
+	}
 }
