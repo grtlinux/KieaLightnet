@@ -1,0 +1,748 @@
+__head_data 항목은 한화에서 사용하는 항목입니다.
+실재 라이트넷에 전달되는 항목은 __body_data입니다.
+그래서 분석을 하려면 __body_data 만 해주세요..
+
+
+======================================================================================
+{
+  "__head_data": {
+    "length": "0000",
+    "reqres": "0200",
+    "type": "200",
+    "trNo": "999999",
+    "reqDate": "20201016",
+    "reqTime": "125525",
+    "resTime": "",
+    "resCode": "",
+    "resMessage": ""
+  },
+  "__body_data": {
+    "sourceCountry": "KOR",
+    "sourceSendCurrency": "USD",
+    "destinationCountry": "IDN",
+    "destinationReceiveAmount": "1000",
+    "destinationReceiveCurrency": "IDR",
+    "destinationOperatorCode": "mgi",
+    "deliveryMethod": "cash"
+  }
+}
+
+
+======================================================================================
+{
+  "__head_data": {
+    "length": "0000",
+    "reqres": "0210",
+    "type": "200",
+    "trNo": "999999",
+    "reqDate": "20201016",
+    "reqTime": "125525",
+    "resTime": "181726",
+    "resCode": "000",
+    "resMessage": "SUCCESS"
+  },
+  "__body_data": {
+    "status": "success",
+    "message": "OK",
+    "data": [
+      {
+        "fee": "15.0000",
+        "deliveryMethod": "cash",
+        "feeModel": "excluded",
+        "feeCurrency": "USD",
+        "feeType": "FLATRATE",
+        "sender": {
+          "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "sender schema description",
+            "properties": {
+              "address": {
+                "properties": {
+                  "city": {
+                    "description": "Sender City",
+                    "maxLength": 20,
+                    "minLength": 0,
+                    "pattern": "^([a-zA-Z \\u00C0-\\u017F\\#\\/\\.\\\"\\'\\,\\(\\)\\-])*$",
+                    "type": "string"
+                  },
+                  "countryCode": {
+                    "description": "Sender Country",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "line1": {
+                    "description": "Sender Street Address",
+                    "maxLength": 30,
+                    "minLength": 0,
+                    "pattern": "^([a-zA-Z0-9 \\u00C0-\\u017F\\#\\/\\.\\\"\\'\\,\\(\\)\\-])*$",
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "description": "Sender Zip Code",
+                    "maxLength": 10,
+                    "minLength": 0,
+                    "pattern": "^[0-9a-zA-Z -]*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "line1",
+                  "city",
+                  "countryCode"
+                ]
+              },
+              "birthCountryCode": {
+                "description": "Sender Birth Country",
+                "maxLength": 3,
+                "minLength": 3,
+                "type": "string"
+              },
+              "cardNumber": {
+                "description": "MoneyGram Plus Number",
+                "maxLength": 20,
+                "minLength": 0,
+                "pattern": "^[0-9]*$",
+                "type": "string"
+              },
+              "citizenshipCountryCode": {
+                "description": "Sender Country of Citizenship",
+                "maxLength": 3,
+                "minLength": 3,
+                "type": "string"
+              },
+              "dob": {
+                "description": "Sender Date of Birth",
+                "format": "date",
+                "maxLength": 10,
+                "minLength": 0,
+                "type": "date"
+              },
+              "email": {
+                "description": "Sender Email Address",
+                "maxLength": 60,
+                "minLength": 0,
+                "type": "string"
+              },
+              "firstName": {
+                "description": "Sender First/Given Name",
+                "maxLength": 20,
+                "minLength": 1,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              },
+              "gender": {
+                "description": "Sender Gender",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Sender Information",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "MALE",
+                          "FEMALE",
+                          "UNKNOWN"
+                        ],
+                        "titleMap": {
+                          "FEMALE": "Female",
+                          "MALE": "Male",
+                          "UNKNOWN": "Not Known / Not Given"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "senderGender"
+                        ],
+                        "titleMap": {
+                          "senderGender": "senderGender"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              },
+              "homePhone": {
+                "properties": {
+                  "countryCode": {
+                    "description": "Sender Phone Country Code",
+                    "maxLength": 3,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "number": {
+                    "description": "Sender Phone Number",
+                    "maxLength": 14,
+                    "minLength": 5,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "number",
+                  "countryCode"
+                ]
+              },
+              "idCountryCode": {
+                "description": "Sender ID Country",
+                "maxLength": 3,
+                "minLength": 3,
+                "type": "string"
+              },
+              "idExpirationDate": {
+                "description": "sender's photoIdExpiration date",
+                "format": "date",
+                "type": "string"
+              },
+              "idIssueAuthority": {
+                "description": "senderPhotoIdIssueAuthority",
+                "maxLength": 30,
+                "minLength": 0,
+                "type": "string"
+              },
+              "idIssueDate": {
+                "description": "sender's photoIdIssue date",
+                "format": "date",
+                "type": "string"
+              },
+              "idNumber": {
+                "description": "Sender ID Number",
+                "maxLength": 25,
+                "minLength": 0,
+                "type": "string"
+              },
+              "idType": {
+                "description": "Sender ID Type",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Compliance Info",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "ALN",
+                          "DRV",
+                          "GOV",
+                          "PAS",
+                          "STA"
+                        ],
+                        "titleMap": {
+                          "ALN": "Alien ID",
+                          "DRV": "Drivers License",
+                          "GOV": "Government ID",
+                          "PAS": "Passport",
+                          "STA": "State ID"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "senderPhotoIdType"
+                        ],
+                        "titleMap": {
+                          "senderPhotoIdType": "senderPhotoIdType"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              },
+              "intendedUseOfServices": {
+                "description": "Why do you typically use MoneyGram?",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Compliance Info",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "BUSINESS_RELATED",
+                          "CHARITY_SUPPORT",
+                          "FAMILY_FRIENDS_SUPPORT",
+                          "THIRD_PARTY"
+                        ],
+                        "titleMap": {
+                          "BUSINESS_RELATED": "Business-Related",
+                          "CHARITY_SUPPORT": "Charity Support",
+                          "FAMILY_FRIENDS_SUPPORT": "Family/Friend Support",
+                          "THIRD_PARTY": "Third Party"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "senderIntendedUseOfMGIServices"
+                        ],
+                        "titleMap": {
+                          "senderIntendedUseOfMGIServices": "senderIntendedUseOfMGIServices"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              },
+              "lastName": {
+                "description": "Sender Last/Family Name",
+                "maxLength": 30,
+                "minLength": 1,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              },
+              "middleName": {
+                "description": "Sender Middle Name",
+                "maxLength": 20,
+                "minLength": 0,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              },
+              "notification": {
+                "properties": {
+                  "marketingEmailOptIn": {
+                    "description": "Sender Marketing Email Notification Opt-In",
+                    "maxLength": 5,
+                    "minLength": 0,
+                    "type": "boolean"
+                  },
+                  "marketingSMSOptIn": {
+                    "description": "Sender Marketing SMS Notification Opt-In",
+                    "maxLength": 5,
+                    "minLength": 0,
+                    "type": "boolean"
+                  },
+                  "transactionEmailOptIn": {
+                    "description": "Sender Transaction Email Notification Opt-In",
+                    "maxLength": 5,
+                    "minLength": 0,
+                    "type": "boolean"
+                  },
+                  "transactionSMSOptIn": {
+                    "description": "Sender Transaction SMS Notification Opt-In",
+                    "maxLength": 5,
+                    "minLength": 0,
+                    "type": "boolean"
+                  }
+                }
+              },
+              "occupation": {
+                "description": "Sender Occupation",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Sender Information",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "ADMIN",
+                          "AGRICULTURE",
+                          "AUTOMOTIVE_SALES",
+                          "BANKING",
+                          "CLERGY",
+                          "COMPUTER",
+                          "CUSTOMER_CARE",
+                          "EDUCATION",
+                          "ENGINEER",
+                          "FACTORY",
+                          "HEALTH_SERVICES",
+                          "PUBLIC_OFFICIAL",
+                          "RESTAURANT",
+                          "RETIRED",
+                          "STUDENT",
+                          "UNEMPLOYED",
+                          "CONSULTING",
+                          "ENTERTAINMENT",
+                          "EXECUTIVE",
+                          "EXPLICIT_SERVICES",
+                          "HUMAN_RESOURCES",
+                          "LEGAL",
+                          "PERSONAL_SERVICES",
+                          "SPORT",
+                          "ENTREPRENEUR"
+                        ],
+                        "titleMap": {
+                          "ADMIN": "Administrative",
+                          "AGRICULTURE": "Agriculture",
+                          "AUTOMOTIVE_SALES": "Automotive",
+                          "BANKING": "Financial Services",
+                          "CLERGY": "Religious",
+                          "COMPUTER": "Information Technology (IT)",
+                          "CONSULTING": "Consulting",
+                          "CUSTOMER_CARE": "Customer Care/Retail",
+                          "EDUCATION": "Education",
+                          "ENGINEER": "Engineer",
+                          "ENTERTAINMENT": "Entertainment",
+                          "ENTREPRENEUR": "Entrepreneur",
+                          "EXECUTIVE": "Executive",
+                          "EXPLICIT_SERVICES": "Explicit Services",
+                          "FACTORY": "Physical Worker",
+                          "HEALTH_SERVICES": "Healthcare",
+                          "HUMAN_RESOURCES": "Human Resources",
+                          "LEGAL": "Legal",
+                          "PERSONAL_SERVICES": "Personal Services",
+                          "PUBLIC_OFFICIAL": "Public Servant",
+                          "RESTAURANT": "Restaurant",
+                          "RETIRED": "Retiree",
+                          "SPORT": "Sport",
+                          "STUDENT": "Student",
+                          "UNEMPLOYED": "Unemployed/Homemaker"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "senderOccupation"
+                        ],
+                        "titleMap": {
+                          "senderOccupation": "senderOccupation"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              },
+              "proofOfFunds": {
+                "description": "Proof of Funds",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Compliance Info",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "ACT_OF_ATTORNEY",
+                          "BANK_STATEMENT",
+                          "NATIONAL_LOTTERY",
+                          "PAYROLL_SLIP",
+                          "SALE_CERTIFICATE",
+                          "TAX_NOTICE"
+                        ],
+                        "titleMap": {
+                          "ACT_OF_ATTORNEY": "Act of Attorney",
+                          "BANK_STATEMENT": "Bank account statement/withdrawl slip",
+                          "NATIONAL_LOTTERY": "Copy of Check",
+                          "PAYROLL_SLIP": "Payroll slip",
+                          "SALE_CERTIFICATE": "Sales certificate",
+                          "TAX_NOTICE": "Income Tax Notice"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "proofOfFunds"
+                        ],
+                        "titleMap": {
+                          "proofOfFunds": "proofOfFunds"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              },
+              "purpose": {
+                "description": "Purpose of Transaction",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Compliance Info",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "BUSINESS_EXPENSE",
+                          "DONATION",
+                          "EDUCATION_TRAIN",
+                          "GIFT",
+                          "INVEST_SAVING",
+                          "LEGAL_OBLIGATION",
+                          "LOAN",
+                          "TRAVEL_EXPENSES",
+                          "BILLS",
+                          "FOOD",
+                          "MEDICAL",
+                          "PURCHASE_GOODS",
+                          "I_DO_NOT_KNOW",
+                          "SALARY"
+                        ],
+                        "titleMap": {
+                          "BILLS": "Bills",
+                          "BUSINESS_EXPENSE": "Business Expense",
+                          "DONATION": "Donation",
+                          "EDUCATION_TRAIN": "Education",
+                          "FOOD": "Food",
+                          "GIFT": "Gift",
+                          "INVEST_SAVING": "Investment",
+                          "I_DO_NOT_KNOW": "I Do Not Know",
+                          "LEGAL_OBLIGATION": "Legal Obligation",
+                          "LOAN": "Loan",
+                          "MEDICAL": "Medical Expenses",
+                          "PURCHASE_GOODS": "Payment for Goods/Services",
+                          "SALARY": "Salary",
+                          "TRAVEL_EXPENSES": "Travel Expenses"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "sendPurposeOfTransaction"
+                        ],
+                        "titleMap": {
+                          "sendPurposeOfTransaction": "sendPurposeOfTransaction"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              },
+              "relationshipToReceiver": {
+                "description": "Relationship to Receiver",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Compliance Info",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "ACQUAINTANCE",
+                          "BUSINESS_PARTNER",
+                          "CLIENT",
+                          "EMPLOY_EMPLOYER",
+                          "FAMILY",
+                          "FRIEND",
+                          "CONTRACTOR",
+                          "EMPLOYER",
+                          "MYSELF",
+                          "ONLINE_FRIEND",
+                          "THIRD_PARTY",
+                          "VENDOR"
+                        ],
+                        "titleMap": {
+                          "ACQUAINTANCE": "Acquaintance",
+                          "BUSINESS_PARTNER": "Business Partner",
+                          "CLIENT": "Client",
+                          "CONTRACTOR": "Contractor",
+                          "EMPLOYER": "Employer",
+                          "EMPLOY_EMPLOYER": "Employee",
+                          "FAMILY": "Family Member",
+                          "FRIEND": "Close Friend",
+                          "MYSELF": "Myself",
+                          "ONLINE_FRIEND": "Online Friend",
+                          "THIRD_PARTY": "Third Party",
+                          "VENDOR": "Vendor"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "relationshipToReceiver"
+                        ],
+                        "titleMap": {
+                          "relationshipToReceiver": "relationshipToReceiver"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              },
+              "secondLastName": {
+                "description": "Sender Second Last/Family Name",
+                "maxLength": 30,
+                "minLength": 1,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              },
+              "sourceOfFunds": {
+                "description": "Source of Funds",
+                "properties": {
+                  "keyValuePair": {
+                    "description": "Compliance Info",
+                    "properties": {
+                      "fieldValue": {
+                        "enum": [
+                          "LOAN",
+                          "SAVINGS",
+                          "SALE_OF_PROPERTY",
+                          "SALARY_EMPLOY",
+                          "FAMILY_FUNDS",
+                          "INHERITANCE",
+                          "LOTTERY_GAMBLING",
+                          "PENSION",
+                          "SOCIAL_BENEFITS",
+                          "THIRD_PARTY"
+                        ],
+                        "titleMap": {
+                          "FAMILY_FUNDS": "Family Funds",
+                          "INHERITANCE": "Inheritance",
+                          "LOAN": "Loan",
+                          "LOTTERY_GAMBLING": "Lottery/Gambling",
+                          "PENSION": "Pension",
+                          "SALARY_EMPLOY": "Salary",
+                          "SALE_OF_PROPERTY": "Sale of Property",
+                          "SAVINGS": "Savings",
+                          "SOCIAL_BENEFITS": "Social Benefits",
+                          "THIRD_PARTY": "Third Party"
+                        },
+                        "type": "string"
+                      },
+                      "xmlTag": {
+                        "enum": [
+                          "sourceOfFunds"
+                        ],
+                        "titleMap": {
+                          "sourceOfFunds": "sourceOfFunds"
+                        },
+                        "type": "string"
+                      }
+                    },
+                    "type": "string"
+                  }
+                },
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "receiver": {
+          "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "receive schema description",
+            "properties": {
+              "accountId": {
+                "description": "Receiver Account Number",
+                "maxLength": 255,
+                "minLength": 0,
+                "type": "string"
+              },
+              "address": {
+                "properties": {
+                  "city": {
+                    "description": "Receiver City",
+                    "maxLength": 40,
+                    "minLength": 0,
+                    "pattern": "^([a-zA-Z \\u00C0-\\u017F\\#\\/\\.\\\"\\'\\,\\(\\)\\-])*$",
+                    "type": "string"
+                  },
+                  "countryCode": {
+                    "description": "Receiver Country",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "line1": {
+                    "description": "Receiver Street Address",
+                    "maxLength": 30,
+                    "minLength": 0,
+                    "pattern": "^([a-zA-Z0-9 \\u00C0-\\u017F\\#\\/\\.\\\"\\'\\,\\(\\)\\-])*$",
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "description": "Receiver ZIP Code",
+                    "maxLength": 10,
+                    "minLength": 0,
+                    "pattern": "^[0-9a-zA-Z -]*$",
+                    "type": "string"
+                  },
+                  "state": {
+                    "description": "Receiver State",
+                    "maxLength": 2,
+                    "minLength": 0,
+                    "type": "string"
+                  }
+                }
+              },
+              "email": {
+                "description": "Receiver Email Address",
+                "maxLength": 60,
+                "minLength": 0,
+                "pattern": "^(([\\\\.a-zA-Z0-9_\\\\-])+@([a-zA-Z0-9_\\\\-])+([a-zA-Z0-9_\\\\-])+[\\\\.]{1}([a-zA-Z0-9_\\\\-])+[\\\\.]?([a-zA-Z0-9_\\\\-])+)*$",
+                "type": "string"
+              },
+              "firstName": {
+                "description": "Receiver First/Given Name",
+                "maxLength": 20,
+                "minLength": 1,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              },
+              "lastName": {
+                "description": "Receiver Last/Family Name",
+                "maxLength": 30,
+                "minLength": 1,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              },
+              "middleName": {
+                "description": "Receiver Middle Name",
+                "maxLength": 20,
+                "minLength": 0,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              },
+              "notification": {
+                "properties": {
+                  "transactionEmailOptIn": {
+                    "description": "Receiver Transaction Email Notification Opt-In",
+                    "maxLength": 5,
+                    "minLength": 0,
+                    "type": "boolean"
+                  },
+                  "transactionSMSOptIn": {
+                    "description": "Receiver Transaction SMS Notification Opt-In",
+                    "maxLength": 5,
+                    "minLength": 0,
+                    "type": "boolean"
+                  }
+                }
+              },
+              "phone": {
+                "properties": {
+                  "countryCode": {
+                    "description": "Receiver Phone Country Code",
+                    "maxLength": 3,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "number": {
+                    "description": "Receiver Phone Number",
+                    "maxLength": 14,
+                    "minLength": 5,
+                    "type": "string"
+                  }
+                }
+              },
+              "secondLastName": {
+                "description": "Receiver Second Last/Family Name",
+                "maxLength": 30,
+                "minLength": 1,
+                "pattern": "^([a-zA-Z \\u00C0-\\u017F\\-\\'\\/])*$",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "metadata": {
+          "receiveCountry": "IDN",
+          "receiveCurrency": "IDR"
+        }
+      }
+    ]
+  }
+}
+
+
+
+
+
