@@ -133,6 +133,28 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info("* error_key     : {}", lnsError.getKey());
 		}
 		
+		if (!Flag.flag) {
+			/*
+			 * '400 Bad Request: [{"status":"fail","message":"source.transactionId is duplicated"}\n]'
+			 */
+			String pattern = null;
+			String str = "400 Bad Request: [{\"status\":\"fail\",\"message\":\"source.transactionId is duplicated\"}\n]";
+			pattern = "\\bsource\\.transactionId is duplicated\\b";
+			if (Flag.flag) log.info(">>>>> KANG.regex: {}", str.matches(pattern));
+			
+			LnsError lnsError = null;
+			lnsError = this.errorReaderJob.search("400 Bad Request: [{\"status\":\"fail\",\"message\":\"terminalName is missing\"}\n]");
+			if (Flag.flag) log.info("* error_org     : {}", lnsError.getError_org());
+			if (Flag.flag) log.info("* error_server  : {}", lnsError.getError_server());
+			if (Flag.flag) log.info("* error_code    : {}", lnsError.getError_code());
+			if (Flag.flag) log.info("* error_message : {}", lnsError.getError_message());
+			if (Flag.flag) log.info("* error_msg     : {}", lnsError.getError_msg());
+			if (Flag.flag) log.info("* error_msg2    : {}", String.format("%7.7s", lnsError.getError_msg()));
+			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
+			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
+			if (Flag.flag) log.info("* error_key     : {}", lnsError.getKey());
+		}
+		
 		if (Flag.flag) {
 			String string = null;
 			Pattern pattern = null;

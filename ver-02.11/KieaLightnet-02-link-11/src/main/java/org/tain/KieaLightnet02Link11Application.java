@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.tain.properties.ProjEnvBaseProperties;
 import org.tain.utils.CurrentInfo;
 import org.tain.utils.Flag;
 import org.tain.utils.Sleep;
@@ -22,22 +23,32 @@ public class KieaLightnet02Link11Application implements CommandLineRunner {
 		SpringApplication.run(KieaLightnet02Link11Application.class, args);
 	}
 
+	@Autowired
+	private ProjEnvBaseProperties projEnvBaseProperties;
+	
 	@Override
 	public void run(String... args) throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) job01();  // properties
-		if (!Flag.flag) job02();  // testing
-		if (Flag.flag) job03();  // tasks > ErrorReaderJob¸
-		if (Flag.flag) job04();  // errrorTest
-		if (Flag.flag) job05();
-		if (Flag.flag) job06();
-		if (Flag.flag) job07();
-		if (Flag.flag) job08();
-		if (Flag.flag) job09();
-		if (Flag.flag) job10();
-		
-		//if (Flag.flag) System.exit(0);
+		try {
+			if (Flag.flag) job01();  // properties
+			if (!Flag.flag) job02();  // testing
+			if (Flag.flag) job03();  // tasks > ErrorReaderJob¸
+			if (Flag.flag) job04();  // errrorTest
+			if (Flag.flag) job05();
+			if (Flag.flag) job06();
+			if (Flag.flag) job07();
+			if (Flag.flag) job08();
+			if (Flag.flag) job09();
+			if (Flag.flag) job10();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (this.projEnvBaseProperties.isTestFlag()) {
+				System.out.println("###################  SYSTEM EXIT by TestFlag ##################3");
+				System.exit(0);
+			}
+		}
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
@@ -91,7 +102,7 @@ public class KieaLightnet02Link11Application implements CommandLineRunner {
 		
 		if (Flag.flag) {
 			if (Flag.flag) this.errorTest01Working.test00();  // regex
-			if (Flag.flag) this.errorTest01Working.test01();
+			if (!Flag.flag) this.errorTest01Working.test01();
 		}
 	}
 	
