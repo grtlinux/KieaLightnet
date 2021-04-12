@@ -34,18 +34,25 @@ public class KieaLightnet07Mapper11Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		log.info("KANG-20200923 >>>>> {} {}", CurrentInfo.get());
 		
-		if (Flag.flag) job01();  // properties
-		if (Flag.flag) job02();  // tasks > MapperReaderJob
-		if (Flag.flag) job03();  // jsonTest
-		if (Flag.flag) job04();  // infoTest
-		if (Flag.flag) job05();  // tasks > ErrorReaderJob
-		if (Flag.flag) job06();  // errrorTest
-		if (Flag.flag) job07();
-		if (Flag.flag) job08();
-		if (Flag.flag) job09();
-		if (Flag.flag) job10();
-		
-		if (this.projEnvBaseProperties.isTestFlag()) System.exit(0);
+		try {
+			if (Flag.flag) job01();  // properties
+			if (Flag.flag) job02();  // tasks > MapperReaderJob
+			if (Flag.flag) job03();  // jsonTest
+			if (Flag.flag) job04();  // infoTest
+			if (Flag.flag) job05();  // tasks > ErrorReaderJob
+			if (Flag.flag) job06();  // errrorTest
+			if (Flag.flag) job07();
+			if (Flag.flag) job08();
+			if (Flag.flag) job09();
+			if (Flag.flag) job10();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (this.projEnvBaseProperties.isTestFlag()) {
+				System.out.println("\n==========================  SYSTEM EXIT by TestFlag  ===========================\n");
+				System.exit(0);
+			}
+		}
 	}
 	
 	///////////////////////////////////////////////////////////////////////////
