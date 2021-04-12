@@ -88,6 +88,11 @@ public class ErrorReaderJob {
 	///////////////////////////////////////////////////////////////////////////
 	
 	@Async(value = "async_errorReaderJob")
+	public void errorReaderJob01(String param) throws Exception {
+		log.info("KANG-20200721 >>>>> {} {} {}", this.param, CurrentInfo.get());
+	}
+	
+	@Async(value = "async_errorReaderJob")
 	public void errorReaderJob(String param) throws Exception {
 		this.param = param;
 		log.info("KANG-20200721 >>>>> {} {} {}", this.param, CurrentInfo.get());

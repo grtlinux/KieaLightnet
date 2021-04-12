@@ -45,7 +45,7 @@ public class KieaLightnet02Link11Application implements CommandLineRunner {
 			e.printStackTrace();
 		} finally {
 			if (this.projEnvBaseProperties.isTestFlag()) {
-				System.out.println("###################  SYSTEM EXIT by TestFlag ##################3");
+				System.out.println("\n==========================  SYSTEM EXIT by TestFlag  ===========================\n");
 				System.exit(0);
 			}
 		}
@@ -102,7 +102,7 @@ public class KieaLightnet02Link11Application implements CommandLineRunner {
 		
 		if (Flag.flag) {
 			if (Flag.flag) this.errorTest01Working.test00();  // regex
-			if (!Flag.flag) this.errorTest01Working.test01();
+			if (Flag.flag) this.errorTest01Working.test01();
 		}
 	}
 	

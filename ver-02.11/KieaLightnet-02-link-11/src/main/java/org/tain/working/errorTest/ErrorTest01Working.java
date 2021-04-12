@@ -75,10 +75,12 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info(">>>>> lnsError = {}", this.errorReaderJob.search("connection is timeout."));
 			if (Flag.flag) log.info(">>>>> lnsError = {}", this.errorReaderJob.search("[3rd party] error exception..."));
 			if (Flag.flag) log.info(">>>>> lnsError = {}", this.errorReaderJob.search("1003 NOTMATCH USER EXIST.."));
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 		
 		if (Flag.flag) {
 			if (Flag.flag) log.info(">>>>> mapError = {}", JsonPrint.getInstance().toPrettyJson(this.errorReaderJob.getMap()));
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 		
 		if (Flag.flag) {
@@ -92,6 +94,7 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
 			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
 			if (Flag.flag) log.info("* error_key     : {}", lnsError.getKey());
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 		
 		if (Flag.flag) {
@@ -108,6 +111,7 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
 			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
 			if (Flag.flag) log.info("* error_key     : {}", lnsError.getKey());
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 		
 		if (Flag.flag) {
@@ -131,9 +135,10 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
 			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
 			if (Flag.flag) log.info("* error_key     : {}", lnsError.getKey());
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 		
-		if (!Flag.flag) {
+		if (Flag.flag) {
 			/*
 			 * '400 Bad Request: [{"status":"fail","message":"source.transactionId is duplicated"}\n]'
 			 */
@@ -143,7 +148,7 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info(">>>>> KANG.regex: {}", str.matches(pattern));
 			
 			LnsError lnsError = null;
-			lnsError = this.errorReaderJob.search("400 Bad Request: [{\"status\":\"fail\",\"message\":\"terminalName is missing\"}\n]");
+			lnsError = this.errorReaderJob.search(str);
 			if (Flag.flag) log.info("* error_org     : {}", lnsError.getError_org());
 			if (Flag.flag) log.info("* error_server  : {}", lnsError.getError_server());
 			if (Flag.flag) log.info("* error_code    : {}", lnsError.getError_code());
@@ -153,6 +158,7 @@ public class ErrorTest01Working {
 			if (Flag.flag) log.info("* error_regex   : {}", lnsError.getError_regex());
 			if (Flag.flag) log.info("* comment       : {}", lnsError.getComment());
 			if (Flag.flag) log.info("* error_key     : {}", lnsError.getKey());
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 		
 		if (Flag.flag) {
@@ -165,11 +171,13 @@ public class ErrorTest01Working {
 			Matcher matcher = pattern.matcher(string);
 			log.info(">>>>> matcher.matches() = {}", matcher.matches());  // match all
 			log.info(">>>>> matcher.find()    = {}", matcher.find());
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 		
 		if (Flag.flag) {
 			log.info(">>>>> search-1 = {}", Pattern.compile("^CREATE\\b").matcher("CREATE UNIQUE INDEX index111 ON\nTABLE01\n(\n\tFLD01 ASC\n);\n").find());
 			log.info(">>>>> search-2 = {}", Pattern.compile("^create\\b", Pattern.CASE_INSENSITIVE).matcher("CREATE UNIQUE INDEX index111 ON\nTABLE01\n(\n\tFLD01 ASC\n);\n").find());
+			if (Flag.flag) log.info("----------------------------------------------------\n");
 		}
 	}
 }
